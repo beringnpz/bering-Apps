@@ -1,0 +1,648 @@
+'ones_east'                                                             ! Input
+  'Small microzooplankton concentration eastern boundary condition'     ! 
+  'mg C m^-3'                                                           ! [milligram C/m3]
+  'MZS_east, scalar, series'                                            ! 
+  'bio_time'                                                            ! 
+  'idTbry(ieast,iMZS)'                                                  ! 
+  'nulvar'                                                              ! 
+  0.0d0                                                                 ! 
+
+'ones_north'                                                            ! Input
+  'Small microzooplankton concentration northern boundary condition'    ! 
+  'mg C m^-3'                                                           ! [milligram C/m3]
+  'MZS_north, scalar, series'                                           ! 
+  'bio_time'                                                            ! 
+  'idTbry(inorth,iMZS)'                                                 ! 
+  'nulvar'                                                              ! 
+  0.0d0                                                                 ! 
+
+'ones_south'                                                            ! Input
+  'Small microzooplankton concentration southern boundary condition'    ! 
+  'mg C m^-3'                                                           ! [milligram C/m3]
+  'MZS_south, scalar, series'                                           ! 
+  'bio_time'                                                            ! 
+  'idTbry(isouth,iMZS)'                                                 ! 
+  'nulvar'                                                              ! 
+  0.0d0                                                                 ! 
+
+'ones_west'                                                             ! Input
+  'Small microzooplankton concentration western boundary condition'     ! 
+  'mg C m^-3'                                                           ! [milligram C/m3]
+  'MZS_west, scalar, series'                                            ! 
+  'bio_time'                                                            ! 
+  'idTbry(iwest,iMZS)'                                                  ! 
+  'nulvar'                                                              ! 
+  0.0d0                                                                 ! 
+
+'ones_east'                                                             ! Input
+  'Small copepod concentration eastern boundary condition'              ! 
+  'mg C m^-3'                                                           ! [milligram C/m3]
+  'Cop_east, scalar, series'                                            ! 
+  'bio_time'                                                            ! 
+  'idTbry(ieast,iCop)'                                                  ! 
+  'nulvar'                                                              ! 
+  1.0d-16                                                               ! 
+
+'ones_east'                                                             ! Input
+  'Slow-sinking detritus concetration eastern boundary condition'       ! 
+  'mg C m^-3'                                                           ! [milligram C/m3]
+  'Det_east, scalar, series'                                            ! 
+  'bio_time'                                                            ! 
+  'idTbry(ieast,iDet)'                                                  ! 
+  'nulvar'                                                              ! 
+  1.0d-16                                                               ! 
+
+'ones_east'                                                             ! Input
+  'Fast-sinking detritus concentration eastern boundary condition'      ! 
+  'mg C m^-3'                                                           ! [milligram C/m3]
+  'DetF_east, scalar, series'                                           ! 
+  'bio_time'                                                            ! 
+  'idTbry(ieast,iDetF)'                                                 ! 
+  'nulvar'                                                              ! 
+  1.0d-16                                                               ! 
+
+'ones_east'                                                             ! Input
+  'Offshore euphausiid concentration eastern boundary condition'        ! 
+  'mg C m^-3'                                                           ! [milligram C/m3]
+  'EupO_east, scalar, series'                                           ! 
+  'bio_time'                                                            ! 
+  'idTbry(ieast,iEupO)'                                                 ! 
+  'nulvar'                                                              ! 
+  1.0d-16                                                               ! 
+
+'ones_east'                                                             ! Input
+  'On-shelf euphausiid concentration eastern boundary condition'        ! 
+  'mg C m^-3'                                                           ! [milligram C/m3]
+  'EupS_east, scalar, series'                                           ! 
+  'bio_time'                                                            ! 
+  'idTbry(ieast,iEupS)'                                                 ! 
+  'nulvar'                                                              ! 
+  1.0d-16                                                               ! 
+
+'ones_east'                                                             ! Input
+  'Jellyfish concentration eastern boundary condition'                  ! 
+  'mg C m^-3'                                                           ! [milligram C/m3]
+  'Jel_east, scalar, series'                                            ! 
+  'bio_time'                                                            ! 
+  'idTbry(ieast,iJel)'                                                  ! 
+  'nulvar'                                                              ! 
+  1.0d-16                                                               ! 
+
+'ones_east'                                                             ! Input
+  'Microzooplankton concentration eastern boundary condition'           ! 
+  'mg C m^-3'                                                           ! [milligram C/m3]
+  'MZL_east, scalar, series'                                            ! 
+  'bio_time'                                                            ! 
+  'idTbry(ieast,iMZL)'                                                  ! 
+  'nulvar'                                                              ! 
+  1.0d-16                                                               ! 
+
+'ones_east'                                                             ! Input
+  'Offshore large copepod concentration eastern boundary condition'     ! 
+  'mg C m^-3'                                                           ! [milligram C/m3]
+  'NCaO_east, scalar, series'                                           ! 
+  'bio_time'                                                            ! 
+  'idTbry(ieast,iNCaO)'                                                 ! 
+  'nulvar'                                                              ! 
+  1.0d-16                                                               ! 
+
+'ones_east'                                                             ! Input
+  'On-shelf large copepod concentration eastern boundary condition'     ! 
+  'mg C m^-3'                                                           ! [milligram C/m3]
+  'NCaS_east, scalar, series'                                           ! 
+  'bio_time'                                                            ! 
+  'idTbry(ieast,iNCaS)'                                                 ! 
+  'nulvar'                                                              ! 
+  1.0d-16                                                               ! 
+
+'ones_east'                                                             ! Input
+  'Large phytoplankton concentration eastern boundary condition'        ! 
+  'mg C m^-3'                                                           ! [milligram C/m3]
+  'PhL_east, scalar, series'                                            ! 
+  'bio_time'                                                            ! 
+  'idTbry(ieast,iPhL)'                                                  ! 
+  'nulvar'                                                              ! 
+  1.0d-16                                                               ! 
+
+'ones_east'                                                             ! Input
+  'Small phytoplankton concentration eastern boundary condition'        ! 
+  'mg C m^-3'                                                           ! [milligram C/m3]
+  'PhS_east, scalar, series'                                            ! 
+  'bio_time'                                                            ! 
+  'idTbry(ieast,iPhS)'                                                  ! 
+  'nulvar'                                                              ! 
+  1.0d-16                                                               ! 
+
+'ones_north'                                                            ! Input
+  'Small copepod concentration northern boundary condition'             ! 
+  'mg C m^-3'                                                           ! [milligram C/m3]
+  'Cop_north, scalar, series'                                           ! 
+  'bio_time'                                                            ! 
+  'idTbry(inorth,iCop)'                                                 ! 
+  'nulvar'                                                              ! 
+  1.0d-16                                                               ! 
+
+'ones_north'                                                            ! Input
+  'Slow-sinking detritus concetration northern boundary condition'      ! 
+  'mg C m^-3'                                                           ! [milligram C/m3]
+  'Det_north, scalar, series'                                           ! 
+  'bio_time'                                                            ! 
+  'idTbry(inorth,iDet)'                                                 ! 
+  'nulvar'                                                              ! 
+  1.0d-16                                                               ! 
+
+'ones_north'                                                            ! Input
+  'Fast-sinking detritus concentration northern boundary condition'     ! 
+  'mg C m^-3'                                                           ! [milligram C/m3]
+  'DetF_north, scalar, series'                                          ! 
+  'bio_time'                                                            ! 
+  'idTbry(inorth,iDetF)'                                                ! 
+  'nulvar'                                                              ! 
+  1.0d-16                                                               ! 
+
+'ones_north'                                                            ! Input
+  'Offshore euphausiid concentration northern boundary condition'       ! 
+  'mg C m^-3'                                                           ! [milligram C/m3]
+  'EupO_north, scalar, series'                                          ! 
+  'bio_time'                                                            ! 
+  'idTbry(inorth,iEupO)'                                                ! 
+  'nulvar'                                                              ! 
+  1.0d-16                                                               ! 
+
+'ones_north'                                                            ! Input
+  'On-shelf euphausiid concentration northern boundary condition'       ! 
+  'mg C m^-3'                                                           ! [milligram C/m3]
+  'EupS_north, scalar, series'                                          ! 
+  'bio_time'                                                            ! 
+  'idTbry(inorth,iEupS)'                                                ! 
+  'nulvar'                                                              ! 
+  1.0d-16                                                               ! 
+
+'ones_north'                                                            ! Input
+  'Jellyfish concentration northern boundary condition'                 ! 
+  'mg C m^-3'                                                           ! [milligram C/m3]
+  'Jel_north, scalar, series'                                           ! 
+  'bio_time'                                                            ! 
+  'idTbry(inorth,iJel)'                                                 ! 
+  'nulvar'                                                              ! 
+  1.0d-16                                                               ! 
+
+'ones_north'                                                            ! Input
+  'Microzooplankton concentration northern boundary condition'          ! 
+  'mg C m^-3'                                                           ! [milligram C/m3]
+  'MZL_north, scalar, series'                                           ! 
+  'bio_time'                                                            ! 
+  'idTbry(inorth,iMZL)'                                                 ! 
+  'nulvar'                                                              ! 
+  1.0d-16                                                               ! 
+
+'ones_north'                                                            ! Input
+  'Offshore large copepod concentration northern boundary condition'    ! 
+  'mg C m^-3'                                                           ! [milligram C/m3]
+  'NCaO_north, scalar, series'                                          ! 
+  'bio_time'                                                            ! 
+  'idTbry(inorth,iNCaO)'                                                ! 
+  'nulvar'                                                              ! 
+  1.0d-16                                                               ! 
+
+'ones_north'                                                            ! Input
+  'On-shelf large copepod concentration northern boundary condition'    ! 
+  'mg C m^-3'                                                           ! [milligram C/m3]
+  'NCaS_north, scalar, series'                                          ! 
+  'bio_time'                                                            ! 
+  'idTbry(inorth,iNCaS)'                                                ! 
+  'nulvar'                                                              ! 
+  1.0d-16                                                               ! 
+
+'ones_north'                                                            ! Input
+  'Large phytoplankton concentration northern boundary condition'       ! 
+  'mg C m^-3'                                                           ! [milligram C/m3]
+  'PhL_north, scalar, series'                                           ! 
+  'bio_time'                                                            ! 
+  'idTbry(inorth,iPhL)'                                                 ! 
+  'nulvar'                                                              ! 
+  1.0d-16                                                               ! 
+
+'ones_north'                                                            ! Input
+  'Small phytoplankton concentration northern boundary condition'       ! 
+  'mg C m^-3'                                                           ! [milligram C/m3]
+  'PhS_north, scalar, series'                                           ! 
+  'bio_time'                                                            ! 
+  'idTbry(inorth,iPhS)'                                                 ! 
+  'nulvar'                                                              ! 
+  1.0d-16                                                               ! 
+
+'ones_south'                                                            ! Input
+  'Small copepod concentration southern boundary condition'             ! 
+  'mg C m^-3'                                                           ! [milligram C/m3]
+  'Cop_south, scalar, series'                                           ! 
+  'bio_time'                                                            ! 
+  'idTbry(isouth,iCop)'                                                 ! 
+  'nulvar'                                                              ! 
+  1.0d-16                                                               ! 
+
+'ones_south'                                                            ! Input
+  'Slow-sinking detritus concetration southern boundary condition'      ! 
+  'mg C m^-3'                                                           ! [milligram C/m3]
+  'Det_south, scalar, series'                                           ! 
+  'bio_time'                                                            ! 
+  'idTbry(isouth,iDet)'                                                 ! 
+  'nulvar'                                                              ! 
+  1.0d-16                                                               ! 
+
+'ones_south'                                                            ! Input
+  'Fast-sinking detritus concentration southern boundary condition'     ! 
+  'mg C m^-3'                                                           ! [milligram C/m3]
+  'DetF_south, scalar, series'                                          ! 
+  'bio_time'                                                            ! 
+  'idTbry(isouth,iDetF)'                                                ! 
+  'nulvar'                                                              ! 
+  1.0d-16                                                               ! 
+
+'ones_south'                                                            ! Input
+  'Offshore euphausiid concentration southern boundary condition'       ! 
+  'mg C m^-3'                                                           ! [milligram C/m3]
+  'EupO_south, scalar, series'                                          ! 
+  'bio_time'                                                            ! 
+  'idTbry(isouth,iEupO)'                                                ! 
+  'nulvar'                                                              ! 
+  1.0d-16                                                               ! 
+
+'ones_south'                                                            ! Input
+  'On-shelf euphausiid concentration southern boundary condition'       ! 
+  'mg C m^-3'                                                           ! [milligram C/m3]
+  'EupS_south, scalar, series'                                          ! 
+  'bio_time'                                                            ! 
+  'idTbry(isouth,iEupS)'                                                ! 
+  'nulvar'                                                              ! 
+  1.0d-16                                                               ! 
+
+'ones_south'                                                            ! Input
+  'Jellyfish concentration southern boundary condition'                 ! 
+  'mg C m^-3'                                                           ! [milligram C/m3]
+  'Jel_south, scalar, series'                                           ! 
+  'bio_time'                                                            ! 
+  'idTbry(isouth,iJel)'                                                 ! 
+  'nulvar'                                                              ! 
+  1.0d-16                                                               ! 
+
+'ones_south'                                                            ! Input
+  'Microzooplankton concentration southern boundary condition'          ! 
+  'mg C m^-3'                                                           ! [milligram C/m3]
+  'MZL_south, scalar, series'                                           ! 
+  'bio_time'                                                            ! 
+  'idTbry(isouth,iMZL)'                                                 ! 
+  'nulvar'                                                              ! 
+  1.0d-16                                                               ! 
+
+'ones_south'                                                            ! Input
+  'Offshore large copepod concentration southern boundary condition'    ! 
+  'mg C m^-3'                                                           ! [milligram C/m3]
+  'NCaO_south, scalar, series'                                          ! 
+  'bio_time'                                                            ! 
+  'idTbry(isouth,iNCaO)'                                                ! 
+  'nulvar'                                                              ! 
+  1.0d-16                                                               ! 
+
+'ones_south'                                                            ! Input
+  'On-shelf large copepod concentration southern boundary condition'    ! 
+  'mg C m^-3'                                                           ! [milligram C/m3]
+  'NCaS_south, scalar, series'                                          ! 
+  'bio_time'                                                            ! 
+  'idTbry(isouth,iNCaS)'                                                ! 
+  'nulvar'                                                              ! 
+  1.0d-16                                                               ! 
+
+'ones_south'                                                            ! Input
+  'Large phytoplankton concentration southern boundary condition'       ! 
+  'mg C m^-3'                                                           ! [milligram C/m3]
+  'PhL_south, scalar, series'                                           ! 
+  'bio_time'                                                            ! 
+  'idTbry(isouth,iPhL)'                                                 ! 
+  'nulvar'                                                              ! 
+  1.0d-16                                                               ! 
+
+'ones_south'                                                            ! Input
+  'Small phytoplankton concentration southern boundary condition'       ! 
+  'mg C m^-3'                                                           ! [milligram C/m3]
+  'PhS_south, scalar, series'                                           ! 
+  'bio_time'                                                            ! 
+  'idTbry(isouth,iPhS)'                                                 ! 
+  'nulvar'                                                              ! 
+  1.0d-16                                                               ! 
+
+'ones_west'                                                             ! Input
+  'Small copepod concentration western boundary condition'              ! 
+  'mg C m^-3'                                                           ! [milligram C/m3]
+  'Cop_west, scalar, series'                                            ! 
+  'bio_time'                                                            ! 
+  'idTbry(iwest,iCop)'                                                  ! 
+  'nulvar'                                                              ! 
+  1.0d-16                                                               ! 
+
+'ones_west'                                                             ! Input
+  'Slow-sinking detritus concetration western boundary condition'       ! 
+  'mg C m^-3'                                                           ! [milligram C/m3]
+  'Det_west, scalar, series'                                            ! 
+  'bio_time'                                                            ! 
+  'idTbry(iwest,iDet)'                                                  ! 
+  'nulvar'                                                              ! 
+  1.0d-16                                                               ! 
+
+'ones_west'                                                             ! Input
+  'Fast-sinking detritus concentration western boundary condition'      ! 
+  'mg C m^-3'                                                           ! [milligram C/m3]
+  'DetF_west, scalar, series'                                           ! 
+  'bio_time'                                                            ! 
+  'idTbry(iwest,iDetF)'                                                 ! 
+  'nulvar'                                                              ! 
+  1.0d-16                                                               ! 
+
+'ones_west'                                                             ! Input
+  'Offshore euphausiid concentration western boundary condition'        ! 
+  'mg C m^-3'                                                           ! [milligram C/m3]
+  'EupO_west, scalar, series'                                           ! 
+  'bio_time'                                                            ! 
+  'idTbry(iwest,iEupO)'                                                 ! 
+  'nulvar'                                                              ! 
+  1.0d-16                                                               ! 
+
+'ones_west'                                                             ! Input
+  'On-shelf euphausiid concentration western boundary condition'        ! 
+  'mg C m^-3'                                                           ! [milligram C/m3]
+  'EupS_west, scalar, series'                                           ! 
+  'bio_time'                                                            ! 
+  'idTbry(iwest,iEupS)'                                                 ! 
+  'nulvar'                                                              ! 
+  1.0d-16                                                               ! 
+
+'ones_west'                                                             ! Input
+  'Jellyfish concentration western boundary condition'                  ! 
+  'mg C m^-3'                                                           ! [milligram C/m3]
+  'Jel_west, scalar, series'                                            ! 
+  'bio_time'                                                            ! 
+  'idTbry(iwest,iJel)'                                                  ! 
+  'nulvar'                                                              ! 
+  1.0d-16                                                               ! 
+
+'ones_west'                                                             ! Input
+  'Microzooplankton concentration western boundary condition'           ! 
+  'mg C m^-3'                                                           ! [milligram C/m3]
+  'MZL_west, scalar, series'                                            ! 
+  'bio_time'                                                            ! 
+  'idTbry(iwest,iMZL)'                                                  ! 
+  'nulvar'                                                              ! 
+  1.0d-16                                                               ! 
+
+'ones_west'                                                             ! Input
+  'Offshore large copepod concentration western boundary condition'     ! 
+  'mg C m^-3'                                                           ! [milligram C/m3]
+  'NCaO_west, scalar, series'                                           ! 
+  'bio_time'                                                            ! 
+  'idTbry(iwest,iNCaO)'                                                 ! 
+  'nulvar'                                                              ! 
+  1.0d-16                                                               ! 
+
+'ones_west'                                                             ! Input
+  'On-shelf large copepod concentration western boundary condition'     ! 
+  'mg C m^-3'                                                           ! [milligram C/m3]
+  'NCaS_west, scalar, series'                                           ! 
+  'bio_time'                                                            ! 
+  'idTbry(iwest,iNCaS)'                                                 ! 
+  'nulvar'                                                              ! 
+  1.0d-16                                                               ! 
+
+'ones_west'                                                             ! Input
+  'Large phytoplankton concentration western boundary condition'        ! 
+  'mg C m^-3'                                                           ! [milligram C/m3]
+  'PhL_west, scalar, series'                                            ! 
+  'bio_time'                                                            ! 
+  'idTbry(iwest,iPhL)'                                                  ! 
+  'nulvar'                                                              ! 
+  1.0d-16                                                               ! 
+
+'ones_west'                                                             ! Input
+  'Small phytoplankton concentration western boundary condition'        ! 
+  'mg C m^-3'                                                           ! [milligram C/m3]
+  'PhS_west, scalar, series'                                            ! 
+  'bio_time'                                                            ! 
+  'idTbry(iwest,iPhS)'                                                  ! 
+  'nulvar'                                                              ! 
+  1.0d-16                                                               ! 
+
+'Fe_east'                                                               ! Input
+  'Iron concentration eastern boundary condition'                       ! 
+  'umol Fe m^-3'                                                        ! [micromole Fe/m3]
+  'Fe_east, scalar, series'                                             ! 
+  'bio_time'                                                            ! 
+  'idTbry(ieast,iFe)'                                                   ! 
+  'nulvar'                                                              ! 
+  1.0d0                                                                 ! 
+
+'NH4_east'                                                              ! Input
+  'Ammonium concentration eastern boundary condition'                   ! 
+  'mmol N m^-3'                                                         ! [millimole N/m3]
+  'NH4_east, scalar, series'                                            ! 
+  'bio_time'                                                            ! 
+  'idTbry(ieast,iNH4)'                                                  ! 
+  'nulvar'                                                              ! 
+  1.0d0                                                                 ! 
+
+'NO3_east'                                                              ! Input
+  'Nitrate concentration eastern boundary condition'                    ! 
+  'mmol N m^-3'                                                         ! [millimole N/m3]
+  'NO3_east, scalar, series'                                            ! 
+  'bio_time'                                                            ! 
+  'idTbry(ieast,iNO3)'                                                  ! 
+  'nulvar'                                                              ! 
+  1.0d0                                                                 ! 
+
+'oxygen_east'                                                           ! Input
+  'Oxygen eastern boundary condition'                                   ! 
+  'millimole_oxygen meter-3'                                            ! [millimole/m3]
+  'Oxyg_east, scalar, series'                                           ! 
+  'bio_time'                                                            ! 
+  'idTbry(ieast,iOxyg)'                                                 ! 
+  'nulvar'                                                              ! 
+  1.0d0                                                                 ! 
+
+'alkalinity_east'                                                       ! Input
+  'Alkalinity eastern boundary condition'                               ! 
+  'milliequivalents meter-3'                                            ! [milliequivalents/m3]
+  'TAlk_east, scalar, series'                                           ! 
+  'bio_time'                                                            ! 
+  'idTbry(ieast,iTAlk)'                                                 ! 
+  'nulvar'                                                              ! 
+  1.0d0                                                                 ! 
+
+'TIC_east'                                                              ! Input
+  'TIC eastern boundary condition'                                      ! 
+  'millimole_carbon meter-3'                                            ! [millimole/m3]
+  'TIC_east, scalar, series'                                            ! 
+  'bio_time'                                                            ! 
+  'idTbry(ieast,iTIC_)'                                                 ! 
+  'nulvar'                                                              ! 
+  1.0d0                                                                 ! 
+
+'Fe_north'                                                              ! Input
+  'Iron concentration northern boundary condition'                      ! 
+  'umol Fe m^-3'                                                        ! [micromole Fe/m3]
+  'Fe_north, scalar, series'                                            ! 
+  'bio_time'                                                            ! 
+  'idTbry(inorth,iFe)'                                                  ! 
+  'nulvar'                                                              ! 
+  1.0d0                                                                 ! 
+
+'NH4_north'                                                             ! Input
+  'Ammonium concentration northern boundary condition'                  ! 
+  'mmol N m^-3'                                                         ! [millimole N/m3]
+  'NH4_north, scalar, series'                                           ! 
+  'bio_time'                                                            ! 
+  'idTbry(inorth,iNH4)'                                                 ! 
+  'nulvar'                                                              ! 
+  1.0d0                                                                 ! 
+
+'NO3_north'                                                             ! Input
+  'Nitrate concentration northern boundary condition'                   ! 
+  'mmol N m^-3'                                                         ! [millimole N/m3]
+  'NO3_north, scalar, series'                                           ! 
+  'bio_time'                                                            ! 
+  'idTbry(inorth,iNO3)'                                                 ! 
+  'nulvar'                                                              ! 
+  1.0d0                                                                 ! 
+
+'oxygen_north'                                                          ! Input
+  'Oxygen northern boundary condition'                                  ! 
+  'millimole_oxygen meter-3'                                            ! [millimole/m3]
+  'Oxyg_north, scalar, series'                                          ! 
+  'bio_time'                                                            ! 
+  'idTbry(inorth,iOxyg)'                                                ! 
+  'nulvar'                                                              ! 
+  1.0d0                                                                 ! 
+
+'alkalinity_north'                                                      ! Input
+  'Alkalinity northern boundary condition'                              ! 
+  'milliequivalents meter-3'                                            ! [milliequivalents/m3]
+  'TAlk_north, scalar, series'                                          ! 
+  'bio_time'                                                            ! 
+  'idTbry(inorth,iTAlk)'                                                ! 
+  'nulvar'                                                              ! 
+  1.0d0                                                                 ! 
+
+'TIC_north'                                                             ! Input
+  'TIC northern boundary condition'                                     ! 
+  'millimole_carbon meter-3'                                            ! [millimole/m3]
+  'TIC_north, scalar, series'                                           ! 
+  'bio_time'                                                            ! 
+  'idTbry(inorth,iTIC_)'                                                ! 
+  'nulvar'                                                              ! 
+  1.0d0                                                                 ! 
+
+'Fe_south'                                                              ! Input
+  'Iron concentration southern boundary condition'                      ! 
+  'umol Fe m^-3'                                                        ! [micromole Fe/m3]
+  'Fe_south, scalar, series'                                            ! 
+  'bio_time'                                                            ! 
+  'idTbry(isouth,iFe)'                                                  ! 
+  'nulvar'                                                              ! 
+  1.0d0                                                                 ! 
+
+'NH4_south'                                                             ! Input
+  'Ammonium concentration southern boundary condition'                  ! 
+  'mmol N m^-3'                                                         ! [millimole N/m3]
+  'NH4_south, scalar, series'                                           ! 
+  'bio_time'                                                            ! 
+  'idTbry(isouth,iNH4)'                                                 ! 
+  'nulvar'                                                              ! 
+  1.0d0                                                                 ! 
+
+'NO3_south'                                                             ! Input
+  'Nitrate concentration southern boundary condition'                   ! 
+  'mmol N m^-3'                                                         ! [millimole N/m3]
+  'NO3_south, scalar, series'                                           ! 
+  'bio_time'                                                            ! 
+  'idTbry(isouth,iNO3)'                                                 ! 
+  'nulvar'                                                              ! 
+  1.0d0                                                                 ! 
+
+'oxygen_south'                                                          ! Input
+  'Oxygen southern boundary condition'                                  ! 
+  'millimole_oxygen meter-3'                                            ! [millimole/m3]
+  'Oxyg_south, scalar, series'                                          ! 
+  'bio_time'                                                            ! 
+  'idTbry(isouth,iOxyg)'                                                ! 
+  'nulvar'                                                              ! 
+  1.0d0                                                                 ! 
+
+'alkalinity_south'                                                      ! Input
+  'Alkalinity southern boundary condition'                              ! 
+  'milliequivalents meter-3'                                            ! [milliequivalents/m3]
+  'TAlk_south, scalar, series'                                          ! 
+  'bio_time'                                                            ! 
+  'idTbry(isouth,iTAlk)'                                                ! 
+  'nulvar'                                                              ! 
+  1.0d0                                                                 ! 
+
+'TIC_south'                                                             ! Input
+  'TIC southern boundary condition'                                     ! 
+  'millimole_carbon meter-3'                                            ! [millimole/m3]
+  'TIC_south, scalar, series'                                           ! 
+  'bio_time'                                                            ! 
+  'idTbry(isouth,iTIC_)'                                                ! 
+  'nulvar'                                                              ! 
+  1.0d0                                                                 ! 
+
+'Fe_west'                                                               ! Input
+  'Iron concentration western boundary condition'                       ! 
+  'umol Fe m^-3'                                                        ! [micromole Fe/m3]
+  'Fe_west, scalar, series'                                             ! 
+  'bio_time'                                                            ! 
+  'idTbry(iwest,iFe)'                                                   ! 
+  'nulvar'                                                              ! 
+  1.0d0                                                                 ! 
+
+'NH4_west'                                                              ! Input
+  'Ammonium concentration western boundary condition'                   ! 
+  'mmol N m^-3'                                                         ! [millimole N/m3]
+  'NH4_west, scalar, series'                                            ! 
+  'bio_time'                                                            ! 
+  'idTbry(iwest,iNH4)'                                                  ! 
+  'nulvar'                                                              ! 
+  1.0d0                                                                 ! 
+
+'NO3_west'                                                              ! Input
+  'Nitrate concentration western boundary condition'                    ! 
+  'mmol N m^-3'                                                         ! [millimole N/m3]
+  'NO3_west, scalar, series'                                            ! 
+  'bio_time'                                                            ! 
+  'idTbry(iwest,iNO3)'                                                  ! 
+  'nulvar'                                                              ! 
+  1.0d0                                                                 ! 
+
+'oxygen_west'                                                           ! Input
+  'Oxygen western boundary condition'                                   ! 
+  'millimole_oxygen meter-3'                                            ! [millimole/m3]
+  'Oxyg_west, scalar, series'                                           ! 
+  'bio_time'                                                            ! 
+  'idTbry(iwest,iOxyg)'                                                 ! 
+  'nulvar'                                                              ! 
+  1.0d0                                                                 ! 
+
+'alkalinity_west'                                                       ! Input
+  'Alkalinity western boundary condition'                               ! 
+  'milliequivalents meter-3'                                            ! [milliequivalents/m3]
+  'TAlk_west, scalar, series'                                           ! 
+  'bio_time'                                                            ! 
+  'idTbry(iwest,iTAlk)'                                                 ! 
+  'nulvar'                                                              ! 
+  1.0d0                                                                 ! 
+
+'TIC_west'                                                              ! Input
+  'TIC western boundary condition'                                      ! 
+  'millimole_carbon meter-3'                                            ! [millimole/m3]
+  'TIC_west, scalar, series'                                            ! 
+  'bio_time'                                                            ! 
+  'idTbry(iwest,iTIC_)'                                                 ! 
+  'nulvar'                                                              ! 
+  1.0d0                                                                 ! 
+

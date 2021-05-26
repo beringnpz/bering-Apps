@@ -1,0 +1,207 @@
+NOTES ON WHERE BIO-SPECIFIC CODE IS LOCATED 
+
+Note: BEST_NPZ and BIO_GOANPZ do not make use of the def_info.F and wrt_info.F sections that the other bio modules use to write biological parameters to netCDF.  We should really consider adding this, since keeping track of which parameters are used for each simulation is important!!
+
+--------------------------
+Functionals
+--------------------------
+
+Investigate: Are the ana_ functions in here just reference templates?  Or are they actually used if ROMS fails to find the file it's looking for in the Application Folder?
+
+--------------------------
+ROMS/Modules/globaldefs.h
+--------------------------
+
+Lines 1040-1046: There's a check to turn on the BIOLOGY option if any bio module is defined.  Any new bio modules will need to be added here.
+
+--------------------------
+ROMS/Modules/mod_average.F
+--------------------------
+
+Lines 119-154: Create pointers to sub-variables in the T_AVERAGE data-type.  Most bio modules just need a generic pointer to avgt(:,:,:,:), but BEST_NPZ and BIO_GOANPZ add a few extras.
+    BESTNPZ: Lines 122-151 (should be able to unnest from SOLVE3D... maybe a typo).
+
+Lines 311-344: Part of allocate_average subroutine.  Allocate memory to AVERAGES structure.  Again, most bio can rely on a generic allocation to avgt, but BEST_NPZ and BIO_GOANPZ need extras.
+    BESTNPZ: Lines 311-341
+
+Lines 632-708: Part of the initialize_average subroutine.  Assigns initial values to AVERAGES sub-variables.
+    BESTNPZ: Lines 632-697
+    
+Note: In newer version, COBALT also adds some extras
+
+--------------------------
+ROMS/Modules/mod_biology.F
+--------------------------
+
+Entire function provides variable declarations related to bio.  Can also add additional subroutines (via CONTAIMS) to the mod_biology modules.
+    BESTNPZ: Lines 1209-1414 (declarations), Lines 1520-2064 (subroutines).  This should be rearranged to keep everything together (as with ECOSIM, which also adds a subroutine).
+
+--------------------------
+ROMS/Modules/mod_ncparam.F
+--------------------------
+
+Lines 515-592: Declare bio-specific output IDs.  Most bio modules only rely on generic ones: avgTid(:,:), avg2Tid(:,:), hisTid(:,:), staTid(:,:).  BEST_NPZ and BIO_GOANPZ make it more complicated.
+    BESTNPZ: Lines 515-577
+    FEAST: Lines 579-585 (should prob. be nested in BESTNPZ)
+    
+Lines 766-831: allocate memory to output IDs
+    BESTNPZ: Lines 766-814
+    FEAST: Lines 816-824
+    
+Lines 1392-3713: Assign varids to all the sub-elements of idTvar, idBvar, etc. (related to varinfo reading).  This is the CASE('idXXX') section.
+    BESTNPZ: 3022-3398
+
+--------------------------
+ROMS/Modules/mod_ocean.F
+--------------------------
+
+Lines 114-145: Add additional sub-variable pointers to the T_OCEAN data-type.  Most bio is happy with the active tracer array t(:,:,:,:,:), but BEST_NPZ and BIO_GOANPZ have to be special.
+    BESTNPZ: Lines 114-140
+    CARBON: Lines 152-155 (pH pointer is shared between a few bio... maybe reconfigure)
+    
+Lines 383-434: Allocate memory to OCEANS structure sub-variables.
+    BESTNPZ: Lines 382-413
+    CARBON: Lines 431-434
+    
+Lines 701-902: Assign initial values to OCEAN structure.
+    CARBON: 723-727
+    BESTNPZ: 767-849
+    
+--------------------------
+ROMS/Modules/mod_param.F
+-------------------------- 
+
+Lines 252-256: This is just after the point where N (number of layers) is defined.  Any other geometry-related stuff is added here.  Only BEST_NPZ does anything here, setting the number of benthic layers.
+    BESTNPZ: 252-256
+    
+Lines 323-619: Sets biological tracer parameters (mostly number of stuff, used later to allocate memory)
+    BESTNPZ: 439-507, 528-583
+    MEANAGE: 519-521
+    FEAST: 588-619
+    
+Lines 762-972: initialize_param subroutine (note: may be a mismatched DO in there... doesn't fold properly).  Initializes values of more parameters.
+    BESTNPZ: 919-958
+
+--------------------------
+ROMS/Modules/mod_scalars.F
+--------------------------
+
+Lines 81-351: bio-related tracer and diagnostic ID declarations
+    BESTNPZ: Lines 200-304
+    AGETRACER: Lines 305-307
+    
+Lines 669-677: Sets max_bio variable (whch triggers bio blowups).  Usually this would be the same for all bio modules, but we needed to increase it for BEST_NPZ.
+
+Lines 1986-2014: Allocate size to any non-scalar tracer IDs.  For most bio modules, this is just idbio, which doesn't require specialized code.  BEST_NPZ is the exception.
+    BESTNPZ: Lines 1989-2013
+    
+Lines 2092-2468: Assign values to tracer IDs. (MEANAGE doesn't need any extras, but it's an exception to the rule)
+    BESTNPZ: Lines 2301-2437
+    
+--------------------------
+ROMS/Nonlinear/biology.F
+--------------------------
+
+Points to primary biology subroutine .h files
+
+
+--------------------------
+ROMS/Nonlinear/bulk_flux.F
+--------------------------
+
+This one's a bit of a mess right now.  The primary biology-related thing happenning here is that ice phytoplankton can alter shortwave radiation penetration through ice.  But the code right now is a messy combo of options for BEST_NPZ w/ or w/o the CLIM_ICE_1D option.  This may need to be reworked to be more robust to other biology modules.
+
+--------------------------
+ROMS/Nonlinear/ccsm_flux.F
+--------------------------
+
+Same as with bulk flux... limit shortwave if there's phytoplankton in the ice.  But it's a mess of CPP flags.
+
+---------------------------
+ROMS/Nonlinear/diag.F
+---------------------------
+
+This holds my attempt to stop computation if a NaN appears in the bio tracers.  Currently BESTNPZ-specific... should try to make more generic.
+
+---------------------------
+ROMS/Nonlinear/get_data.F
+---------------------------
+
+Lines 1276-1293: Read climatology for bio tracers.  BEST_NPZ and BIO_GOANPZ use this for iron, and BEST_NPZ w/ climatological ice uses this for ice.
+
+---------------------------
+ROMS/Nonlinear/pre_step3d.F
+---------------------------
+
+Lines 387-440: Biology feedback on light attenuation.  Currently BEST_NPZ-specific; could be made generic.
+
+Lines 984-1012: Turn off vertical diffusion for larger critters, on the assumption that they are big enough to swim.  This option is applied within BEST_NPZ and BIO_GOANPZ.
+
+---------------------------
+ROMS/Nonlinear/set_avg.F
+---------------------------
+
+Most bio modules just hold their data in the main tracer array (avgt).  BEST_NPZ and BIO_GOANPZ add a bajillion other similar arrays (stationary, prod2, prod3, benthic, etc.), resulting in a lot of extra code scattered throughout this one.  Possibly try to consolidate this better.
+
+---------------------------
+ROMS/Nonlinear/set_data.F
+---------------------------
+
+Lines 1649-1698: Apply climatology to biological tracers.  BEST_NPZ and BIO_GOANPZ use this for iron, and BEST_NPZ w/ climatological ice uses this for ice.
+
+---------------------------
+ROMS/Nonlinear/step3d_t.F
+---------------------------
+
+Scattered code to a) turn off vertical diffusion for larger critters (BEST_NPZ and BIO_GOANPZ only).  There's also BEST_NPZ code for stepping ice tracers and setting diagnostics, but need to examine this more to be certain it's necessary. 
+
+---------------------------
+ROMS/Utility/close_io.F
+---------------------------
+
+Lines 51-82: BRST_NPZ w/ BIOFLUX only: writes some diagnostics to standard output file (as part of final cleanup before exiting).
+
+---------------------------
+ROMS/Utility/def_avg.F
+---------------------------
+
+Lines 713-951: Create netCDF variables based on Vinfo data.  Most bio relies on just the idTvar, but need customization for any other id's we created (whether scalar or array).
+    BESTNPZ: 713-934 (ice stuff a little messy)
+    
+---------------------------
+ROMS/Utility/def_his.F
+ROMS/Utility/def_station.F
+---------------------------
+
+same concept as above
+
+---------------------------
+ROMS/Utility/inp_par.F
+---------------------------
+
+Lines 4383-9280: Subroutine read_BioPar, reads bio.in input parameters.  Should be able to rework this to one subroutine per bio module.
+    BESTNPZ: Lines 6694-8027 (with FEAST sometimes nested and sometimes not)
+
+---------------------------
+ROMS/Utility/wrt_avg.F
+ROMS/Utility/wrt_his.F
+ROMS/Utility/wrt_station.F
+---------------------------
+
+Extending netCDF writing to the specialized tracer arrays (BEST_NPZ and BIO_GOANPZ)
+    BESTNPZ: Lines 819-1142 (avg)
+
+
+Note that in wrt_station, a lot of this is not wrapped in BEST_NPZ or other bio-appriopriate CPP flags.  It should be.    
+
+
+    
+    
+
+
+
+    
+
+
+
+

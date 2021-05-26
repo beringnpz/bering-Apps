@@ -1,0 +1,225 @@
+'rho'                                                                   ! Output
+  'density anomaly'                                                     ! 
+  'kilogram meter-3'                                                    ! [kg/m3]
+  'density, scalar, series'                                             ! 
+  'ocean_time'                                                          ! 
+  'idDano'                                                              ! 
+  'r3dvar'                                                              ! 
+  1.0d0                                                                 ! 
+
+'zeta'                                                                  ! Input/Output
+  'free-surface'                                                        ! 
+  'meter'                                                               ! [m]
+  'free-surface, scalar, series'                                        ! 
+  'ocean_time'                                                          ! 
+  'idFsur'                                                              ! 
+  'r2dvar'                                                              ! 
+  1.0d0                                                                 ! 
+
+'Hsbl'                                                                  ! Input/Output
+  'depth of oceanic surface boundary layer'                             ! 
+  'meter'                                                               ! [m]
+  'Hsbl, scalar, series'                                                ! 
+  'ocean_time'                                                          ! 
+  'idHsbl'                                                              ! 
+  'r2dvar'                                                              ! 
+  1.0d0                                                                 ! 
+
+'latent'                                                                ! Input/Output
+  'net latent heat flux'                                                ! 
+  'watt meter-2'                                                        ! Input:  [Watt/m2]
+  'latent heat flux, scalar, series'                                    ! [Celsius m/s]
+  'lhf_time'                                                            ! Output: [Watt/m2]
+  'idLhea'                                                              ! 
+  'r2dvar'                                                              ! 
+  1.0d0                                                                 ! 
+
+'lwrad'                                                                 ! Input/Output
+  'net longwave radiation flux'                                         ! 
+  'watt meter-2'                                                        ! Input:  [Watt/m2]
+  'longwave radiation, scalar, series'                                  ! [Celsius m/s]
+  'lrf_time'                                                            ! Output: [Watt/m2]
+  'idLrad'                                                              ! 
+  'r2dvar'                                                              ! 
+  1.0d0                                                                 ! 
+
+'omega'                                                                 ! Output
+  'S-coordinate vertical momentum component'                            ! 
+  'meter3 second-1'                                                     ! [m3/s]
+  'omega, scalar, series'                                               ! 
+  'ocean_time'                                                          ! 
+  'idOvel'                                                              ! 
+  'w3dvar'                                                              ! 
+  1.0d0                                                                 ! 
+
+'AKs'                                                                   ! Input/Output
+  'salinity vertical diffusion coefficient'                             ! 
+  'meter2 second-1'                                                     ! [m2/s]
+  'AKs, scalar, series'                                                 ! 
+  'ocean_time'                                                          ! 
+  'idSdif'                                                              ! 
+  'w3dvar'                                                              ! 
+  1.0d0                                                                 ! 
+
+'sensible'                                                              ! Input/Output
+  'net sensible heat flux'                                              ! 
+  'watt meter-2'                                                        ! Input:  [Watt/m2]
+  'sensible heat flux, scalar, series'                                  ! [Celsius m/s]
+  'shf_time'                                                            ! Output: [Watt/m2]
+  'idShea'                                                              ! 
+  'r2dvar'                                                              ! 
+  1.0d0                                                                 ! 
+
+'swrad'                                                                 ! Input/Output
+  'solar shortwave radiation flux'                                      ! 
+  'watt meter-2'                                                        ! Input:  [Watt/m2]
+  'shortwave radiation, scalar, series'                                 ! [Celsius m/s]
+  'srf_time'                                                            ! Output: [Watt/m2]
+  'idSrad'                                                              ! 
+  'r2dvar'                                                              ! 
+  1.0d0                                                                 ! 
+
+'AKt'                                                                   ! Input/Output
+  'temperature vertical diffusion coefficient'                          ! 
+  'meter2 second-1'                                                     ! [m2/s]
+  'AKt, scalar, series'                                                 ! 
+  'ocean_time'                                                          ! 
+  'idTdif'                                                              ! 
+  'w3dvar'                                                              ! 
+  1.0d0                                                                 ! 
+
+'ssflux'                                                                ! Output
+  'surface net salt flux, (E-P)*SALT'                                   ! 
+  'meter second-1'                                                      ! [PSU m/s]
+  'surface net salt flux, scalar, series'                               ! 
+  'ssf_time'                                                            ! 
+  'idTsur(isalt)'                                                       ! 
+  'r2dvar'                                                              ! 
+  1.0d0                                                                 ! 
+
+'shflux'                                                                ! Input/Output
+  'surface net heat flux'                                               ! 
+  'watt meter-2'                                                        ! Input:  [Watt/m2]
+  'surface heat flux, scalar, series'                                   ! [Celsius m/s]
+  'shf_time'                                                            ! Output: [Watt/m2]
+  'idTsur(itemp)'                                                       ! 
+  'r2dvar'                                                              ! 
+  1.0d0                                                                 ! 
+
+'ubar'                                                                  ! Input/Ouput
+  'vertically integrated u-momentum component'                          ! 
+  'meter second-1'                                                      ! [m/s]
+  'ubar-velocity, scalar, series'                                       ! 
+  'ocean_time'                                                          ! 
+  'idUbar'                                                              ! 
+  'u2dvar'                                                              ! 
+  1.0d0                                                                 ! 
+
+'bustr'                                                                 ! Output
+  'bottom u-momentum stress'                                            ! 
+  'newton meter-2'                                                      ! [m2/s2]
+  'bottom u-momentum stress, scalar, series'                            ! Output: [N/m2]
+  'bms_time'                                                            ! 
+  'idUbms'                                                              ! 
+  'u2dvar'                                                              ! 
+  1.0d0                                                                 ! 
+
+'sustr'                                                                 ! Input/Output
+  'surface u-momentum stress'                                           ! 
+  'newton meter-2'                                                      ! Input:  [N/m2]
+  'surface u-momentum stress, scalar, series'                           ! [m2/s2]
+  'sms_time'                                                            ! Output: [N/m2]
+  'idUsms'                                                              ! 
+  'u2dvar'                                                              ! 
+  1.0d0                                                                 ! 
+
+'u'                                                                     ! Input/Output
+  'u-momentum component'                                                ! 
+  'meter second-1'                                                      ! [m/s]
+  'u-velocity, scalar, series'                                          ! 
+  'ocean_time'                                                          ! 
+  'idUvel'                                                              ! 
+  'u3dvar'                                                              ! 
+  1.0d0                                                                 ! 
+
+'vbar'                                                                  ! Input/Output
+  'vertically integrated v-momentum component'                          ! 
+  'meter second-1'                                                      ! [m/s]
+  'vbar-velocity, scalar, series'                                       ! 
+  'ocean_time'                                                          ! 
+  'idVbar'                                                              ! 
+  'v2dvar'                                                              ! 
+  1.0d0                                                                 ! 
+
+'bvstr'                                                                 ! Output
+  'bottom v-momentum stress'                                            ! 
+  'newton meter-2'                                                      ! [m2/s2]
+  'bottom v-momentum stress, scalar, series'                            ! Output: [N/m2]
+  'bms_time'                                                            ! 
+  'idVbms'                                                              ! 
+  'v2dvar'                                                              ! 
+  1.0d0                                                                 ! 
+
+'svstr'                                                                 ! Input/Output
+  'surface v-momentum stress'                                           ! 
+  'newton meter-2'                                                      ! Input:  [N/m2]
+  'surface v-momentum stress, scalar, series'                           ! [m2/s2]
+  'sms_time'                                                            ! Output: [N/m2]
+  'idVsms'                                                              ! 
+  'v2dvar'                                                              ! 
+  1.0d0                                                                 ! 
+
+'v'                                                                     ! Input/Output
+  'v-momentum component'                                                ! 
+  'meter second-1'                                                      ! [m/s]
+  'v-velocity, scalar, series'                                          ! 
+  'ocean_time'                                                          ! 
+  'idVvel'                                                              ! 
+  'v3dvar'                                                              ! 
+  1.0d0                                                                 ! 
+
+'AKv'                                                                   ! Input/Output
+  'vertical viscosity coefficient'                                      ! 
+  'meter2 second-1'                                                     ! [m2/s]
+  'AKv, scalar, series'                                                 ! 
+  'ocean_time'                                                          ! 
+  'idVvis'                                                              ! 
+  'w3dvar'                                                              ! 
+  1.0d0                                                                 ! 
+
+'w'                                                                     ! Output
+  'vertical momentum component'                                         ! 
+  'meter second-1'                                                      ! [m/s]
+  'w-velocity, scalar, series'                                          ! 
+  'ocean_time'                                                          ! 
+  'idWvel'                                                              ! 
+  'w3dvar'                                                              ! 
+  1.0d0                                                                 ! 
+
+'ocean_time'                                                            ! Input/Output
+  'time since initialization'                                           ! 
+  'second'                                                              ! [s]
+  'time, scalar, series'                                                ! 
+  'ocean_time'                                                          ! 
+  'idtime'                                                              ! 
+  'nulvar'                                                              ! 
+  1.0d0                                                                 ! 
+
+'salt'                                                                  ! Input/Output
+  'salinity'                                                            ! 
+  'nondimensional'                                                      ! [PSU]
+  'salinity, scalar, series'                                            ! 
+  'ocean_time'                                                          ! 
+  'idTvar(isalt)'                                                       ! 
+  'r3dvar'                                                              ! 
+  1.0d0                                                                 ! 
+
+'temp'                                                                  ! Input/Output
+  'potential temperature'                                               ! 
+  'Celsius'                                                             ! [Celsius]
+  'temperature, scalar, series'                                         ! 
+  'ocean_time'                                                          ! 
+  'idTvar(itemp)'                                                       ! 
+  'r3dvar'                                                              ! 
+  1.0d0                                                                 ! 
+

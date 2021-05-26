@@ -1,0 +1,198 @@
+'ageice'                                                                ! Input/Output
+  'age of the ice'                                                      ! 
+  'sec'                                                                 ! [sec]
+  'ice age, scalar, series'                                             ! 
+  'ocean_time'                                                          ! 
+  'idAgeice'                                                            ! 
+  'r2dvar'                                                              ! 
+  1.0d0                                                                 ! 
+
+'aice'                                                                  ! Input/Output
+  'fraction of cell covered by ice'                                     ! 
+  'nondimensional'                                                      ! [dimensionless]
+  'ice concentration, scalar, series'                                   ! 
+  'ocean_time'                                                          ! 
+  'idAice'                                                              ! 
+  'r2dvar'                                                              ! 
+  1.0d0                                                                 ! 
+
+'chu_iw'                                                                ! Input/Output
+  'ice-water momentum transfer coefficient'                             ! 
+  'meter second-1'                                                      ! [m/s]
+  'transfer coefficient, scalar, series'                                ! 
+  'ocean_time'                                                          ! 
+  'idChuiw'                                                             ! 
+  'r2dvar'                                                              ! 
+  1.0d0                                                                 ! 
+
+'hice'                                                                  ! Input/Output
+  'average ice thickness in cell'                                       ! 
+  'meter'                                                               ! [m]
+  'ice thickness, scalar, series'                                       ! 
+  'ocean_time'                                                          ! 
+  'idHice'                                                              ! 
+  'r2dvar'                                                              ! 
+  1.0d0                                                                 ! 
+
+'iomflx'                                                                ! Output
+  'ice-ocean mass flux'                                                 ! 
+  'meter second-1'                                                      ! [m/s]
+  'ice-ocean mass flux, scalar, series'                                 ! 
+  'ocean_time'                                                          ! 
+  'idIomflx'                                                            ! 
+  'r2dvar'                                                              ! 
+  1.0d0                                                                 ! 
+
+'s0mk'                                                                  ! Input/Output
+  'salinity of molecular sub-layer under ice'                           ! 
+  'nondimensional'                                                      ! [dimensionless]
+  'salinity, scalar, series'                                            ! 
+  'ocean_time'                                                          ! 
+  'idS0mk'                                                              ! 
+  'r2dvar'                                                              ! 
+  1.0d0                                                                 ! 
+
+'sfwat'                                                                 ! Input/Output
+  'surface melt water thickness on ice'                                 ! 
+  'meter'                                                               ! [m]
+  'melt water thickness, scalar, series'                                ! 
+  'ocean_time'                                                          ! 
+  'idSfwat'                                                             ! 
+  'r2dvar'                                                              ! 
+  1.0d0                                                                 ! 
+
+'sig11'                                                                 ! Input/Output
+  'internal ice stress 11 component'                                    ! 
+  'Newton meter-1'                                                      ! [N/m]
+  'ice stress 11, scalar, series'                                       ! 
+  'ocean_time'                                                          ! 
+  'idSig11'                                                             ! 
+  'r2dvar'                                                              ! 
+  1.0d0                                                                 ! 
+
+'sig12'                                                                 ! Input/Output
+  'internal ice stress 12 component'                                    ! 
+  'Newton meter-1'                                                      ! [N/m]
+  'ice stress 12, scalar, series'                                       ! 
+  'ocean_time'                                                          ! 
+  'idSig12'                                                             ! 
+  'r2dvar'                                                              ! 
+  1.0d0                                                                 ! 
+
+'sig22'                                                                 ! Input/Output
+  'internal ice stress 22 component'                                    ! 
+  'Newton meter-1'                                                      ! [N/m]
+  'ice stress 22, scalar, series'                                       ! 
+  'ocean_time'                                                          ! 
+  'idSig22'                                                             ! 
+  'r2dvar'                                                              ! 
+  1.0d0                                                                 ! 
+
+'t0mk'                                                                  ! Input/Output
+  'temperature of molecular sub-layer under ice'                        ! 
+  'degrees Celsius'                                                     ! [Celsius]
+  'temperature, scalar, series'                                         ! 
+  'ocean_time'                                                          ! 
+  'idT0mk'                                                              ! 
+  'r2dvar'                                                              ! 
+  1.0d0                                                                 ! 
+
+'tau_iw'                                                                ! Input/Output
+  'ice-water friction velocity'                                         ! 
+  'meter second-1'                                                      ! [m/s]
+  'friction velocity, scalar, series'                                   ! 
+  'ocean_time'                                                          ! 
+  'idTauiw'                                                             ! 
+  'r2dvar'                                                              ! 
+  1.0d0                                                                 ! 
+
+'tisrf'                                                                 ! Input/Output
+  'temperature of ice surface'                                          ! 
+  'degrees Celcius'                                                     ! [Celsius]
+  'surface temperature, scalar, series'                                 ! 
+  'ocean_time'                                                          ! 
+  'idTice'                                                              ! 
+  'r2dvar'                                                              ! 
+  1.0d0                                                                 ! 
+
+'ti'                                                                    ! Input/Output
+  'interior ice temperature'                                            ! 
+  'degrees Celcius'                                                     ! [Celsius]
+  'interior temperature, scalar, series'                                ! 
+  'ocean_time'                                                          ! 
+  'idTimid'                                                             ! 
+  'r2dvar'                                                              ! 
+  1.0d0                                                                 ! 
+
+'uice'                                                                  ! Input/Output
+  'u-component of ice velocity'                                         ! 
+  'meter second-1'                                                      ! [m/s]
+  'u-component of ice velocity, scalar, series'                         ! 
+  'ocean_time'                                                          ! 
+  'idUice'                                                              ! 
+  'u2dvar'                                                              ! 
+  1.0d0                                                                 ! 
+
+'vice'                                                                  ! Input/Output
+  'v-component of ice velocity'                                         ! 
+  'meter second-1'                                                      ! [m/s]
+  'v-component of ice velocity, scalar, series'                         ! 
+  'ocean_time'                                                          ! 
+  'idVice'                                                              ! 
+  'v2dvar'                                                              ! 
+  1.0d0                                                                 ! 
+
+'wai'                                                                   ! Output
+  'rate of ice melt on top'                                             ! 
+  'm^3 s-1'                                                             ! [m3/s]
+  'freeze/melt rate, scalar, series'                                    ! 
+  'ocean_time'                                                          ! 
+  'idWai'                                                               ! 
+  'r2dvar'                                                              ! 
+  1.0d0                                                                 ! 
+
+'wao'                                                                   ! Output
+  'rate of ice growth in leads'                                         ! 
+  'm^3 s-1'                                                             ! [m3/s]
+  'freeze/melt rate, scalar, series'                                    ! 
+  'ocean_time'                                                          ! 
+  'idWao'                                                               ! 
+  'r2dvar'                                                              ! 
+  1.0d0                                                                 ! 
+
+'wfr'                                                                   ! Output
+  'rate of frazil ice growth'                                           ! 
+  'm^3 s-1'                                                             ! [m3/s]
+  'freeze rate, scalar, series'                                         ! 
+  'ocean_time'                                                          ! 
+  'idWfr'                                                               ! 
+  'r2dvar'                                                              ! 
+  1.0d0                                                                 ! 
+
+'wio'                                                                   ! Output
+  'rate of ice growth under ice'                                        ! 
+  'm^3 s-1'                                                             ! [m3/s]
+  'freeze rate, scalar, series'                                         ! 
+  'ocean_time'                                                          ! 
+  'idWio'                                                               ! 
+  'r2dvar'                                                              ! 
+  1.0d0                                                                 ! 
+
+'wro'                                                                   ! Output
+  'rate of ice melt runoff'                                             ! 
+  'm^3 s-1'                                                             ! [m3/s]
+  'melt runoff rate, scalar, series'                                    ! 
+  'ocean_time'                                                          ! 
+  'idWro'                                                               ! 
+  'r2dvar'                                                              ! 
+  1.0d0                                                                 ! 
+
+'snow_thick'                                                            ! Output
+  'thickness of snow cover'                                             ! 
+  'meter'                                                               ! [m]
+  'snow thickness, scalar, series'                                      ! 
+  'ocean_time'                                                          ! 
+  'idHsno'                                                              ! 
+  'r2dvar'                                                              ! 
+  1.0d0                                                                 ! 
+

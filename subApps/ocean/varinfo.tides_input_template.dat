@@ -1,0 +1,81 @@
+'tide_Pamp'                                                             ! Input
+  'tidal potential elevation amplitude'                                 ! 
+  'meter'                                                               ! [m]
+  'SSH_Pamp, scalar, series'                                            ! 
+  'tide_period'                                                         ! 
+  'idTpam'                                                              ! 
+  'r2dvar'                                                              ! 
+  1.0d0                                                                 ! 
+
+'tide_period'                                                           ! Input
+  'tidal period'                                                        ! 
+  'hours'                                                               ! [s]
+  'tide_period, scalar, series'                                         ! 
+  'tide_period'                                                         ! 
+  'idTper'                                                              ! 
+  'nulvar'                                                              ! 
+  3600.0d0                                                              ! 60*60
+
+'tide_Pphase'                                                           ! Input
+  'tidal potential elevation phase angle'                               ! 
+  'degrees'                                                             ! [radians]
+  'SSH_Pphase, scalar, series'                                          ! 
+  'tide_period'                                                         ! 
+  'idTpph'                                                              ! 
+  'r2dvar'                                                              ! 
+  0.017453292519943295                                                  ! pi/180
+
+'tide_Cangle'                                                           ! Input
+  'tidal current inclination angle'                                     ! 
+  'degrees'                                                             ! [radians]
+  'tide_Cangle, scalar, series'                                         ! 
+  'tide_period'                                                         ! 
+  'idTvan'                                                              ! 
+  'r2dvar'                                                              ! 
+  0.017453292519943295                                                  ! pi/180
+
+'tide_Cmax'                                                             ! Input
+  'maximum tidal current, ellipse major axis'                           ! 
+  'meter second-1'                                                      ! [m/s]
+  'tide_Cmax, scalar, series'                                           ! 
+  'tide_period'                                                         ! 
+  'idTvma'                                                              ! 
+  'r2dvar'                                                              ! 
+  1.0d0                                                                 ! 
+
+'tide_Cmin'                                                             ! Input
+  'minimum tidal current, ellipse minor axis'                           ! 
+  'meter second-1'                                                      ! [m/s]
+  'tide_Cmin, scalar, series'                                           ! 
+  'tide_period'                                                         ! 
+  'idTvmi'                                                              ! 
+  'r2dvar'                                                              ! 
+  1.0d0                                                                 ! 
+
+'tide_Cphase'                                                           ! Input
+  'tidal current phase angle'                                           ! 
+  'degrees'                                                             ! [radians]
+  'tide_Cphase, scalar, series'                                         ! 
+  'tide_period'                                                         ! 
+  'idTvph'                                                              ! 
+  'r2dvar'                                                              ! 
+  0.017453292519943295                                                  ! pi/180
+
+'tide_Eamp'                                                             ! Input
+  'tidal elevation amplitude'                                           ! 
+  'meter'                                                               ! [m]
+  'SSH_Tamp, scalar, series'                                            ! 
+  'tide_period'                                                         ! 
+  'idTzam'                                                              ! 
+  'r2dvar'                                                              ! 
+  1.0d0                                                                 ! 
+
+'tide_Ephase'                                                           ! Input
+  'tidal elevation phase angle'                                         ! 
+  'degrees'                                                             ! [radians]
+  'SSH_Tphase, scalar, series'                                          ! 
+  'tide_period'                                                         ! 
+  'idTzph'                                                              ! 
+  'r2dvar'                                                              ! 
+  0.017453292519943295                                                  ! pi/180
+

@@ -1,0 +1,90 @@
+'lwrad_down'                                                            ! Input
+  'downwelling longwave radiation flux'                                 ! 
+  'watt meter-2'                                                        ! Input:  [Watt/m2]
+  'downwelling longwave radiation, scalar, series'                      ! [Celsius m/s]
+  'lrf_time'                                                            ! 
+  'idLdwn'                                                              ! 
+  'r2dvar'                                                              ! 
+  1.0d0                                                                 ! 
+
+'Pair'                                                                  ! Input
+  'surface air pressure'                                                ! 
+  'Pascal'                                                              ! [millibar]
+  'Pair, scalar, series'                                                ! 
+  'pair_time'                                                           ! 
+  'idPair'                                                              ! 
+  'r2dvar'                                                              ! 
+  0.01d0                                                                ! 
+
+'Qair'                                                                  ! Input
+  'surface air relative humidity'                                       ! 
+  'kg/kg'                                                               ! [kg/kg]
+  'Qair, scalar, series'                                                ! 
+  'qair_time'                                                           ! 
+  'idQair'                                                              ! 
+  'r2dvar'                                                              ! 
+  1.00d0                                                                ! was percent
+
+'SSS'                                                                   ! Input
+  'sea surface salinity climatology'                                    ! 
+  'nondimensional'                                                      ! [PSU]
+  'SSS, scalar, series'                                                 ! 
+  'sss_time'                                                            ! 
+  'idSSSc'                                                              ! 
+  'r2dvar'                                                              ! 
+  1.0d0                                                                 ! 
+
+'Runoff'                                                                ! Input
+  'Fresh water runoff from land'                                        ! 
+  'kg/s/m^2'                                                            ! [kg/m2/s]
+  'runoff, scalar, series'                                              ! 
+  'runoff_time'                                                         ! 
+  'idRunoff'                                                            ! 
+  'r2dvar'                                                              ! 
+  1.0d0                                                                 ! 
+
+'Tair'                                                                  ! Input
+  'surface air temperature'                                             ! 
+  'Celsius'                                                             ! [Celsius]
+  'Tair, scalar, series'                                                ! 
+  'tair_time'                                                           ! 
+  'idTair'                                                              ! 
+  'r2dvar'                                                              ! 
+  1.0d0                                                                 ! 
+
+'Uwind'                                                                 ! Input/Output
+  'surface u-wind component'                                            ! 
+  'meter second-1'                                                      ! [m/s]
+  'u-wind, scalar, series'                                              ! 
+  'wind_time'                                                           ! 
+  'idUair'                                                              ! 
+  'r2dvar'                                                              ! 
+  1.0d0                                                                 ! 
+
+'Vwind'                                                                 ! Input/Output
+  'surface v-wind component'                                            ! 
+  'meter second-1'                                                      ! [m/s]
+  'v-wind, scalar, series'                                              ! 
+  'wind_time'                                                           ! 
+  'idVair'                                                              ! 
+  'r2dvar'                                                              ! 
+  1.0d0                                                                 ! 
+
+'rain'                                                                  ! Input/Output
+  'rain fall rate'                                                      ! 
+  'kilogram meter-2 second-1'                                           ! [kg/m2/s]
+  'rain, scalar, series'                                                ! 
+  'rain_time'                                                           ! 
+  'idrain'                                                              ! 
+  'r2dvar'                                                              ! 
+  1.0d0                                                                 ! 1/rhow (0.001 m3/kg) if m/s
+
+'swrad'                                                                 ! Input/Output
+  'solar shortwave radiation flux'                                      ! 
+  'watt meter-2'                                                        ! Input:  [Watt/m2]
+  'shortwave radiation, scalar, series'                                 ! [Celsius m/s]
+  'srf_time'                                                            ! Output: [Watt/m2]
+  'idSrad'                                                              ! 
+  'r2dvar'                                                              ! 
+  1.0d0                                                                 ! 
+

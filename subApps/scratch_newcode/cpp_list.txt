@@ -1,0 +1,115 @@
+In both
+
+ADD_FSOBC    
+ADD_M2OBC    
+ALBEDO_CURVE 
+ANA_BSFLUX   
+ANA_BTFLUX   
+AVERAGES     
+BULK_FLUXES  
+CCSM_FLUXES  
+CORE_FORCING 
+CURVGRID     
+DJ_GRADPS    
+EMINUSP      
+LMD_CONVEC   
+LMD_MIXING   
+LMD_NONLOCAL 
+LMD_RIMIX    
+LMD_SHAPIRO  
+LMD_SKPP     
+LONGWAVE_OUT 
+LTIDES       
+MASKING      
+MIX_S_UV     
+NONLIN_EOS   
+NO_WRITE_GRID
+POT_TIDES    
+RADIATION_2D 
+RUNOFF       
+SALINITY     
+SCORRECTION  
+SOLAR_SOURCE 
+SOLVE3D      
+SSH_TIDES    
+TIDES_ASTRO  
+UV_ADV       
+UV_COR       
+UV_TIDES     
+UV_VIS2      
+VISC_GRID    
+
+
+In B10K (old) only
+
+ANA_AIOBC         (sets ice boundary conditions to 0)
+ANA_HIOBC         (sets ice boundary conditions to 0)
+ANA_HSNOBC        (sets ice snow boundary conditions to 0)
+ANA_PSOURCE       (use analytical point source values, custom for Bering Strait)
+AVERAGES_AKS      x deprecated, now set by input parameter Aout(idSdif)
+AVERAGES_AKT      x deprecated, now set by input parameter Aout(idTdif)
+AVERAGES_AKV      x deprecated, now set by input paramerer Aout(idVvis)
+AVERAGES_FLUXES   x deprecated, now set by individually by Aout input array 
+BERING_10K        (sets BERING_10K domain; in old version this was added in a non-standard way in addition to the NEP5 application flag)
+DIFF_GRID         (scales diffusion coefficients by grid size)
+DIURNAL_SRFLUX    (adds diurnal cycle to daily-averaged shortwave input)
+DRAG_LIMITER      ? (quadratic bottom stress... is this a customization?  different than UV_QDRAG?)
+EASTERN_WALL      x deprecated, now set by setting input parameters LBC(:,3) to Clo
+ICE_ADVECT        (advect ice tracers)
+ICE_BULK_FLUXES   (use for ice in bulk flux computation)
+ICE_EVP           (elastic-viscous-plastic rheology)
+ICE_MK            (Mellor-Kantha thermoodynamics)
+ICE_MODEL         (use the sea ice model)
+ICE_MOMENTUM      (add ice momentum component)
+ICE_MOM_BULK      (something related to ice-water stress computation)
+ICE_SMOLAR        (MPDATA advection scheme)
+ICE_THERMO        (ice thermodynamic component)
+ICE_UPWIND        (upwind advection scheme)
+MIX_GEO_TS        (mix along geopotential (constant z) surfaces)
+NORTHERN_WALL     x deprecated, now set by setting input parameters LBC(:,4) to Clo
+RDRG_GRID         ? (reads bottom drag coefficients from grid file... customization?)
+RST_SINGLE        (single precision in restart files)
+SOUTH_FSCHAPMAN   x deprecated, now set by via input parameter LBC(isFsur,2) = Che
+SOUTH_M2FLATHER   x deprecated, now set by via input parameter LBC(isUbar,2) = Fla, LBC(isVbar,2) = Fla
+SOUTH_M3NUDGING   x deprecated, now set by via input parameter LBC(isUvel,2) = RadNud, LBC(isVvel,2) = RadNud
+SOUTH_M3RADIATION x ""
+SOUTH_MIGRADIENT  x deprecated, I think even as of our old version...
+SOUTH_TNUDGING    x deprecated, now set by via input parameter LBC(isTsur,2) = RadNud
+SOUTH_TRADIATION  x ""
+SPONGE            x deprecated, replaced with input parameters LuvSponge, LtracerSponge TODO: check that we want sponge on for all, add visc_factor to grid file? See ticket 627
+STATIONS          (turn on station output)
+TS_C4HADVECTION   x deprecated, replaced with input parameter Hadvection = C4
+TS_C4VADVECTION   x deprecated, replaced with input parameter Vadvection = C4
+TS_DIF2           turn on harmonic horizontal mixing
+UV_LDRAG          turn on linear bottom friction
+UV_PSOURCE        x deprecated, replaced with input parameter LuvSrc
+UV_SADVECTION     turn on splines vertical advection
+UV_SMAGORINSKY    turn on Smagorinky-like viscosity 
+VISC_3DCOEF       turn on time-invarant horizontal viscosity at rho-points
+WEST_FSCHAPMAN    x deprecated, now set by via input parameter LBC(isFsur,1) = Che
+WEST_M2FLATHER    x deprecated, now set by via input parameter LBC(isUbar,1) = Fla, LBC(
+WEST_M3NUDGING    x deprecated, now set by via input parameter LBC(isUvel,1) = RadNud, L
+WEST_M3RADIATION  x ""
+WEST_MIGRADIENT   x deprecated, I think even as of our old version...
+WEST_TNUDGING     x deprecated, now set by via input parameter LBC(isTsur,1) = RadNud
+WEST_TRADIATION   x ""
+
+In Bering (new) only
+
+ALBEDO_CSIM        ice albedo from CSIM... maybe?
+ANA_DRAG           x analytical drag
+ANA_NUDGCOEF       x analytical climatology nudging coefficients... don't think we need this (until we get to Fe, at least)
+CICE_COUPLING      x different ice model
+FILTERED           x some sort of filtering on averages outputs... I don't think we want this
+IMPLICIT_NUDGING   implicit nudging in momentum radiation... figure out what this means and if we need it
+LIMIT_BSTRESS      limits the magnitude of bottom stress... investigate whether this relates to bottom drag stuff
+NO_HIS             x Turns off history file writing
+NO_SCORRECTION_ICE Don't use SCORRECTION under the ice... consider?
+PERFECT_RESTART    perfect restart... may want to consider this to eliminate some of our restart mass balance issues
+RI_SPLINES         the splines options are new, have to do with spline reconstruction of vertical sheet, diffusivity, and viscosity... not sure if we should consider these
+SPLINES_VDIFF      ""
+SPLINES_VVISC      ""
+UV_DRAG_GRID       Replaces RDRG_GRID, needs to be paired with either UV_LDRAG (idragL [rdrag]), UV_QDRAG (idragQ [rdrag2]), or UV_LOG_DRAG (idZoBL [ZoBot])
+UV_QDRAG           see above
+WET_DRY            x wetting/drying, don't need for Bering
+WTYPE_GRID         Allows for spatially varying water type... we may want to look into this to replace sediment attenuation kludge, but check how it interacts with OPTICAL_MANTISSA

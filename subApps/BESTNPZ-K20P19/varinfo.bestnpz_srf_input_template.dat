@@ -1,0 +1,27 @@
+'pCO2air'                                                               ! Input
+  'Atmospheric pCO2'                                                    ! 
+  'micro atm'                                                           ! [uatm]
+  'Atmospheric pCO2'                                                    ! 
+  'ocean_time'                                                          ! 
+  'idpCO2air'                                                           ! 
+  'r2dvar'                                                              ! 
+  1.0d0                                                                 ! 
+
+'Alkalinity_Flux'                                                       ! Input
+  'Alk flux with freshwater runoff'                                     ! 
+  '(ueq/s)/m^2'                                                         ! [ueq/s/m2]
+  'Alkalinity Flux'                                                     ! 
+  'alkalinity_time'                                                     ! 
+  'idTAFlux'                                                            ! 
+  'r2dvar'                                                              ! 
+  1.0d0                                                                 ! 
+
+'DIC_Flux'                                                              ! Input
+  'DIC flux with freshwater runoff'                                     ! 
+  '(umol/s)/m^2'                                                        ! [umol/s/m2]
+  'DIC Flux'                                                            ! 
+  'DIC_time'                                                            ! 
+  'idDICFlux'                                                           ! 
+  'r2dvar'                                                              ! 
+  1.0d0                                                                 ! 
+
