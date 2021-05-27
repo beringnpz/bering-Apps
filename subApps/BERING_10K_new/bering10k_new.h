@@ -12,211 +12,185 @@
 **  Options for BERING simulation
 */
 
-#undef ROMS_MODEL
-#undef WRF_MODEL
-#undef MCT_LIB
-#undef ATM2OCN_FLUXES  /* not sure about this with ice */
-#undef NO_LBC_ATT
+#define  BERING_10K     /* Application flag */
+                        /* Usually, this would be set via the ROMS_APPLICATION environment 
+                           variable within a build script or makefile.  BERING_10K is a 
+                           special case in that it relies on two application flags: NEP5 
+                           and BERING_10K.  When used this way, this header file should be
+                           renamed nep5.h. */
 
-#define NO_HIS
-#undef HDF5
-#undef DEFLATE
-#undef PARALLEL_IN
-#undef PARALLEL_OUT
-#define PERFECT_RESTART
-#define IMPLICIT_NUDGING
+#undef NETCDF4              // use classic netCDF 
+#undef PARALLEL_IO          // no parallel input/output
+#undef OFFLINE_FLOATS       // could be used for floats in offline version... but not now
 
 /* general */
 
-#define CURVGRID
-#define MASKING
-#define SOLVE3D
-#ifdef SOLVE3D
-# define SALINITY
-# define NONLIN_EOS
-# define SPLINES_VDIFF
-# define SPLINES_VVISC
-# define RI_SPLINES
-#endif
-#undef FLOATS
-#undef STATIONS
-#define WET_DRY
-
-#undef T_PASSIVE
-#ifdef T_PASSIVE
-# define ANA_BPFLUX        /* analytical bottom passive tracers fluxes */
-# define ANA_SPFLUX
-# define ANA_PASSIVE
-# define TRC_PSOURCE
-# define ANA_TRC_PSOURCE
-# define AGE_MEAN
-#endif
+#define CURVGRID            // use curvilinear coordinates
+#define MASKING             // use land/sea masking
+#define NONLIN_EOS          // nonlinear equation of state
+#define SOLVE3D             // 3D primitive equations
+#define SALINITY            // have salinity
+#ifdef SOLVE3D               
+# undef SPLINES             // turn off option for parabolic splines reconstruction of vertical derivatives
+#endif                      
+#undef FLOATS               // toggle on/off floats
+#define STATIONS            // toggle on/off stations output
+#undef WET_DRY              // no wetting/drying of grid cells
+                          
+#undef T_PASSIVE            // no passive tracers
+#ifdef T_PASSIVE            
+# define ANA_PASSIVE        // ... but if on, use analytical initial conditions for them
+#endif                 
+                
+/* salinity nudging */ 
+                
+#define SCORRECTION         // freshwater flux correction
 
 /* ice */
 
 #ifdef SOLVE3D
-# define CICE_COUPLING
-# ifdef CICE_MODEL
-#  define SNOWFALL
-#  define SNOW_FROM_RAIN
-# endif
-
-# undef  ICE_MODEL
-# ifdef ICE_MODEL
-#  define ANA_ICE
-#  undef  OUTFLOW_MASK
-#  undef  FASTICE_CLIMATOLOGY
-#  define  ICE_THERMO
-#  define  ICE_MK
-#  define  ICE_MOMENTUM
-#  define  ICE_MOM_BULK
-#  define  ICE_EVP
-#  define  ICE_STRENGTH_QUAD
-#  define  ICE_ADVECT
-#  define  ICE_SMOLAR
-#  define  ICE_UPWIND
-#  define  ICE_BULK_FLUXES
-#  define ICE_CONVSNOW
-#  define ICE_I_O
-#  define ICE_DIAGS
-#  undef  MELT_PONDS
+# define  ICE_MODEL         // Turn on default ice model with...
+# ifdef ICE_MODEL           
+#  define  ICE_THERMO       // ... ice thermodynamic component
+#  define  ICE_MK           // ... Mellor-Kantha thermodynamics
+#  undef   ICE_ALB_EC92
+#  undef   ICE_SMOOTH
+#  define  ICE_MOMENTUM     // ... ice momentum component
+#  define  ICE_MOM_BULK     // ... something related to ice-water stress computation
+#  define  ICE_EVP          // ... elastic-viscous-plastic rheology
+#  define  ICE_ADVECT       // ... advect ice tracers
+#  define  ICE_SMOLAR       // ... MPDATA advection scheme
+#  define  ICE_UPWIND       // ... upwind advection scheme
+#  define  ICE_BULK_FLUXES  // ... ice in bulk flux computation
+#  define  ANA_AIOBC        // ... analytical aice boundary conditions (defaults to 0)
+#  define  ANA_HIOBC        // ... analytical hice boundary conditions (defaults to 0)
+#  define  ANA_HSNOBC       // ... analytical snow boundary conditions (defaults to 0)
 # endif
 #endif
 
 /* output stuff */
-
-#define NO_WRITE_GRID
-#undef OUT_DOUBLE
-#ifndef PERFECT_RESTART
-# define RST_SINGLE
-#endif
-#define AVERAGES
-#undef AVERAGES2
-#ifdef SOLVE3D
-# undef AVERAGES_DETIDE
-# undef DIAGNOSTICS_TS
-#endif
-#undef DIAGNOSTICS_UV
-
+ 
+#define NO_WRITE_GRID       // Don't write grid arrays
+#undef OUT_DOUBLE           // Don't force double precision
+#define RST_SINGLE          // Use single precision for restart files
+#define AVERAGES            // Write out averages output
+#undef AVERAGES2            // No secondary averages output
+ 
 /* advection, dissipation, pressure grad, etc. */
+ 
+#ifdef SOLVE3D
+# define DJ_GRADPS          // use splines density Jacobian (Shchepetkin, 2000) in pressure graident term
+#endif
+ 
+#define UV_ADV              // turn on advection terms
+#define UV_COR              // turn on Coriolis terms
+#define UV_SADVECTION       // turn on splines vertical advection
+ 
+#define UV_VIS2             // turn on harmonic horizontal mixing, momentum 
+#define UV_SMAGORINSKY      // turn on Smagorinky-like viscosity 
+#define VISC_3DCOEF         // turn on time-invarant horizontal viscosity at rho-points
+#define MIX_S_UV            // mixing along constant S-surfaces 
+#define VISC_GRID           // scale viscosity coefficient by grid size
 
 #ifdef SOLVE3D
-# define DJ_GRADPS
+# define TS_DIF2            // turn on harmonic horizontal mixing, tracers 
+# define MIX_GEO_TS         // mix along geopotential (constant z) surfaces
+# define DIFF_GRID          // scales diffusion coefficients by grid size
 #endif
-
-#define UV_ADV
-#define UV_COR
-#undef UV_SADVECTION
-
-#define UV_VIS2
-#undef VISC_3DCOEF
-#define MIX_S_UV
-#define VISC_GRID
-#undef SPONGE
-
-#ifdef SOLVE3D
-# undef TS_DIF2
-# undef MIX_GEO_TS
-# undef DIFF_GRID
-#endif
-
+ 
+ 
 /* vertical mixing */
-
+ 
 #ifdef SOLVE3D
-# define WTYPE_GRID
-
-# define LMD_MIXING
+# define SOLAR_SOURCE       // solar radiation source term
+ 
+# define LMD_MIXING         // Use Large et al. (1994) interior closure with ...
 # ifdef LMD_MIXING
-#  define LMD_RIMIX
-#  define LMD_CONVEC
-#  define LMD_SKPP
-#  undef LMD_BKPP
-#  define LMD_NONLOCAL
-#  define LMD_SHAPIRO
-#  undef LMD_DDMIX
+#  define LMD_RIMIX         // ... diffusivity due to shear instability
+#  define LMD_CONVEC        // ... convective mixing due to shear instability
+#  define LMD_SKPP          // ... surface boundary layer KPP mixing
+#  undef LMD_BKPP           // ... no bottom boundary KPP mixing
+#  define LMD_NONLOCAL      // ... nonlocal transport
+#  define LMD_SHAPIRO       // ... Shapiro filtering boundary layer depth
+#  undef LMD_DDMIX          // ... no double-diffusive mixing
 # endif
+ 
+# undef GLS_MIXING          // Don't use alternative mixing schemes
+# undef MY25_MIXING
 
-# undef GLS_MIXING
-
-# if defined GLS_MIXING
+# if defined GLS_MIXING || defined MY25_MIXING
 #  define KANTHA_CLAYSON
 #  define N2S2_HORAVG
-#  define AKLIMIT
 # endif
 #endif
-
+ 
 /* surface forcing */
-
+ 
 #ifdef SOLVE3D
-# ifndef ATM2OCN_FLUXES
-#  define CORE_FORCING
-#  define BULK_FLUXES
-#  define CCSM_FLUXES
-#  undef ARCTIC_MERRA_HACK
-# endif
+# define CORE_FORCING       // input humidity is specific humidity, not relative
+# define BULK_FLUXES        // use bulk fluxes computation...
+# define CCSM_FLUXES        // ... specifically, the CCSM version of bulk fluxes computation
 # if defined BULK_FLUXES || defined CCSM_FLUXES
-#  define LONGWAVE_OUT
-#  undef DIURNAL_SRFLUX
-#  define SOLAR_SOURCE
-#  define EMINUSP
-#  undef ANA_SRFLUX
-#  undef ALBEDO_CLOUD
-#  define ALBEDO_CURVE  /* for water */
-#  undef ICE_ALB_EC92  /* for ice */
-#  define ALBEDO_CSIM   /* for ice */
-#  undef ALBEDO_FILE  /* for both */
+#  define LONGWAVE_OUT      // compute outgoing longwave radiation (with downward provided as input)
+#  define DIURNAL_SRFLUX    // add diurnal cycle to daily-averaged shortwave input
+#  define EMINUSP           // compute evap minus precip
+#  undef ANA_SRFLUX         // no analytical surface fluxes
+#  undef ALBEDO             // Don't calculate shortwave using global albedo equation (use input plus diurnal instead)
+#  define ALBEDO_CURVE      // albedo function of lat from Large and Yeager
+#  undef LONGWAVE           // Not using net longwave
 # endif
 #endif
-
+ 
 /* surface and side corrections */
-
+ 
 #ifdef SOLVE3D
-# define SCORRECTION
-# define NO_SCORRECTION_ICE
-# undef QCORRECTION
+# undef SRELAXATION         // No salinity relaxation
+# undef QCORRECTION         // No net heat flux correction
 #endif
-
+ 
 #ifdef SOLVE3D
-# define ANA_NUDGCOEF
+# undef TCLIMATOLOGY        // No tracer climatology
+# undef TCLM_NUDGING        // No tracer nudging
 #endif
-
+ 
 /* point sources (rivers, line sources) */
+/* Using Runoff instead now             */
 
-/* Using Runoff now */
 #ifdef SOLVE3D
-# define RUNOFF
+# define RUNOFF             // Add runoff as an additional rain field
+# define ANA_PSOURCE        // Use analytical point sources
 #endif
-
+ 
 /* tides */
-
-#define LTIDES
+ 
+#define LTIDES              // Turn on tides (Not a ROMS CPP option, just used here to turn some stuff on/off in bulk)
 #ifdef LTIDES
-# if defined AVERAGES && !defined USE_DEBUG
-#  define FILTERED
-# endif
-# define SSH_TIDES
-# define UV_TIDES
-# define ADD_FSOBC
-# define ADD_M2OBC
-# undef RAMP_TIDES
-# define TIDES_ASTRO
-# define POT_TIDES
-
-# undef UV_LDRAG
-# define UV_DRAG_GRID
-# define ANA_DRAG
-# define LIMIT_BSTRESS
-# define UV_QDRAG
+# undef FILTERED            // don't turn on filters... may need on eventually  KAK: what filters, exactly?
+# define SSH_TIDES          // impose tidal elevation
+# define UV_TIDES           // impose tidal currents
+# define ADD_FSOBC          // add tidal elevation to processed OBC data
+# define ADD_M2OBC          // add tidal currents  to processed OBC data
+# undef RAMP_TIDES          // don't ramp tidal forcing over a day
+# define TIDES_ASTRO        // calculate astronomical phase argument
+# define POT_TIDES          // impose potential tides
+# define UV_LDRAG           // turn on linear bottom friction
+# define RDRG_GRID          // read bottom drag coefficients from grid file
+# define DRAG_LIMITER       // quadratic bottom stress  KAK: customization?
+# undef UV_QDRAG
 #else
-# define UV_QDRAG
+# define UV_QDRAG           // quadratic bottom stress
 #endif
-
+ 
 /* Boundary conditions...careful with grid orientation */
-
+/* BERING_10K: north = Russia (northwest-ish), closed
+               south = Gulf of Alaska (southeast-ish), open
+               east = Bering Strait, closed but with momentum point source (see ana_psource)
+               west = North Pacific (south of Aleutians), open */
+ 
 #define RADIATION_2D
-
+ 
 /* roms quirks */
-
+ 
 #ifdef SOLVE3D
 # define ANA_BSFLUX
 # define ANA_BTFLUX
@@ -227,17 +201,35 @@
 /*
 **  Biological model options.
 */
+
+/* In order to allow use of this header file with different biology, I'm 
+   leaving out any explicit define/undef options for BESTNPZ and FEAST.  
+   These will be defined externally via MY_CPP_FLAGS.
+*/ 
+
 #undef NEMURO
+#undef BIO_GOANPZ        /* Sarah Hinckley's 11 box model */
+
+#if defined BEST_NPZ || defined BIO_GOANPZ || defined PASSIVE_TRACERS
+# undef  BIOFLUX           /* sum Nitrogen fluxes between boxes */
+# define ANA_BIOLOGY       /* analytical biology initial conditions */
+# define ANA_BPFLUX        /* analytical bottom passive tracers fluxes */
+# define ANA_SPFLUX        /* analytical surface passive tracers fluxes */
+# define DIAPAUSE          /* Enable large copepod seasonal vertical migration */
+# undef FLOAT_VWALK
+#endif
 
 #if defined NEMURO
-# define BIO_SEDIMENT
-# define NEMURO_SED1
-# undef ANA_BIOLOGY       /* analytical biology initial conditions */
+# undef ANA_BIOLOGY        /* analytical biology initial conditions */
+# define ANA_BPFLUX        /* analytical bottom passive tracers fluxes */
+# define ANA_SPFLUX        /* analytical surface passive tracers fluxes */
 # define IRON_LIMIT        /* Add iron as passive 11th tracer */
 # define IRON_RELAX
 # undef  IRON_RSIN
+# define BIO_SEDIMENT
 # define HOLLING_GRAZING
 # undef  IVLEV_EXPLICIT
 # undef  ANA_BIOSWRAD
 # undef  DIAGNOSTICS_BIO
+# undef  BIO_SEDIMENT
 #endif

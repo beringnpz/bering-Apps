@@ -20,122 +20,127 @@
 */
 
 
-#define  BERING_10K
+#define  BERING_10K     /* Application flag */
+                        /* Usually, this would be set via the ROMS_APPLICATION environment 
+                           variable within a build script or makefile.  BERING_10K is a 
+                           special case in that it relies on two application flags: NEP5 
+                           and BERING_10K.  When used this way, this header file should be
+                           renamed nep5.h. */
 
-#undef NETCDF4
-#undef PARALLEL_IO
-#undef OFFLINE_FLOATS
+#undef NETCDF4              // use classic netCDF 
+#undef PARALLEL_IO          // no parallel input/output
+#undef OFFLINE_FLOATS       // could be used for floats in offline version... but not now
 
 /* general */
 
-#define CURVGRID
-#define MASKING
-#define NONLIN_EOS
-#define SOLVE3D
-#define SALINITY
-#ifdef SOLVE3D
-# undef SPLINES
-#endif
-#undef FLOATS
-#define STATIONS
-#undef WET_DRY
-
-#undef T_PASSIVE
-#ifdef T_PASSIVE
-# define ANA_PASSIVE
-#endif
- 
-/* salinity nudging */
-
-#define SCORRECTION
+#define CURVGRID            // use curvilinear coordinates
+#define MASKING             // use land/sea masking
+#define NONLIN_EOS          // nonlinear equation of state
+#define SOLVE3D             // 3D primitive equations
+#define SALINITY            // have salinity
+#ifdef SOLVE3D               
+# undef SPLINES             // turn off option for parabolic splines reconstruction of vertical derivatives
+#endif                      
+#undef FLOATS               // toggle on/off floats
+#define STATIONS            // toggle on/off stations output
+#undef WET_DRY              // no wetting/drying of grid cells
+                          
+#undef T_PASSIVE            // no passive tracers
+#ifdef T_PASSIVE            
+# define ANA_PASSIVE        // ... but if on, use analytical initial conditions for them
+#endif                 
+                
+/* salinity nudging */ 
+                
+#define SCORRECTION         // freshwater flux correction
 
 /* ice */
 
 #ifdef SOLVE3D
-# define  ICE_MODEL
-# ifdef ICE_MODEL
-#  define  ICE_THERMO
-#  define  ICE_MK
+# define  ICE_MODEL         // Turn on default ice model with...
+# ifdef ICE_MODEL           
+#  define  ICE_THERMO       // ... ice thermodynamic component
+#  define  ICE_MK           // ... Mellor-Kantha thermodynamics
 #  undef   ICE_ALB_EC92
 #  undef   ICE_SMOOTH
-#  define  ICE_MOMENTUM
-#  define  ICE_MOM_BULK
-#  define  ICE_EVP
-#  define  ICE_ADVECT
-#  define  ICE_SMOLAR
-#  define  ICE_UPWIND
-#  define  ICE_BULK_FLUXES
-#  define  ANA_AIOBC
-#  define  ANA_HIOBC
-#  define  ANA_HSNOBC
+#  define  ICE_MOMENTUM     // ... ice momentum component
+#  define  ICE_MOM_BULK     // ... something related to ice-water stress computation
+#  define  ICE_EVP          // ... elastic-viscous-plastic rheology
+#  define  ICE_ADVECT       // ... advect ice tracers
+#  define  ICE_SMOLAR       // ... MPDATA advection scheme
+#  define  ICE_UPWIND       // ... upwind advection scheme
+#  define  ICE_BULK_FLUXES  // ... ice in bulk flux computation
+#  define  ANA_AIOBC        // ... analytical aice boundary conditions (defaults to 0)
+#  define  ANA_HIOBC        // ... analytical hice boundary conditions (defaults to 0)
+#  define  ANA_HSNOBC       // ... analytical snow boundary conditions (defaults to 0)
 # endif
 #endif
 
 /* output stuff */
  
-#define NO_WRITE_GRID
-#undef OUT_DOUBLE
-#define RST_SINGLE
-#define AVERAGES
-#undef AVERAGES2
+#define NO_WRITE_GRID       // Don't write grid arrays
+#undef OUT_DOUBLE           // Don't force double precision
+#define RST_SINGLE          // Use single precision for restart files
+#define AVERAGES            // Write out averages output
+#undef AVERAGES2            // No secondary averages output
 #ifdef SOLVE3D
-# undef AVERAGES_DETIDE
-# define AVERAGES_AKT
-# define AVERAGES_AKS
-# define AVERAGES_AKV
-# define AVERAGES_FLUXES
-# undef AVERAGES_QUADRATIC
-# undef DIAGNOSTICS_TS
+# undef AVERAGES_DETIDE     // Don't apply detiding filter
+# define AVERAGES_AKT       // add AKt output to averages file
+# define AVERAGES_AKS       // add AKs output to averages file
+# define AVERAGES_AKV       // add AKv output to averages file
+# define AVERAGES_FLUXES    // add a bunch of variables related to surface fluxes to averages file
+# undef AVERAGES_QUADRATIC  // Donj't add quadratic terms to averages file
+# undef DIAGNOSTICS_TS      // Don't add tracer diagnostics to averages file
 #endif
-#undef DIAGNOSTICS_UV
+#undef DIAGNOSTICS_UV       // Don't add momentum diagnostics to averages file
  
 /* advection, dissipation, pressure grad, etc. */
  
 #ifdef SOLVE3D
-# define DJ_GRADPS
+# define DJ_GRADPS          // use splines density Jacobian (Shchepetkin, 2000) in pressure graident term
 #endif
  
-#define UV_ADV
-#define UV_COR
-#define UV_SADVECTION
+#define UV_ADV              // turn on advection terms
+#define UV_COR              // turn on Coriolis terms
+#define UV_SADVECTION       // turn on splines vertical advection
  
 #ifdef SOLVE3D
-# define TS_C4HADVECTION
-# define TS_C4VADVECTION
-# undef TS_MPDATA
+# define TS_C4HADVECTION    // use 4th-order centered horizontal advection
+# define TS_C4VADVECTION    // use 4th-order centered vertical advection
+# undef TS_MPDATA           // Don't use recursive MPDATA 3D advection
 #endif
  
-#define UV_VIS2
-#define UV_SMAGORINSKY
-#define VISC_3DCOEF
-#define MIX_S_UV
-#define VISC_GRID
-#define SPONGE
+#define UV_VIS2             // turn on harmonic horizontal mixing, momentum 
+#define UV_SMAGORINSKY      // turn on Smagorinky-like viscosity 
+#define VISC_3DCOEF         // turn on time-invarant horizontal viscosity at rho-points
+#define MIX_S_UV            // mixing along constant S-surfaces 
+#define VISC_GRID           // scale viscosity coefficient by grid size
+#define SPONGE              // allows for enhanced viscosity/diffusion areas
 
 #ifdef SOLVE3D
-# define TS_DIF2
-# define MIX_GEO_TS
-# define DIFF_GRID
+# define TS_DIF2            // turn on harmonic horizontal mixing, tracers 
+# define MIX_GEO_TS         // mix along geopotential (constant z) surfaces
+# define DIFF_GRID          // scales diffusion coefficients by grid size
 #endif
  
  
 /* vertical mixing */
  
 #ifdef SOLVE3D
-# define SOLAR_SOURCE
+# define SOLAR_SOURCE       // solar radiation source term
  
-# define LMD_MIXING
+# define LMD_MIXING         // Use Large et al. (1994) interior closure with ...
 # ifdef LMD_MIXING
-#  define LMD_RIMIX
-#  define LMD_CONVEC
-#  define LMD_SKPP
-#  undef LMD_BKPP
-#  define LMD_NONLOCAL
-#  define LMD_SHAPIRO
-#  undef LMD_DDMIX
+#  define LMD_RIMIX         // ... diffusivity due to shear instability
+#  define LMD_CONVEC        // ... convective mixing due to shear instability
+#  define LMD_SKPP          // ... surface boundary layer KPP mixing
+#  undef LMD_BKPP           // ... no bottom boundary KPP mixing
+#  define LMD_NONLOCAL      // ... nonlocal transport
+#  define LMD_SHAPIRO       // ... Shapiro filtering boundary layer depth
+#  undef LMD_DDMIX          // ... no double-diffusive mixing
 # endif
  
-# undef GLS_MIXING
+# undef GLS_MIXING          // Don't use alternative mixing schemes
 # undef MY25_MIXING
 
 # if defined GLS_MIXING || defined MY25_MIXING
@@ -147,60 +152,60 @@
 /* surface forcing */
  
 #ifdef SOLVE3D
-# define CORE_FORCING
-# define BULK_FLUXES
-# define CCSM_FLUXES
+# define CORE_FORCING       // input humidity is specific humidity, not relative
+# define BULK_FLUXES        // use bulk fluxes computation...
+# define CCSM_FLUXES        // ... specifically, the CCSM version of bulk fluxes computation
 # if defined BULK_FLUXES || defined CCSM_FLUXES
-#  define LONGWAVE_OUT
-#  define DIURNAL_SRFLUX 
-#  define EMINUSP
-#  undef ANA_SRFLUX
-#  undef ALBEDO
-#  define ALBEDO_CURVE  
-#  undef LONGWAVE
+#  define LONGWAVE_OUT      // compute outgoing longwave radiation (with downward provided as input)
+#  define DIURNAL_SRFLUX    // add diurnal cycle to daily-averaged shortwave input
+#  define EMINUSP           // compute evap minus precip
+#  undef ANA_SRFLUX         // no analytical surface fluxes
+#  undef ALBEDO             // Don't calculate shortwave using global albedo equation (use input plus diurnal instead)
+#  define ALBEDO_CURVE      // albedo function of lat from Large and Yeager
+#  undef LONGWAVE           // Not using net longwave
 # endif
 #endif
  
 /* surface and side corrections */
  
 #ifdef SOLVE3D
-# undef SRELAXATION
-# undef QCORRECTION
+# undef SRELAXATION         // No salinity relaxation
+# undef QCORRECTION         // No net heat flux correction
 #endif
  
 #ifdef SOLVE3D
-# undef TCLIMATOLOGY
-# undef TCLM_NUDGING
+# undef TCLIMATOLOGY        // No tracer climatology
+# undef TCLM_NUDGING        // No tracer nudging
 #endif
  
 /* point sources (rivers, line sources) */
 /* Using Runoff instead now             */
 
 #ifdef SOLVE3D
-# define RUNOFF
-# define UV_PSOURCE
-# define ANA_PSOURCE
-# undef TS_PSOURCE
+# define RUNOFF             // Add runoff as an additional rain field
+# define UV_PSOURCE         // Include momentum point sources (but not for rivers, for Bering Strait)
+# define ANA_PSOURCE        // Use analytical point sources
+# undef TS_PSOURCE          // No tracer point sources
 #endif
  
 /* tides */
  
-#define LTIDES
+#define LTIDES              // Turn on tides (Not a ROMS CPP option, just used here to turn some stuff on/off in bulk)
 #ifdef LTIDES
-# undef FILTERED   /*need on eventually*/
-# define SSH_TIDES
-# define UV_TIDES
-# define ADD_FSOBC
-# define ADD_M2OBC
+# undef FILTERED            // don't turn on filters... may need on eventually  KAK: what filters, exactly?
+# define SSH_TIDES          // impose tidal elevation
+# define UV_TIDES           // impose tidal currents
+# define ADD_FSOBC          // add tidal elevation to processed OBC data
+# define ADD_M2OBC          // add tidal currents  to processed OBC data
 # undef RAMP_TIDES
 # define TIDES_ASTRO
-# define POT_TIDES
-# define UV_LDRAG
-# define RDRG_GRID
-# define DRAG_LIMITER
+# define POT_TIDES          // impose potential tides
+# define UV_LDRAG           // turn on linear bottom friction
+# define RDRG_GRID          // read bottom drag coefficients from grid file
+# define DRAG_LIMITER       // quadratic bottom stress  KAK: customization?
 # undef UV_QDRAG
 #else
-# define UV_QDRAG
+# define UV_QDRAG           // quadratic bottom stress
 #endif
  
 /* Boundary conditions...careful with grid orientation */
@@ -209,8 +214,8 @@
                east = Bering Strait, closed but with momentum point source (see ana_psource)
                west = North Pacific (south of Aleutians), open */
  
-#define EASTERN_WALL
-#define NORTHERN_WALL
+#define EASTERN_WALL        // closed eastern
+#define NORTHERN_WALL       // closed northern
 #undef WESTERN_WALL
 #undef SOUTHERN_WALL
  
@@ -228,27 +233,27 @@
 # endif
 #endif
  
-#ifndef WESTERN_WALL
-# define WEST_FSCHAPMAN
-# define WEST_M2FLATHER
+#ifndef WESTERN_WALL        // western boundary conditions
+# define WEST_FSCHAPMAN     // ... free surface Chapman
+# define WEST_M2FLATHER     // ... 2D momentum Flather
 # ifdef SOLVE3D
-#  define WEST_M3RADIATION
+#  define WEST_M3RADIATION  // ... 3D momentum radiation+nudging
 #  define WEST_M3NUDGING
-#  define WEST_TRADIATION
-#  define WEST_TNUDGING
-#  define WEST_MIGRADIENT
+#  define WEST_TRADIATION   // ... 3D tracers radiation+nudging
+#  define WEST_TNUDGING     
+#  define WEST_MIGRADIENT   // ... Ice tracers gradient
 # endif
 #endif
  
-#ifndef SOUTHERN_WALL
-# define SOUTH_FSCHAPMAN
-# define SOUTH_M2FLATHER
+#ifndef SOUTHERN_WALL       // southern boundary conditions
+# define SOUTH_FSCHAPMAN    // ... free surface Chapman
+# define SOUTH_M2FLATHER    // ... 2D momentum Flather
 # ifdef SOLVE3D
-#  define SOUTH_M3RADIATION
+#  define SOUTH_M3RADIATION // ... 3D momentum radiation+nudging
 #  define SOUTH_M3NUDGING
-#  define SOUTH_TRADIATION
+#  define SOUTH_TRADIATION  // ... 3D tracers radiation+nudging
 #  define SOUTH_TNUDGING
-#  define SOUTH_MIGRADIENT
+#  define SOUTH_MIGRADIENT  // ... Ice tracers gradient
 # endif
 #endif
  
