@@ -37,93 +37,12 @@
 !------------------------------------------------------------------------------
 !
 
-'IceLog'                                                                ! Input/Output
-  'Logical Ice Counter'                                                 ! 
-  'unitless'                                                            ! [logical]
-  'IceLog, scalar, series'                                              ! 
-  'ocean_time'                                                          ! 
-  'idIceLog'                                                            ! 
-  'r2dvar'                                                              ! 
-  1.0d0                                                                 ! 
-
-'IceNH4'                                                                ! Input/Output
-  'Ice ammonium concentration'                                          ! 
+'NO3'                                                                   ! Input/Output
+  'Nitrate concentration'                                               ! 
   'mmol N m^-3'                                                         ! [millimole N/m3]
-  'IceNH4, scalar, series'                                              ! 
+  'NO3, scalar, series'                                                 ! 
   'bio_time'                                                            ! 
-  'idIceNH4'                                                            ! 
-  'r2dvar'                                                              ! 
-  1.0d0                                                                 ! 
-
-'IceNO3'                                                                ! Input/Output
-  'Ice nitrate concentration'                                           ! 
-  'mmol N m^-3'                                                         ! [millimole N/m3]
-  'IceNO3, scalar, series'                                              ! 
-  'bio_time'                                                            ! 
-  'idIceNO3'                                                            ! 
-  'r2dvar'                                                              ! 
-  1.0d0                                                                 ! 
-
-'IcePhL'                                                                ! Input/Output
-  'Ice algae concentration'                                             ! 
-  'mg C m^-3'                                                           ! [milligram C/m3]
-  'IcePhL, scalar, series'                                              ! 
-  'bio_time'                                                            ! 
-  'idIcePhL'                                                            ! 
-  'r2dvar'                                                              ! 
-  1.0d0                                                                 ! 
-
-'Fe'                                                                    ! Input/Output
-  'Iron concentration'                                                  ! 
-  'umol Fe m^-3'                                                        ! [microgram Fe/m3]
-  'Fe, scalar, series'                                                  ! 
-  'bio_time'                                                            ! 
-  'idTvar(iFe)'                                                         ! 
-  'r3dvar'                                                              ! 
-  1.0d0                                                                 ! 
-
-'Jel'                                                                   ! Input/Output
-  'Jellyfish concentration'                                             ! 
-  'mg C m^-3'                                                           ! [milligram C/m3]
-  'Jel, scalar, series'                                                 ! 
-  'bio_time'                                                            ! 
-  'idTvar(iJel)'                                                        ! 
-  'r3dvar'                                                              ! 
-  1.0d0                                                                 ! 
-
-'MZL'                                                                   ! Input/Output
-  'Microzooplankton concentration'                                      ! 
-  'mg C m^-3'                                                           ! [milligram C/m3]
-  'MZL, scalar, series'                                                 ! 
-  'bio_time'                                                            ! 
-  'idTvar(iMZL)'                                                        ! 
-  'r3dvar'                                                              ! 
-  1.0d0                                                                 ! 
-
-'MZS'                                                                   ! Input/Output
-  'Small microzooplankton concentration (deprecated)'                   ! 
-  'mg C m^-3'                                                           ! [milligram C/m3]
-  'MZS, scalar, series'                                                 ! 
-  'bio_time'                                                            ! 
-  'idTvar(iMZS)'                                                        ! 
-  'r3dvar'                                                              ! 
-  0.0d0                                                                 ! 
-
-'NCaO'                                                                  ! Input/Output
-  'Offshore large copepod concentration'                                ! 
-  'mg C m^-3'                                                           ! [milligram C/m3]
-  'NCaO, scalar, series'                                                ! 
-  'bio_time'                                                            ! 
-  'idTvar(iNCaO)'                                                       ! 
-  'r3dvar'                                                              ! 
-  1.0d0                                                                 ! 
-
-'NCaS'                                                                  ! Input/Output
-  'On-shelf large copepod concentration'                                ! 
-  'mg C m^-3'                                                           ! [milligram C/m3]
-  'NCaS, scalar, series'                                                ! 
-  'bio_time'                                                            ! 
-  'idTvar(iNCaS)'                                                       ! 
+  'idTvar(iNO3)'                                                        ! 
   'r3dvar'                                                              ! 
   1.0d0                                                                 ! 
 
@@ -136,39 +55,174 @@
   'r3dvar'                                                              ! 
   1.0d0                                                                 ! 
 
-'NO3'                                                                   ! Input/Output
-  'Nitrate concentration'                                               ! 
-  'mmol N m^-3'                                                         ! [millimole N/m3]
-  'NO3, scalar, series'                                                 ! 
+'PhS'                                                                   ! Input/Output
+  'Small phytoplankton concentration'                                   ! 
+  'mg C m^-3'                                                           ! [milligram C/m3]
+  'small phytoplankton, scalar, series'                                 ! 
   'bio_time'                                                            ! 
-  'idTvar(iNO3)'                                                        ! 
-  'r3dvar'                                                              ! 
-  1.0d0                                                                 ! 
-
-'oxygen'                                                                ! Input/Output
-  'dissolved oxygen concentration'                                      ! 
-  'millimole_oxygen meter-3'                                            ! [millimole/m3]
-  'Oxygen, scalar, series'                                              ! 
-  'ocean_time'                                                          ! 
-  'idTvar(iOxyg)'                                                       ! 
+  'idTvar(iPhS)'                                                        ! 
   'r3dvar'                                                              ! 
   1.0d0                                                                 ! 
 
 'PhL'                                                                   ! Input/Output
   'Large phytoplankton concentration'                                   ! 
   'mg C m^-3'                                                           ! [milligram C/m3]
-  'PhL, scalar, series'                                                 ! 
+  'large phytoplankton, scalar, series'                                 ! 
   'bio_time'                                                            ! 
   'idTvar(iPhL)'                                                        ! 
   'r3dvar'                                                              ! 
   1.0d0                                                                 ! 
 
-'PhS'                                                                   ! Input/Output
-  'Small phytoplankton concentration'                                   ! 
+'MZS'                                                                   ! Input/Output
+  'Small microzooplankton concentration (deprecated)'                   ! 
   'mg C m^-3'                                                           ! [milligram C/m3]
-  'PhS, scalar, series'                                                 ! 
+  'small microzooplankton, scalar, series'                              ! 
   'bio_time'                                                            ! 
-  'idTvar(iPhS)'                                                        ! 
+  'idTvar(iMZS)'                                                        ! 
+  'r3dvar'                                                              ! 
+  0.0d0                                                                 ! 
+
+'MZL'                                                                   ! Input/Output
+  'Microzooplankton concentration'                                      ! 
+  'mg C m^-3'                                                           ! [milligram C/m3]
+  'large microzooplankton, scalar, series'                              ! 
+  'bio_time'                                                            ! 
+  'idTvar(iMZL)'                                                        ! 
+  'r3dvar'                                                              ! 
+  1.0d0                                                                 ! 
+
+'Cop'                                                                   ! Input/Output
+  'Small copepod concentration'                                         ! 
+  'mg C m^-3'                                                           ! [milligram C/m3]
+  'copepod, scalar, series'                                             ! 
+  'bio_time'                                                            ! 
+  'idTvar(iCop)'                                                        ! 
+  'r3dvar'                                                              ! 
+  1.0d0                                                                 ! 
+
+'NCaS'                                                                  ! Input/Output
+  'On-shelf large copepod concentration'                                ! 
+  'mg C m^-3'                                                           ! [milligram C/m3]
+  'neocalanus, scalar, series'                                          ! 
+  'bio_time'                                                            ! 
+  'idTvar(iNCaS)'                                                       ! 
+  'r3dvar'                                                              ! 
+  1.0d0                                                                 ! 
+
+'EupS'                                                                  ! Input/Output
+  'On-shelf euphausiid concentration'                                   ! 
+  'mg C m^-3'                                                           ! [milligram C/m3]
+  'euphausiid, scalar, series'                                          ! 
+  'bio_time'                                                            ! 
+  'idTvar(iEupS)'                                                       ! 
+  'r3dvar'                                                              ! 
+  1.0d0                                                                 ! 
+
+'NCaO'                                                                  ! Input/Output
+  'Offshore large copepod concentration'                                ! 
+  'mg C m^-3'                                                           ! [milligram C/m3]
+  'neocalanus, scalar, series'                                          ! 
+  'bio_time'                                                            ! 
+  'idTvar(iNCaO)'                                                       ! 
+  'r3dvar'                                                              ! 
+  1.0d0                                                                 ! 
+
+'EupO'                                                                  ! Input/Output
+  'Offshore euphausiid concentration'                                   ! 
+  'mg C m^-3'                                                           ! [milligram C/m3]
+  'euphausiid, scalar, series'                                          ! 
+  'bio_time'                                                            ! 
+  'idTvar(iEupO)'                                                       ! 
+  'r3dvar'                                                              ! 
+  1.0d0                                                                 ! 
+
+'Det'                                                                   ! Input/Output
+  'Slow-sinking detritus concentration'                                 ! 
+  'mg C m^-3'                                                           ! [milligram C/m3]
+  'detritus, scalar, series'                                            ! 
+  'bio_time'                                                            ! 
+  'idTvar(iDet)'                                                        ! 
+  'r3dvar'                                                              ! 
+  1.0d0                                                                 ! 
+
+'DetF'                                                                  ! Input/Output
+  'Fast-sinking detritus concentration'                                 ! 
+  'mg C m^-3'                                                           ! [milligram C/m3]
+  'detritus, scalar, series'                                            ! 
+  'bio_time'                                                            ! 
+  'idTvar(iDetF)'                                                       ! 
+  'r3dvar'                                                              ! 
+  1.0d0                                                                 ! 
+
+'Jel'                                                                   ! Input/Output
+  'Jellyfish concentration'                                             ! 
+  'mg C m^-3'                                                           ! [milligram C/m3]
+  'jellyfish, scalar, series'                                           ! 
+  'bio_time'                                                            ! 
+  'idTvar(iJel)'                                                        ! 
+  'r3dvar'                                                              ! 
+  1.0d0                                                                 ! 
+
+'Ben'                                                                   ! Input/Output
+  'Benthic infauna concentration'                                       ! 
+  'mg C m^-2'                                                           ! [milligram C/m2]
+  'benthos, scalar, series'                                             ! 
+  'bio_time'                                                            ! 
+  'idBvar(iBen)'                                                        ! 
+  'r2dvar'                                                              ! 
+  1.0d0                                                                 ! 
+
+'DetBen'                                                                ! Input/Output
+  'Benthic detritus concentration'                                      ! 
+  'mg C m^-2'                                                           ! [milligram C/m2]
+  'benthic detritus, scalar, series'                                    ! 
+  'bio_time'                                                            ! 
+  'idBvar(iDetBen)'                                                     ! 
+  'r2dvar'                                                              ! 
+  1.0d0                                                                 ! 
+
+'IcePhL'                                                                ! Input/Output
+  'Ice algae concentration'                                             ! 
+  'mg C m^-3'                                                           ! [milligram C/m3]
+  'ice algae conc, scalar, series'                                      ! 
+  'bio_time'                                                            ! 
+  'idIcePhL'                                                            ! 
+  'r2dvar'                                                              ! 
+  1.0d0                                                                 ! 
+
+'IceNO3'                                                                ! Input/Output
+  'Ice nitrate concentration'                                           ! 
+  'mmol N m^-3'                                                         ! [millimole N/m3]
+  'ice nitrate conc, scalar, series'                                    ! 
+  'bio_time'                                                            ! 
+  'idIceNO3'                                                            ! 
+  'r2dvar'                                                              ! 
+  1.0d0                                                                 ! 
+
+'IceNH4'                                                                ! Input/Output
+  'Ice ammonium concentration'                                          ! 
+  'mmol N m^-3'                                                         ! [millimole N/m3]
+  'ice ammonium conc, scalar, series'                                   ! 
+  'bio_time'                                                            ! 
+  'idIceNH4'                                                            ! 
+  'r2dvar'                                                              ! 
+  1.0d0                                                                 ! 
+
+'IceLog'                                                                ! Input/Output
+  'Ice log'                                                             ! 
+  'unitless'                                                            ! [logical]
+  'ice log, scalar, series'                                             ! 
+  'bio_time'                                                            ! 
+  'idIceLog'                                                            ! 
+  'r2dvar'                                                              ! 
+  1.0d0                                                                 ! 
+
+'Fe'                                                                    ! Input/Output
+  'Iron concentration'                                                  ! 
+  'umol Fe m^-3'                                                        ! [microgram Fe/m3]
+  'iron conc, scalar, series'                                           ! 
+  'bio_time'                                                            ! 
+  'idTvar(iFe)'                                                         ! 
   'r3dvar'                                                              ! 
   1.0d0                                                                 ! 
 
@@ -187,6 +241,15 @@
   'TIC, scalar, series'                                                 ! 
   'ocean_time'                                                          ! 
   'idTvar(iTIC_)'                                                       ! 
+  'r3dvar'                                                              ! 
+  1.0d0    
+
+'oxygen'                                                                ! Input/Output
+  'dissolved oxygen concentration'                                      ! 
+  'millimole_oxygen meter-3'                                            ! [millimole/m3]
+  'Oxygen, scalar, series'                                              ! 
+  'ocean_time'                                                          ! 
+  'idTvar(iOxyg)'                                                       ! 
   'r3dvar'                                                              ! 
   1.0d0                                                                 ! 
 
@@ -2436,7 +2499,7 @@
   'r2dvar'
   1.0d0
 
-! Deprecation diagnostics (PROD3 defined)
+! Deprecated diagnostics (PROD3 defined)
 
 'prod_PhS'
   'primary production small phytoplankton'
@@ -2654,7 +2717,7 @@
   'r3dvar'
   1.0d0
 
-! Deprecation diagnostics (PROD2 defined)
+! Deprecated diagnostics (PROD2 defined)
 
 'prod_Ben'
   'secondary production Benthos'
