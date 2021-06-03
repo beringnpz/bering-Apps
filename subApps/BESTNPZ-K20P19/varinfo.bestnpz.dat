@@ -41,7 +41,7 @@
   'Nitrate concentration'                                               ! 
   'mmol N m^-3'                                                         ! [millimole N/m3]
   'NO3, scalar, series'                                                 ! 
-  'bio_time'                                                            ! 
+  'ocean_time'                                                            ! 
   'idTvar(iNO3)'                                                        ! 
   'r3dvar'                                                              ! 
   1.0d0                                                                 ! 
@@ -50,7 +50,7 @@
   'Ammonium concentration'                                              ! 
   'mmol N m^-3'                                                         ! [millimole N/m3]
   'NH4, scalar, series'                                                 ! 
-  'bio_time'                                                            ! 
+  'ocean_time'                                                            ! 
   'idTvar(iNH4)'                                                        ! 
   'r3dvar'                                                              ! 
   1.0d0                                                                 ! 
@@ -59,7 +59,7 @@
   'Small phytoplankton concentration'                                   ! 
   'mg C m^-3'                                                           ! [milligram C/m3]
   'small phytoplankton, scalar, series'                                 ! 
-  'bio_time'                                                            ! 
+  'ocean_time'                                                            ! 
   'idTvar(iPhS)'                                                        ! 
   'r3dvar'                                                              ! 
   1.0d0                                                                 ! 
@@ -68,7 +68,7 @@
   'Large phytoplankton concentration'                                   ! 
   'mg C m^-3'                                                           ! [milligram C/m3]
   'large phytoplankton, scalar, series'                                 ! 
-  'bio_time'                                                            ! 
+  'ocean_time'                                                            ! 
   'idTvar(iPhL)'                                                        ! 
   'r3dvar'                                                              ! 
   1.0d0                                                                 ! 
@@ -77,7 +77,7 @@
   'Small microzooplankton concentration (deprecated)'                   ! 
   'mg C m^-3'                                                           ! [milligram C/m3]
   'small microzooplankton, scalar, series'                              ! 
-  'bio_time'                                                            ! 
+  'ocean_time'                                                            ! 
   'idTvar(iMZS)'                                                        ! 
   'r3dvar'                                                              ! 
   0.0d0                                                                 ! 
@@ -86,7 +86,7 @@
   'Microzooplankton concentration'                                      ! 
   'mg C m^-3'                                                           ! [milligram C/m3]
   'large microzooplankton, scalar, series'                              ! 
-  'bio_time'                                                            ! 
+  'ocean_time'                                                            ! 
   'idTvar(iMZL)'                                                        ! 
   'r3dvar'                                                              ! 
   1.0d0                                                                 ! 
@@ -95,7 +95,7 @@
   'Small copepod concentration'                                         ! 
   'mg C m^-3'                                                           ! [milligram C/m3]
   'copepod, scalar, series'                                             ! 
-  'bio_time'                                                            ! 
+  'ocean_time'                                                            ! 
   'idTvar(iCop)'                                                        ! 
   'r3dvar'                                                              ! 
   1.0d0                                                                 ! 
@@ -104,7 +104,7 @@
   'On-shelf large copepod concentration'                                ! 
   'mg C m^-3'                                                           ! [milligram C/m3]
   'neocalanus, scalar, series'                                          ! 
-  'bio_time'                                                            ! 
+  'ocean_time'                                                            ! 
   'idTvar(iNCaS)'                                                       ! 
   'r3dvar'                                                              ! 
   1.0d0                                                                 ! 
@@ -113,7 +113,7 @@
   'On-shelf euphausiid concentration'                                   ! 
   'mg C m^-3'                                                           ! [milligram C/m3]
   'euphausiid, scalar, series'                                          ! 
-  'bio_time'                                                            ! 
+  'ocean_time'                                                            ! 
   'idTvar(iEupS)'                                                       ! 
   'r3dvar'                                                              ! 
   1.0d0                                                                 ! 
@@ -122,7 +122,7 @@
   'Offshore large copepod concentration'                                ! 
   'mg C m^-3'                                                           ! [milligram C/m3]
   'neocalanus, scalar, series'                                          ! 
-  'bio_time'                                                            ! 
+  'ocean_time'                                                            ! 
   'idTvar(iNCaO)'                                                       ! 
   'r3dvar'                                                              ! 
   1.0d0                                                                 ! 
@@ -131,7 +131,7 @@
   'Offshore euphausiid concentration'                                   ! 
   'mg C m^-3'                                                           ! [milligram C/m3]
   'euphausiid, scalar, series'                                          ! 
-  'bio_time'                                                            ! 
+  'ocean_time'                                                            ! 
   'idTvar(iEupO)'                                                       ! 
   'r3dvar'                                                              ! 
   1.0d0                                                                 ! 
@@ -140,7 +140,7 @@
   'Slow-sinking detritus concentration'                                 ! 
   'mg C m^-3'                                                           ! [milligram C/m3]
   'detritus, scalar, series'                                            ! 
-  'bio_time'                                                            ! 
+  'ocean_time'                                                            ! 
   'idTvar(iDet)'                                                        ! 
   'r3dvar'                                                              ! 
   1.0d0                                                                 ! 
@@ -149,7 +149,7 @@
   'Fast-sinking detritus concentration'                                 ! 
   'mg C m^-3'                                                           ! [milligram C/m3]
   'detritus, scalar, series'                                            ! 
-  'bio_time'                                                            ! 
+  'ocean_time'                                                            ! 
   'idTvar(iDetF)'                                                       ! 
   'r3dvar'                                                              ! 
   1.0d0                                                                 ! 
@@ -158,7 +158,7 @@
   'Jellyfish concentration'                                             ! 
   'mg C m^-3'                                                           ! [milligram C/m3]
   'jellyfish, scalar, series'                                           ! 
-  'bio_time'                                                            ! 
+  'ocean_time'                                                            ! 
   'idTvar(iJel)'                                                        ! 
   'r3dvar'                                                              ! 
   1.0d0                                                                 ! 
@@ -167,7 +167,7 @@
   'Benthic infauna concentration'                                       ! 
   'mg C m^-2'                                                           ! [milligram C/m2]
   'benthos, scalar, series'                                             ! 
-  'bio_time'                                                            ! 
+  'ocean_time'                                                            ! 
   'idBvar(iBen)'                                                        ! 
   'r2dvar'                                                              ! 
   1.0d0                                                                 ! 
@@ -176,7 +176,7 @@
   'Benthic detritus concentration'                                      ! 
   'mg C m^-2'                                                           ! [milligram C/m2]
   'benthic detritus, scalar, series'                                    ! 
-  'bio_time'                                                            ! 
+  'ocean_time'                                                            ! 
   'idBvar(iDetBen)'                                                     ! 
   'r2dvar'                                                              ! 
   1.0d0                                                                 ! 
@@ -185,7 +185,7 @@
   'Ice algae concentration'                                             ! 
   'mg C m^-3'                                                           ! [milligram C/m3]
   'ice algae conc, scalar, series'                                      ! 
-  'bio_time'                                                            ! 
+  'ocean_time'                                                            ! 
   'idIcePhL'                                                            ! 
   'r2dvar'                                                              ! 
   1.0d0                                                                 ! 
@@ -194,7 +194,7 @@
   'Ice nitrate concentration'                                           ! 
   'mmol N m^-3'                                                         ! [millimole N/m3]
   'ice nitrate conc, scalar, series'                                    ! 
-  'bio_time'                                                            ! 
+  'ocean_time'                                                            ! 
   'idIceNO3'                                                            ! 
   'r2dvar'                                                              ! 
   1.0d0                                                                 ! 
@@ -203,7 +203,7 @@
   'Ice ammonium concentration'                                          ! 
   'mmol N m^-3'                                                         ! [millimole N/m3]
   'ice ammonium conc, scalar, series'                                   ! 
-  'bio_time'                                                            ! 
+  'ocean_time'                                                            ! 
   'idIceNH4'                                                            ! 
   'r2dvar'                                                              ! 
   1.0d0                                                                 ! 
@@ -212,7 +212,7 @@
   'Ice log'                                                             ! 
   'unitless'                                                            ! [logical]
   'ice log, scalar, series'                                             ! 
-  'bio_time'                                                            ! 
+  'ocean_time'                                                            ! 
   'idIceLog'                                                            ! 
   'r2dvar'                                                              ! 
   1.0d0                                                                 ! 
@@ -221,7 +221,7 @@
   'Iron concentration'                                                  ! 
   'umol Fe m^-3'                                                        ! [microgram Fe/m3]
   'iron conc, scalar, series'                                           ! 
-  'bio_time'                                                            ! 
+  'ocean_time'                                                            ! 
   'idTvar(iFe)'                                                         ! 
   'r3dvar'                                                              ! 
   1.0d0                                                                 ! 
