@@ -174,8 +174,8 @@
 # define TIDES_ASTRO        // calculate astronomical phase argument
 # define POT_TIDES          // impose potential tides
 # define UV_LDRAG           // turn on linear bottom friction
-# define RDRG_GRID          // read bottom drag coefficients from grid file
-# define DRAG_LIMITER       // quadratic bottom stress  KAK: customization?
+# define UV_DRAG_GRID       // use spatially-varying linear coefficient of bottom drag
+# define LIMIT_BSTRESS      // limit bottom stress to not change direction of momentum
 # undef UV_QDRAG
 #else
 # define UV_QDRAG           // quadratic bottom stress
