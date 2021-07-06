@@ -12,7 +12,7 @@
 **  Options for BERING simulation
 */
 
-#define  BERING_10K     /* Application flag */
+/*#define  BERING_10K     /* Application flag */
                         /* Usually, this would be set via the ROMS_APPLICATION environment 
                            variable within a build script or makefile.  BERING_10K is a 
                            special case in that it relies on two application flags: NEP5 
@@ -22,6 +22,7 @@
 #undef NETCDF4              // use classic netCDF 
 #undef PARALLEL_IO          // no parallel input/output
 #undef OFFLINE_FLOATS       // could be used for floats in offline version... but not now
+#undef USE_CICE             // no CICE ice... should be undefined by default but hitting issues building
 
 /* general */
 
