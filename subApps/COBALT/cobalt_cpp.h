@@ -1,3 +1,6 @@
+
+/* COBALT module options */
+
 #ifdef BIO_COBALT
 # undef TS_MPDATA
 # define TS_HSIMT
