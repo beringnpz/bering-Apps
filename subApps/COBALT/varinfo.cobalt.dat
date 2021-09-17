@@ -472,6 +472,17 @@
   'r3dvar'
   1.0d0
 
+! Tracer nudging coefficient
+
+'tracer_NudgeCoef'
+  'generic tracer inverse nudging coefficients'
+  'day-1'
+  'tracer_NudgeCoef, scalar'
+  'nulvar'
+  'idgTnc'
+  'r3dvar'
+  1.0d0
+
 !
 !------------------------------------------------------------------------------
 !  Climatology for biological state variables
