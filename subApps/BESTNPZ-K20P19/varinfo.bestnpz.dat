@@ -41,7 +41,7 @@
   'Nitrate concentration'                                               ! 
   'mmol N m^-3'                                                         ! [millimole N/m3]
   'NO3, scalar, series'                                                 ! 
-  'ocean_time'                                                            ! 
+  'ocean_time'                                                          ! 
   'idTvar(iNO3)'                                                        ! 
   'r3dvar'                                                              ! 
   1.0d0                                                                 ! 
@@ -50,7 +50,7 @@
   'Ammonium concentration'                                              ! 
   'mmol N m^-3'                                                         ! [millimole N/m3]
   'NH4, scalar, series'                                                 ! 
-  'ocean_time'                                                            ! 
+  'ocean_time'                                                          ! 
   'idTvar(iNH4)'                                                        ! 
   'r3dvar'                                                              ! 
   1.0d0                                                                 ! 
@@ -725,7 +725,7 @@
   'Oxygen eastern boundary condition'                                   ! 
   'millimole_oxygen meter-3'                                            ! [millimole/m3]
   'Oxyg_east, scalar, series'                                           ! 
-  'bio_time'                                                            ! 
+  'oxygen_time'                                                            ! 
   'idTbry(ieast,iOxyg)'                                                 ! 
   'nulvar'                                                              ! 
   1.0d0                                                                 ! 
@@ -779,7 +779,7 @@
   'Oxygen northern boundary condition'                                  ! 
   'millimole_oxygen meter-3'                                            ! [millimole/m3]
   'Oxyg_north, scalar, series'                                          ! 
-  'bio_time'                                                            ! 
+  'oxygen_time'                                                            ! 
   'idTbry(inorth,iOxyg)'                                                ! 
   'nulvar'                                                              ! 
   1.0d0                                                                 ! 
@@ -833,7 +833,7 @@
   'Oxygen southern boundary condition'                                  ! 
   'millimole_oxygen meter-3'                                            ! [millimole/m3]
   'Oxyg_south, scalar, series'                                          ! 
-  'bio_time'                                                            ! 
+  'oxygen_time'                                                            ! 
   'idTbry(isouth,iOxyg)'                                                ! 
   'nulvar'                                                              ! 
   1.0d0                                                                 ! 
@@ -887,7 +887,7 @@
   'Oxygen western boundary condition'                                   ! 
   'millimole_oxygen meter-3'                                            ! [millimole/m3]
   'Oxyg_west, scalar, series'                                           ! 
-  'bio_time'                                                            ! 
+  'oxygen_time'                                                            ! 
   'idTbry(iwest,iOxyg)'                                                 ! 
   'nulvar'                                                              ! 
   1.0d0                                                                 ! 
