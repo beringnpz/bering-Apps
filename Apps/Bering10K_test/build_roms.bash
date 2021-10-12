@@ -264,15 +264,18 @@ if [ -n "${USE_MPI:+1}" ] && [ -n "${USE_OpenMP:+1}" ]; then
 fi
 
 #--------------------------------------------------------------------------
-# Compile.
+# Compile: Physics only
 #--------------------------------------------------------------------------
+
+compdate=$(date "+%Y%m%d%H%M")
+
+export  SCRATCH_DIR=${MY_PROJECT_DIR}/Build_phys_${compdate}
+export  USE_DEBUG=
 
 # Remove build directory.
 
 if [ $clean -eq 1 ]; then
-  echo "==========="
   echo "Cleaning..."
-  echo "==========="
   make clean
 fi
 
@@ -284,41 +287,87 @@ else
   if [ $parallel -eq 1 ]; then
     make $NCPUS
   else
-    echo "============="
-    echo "Making all..."
-    echo "${PWD}"
-    echo "============="
-    make &> /gscratch/bumblereem/kearney/testBeringApp/testlog_makeall.txt
-    #make --just-print &> /gscratch/bumblereem/kearney/testBeringApp/testlog_makejustprint.txt
-    #make --print-data-base &> /gscratch/bumblereem/kearney/testBeringApp/testlog_makedatabase.txt
+    echo "Compiling physics-only variant"
+    make &> buildroms_log.txt
+    if [ $? -ne 0 ]; then
+      mv buildroms_log.txt ${SCRATCH_DIR}/buildroms_log.txt
+      echo "  Compilation failed: see ${SCRATCH_DIR}/buildroms_log.txt for details"
+    else
+      mv buildroms_log.txt ${SCRATCH_DIR}/buildroms_log.txt
+      mv ${MY_PROJECT_DIR}/romsM ${MY_PROJECT_DIR}/romsM_phys_${compdate}
+      echo "  Success: romsM_phys_${compdate} created"
+    fi
   fi
 fi
 
 #--------------------------------------------------------------------------
-# Older version
+# Compile: COBALT
 #--------------------------------------------------------------------------
 
-#export   ROMS_APPLICATION=NEP5
-#export        NestedGrids=1
-#export        MY_ROOT_DIR=/gscratch/bumblereem/roms-bering-sea  # Location of roms-bering-sea clone
-#export     MY_PROJECT_DIR=${MY_ROOT_DIR}/Apps/NEP # Location of analyticals, headers, etc
-#export        MY_ROMS_SRC=${MY_ROOT_DIR}          # Main ROMS source code
+# export  SCRATCH_DIR=${MY_PROJECT_DIR}/Build_cobalt_${compdate}
+# export  USE_DEBUG=
+# export  MY_CPP_FLAGS="-DBIO_COBALT"
+#
+# # Remove build directory.
+#
+# if [ $clean -eq 1 ]; then
+#   echo "Cleaning..."
+#   make clean
+# fi
+#
+# # Compile (the binary will go to BINDIR set above).
+#
+# if [ $dprint -eq 1 ]; then
+#   make $debug
+# else
+#   if [ $parallel -eq 1 ]; then
+#     make $NCPUS
+#   else
+#     echo "Compiling COBALT variant"
+#     make &> buildroms_log.txt
+#     if [ $? -ne 0 ]; then
+#       mv buildroms_log.txt ${SCRATCH_DIR}/buildroms_log.txt
+#       echo "  Compilation failed: see ${SCRATCH_DIR}/buildroms_log.txt for details"
+#     else
+#       mv buildroms_log.txt ${SCRATCH_DIR}/buildroms_log.txt
+#       mv ${MY_PROJECT_DIR}/romsM ${MY_PROJECT_DIR}/romsM_cobalt_${compdate}
+#       echo "  Success: romsM_cobalt_${compdate} created"
+#     fi
+#   fi
+# fi
 
-#export     MY_HEADER_DIR=${MY_PROJECT_DIR}
-#export MY_ANALYTICAL_DIR=${MY_PROJECT_DIR}
-#export         COMPILERS=${MY_ROMS_SRC}/Compilers
+#--------------------------------------------------------------------------
+# Compile: COBALT (debug mode)
+#--------------------------------------------------------------------------
 
-#export            BINDIR=/gscratch/bumblereem/kearney/testBeringApp
-#export       SCRATCH_DIR=/gscratch/bumblereem/kearney/testBeringApp/Build_old
-
-#cd ${MY_ROMS_SRC}
-
-#echo "============="
-#echo "Making all..."
-#echo "${PWD}"
-#echo "============="
-#make clean
-#make &> /gscratch/bumblereem/kearney/testBeringApp/testlog_old_makeall.txt
-#make --just-print &> /gscratch/bumblereem/kearney/testBeringApp/testlog_old_makejustprint.txt
-#make --print-data-base &> /gscratch/bumblereem/kearney/testBeringApp/testlog_old_makedatabase.txt
-
+# export  SCRATCH_DIR=${MY_PROJECT_DIR}/Build_cobalt_${compdate}
+# export  USE_DEBUG=on
+# export  MY_CPP_FLAGS="-DBIO_COBALT"
+#
+# # Remove build directory.
+#
+# if [ $clean -eq 1 ]; then
+#   echo "Cleaning..."
+#   make clean
+# fi
+#
+# # Compile (the binary will go to BINDIR set above).
+#
+# if [ $dprint -eq 1 ]; then
+#   make $debug
+# else
+#   if [ $parallel -eq 1 ]; then
+#     make $NCPUS
+#   else
+#     echo "Compiling COBALT variant in debug mode"
+#     make &> buildroms_log.txt
+#     if [ $? -ne 0 ]; then
+#       mv buildroms_log.txt ${SCRATCH_DIR}/buildroms_log.txt
+#       echo "  Compilation failed: see ${SCRATCH_DIR}/buildroms_log.txt for details"
+#     else
+#       mv buildroms_log.txt ${SCRATCH_DIR}/buildroms_log.txt
+#       mv ${MY_PROJECT_DIR}/romsG ${MY_PROJECT_DIR}/romsG_cobalt_${compdate}
+#       echo "  Success: romsG_cobalt_${compdate} created"
+#     fi
+#   fi
+# fi
