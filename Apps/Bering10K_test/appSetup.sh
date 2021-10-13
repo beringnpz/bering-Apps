@@ -56,6 +56,9 @@ rm varinfo_cobalt.dat.bu
 # .in files
 #-----------------------
 
+# These were copied and then edited manually.  Users should modify their own files on a 
+# simulation-specific basis; these are included for reference only.
+
 # ocean_phys.in:   copy from ${berapps}/subApps/BERING_10K_new/ocean_bering10k_new.in with
 #                  customized time variables, archiving variables, and input .nc
 #                  files
