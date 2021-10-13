@@ -1,3 +1,4 @@
+! BEGIN_STATE_VARIABLES
 !
 !------------------------------------------------------------------------------
 !  Biological state variables
@@ -482,6 +483,8 @@
   'idgTnc'
   'r3dvar'
   1.0d0
+
+! END_STATE_VARIABLES
 
 !
 !------------------------------------------------------------------------------
@@ -3484,3 +3487,4 @@
 !   iDbio3(ipCO2)
 !   iDbio3(iaggloss_md)
 ! We may need to add those for future applications.
+
