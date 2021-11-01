@@ -49,7 +49,7 @@ BioIter == 1
  k_chlB   ==  0.2829    ! Chlorophyll attenuation coefficient, exponent [unitless]
  k_chlC   ==  0.0       ! Other material (CDOM,sediment,etc.) attenuation coefficient [m^-1]
  k_sed1   ==  2.833     ! Depth-based attenuation coefficient, factor [m^-1]
- k_sed1   == -1.079     ! Depth-based attenuation coefficient, exponent [unitless]
+ k_sed2   == -1.079     ! Depth-based attenuation coefficient, exponent [unitless]
 
 ! Biological conversions
  xi       ==   0.0126   ! Nitrogen:Carbon ratio [mmol N / mg C]
