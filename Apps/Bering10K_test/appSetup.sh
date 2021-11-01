@@ -17,6 +17,7 @@ berapps=../..
 
 cp ${berapps}/subApps/BERING_10K_new/bering_10k.h bering_10k.h 
 cat ${berapps}/subApps/COBALT/cobalt_cpp.h >> bering_10k.h
+cat ${berapps}/subApps/BESTNPZ/bestnpz_cpp.h >> bering_10k.h
 
 # Point sources: Used to set Bering Strait flow, specific to the grid
 
@@ -51,6 +52,17 @@ cat ${berapps}/subApps/IceBudgell/varinfo.ice.dat >> varinfo_cobalt.dat # Add ic
 sed -n '/END_STATE_VARIABLES/,$p' ${berapps}/subApps/COBALT/varinfo.cobalt.dat >> varinfo_cobalt.dat # Add the rest of the COBALT variables
 sed -i.bu "s/'rdrag'/'rdrg_grid'/" varinfo_cobalt.dat # Rename rdrag
 rm varinfo_cobalt.dat.bu
+
+# BESTNPZ
+
+sed -n '/!  ROMS\/TOMS IO NetCDF variables./,/ADD_STATE_VARIABLES_HERE/p' ${berapps}/subApps/ocean/varinfo.defaults.dat > varinfo_bestnpz.dat # First part of physics
+sed -n '/BEGIN_STATE_VARIABLES/,/END_STATE_VARIABLES/p' ${berapps}/subApps/BESTNPZ/varinfo.bestnpz.dat >> varinfo_bestnpz.dat # Add BESTNPZ state variables
+sed -n '/ADD_STATE_VARIABLES_HERE/,$p' ${berapps}/subApps/ocean/varinfo.defaults.dat >> varinfo_bestnpz.dat # Add the rest of the physics
+cat ${berapps}/subApps/IceBudgell/varinfo.ice.dat >> varinfo_bestnpz.dat # Add ice
+sed -n '/END_STATE_VARIABLES/,$p' ${berapps}/subApps/BESTNPZ/varinfo.bestnpz.dat >> varinfo_bestnpz.dat # Add the rest of the BESTNPZ variables
+sed -i.bu "s/'rdrag'/'rdrg_grid'/" varinfo_bestnpz.dat # Rename rdrag
+rm varinfo_bestnpz.dat.bu
+
 
 #-----------------------
 # .in files
