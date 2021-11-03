@@ -23,6 +23,14 @@ cat ${berapps}/subApps/BESTNPZ/bestnpz_cpp.h >> bering_10k.h
 
 cp ${berapps}/subApps/BERING_10K_new/ana_psource.h ana_psource.h
 
+# BEST_NPZ initial conditions, plus and boundary conditions for ice tracers, Fe
+
+cp ${berapps}/subApps/BESTNPZ/ana_biology_BESTnpz.h ana_biology_BESTnpz.h
+cp ${berapps}/subApps/BESTNPZ/ana_IceNH4bc.h ana_IceNH4bc.h
+cp ${berapps}/subApps/BESTNPZ/ana_IceNO3bc.h ana_IceNO3bc.h
+cp ${berapps}/subApps/BESTNPZ/ana_IcePhLbc.h ana_IcePhLbc.h
+cp ${berapps}/subApps/BESTNPZ/ana_tclima.h ana_tclima.h
+
 #-----------------------
 # varinfo
 #-----------------------
