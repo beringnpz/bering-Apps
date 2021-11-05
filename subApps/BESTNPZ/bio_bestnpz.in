@@ -223,7 +223,8 @@ rg0      == 0.01        ! IcePhL mortality rate at 0 deg C [1/d]
 rg       == 0.03        ! IcePhL temperature coefficient for mortality [1/deg C]
 annit    == 0.0149      ! IcePhL nitrification factor [1/d]
 aidz     == 0.02        ! Ice thickness [m]
-
+tI0      == 0.0095d0    ! Nitrification light threshold [W m^-2]
+KI       == 4.0d0       ! Nitrification light half-saturation constant [W m^-2]
 
 
 ! Lateral, constant, harmonic/biharmonic horizontal diffusion of biological
