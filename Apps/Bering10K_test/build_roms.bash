@@ -29,14 +29,22 @@
 #                                                                       :::
 # Options:                                                              :::
 #                                                                       :::
-#    -j [N]      Compile in parallel using N CPUs                       :::
+#    -j [N]       Compile in parallel using N CPUs                      :::
 #                  omit argument for all available CPUs                 :::
 #                                                                       :::
-#    -p macro    Prints any Makefile macro value. For example,          :::
+#    -p macro     Prints any Makefile macro value. For example,         :::
 #                                                                       :::
 #                  build.bash -p FFLAGS                                 :::
 #                                                                       :::
-#    -noclean    Do not clean already compiled objects                  :::
+#    -noclean     Do not clean already compiled objects                 :::
+#                                                                       :::
+#    -db          Compile in debug mode (USE_DEBUG)                     :::
+#                                                                       :::
+#    -variant [x] CPP-combo variant to compile.  Can be:                :::
+#                 phys:    no bio, default ice [default]                :::
+#                 cobalt:  COBALT bio, default ice                      :::
+#                 bestnpz: BEST_NPZ bio, default ice                    :::
+#                                                                       :::
 #                                                                       :::
 # Notice that sometimes the parallel compilation fail to find MPI       :::
 # include file "mpif.h".                                                :::
@@ -48,6 +56,8 @@ which_MPI=openmpi                             # default, overwritten below
 parallel=0
 clean=1
 dprint=0
+compiledebug=0
+compilevar="phys"
 
 MY_CPP_FLAGS=
 
@@ -78,7 +88,18 @@ do
       shift
       clean=0
       ;;
-
+      
+    -variant )
+      shift
+      compilevar="$1"
+      shift
+      ;;
+      
+    -db )
+      shift
+      compiledebug=1
+      ;;
+      
     * )
       echo ""
       echo "$0 : Unknown option [ $1 ]"
@@ -267,10 +288,48 @@ fi
 # Compile: Physics only
 #--------------------------------------------------------------------------
 
+# Compilation date string
+
 compdate=$(date "+%Y%m%d%H%M")
 
-export  SCRATCH_DIR=${MY_PROJECT_DIR}/Build_phys_${compdate}
-export  USE_DEBUG=
+# Turn on debugging if necessary
+
+if [ "$compiledebug" -eq 1 ]; then
+  USE_DEBUG=on
+  rbase="romsG"
+  debugstr="in debug mode"
+else
+  export  USE_DEBUG=
+  rbase="romsM"
+  debugstr=""
+fi
+
+# Variant flags and details
+
+case "$compilevar" in
+  phys )
+    longname="physics-only"
+    ;;
+  cobalt )
+    longname="COBALT"
+    export MY_CPP_FLAGS="${MY_CPP_FLAGS} -DBIO_COBALT"
+    ;;
+  bestnpz )
+    longname="BEST_NPZ"
+    export MY_CPP_FLAGS="${MY_CPP_FLAGS} -DBEST_NPZ"
+    ;;
+  * )
+    echo "Unknown variant"
+    echo "  (options: phys, cobalt, bestnpz)"
+    echo ""
+    exit 1
+    ;;
+esac
+
+
+# Scratch directory
+  
+export  SCRATCH_DIR=${MY_PROJECT_DIR}/Build_${compilevar}_${compdate}
 
 # Remove build directory.
 
@@ -287,87 +346,16 @@ else
   if [ $parallel -eq 1 ]; then
     make $NCPUS
   else
-    echo "Compiling physics-only variant"
+    echo ""
+    echo "Compiling $longname variant $debugstr"
     make &> buildroms_log.txt
     if [ $? -ne 0 ]; then
       mv buildroms_log.txt ${SCRATCH_DIR}/buildroms_log.txt
       echo "  Compilation failed: see ${SCRATCH_DIR}/buildroms_log.txt for details"
     else
       mv buildroms_log.txt ${SCRATCH_DIR}/buildroms_log.txt
-      mv ${MY_PROJECT_DIR}/romsM ${MY_PROJECT_DIR}/romsM_phys_${compdate}
-      echo "  Success: romsM_phys_${compdate} created"
+      mv ${MY_PROJECT_DIR}/${rbase} ${MY_PROJECT_DIR}/${rbase}_${compilevar}_${compdate}
+      echo "  Success: ${rbase}_${compilevar}_${compdate} created"
     fi
   fi
 fi
-
-#--------------------------------------------------------------------------
-# Compile: COBALT
-#--------------------------------------------------------------------------
-
-# export  SCRATCH_DIR=${MY_PROJECT_DIR}/Build_cobalt_${compdate}
-# export  USE_DEBUG=
-# export  MY_CPP_FLAGS="-DBIO_COBALT"
-#
-# # Remove build directory.
-#
-# if [ $clean -eq 1 ]; then
-#   echo "Cleaning..."
-#   make clean
-# fi
-#
-# # Compile (the binary will go to BINDIR set above).
-#
-# if [ $dprint -eq 1 ]; then
-#   make $debug
-# else
-#   if [ $parallel -eq 1 ]; then
-#     make $NCPUS
-#   else
-#     echo "Compiling COBALT variant"
-#     make &> buildroms_log.txt
-#     if [ $? -ne 0 ]; then
-#       mv buildroms_log.txt ${SCRATCH_DIR}/buildroms_log.txt
-#       echo "  Compilation failed: see ${SCRATCH_DIR}/buildroms_log.txt for details"
-#     else
-#       mv buildroms_log.txt ${SCRATCH_DIR}/buildroms_log.txt
-#       mv ${MY_PROJECT_DIR}/romsM ${MY_PROJECT_DIR}/romsM_cobalt_${compdate}
-#       echo "  Success: romsM_cobalt_${compdate} created"
-#     fi
-#   fi
-# fi
-
-#--------------------------------------------------------------------------
-# Compile: COBALT (debug mode)
-#--------------------------------------------------------------------------
-
-# export  SCRATCH_DIR=${MY_PROJECT_DIR}/Build_cobalt_${compdate}
-# export  USE_DEBUG=on
-# export  MY_CPP_FLAGS="-DBIO_COBALT"
-#
-# # Remove build directory.
-#
-# if [ $clean -eq 1 ]; then
-#   echo "Cleaning..."
-#   make clean
-# fi
-#
-# # Compile (the binary will go to BINDIR set above).
-#
-# if [ $dprint -eq 1 ]; then
-#   make $debug
-# else
-#   if [ $parallel -eq 1 ]; then
-#     make $NCPUS
-#   else
-#     echo "Compiling COBALT variant in debug mode"
-#     make &> buildroms_log.txt
-#     if [ $? -ne 0 ]; then
-#       mv buildroms_log.txt ${SCRATCH_DIR}/buildroms_log.txt
-#       echo "  Compilation failed: see ${SCRATCH_DIR}/buildroms_log.txt for details"
-#     else
-#       mv buildroms_log.txt ${SCRATCH_DIR}/buildroms_log.txt
-#       mv ${MY_PROJECT_DIR}/romsG ${MY_PROJECT_DIR}/romsG_cobalt_${compdate}
-#       echo "  Success: romsG_cobalt_${compdate} created"
-#     fi
-#   fi
-# fi
