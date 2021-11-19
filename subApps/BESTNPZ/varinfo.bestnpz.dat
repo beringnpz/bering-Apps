@@ -186,8 +186,8 @@
   'Ice algae concentration'                                             ! 
   'mg C m^-3'                                                           ! [milligram C/m3]
   'ice algae conc, scalar, series'                                      ! 
-  'ocean_time'                                                            ! 
-  'idIcePhL'                                                            ! 
+  'ocean_time'                                                          ! 
+  'idIceTvar(iIPhL)'                                                    ! 
   'r2dvar'                                                              ! 
   1.0d0                                                                 ! 
 
@@ -195,8 +195,8 @@
   'Ice nitrate concentration'                                           ! 
   'mmol N m^-3'                                                         ! [millimole N/m3]
   'ice nitrate conc, scalar, series'                                    ! 
-  'ocean_time'                                                            ! 
-  'idIceNO3'                                                            ! 
+  'ocean_time'                                                          ! 
+  'idIceTvar(iINO3)'                                                    ! 
   'r2dvar'                                                              ! 
   1.0d0                                                                 ! 
 
@@ -204,8 +204,8 @@
   'Ice ammonium concentration'                                          ! 
   'mmol N m^-3'                                                         ! [millimole N/m3]
   'ice ammonium conc, scalar, series'                                   ! 
-  'ocean_time'                                                            ! 
-  'idIceNH4'                                                            ! 
+  'ocean_time'                                                          ! 
+  'idIceTvar(iINH4)'                                                     ! 
   'r2dvar'                                                              ! 
   1.0d0                                                                 ! 
 

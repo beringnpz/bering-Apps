@@ -297,18 +297,14 @@ ad_Vadvection == C4                             ! idbio(:), compact
 ! 16. Alk
 ! 17. Oxyg
 
-Hout(idTvar) == 17*T                  ! biological tracer, pelagic
-Hout(idBeTvar) == 2*T                 ! bioloigical tracers, benthic
-Hout(idIcePhL) == T
-Hout(idIceNO3) == T
-Hout(idIceNH4) == T
+Hout(idTvar) == 17*T                  ! biological tracers, pelagic
+Hout(idBeTvar) == 2*T                 ! biological tracers, benthic
+Hout(idIceTvar) == 3*T                ! biological tracers, sympagic (ice)
 Hout(idTsur) == 17*F                  ! surface tracer flux
 
 Aout(idTvar) == 17*T
 Aout(idBeTvar) == 2*T
-Aout(idIcePhL) == T
-Aout(idIceNO3) == T
-Aout(idIceNH4) == T
+Aout(idIceTvar) == 3*T
 
 ! Logical switches (TRUE/FALSE) to activate writing of biological diagnostics
 ! into DIAGNOSTICS output file
