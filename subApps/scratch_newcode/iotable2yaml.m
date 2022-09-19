@@ -1,6 +1,7 @@
+%% I/O table to YAML
+
 % file = '../BIO_BANAS/banas_io.csv';
 file = '../BESTNPZ/bestnpz_io.csv';
-
 
 Opt = detectImportOptions(file);
 [Opt.VariableTypes{:}] = deal('char');
@@ -14,29 +15,65 @@ Io.standard_name = repmat({''}, height(Io),1);
 
 Io = Io(:,fld);
 
-maxlen = zeros(size(fld));
-for ii = 1:length(fld)
-    maxlen(ii) = max(cellfun(@length, Io.(fld{ii})));
-end
-    
-fmtdata = [fld; num2cell(maxlen+2)];
-fmt = sprintf('%s: %%-%ds', fmtdata{:});
-
 data = Io{:,:}';
 for ii = 1:numel(data)
-    if contains(data{ii}, ',')
+    if contains(data{ii}, {',',':'})
         data{ii} = sprintf('"%s",', data{ii});
     else
         data{ii} = sprintf('%s,', data{ii});
     end
 end
 
+maxlen = zeros(size(fld));
+for ii = 1:length(fld)
+    maxlen(ii) = max(cellfun(@length, data(ii,:)));
+end
+    
+fmtdata = [fld; num2cell(maxlen+2)];
+fmt = sprintf('%s: %%-%ds', fmtdata{:});
+
 tmp = sprintf(['  - {' fmt '}\n'], data{:});
 tmp = regexprep(tmp, ',\s*}\n', '}\n');
-
 
 newfile = strrep(file, '.csv', '.yaml');
 
 fid = fopen(newfile, 'wt');
 fprintf(fid, 'metadata:\n%s', tmp);
 fclose(fid);
+
+%% param table to YAML
+
+file = '../BESTNPZ/bestnpz_parameters.csv';
+
+Tmp = readtable(file);
+
+fld = {'param', 'unit', 'descrip'};
+
+data = Tmp{:,fld}';
+for ii = 1:numel(data)
+    if contains(data{ii}, {',',':'})
+        data{ii} = sprintf('"%s",', data{ii});
+    else
+        data{ii} = sprintf('%s,', data{ii});
+    end
+end
+
+maxlen = zeros(size(fld));
+for ii = 1:length(fld)
+    maxlen(ii) = max(cellfun(@length, data(ii,:)));
+end
+    
+fmtdata = [fld; num2cell(maxlen+2)];
+fmt = sprintf('%s: %%-%ds', fmtdata{:});
+
+tmp = sprintf(['  - {' fmt '}\n'], data{:});
+tmp = regexprep(tmp, ',\s*}\n', '}\n');
+
+newfile = strrep(file, '.csv', '.yaml');
+
+fid = fopen(newfile, 'wt');
+fprintf(fid, 'metadata:\n%s', tmp);
+fclose(fid);
+
+
+

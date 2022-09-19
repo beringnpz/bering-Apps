@@ -1,27 +1,27 @@
 # Banas model parameters
-
-mu0:        {value: 1.2,   unit: d^-1,             descrip: maximum phytoplankton growth rate}
-att_sw:     {value: 0.05,  unit: m^-1,             descrip: light attenuation by seawater}
-att_p:      {value: 0.006, unit: m^-1 uM N^-1,     descrip: light attneuation by phytoplankton}
-alpha_win:  {value: 0.01,  unit: (W M^-2)^-1 d^-1, descrip: "initial growth-light slope, winter"}
-alpha_sum:  {value: 0.16,  unit: (W M^-2)^-1 d^-1, descrip: "initial growth-light slope, summer"}
-Ecrit:      {value: 30,    unit: W m^-2,           descrip: light level of alpha_win/alpha_sum transition}
-deltaE:     {value: 5,     unit: W m^-2,           descrip: width of alpha_win/alpha_sum transition}
-kmin:       {value: 0.16,  unit: uM N,             descrip: minmimum half-saturation for NO3}
-phi_NH4:    {value: 2.0,   unit: unitless,         descrip: preference for NH4}
-CNratio:    {value: 9.0,   unit: molC/molN,        descrip: phytoplankton C:N ratio}
-chlNratio:  {value: 2.2,   unit: mg chl/uM N,      descrip: chlorohpyll:N ratio}
-m_P:        {value: 0.03,  unit: d^-1,             descrip: phytoplankton mortality}
-m_agg:      {value: 0.009, unit: (uM N)^-1 d^-1,   descrip: phytoplankton loss via aggregation}
-I0:         {value: 3.4,   unit: d^-1,             descrip: max microzooplankton ingestion rate}
-K:          {value: 1,     unit: uM N,             descrip: grazing half-saturation}
-epsil:      {value: 0.3,   unit: unitless,         descrip: microzooplankton growth efficiency}
-fex:        {value: 0.35,  unit: unitless,         descrip: fraction of grazing excreted to NH4}
-m_Z:        {value: 1.5,   unit: d^-1,             descrip: microzooplankton mortality}
-w_S:        {value: 3,     unit: m d^-1,           descrip: small detritus sinking rate}
-w_L:        {value: 100,   unit: m d^-1,           descrip: large detritus sinking rate}
-r_remin:    {value: 0.05,  unit: d^-1,             descrip: detrital remineralization rate}
-r_nitr:     {value: 0.03,  unit: d^-1,             descrip: nitrification rate}
-Q_P:        {value: 2,     unit: unitless,         descrip: Q10 for phytoplankton}
-Q_Z:        {value: 2.8,   unit: unitless,         descrip: Q10 for zooplankton}
-Q_R:        {value: 2.8,   unit: unitless,         descrip: Q10 for bacterial respiration}
+---
+- {param: mu0,        value: 1.2,   unit: d^-1,             descrip: maximum phytoplankton growth rate}
+- {param: att_sw,     value: 0.05,  unit: m^-1,             descrip: light attenuation by seawater}
+- {param: att_p,      value: 0.006, unit: m^-1 uM N^-1,     descrip: light attneuation by phytoplankton}
+- {param: alpha_win,  value: 0.01,  unit: (W M^-2)^-1 d^-1, descrip: "initial growth-light slope, winter"}
+- {param: alpha_sum,  value: 0.16,  unit: (W M^-2)^-1 d^-1, descrip: "initial growth-light slope, summer"}
+- {param: Ecrit,      value: 30,    unit: W m^-2,           descrip: light level of alpha_win/alpha_sum transition}
+- {param: deltaE,     value: 5,     unit: W m^-2,           descrip: width of alpha_win/alpha_sum transition}
+- {param: kmin,       value: 0.16,  unit: uM N,             descrip: minmimum half-saturation for NO3}
+- {param: phi_NH4,    value: 2.0,   unit: unitless,         descrip: preference for NH4}
+- {param: CNratio,    value: 9.0,   unit: molC/molN,        descrip: "phytoplankton C:N ratio"}
+- {param: chlNratio,  value: 2.2,   unit: mg chl/uM N,      descrip: "chlorohpyll:N ratio"}
+- {param: m_P,        value: 0.03,  unit: d^-1,             descrip: phytoplankton mortality}
+- {param: m_agg,      value: 0.009, unit: (uM N)^-1 d^-1,   descrip: phytoplankton loss via aggregation}
+- {param: I0,         value: 3.4,   unit: d^-1,             descrip: max microzooplankton ingestion rate}
+- {param: K,          value: 1,     unit: uM N,             descrip: grazing half-saturation}
+- {param: epsil,      value: 0.3,   unit: unitless,         descrip: microzooplankton growth efficiency}
+- {param: fex,        value: 0.35,  unit: unitless,         descrip: fraction of grazing excreted to NH4}
+- {param: m_Z,        value: 1.5,   unit: d^-1,             descrip: microzooplankton mortality}
+- {param: w_S,        value: 3,     unit: m d^-1,           descrip: small detritus sinking rate}
+- {param: w_L,        value: 100,   unit: m d^-1,           descrip: large detritus sinking rate}
+- {param: r_remin,    value: 0.05,  unit: d^-1,             descrip: detrital remineralization rate}
+- {param: r_nitr,     value: 0.03,  unit: d^-1,             descrip: nitrification rate}
+- {param: Q_P,        value: 2,     unit: unitless,         descrip: Q10 for phytoplankton}
+- {param: Q_Z,        value: 2.8,   unit: unitless,         descrip: Q10 for zooplankton}
+- {param: Q_R,        value: 2.8,   unit: unitless,         descrip: Q10 for bacterial respiration}

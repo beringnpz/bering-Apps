@@ -1,0 +1,8 @@
+- { flag: BEST_NPZ,     descrip: "Bering Ecosystem Study NPZ model"}
+- { flag: CARBON_FLUX,  descrip: "TIC and Alk surface (river-derived) fluxes"}
+- { flag: CLIM_ICE_1D,  descrip: "1D analytical ice thickness, no explicit ice model"}
+- { flag: DEPTHLIMITER, descrip: "Enforce on/off-shelf habitat for large zooplankton"}
+- { flag: DIAPAUSE,     descrip: "Seasonal diapuase for large copepods"}
+- { flag: EUPDIEL,      descrip: "Diel vertical migration for euphausiids"}
+- { flag: JELLY,        descrip: "Add jellyfish top predator"}
+- { flag: MZLM0LIN,     descrip: "Linear non-predatory mortality for microzooplankton"}
