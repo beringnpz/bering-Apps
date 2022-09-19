@@ -1,0 +1,26 @@
+﻿param,descrip,value,unit
+mu0,maximum phytoplankton growth rate,1.2,d^-1
+att_sw,light attenuation by seawater,0.05,m^-1
+att_p,light attneuation by phytoplankton,0.006,m^-1 uM N^-1
+alpha_win,"initial growth-light slope, winter",0.01,(W M^-2)^-1 d^-1
+alpha_sum,"initial growth-light slope, summer",0.16,(W M^-2)^-1 d^-1
+Ecrit,light level of alpha_win/alpha_sum transition,30,W m^-2
+deltaE,width of alpha_win/alpha_sum transition,5,W m^-2
+kmin,minmimum half-saturation for NO3,0.16,uM N
+phi_NH4,preference for NH4,2,unitless
+CNratio,phytoplankton C:N ratio,9,molC/molN
+chlNratio,chlorohpyll:N ratio,2.2,mg chl/uM N
+m_P,phytoplankton mortality,0.03,d^-1
+m_agg,phytoplankton loss via aggregation,0.009,(uM N)^-1 d^-1
+I0,max microzooplankton ingestion rate,3.4,d^-1
+K,grazing half-saturation,1,uM N
+epsil,microzooplankton growth efficiency,0.3,unitless
+fex,fraction of grazing excreted to NH4,0.35,unitless
+m_Z,microzooplankton mortality,1.5,d^-1
+w_S,small detritus sinking rate,3,m d^-1
+w_L,large detritus sinking rate,100,m d^-1
+r_remin,detrital remineralization rate,0.05,d^-1
+r_nitr,nitrification rate,0.03,d^-1
+Q_P,Q10 for phytoplankton,2,unitless
+Q_Z,Q10 for zooplankton,2.8,unitless
+Q_R,Q10 for bacterial respiration,2.8,unitless

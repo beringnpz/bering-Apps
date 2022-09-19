@@ -23,13 +23,15 @@ cat ${berapps}/subApps/BESTNPZ/bestnpz_cpp.h >> bering_10k.h
 
 cp ${berapps}/subApps/BERING_10K_new/ana_psource.h ana_psource.h
 
-# BEST_NPZ initial conditions, plus and boundary conditions for ice tracers, Fe
+# Note: The following analyticals are used by BEST_NPZ by default.  Local versions can be 
+# added if different behavior is desired.
+#
+# ROMS/Functionals/ana_tclima.h: sets profile for Fe nudging; surface and deep values are 
+#      set based on bathymetry, with a 50-m surface layer
+# ROMS/Functionals/ana_itobc.h: sets ice bio boundary values to 0
+# ROMS/Functionals/ana_biology.h: spinup initialization; NO3 present at depth, Fe uses the 
+#      same profile as nudging, no NH4 or detritus, living critters at seed value
 
-cp ${berapps}/subApps/BESTNPZ/ana_biology_BESTnpz.h ana_biology_BESTnpz.h
-cp ${berapps}/subApps/BESTNPZ/ana_IceNH4bc.h ana_IceNH4bc.h
-cp ${berapps}/subApps/BESTNPZ/ana_IceNO3bc.h ana_IceNO3bc.h
-cp ${berapps}/subApps/BESTNPZ/ana_IcePhLbc.h ana_IcePhLbc.h
-cp ${berapps}/subApps/BESTNPZ/ana_tclima.h ana_tclima.h
 
 #-----------------------
 # varinfo
@@ -89,6 +91,9 @@ rm varinfo_bestnpz.dat.bu
 #
 # bio_cobalt.in:   copy of ${berapps}/subApps/COBALT/bio_Cobalt.in.full.hincasthauri2020
 #                  with tracer nudging, climatology, and point sources switched to false.
+#
+# bio_bestnpz.in:  copy of ${berapps}/subApps/BESTNPZ/bio_bestnpz.in
+
 
 
 

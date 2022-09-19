@@ -1333,48 +1333,50 @@ Dout(iC_2_chl_sm) == T
 Dout(iC_2_chl_lg) == T
 Dout(iC_2_chl_md) == T
 
-   LBC(isTvar) ==   RadNud  RadNud  Clo  Clo \ ! insm Small Phytoplankton Nitrogen
-                    RadNud  RadNud  Clo  Clo \ ! inmd Medium Phytoplankton Nitrogen
-                    RadNud  RadNud  Clo  Clo \ ! inlg Large Phytoplankton Nitrogen
-                    RadNud  RadNud  Clo  Clo \ ! indi Diazotroph Nitrogen
-                    RadNud  RadNud  Clo  Clo \ ! insmz Small Zooplankton Nitrogen
-                    RadNud  RadNud  Clo  Clo \ ! inmdz Medium-sized zooplankton Nitrogen
-                    RadNud  RadNud  Clo  Clo \ ! inlgz large Zooplankton Nitrogen
-                    RadNud  RadNud  Clo  Clo \ ! ildon labile DON
-                    RadNud  RadNud  Clo  Clo \ ! isldon Semilabile DON
-                    RadNud  RadNud  Clo  Clo \ ! isrdon Semi-Refractory DON
-                    RadNud  RadNud  Clo  Clo \ ! inbact bacterial
-                    RadNud  RadNud  Clo  Clo \ ! inh4 Ammonia
-                    RadNud  RadNud  Clo  Clo \ ! ino3 Nitrate
-                    RadNud  RadNud  Clo  Clo \ ! indet ndet
-                    RadNud  RadNud  Clo  Clo \ ! isio4 Silicate
-                    RadNud  RadNud  Clo  Clo \ ! isilg Large Phytoplankton Silicon
-                    RadNud  RadNud  Clo  Clo \ ! isimd Medium Phytoplankton Silicon
-                    RadNud  RadNud  Clo  Clo \ ! isidet Detrital Silicon
-                    RadNud  RadNud  Clo  Clo \ ! icadet_calc Detrital CaCO3
-                    RadNud  RadNud  Clo  Clo \ ! icadet_arag Detrital CaCO3
-                    RadNud  RadNud  Clo  Clo \ ! ilith Lithogenic Aluminosilicate
-                    RadNud  RadNud  Clo  Clo \ ! ilithdet lithdet
-                    RadNud  RadNud  Clo  Clo \ ! ildop labile DOP
-                    RadNud  RadNud  Clo  Clo \ ! isldop Semilabile DOP
-                    RadNud  RadNud  Clo  Clo \ ! isrdop Semi-Refractory DOP
-                    RadNud  RadNud  Clo  Clo \ ! ipo4 Phosphate
-                    RadNud  RadNud  Clo  Clo \ ! ipdet Detrital Phosphorus
-                    RadNud  RadNud  Clo  Clo \ ! ifesm Small Phytoplankton Iron
-                    RadNud  RadNud  Clo  Clo \ ! ifemd Medium Phytoplankton Iron
-                    RadNud  RadNud  Clo  Clo \ ! ifedi Diazotroph Iron
-                    RadNud  RadNud  Clo  Clo \ ! ifelg Large Phytoplankton Iron
-                    RadNud  RadNud  Clo  Clo \ ! ifed Dissolved Iron
-                    RadNud  RadNud  Clo  Clo \ ! ifedet Detrital Iron
-                    RadNud  RadNud  Clo  Clo \ ! io2 Oxygen
-                    RadNud  RadNud  Clo  Clo \ ! idic Dissolved Inorganic Carbon
-                    RadNud  RadNud  Clo  Clo   ! ialk Alkalinity
+   LBC(isTvar) ==   RadNud  RadNud  Clo  Clo \ !  1. insm Small Phytoplankton Nitrogen
+                    RadNud  RadNud  Clo  Clo \ !  2. inlg Large Phytoplankton Nitrogen
+                    RadNud  RadNud  Clo  Clo \ !  3. indi Diazotroph Nitrogen
+                    RadNud  RadNud  Clo  Clo \ !  4. insmz Small Zooplankton Nitrogen
+                    RadNud  RadNud  Clo  Clo \ !  5. inmdz Medium-sized zooplankton Nitrogen
+                    RadNud  RadNud  Clo  Clo \ !  6. inlgz large Zooplankton Nitrogen
+                    RadNud  RadNud  Clo  Clo \ !  7. ildon labile DON
+                    RadNud  RadNud  Clo  Clo \ !  8. isldon Semilabile DON
+                    RadNud  RadNud  Clo  Clo \ !  9. isrdon Semi-Refractory DON
+                    RadNud  RadNud  Clo  Clo \ ! 10. inbact bacterial
+                    RadNud  RadNud  Clo  Clo \ ! 11. inh4 Ammonia
+                    RadNud  RadNud  Clo  Clo \ ! 12. ino3 Nitrate
+                    RadNud  RadNud  Clo  Clo \ ! 13. indet ndet
+                    RadNud  RadNud  Clo  Clo \ ! 14. isio4 Silicate
+                    RadNud  RadNud  Clo  Clo \ ! 15. isilg Large Phytoplankton Silicon
+                    RadNud  RadNud  Clo  Clo \ ! 16. isidet Detrital Silicon
+                    RadNud  RadNud  Clo  Clo \ ! 17. icadet_calc Detrital CaCO3
+                    RadNud  RadNud  Clo  Clo \ ! 18. icadet_arag Detrital CaCO3
+                    RadNud  RadNud  Clo  Clo \ ! 19. ilith Lithogenic Aluminosilicate
+                    RadNud  RadNud  Clo  Clo \ ! 20. ilithdet lithdet
+                    RadNud  RadNud  Clo  Clo \ ! 21. ipo4 Phosphate
+                    RadNud  RadNud  Clo  Clo \ ! 22. ifesm Small Phytoplankton Iron
+                    RadNud  RadNud  Clo  Clo \ ! 23. ifedi Diazotroph Iron
+                    RadNud  RadNud  Clo  Clo \ ! 24. ifelg Large Phytoplankton Iron
+                    RadNud  RadNud  Clo  Clo \ ! 25. ifed Dissolved Iron
+                    RadNud  RadNud  Clo  Clo \ ! 26. ifedet Detrital Iron
+                    RadNud  RadNud  Clo  Clo \ ! 27. io2 Oxygen
+                    RadNud  RadNud  Clo  Clo \ ! 28. idic Dissolved Inorganic Carbon
+                    RadNud  RadNud  Clo  Clo \ ! 29. ialk Alkalinity
+                    RadNud  RadNud  Clo  Clo \ ! 30. inmd Medium Phytoplankton Nitrogen
+                    RadNud  RadNud  Clo  Clo \ ! 31. isimd Medium Phytoplankton Silicon
+                    RadNud  RadNud  Clo  Clo \ ! 32. ifemd Medium Phytoplankton Iron
+! Note: if COBALT_PHOSPHORUS turned on, ildop-isrdp go between ilithdet and ipo4, 
+! and ipdet after ipo4.  Adjust indices accordingly.
+!                   RadNud  RadNud  Clo  Clo \ ! ##. ildop labile DOP
+!                   RadNud  RadNud  Clo  Clo \ ! ##. isldop Semilabile DOP
+!                   RadNud  RadNud  Clo  Clo \ ! ##. isrdop Semi-Refractory DOP
+!                   RadNud  RadNud  Clo  Clo   ! ##. ipdet Detrital Phosphorus
 
 ! Logical switches (TRUE/FALSE) to specify which variables to process for
 ! tracers climatology: [NBT,Ngrids] values are expected. See glossary below
 ! for details.
 
-  LtracerCLM == 36*F ! was on in NWGOA... boundary nudging, I assume?
-  LnudgeTCLM == 36*F ! was on in NWGOA for boundary nudging... revisit?
-  LtracerSrc == 36*F ! was on in NWGOA for... I don't know yet? Coastal?  Done analytically, see COBALT_REMI, Definitely revisit
+  LtracerCLM == 32*T ! PO4 necessary  36*F ! was on in NWGOA... boundary nudging, I assume?
+  LnudgeTCLM == 32*F ! was on in NWGOA for boundary nudging... revisit?
+  LtracerSrc == 32*F ! was on in NWGOA for... I don't know yet? Coastal?  Done analytically, see COBALT_REMI, Definitely revisit
 

@@ -199,38 +199,13 @@
 # define ANA_SMFLUX
 #endif
 
-/*
-**  Biological model options.
-*/
+/* MPI stuff (see https://www.myroms.org/projects/src/ticket/747)      */
+/* not strictly necessary, but enforces same behavior as older version */
 
-/* In order to allow use of this header file with different biology, I'm 
-   leaving out any explicit define/undef options for BESTNPZ and FEAST.  
-   These will be defined externally via MY_CPP_FLAGS.
-*/ 
+# define BOUNDARY_ALLREDUCE /* use mpi_allreduce in mp_boundary */
+# undef  COLLECT_ALLGATHER  /* use mpi_allgather in mp_collect  */
+# define COLLECT_ALLREDUCE  /* use mpi_allreduce in mp_collect  */
+# define REDUCE_ALLGATHER   /* use mpi_allgather in mp_reduce   */
+# undef  REDUCE_ALLREDUCE   /* use mpi_allreduce in mp_reduce   */
 
-#undef NEMURO
-#undef BIO_GOANPZ        /* Sarah Hinckley's 11 box model */
 
-#if defined BEST_NPZ || defined BIO_GOANPZ || defined PASSIVE_TRACERS
-# undef  BIOFLUX           /* sum Nitrogen fluxes between boxes */
-# define ANA_BIOLOGY       /* analytical biology initial conditions */
-# define ANA_BPFLUX        /* analytical bottom passive tracers fluxes */
-# define ANA_SPFLUX        /* analytical surface passive tracers fluxes */
-# define DIAPAUSE          /* Enable large copepod seasonal vertical migration */
-# undef FLOAT_VWALK
-#endif
-
-#if defined NEMURO
-# undef ANA_BIOLOGY        /* analytical biology initial conditions */
-# define ANA_BPFLUX        /* analytical bottom passive tracers fluxes */
-# define ANA_SPFLUX        /* analytical surface passive tracers fluxes */
-# define IRON_LIMIT        /* Add iron as passive 11th tracer */
-# define IRON_RELAX
-# undef  IRON_RSIN
-# define BIO_SEDIMENT
-# define HOLLING_GRAZING
-# undef  IVLEV_EXPLICIT
-# undef  ANA_BIOSWRAD
-# undef  DIAGNOSTICS_BIO
-# undef  BIO_SEDIMENT
-#endif

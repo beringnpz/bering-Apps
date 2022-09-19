@@ -57,7 +57,10 @@ parallel=0
 clean=1
 dprint=0
 compiledebug=0
+compileserial=0
 compilevar="phys"
+compdate=$(date "+%Y%m%d%H%M")
+
 
 MY_CPP_FLAGS=
 
@@ -98,6 +101,17 @@ do
     -db )
       shift
       compiledebug=1
+      ;;
+      
+    -serial )
+      shift
+      compileserial=1
+      ;;
+      
+    -datestr )
+      shift
+      compdate="$1"
+      shift
       ;;
       
     * )
@@ -288,20 +302,29 @@ fi
 # Compile: Physics only
 #--------------------------------------------------------------------------
 
-# Compilation date string
-
-compdate=$(date "+%Y%m%d%H%M")
 
 # Turn on debugging if necessary
 
 if [ "$compiledebug" -eq 1 ]; then
-  USE_DEBUG=on
+  export USE_DEBUG=on
   rbase="romsG"
   debugstr="in debug mode"
 else
   export  USE_DEBUG=
   rbase="romsM"
   debugstr=""
+fi
+
+# Switch to serial
+
+if [ "$compileserial" -eq 1 ]; then
+  export USE_MPI=
+  export USE_MPIF90=
+  if [ "$compiledebug" -eq 1 ]; then
+    rbase="romsG"
+  else
+    rbase="romsS"
+  fi
 fi
 
 # Variant flags and details
@@ -316,7 +339,7 @@ case "$compilevar" in
     ;;
   bestnpz )
     longname="BEST_NPZ"
-    export MY_CPP_FLAGS="${MY_CPP_FLAGS} -DBEST_NPZ"
+    export MY_CPP_FLAGS="${MY_CPP_FLAGS} -DBEST_NPZ -DCARBON"
     ;;
   * )
     echo "Unknown variant"

@@ -106,9 +106,9 @@ GridsInLayer =  1
 ! shared-memory configurations used to determine tile horizontal range
 ! indices (Istr,Iend) and (Jstr,Jend), [1:Ngrids].
 
-       NtileI == 7                               ! I-direction partition
+       NtileI ==   7                               ! I-direction partition
 ! ORDER MATTERS HERE!
-       NtileJ == 20                               ! J-direction partition
+       NtileJ ==  20                               ! J-direction partition
 
 ! Set horizontal and vertical advection schemes for active and inert
 ! tracers. A different advection scheme is allowed for each tracer.
@@ -239,7 +239,7 @@ ad_VolCons(north) ==  F                            ! northern boundary
 
 ! Time-Stepping parameters.
 
-      NTIMES == 52560
+      NTIMES == 105120 ! 2 years
           DT == 600.0d0 ! 600 sec. = 10 min.
      NDTFAST == 40
 
@@ -277,7 +277,7 @@ ad_VolCons(north) ==  F                            ! northern boundary
 
      LDEFOUT == T
         NHIS == 1008   ! 1 week save interval
-     NDEFHIS == 0 !10080  ! 10 weeks new file interval
+     NDEFHIS == 10080  ! 10 weeks new file interval
       NTSAVG == 1      ! start averages from time step 1 
         NAVG == 1008   ! 1 week
      NDEFAVG == 10080  ! 10 weeks
@@ -285,8 +285,8 @@ ad_VolCons(north) ==  F                            ! northern boundary
        NAVG2 == 27     ! 4.5 hours (currently unused)
     NDEFAVG2 == 2700   ! 18.75 days (currently unused)
       NTSDIA == 1      ! start from time step 1
-        NDIA == 0      ! suppress diagnostics file (for now)
-     NDEFDIA == 0      ! no new file interval (single diagnostics file)
+        NDIA == 1008   ! 1 week save interval
+     NDEFDIA == 10080  ! 10 weeks new file interval
 
 ! Output tangent linear and adjoint models parameters.
 
@@ -446,8 +446,8 @@ LtracerSponge == T T                            ! temperature, salinity, inert
 ! origin for tidal forcing, and model reference time for output
 ! NetCDF units attribute.
 
-      DSTART =  25567.0d0                  ! days 
-  TIDE_START = -693962.0d0                 ! days
+      DSTART =  37257.0d0                  ! days (25567 = Jan 1, 1970), 37257 = Jan 1, 2002)
+  TIDE_START = -693962.0d0                 ! days (-693962 = Dec 31, 0000)
     TIME_REF =  19000101.0d0               ! yyyymmdd.dd
 
 ! Nudging/relaxation time scales, inverse scales will be computed
@@ -1001,7 +1001,7 @@ Dout(iTvdif) == T T     ! temp_vdiff, ...    vertical diffusion
 ! Input NetCDF file names, [1:Ngrids].
 
      GRDNAME == ./Input/Bering10K_extended_grid.nc
-     ININAME == ./Input/delta_44_his_00157_slice.nc
+     ININAME == ./Input/delta_46_his_00168.nc ! copy of delta_46_his_00168.nc from old hindcast (bering10k/output/hindcasts/npz_201904_delta30)
      ITLNAME == ocean_itl.nc
      IRPNAME == ocean_irp.nc
      IADNAME == ocean_iad.nc
@@ -1043,9 +1043,12 @@ Dout(iTvdif) == T T     ! temp_vdiff, ...    vertical diffusion
      CLMNAME == ocean_clim.nc
 
     NBCFILES == 1                          ! number of boundary files
-     BRYNAME == ./Input/2000/roms-cfs-bry-N30-2000.nc |
-                ./Input/2001/roms-cfs-bry-N30-2001.nc |
-                ./Input/2002/roms-cfs-bry-N30-2002.nc 
+     BRYNAME == ./Input/2001/roms-cfs-bryphys-N30-2001.nc |
+                ./Input/2002/roms-cfs-bryphys-N30-2002.nc |
+                ./Input/2003/roms-cfs-bryphys-N30-2003.nc |
+                ./Input/2004/roms-cfs-bryphys-N30-2004.nc |
+                ./Input/2005/roms-cfs-bryphys-N30-2005.nc |
+                ./Input/2006/roms-cfs-bryphys-N30-2006.nc 
 
 ! Input climatology nudging coefficients file name.
 
@@ -1080,33 +1083,52 @@ Dout(iTvdif) == T T     ! temp_vdiff, ...    vertical diffusion
 
     NFFILES == 10                          ! number of forcing files
 
-    FRCNAME == ./Input/2000/roms-cfs-atmos-Pair-2000.nc |
-               ./Input/2001/roms-cfs-atmos-Pair-2001.nc |
-               ./Input/2002/roms-cfs-atmos-Pair-2002.nc \
-               ./Input/2000/roms-cfs-atmos-Qair-2000.nc |
-               ./Input/2001/roms-cfs-atmos-Qair-2001.nc | 
-               ./Input/2002/roms-cfs-atmos-Qair-2002.nc \
-               ./Input/2000/roms-cfs-atmos-Tair-2000.nc |
-               ./Input/2001/roms-cfs-atmos-Tair-2001.nc |
-               ./Input/2002/roms-cfs-atmos-Tair-2002.nc \
-               ./Input/2000/roms-cfs-atmos-Uwind-2000.nc |
-               ./Input/2001/roms-cfs-atmos-Uwind-2001.nc |
-               ./Input/2002/roms-cfs-atmos-Uwind-2002.nc \
-               ./Input/2000/roms-cfs-atmos-Vwind-2000.nc |
-               ./Input/2001/roms-cfs-atmos-Vwind-2001.nc |
-               ./Input/2002/roms-cfs-atmos-Vwind-2002.nc \
-               ./Input/2000/roms-cfs-atmos-lwrad-2000.nc |
-               ./Input/2001/roms-cfs-atmos-lwrad-2001.nc |
-               ./Input/2002/roms-cfs-atmos-lwrad-2002.nc \
-               ./Input/2000/roms-cfs-atmos-rain-2000.nc |
-               ./Input/2001/roms-cfs-atmos-rain-2001.nc |
-               ./Input/2002/roms-cfs-atmos-rain-2002.nc \
-               ./Input/2000/roms-cfs-atmos-swrad-2000.nc |
-               ./Input/2001/roms-cfs-atmos-swrad-2001.nc |
-               ./Input/2002/roms-cfs-atmos-swrad-2002.nc \
-               ./Input/2000/runoff_kearney_2000.nc |
+    FRCNAME == ./Input/2002/roms-cfs-atmos-Pair-2002.nc |
+               ./Input/2003/roms-cfs-atmos-Pair-2003.nc |
+               ./Input/2004/roms-cfs-atmos-Pair-2004.nc |
+               ./Input/2005/roms-cfs-atmos-Pair-2005.nc |
+               ./Input/2006/roms-cfs-atmos-Pair-2006.nc \
+               ./Input/2002/roms-cfs-atmos-Qair-2002.nc |
+               ./Input/2003/roms-cfs-atmos-Qair-2003.nc |
+               ./Input/2004/roms-cfs-atmos-Qair-2004.nc |
+               ./Input/2005/roms-cfs-atmos-Qair-2005.nc |
+               ./Input/2006/roms-cfs-atmos-Qair-2006.nc \
+               ./Input/2002/roms-cfs-atmos-Tair-2002.nc |
+               ./Input/2003/roms-cfs-atmos-Tair-2003.nc |
+               ./Input/2004/roms-cfs-atmos-Tair-2004.nc |
+               ./Input/2005/roms-cfs-atmos-Tair-2005.nc |
+               ./Input/2006/roms-cfs-atmos-Tair-2006.nc \
+               ./Input/2002/roms-cfs-atmos-Uwind-2002.nc |
+               ./Input/2003/roms-cfs-atmos-Uwind-2003.nc |
+               ./Input/2004/roms-cfs-atmos-Uwind-2004.nc |
+               ./Input/2005/roms-cfs-atmos-Uwind-2005.nc |
+               ./Input/2006/roms-cfs-atmos-Uwind-2006.nc \
+               ./Input/2002/roms-cfs-atmos-Vwind-2002.nc |
+               ./Input/2003/roms-cfs-atmos-Vwind-2003.nc |
+               ./Input/2004/roms-cfs-atmos-Vwind-2004.nc |
+               ./Input/2005/roms-cfs-atmos-Vwind-2005.nc |
+               ./Input/2006/roms-cfs-atmos-Vwind-2006.nc \
+               ./Input/2002/roms-cfs-atmos-lwrad-2002.nc |
+               ./Input/2003/roms-cfs-atmos-lwrad-2003.nc |
+               ./Input/2004/roms-cfs-atmos-lwrad-2004.nc |
+               ./Input/2005/roms-cfs-atmos-lwrad-2005.nc |
+               ./Input/2006/roms-cfs-atmos-lwrad-2006.nc \
+               ./Input/2002/roms-cfs-atmos-rain-2002.nc |
+               ./Input/2003/roms-cfs-atmos-rain-2003.nc |
+               ./Input/2004/roms-cfs-atmos-rain-2004.nc |
+               ./Input/2005/roms-cfs-atmos-rain-2005.nc |
+               ./Input/2006/roms-cfs-atmos-rain-2006.nc \
+               ./Input/2002/roms-cfs-atmos-swrad-2002.nc |
+               ./Input/2003/roms-cfs-atmos-swrad-2003.nc |
+               ./Input/2004/roms-cfs-atmos-swrad-2004.nc |
+               ./Input/2005/roms-cfs-atmos-swrad-2005.nc |
+               ./Input/2006/roms-cfs-atmos-swrad-2006.nc \
                ./Input/2001/runoff_kearney_2001.nc |
-               ./Input/2002/runoff_kearney_2002.nc \ 
+               ./Input/2002/runoff_kearney_2002.nc |
+               ./Input/2003/runoff_kearney_2003.nc |
+               ./Input/2004/runoff_kearney_2004.nc |
+               ./Input/2005/runoff_kearney_2005.nc |
+               ./Input/2006/runoff_kearney_2006.nc \
                /gscratch/bumblereem/bering10k/input/generic/sss.clim.nc
 
 ! Output NetCDF file names, [1:Ngrids].
