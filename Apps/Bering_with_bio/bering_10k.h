@@ -220,7 +220,7 @@
 # define TS_C4VADVECTION
 #endif
 
-/* #define DEBUG_COBALT */
+/*#define DEBUG_COBALT */
 /*#define COBALT_CONSERVATION_TEST */
 /*#define COBALT_NOSOURCE */
 /*#define COBALT_DO_NOTHING  */
@@ -266,3 +266,6 @@
 # define ANA_SPFLUX        /* analytical surface passive tracers fluxes */
 #endif
 
+#ifdef BIO_BANAS
+# define OPTIC_MANIZZA
+#endif

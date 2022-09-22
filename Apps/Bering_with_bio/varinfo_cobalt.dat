@@ -1,432 +1,346 @@
-!  ROMS/TOMS IO NetCDF variables.
-!
-!========================================================= Hernan G. Arango ===
-!  Copyright (c) 2002-2020 The ROMS/TOMS Group                                !
-!    Licensed under a MIT/X style license                                     !
-!    See License_ROMS.txt                                                     !
-!==============================================================================
-!
-! Note! This file contains some Tclm entries for historic reasons.
-! These will no longer be read, but contain information on the
-! climatology nudging used in CoSine. Many fields are using the same
-! values since there is so little data.
-! For instance, idTclm(iS1_N) points to NH4.
-!
-!==============================================================================
-!
-!  This file contains all ROMS/TOMS Input/Output variables information.  It   !
-!  is used to manage NetCDF files.  The following information is needed for   !
-!  any IO variable:                                                           !
-!                                                                             !
-!       Vinfo(1)      Field variable name.                                    !
-!       Vinfo(2)      Long-name attribute.                                    !
-!       Vinfo(3)      Units attribute.                                        !
-!       Vinfo(4)      Field type attribute.                                   !
-!       Vinfo(5)      Associated time variable name.                          !
-!       Vinfo(6)      Index variable name used in information arrays.         !
-!       Vinfo(7)      Staggered C-grid variable type:                         !
-!                       'nulvar' => non-grided variable.                      !
-!                       'p2dvar' => 2D PHI-variable.                          !
-!                       'r2dvar' => 2D RHO-variable.                          !
-!                       'u2dvar' => 2D U-variable.                            !
-!                       'v2dvar' => 2D V-variable.                            !
-!                       'p3dvar' => 3D PHI-variable.                          !
-!                       'r3dvar' => 3D RHO-variable.                          !
-!                       'u3dvar' => 3D U-variable.                            !
-!                       'v3dvar' => 3D V-variable.                            !
-!                       'w3dvar' => 3D W-variable.                            !
-!                       'b3dvar' => 3D BED-sediment.                          !
-!                       'l3dvar' => 3D spectral light variable.               !
-!                       'l4dvar' => 4D spectral light variable.               !
-!       scale         Scale to convert input data to model units.             !
-!                                                                             !
-!  Enclose Vinfo variables with single quotes so this file can be read with   !
-!  a free format statement.  The  Vinfo(6) variable must be unique and case   !
-!  sensitive.  It is checked in "mod_ncparm" to set the appropiate ID index   !
-!  for the information arrays.                                                !
-!                                                                             !
-!  Notice that there is commented information for each variable  including    !
-!  input/output type and internal model units in brackets.  There are some    !
-!  variables that are special and require a particular units for Input and    !
-!  and output.                                                                !
-!                                                                             !
-!==============================================================================
-!
-! The value in Vinfo(5) here is used to name the unlimited dimension in all
-! output NetCDF files.  By default it is set to 'time'.  Alternatively, you
-! can use 'ocean_time' as dimension name so both variable and dimension
-! names are the same.  This facilitates processing in some NetCDF packages.
-! Notice that we use the prefix 'ocean' in the variable name to differentiate
-! between oceanic and atmospheric time clocks in fully coupled applications.
-!
-! Notice that salinity does not have physical units. A commented [PSU] can
-! be found below to indicate that the practical salinity scale was used to
-! determine conductivity. See,
-!
-! http://marine.rutgers.edu/po/users/forum/viewtopic.php?t=294
-!
-!------------------------------------------------------------------------------
-!  Git Repository
-!------------------------------------------------------------------------------
-!
-
-'$URL$'
-
-!
-!------------------------------------------------------------------------------
-!  Model state variables.
-!------------------------------------------------------------------------------
-!
-
-'ocean_time'                                       ! Input/Output
+'ocean_time'
   'time since initialization'
-  'second'                                         ! [s]
+  'second'
   'time, scalar, series'
   'ocean_time'
   'idtime'
   'nulvar'
   1.0d0
 
-'bath'                                             ! Input/Output
+'bath'
   'bathymetry'
-  'meter'                                          ! [m]
+  'meter'
   'bathymetry, scalar, series'
   'ocean_time'
   'idbath'
   'r2dvar'
   1.0d0
 
-'zeta'                                             ! Input/Output
+'zeta'
   'free-surface'
-  'meter'                                          ! [m]
+  'meter'
   'free-surface, scalar, series'
   'ocean_time'
   'idFsur'
   'r2dvar'
   1.0d0
 
-'ubar'                                             ! Input/Ouput
+'ubar'
   'vertically integrated u-momentum component'
-  'meter second-1'                                 ! [m/s]
+  'meter second-1'
   'ubar-velocity, scalar, series'
   'ocean_time'
   'idUbar'
   'u2dvar'
   1.0d0
 
-'vbar'                                             ! Input/Output
+'vbar'
   'vertically integrated v-momentum component'
-  'meter second-1'                                 ! [m/s]
+  'meter second-1'
   'vbar-velocity, scalar, series'
   'ocean_time'
   'idVbar'
   'v2dvar'
   1.0d0
 
-'ubar_eastward'                                    ! Ouput
+'ubar_eastward'
   'eastward vertically integrated momentum component at RHO-points'
-  'meter second-1'                                 ! [m/s]
+  'meter second-1'
   'ubar_eastward, scalar, series'
   'ocean_time'
   'idu2dE'
   'r2dvar'
   1.0d0
 
-'vbar_northward'                                   ! Output
+'vbar_northward'
   'northward vertically integrated momentum component at RHO-points'
-  'meter second-1'                                 ! [m/s]
+  'meter second-1'
   'vbar_northward, scalar, series'
   'ocean_time'
   'idv2dN'
   'r2dvar'
   1.0d0
 
-'u'                                                ! Input/Output
+'u'
   'u-momentum component'
-  'meter second-1'                                 ! [m/s]
+  'meter second-1'
   'u-velocity, scalar, series'
   'ocean_time'
   'idUvel'
   'u3dvar'
   1.0d0
 
-'v'                                                ! Input/Output
+'v'
   'v-momentum component'
-  'meter second-1'                                 ! [m/s]
+  'meter second-1'
   'v-velocity, scalar, series'
   'ocean_time'
   'idVvel'
   'v3dvar'
   1.0d0
 
-'u_eastward'                                       ! Output
+'u_eastward'
   'eastward momentum component at RHO-points'
-  'meter second-1'                                 ! [m/s]
+  'meter second-1'
   'u_eastward, scalar, series'
   'ocean_time'
   'idu3dE'
   'r3dvar'
   1.0d0
 
-'v_northward'                                      ! Output
+'v_northward'
   'northward momentum component at RHO-points'
-  'meter second-1'                                 ! [m/s]
+  'meter second-1'
   'v_northward, scalar, series'
   'ocean_time'
   'idv3dN'
   'r3dvar'
   1.0d0
 
-'u_sur'                                            ! Output
+'u_sur'
   'model surface u-momentum component'
-  'meter second-1'                                 ! [m/s]
+  'meter second-1'
   'u_sur, scalar, series'
   'ocean_time'
   'idUsur'
   'u2dvar'
   1.0d0
 
-'v_sur'                                            ! Output
+'v_sur'
   'model surface v-momentum component'
-  'meter second-1'                                 ! [m/s]
+  'meter second-1'
   'v_sur, scalar, series'
   'ocean_time'
   'idVsur'
   'v2dvar'
   1.0d0
 
-'u_sur_eastward'                                   ! Output
+'u_sur_eastward'
   'model surface eastward momentum component at RHO-points'
-  'meter second-1'                                 ! [m/s]
+  'meter second-1'
   'u_sur_eastward, scalar, series'
   'ocean_time'
   'idUsuE'
   'r2dvar'
   1.0d0
 
-'v_sur_northward'                                  ! Output
+'v_sur_northward'
   'model surface northward momentum component at RHO-points'
-  'meter second-1'                                 ! [m/s]
+  'meter second-1'
   'v_sur_northward, scalar, series'
   'ocean_time'
   'idVsuN'
   'r2dvar'
   1.0d0
 
-'w'                                                ! Output
+'w'
   'vertical momentum component'
-  'meter second-1'                                 ! [m/s]
+  'meter second-1'
   'w-velocity, scalar, series'
   'ocean_time'
   'idWvel'
   'w3dvar'
   1.0d0
 
-'omega'                                            ! Output
+'omega'
   'S-coordinate vertical momentum component'
-  'meter3 second-1'                                ! [m3/s]
+  'meter3 second-1'
   'omega, scalar, series'
   'ocean_time'
   'idOvel'
   'w3dvar'
   1.0d0
 
-'omega'                                            ! Output
+'omega'
   'S-coordinate vertical momentum component'
-  'meter3 second-1'                                ! [m3/s]
+  'meter3 second-1'
   'omega, scalar, series'
   'ocean_time'
   'idOclm'
   'w3dvar'
   1.0d0
 
-'rho'                                              ! Output
+'rho'
   'density anomaly'
-  'kilogram meter-3'                               ! [kg/m3]
+  'kilogram meter-3'
   'density, scalar, series'
   'ocean_time'
   'idDano'
   'r3dvar'
   1.0d0
 
-'temp'                                             ! Input/Output
+'temp'
   'potential temperature'
-  'Celsius'                                        ! [Celsius]
+  'Celsius'
   'temperature, scalar, series'
   'ocean_time'
   'idTvar(itemp)'
   'r3dvar'
   1.0d0
 
-'salt'                                             ! Input/Output
+'salt'
   'salinity'
-  'nondimensional'                                 ! [PSU]
+  'nondimensional'
   'salinity, scalar, series'
   'ocean_time'
   'idTvar(isalt)'
   'r3dvar'
   1.0d0
 
-'temp_sur'                                         ! Output
+'temp_sur'
   'model surface potential temperature'
-  'Celsius'                                        ! [Celsius]
+  'Celsius'
   'temp_sur, scalar, series'
   'ocean_time'
   'idsurT(itemp)'
   'r2dvar'
   1.0d0
 
-'salt_sur'                                         ! Output
+'salt_sur'
   'model surface salinity'
-  'nondimensional'                                 ! [PSU]
+  'nondimensional'
   'salinity, scalar, series'
   'ocean_time'
   'idsurT(isalt)'
   'r2dvar'
   1.0d0
 
-'z_rho'                                            ! Output
+'z_rho'
   'depth of RHO-points'
-  'meter'                                          ! [meter]
+  'meter'
   'z_rho, scalar, series'
   'ocean_time'
   'idpthR'
   'r3dvar'
   1.0d0
 
-'z_u'                                              ! Output
+'z_u'
   'depth of U-points'
-  'meter'                                          ! [meter]
+  'meter'
   'z_u, scalar, series'
   'ocean_time'
   'idpthU'
   'u3dvar'
   1.0d0
 
-'z_v'                                              ! Output
+'z_v'
   'depth of V-points'
-  'meter'                                          ! [meter]
+  'meter'
   'z_v, scalar, series'
   'ocean_time'
   'idpthV'
   'v3dvar'
   1.0d0
 
-'z_w'                                              ! Output
+'z_w'
   'depth of W-points'
-  'meter'                                          ! [meter]
+  'meter'
   'z_w, scalar, series'
   'ocean_time'
   'idpthW'
   'w3dvar'
   1.0d0
 
-'EBF'                                           ! Output
+'EBF'
   'Ekman buoyancy flux at PSI-points'
-  'Watt kg-1'                                   ! [m/s]
+  'Watt kg-1'
   'EBF, scalar, series'
   'ocean_time'
   'idEBF'
   'p2dvar'
   1.0d0
 
-'strain'                                           ! Output
+'strain'
   'strain'
-  'second-1'                                       ! [1/s]
+  'second-1'
   'strain, scalar, series'
   'ocean_time'
   'idStr'
   'p3dvar'
   1.0d0
 
-'strain_sur'                                       ! Output
+'strain_sur'
   'surface strain'
-  'second-1'                                       ! [1/s]
+  'second-1'
   'strain_sur, scalar, series'
   'ocean_time'
   'idStr2'
   'p2dvar'
   1.0d0
 
-'rvort_sur'                                        ! Output
+'rvort_sur'
   'surface relative vorticity'
-  'second-1'                                       ! [1/s]
+  'second-1'
   'rvort_sur, scalar, series'
   'ocean_time'
   'idRVsu'
   'p2dvar'
   1.0d0
 
-'pvort_sur'                                        ! Output
+'pvort_sur'
   'surface potential vorticity'
-  'meter-1 second-1'                               ! [1/m/s]
+  'meter-1 second-1'
   'pvort_sur, scalar, series'
   'ocean_time'
   'idPVsu'
   'p2dvar'
   1.0d0
 
-'pvortk_sur'                                        ! Output
+'pvortk_sur'
   'surface potential vorticity, k component'
-  'meter-1 second-1'                               ! [1/m/s]
+  'meter-1 second-1'
   'pvortk_sur, scalar, series'
   'ocean_time'
   'idPVKsu'
   'p2dvar'
   1.0d0
 
-'pvortk'                                       ! Input/Output
+'pvortk'
   'potential vorticity, k component'
-  'meter-1 second-1'                               ! [1/m/s]
+  'meter-1 second-1'
   'pvorticity k component, scalar, series'
   'ocean_time'
   'id3dPVK'
   'p3dvar'
   1.0d0
 
-'pvorti'                                       ! Input/Output
+'pvorti'
   'potential vorticity, i component'
-  'meter-1 second-1'                               ! [1/m/s]
+  'meter-1 second-1'
   'pvorticity, i component, scalar, series'
   'ocean_time'
   'id3dPVI'
   'p3dvar'
   1.0d0
 
-'pvortj'                                       ! Input/Output
+'pvortj'
   'potential vorticity, j component'
-  'meter-1 second-1'                               ! [1/m/s]
+  'meter-1 second-1'
   'pvorticity, j component, scalar, series'
   'ocean_time'
   'id3dPVJ'
   'p3dvar'
   1.0d0
 
-'pvorti_sur'                                        ! Output
+'pvorti_sur'
   'surface potential vorticity, i component'
-  'meter-1 second-1'                               ! [1/m/s]
+  'meter-1 second-1'
   'pvorti_sur, scalar, series'
   'ocean_time'
   'idPVIsu'
   'p2dvar'
   1.0d0
 
-'pvortj_sur'                                        ! Output
+'pvortj_sur'
   'surface potential vorticity, j component'
-  'meter-1 second-1'                               ! [1/m/s]
+  'meter-1 second-1'
   'pvortj_sur, scalar, series'
   'ocean_time'
   'idPVJsu'
   'p2dvar'
   1.0d0
 
-!
-!------------------------------------------------------------------------------
-!  Wet/dry masks.
-!------------------------------------------------------------------------------
-!
-
-'wetdry_mask_psi'                                  ! Input/Output
+'wetdry_mask_psi'
   'wet/dry mask on PSI-points'
   'nondimensional'
   'wetdry_mask_psi, scalar, series'
@@ -435,7 +349,7 @@
   'p2dvar'
   1.0d0
 
-'wetdry_mask_rho'                                  ! Input/Output
+'wetdry_mask_rho'
   'wet/dry mask on RHO-points'
   'nondimensional'
   'wetdry_mask_rho, scalar, series'
@@ -444,7 +358,7 @@
   'r2dvar'
   1.0d0
 
-'wetdry_mask_u'                                    ! Input/Output
+'wetdry_mask_u'
   'wet/dry mask on U-points'
   'nondimensional'
   'wetdry_mask_u, scalar, series'
@@ -453,7 +367,7 @@
   'u2dvar'
   1.0d0
 
-'wetdry_mask_v'                                    ! Input/Output
+'wetdry_mask_v'
   'wet/dry mask on V-points'
   'nondimensional'
   'wetdry_mask_v, scalar, series'
@@ -462,419 +376,401 @@
   'v2dvar'
   1.0d0
 
-!
-!------------------------------------------------------------------------------
-!  Detided variables
-!------------------------------------------------------------------------------
-!
-
-'CosW'                                             ! Input/Output
+'CosW'
   'time-accumulated COS(omega(k)*t)'
-  'radians'                                        ! [radians]
+  'radians'
   'CosW, scalar'
   'tide_period'
   'idCosW'
   'nulvar'
   1.0d0
 
-'SinW'                                             ! Input/Output
+'SinW'
   'time-accumulated SIN(omega(k)*t)'
-  'radians'                                        ! [radians]
+  'radians'
   'SinW, scalar'
   'tide_period'
   'idSinW'
   'nulvar'
   1.0d0
 
-'CosWCosW'                                         ! Input/Output
+'CosWCosW'
   'time-accumulated COS(omega(k)*t)*COS(omega(l)*t) matrix'
-  'radians'                                        ! [radians]
+  'radians'
   'CosWCosW, scalar'
   'tide_period'
   'idCos2'
   'nulvar'
   1.0d0
 
-'SinWSinW'                                         ! Input/Output
+'SinWSinW'
   'time-accumulated SIN(omega(k)*t)*SIN(omega(l)*t) matrix'
-  'radians'                                        ! [radians]
+  'radians'
   'SinWSinW, scalar'
   'tide_period'
   'idSin2'
   'nulvar'
   1.0d0
 
-'SinWCosW'                                         ! Input/Output
+'SinWCosW'
   'time-accumulated SIN(omega(k)*t)*COS(omega(l)*t) matrix'
-  'radians'                                        ! [radians]
+  'radians'
   'SinWCosW, scalar'
   'tide_period'
   'idSWCW'
   'nulvar'
   1.0d0
 
-'zeta_tide'                                        ! Input/Output
+'zeta_tide'
   'time-accumulated free-surface tide harmonics'
-  'meter'                                          ! [m]
+  'meter'
   'zeta_tide, scalar'
   'ocean_time'
   'idFsuH'
   'r2dvar'
   1.0d0
 
-'zeta_detided'                                     ! Output
+'zeta_detided'
   'detided free-surface'
-  'meter'                                          ! [m]
+  'meter'
   'zeta_detided, scalar, series'
   'ocean_time'
   'idFsuD'
   'r2dvar'
   1.0d0
 
-'ubar_tide'                                        ! Input/Ouput
+'ubar_tide'
   'time-accumulated 2D u-momentum tide harmonics'
-  'meter second-1'                                 ! [m/s]
+  'meter second-1'
   'ubar_tide, scalar'
   'ocean_time'
   'idu2dH'
   'u2dvar'
   1.0d0
 
-'ubar_detided'                                     ! Ouput
+'ubar_detided'
   'detided 2D u-momentum'
-  'meter second-1'                                 ! [m/s]
+  'meter second-1'
   'ubar_detided, scalar, series'
   'ocean_time'
   'idu2dD'
   'u2dvar'
   1.0d0
 
-'vbar_tide'                                        ! Input/Output
+'vbar_tide'
   'time-accumulated 2D v-momentum tide harmonics'
-  'meter second-1'                                 ! [m/s]
+  'meter second-1'
   'vbar_tide, scalar'
   'ocean_time'
   'idv2dH'
   'v2dvar'
   1.0d0
 
-'vbar_detided'                                     ! Output
+'vbar_detided'
   'detided 2D v-momentum'
-  'meter second-1'                                 ! [m/s]
+  'meter second-1'
   'vbar_detided, scalar, series'
   'ocean_time'
   'idv2dD'
   'v2dvar'
   1.0d0
 
-'u_tide'                                           ! Input/Output
+'u_tide'
   'time-accumulated 3D u-momentum tide harmonics'
-  'meter second-1'                                 ! [m/s]
+  'meter second-1'
   'u_tide, scalar'
   'ocean_time'
   'idu3dH'
   'u3dvar'
   1.0d0
 
-'u_detided'                                        ! Output
+'u_detided'
   'detided 3D u-momentum'
-  'meter second-1'                                 ! [m/s]
+  'meter second-1'
   'u_detided, scalar, series'
   'ocean_time'
   'idu3dD'
   'u3dvar'
   1.0d0
 
-'v_tide'                                           ! Input/Output
+'v_tide'
   'time-accumulated 3D v-momentum tide harmonics'
-  'meter second-1'                                 ! [m/s]
+  'meter second-1'
   'v_tide, scalar'
   'ocean_time'
   'idv3dH'
   'v3dvar'
   1.0d0
 
-'v_detided'                                        ! Output
+'v_detided'
   'detided 3D v-momentum'
-  'meter second-1'                                 ! [m/s]
+  'meter second-1'
   'v_detided, scalar, series'
   'ocean_time'
   'idv3dD'
   'v3dvar'
   1.0d0
 
-'temp_tide'                                        ! Input/Output
+'temp_tide'
   'time-accumulated potential temperature tide harmonics'
-  'Celsius'                                        ! [Celsius]
+  'Celsius'
   'temp_tide, scalar'
   'ocean_time'
   'idTrcH(itemp)'
   'r3dvar'
   1.0d0
 
-'temp_detided'                                     ! Output
+'temp_detided'
   'detided potential temperature'
-  'Celsius'                                        ! [Celsius]
+  'Celsius'
   'v_detided, scalar, series'
   'ocean_time'
   'idTrcD(itemp)'
   'r3dvar'
   1.0d0
 
-'temp_tide'                                        ! Input/Output
+'temp_tide'
   'time-accumulated potential temperature tide harmonics'
-  'Celsius'                                        ! [Celsius]
+  'Celsius'
   'temp_tide, scalar'
   'ocean_time'
   'idTrcH(itemp)'
   'r3dvar'
   1.0d0
 
-'temp_detided'                                     ! Output
+'temp_detided'
   'detided potential temperature'
-  'Celsius'                                        ! [Celsius]
+  'Celsius'
   'temp_detided, scalar, series'
   'ocean_time'
   'idTrcD(itemp)'
   'r3dvar'
   1.0d0
 
-'salt_tide'                                        ! Input/Output
+'salt_tide'
   'time-accumulated salinity tide harmonics'
-  'nondimensional'                                 ! [PSU]
+  'nondimensional'
   'salt_tide, scalar'
   'ocean_time'
   'idTrcH(isalt)'
   'r3dvar'
   1.0d0
 
-'salt_detided'                                     ! Output
+'salt_detided'
   'detided potential temperature'
-  'nondimensional'                                 ! [PSU]
+  'nondimensional'
   'salt_detided, scalar, series'
   'ocean_time'
   'idTrcD(isalt)'
   'r3dvar'
   1.0d0
 
-!
-!------------------------------------------------------------------------------
-!  Momentum stress variables.
-!------------------------------------------------------------------------------
-!
-
-'sustr'                                            ! Input/Output
+'sustr'
   'surface u-momentum stress'
-  'newton meter-2'                                 ! Input:  [N/m2]
-  'surface u-momentum stress, scalar, series'      ! [m2/s2]
-  'sms_time'                                       ! Output: [N/m2]
+  'newton meter-2'
+  'surface u-momentum stress, scalar, series'
+  'sms_time'
   'idUsms'
   'u2dvar'
   1.0d0
 
-'svstr'                                            ! Input/Output
+'svstr'
   'surface v-momentum stress'
-  'newton meter-2'                                 ! Input:  [N/m2]
-  'surface v-momentum stress, scalar, series'      ! [m2/s2]
-  'sms_time'                                       ! Output: [N/m2]
+  'newton meter-2'
+  'surface v-momentum stress, scalar, series'
+  'sms_time'
   'idVsms'
   'v2dvar'
   1.0d0
 
-'bustr'                                            ! Output
+'bustr'
   'bottom u-momentum stress'
-  'newton meter-2'                                 ! [m2/s2]
-  'bottom u-momentum stress, scalar, series'       ! Output: [N/m2]
+  'newton meter-2'
+  'bottom u-momentum stress, scalar, series'
   'bms_time'
   'idUbms'
   'u2dvar'
   1.0d0
 
-'bvstr'                                            ! Output
+'bvstr'
   'bottom v-momentum stress'
-  'newton meter-2'                                 ! [m2/s2]
-  'bottom v-momentum stress, scalar, series'       ! Output: [N/m2]
+  'newton meter-2'
+  'bottom v-momentum stress, scalar, series'
   'bms_time'
   'idVbms'
   'v2dvar'
   1.0d0
 
-'bustrc'                                           ! Output
+'bustrc'
   'current-induced, bottom u-momentum stress'
-  'newton meter-2'                                 ! [m2/s2]
-  'bottom u-momentum stress, scalar, series'       ! Output: [N/m2]
+  'newton meter-2'
+  'bottom u-momentum stress, scalar, series'
   'bms_time'
   'idUbrs'
   'r2dvar'
   1.0d0
 
-'bvstrc'                                           ! Ouput
+'bvstrc'
   'current-induced, bottom v-momentum stress'
-  'newton meter-2'                                 ! [m2/s2]
-  'bottom v-momentum stress, scalar, series'       ! Output: [N/m2]
+  'newton meter-2'
+  'bottom v-momentum stress, scalar, series'
   'bms_time'
   'idVbrs'
   'r2dvar'
   1.0d0
 
-'bustrw'                                           ! Output
+'bustrw'
   'wind-induced, bottom u-momentum stress'
-  'newton meter-2'                                 ! [m2/s2]
-  'bottom u-wave stress, scalar, series'           ! Output: [N/m2]
+  'newton meter-2'
+  'bottom u-wave stress, scalar, series'
   'ocean_time'
   'idUbws'
   'r2dvar'
   1.0d0
 
-'bvstrw'                                           ! Output
+'bvstrw'
   'wind-induced, bottom v-momentum stress'
-  'newton meter-2'                                 ! [m2/s2]
-  'bottom v-wave stress, scalar, series'           ! Output: [N/m2]
+  'newton meter-2'
+  'bottom v-wave stress, scalar, series'
   'ocean_time'
   'idVbws'
   'r2dvar'
   1.0d0
 
-'bustrcwmax'                                       ! Output
+'bustrcwmax'
   'maximum wind and current, bottom u-wave stress'
-  'newton meter-2'                                 ! [m2/s2]
-  'bustrcwmax, scalar, series'                     ! Output: [N/m2]
+  'newton meter-2'
+  'bustrcwmax, scalar, series'
   'ocean_time'
   'idUbcs'
   'u2dvar'
   1.0d0
 
-'bvstrcwmax'                                       ! Output
+'bvstrcwmax'
   'maximum wind and current, bottom v-wave stress'
-  'newton meter-2'                                 ! [m2/s2]
-  'bustrcwmax, scalar, series'                     ! Output: [N/m2]
+  'newton meter-2'
+  'bustrcwmax, scalar, series'
   'ocean_time'
   'idVbcs'
   'v2dvar'
   1.0d0
 
-'Ubot'                                             ! Output
+'Ubot'
   'wind-induced, bed wave orbital u-velocity'
-  'meter second-1'                                 ! [m/s]
+  'meter second-1'
   'bed wave u-velocity, scalar, series'
   'ocean_time'
   'idUbot'
   'r2dvar'
   1.0d0
 
-'Vbot'                                             ! Output
+'Vbot'
   'wind-induced, bed wave orbital v-velocity'
-  'meter second-1'                                 ! [m/s]
+  'meter second-1'
   'bed wave v-velocity, scalar, series'
   'ocean_time'
   'idVbot'
   'r2dvar'
   1.0d0
 
-'Ur'                                               ! Output
+'Ur'
   'bottom u-momentum above bed'
-  'meter second-1'                                 ! [m/s]
+  'meter second-1'
   'bottom u-velocity, scalar, series'
   'ocean_time'
   'idUbur'
   'r2dvar'
   1.0d0
 
-'Vr'                                               ! Output
+'Vr'
   'bottom v-momentum above bed'
-  'meter second-1'                                 ! [m/s]
+  'meter second-1'
   'bottom v-velocity, scalar, series'
   'ocean_time'
   'idVbvr'
   'r2dvar'
   1.0d0
-!
-!------------------------------------------------------------------------------
-!  Tracer flux variables.
-!------------------------------------------------------------------------------
-!
 
-'shflux'                                           ! Input/Output
+'shflux'
   'surface net heat flux'
-  'watt meter-2'                                   ! Input:  [Watt/m2]
-  'surface heat flux, scalar, series'              ! [Celsius m/s]
-  'shf_time'                                       ! Output: [Watt/m2]
+  'watt meter-2'
+  'surface heat flux, scalar, series'
+  'shf_time'
   'idTsur(itemp)'
   'r2dvar'
   1.0d0
 
-'dQdSST'                                           ! Input
+'dQdSST'
   'surface net heat flux sensitivity to SST'
-  'watt meter-2 Celsius-1'                         ! Input:  [Watt/m2]
-  'dQdSST, scalar, series'                         ! [Celsius m/s]
+  'watt meter-2 Celsius-1'
+  'dQdSST, scalar, series'
   'sst_time'
   'iddQdT'
   'r2dvar'
   1.0d0
 
-'ssflux'                                           ! Output
+'ssflux'
   'surface net salt flux, (E-P)*SALT'
-  'meter second-1'                                 ! [PSU m/s]
+  'meter second-1'
   'surface net salt flux, scalar, series'
   'ssf_time'
   'idTsur(isalt)'
   'r2dvar'
   1.0d0
 
-'swflux'                                           ! Input
+'swflux'
   'surface net freswater flux, (E-P)'
-  'centimeter day-1'                               ! Input:  [m/s]
-  'surface net salt flux, scalar, series'          ! [PSU m/s]
+  'centimeter day-1'
+  'surface net salt flux, scalar, series'
   'swf_time'
   'idsfwf'
   'r2dvar'
-  1.157407d-7                                      ! 0.01/86400
+  1.157407d-7
 
-'EminusP'                                          ! Input/Output
+'EminusP'
   'bulk_flux surface net freswater flux, (E-P)'
-  'meter second-1'                                 ! computed by NLM ROMS
-  'EminusP, scalar, series'                        ! bulk_flux.F and
-  'ocean_time'                                     ! needed in adjoint-based
-  'idEmPf'                                         ! applications
+  'meter second-1'
+  'EminusP, scalar, series'
+  'ocean_time'
+  'idEmPf'
   'r2dvar'
   1.0d0
 
-'SSSf'                                             ! Input/Output
+'SSSf'
   'surface net freswater flux from salinity nudging'
-  'meter second-1'                                 ! computed by NLM ROMS
-  'SSSf, scalar, series'                           ! bulk_flux.F and
-  'ocean_time'                                     ! needed in adjoint-based
-  'idSSSf'                                         ! applications
+  'meter second-1'
+  'SSSf, scalar, series'
+  'ocean_time'
+  'idSSSf'
   'r2dvar'
   1.0d0
 
-'fastice'                                          ! Input/Output
+'fastice'
   'landfast ice extent'
-  '1'                                              !
-  'FastIce, scalar, series'                        !
-  'ocean_time'                                     !
-  'idFastIce'                                      !
+  '1'
+  'FastIce, scalar, series'
+  'ocean_time'
+  'idFastIce'
   'r2dvar'
   1.0d0
 
-'bhflux'                                           ! Input
+'bhflux'
   'bottom net heat flux'
-  'watt meter-2'                                   ! Input:  [Watt/m2]
-  'bottom heat flux, scalar, series'               ! [Celsius m/s]
+  'watt meter-2'
+  'bottom heat flux, scalar, series'
   'bhf_time'
   'idTbot(itemp)'
   'r2dvar'
   1.0d0
 
-'bwflux'                                           ! Input
+'bwflux'
   'bottom net freshwater flux'
-  'centimeter day-1'                               ! Input:  [m/s]
-  'bottom water flux, scalar, series'              ! [PSU m/s]
+  'centimeter day-1'
+  'bottom water flux, scalar, series'
   'bwf_time'
   'idTbot(isalt)'
   'r2dvar'
-  1.157407d-7                                      ! 0.01/86400
-
+  1.157407d-7
 
 'Runoff'
   'Fresh water runoff from land'
@@ -966,1015 +862,972 @@
   'r2dvar'
   1.0d0
 
-!
-!------------------------------------------------------------------------------
-!  Mixing variables.
-!------------------------------------------------------------------------------
-!
-
-'tke'                                              ! Output
+'tke'
   'turbulent kinetic energy'
-  'meter2 second-2'                                ! [m2/s2]
+  'meter2 second-2'
   'tke, scalar, series'
   'ocean_time'
   'idMtke'
   'w3dvar'
   1.0d0
 
-'gls'                                              ! Output
+'gls'
   'turbulent generic length scale'
-  'meter3 second-2'                                ! [m3/s2]
+  'meter3 second-2'
   'gls, scalar, series'
   'ocean_time'
   'idMtls'
   'w3dvar'
   1.0d0
 
-'Lscale'                                           ! Output
+'Lscale'
   'vertical mixing turbulent length scale'
-  'meter'                                          ! [m]
+  'meter'
   'Lscale, scalar, series'
   'ocean_time'
   'idVmLS'
   'w3dvar'
   1.0d0
 
-'AKv'                                              ! Input/Output
+'AKv'
   'vertical viscosity coefficient'
-  'meter2 second-1'                                ! [m2/s]
+  'meter2 second-1'
   'AKv, scalar, series'
   'ocean_time'
   'idVvis'
   'w3dvar'
   1.0d0
 
-'AKt'                                              ! Input/Output
+'AKt'
   'temperature vertical diffusion coefficient'
-  'meter2 second-1'                                ! [m2/s]
+  'meter2 second-1'
   'AKt, scalar, series'
   'ocean_time'
   'idTdif'
   'w3dvar'
   1.0d0
 
-'AKs'                                              ! Input/Output
+'AKs'
   'salinity vertical diffusion coefficient'
-  'meter2 second-1'                                ! [m2/s]
+  'meter2 second-1'
   'AKs, scalar, series'
   'ocean_time'
   'idSdif'
   'w3dvar'
   1.0d0
 
-'AKk'                                              ! Input/Output
+'AKk'
   'Turbulent kinetic energy vertical diffusion coefficient'
-  'meter2 second-1'                                ! [m2/s]
+  'meter2 second-1'
   'AKk, scalar, series'
   'ocean_time'
   'idVmKK'
   'w3dvar'
   1.0d0
 
-'AKp'                                              ! Input/Output
+'AKp'
   'Turbulent length scale vertical diffusion coefficient'
-  'meter2 second-1'                                ! [m2/s]
+  'meter2 second-1'
   'AKp, scalar, series'
   'ocean_time'
   'idVmKP'
   'w3dvar'
   1.0d0
 
-'ghat_temp'                                        ! Input/Output
+'ghat_temp'
   'potential temperature nonlocal transport'
-  'nondimensional'                                 ! [nondimensional]
+  'nondimensional'
   'ghat_temp, scalar, series'
   'ocean_time'
   'idGhat(itemp)'
   'w3dvar'
   1.0d0
 
-'ghat_salt'                                        ! Input/Output
+'ghat_salt'
   'salinity nonlocal transport'
-  'nondimensional'                                 ! {nondimensional]
+  'nondimensional'
   'ghat_salt, scalar, series'
   'ocean_time'
   'idGhat(isalt)'
   'w3dvar'
   1.0d0
 
-!
-!------------------------------------------------------------------------------
-!  Boundary variables.
-!------------------------------------------------------------------------------
-!
-
-'zeta_west'                                        ! Input
+'zeta_west'
   'free-surface western boundary condition'
-  'meter'                                          ! [m]
+  'meter'
   'zeta_west, scalar, series'
   'ocean_time'
   'idZbry(iwest)'
   'nulvar'
   1.0d0
 
-'zeta_east'                                        ! Input
+'zeta_east'
   'free-surface eastern boundary condition'
-  'meter'                                          ! [m]
+  'meter'
   'zeta_east, scalar, series'
   'ocean_time'
   'idZbry(ieast)'
   'nulvar'
   1.0d0
 
-'zeta_south'                                       ! Input
+'zeta_south'
   'free-surface southern boundary condition'
-  'meter'                                          ! [m]
+  'meter'
   'zeta_south, scalar, series'
   'ocean_time'
   'idZbry(isouth)'
   'nulvar'
   1.0d0
 
-'zeta_north'                                       ! Input
+'zeta_north'
   'free-surface northern boundary condition'
-  'meter'                                          ! [m]
+  'meter'
   'zeta_north, scalar, series'
   'ocean_time'
   'idZbry(inorth)'
   'nulvar'
   1.0d0
 
-'ubar_west'                                        ! Input
+'ubar_west'
   '2D u-momentum western boundary condition'
-  'meter second-1'                                 ! [m/s]
+  'meter second-1'
   'ubar_west, scalar, series'
   'ocean_time'
   'idU2bc(iwest)'
   'nulvar'
   1.0d0
 
-'ubar_east'                                        ! Input
+'ubar_east'
   '2D u-momentum eastern boundary condition'
-  'meter second-1'                                 ! [m/s]
+  'meter second-1'
   'ubar_east, scalar, series'
   'ocean_time'
   'idU2bc(ieast)'
   'nulvar'
   1.0d0
 
-'ubar_south'                                       ! Input
+'ubar_south'
   '2D u-momentum southern boundary condition'
-  'meter second-1'                                 ! [m/s]
+  'meter second-1'
   'ubar_south, scalar, series'
   'ocean_time'
   'idU2bc(isouth)'
   'nulvar'
   1.0d0
 
-'ubar_north'                                       ! Input
+'ubar_north'
   '2D u-momentum northern boundary condition'
-  'meter second-1'                                 ! [m/s]
+  'meter second-1'
   'ubar_north, scalar, series'
   'ocean_time'
   'idU2bc(inorth)'
   'nulvar'
   1.0d0
 
-'vbar_west'                                        ! Input
+'vbar_west'
   '2D v-momentum western boundary condition'
-  'meter second-1'                                 ! [m/s]
+  'meter second-1'
   'vbar_west, scalar, series'
   'ocean_time'
   'idV2bc(iwest)'
   'nulvar'
   1.0d0
 
-'vbar_east'                                        ! Input
+'vbar_east'
   '2D v-momentum eastern boundary condition'
-  'meter second-1'                                 ! [m/s]
+  'meter second-1'
   'vbar_east, scalar, series'
   'ocean_time'
   'idV2bc(ieast)'
   'nulvar'
   1.0d0
 
-'vbar_south'                                       ! Input
+'vbar_south'
   '2D v-momentum southern boundary condition'
-  'meter second-1'                                 ! [m/s]
+  'meter second-1'
   'vbar_south, scalar, series'
   'ocean_time'
   'idV2bc(isouth)'
   'nulvar'
   1.0d0
 
-'vbar_north'                                       ! Input
+'vbar_north'
   '2D v-momentum northern boundary condition'
-  'meter second-1'                                 ! [m/s]
+  'meter second-1'
   'vbar_north, scalar, series'
   'ocean_time'
   'idV2bc(inorth)'
   'nulvar'
   1.0d0
 
-'u_west'                                           ! Input
+'u_west'
   '3D u-momentum western boundary condition'
-  'meter second-1'                                 ! [m/s]
+  'meter second-1'
   'u_west, scalar, series'
   'ocean_time'
   'idU3bc(iwest)'
   'nulvar'
   1.0d0
 
-'u_east'                                           ! Input
+'u_east'
   '3D u-momentum eastern boundary condition'
-  'meter second-1'                                 ! [m/s]
+  'meter second-1'
   'u_east, scalar, series'
   'ocean_time'
   'idU3bc(ieast)'
   'nulvar'
   1.0d0
 
-'u_south'                                          ! Input
+'u_south'
   '3D u-momentum southern boundary condition'
-  'meter second-1'                                 ! [m/s]
+  'meter second-1'
   'u_south, scalar, series'
   'ocean_time'
   'idU3bc(isouth)'
   'nulvar'
   1.0d0
 
-'u_north'                                          ! Input
+'u_north'
   '3D u-momentum northern boundary condition'
-  'meter second-1'                                 ! [m/s]
+  'meter second-1'
   'u_north, scalar, series'
   'ocean_time'
   'idU3bc(inorth)'
   'nulvar'
   1.0d0
 
-'v_west'                                           ! Input
+'v_west'
   '3D v-momentum western boundary condition'
-  'meter second-1'                                 ! [m/s]
+  'meter second-1'
   'v_west, scalar, series'
   'ocean_time'
   'idV3bc(iwest)'
   'nulvar'
   1.0d0
 
-'v_east'                                           ! Input
+'v_east'
   '3D v-momentum eastern boundary condition'
-  'meter second-1'                                 ! [m/s]
+  'meter second-1'
   'v_east, scalar, series'
   'ocean_time'
   'idV3bc(ieast)'
   'nulvar'
   1.0d0
 
-'v_south'                                          ! Input
+'v_south'
   '3D v-momentum southern boundary condition'
-  'meter second-1'                                 ! [m/s]
+  'meter second-1'
   'v_south, scalar, series'
   'ocean_time'
   'idV3bc(isouth)'
   'nulvar'
   1.0d0
 
-'v_north'                                          ! Input
+'v_north'
   '3D v-momentum northern boundary condition'
-  'meter second-1'                                 ! [m/s]
+  'meter second-1'
   'v_north, scalar, series'
   'ocean_time'
   'idV3bc(inorth)'
   'nulvar'
   1.0d0
 
-'temp_west'                                        ! Input
+'temp_west'
   'temperature western boundary condition'
-  'Celsius'                                        ! [Celsius]
+  'Celsius'
   'temp_west, scalar, series'
   'ocean_time'
   'idTbry(iwest,itemp)'
   'nulvar'
   1.0d0
 
-'temp_east'                                        ! Input
+'temp_east'
   'temperature eastern boundary condition'
-  'Celsius'                                        ! [Celsius]
+  'Celsius'
   'temp_east, scalar, series'
   'ocean_time'
   'idTbry(ieast,itemp)'
   'nulvar'
   1.0d0
 
-'temp_south'                                       ! Input
+'temp_south'
   'temperature southern boundary condition'
-  'Celsius'                                        ! [Celsius]
+  'Celsius'
   'temp_south, scalar, series'
   'ocean_time'
   'idTbry(isouth,itemp)'
   'nulvar'
   1.0d0
 
-'temp_north'                                       ! Input
+'temp_north'
   'temperature northern boundary condition'
-  'Celsius'                                        ! [Celsius]
+  'Celsius'
   'temp_north, scalar, series'
   'ocean_time'
   'idTbry(inorth,itemp)'
   'nulvar'
   1.0d0
 
-'salt_west'                                        ! Input
+'salt_west'
   'salinity western boundary condition'
-  'nondimensional'                                 ! [PSU]
+  'nondimensional'
   'salt_west, scalar, series'
   'ocean_time'
   'idTbry(iwest,isalt)'
   'nulvar'
   1.0d0
 
-'salt_east'                                        ! Input
+'salt_east'
   'salinity eastern boundary condition'
-  'nondimensional'                                 ! [PSU]
+  'nondimensional'
   'salt_east, scalar, series'
   'ocean_time'
   'idTbry(ieast,isalt)'
   'nulvar'
   1.0d0
 
-'salt_south'                                       ! Input
+'salt_south'
   'salinity southern boundary condition'
-  'nondimensional'                                 ! [PSU]
+  'nondimensional'
   'salt_south, scalar, series'
   'ocean_time'
   'idTbry(isouth,isalt)'
   'nulvar'
   1.0d0
 
-'salt_north'                                       ! Input
+'salt_north'
   'salinity northern boundary condition'
-  'nondimensional'                                 ! [PSU]
+  'nondimensional'
   'salt_north, scalar, series'
   'ocean_time'
   'idTbry(inorth,isalt)'
   'nulvar'
   1.0d0
 
-!
-!------------------------------------------------------------------------------
-!  Atmospheric forcing variables.
-!------------------------------------------------------------------------------
-!
-
-'Pair'                                             ! Input
+'Pair'
   'surface air pressure'
-  'Pascal'                                       ! [ROMS wants millibar]
+  'Pascal'
   'Pair, scalar, series'
   'pair_time'
   'idPair'
   'r2dvar'
   0.01d0
 
-'Tair'                                             ! Input
+'Tair'
   'surface air temperature'
-  'Celsius'                                        ! [Kelvin]
+  'Celsius'
   'Tair, scalar, series'
   'tair_time'
   'idTair'
   'r2dvar'
   1.0d0
 
-'Qair'                                             ! Input
+'Qair'
   'surface air relative humidity'
-  'kg/kg'                                          ! [kg/kg]
+  'kg/kg'
   'Qair, scalar, series'
   'qair_time'
   'idQair'
   'r2dvar'
-  1.00d0                                           ! was percent
+  1.00d0
 
-'cloud'                                            ! Input
+'cloud'
   'cloud fraction'
-  'nondimensional'                                 ! [nondimensional]
+  'nondimensional'
   'cloud, scalar, series'
   'cloud_time'
   'idCfra'
   'r2dvar'
   1.0d0
 
-'swrad'                                            ! Input/Output
+'swrad'
   'solar shortwave radiation flux'
-  'watt meter-2'                                   ! Input:  [Watt/m2]
-  'shortwave radiation, scalar, series'            ! [Celsius m/s]
-  'srf_time'                                       ! Output: [Watt/m2]
+  'watt meter-2'
+  'shortwave radiation, scalar, series'
+  'srf_time'
   'idSrad'
   'r2dvar'
   1.0d0
 
-'albedo'                                           ! Input/Output
+'albedo'
   'albedo'
-  'fraction'                                       ! Input: [fraction]
-  'albedo, scalar, series'                         ! [Celsius m/s]
-  'albedo_time'                                    ! Output: [fraction]
+  'fraction'
+  'albedo, scalar, series'
+  'albedo_time'
   'idAlbe'
   'r2dvar'
   1.0d0
 
-'lwrad_down'                                       ! Input
+'lwrad_down'
   'downwelling longwave radiation flux'
-  'watt meter-2'                                   ! Input:  [Watt/m2]
-  'downwelling longwave radiation, scalar, series' ! [Celsius m/s]
+  'watt meter-2'
+  'downwelling longwave radiation, scalar, series'
   'lrf_time'
   'idLdwn'
   'r2dvar'
   1.0d0
 
-'lwrad'                                            ! Input/Output
+'lwrad'
   'net longwave radiation flux'
-  'watt meter-2'                                   ! Input:  [Watt/m2]
-  'longwave radiation, scalar, series'             ! [Celsius m/s]
-  'lrf_time'                                       ! Output: [Watt/m2]
+  'watt meter-2'
+  'longwave radiation, scalar, series'
+  'lrf_time'
   'idLrad'
   'r2dvar'
   1.0d0
 
-'latent'                                           ! Input/Output
+'latent'
   'net latent heat flux'
-  'watt meter-2'                                   ! Input:  [Watt/m2]
-  'latent heat flux, scalar, series'               ! [Celsius m/s]
-  'lhf_time'                                       ! Output: [Watt/m2]
+  'watt meter-2'
+  'latent heat flux, scalar, series'
+  'lhf_time'
   'idLhea'
   'r2dvar'
   1.0d0
 
-'sensible'                                         ! Input/Output
+'sensible'
   'net sensible heat flux'
-  'watt meter-2'                                   ! Input:  [Watt/m2]
-  'sensible heat flux, scalar, series'             ! [Celsius m/s]
-  'shf_time'                                       ! Output: [Watt/m2]
+  'watt meter-2'
+  'sensible heat flux, scalar, series'
+  'shf_time'
   'idShea'
   'r2dvar'
   1.0d0
 
-'rain'                                             ! Input
+'rain'
   'rain fall rate'
-  'kilogram meter-2 second-1'                      ! [kg m2/s]
+  'kilogram meter-2 second-1'
   'rain, scalar, series'
   'rain_time'
   'idrain'
   'r2dvar'
-  1.0d0                                            ! 1/rhow (0.001 m3/kg) if m/s
+  1.0d0
 
-'snow'                                             ! Input
+'snow'
   'snow fall rate'
-  'kilogram meter-2 second-1'                      ! [kg m2/s]
+  'kilogram meter-2 second-1'
   'snow, scalar, series'
   'snow_time'
   'idsnow'
   'r2dvar'
-  1.0d0                                            ! 1/rhow (0.001 m3/kg) if m/s
+  1.0d0
 
-'evaporation'                                      ! Input
+'evaporation'
   'evaporation rate'
-  'kilogram meter-2 second-1'                      ! [kg m2/s]
+  'kilogram meter-2 second-1'
   'evaporation, scalar, series'
   'evap_time'
   'idevap'
   'r2dvar'
-  1.0d0                                            ! 1/rhow (0.001 m3/kg) if m/s
+  1.0d0
 
-'Uwind'                                            ! Input
+'Uwind'
   'surface u-wind component'
-  'meter second-1'                                 ! [m/s]
+  'meter second-1'
   'u-wind, scalar, series'
   'wind_time'
   'idUair'
   'r2dvar'
   1.0d0
 
-'Vwind'                                            ! Input
+'Vwind'
   'surface v-wind component'
-  'meter second-1'                                 ! [m/s]
+  'meter second-1'
   'v-wind, scalar, series'
   'wind_time'
   'idVair'
   'r2dvar'
   1.0d0
 
-'Uwind_eastward'                                   ! Output
+'Uwind_eastward'
   'eastward surface wind component at RHO-points'
-  'meter second-1'                                 ! [m/s]
+  'meter second-1'
   'Uwind_eastward, scalar, series'
   'ocean_time'
   'idUairE'
   'r2dvar'
   1.0d0
 
-'Vwind_northward'                                  ! Output
+'Vwind_northward'
   'northward surface wind component at RHO-points'
-  'meter second-1'                                 ! [m/s]
+  'meter second-1'
   'Vwind_northward, scalar, series'
   'ocean_time'
   'idVairN'
   'r2dvar'
   1.0d0
 
-'Dwave'                                            ! Input
+'Dwave'
   'wind-induced wave direction'
-  'degrees'                                        ! [radians]
+  'degrees'
   'Dwave, scalar, series'
   'wave_time'
   'idWdir'
   'r2dvar'
-  0.017453292519943295                             ! pi/180
+  0.017453292519943295
 
-'Hwave'                                            ! Input
+'Hwave'
   'wind-induced significant wave height'
-  'meter'                                          ! [m]
+  'meter'
   'Hwave, scalar, series'
   'wave_time'
   'idWamp'
   'r2dvar'
   1.0d0
 
-'Lwave'                                            ! Input
+'Lwave'
   'wind-induced mean wavelength'
-  'meter'                                          ! [m]
+  'meter'
   'Lwave, scalar, series'
   'wave_time'
   'idWlen'
   'r2dvar'
   1.0
 
-'Pwave_top'                                        ! Input
+'Pwave_top'
   'wind-induced peak surface wave Period'
-  'second'                                         ! [s]
+  'second'
   'Pwave_top, scalar, series'
   'wave_time'
   'idWptp'
   'r2dvar'
   1.0d0
 
-'Pwave_bot'                                        ! Input
+'Pwave_bot'
   'wind-induced bottom wave Period'
-  'second'                                         ! [s]
+  'second'
   'Pwave_bot, scalar, series'
   'wave_time'
   'idWpbt'
   'r2dvar'
   1.0d0
 
-'Ub_swan'                                          ! Input
+'Ub_swan'
   'wind-induced bottom orbital velocity'
-  'meter second-1'                                 ! [m/s]
+  'meter second-1'
   'Ub_swan, scalar, series'
   'wave_time'
   'idWorb'
   'r2dvar'
   1.0d0
 
-'Wave_dissip'                                      ! Input
+'Wave_dissip'
   'wave dissipation'
-  'Watts meter-2'                                  ! [W/m2]
+  'Watts meter-2'
   'Wave_dissip, scalar, series'
   'wave_time'
   'idWdis'
   'r2dvar'
-  0.00097561                                       !1/rho0
+  0.00097561
 
-'Wave_break'                                       ! Input
+'Wave_break'
   'percent wave breaking'
-  'nondimensionsal'                                ! []
+  'nondimensionsal'
   'Wave_break, scalar, series'
   'wave_time'
   'idWbrk'
   'r2dvar'
   1.0d0
 
-'Sxx_bar'                                          ! Output
+'Sxx_bar'
   'vertically-integrated radiation stress, Sxx-component'
-  'meter2 second2'                                 ! [s]
+  'meter2 second2'
   'Sxx, scalar, series'
   'ocean_time'
   'idW2xx'
   'r2dvar'
   1.0d0
 
-'Sxy_bar'                                          ! Output
+'Sxy_bar'
   'vertically-integrated radiation stress, Sxy-component'
-  'meter2 second2'                                 ! [s]
+  'meter2 second2'
   'Sxy_bar, scalar, series'
   'ocean_time'
   'idW2xy'
   'r2dvar'
   1.0d0
 
-'Syy_bar'                                          ! Output
+'Syy_bar'
   'vertically-integrated radiation stress, Syy-component'
-  'meter2 second2'                                 ! [s]
+  'meter2 second2'
   'Syy_bar, scalar, series'
   'ocean_time'
   'idW2yy'
   'r2dvar'
   1.0d0
 
-'Sxx'                                              ! Output
+'Sxx'
   '3D horizontal radiation stress, Sxx-component'
-  'meter2 second2'                                 ! [s]
+  'meter2 second2'
   'Sxx, scalar, series'
   'ocean_time'
   'idW3xx'
   'r3dvar'
   1.0d0
 
-'Sxy'                                              ! Output
+'Sxy'
   '3D horizontal radiation stress, Sxy-component'
-  'meter2 second2'                                 ! [s]
+  'meter2 second2'
   'Sxy, scalar, series'
   'ocean_time'
   'idW3xy'
   'r3dvar'
   1.0d0
 
-'Syy'                                              ! Output
+'Syy'
   '3D radiation stress, Syy-component'
-  'meter2 second2'                                 ! [s]
+  'meter2 second2'
   'Syy, scalar, series'
   'ocean_time'
   'idW3yy'
   'r3dvar'
   1.0d0
 
-'Szx'                                              ! Output
+'Szx'
   '3D vertical radiation stress, Szx-component'
-  'meter2 second2'                                 ! [s]
+  'meter2 second2'
   'Szx, scalar, series'
   'ocean_time'
   'idW3zx'
   'r3dvar'
   1.0d0
 
-'Szy'                                              ! Output
+'Szy'
   '3D vertical radiation stress, Szy-component'
-  'meter2 second2'                                 ! [s]
+  'meter2 second2'
   'Szy, scalar, series'
   'ocean_time'
   'idW3zy'
   'r3dvar'
   1.0d0
 
-'ubar_Rstress'                                     ! Output
+'ubar_Rstress'
   'vertically-integrated u-radiation stress'
-  'newton meter-2'                                 ! [N/m2]
+  'newton meter-2'
   'ubar_Rstress, scalar, series'
   'ocean_time'
   'idU2rs'
   'u2dvar'
   1.0d0
 
-'ubar_stokes'                                      ! Output
+'ubar_stokes'
   'vertically-integrated u-Stokes drift velocity'
-  'meter second-1'                                 ! [m/s]
+  'meter second-1'
   'ubar_stokes-velocity, scalar, series'
   'ocean_time'
   'idU2Sd'
   'u2dvar'
   1.0d0
 
-'vbar_Rstress'                                      ! Output
+'vbar_Rstress'
   'vertically-integrated v-radiation stress'
-  'newton meter-2'                                  ! [N/m2]
+  'newton meter-2'
   'ubar_Rstress, scalar, series'
   'ocean_time'
   'idV2rs'
   'v2dvar'
   1.0d0
 
-'vbar_stokes'                                      ! Output
+'vbar_stokes'
   'vertically-integrated v-Stokes drift velocity'
-  'meter second-1'                                 ! [m/s]
+  'meter second-1'
   'vbar_stokes, scalar, series'
   'ocean_time'
   'idV2Sd'
   'v2dvar'
   1.0d0
 
-'u_Rstress'                                         ! Output
+'u_Rstress'
   'u-radiation stress'
-  'newton meter-2'                                  ! [N/m2]
+  'newton meter-2'
   'u_Rstress, scalar, series'
   'ocean_time'
   'idU3rs'
   'u3dvar'
   1.0d0
 
-'u_stokes'                                         ! Output
+'u_stokes'
   'u-Stokes drift velocity'
-  'meter second-1'                                 ! [m/s]
+  'meter second-1'
   'u_stokes, scalar, series'
   'wave_time'
   'idU3Sd'
   'u3dvar'
   1.0d0
 
-'v_Rstress'                                         ! Output
+'v_Rstress'
   'v-radiation stress'
-  'newton meter-2'                                  ! [N/m2]
+  'newton meter-2'
   'v_Rstress, scalar, series'
   'ocean_time'
   'idV3rs'
   'v3dvar'
   1.0d0
 
-'v_stokes'                                         ! Output
+'v_stokes'
   'v-Stokes drift velocity'
-  'meter second-1'                                 ! [m/s]
+  'meter second-1'
   'v_stokes, scalar, series'
   'ocean_time'
   'idV3Sd'
   'v3dvar'
   1.0d0
 
-!
-!------------------------------------------------------------------------------
-!  Tidal forcing variables.
-!------------------------------------------------------------------------------
-!
-
-'tide_period'                                      ! Input
+'tide_period'
   'tidal period'
-  'hours'                                          ! [s]
+  'hours'
   'tide_period, scalar, series'
   'tide_period'
   'idTper'
   'nulvar'
-  3600.0d0                                         ! 60*60
+  3600.0d0
 
-'tide_Eamp'                                        ! Input
+'tide_Eamp'
   'tidal elevation amplitude'
-  'meter'                                          ! [m]
+  'meter'
   'SSH_Tamp, scalar, series'
   'tide_period'
   'idTzam'
   'r2dvar'
   1.0d0
 
-'tide_Ephase'                                      ! Input
+'tide_Ephase'
   'tidal elevation phase angle'
-  'degrees'                                        ! [radians]
+  'degrees'
   'SSH_Tphase, scalar, series'
   'tide_period'
   'idTzph'
   'r2dvar'
-  0.017453292519943295                             ! pi/180
+  0.017453292519943295
 
-'tide_Cphase'                                      ! Input
+'tide_Cphase'
   'tidal current phase angle'
-  'degrees'                                        ! [radians]
+  'degrees'
   'tide_Cphase, scalar, series'
   'tide_period'
   'idTvph'
   'r2dvar'
-  0.017453292519943295                             ! pi/180
+  0.017453292519943295
 
-'tide_Cangle'                                      ! Input
+'tide_Cangle'
   'tidal current inclination angle'
-  'degrees'                                        ! [radians]
+  'degrees'
   'tide_Cangle, scalar, series'
   'tide_period'
   'idTvan'
   'r2dvar'
-  0.017453292519943295                             ! pi/180
+  0.017453292519943295
 
-'tide_Cmax'                                        ! Input
+'tide_Cmax'
   'maximum tidal current, ellipse major axis'
-  'meter second-1'                                 ! [m/s]
+  'meter second-1'
   'tide_Cmax, scalar, series'
   'tide_period'
   'idTvma'
   'r2dvar'
   1.0d0
 
-'tide_Cmin'                                        ! Input
+'tide_Cmin'
   'minimum tidal current, ellipse minor axis'
-  'meter second-1'                                 ! [m/s]
+  'meter second-1'
   'tide_Cmin, scalar, series'
   'tide_period'
   'idTvmi'
   'r2dvar'
   1.0d0
 
-'tide_Pamp'                                        ! Input
+'tide_Pamp'
   'tidal potential elevation amplitude'
-  'meter'                                          ! [m]
+  'meter'
   'SSH_Pamp, scalar, series'
   'tide_period'
   'idTpam'
   'r2dvar'
   1.0d0
 
-'tide_Pphase'                                      ! Input
+'tide_Pphase'
   'tidal potential elevation phase angle'
-  'degrees'                                        ! [radians]
+  'degrees'
   'SSH_Pphase, scalar, series'
   'tide_period'
   'idTpph'
   'r2dvar'
-  0.017453292519943295                             ! pi/180
+  0.017453292519943295
 
-'tide_m2amp'                                       ! Input
+'tide_m2amp'
   'tidal velocity amplitude'
-  'meter second-1'                                 ! m/s
+  'meter second-1'
   'tide_m2amp, scalar'
   'tide_period'
   'idM2am'
   'r2dvar'
   1.0
 
-!
-!------------------------------------------------------------------------------
-!  River forcing variables.
-!------------------------------------------------------------------------------
-!
-
-'river_Xposition'                                  ! Input
+'river_Xposition'
   'river runoff  XI-positions at RHO-points'
-  'nondimensional'                                 ! [nondimensional]
+  'nondimensional'
   'river_Xposition, scalar'
   'river'
   'idRxpo'
   'nulvar'
   1.0d0
 
-'river_Eposition'                                  ! Input
+'river_Eposition'
   'river runoff ETA-positions at RHO-points'
-  'nondimensional'                                 ! [nondimensional]
+  'nondimensional'
   'river_Eposition'
   'river'
   'idRepo'
   'nulvar'
   1.0d0
 
-'river_direction'                                  ! Input
+'river_direction'
   'river runoff direction'
-  'nondimensional'                                 ! [nondimensional]
+  'nondimensional'
   'river_direction, scalar'
   'river'
   'idRdir'
   'nulvar'
   1.0d0
 
-'river_Vshape'                                     ! Input
+'river_Vshape'
   'river runoff mass transport vertical profile'
-  'nondimensional'                                 ! [nondimensional]
+  'nondimensional'
   'river_Vshape, scalar'
   'river'
   'idRvsh'
   'nulvar'
   1.0d0
 
-'river_transport'                                  ! Input
+'river_transport'
   'river runoff mass transport'
-  'meter3 second-1'                                ! [m3/s]
+  'meter3 second-1'
   'river_transport, scalar, series'
   'river_time'
   'idRtra'
   'nulvar'
   1.0d0
 
-'river_flag'                                       ! Input
+'river_flag'
   'river runoff flag'
-  'nondimensional'                                 ! [nondimensional]
+  'nondimensional'
   'river_flag, scalar'
   'river'
   'idRflg'
   'nulvar'
   1.0d0
 
-'river_temp'                                       ! Input
+'river_temp'
   'river runoff potential temperature'
-  'Celsius'                                        ! [Celsius]
+  'Celsius'
   'river_temp, scalar, series'
   'river_time'
   'idRtrc(itemp)'
   'nulvar'
   1.0d0
 
-'river_salt'                                       ! Input
+'river_salt'
   'river runoff salinity'
-  'nondimensional'                                 ! [PSU]
+  'nondimensional'
   'river_salt, scalar, series'
   'river_time'
   'idRtrc(isalt)'
   'nulvar'
   1.0d0
 
-'river_dye_'                                       ! Input
+'river_dye_'
   'river runoff dye concentration'
-  'kilogram meter-3'                               ! [kg/m3]
+  'kilogram meter-3'
   'river_dye, scalar, series'
   'river_time'
   'idRtrc(inert(i))'
   'nulvar'
   1.0d0
 
-'river_mud_'                                       ! Input
+'river_mud_'
   'river runoff suspended sediment concentration'
-  'kilogram meter-3'                               ! [kg/m3]
+  'kilogram meter-3'
   'river_sediment, scalar, series'
   'river_time'
   'idRtrc(idmud)'
   'nulvar'
   1.0d0
 
-'river_sand_'                                      ! Input
+'river_sand_'
   'river runoff suspended sediment concentration'
-  'kilogram meter-3'                               ! [kg/m3]
+  'kilogram meter-3'
   'river_sediment, scalar, series'
   'river_time'
   'idRtrc(isand)'
   'nulvar'
   1.0d0
 
-'river_nutrient'                                   ! Input
+'river_nutrient'
   'river runoff nutrient'
-  'millimole_nitrogen meter-3'                     ! [millimole/m3]
+  'millimole_nitrogen meter-3'
   'river_nutrient, scalar, series'
   'river_time'
   'idRtrc(iNutr)'
   'nulvar'
   1.0d0
 
-
-!
-!------------------------------------------------------------------------------
-!  Boundary layer variables.
-!------------------------------------------------------------------------------
-!
-
-'Hsbl'                                             ! Input/Output
+'Hsbl'
   'depth of oceanic surface boundary layer'
-  'meter'                                          ! [m]
+  'meter'
   'Hsbl, scalar, series'
   'ocean_time'
   'idHsbl'
   'r2dvar'
   1.0d0
 
-'Hbbl'                                             ! Input/Output
+'Hbbl'
   'depth of oceanic bottom boundary layer'
-  'meter'                                          ! [m]
+  'meter'
   'Hbbl, scalar, series'
   'ocean_time'
   'idHbbl'
   'r2dvar'
   1.0d0
 
-!
-!------------------------------------------------------------------------------
-!  Climatotogy variables.
-!------------------------------------------------------------------------------
-!
-
-'zeta'                                             ! Input
+'zeta'
   'sea surface height climatology'
-  'meter'                                          ! [m]
+  'meter'
   'zeta, scalar, series'
   'ocean_time'
   'idSSHc'
   'r2dvar'
   1.0d0
 
-'ubar'                                             ! Input
+'ubar'
   'vertically integrated u-momentum climatology'
-  'meter second-1'                                 ! [m/s]
+  'meter second-1'
   'ubar-velocity, scalar, series'
   'ocean_time'
   'idUbcl'
   'u2dvar'
   1.0d0
 
-'vbar'                                             ! Input
+'vbar'
   'vertically integrated v-momentum climatology'
-  'meter second-1'                                 ! [m/s]
+  'meter second-1'
   'vbar-velocity, scalar, series'
   'ocean_time'
   'idVbcl'
   'v2dvar'
   1.0d0
 
-'u'                                                ! Input
+'u'
   'u-momentum component climatology'
-  'meter second-1'                                 ! [m/s]
+  'meter second-1'
   'u-velocity, scalar, series'
   'ocean_time'
   'idUclm'
   'u3dvar'
   1.0d0
 
-'v'                                                ! Input
+'v'
   'v-momentum component climatology'
-  'meter second-1'                                 ! [m/s]
+  'meter second-1'
   'v-velocity, scalar, series'
   'ocean_time'
   'idVclm'
@@ -1990,1025 +1843,869 @@
   'w3dvar'
   1.0d0
 
-'SSS'                                              ! Input
+'SSS'
   'sea surface salinity climatology'
-  'nondimensional'                                 ! [PSU]
+  'nondimensional'
   'SSS, scalar, series'
   'sss_time'
   'idSSSc'
   'r2dvar'
   1.0d0
 
-'SST'                                              ! Input
+'SST'
   'sea surface temperature climatology'
-  'Celsius'                                        ! [Celsius]
+  'Celsius'
   'SST, scalar, series'
   'sst_time'
   'idSSTc'
   'r2dvar'
   1.0d0
 
-!
-!------------------------------------------------------------------------------
-!  Adjoint sensitivy variables.  The units below are the same as the state.
-!  However, the input functional can have squared, energy, nondimensional,
-!  or other units.
-!------------------------------------------------------------------------------
-!
-
-'zeta'                                             ! Input
+'zeta'
   'sea surface height functional'
-  'meter'                                          ! [m]
+  'meter'
   'zeta, scalar, series'
   'zeta_time'
   'idZads'
   'r2dvar'
   1.0d0
 
-'ubar'                                             ! Input
+'ubar'
   'vertically integrated u-momentum functional'
-  'meter second-1'                                 ! [m/s]
+  'meter second-1'
   'ubar-velocity, scalar, series'
   'v2d_time'
   'idUbas'
   'u2dvar'
   1.0d0
 
-'vbar'                                             ! Input
+'vbar'
   'vertically integrated v-momentum functional'
-  'meter second-1'                                 ! [m/s]
+  'meter second-1'
   'vbar-velocity, scalar, series'
   'v2d_time'
   'idVbas'
   'v2dvar'
   1.0d0
 
-'u'                                                ! Input
+'u'
   'u-momentum component functional'
-  'meter second-1'                                 ! [m/s]
+  'meter second-1'
   'u-velocity, scalar, series'
   'v3d_time'
   'idUads'
   'u3dvar'
   1.0d0
 
-'v'                                                ! Input
+'v'
   'v-momentum component functional'
-  'meter second-1'                                 ! [m/s]
+  'meter second-1'
   'v-velocity, scalar, series'
   'v3d_time'
   'idVads'
   'v3dvar'
   1.0d0
 
-'temp'                                             ! Input
+'temp'
   'potential temperature functional'
-  'Celsius'                                        ! [Celsius]
+  'Celsius'
   'temp_time, scalar, series'
   'temp_time'
   'idTads(itemp)'
   'r3dvar'
   1.0d0
 
-'salt'                                             ! Input
+'salt'
   'salinity functional'
-  'nondimensional'                                 ! [PSU]
+  'nondimensional'
   'salt_time, scalar, series'
   'salt_time'
   'idTads(isalt)'
   'r3dvar'
   1.0d0
 
-!
-!------------------------------------------------------------------------------
-!  Tangent linear model impulse forcing variables.
-!
-!  Notice that additional metadata is need here because with need different
-!  indices to avoid conflict with the forward basic state variables. They
-!  are used at the same time. The passive tracers (NAT+1:NT) are assigned
-!  internally to the same values as the basic state.
-!------------------------------------------------------------------------------
-!
-
-'zeta'                                             ! Input
+'zeta'
   'free-surface impulse forcing'
-  'meter'                                          ! [m]
+  'meter'
   'zeta, scalar, series'
   'zeta_time'
   'idZtlf'
   'r2dvar'
   1.0d0
 
-'ubar'                                             ! Input
+'ubar'
   'vertically integrated u-momentum impulse forcing'
-  'meter second-1'                                 ! [m/s]
+  'meter second-1'
   'ubar-velocity, scalar, series'
   'v2d_time'
   'idUbtf'
   'u2dvar'
   1.0d0
 
-'vbar'                                             ! Input
+'vbar'
   'vertically integrated v-momentum impulse forcing'
-  'meter second-1'                                 ! [m/s]
+  'meter second-1'
   'vbar-velocity, scalar, series'
   'v2d_time'
   'idVbtf'
   'v2dvar'
   1.0d0
 
-'u'                                                ! Input
+'u'
   'u-momentum component impulse forcing'
-  'meter second-1'                                 ! [m/s]
+  'meter second-1'
   'u-velocity, scalar, series'
   'v3d_time'
   'idUtlf'
   'u3dvar'
   1.0d0
 
-'v'                                                ! Input
+'v'
   'v-momentum component impulse forcing'
-  'meter second-1'                                 ! [m/s]
+  'meter second-1'
   'v-velocity, scalar, series'
   'v3d_time'
   'idVtlf'
   'v3dvar'
   1.0d0
 
-'temp'                                             ! Input
+'temp'
   'potential temperature impulse forcing'
-  'Celsius'                                        ! [Celsius]
+  'Celsius'
   'temp_time, scalar, series'
   'temp_time'
   'idTtlf(itemp)'
   'r3dvar'
   1.0d0
 
-'salt'                                             ! Input
+'salt'
   'salinity functional'
-  'nondimensional'                                 ! [PSU]
+  'nondimensional'
   'salt_time, scalar, series'
   'salt_time'
   'idTtlf(isalt)'
   'r3dvar'
   1.0d0
 
-!
-!------------------------------------------------------------------------------
-!  Observation variables: Optimal Interpolation and Nudging.
-!------------------------------------------------------------------------------
-!
-
-'SSH'                                              ! Input
+'SSH'
   'sea surface height observations'
-  'meter'                                          ! [m]
+  'meter'
   'SSHobs, scalar, series'
   'SSHobs_time'
   'idSSHo'
   'r2dvar'
   1.0d0
 
-'SSH_err'                                          ! Input
+'SSH_err'
   'sea surface height error variance'
-  'nondimensional'                                 ! [nondimenisional]
+  'nondimensional'
   'SSH_err, scalar, series'
   'SSHobs_time'
   'idSSHe'
   'r2dvar'
   1.0d0
 
-'u'                                                ! Input
+'u'
   'u-momentum component observations'
-  'meter second-1'                                 ! [m/s]
+  'meter second-1'
   'Uobs, scalar, series'
   'Vobs_time'
   'idUobs'
   'u3dvar'
   1.0d0
 
-'v'                                                ! Input
+'v'
   'v-momentum component observations'
-  'meter second-1'                                 ! [m/s]
+  'meter second-1'
   'Vobs, scalar, series'
   'Vobs_time'
   'idVobs'
   'v3dvar'
   1.0d0
 
-'Evel'                                             ! Input
+'Evel'
   'horizontal velocity error variance'
-  'nondimensional'                                 ! [nondimensional]
+  'nondimensional'
   'Evel, scalar, series'
   'Vobs_time'
   'idUVer'
   'r3dvar'
   1.0d0
 
-'Usur'                                             ! Input
+'Usur'
   'surface u-momentum component observations'
-  'meter second-1'                                 ! [m/s]
+  'meter second-1'
   'Usur, scalar, series'
   'Vsur_time'
   'idUsur'
   'u2dvar'
   1.0d0
 
-'Vsur'                                             ! Input
+'Vsur'
   'surface v-momentum component observations'
-  'meter second-1'                                 ! [m/s]
+  'meter second-1'
   'Vsur, scalar, series'
   'Vsur_time'
   'idVsur'
   'v2dvar'
   1.0d0
 
-'Esur'                                             ! Input
+'Esur'
   'surface velocity error variance'
-  'nondimensional'                                 ! [nondimensional]
+  'nondimensional'
   'Esur, scalar, series'
   'Vsur_time'
   'idUVse'
   'r2dvar'
   1.0d0
 
-'SST'                                              ! Input
+'SST'
   'sea surface temperature observations'
-  'Celsius'                                        ! [Celsius]
+  'Celsius'
   'SSTobs, scalar, series'
   'SSTobs_time'
   'idSSTo'
   'r2dvar'
   1.0d0
 
-'SST_err'                                          ! Input
+'SST_err'
   'sea surface temperature error variance'
-  'nondimensional'                                 ! [nondimensional]
+  'nondimensional'
   'SST_err, scalar, series'
   'SSTobs_time'
   'idSSTe'
   'r2dvar'
   1.0d0
 
-'temp'                                             ! Input
+'temp'
   'potential temperature observations'
-  'Celsius'                                        ! [nondimensional]
+  'Celsius'
   'Tobs, scalar, series'
   'Tobs_time'
   'idTobs(itemp)'
   'r3dvar'
   1.0d0
 
-'temp_err'                                         ! Input
+'temp_err'
   'potential temperature error variance'
-  'nondimensional'                                 ! [nondimensional]
+  'nondimensional'
   'temp_err, scalar, series'
   'Tobs_time'
   'idTerr(itemp)'
   'r3dvar'
   1.0d0
 
-'salt'                                             ! Input
+'salt'
   'salinity observations'
-  'nondimensional'                                 ! [PSU]
+  'nondimensional'
   'Sobs, scalar, series'
   'Sobs_time'
   'idTobs(isalt)'
   'r3dvar'
   1.0d0
 
-'salt_err'                                         ! Input
+'salt_err'
   'salinity error variance'
-  'nondimensional'                                 ! [nondimensional]
+  'nondimensional'
   'salt_err, scalar, series'
   'Sobs_time'
   'idTerr(isalt)'
   'r3dvar'
   1.0d0
 
-!
-!------------------------------------------------------------------------------
-!  Inert passive tracer variables.
-!------------------------------------------------------------------------------
-!
-!  Only one entry should be specified here.  This entry contain all the
-!  information necessary to process all NPT fields.  The variable name is
-!  arbitrary and you may choose any unique name for Vinfo(1) that is not
-!  already defined. The identifier for Vinfo(6) must be "idTvar(inert(i))".
-!
-
-'dye_'                                             ! Input/Output
+'dye_'
   'dye concentration'
-  'kilogram meter-3'                               ! [kg/m3]
+  'kilogram meter-3'
   'dye_, scalar, series'
   'ocean_time'
   'idTvar(inert(i))'
   'r3dvar'
   1.0d0
 
-'dye_west_'                                        ! Input
+'dye_west_'
   'dye concentration western boundary condition'
-  'kilogram meter-3'                               ! [kg/m3]
+  'kilogram meter-3'
   'dye_west_, scalar, series'
   'dye_time'
   'idTbry(iwest,inert(i))'
   'nulvar'
   1.0d0
 
-'dye_east_'                                        ! Input
+'dye_east_'
   'dye concentration eastern boundary condition'
-  'kilogram meter-3'                               ! [kg/m3]
+  'kilogram meter-3'
   'dye_east_, scalar, series'
   'dye_time'
   'idTbry(ieast,inert(i))'
   'nulvar'
   1.0d0
 
-'dye_south_'                                       ! Input
+'dye_south_'
   'dye concentration southern boundary condition'
-  'kilogram meter-3'                               ! [kg/m3]
+  'kilogram meter-3'
   'dye_south_, scalar, series'
   'dye_time'
   'idTbry(isouth,inert(i))'
   'nulvar'
   1.0d0
 
-'dye_north_'                                       ! Input
+'dye_north_'
   'dye concentration northern boundary condition'
-  'kilogram meter-3'                               ! [kg/m3]
+  'kilogram meter-3'
   'dye_north_, scalar, series'
   'dye_time'
   'idTbry(inorth,inert(i))'
   'nulvar'
   1.0d0
 
-!
-!------------------------------------------------------------------------------
-!  Sediment variables:  The actual variable name for some of the sediment
-!                       tracers are set-up internally in "mod_ncparam.F".
-!  It depends on the mumber of cohesive and noncohesive sediment tracers
-!  for a particular application. For example if you have 1 cohesive and
-!  2 noncohesive sediment classes, the variable names are:
-!
-!    "mud_"          becomes   "mud_01"
-!    "mud_west_"     becomes   "mud_west_01"
-!    "mud_east_"     becomes   "mud_east_01"
-!    "mud_south_"    becomes   "mud_south_01"
-!    "mud_north_"    becomes   "mud_north_01"
-!
-!    "sand_"         becomes   "sand_01",       "sand_02"
-!    "sand_west"     becomes   "sand_west_01",  "sand_west_02"
-!    "sand_east"     becomes   "sand_east_01",  "sand_east_02"
-!    "sand_south"    becomes   "sand_south_01", "sand_south_02"
-!    "sand_north"    becomes   "sand_north_01", "sand_north_02"
-!------------------------------------------------------------------------------
-!
-
-'mud_'                                             ! Input/Output
+'mud_'
   'suspended cohesive sediment'
-  'kilogram meter-3'                               ! [kg/m3]
+  'kilogram meter-3'
   'mud_, scalar, series'
   'ocean_time'
   'idTvar(idmud(i))'
   'r3dvar'
   1.0d0
 
-'mud_west_'                                        ! Input
+'mud_west_'
   'suspended cohesive sediment western boundary condition'
-  'kilogram meter-3'                               ! [kg/m3]
+  'kilogram meter-3'
   'mud_west_, scalar, series'
   'mud_time'
   'idTbry(iwest,idmud(i))'
   'r3dvar'
   1.0d0
 
-'mud_east_'                                        ! Input
+'mud_east_'
   'suspended cohesive sediment eastern boundary condition'
-  'kilogram meter-3'                               ! [kg/m3]
+  'kilogram meter-3'
   'mud_east_, scalar, series'
   'mud_time'
   'idTbry(ieast,idmud(i))'
   'nulvar'
   1.0d0
 
-'mud_south_'                                       ! Input
+'mud_south_'
   'suspended cohesive sediment southern boundary condition'
-  'kilogram meter-3'                               ! [kg/m3]
+  'kilogram meter-3'
   'mud_south_, scalar, series'
   'mud_time'
   'idTbry(isouth,idmud(i))'
   'nulvar'
   1.0d0
 
-'mud_north_'                                       ! Input
+'mud_north_'
   'suspended cohesive sediment northern boundary condition'
-  'kilogram meter-3'                               ! [kg/m3]
+  'kilogram meter-3'
   'mud_north_, scalar, series'
   'mud_time'
   'idTbry(inorth,idmud(i))'
   'nulvar'
   1.0d0
 
-'sand_'                                            ! Input/Output
+'sand_'
   'suspended noncohesive sediment'
-  'kilogram meter-3'                               ! [kg/m3]
+  'kilogram meter-3'
   'sand_, scalar, series'
   'ocean_time'
   'idTvar(isand(i))'
   'r3dvar'
   1.0d0
 
-'sand_west_'                                       ! Input
+'sand_west_'
   'suspended noncohesive sediment western boundary condition'
-  'kilogram meter-3'                               ! [kg/m3]
+  'kilogram meter-3'
   'sand_west_, scalar, series'
   'sand_time'
   'idTbry(iwest,isand(i))'
   'nulvar'
   1.0d0
 
-'sand_east_'                                       ! Input
+'sand_east_'
   'suspended noncohesive sediment eastern boundary condition'
-  'kilogram meter-3'                               ! [kg/m3]
+  'kilogram meter-3'
   'sand_east_, scalar, series'
   'sand_time'
   'idTbry(ieast,isand(i))'
   'nulvar'
   1.0d0
 
-'sand_south_'                                      ! Input
+'sand_south_'
   'suspended noncohesive sediment southern boundary condition'
-  'kilogram meter-3'                               ! [kg/m3]
+  'kilogram meter-3'
   'sand_south_, scalar, series'
   'sand_time'
   'idTbry(isouth,isand(i))'
   'nulvar'
   1.0d0
 
-'sand_north_'                                      ! Input
+'sand_north_'
   'suspended noncohesive sediment northern boundary condition'
-  'kilogram meter-3'                               ! [kg/m3]
+  'kilogram meter-3'
   'sand_north_, scalar, series'
   'sand_time'
   'idTbry(inorth,isand(i))'
   'nulvar'
   1.0d0
 
-'mudfrac_'                                         ! Input/Output
+'mudfrac_'
   'cohesive sediment fraction'
-  'nondimensional'                                 ! [nondimensional]
+  'nondimensional'
   'mudfrac_, scalar, series'
   'ocean_time'
   'idfrac'
   'b3dvar'
   1.0d0
 
-'sandfrac_'                                        ! Input/Output
+'sandfrac_'
   'noncohesive sediment fraction'
-  'nondimensional'                                 ! [nondimensional]
+  'nondimensional'
   'sandfrac_, scalar, series'
   'ocean_time'
   'idfrac'
   'b3dvar'
   1.0d0
 
-'mudmass_'                                         ! Input/Output
+'mudmass_'
   'cohesive sediment mass'
-  'kilogram meter-2'                               ! [kg/m2]
+  'kilogram meter-2'
   'mudmass_, scalar, series'
   'ocean_time'
   'idBmas'
   'b3dvar'
   1.0d0
 
-'sandmass_'                                        ! Input/Output
+'sandmass_'
   'noncohesive sediment mass'
-  'kilogram meter-2'                               ! [kg/m2]
+  'kilogram meter-2'
   'sandmass_, scalar, series'
   'ocean_time'
   'idBmas'
   'b3dvar'
   1.0d0
 
-'bedload_Usand_'                                   ! Input/Output
+'bedload_Usand_'
   'bed load flux of sand in U-direction'
-  'kilogram meter-1 s-1'                           ! [kg/m/s]
+  'kilogram meter-1 s-1'
   'bedload_Usand_, scalar, series'
   'ocean_time'
   'idUbld'
   'u2dvar'
   1.0d0
 
-'bedload_Umud_'                                    ! Input/Output
+'bedload_Umud_'
   'bed load flux of mud in U-direction'
-  'kilogram meter-1 s-1'                           ! [kg/m/s]
+  'kilogram meter-1 s-1'
   'bedload_Umud_, scalar, series'
   'ocean_time'
   'idUbld'
   'u2dvar'
   1.0d0
 
-'bedload_Vsand_'                                   ! Input/Output
+'bedload_Vsand_'
   'bed load flux of sand in V-direction'
-  'kilogram meter-1 s-1'                           ! [kg/m/s]
+  'kilogram meter-1 s-1'
   'bedload_Vsand_, scalar, series'
   'ocean_time'
   'idVbld'
   'v2dvar'
   1.0d0
 
-'bedload_Vmud_'                                    ! Input/Output
+'bedload_Vmud_'
   'bed load flux of mud in V-direction'
-  'kilogram meter-1 s-1'                           ! [kg/m/s]
+  'kilogram meter-1 s-1'
   'bedload_Vmud_, scalar, series'
   'ocean_time'
   'idVbld'
   'v2dvar'
   1.0d0
 
-'ero_flux'                                         ! Output
+'ero_flux'
   'erosion flux'
-  'kilogram meter-2'                               ! [kg/m2]
+  'kilogram meter-2'
   'ero_flux, scalar, series'
   'ocean_time'
   'idBott(idefx)'
   'r2dvar'
   1.0d0
 
-'dep_net'                                          ! Output
+'dep_net'
   'erosion or deposition'
-  'meter'                                          ! [m]
+  'meter'
   'dep_net, scalar, series'
   'ocean_time'
   'idBott(idnet)'
   'r2dvar'
   1.0d0
 
-'tau_crit_off'                                     ! Output
+'tau_crit_off'
   'Offset for critical shear stress equation'
-  'kg/Pa/s'                                        ! [kg/Pa/s]
+  'kg/Pa/s'
   'tau_crit_off, scalar, series'
   'ocean_time'
   'idBott(idoff)'
   'r2dvar'
   1.0d0
 
-'tau_crit_slope'                                   ! Output
+'tau_crit_slope'
   'Slope for critical shear stress equation'
-  'Pa/s'                                           ! [Pa/s]
+  'Pa/s'
   'tau_crit_slope, scalar, series'
   'ocean_time'
   'idBott(idslp)'
   'r2dvar'
   1.0d0
 
-'tau_crit_time'                                    ! Output
+'tau_crit_time'
   'Nudging time for critical shear stress equation'
-  's-1'                                            ! [s-1]
+  's-1'
   'tau_crit_time, scalar, series'
   'ocean_time'
   'idBott(idtim)'
   'r2dvar'
   1.0d0
 
-'bed_thickness'                                    ! Input/Output
+'bed_thickness'
   'sediment bed layer thickness'
-  'meter'                                          ! [m]
+  'meter'
   'bed_thickness, scalar, series'
   'ocean_time'
   'idSbed(ithck)'
   'b3dvar'
   1.0d0
 
-'bed_age'                                          ! Input/Output
+'bed_age'
   'sediment layer age'
-  'seconds'                                        ! [s]
+  'seconds'
   'bed_age, scalar, series'
   'ocean_time'
   'idSbed(iaged)'
   'b3dvar'
   1.0d0
 
-'bed_porosity'                                     ! Input/Output
+'bed_porosity'
   'sediment layer porosity'
-  'nondimensional'                                 ! [nondimensional]
+  'nondimensional'
   'bed_porosity, scalar, series'
   'ocean_time'
   'idSbed(iporo)'
   'b3dvar'
   1.0d0
 
-'bed_biodiff'                                      ! Input/Output
+'bed_biodiff'
   'biodiffusivity at bottom of each layer'
-  'meter2 second-1'                                ! [m2/s]
+  'meter2 second-1'
   'bed_biodiff, scalar, series'
   'ocean_time'
   'idSbed(idiff)'
   'b3dvar'
   1.0d0
 
-'bed_tau_crit'                                     ! Input/Output
+'bed_tau_crit'
   'tau critical in each layer'
-  'Newtons meter-2'                                ! [N/m2]
+  'Newtons meter-2'
   'bed_tau_crit, scalar, series'
   'ocean_time'
   'idSbed(ibtcr)'
   'b3dvar'
   1.0d0
 
-'grain_diameter'                                   ! Input/Output
+'grain_diameter'
   'sediment median grain diameter size'
-  'meter'                                          ! [m]
+  'meter'
   'grain_diameter, scalar, series'
   'ocean_time'
   'idBott(isd50)'
   'r2dvar'
   1.0d0
 
-'grain_density'                                    ! Input/Output
+'grain_density'
   'sediment median grain density'
-  'kilogram meter3'                                ! [kg/m3]
+  'kilogram meter3'
   'grain_density, scalar, series'
   'ocean_time'
   'idBott(idens)'
   'r2dvar'
   1.0d0
 
-'settling_vel'                                     ! Input/Output
+'settling_vel'
   'sediment median grain settling velocity'
-  'meter second-1'                                 ! [m/s]
+  'meter second-1'
   'settling_vel, scalar, series'
   'ocean_time'
   'idBott(iwsed)'
   'r2dvar'
   1.0d0
 
-'erosion_stress'                                   ! Input/Output
+'erosion_stress'
   'sediment median critical erosion stress'
-  'newton meter-2'                                 ! [N/m2]
+  'newton meter-2'
   'erosion_stress, scalar, series'
   'ocean_time'
   'idBott(itauc)'
   'r2dvar'
   1.0d0
 
-'ripple_length'                                    ! Input/Output
+'ripple_length'
   'bottom ripple length'
-  'meter'                                          ! [m]
+  'meter'
   'ripple_length, scalar, series'
   'ocean_time'
   'idBott(irlen)'
   'r2dvar'
   1.0d0
 
-'ripple_height'                                    ! Input/Output
+'ripple_height'
   'bottom ripple height'
-  'meter'                                          ! [m]
+  'meter'
   'ripple_height, scalar, series'
   'ocean_time'
   'idBott(irhgt)'
   'r2dvar'
   1.0d0
 
-'bed_wave_amp'                                     ! Input/Output
+'bed_wave_amp'
   'bed wave excursion amplitude'
-  'meter'                                          ! [m]
+  'meter'
   'bed_wave_amp, scalar, series'
   'ocean_time'
   'idBott(ibwav)'
   'r2dvar'
   1.0d0
 
-'rdrg_grid'                                            ! Input/Output
+'rdrag_grid'
   'linear bottom drag coefficient'
-  'meter second-1'                                 ! [m/s]
+  'meter second-1'
   'rdrag, scalar, series'
   'ocean_time'
   'idragL'
   'r2dvar'
   1.0d0
 
-'rdrag2'                                           ! Input/Output
+'rdrag2'
   'quadratic bottom drag coefficient'
-  'nondimensional'                                 ! [nondimensional]
+  'nondimensional'
   'rdrag2, scalar, series'
   'ocean_time'
   'idragQ'
   'r2dvar'
   1.0d0
 
-'wavedrag'                                         ! Input/Output
+'wavedrag'
   'linear bottom drag coefficient'
-  'meter second-1'                                 ! [m/s]
+  'meter second-1'
   'wavedrag, scalar, series'
   'ocean_time'
   'idragW'
   'r2dvar'
   1.0d0
 
-'ZoBot'                                            ! Input/Output
+'ZoBot'
   'time invariant, bottom roughness length'
-  'meter'                                          ! [m]
+  'meter'
   'ZoBot, scalar, series'
   'ocean_time'
   'idZoBL'
   'r2dvar'
   1.0d0
 
-'Zo_def'                                           ! Input/Output
+'Zo_def'
   'default bottom roughness length'
-  'meter'                                          ! [m]
+  'meter'
   'Zo_def, scalar, series'
   'ocean_time'
   'idBott(izdef)'
   'r2dvar'
   1.0d0
 
-'Zo_app'                                           ! Input/Output
+'Zo_app'
   'apparent bottom roughness length'
-  'meter'                                          ! [m]
+  'meter'
   'Zo_app, scalar, series'
   'ocean_time'
   'idBott(izapp)'
   'r2dvar'
   1.0d0
 
-'Zo_Nik'                                           ! Input/Output
+'Zo_Nik'
   'Nikaradse bottom roughness length'
-  'meter'                                          ! [m]
+  'meter'
   'Zo_Nik, scalar, series'
   'ocean_time'
   'idBott(izNik)'
   'r2dvar'
   1.0d0
 
-'Zo_bio'                                           ! Input/Output
+'Zo_bio'
   'biological bottom roughness length'
-  'meter'                                          ! [m]
+  'meter'
   'Zo_bio, scalar, series'
   'ocean_time'
   'idBott(izbio)'
   'r2dvar'
   1.0d0
 
-'Zo_bedform'                                       ! Input/Output
+'Zo_bedform'
   'bed form bottom roughness length'
-  'meter'                                          ! [m]
+  'meter'
   'Zo_bedform, scalar, series'
   'ocean_time'
   'idBott(izbfm)'
   'r2dvar'
   1.0d0
 
-'Zo_bedload'                                       ! Input/Output
+'Zo_bedload'
   'bed load bottom roughness length'
-  'meter'                                          ! [m]
+  'meter'
   'Zo_bedload, scalar, series'
   'ocean_time'
   'idBott(izbld)'
   'r2dvar'
   1.0d0
 
-'Zo_wbl'                                           ! Input/Output
+'Zo_wbl'
   'wave bottom boundary layer roughness length'
-  'meter'                                          ! [m]
+  'meter'
   'Zo_wbl, scalar, series'
   'ocean_time'
   'idBott(izwbl)'
   'r2dvar'
   1.0d0
 
-'active_layer_thickness'                           ! Input/Output
+'active_layer_thickness'
   'active layer thickness'
-  'meter'                                          ! [m]
+  'meter'
   'active_layer_thickness, scalar, series'
   'ocean_time'
   'idBott(iactv)'
   'r2dvar'
   1.0d0
 
-'cohesive_behavior'                                ! Output
+'cohesive_behavior'
   'cohesive behavior'
-  '1'                                              ! []
+  '1'
   'cohesive_behavior, scalar, series'
   'ocean_time'
   'idBott(idprp)'
   'r2dvar'
   1.0d0
 
-'saltation'                                        ! Input/Output
+'saltation'
   'bottom saltation height'
-  'meter'                                          ! [m]
+  'meter'
   'saltation, scalar, series'
   'ocean_time'
   'idBott(ishgt)'
   'r2dvar'
   1.0d0
 
-'dmix_offset'                                      ! Input/Output
+'dmix_offset'
   'dmix erodibility profile offset'
-  'meter'                                          ! [m]
+  'meter'
   'dmix_offset, scalar, series'
   'ocean_time'
   'idBott(idoff)'
   'r2dvar'
   1.0d0
 
-'dmix_slope'                                      ! Input/Output
+'dmix_slope'
   'dmix erodibility profile slope'
-  '_'                                             ! [_]
+  '_'
   'dmix_slope, scalar, series'
   'ocean_time'
   'idBott(idslp)'
   'r2dvar'
   1.0d0
 
-'dmix_time'                                        ! Input/Output
+'dmix_time'
   'dmix erodibility profile time scale'
-  'seconds'                                        ! [s]
+  'seconds'
   'dmix_time, scalar, series'
   'ocean_time'
   'idBott(idtim)'
   'r2dvar'
   1.0d0
 
-'tau_crit_slope_c'                                 ! Input/Output
+'tau_crit_slope_c'
   'tau_crit_slope_c'
-  'N/m2'                                           ! [N/m2]
+  'N/m2'
   'tau_crit_slope_c, scalar, series'
   'ocean_time'
   'idBott(itcsc)'
   'r2dvar'
   1.0d0
 
-'tau_crit_offset_c'                                ! Input/Output
+'tau_crit_offset_c'
   'tau_crit_offset_c'
-  'N/m2'                                           ! [N/m2]
+  'N/m2'
   'tau_crit_offset_c, scalar, series'
   'ocean_time'
   'idBott(itcoc)'
   'r2dvar'
   1.0d0
 
-'tau_crit_rtime'                                   ! Input/Output
+'tau_crit_rtime'
   'tau_crit_rtime'
-  's'                                              ! [s]
+  's'
   'tau_crit_rtime, scalar, series'
   'ocean_time'
   'idBott(itcrt)'
   'r2dvar'
   1.0d0
 
-'Db_max'                                           ! Input/Output
+'Db_max'
   'Db_max'
-  '?'                                              ! [?]
+  '?'
   'Db_max, scalar, series'
   'ocean_time'
   'idBott(idbmx)'
   'r2dvar'
   1.0d0
 
-'Db_mm'                                            ! Input/Output
+'Db_mm'
   'Db_mm'
-  '?'                                              ! [?]
+  '?'
   'Db_mm, scalar, series'
   'ocean_time'
   'idBott(idbmm)'
   'r2dvar'
   1.0d0
 
-'Db_zs'                                            ! Input/Output
+'Db_zs'
   'Db_zs'
-  '?'                                              ! [?]
+  '?'
   'Db_zs, scalar, series'
   'ocean_time'
   'idBott(idbzs)'
   'r2dvar'
   1.0d0
 
-'Db_zm'                                            ! Input/Output
+'Db_zm'
   'Db_zm'
-  '?'                                              ! [?]
+  '?'
   'Db_zm, scalar, series'
   'ocean_time'
   'idBott(idbzm)'
   'r2dvar'
   1.0d0
 
-'Db_zphi'                                          ! Input/Output
+'Db_zphi'
   'Db_zphi'
-  '?'                                              ! [?]
+  '?'
   'Db_zphi, scalar, series'
   'ocean_time'
   'idBott(idbzp)'
   'r2dvar'
   1.0d0
 
-'wet_dry_masking'                                  ! Input/Output
+'wet_dry_masking'
   'wet_dry mask'
-  '1'                                              ! []
+  '1'
   'wet masking, scalar, series'
   'ocean_time'
   'idWmsk'
   'r2dvar'
   1.0d0
-
-
-!
-!-----------------------------------------------------------------------
-!  Define names of variables for time-averaged quadratic terms.
-!-----------------------------------------------------------------------
-!
-
-'zeta2'                                            ! Output
-  'time-averaged squared free-surface'
-  'meter2'                                         ! [m2]
-  'zeta2, scalar, series'
-  'ocean_time'
-  'idZZav'
-  'r2dvar'
-  1.0d0
-
-'ubar2'                                            ! Output
-  'time-averaged squared vertically integrated u-momentum'
-  'meter2 second-2'                                ! [m2/s2]
-  'ubar2, scalar, series'
-  'ocean_time'
-  'idU2av'
-  'u2dvar'
-  1.0d0
-
-'vbar2'                                            ! Output
-  'time-averaged squared vertically integrated v-momentum'
-  'meter2 second-2'                                ! [m2/s2]
-  'vbar2, scalar, series'
-  'ocean_time'
-  'idV2av'
-  'v2dvar'
-  1.0d0
-
-'Huon'                                             ! Output
-  'time-averaged u-volume flux'
-  'meter3 second-1'                                ! [m3/s]
-  'Huon, scalar, series'
-  'ocean_time'
-  'idHUav'
-  'u3dvar'
-  1.0d0
-
-'Hvom'                                             ! Output
-  'time-averaged v-volume flux'
-  'meter3 second-1'                                ! [m3/s]
-  'Hvom, scalar, series'
-  'ocean_time'
-  'idHVav'
-  'v3dvar'
-  1.0d0
-
-'uu'                                               ! Output
-  'time-averaged u-momentum times u-momentum'
-  'meter2 second-2'                                ! [m2/s2]
-  'uu, scalar, series'
-  'ocean_time'
-  'idUUav'
-  'u3dvar'
-  1.0d0
-
-'uv'                                               ! Output
-  'time-averaged u-momentum times v-momentum'
-  'meter2 second-2'                                ! [m2/s2]
-  'uv, scalar, series'
-  'ocean_time'
-  'idUVav'
-  'r3dvar'
-  1.0d0
-
-'vv'                                               ! Output
-  'time-averaged v-momentum times v-momentum'
-  'meter2 second-2'                                ! [m2/s2]
-  'uv, scalar, series'
-  'ocean_time'
-  'idVVav'
-  'v3dvar'
-  1.0d0
-
-'speed'                                            ! Output
-  'time-averaged speed'
-  'meter2 second-2'                                ! [m2/s2]
-  'speed, scalar, series'
-  'ocean_time'
-  'idSUVav'
-  'r3dvar'
-  1.0d0
-
-! ADD_STATE_VARIABLES_HERE
-! BEGIN_STATE_VARIABLES
-!
-!------------------------------------------------------------------------------
-!  Biological state variables
-!------------------------------------------------------------------------------
-!
-
-! Nitrogen
 
 'nsm'
   'Small Phytoplankton Nitrogen'
@@ -3127,8 +2824,6 @@
   'r3dvar'
   1.0d0
 
-! Biogenic Minerals and Lithogenic Materials (COBALT_MINERALS)
-
 'sio4'
   'Silicate'
   'mol/kg'
@@ -3192,8 +2887,6 @@
   'r3dvar'
   1.0d0
 
-! Phosporus Dynamics (always on)
-
 'po4'
   'Phosphate'
   'mol/kg'
@@ -3202,8 +2895,6 @@
   'idTvar(ipo4)'
   'r3dvar'
   1.0d0
-
-! Phosporus Dynamics (COBALT_PHOSPHORUS)
 
 'ldop'
   'labile DOP'
@@ -3240,8 +2931,6 @@
   'idTvar(ipdet)'
   'r3dvar'
   1.0d0
-
-! Iron Dynamics (COBALT_IRON)
 
 'fesm'
   'Small Phytoplankton Iron'
@@ -3288,8 +2977,6 @@
   'r3dvar'
   1.0d0
 
-! Oxygen, Carbon and Alkalinity (COBALT_CARBON)
-
 'o2'
   'Oxygen'
   'mol/kg'
@@ -3317,8 +3004,6 @@
   'r3dvar'
   1.0d0
 
-! Coastal diatoms (COASTDIAT)
-
 'nmd'
   'Medium Phytoplankton Nitrogen'
   'mol/kg'
@@ -3345,8 +3030,6 @@
   'idTvar(ifemd)'
   'r3dvar'
   1.0d0
-
-! Benthic (BENTHIC)
 
 'cased'
   'Sediment CaCO3'
@@ -3402,726 +3085,700 @@
   'r2dvar'
   1.0d0
 
-! BGC diagnostics treated like tracers
-
-'chl'
-  'Chlorophyll'
-  'ug kg-1'
-  'chl, scalar, series'
+'zeta2'
+  'time-averaged squared free-surface'
+  'meter2'
+  'zeta2, scalar, series'
   'ocean_time'
-  'iDobgc(iochl)'
-  'r3dvar'
+  'idZZav'
+  'r2dvar'
   1.0d0
 
-'irr_mem'
-  'Irradiance memory'
-  'Watts/m^2'
-  'irr_mem, scalar, series'
+'ubar2'
+  'time-averaged squared vertically integrated u-momentum'
+  'meter2 second-2'
+  'ubar2, scalar, series'
   'ocean_time'
-  'iDobgc(ioirr_mem)'
-  'r3dvar'
+  'idU2av'
+  'u2dvar'
   1.0d0
 
-'htotal'
-  'H+ ion concentration'
-  'mol/kg'
-  'htotal, scalar, series'
+'vbar2'
+  'time-averaged squared vertically integrated v-momentum'
+  'meter2 second-2'
+  'vbar2, scalar, series'
   'ocean_time'
-  'iDobgc(iohtotal)'
-  'r3dvar'
+  'idV2av'
+  'v2dvar'
   1.0d0
 
-'co3_ion'
-  'Carbonate ion'
-  'mol/kg'
-  'co3_ion, scalar, series'
+'Huon'
+  'time-averaged u-volume flux'
+  'meter3 second-1'
+  'Huon, scalar, series'
   'ocean_time'
-  'iDobgc(ioco3_ion)'
-  'r3dvar'
+  'idHUav'
+  'u3dvar'
   1.0d0
 
-'mu_mem_sm'
-  'Aggreg memory small phyto'
-  ''
-  'mu_mem_sm, scalar, series'
+'Hvom'
+  'time-averaged v-volume flux'
+  'meter3 second-1'
+  'Hvom, scalar, series'
   'ocean_time'
-  'iDobgc(iomu_mem_sm)'
-  'r3dvar'
+  'idHVav'
+  'v3dvar'
   1.0d0
 
-'mu_mem_di'
-  'Aggreg memory diatoms'
-  ''
-  'mu_mem_di, scalar, series'
+'uu'
+  'time-averaged u-momentum times u-momentum'
+  'meter2 second-2'
+  'uu, scalar, series'
   'ocean_time'
-  'iDobgc(iomu_mem_di)'
-  'r3dvar'
+  'idUUav'
+  'u3dvar'
   1.0d0
 
-'mu_mem_lg'
-  'Aggreg memory large phyto'
-  ''
-  'mu_mem_lg, scalar, series'
+'uv'
+  'time-averaged u-momentum times v-momentum'
+  'meter2 second-2'
+  'uv, scalar, series'
   'ocean_time'
-  'iDobgc(iomu_mem_lg)'
+  'idUVav'
   'r3dvar'
   1.0d0
 
-'mu_mem_md'
-  'Aggreg memory medium phyto'
-  ''
-  'mu_mem_md, scalar, series'
+'vv'
+  'time-averaged v-momentum times v-momentum'
+  'meter2 second-2'
+  'uv, scalar, series'
   'ocean_time'
-  'iDobgc(iomu_mem_md)'
+  'idVVav'
+  'v3dvar'
+  1.0d0
+
+'speed'
+  'time-averaged speed'
+  'meter2 second-2'
+  'speed, scalar, series'
+  'ocean_time'
+  'idSUVav'
   'r3dvar'
   1.0d0
 
-! Tracer nudging coefficient
-
-'tracer_NudgeCoef'
-  'generic tracer inverse nudging coefficients'
-  'day-1'
-  'tracer_NudgeCoef, scalar'
-  'nulvar'
-  'idgTnc'
-  'r3dvar'
-  1.0d0
-
-! END_STATE_VARIABLES
-! ADD_STATE_VARIABLES_HERE
-
-'tracer2'                                          ! Output
+'tracer2'
   'time-averaged squared tracer'
-  'tracer2'                                        ! [tracer2]
+  'tracer2'
   'tracer2, scalar, series'
   'ocean_time'
   'idTTav(itrc)'
   'r3dvar'
   1.0d0
 
-'Huontracer'                                       ! Output
+'Huontracer'
   'time-averaged tracer u-volume flux'
-  'meter3 second-1 tracer'                         ! [m3/s tracer]
+  'meter3 second-1 tracer'
   'Huontracer, scalar, series'
   'ocean_time'
   'iHUTav(itrc)'
   'u3dvar'
- 1.0d0
+  1.0d0
 
-'utracer'                                          ! Output
+'utracer'
   'time-averaged u-momentum times tracer'
-  'meter second-1 tracer'                          ! [m/s tracer]
+  'meter second-1 tracer'
   'utracer, scalar, series'
   'ocean_time'
   'idUTav(itrc)'
   'u3dvar'
   1.0d0
 
-'Hvomtracer'                                       ! Output
+'Hvomtracer'
   'time-averaged tracer v-volume flux'
-  'meter3 second-1 tracer'                         ! [m3/s tracer]
+  'meter3 second-1 tracer'
   'Hvomtracer, scalar, series'
   'ocean_time'
   'iHVTav(itrc)'
   'v3dvar'
- 1.0d0
+  1.0d0
 
-'vtracer'                                          ! Output
+'vtracer'
   'time-averaged v-momentum times tracer'
-  'meter second-1 tracer'                          ! [m/s tracer]
+  'meter second-1 tracer'
   'vtracer, scalar, series'
   'ocean_time'
   'idVTav(itrc)'
   'v3dvar'
   1.0d0
 
-!
-!-----------------------------------------------------------------------
-!  Define names of variables for diagnostic fields.
-!-----------------------------------------------------------------------
-!
-!  2D momentum diagnostic terms.
-!
-
-'pvorticity_bar'                                   ! Input/Output
+'pvorticity_bar'
   '2D potential vorticity'
-  'meter-1 second-1'                               ! [1/m/s]
+  'meter-1 second-1'
   'pvorticity_bar, scalar, series'
   'ocean_time'
   'id2dPV'
   'p2dvar'
   1.0d0
 
-'rvorticity_bar'                                   ! Input/Output
+'rvorticity_bar'
   '2D relative vorticity'
-  'second-1'                                       ! [1/s]
+  'second-1'
   'rvorticity_bar, scalar, series'
   'ocean_time'
   'id2dRV'
   'p2dvar'
   1.0d0
 
-'ubar_accel'                                       ! Input/Output
+'ubar_accel'
   '2D u-momentum, acceleration term'
-  'meter second-2'                                 ! [m/s2]
+  'meter second-2'
   'ubar_accel, scalar, series'
   'ocean_time'
   'idDu2d(M2rate)'
   'u2dvar'
   1.0d0
 
-'vbar_accel'                                       ! Input/Output
+'vbar_accel'
   '2D v-momentum, acceleration term'
-  'meter second-2'                                 ! [m/s2]
+  'meter second-2'
   'vbar_accel, scalar, series'
   'ocean_time'
   'idDv2d(M2rate)'
   'v2dvar'
   1.0d0
 
-'ubar_prsgrd'                                      ! Input/Output
+'ubar_prsgrd'
   '2D u-momentum, pressure gradient term'
-  'meter second-2'                                 ! [m/s2]
+  'meter second-2'
   'ubar_prsgrd, scalar, series'
   'ocean_time'
   'idDu2d(M2pgrd)'
   'u2dvar'
   1.0d0
 
-'vbar_prsgrd'                                      ! Input/Output
+'vbar_prsgrd'
   '2D v-momentum, pressure gradient term'
-  'meter second-2'                                 ! [m/s2]
+  'meter second-2'
   'vbar_prsgrd, scalar, series'
   'ocean_time'
   'idDv2d(M2pgrd)'
   'v2dvar'
   1.0d0
 
-'ubar_cor'                                         ! Input/Output
+'ubar_cor'
   '2D u-momentum, Coriolis term'
-  'meter second-2'                                 ! [m/s2]
+  'meter second-2'
   'ubar_cor, scalar, series'
   'ocean_time'
   'idDu2d(M2fcor)'
   'u2dvar'
   1.0d0
 
-'vbar_cor'                                         ! Input/Output
+'vbar_cor'
   '2D v-momentum, Coriolis term'
-  'meter second-2'                                 ! [m/s2]
+  'meter second-2'
   'vbar_cor, scalar, series'
   'ocean_time'
   'idDv2d(M2fcor)'
   'v2dvar'
   1.0d0
 
-'ubar_hadv'                                        ! Input/Output
+'ubar_hadv'
   '2D u-momentum, horizontal advection term'
-  'meter second-2'                                 ! [m/s2]
+  'meter second-2'
   'ubar_hadv, scalar, series'
   'ocean_time'
   'idDu2d(M2hadv)'
   'u2dvar'
   1.0d0
 
-'ubar_xadv'                                        ! Input/Output
+'ubar_xadv'
   '2D u-momentum, horizontal XI-advection term'
-  'meter second-2'                                 ! [m/s2]
+  'meter second-2'
   'ubar_xadv, scalar, series'
   'ocean_time'
   'idDu2d(M2xadv)'
   'u2dvar'
   1.0d0
 
-'ubar_yadv'                                        ! Input/Output
+'ubar_yadv'
   '2D u-momentum, horizontal ETA-advection term'
-  'meter second-2'                                 ! [m/s2]
+  'meter second-2'
   'ubar_yadv, scalar, series'
   'ocean_time'
   'idDu2d(M2yadv)'
   'u2dvar'
   1.0d0
 
-'vbar_hadv'                                        ! Input/Output
+'vbar_hadv'
   '2D v-momentum, horizontal advection term'
-  'meter second-2'                                 ! [m/s2]
+  'meter second-2'
   'vbar_hadv, scalar, series'
   'ocean_time'
   'idDv2d(M2hadv)'
   'v2dvar'
   1.0d0
 
-'vbar_xadv'                                        ! Input/Output
+'vbar_xadv'
   '2D v-momentum, horizontal XI-advection term'
-  'meter second-2'                                 ! [m/s2]
+  'meter second-2'
   'vbar_xadv, scalar, series'
   'ocean_time'
   'idDv2d(M2xadv)'
   'v2dvar'
   1.0d0
 
-'vbar_yadv'                                        ! Input/Output
+'vbar_yadv'
   '2D v-momentum, horizontal ETA-advection term'
-  'meter second-2'                                 ! [m/s2]
+  'meter second-2'
   'vbar_yadv, scalar, series'
   'ocean_time'
   'idDv2d(M2yadv)'
   'v2dvar'
   1.0d0
 
-'ubar_hrad'                                        ! Input/Output
+'ubar_hrad'
   '2D u-momentum, horizontal radiation stress term'
-  'meter second-2'                                 ! [m/s2]
+  'meter second-2'
   'ubar_hrad, scalar, series'
   'ocean_time'
   'idDu2d(M2hrad)'
   'u2dvar'
   1.0d0
 
-'vbar_hrad'                                        ! Input/Output
+'vbar_hrad'
   '2D v-momentum, horizontal radiation stress term'
-  'meter second-2'                                 ! [m/s2]
+  'meter second-2'
   'vbar_hrad, scalar, series'
   'ocean_time'
   'idDv2d(M2hrad)'
   'v2dvar'
   1.0d0
 
-'ubar_hvisc'                                       ! Input/Output
+'ubar_hvisc'
   '2D u-momentum, horizontal viscosity term'
-  'meter second-2'                                 ! [m/s2]
+  'meter second-2'
   'ubar_hvisc, scalar, series'
   'ocean_time'
   'idDu2d(M2hvis)'
   'u2dvar'
   1.0d0
 
-'ubar_xvisc'                                       ! Input/Output
+'ubar_xvisc'
   '2D u-momentum, horizontal XI-viscosity term'
-  'meter second-2'                                 ! [m/s2]
+  'meter second-2'
   'ubar_xvisc, scalar, series'
   'ocean_time'
   'idDu2d(M2xvis)'
   'u2dvar'
   1.0d0
 
-'ubar_yvisc'                                       ! Input/Output
+'ubar_yvisc'
   '2D u-momentum, horizontal ETA-viscosity term'
-  'meter second-2'                                 ! [m/s2]
+  'meter second-2'
   'ubar_yvisc, scalar, series'
   'ocean_time'
   'idDu2d(M2yvis)'
   'u2dvar'
   1.0d0
 
-'vbar_hvisc'                                       ! Input/Output
+'vbar_hvisc'
   '2D v-momentum, horizontal viscosity term'
-  'meter second-2'                                 ! [m/s2]
+  'meter second-2'
   'vbar_hvisc, scalar, series'
   'ocean_time'
   'idDv2d(M2hvis)'
   'v2dvar'
   1.0d0
 
-'vbar_xvisc'                                       ! Input/Output
+'vbar_xvisc'
   '2D v-momentum, horizontal XI-viscosity term'
-  'meter second-2'                                 ! [m/s2]
+  'meter second-2'
   'vbar_xvisc, scalar, series'
   'ocean_time'
   'idDv2d(M2xvis)'
   'v2dvar'
   1.0d0
 
-'vbar_yvisc'                                       ! Input/Output
+'vbar_yvisc'
   '2D v-momentum, horizontal ETA-viscosity term'
-  'meter second-2'                                 ! [m/s2]
+  'meter second-2'
   'vbar_yvisc, scalar, series'
   'ocean_time'
   'idDv2d(M2yvis)'
   'v2dvar'
   1.0d0
 
-'ubar_sstr'                                        ! Input/Output
+'ubar_sstr'
   '2D u-momentum, surface stress term'
-  'meter second-2'                                 ! [m/s2]
+  'meter second-2'
   'ubar_sstr, scalar, series'
   'ocean_time'
   'idDu2d(M2sstr)'
   'u2dvar'
   1.0d0
 
-'ubar_bstr'                                        ! Input/Output
+'ubar_bstr'
   '2D u-momentum, bottom stress term'
-  'meter second-2'                                 ! [m/s2]
+  'meter second-2'
   'ubar_bstr, scalar, series'
   'ocean_time'
   'idDu2d(M2bstr)'
   'u2dvar'
   1.0d0
 
-'vbar_sstr'                                        ! Input/Output
+'vbar_sstr'
   '2D v-momentum, surface stress term'
-  'meter second-2'                                 ! [m/s2]
+  'meter second-2'
   'vbar_sstr, scalar, series'
   'ocean_time'
   'idDv2d(M2sstr)'
   'v2dvar'
   1.0d0
 
-'vbar_bstr'                                        ! Input/Output
+'vbar_bstr'
   '2D v-momentum, bottom stress term'
-  'meter second-2'                                 ! [m/s2]
+  'meter second-2'
   'vbar_bstr, scalar, series'
   'ocean_time'
   'idDv2d(M2bstr)'
   'v2dvar'
   1.0d0
 
-!
-!  3D momentum diagnostic terms.
-!
-
-'pvorticity'                                       ! Input/Output
+'pvorticity'
   'potential vorticity'
-  'meter-1 second-1'                               ! [1/m/s]
+  'meter-1 second-1'
   'pvorticity, scalar, series'
   'ocean_time'
   'id3dPV'
   'p3dvar'
   1.0d0
 
-'rvorticity'                                       ! Input/Output
+'rvorticity'
   'relative vorticity'
-  'second-1'                                       ! [1/s]
+  'second-1'
   'rvorticity, scalar, series'
   'ocean_time'
   'id3dRV'
   'p3dvar'
   1.0d0
 
-'u_accel'                                          ! Input/Output
+'u_accel'
   '3D u-momentum, acceleration term'
-  'meter second-2'                                 ! [m/s2]
+  'meter second-2'
   'u_accel, scalar, series'
   'ocean_time'
   'idDu3d(M3rate)'
   'u3dvar'
   1.0d0
 
-'v_accel'                                          ! Input/Output
+'v_accel'
   '3D v-momentum, acceleration term'
-  'meter second-2'                                 ! [m/s2]
+  'meter second-2'
   'v_accel, scalar, series'
   'ocean_time'
   'idDv3d(M3rate)'
   'v3dvar'
   1.0d0
 
-'u_prsgrd'                                         ! Input/Output
+'u_prsgrd'
   '3D u-momentum, pressure gradient term'
-  'meter second-2'                                 ! [m/s2]
+  'meter second-2'
   'u_prsgrd, scalar, series'
   'ocean_time'
   'idDu3d(M3pgrd)'
   'u3dvar'
   1.0d0
 
-'v_prsgrd'                                         ! Input/Output
+'v_prsgrd'
   '3D v-momentum, pressure gradient term'
-  'meter second-2'                                 ! [m/s2]
+  'meter second-2'
   'v_prsgrd, scalar, series'
   'ocean_time'
   'idDv3d(M3pgrd)'
   'v3dvar'
   1.0d0
 
-'u_cor'                                            ! Input/Output
+'u_cor'
   '3D u-momentum, Coriolis term'
-  'meter second-2'                                 ! [m/s2]
+  'meter second-2'
   'u_cor, scalar, series'
   'ocean_time'
   'idDu3d(M3fcor)'
   'u3dvar'
   1.0d0
 
-'v_cor'                                            ! Input/Output
+'v_cor'
   '3D v-momentum, Coriolis term'
-  'meter second-2'                                 ! [m/s2]
+  'meter second-2'
   'v_cor, scalar, series'
   'ocean_time'
   'idDv3d(M3fcor)'
   'v3dvar'
   1.0d0
 
-'u_hadv'                                           ! Input/Output
+'u_hadv'
   '3D u-momentum, horizontal advection term'
-  'meter second-2'                                 ! [m/s2]
+  'meter second-2'
   'u_hadv, scalar, series'
   'ocean_time'
   'idDu3d(M3hadv)'
   'u3dvar'
   1.0d0
 
-'u_xadv'                                           ! Input/Output
+'u_xadv'
   '3D u-momentum, horizontal XI-advection term'
-  'meter second-2'                                 ! [m/s2]
+  'meter second-2'
   'u_xadv, scalar, series'
   'ocean_time'
   'idDu3d(M3xadv)'
   'u3dvar'
   1.0d0
 
-'u_yadv'                                           ! Input/Output
+'u_yadv'
   '3D u-momentum, horizontal ETA-advection term'
-  'meter second-2'                                 ! [m/s2]
+  'meter second-2'
   'u_yadv, scalar, series'
   'ocean_time'
   'idDu3d(M3yadv)'
   'u3dvar'
   1.0d0
 
-'v_hadv'                                           ! Input/Output
+'v_hadv'
   '3D v-momentum, horizontal advection term'
-  'meter second-2'                                 ! [m/s2]
+  'meter second-2'
   'v_hadv, scalar, series'
   'ocean_time'
   'idDv3d(M3hadv)'
   'v3dvar'
   1.0d0
 
-'v_xadv'                                           ! Input/Output
+'v_xadv'
   '3D v-momentum, horizontal XI-advection term'
-  'meter second-2'                                 ! [m/s2]
+  'meter second-2'
   'v_xadv, scalar, series'
   'ocean_time'
   'idDv3d(M3xadv)'
   'v3dvar'
   1.0d0
 
-'v_yadv'                                           ! Input/Output
+'v_yadv'
   '3D v-momentum, horizontal ETA-advection term'
-  'meter second-2'                                 ! [m/s2]
+  'meter second-2'
   'v_yadv, scalar, series'
   'ocean_time'
   'idDv3d(M3yadv)'
   'v3dvar'
   1.0d0
 
-'u_vadv'                                           ! Input/Output
+'u_vadv'
   '3D u-momentum, vertical advection term'
-  'meter second-2'                                 ! [m/s2]
+  'meter second-2'
   'u_vadv, scalar, series'
   'ocean_time'
   'idDu3d(M3vadv)'
   'u3dvar'
   1.0d0
 
-'v_vadv'                                           ! Input/Output
+'v_vadv'
   '3D v-momentum, vertical advection term'
-  'meter second-2'                                 ! [m/2]
+  'meter second-2'
   'v_vadv, scalar, series'
   'ocean_time'
   'idDv3d(M3vadv)'
   'v3dvar'
   1.0d0
 
-'u_hrad'                                           ! Input/Output
+'u_hrad'
   '3D u-momentum, horizontal radiation stress  term'
-  'meter second-2'                                 ! [m/s2]
+  'meter second-2'
   'u_hrad, scalar, series'
   'ocean_time'
   'idDu3d(M3hrad)'
   'u3dvar'
   1.0d0
 
-'v_hrad'                                           ! Input/Output
+'v_hrad'
   '3D v-momentum, horizontal radiation stress term'
-  'meter second-2'                                 ! [m/s2]
+  'meter second-2'
   'v_hrad, scalar, series'
   'ocean_time'
   'idDv3d(M3hrad)'
   'v3dvar'
   1.0d0
 
-'u_vrad'                                           ! Input/Output
+'u_vrad'
   '3D u-momentum, vertical radiation stress term'
-  'meter second-2'                                 ! [m/s2]
+  'meter second-2'
   'u_vrad, scalar, series'
   'ocean_time'
   'idDu3d(M3vrad)'
   'u3dvar'
   1.0d0
 
-'v_vrad'                                           ! Input/Output
+'v_vrad'
   '3D v-momentum, vertical radiation stress term'
-  'meter second-2'                                 ! [m/2]
+  'meter second-2'
   'v_vrad, scalar, series'
   'ocean_time'
   'idDv3d(M3vrad)'
   'v3dvar'
   1.0d0
 
-'u_hvisc'                                          ! Input/Output
+'u_hvisc'
   '3D u-momentum, horizontal viscosity term'
-  'meter second-2'                                 ! [m/s2]
+  'meter second-2'
   'u_hvisc, scalar, series'
   'ocean_time'
   'idDu3d(M3hvis)'
   'u3dvar'
   1.0d0
 
-'u_xvisc'                                          ! Input/Output
+'u_xvisc'
   '3D u-momentum, horizontal XI-viscosity term'
-  'meter second-2'                                 ! [m/s2]
+  'meter second-2'
   'u_xvisc, scalar, series'
   'ocean_time'
   'idDu3d(M3xvis)'
   'u3dvar'
   1.0d0
 
-'u_yvisc'                                          ! Input/Output
+'u_yvisc'
   '3D u-momentum, horizontal ETA-viscosity term'
-  'meter second-2'                                 ! [m/s2]
+  'meter second-2'
   'u_yvisc, scalar, series'
   'ocean_time'
   'idDu3d(M3yvis)'
   'u3dvar'
   1.0d0
 
-'v_hvisc'                                          ! Input/Output
+'v_hvisc'
   '3D v-momentum, horizontal viscosity term'
-  'meter second-2'                                 ! [m/s2]
+  'meter second-2'
   'v_hvisc, scalar, series'
   'ocean_time'
   'idDv3d(M3hvis)'
   'v3dvar'
   1.0d0
 
-'v_xvisc'                                          ! Input/Output
+'v_xvisc'
   '3D v-momentum, horizontal XI-viscosity term'
-  'meter second-2'                                 ! [m/s2]
+  'meter second-2'
   'v_xvisc, scalar, series'
   'ocean_time'
   'idDv3d(M3xvis)'
   'v3dvar'
   1.0d0
 
-'v_yvisc'                                          ! Input/Output
+'v_yvisc'
   '3D v-momentum, horizontal ETA-viscosity term'
-  'meter second-2'                                 ! [m/s2]
+  'meter second-2'
   'v_yvisc, scalar, series'
   'ocean_time'
   'idDv3d(M3yvis)'
   'v3dvar'
   1.0d0
 
-'u_vvisc'                                          ! Input/Output
+'u_vvisc'
   '3D u-momentum, vertical viscosity term'
-  'meter second-2'                                 ! [m/s2]
+  'meter second-2'
   'u_vvisc, scalar, series'
   'ocean_time'
   'idDu3d(M3vvis)'
   'u3dvar'
   1.0d0
 
-'v_vvisc'                                          ! Input/Output
+'v_vvisc'
   '3D v-momentum, vertical viscosity term'
-  'meter second-2'                                 ! [m/s2]
+  'meter second-2'
   'v_vvisc, scalar, series'
   'ocean_time'
   'idDv3d(M3vvis)'
   'v3dvar'
   1.0d0
 
-!
-!  Tracer diagnostics terms. Notice that the variable names are generic
-!  to allow string concatenation with the actual tracer name. These
-!  entries MUST be entered in this file after all the active and
-!  passive tracer variable information.
-!
-
-'_rate'                                            ! Input/Output
+'_rate'
   'time rate of change'
-  'second-1'                                       ! [1/s T]
+  'second-1'
   '_rate, scalar, series'
   'ocean_time'
   'idDtrc(iTrate)'
   'r3dvar'
   1.0d0
 
-'_hadv'                                            ! Input/Output
+'_hadv'
   'horizontal advection term'
-  'second-1'                                       ! [1/s T]
+  'second-1'
   '_hadv, scalar, series'
   'ocean_time'
   'idDtrc(iThadv)'
   'r3dvar'
   1.0d0
 
-'_xadv'                                            ! Input/Output
+'_xadv'
   'horizontal XI-advection term'
-  'second-1'                                       ! [1/s T]
+  'second-1'
   '_xadv, scalar, series'
   'ocean_time'
   'idDtrc(iTxadv)'
   'r3dvar'
   1.0d0
 
-'_yadv'                                            ! Input/Output
+'_yadv'
   'horizontal ETA-advection term'
-  'second-1'                                       ! [1/s T]
+  'second-1'
   '_yadv, scalar, series'
   'ocean_time'
   'idDtrc(iTyadv)'
   'r3dvar'
   1.0d0
 
-'_vadv'                                            ! Input/Output
+'_vadv'
   'vertical advection term'
-  'second-1'                                       ! [1/s T]
+  'second-1'
   '_vadv, scalar, series'
   'ocean_time'
   'idDtrc(iTvadv)'
   'r3dvar'
   1.0d0
 
-'_hdiff'                                           ! Input/Output
+'_hdiff'
   'horizontal diffusion term'
-  'second-1'                                       ! [1/s T]
+  'second-1'
   '_hdiff, scalar, series'
   'ocean_time'
   'idDtrc(iThdif)'
   'r3dvar'
   1.0d0
 
-'_xdiff'                                           ! Input/Output
+'_xdiff'
   'horizontal XI-diffusion term'
-  'second-1'                                       ! [1/s T]
+  'second-1'
   '_xdiff, scalar, series'
   'ocean_time'
   'idDtrc(iTxdif)'
   'r3dvar'
   1.0d0
 
-'_ydiff'                                           ! Input/Output
+'_ydiff'
   'horizontal ETA-diffusion term'
-  'second-1'                                       ! [1/s T]
+  'second-1'
   '_ydiff, scalar, series'
   'ocean_time'
   'idDtrc(iTydif)'
   'r3dvar'
   1.0d0
 
-'_sdiff'                                           ! Input/Output
+'_sdiff'
   'horizontal S-diffusion rotated tensor term'
-  'second-1'                                       ! [1/s T]
+  'second-1'
   '_sdiff, scalar, series'
   'ocean_time'
   'idDtrc(iTsdif)'
   'r3dvar'
   1.0d0
 
-'_vdiff'                                           ! Input/Output
+'_vdiff'
   'vertical diffusion term'
   'second-1'
   '_vdiff, scalar, series'
@@ -4130,235 +3787,223 @@
   'r3dvar'
   1.0d0
 
-!
-!-----------------------------------------------------------------------
-!  Forward trajectory variables for tangent linear and adjoint models.
-!-----------------------------------------------------------------------
-!
-
-'rzeta'                                            ! Input/Output
+'rzeta'
   'RHS of free-surface equation'
-  'meter3 second-1'                                ! [m3/s]
+  'meter3 second-1'
   'rzeta, scalar, series'
   'ocean_time'
   'idRzet'
   'r2dvar'
   1.0d0
 
-'rubar'                                            ! Input/Output
+'rubar'
   'RHS of vertically integrated u-momentum'
-  'meter4 second-2'                                ! [m4/s2]
+  'meter4 second-2'
   'rubar, scalar, series'
   'ocean_time'
   'idRu2d'
   'u2dvar'
   1.0d0
 
-'rvbar'                                            ! Input/Output
+'rvbar'
   'RHS of vertically integrated v-momentum'
-  'meter4 second-2'                                ! [m4/s2]
+  'meter4 second-2'
   'rvbar, scalar, series'
   'ocean_time'
   'idRv2d'
   'v2dvar'
   1.0d0
 
-'rufrc'                                            ! Input/Output
+'rufrc'
   'RHS of vertically integrated u-coupling terms'
-  'meter4 second-2'                                ! [m4/s2]
+  'meter4 second-2'
   'rufrc, scalar, series'
   'ocean_time'
   'idRuct'
   'u2dvar'
   1.0d0
 
-'rvfrc'                                            ! Input/Output
+'rvfrc'
   'RHS of vertically integrated v-coupling terms'
-  'meter4 second-2'                                ! [m4/s2]
+  'meter4 second-2'
   'rvfrc, scalar, series'
   'ocean_time'
   'idRvct'
   'v2dvar'
   1.0d0
 
-'DU_avg1'                                          ! Input/Output
+'DU_avg1'
   'time averaged u-flux for 2D equations'
-  'meter3 second-1'                                ! [m3/s]
+  'meter3 second-1'
   'DU_avg1, scalar, series'
   'ocean_time'
   'idUfx1'
   'u2dvar'
   1.0d0
 
-'DU_avg2'                                          ! Input/Output
+'DU_avg2'
   'time averaged u-flux for 3D equations coupling'
-  'meter3 second-1'                                ! [m3/s]
+  'meter3 second-1'
   'DU_avg2, scalar, series'
   'ocean_time'
   'idUfx2'
   'u2dvar'
   1.0d0
 
-'DV_avg1'                                          ! Input/Output
+'DV_avg1'
   'time averaged v-flux for 2D equations'
-  'meter3 second-1'                                ! [m3/s]
+  'meter3 second-1'
   'DV_avg1, scalar, series'
   'ocean_time'
   'idVfx1'
   'v2dvar'
   1.0d0
 
-'DV_avg2'                                          ! Input/Output
+'DV_avg2'
   'time averaged v-flux for 3D equations coupling'
-  'meter3 second-1'                                ! [m3/s]
+  'meter3 second-1'
   'DV_avg2, scalar, series'
   'ocean_time'
   'idVfx2'
   'v2dvar'
   1.0d0
 
-'ru'                                               ! Input/Output
+'ru'
   'RHS of total u-momentum'
-  'meter4 second-2'                                ! [m4/s2]
+  'meter4 second-2'
   'ru, scalar, series'
   'ocean_time'
   'idRu3d'
   'u3dvar'
   1.0d0
 
-'rv'                                               ! Input/Output
+'rv'
   'RHS of total v-momentum'
-  'meter4 second-2'                                ! [m4/s2]
+  'meter4 second-2'
   'rv, scalar, series'
   'ocean_time'
   'idRv3d'
   'v3dvar'
   1.0d0
 
-!
-!-----------------------------------------------------------------------
-!  Varational data assimilation variables.
-!-----------------------------------------------------------------------
-!
-
-'Nobs'                                             ! Input
+'Nobs'
   'number of observations per survey time'
-  'nondimensional'                                 ! [nondimensional]
+  'nondimensional'
   'nulvar'
   'nulvar'
   'idNobs'
   'nulvar'
   1.0d0
 
-'survey_time'                                      ! Input
+'survey_time'
   'observations survey time'
-  'day'                                            ! [day]
+  'day'
   'nulvar'
   'nulvar'
   'idOday'
   'nulvar'
   1.0d0
 
-'obs_type'                                         ! Input
+'obs_type'
   'associated model state variable type'
-  'nondimensional'                                 ! [nondimensional]
+  'nondimensional'
   'nulvar'
   'datum'
   'idOtyp'
   'nulvar'
   1.0d0
 
-'obs_time'                                         ! Input
+'obs_time'
   'time of observation'
-  'day'                                            ! [day]
+  'day'
   'nulvar'
   'datum'
   'idObsT'
   'nulvar'
   1.0d0
 
-'obs_lon'                                         ! Input
+'obs_lon'
   'observation longitude'
-  'degrees_east'                                  ! [degrees_east]
+  'degrees_east'
   'nulvar'
   'datum'
   'idOlon'
   'nulvar'
   1.0d0
 
-'obs_lat'                                         ! Input
+'obs_lat'
   'observation latitude'
-  'degrees_north'                                 ! [degrees_north]
+  'degrees_north'
   'nulvar'
   'datum'
   'idOlat'
   'nulvar'
   1.0d0
 
-'obs_depth'                                        ! Input/Output
+'obs_depth'
   'depth of observation'
-  'meter'                                          ! [m]
+  'meter'
   'nulvar'
   'datum'
   'idObsD'
   'nulvar'
   1.0d0
 
-'obs_Xgrid'                                        ! Input
+'obs_Xgrid'
   'x-grid observation location'
-  'nondimensional'                                 ! [nondimensional]
+  'nondimensional'
   'nulvar'
   'datum'
   'idObsX'
   'nulvar'
   1.0d0
 
-'obs_Ygrid'                                        ! Input
+'obs_Ygrid'
   'y-grid observation location'
-  'nondimensional'                                 ! [nondimensional]
+  'nondimensional'
   'nulvar'
   'datum'
   'idObsY'
   'nulvar'
   1.0d0
 
-'obs_Zgrid'                                        ! Input/Output
+'obs_Zgrid'
   'z-grid observation location'
-  'nondimensional'                                 ! [nondimensional]
+  'nondimensional'
   'nulvar'
   'datum'
   'idObsZ'
   'nulvar'
   1.0d0
 
-'obs_value'                                        ! Input
+'obs_value'
   'observation value'
-  'state variable units'                           ! [state units]
+  'state variable units'
   'nulvar'
   'datum'
   'idOval'
   'nulvar'
   1.0d0
 
-'obs_variance'                                     ! Input
+'obs_variance'
   'observation global variance'
-  'squared state variable units'                   ! [squared state units]
+  'squared state variable units'
   'nulvar'
   'datum'
   'idOvar'
   'nulvar'
   1.0d0
 
-'obs_error'                                        ! Input
+'obs_error'
   'observation error, assigned weight'
-  'inverse squared state variable units'           ! [1/(squared state units)]
+  'inverse squared state variable units'
   'nulvar'
   'datum'
   'idOerr'
   'nulvar'
   1.0d0
 
-'obs_scale'                                        ! Output
+'obs_scale'
   'observation screening/normalization scale'
   'nondimensional'
   'nulvar'
@@ -4367,25 +4012,25 @@
   'nulvar'
   1.0d0
 
-'Kh'                                               ! Input
+'Kh'
   'convolution horizontal diffusion coefficient'
-  'meter2 second-1'                                ! [m2/s]
+  'meter2 second-1'
   'Kh, scalar, series'
   'ocean_time'
   'idKhor'
   'r2dvar'
   1.0d0
 
-'Kv'                                               ! Input
+'Kv'
   'convolution vertical diffusion coefficient'
-  'meter2 second-1'                                ! [m2/s]
+  'meter2 second-1'
   'Kv, scalar, series'
   'ocean_time'
   'idKver'
   'w3dvar'
   1.0d0
 
-'NLmodel_initial'                                  ! Output
+'NLmodel_initial'
   'initial nonlinear model at observation locations'
   'nulvar'
   'nulvar'
@@ -4394,7 +4039,7 @@
   'nulvar'
   1.0d0
 
-'NLmodel_value'                                    ! Output
+'NLmodel_value'
   'nonlinear model at observation locations'
   'nulvar'
   'nulvar'
@@ -4403,7 +4048,7 @@
   'nulvar'
   1.0d0
 
-'TLmodel_value'                                    ! Output
+'TLmodel_value'
   'tangent linear model at observation locations'
   'nulvar'
   'nulvar'
@@ -4412,7 +4057,7 @@
   'nulvar'
   1.0d0
 
-'misfit_initial'                                   ! Output
+'misfit_initial'
   'initial model-observation misfit'
   'nulvar'
   'nulvar'
@@ -4421,7 +4066,7 @@
   'nulvar'
   1.0d0
 
-'misfit_final'                                     ! Output
+'misfit_final'
   'final model-observation misfit'
   'nulvar'
   'nulvar'
@@ -4429,13 +4074,6 @@
   'idMOMf'
   'nulvar'
   1.0d0
-
-
-!
-!------------------------------------------------------------------------------
-! Ice-related variables
-!------------------------------------------------------------------------------
-!
 
 'prate'
   'precipitation rate'
@@ -4500,18 +4138,18 @@
   'v2dvar'
   1.0d0
 
-'uice_eastward'                                    ! Output
+'uice_eastward'
   'ice eastward momentum component at RHO-points'
-  'meter second-1'                                 ! [m/s]
+  'meter second-1'
   'uice_eastward, scalar, series'
   'ocean_time'
   'idUiceE'
   'r2dvar'
   1.0d0
 
-'vice_northward'                                   ! Output
+'vice_northward'
   'ice northward momentum component at RHO-points'
-  'meter second-1'                                 ! [m/s]
+  'meter second-1'
   'vice_northward, scalar, series'
   'ocean_time'
   'idViceN'
@@ -4635,14 +4273,14 @@
   'r2dvar'
   1.0d0
 
-'sfwat'                                           ! Input/Output
-  'surface melt water thickness on ice'           ! 
-  'meter'                                         ! [m]
-  'melt water thickness, scalar, series'          ! 
-  'ocean_time'                                    ! 
-  'idSfwat'                                       ! 
-  'r2dvar'                                        ! 
-  1.0d0                                           ! 
+'sfwat'
+  'surface melt water thickness on ice'
+  'meter'
+  'melt water thickness, scalar, series'
+  'ocean_time'
+  'idSfwat'
+  'r2dvar'
+  1.0d0
 
 'wfr'
   'rate of frazil ice growth'
@@ -4853,7 +4491,7 @@
 
 'saltflux_ice'
   'salt flux under ice'
-  'meter second-1'                                 ! [PSU m/s]
+  'meter second-1'
   'saltflux_ice, scalar, series'
   'ocean_time'
   'idSaltI'
@@ -4862,7 +4500,7 @@
 
 'saltflux_leads'
   'salt flux in leads'
-  'meter second-1'                                 ! [PSU m/s]
+  'meter second-1'
   'saltflux_leads, scalar, series'
   'ocean_time'
   'idSaltL'
@@ -4932,16 +4570,9 @@
   'r2dvar'
   1.0d0
 
-
-!
-!------------------------------------------------------------------------------
-! Ice-related Boundary variables
-!------------------------------------------------------------------------------
-!
-
 'aice_west'
   'ice concentration western boundary condition'
-  ' '
+  'None'
   'aice_west, scalar, series'
   'bry_time'
   'idAibc(iwest)'
@@ -4950,7 +4581,7 @@
 
 'aice_east'
   'ice concentration eastern boundary condition'
-  ' '
+  'None'
   'aice_east, scalar, series'
   'bry_time'
   'idAibc(ieast)'
@@ -4959,7 +4590,7 @@
 
 'aice_north'
   'ice concentration northern boundary condition'
-  ' '
+  'None'
   'aice_north, scalar, series'
   'bry_time'
   'idAibc(inorth)'
@@ -4968,7 +4599,7 @@
 
 'aice_south'
   'ice concentration southern boundary condition'
-  ' '
+  'None'
   'aice_south, scalar, series'
   'bry_time'
   'idAibc(isouth)'
@@ -5262,15 +4893,87 @@
   'idVibc(isouth)'
   'nulvar'
   1.0d0
-! END_STATE_VARIABLES
 
-!
-!------------------------------------------------------------------------------
-!  Climatology for biological state variables
-!------------------------------------------------------------------------------
-!
+'chl'
+  'Chlorophyll'
+  'ug kg-1'
+  'chl, scalar, series'
+  'ocean_time'
+  'iDobgc(iochl)'
+  'r3dvar'
+  1.0d0
 
-! Coastal diatoms (COASTDIAT)
+'irr_mem'
+  'Irradiance memory'
+  'Watts/m^2'
+  'irr_mem, scalar, series'
+  'ocean_time'
+  'iDobgc(ioirr_mem)'
+  'r3dvar'
+  1.0d0
+
+'htotal'
+  'H+ ion concentration'
+  'mol/kg'
+  'htotal, scalar, series'
+  'ocean_time'
+  'iDobgc(iohtotal)'
+  'r3dvar'
+  1.0d0
+
+'co3_ion'
+  'Carbonate ion'
+  'mol/kg'
+  'co3_ion, scalar, series'
+  'ocean_time'
+  'iDobgc(ioco3_ion)'
+  'r3dvar'
+  1.0d0
+
+'mu_mem_sm'
+  'Aggreg memory small phyto'
+  'None'
+  'mu_mem_sm, scalar, series'
+  'ocean_time'
+  'iDobgc(iomu_mem_sm)'
+  'r3dvar'
+  1.0d0
+
+'mu_mem_di'
+  'Aggreg memory diatoms'
+  'None'
+  'mu_mem_di, scalar, series'
+  'ocean_time'
+  'iDobgc(iomu_mem_di)'
+  'r3dvar'
+  1.0d0
+
+'mu_mem_lg'
+  'Aggreg memory large phyto'
+  'None'
+  'mu_mem_lg, scalar, series'
+  'ocean_time'
+  'iDobgc(iomu_mem_lg)'
+  'r3dvar'
+  1.0d0
+
+'mu_mem_md'
+  'Aggreg memory medium phyto'
+  'None'
+  'mu_mem_md, scalar, series'
+  'ocean_time'
+  'iDobgc(iomu_mem_md)'
+  'r3dvar'
+  1.0d0
+
+'tracer_NudgeCoef'
+  'generic tracer inverse nudging coefficients'
+  'day-1'
+  'tracer_NudgeCoef, scalar'
+  'nulvar'
+  'idgTnc'
+  'r3dvar'
+  1.0d0
 
 'nmd'
   'medium Phytoplankton Nitrogen'
@@ -5298,17 +5001,6 @@
   'idTclm(ifemd)'
   'r3dvar'
   1.0d0
-
-!
-!------------------------------------------------------------------------------
-!  Biological boundary conditions
-!  By default, the nutrient state variables require independent boundary input 
-!  variables values, while the the living critters use scaling of the same
-!  ones_XXXX input variables to set their boundary values to a seed value
-!------------------------------------------------------------------------------
-!
-
-! Nitrogen
 
 'ones_east'
   'Small Phytoplankton Nitrogen eastern boundary condition'
@@ -5778,8 +5470,6 @@
   'nulvar'
   1.0d-9
 
-! Biogenic Minerals and Lithogenic Materials (COBALT_MINERALS)
-
 'SiO4_east'
   'Silicate eastern boundary condition'
   'mol/kg'
@@ -6032,8 +5722,6 @@
   'nulvar'
   1.0d-9
 
-! Phosporus Dynamics (always on)
-
 'PO4_east'
   'Phosphate eastern boundary condition'
   'mol/kg'
@@ -6069,8 +5757,6 @@
   'idTbry(iwest,ipo4)'
   'nulvar'
   1.0d-6
-
-! Phosporus Dynamics (COBALT_PHOSPHORUS)
 
 'ones_east'
   'labile DOP eastern boundary condition'
@@ -6215,8 +5901,6 @@
   'idTbry(iwest,ipdet)'
   'nulvar'
   1.0d-9
-
-! Iron Dynamics (COBALT_IRON)
 
 'ones_east'
   'Small Phytoplankton Iron eastern boundary condition'
@@ -6398,8 +6082,6 @@
   'nulvar'
   1.0d-9
 
-! Oxygen, Carbon and Alkalinity (COBALT_CARBON)
-
 'oxygen_east'
   'Oxygen eastern boundary condition'
   'mol/kg'
@@ -6508,8 +6190,6 @@
   'nulvar'
   1.0d-6
 
-! Coastal diatoms (COASTDIAT)
-
 'ones_east'
   'Medium Phytoplankton Nitrogen eastern boundary condition'
   'mol/kg'
@@ -6617,14 +6297,6 @@
   'idTbry(iwest,ifemd)'
   'nulvar'
   1.0d-9
-
-!
-!------------------------------------------------------------------------------
-!  Tracer point sources (rivers) for biological state variables
-!------------------------------------------------------------------------------
-!
-
-! Nitrogen
 
 'river_nsm'
   'river runoff Small Phytoplankton Nitrogen'
@@ -6743,8 +6415,6 @@
   'r3dvar'
   1.0d0
 
-! Biogenic Minerals and Lithogenic Materials (COBALT_MINERALS)
-
 'river_sio4'
   'river runoff Silicate'
   'mol/kg'
@@ -6808,8 +6478,6 @@
   'r3dvar'
   1.0d0
 
-! Phosporus Dynamics (always on)
-
 'river_po4'
   'river runoff Phosphate'
   'mol/kg'
@@ -6818,8 +6486,6 @@
   'idRtrc(ipo4)'
   'r3dvar'
   1.0d0
-
-! Phosporus Dynamics (COBALT_PHOSPHORUS)
 
 'river_ldop'
   'river runoff labile DOP'
@@ -6856,8 +6522,6 @@
   'idRtrc(ipdet)'
   'r3dvar'
   1.0d0
-
-! Iron Dynamics (COBALT_IRON)
 
 'river_fesm'
   'river runoff Small Phytoplankton Iron'
@@ -6904,8 +6568,6 @@
   'r3dvar'
   1.0d0
 
-! Oxygen, Carbon and Alkalinity (COBALT_CARBON)
-
 'river_o2'
   'river runoff Oxygen'
   'mol/kg'
@@ -6933,8 +6595,6 @@
   'r3dvar'
   1.0d0
 
-! Coastal diatoms (COASTDIAT)
-
 'river_nmd'
   'river runoff Medium Phytoplankton Nitrogen'
   'mol/kg'
@@ -6961,14 +6621,6 @@
   'idRtrc(ifemd)'
   'r3dvar'
   1.0d0
-
-!
-!------------------------------------------------------------------------------
-!  External forcing
-!------------------------------------------------------------------------------
-!
-
-! River sources (BIO_COBALT_RUNOFF)
 
 'river_no3'
   'no3 river source'
@@ -7051,8 +6703,6 @@
   'r2dvar'
   1.0d0
 
-! River iron (BIO_COBALT_RUNOFF + COBALT_IRON)
-
 'river_fed'
   'fed river source'
   'mol.m-2.s-1'
@@ -7061,8 +6711,6 @@
   'idriver_fed'
   'r2dvar'
   1.0d0
-
-! Surface forcing
 
 'pCO2air'
   'atmCO2'
@@ -7099,14 +6747,6 @@
   'idMineralFe'
   'r2dvar'
   1.0d0
-
-!
-!------------------------------------------------------------------------------
-!  Diagnostics
-!------------------------------------------------------------------------------
-!
-
-! Always on
 
 'cased'
   'Sediment CaCO3'
@@ -7596,7 +7236,7 @@
 
 'z_ratio_100'
   'Z-ratio'
-  ''
+  'None'
   'z_ratio_100, scalar, series'
   'ocean_time'
   'iDbio2(iz_ratio_100)'
@@ -7605,7 +7245,7 @@
 
 'pe_ratio_100'
   'pe-ratio'
-  ''
+  'None'
   'pe_ratio_100, scalar, series'
   'ocean_time'
   'iDbio2(ipe_ratio_100)'
@@ -7614,7 +7254,7 @@
 
 'f_ratio_100'
   'f-ratio'
-  ''
+  'None'
   'f_ratio_100, scalar, series'
   'ocean_time'
   'iDbio2(if_ratio_100)'
@@ -7910,7 +7550,7 @@
   1.0d0
 
 'def_fe_sm'
-  ''
+  'None'
   '[]'
   'def_fe_sm, scalar, series'
   'ocean_time'
@@ -7919,7 +7559,7 @@
   1.0d0
 
 'def_fe_di'
-  ''
+  'None'
   '[]'
   'def_fe_di, scalar, series'
   'ocean_time'
@@ -7928,7 +7568,7 @@
   1.0d0
 
 'def_fe_lg'
-  ''
+  'None'
   '[]'
   'def_fe_lg, scalar, series'
   'ocean_time'
@@ -7937,7 +7577,7 @@
   1.0d0
 
 'felim_sm'
-  ''
+  'None'
   '[]'
   'felim_sm, scalar, series'
   'ocean_time'
@@ -7946,7 +7586,7 @@
   1.0d0
 
 'felim_di'
-  ''
+  'None'
   '[]'
   'felim_di, scalar, series'
   'ocean_time'
@@ -7955,7 +7595,7 @@
   1.0d0
 
 'felim_lg'
-  ''
+  'None'
   '[]'
   'felim_lg, scalar, series'
   'ocean_time'
@@ -7964,7 +7604,7 @@
   1.0d0
 
 'no3lim_sm'
-  ''
+  'None'
   '[]'
   'no3lim_sm, scalar, series'
   'ocean_time'
@@ -7973,7 +7613,7 @@
   1.0d0
 
 'no3lim_di'
-  ''
+  'None'
   '[]'
   'no3lim_di, scalar, series'
   'ocean_time'
@@ -7982,7 +7622,7 @@
   1.0d0
 
 'no3lim_lg'
-  ''
+  'None'
   '[]'
   'no3lim_lg, scalar, series'
   'ocean_time'
@@ -7991,7 +7631,7 @@
   1.0d0
 
 'nh4lim_sm'
-  ''
+  'None'
   '[]'
   'nh4lim_sm, scalar, series'
   'ocean_time'
@@ -8000,7 +7640,7 @@
   1.0d0
 
 'nh4lim_di'
-  ''
+  'None'
   '[]'
   'nh4lim_di, scalar, series'
   'ocean_time'
@@ -8009,7 +7649,7 @@
   1.0d0
 
 'nh4lim_lg'
-  ''
+  'None'
   '[]'
   'nh4lim_lg, scalar, series'
   'ocean_time'
@@ -8018,7 +7658,7 @@
   1.0d0
 
 'po4lim_sm'
-  ''
+  'None'
   '[]'
   'po4lim_sm, scalar, series'
   'ocean_time'
@@ -8027,7 +7667,7 @@
   1.0d0
 
 'po4lim_di'
-  ''
+  'None'
   '[]'
   'po4lim_di, scalar, series'
   'ocean_time'
@@ -8036,7 +7676,7 @@
   1.0d0
 
 'po4lim_lg'
-  ''
+  'None'
   '[]'
   'po4lim_lg, scalar, series'
   'ocean_time'
@@ -8045,8 +7685,8 @@
   1.0d0
 
 'chl_di'
-  ''
-  '[ug/kg]'
+  'None'
+  '['ug/kg']'
   'chl_di, scalar, series'
   'ocean_time'
   'iDbio3(ichl_di)'
@@ -8054,8 +7694,8 @@
   1.0d0
 
 'C_2_chl_di'
-  ''
-  '[ug/kg]'
+  'None'
+  '['ug/kg']'
   'C_2_chl_di, scalar, series'
   'ocean_time'
   'iDbio3(iC_2_chl_di)'
@@ -8063,8 +7703,8 @@
   1.0d0
 
 'chl_sm'
-  ''
-  '[ug/kg]'
+  'None'
+  '['ug/kg']'
   'chl_sm, scalar, series'
   'ocean_time'
   'iDbio3(ichl_sm)'
@@ -8072,8 +7712,8 @@
   1.0d0
 
 'C_2_chl_sm'
-  ''
-  '[ug/kg]'
+  'None'
+  '['ug/kg']'
   'C_2_chl_sm, scalar, series'
   'ocean_time'
   'iDbio3(iC_2_chl_sm)'
@@ -8081,8 +7721,8 @@
   1.0d0
 
 'chl_lg'
-  ''
-  '[ug/kg]'
+  'None'
+  '['ug/kg']'
   'chl_lg, scalar, series'
   'ocean_time'
   'iDbio3(ichl_lg)'
@@ -8090,15 +7730,13 @@
   1.0d0
 
 'C_2_chl_lg'
-  ''
-  '[ug/kg]'
+  'None'
+  '['ug/kg']'
   'C_2_chl_lg, scalar, series'
   'ocean_time'
   'iDbio3(iC_2_chl_lg)'
   'r3dvar'
   1.0d0
-
-! COASTDIAT
 
 'prod_n_100_md'
   'nitrogen production for medium phyto upper 100m'
@@ -8164,7 +7802,7 @@
   1.0d0
 
 'def_fe_md'
-  ''
+  'None'
   '[]'
   'def_fe_md, scalar, series'
   'ocean_time'
@@ -8173,7 +7811,7 @@
   1.0d0
 
 'felim_md'
-  ''
+  'None'
   '[]'
   'felim_md, scalar, series'
   'ocean_time'
@@ -8182,7 +7820,7 @@
   1.0d0
 
 'no3lim_md'
-  ''
+  'None'
   '[]'
   'no3lim_md, scalar, series'
   'ocean_time'
@@ -8191,7 +7829,7 @@
   1.0d0
 
 'nh4lim_md'
-  ''
+  'None'
   '[]'
   'nh4lim_md, scalar, series'
   'ocean_time'
@@ -8200,7 +7838,7 @@
   1.0d0
 
 'po4lim_md'
-  ''
+  'None'
   '[]'
   'po4lim_md, scalar, series'
   'ocean_time'
@@ -8209,8 +7847,8 @@
   1.0d0
 
 'chl_md'
-  ''
-  '[ug/kg]'
+  'None'
+  '['ug/kg']'
   'chl_md, scalar, series'
   'ocean_time'
   'iDbio3(ichl_md)'
@@ -8218,51 +7856,11 @@
   1.0d0
 
 'C_2_chl_md'
-  ''
-  '[ug/kg]'
+  'None'
+  '['ug/kg']'
   'C_2_chl_md, scalar, series'
   'ocean_time'
   'iDbio3(iC_2_chl_md)'
   'r3dvar'
   1.0d0
-
-! Warning: the following IDs are found in the cobalt_var.h code, but 
-! were not found in the COBALT varinfo.dat files that I modeled this 
-! one on: 
-!   idTclm(insm)
-!   idTclm(inlg)
-!   idTclm(indi)
-!   idTclm(insmz)
-!   idTclm(inmdz)
-!   idTclm(inlgz)
-!   idTclm(ildon)
-!   idTclm(isldon)
-!   idTclm(isrdon)
-!   idTclm(inbact)
-!   idTclm(inh4)
-!   idTclm(ino3)
-!   idTclm(indet)
-!   idTclm(isio4)
-!   idTclm(isilg)
-!   idTclm(isidet)
-!   idTclm(icadet_calc)
-!   idTclm(icadet_arag)
-!   idTclm(ilith)
-!   idTclm(ilithdet)
-!   idTclm(ipo4)
-!   idTclm(ildop)
-!   idTclm(isldop)
-!   idTclm(isrdop)
-!   idTclm(ipdet)
-!   idTclm(ifesm)
-!   idTclm(ifedi)
-!   idTclm(ifelg)
-!   idTclm(ifed)
-!   idTclm(ifedet)
-!   idTclm(io2)
-!   idTclm(idic)
-!   idTclm(ialk)
-!   iDbio3(ipCO2)
-!   iDbio3(iaggloss_md)
-! We may need to add those for future applications.
 
