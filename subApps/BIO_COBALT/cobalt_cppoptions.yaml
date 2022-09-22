@@ -1,0 +1,10 @@
+- {flag: BIO_COBALT               , descrip: use if Stock et al. (2014) COBALT model}
+- {flag: ANA_ALK_DIC              , descrip: use if analytic alkalinity and DIC}
+- {flag: BIO_COBALT_RUNOFF        , descrip: use if runoff includes COBALT fields}
+- {flag: COASTDIAT                , descrip: use if coastal diatoms (md phyto) are included}
+- {flag: COBALT_CARBON            , descrip: use if carbon compents matter}
+- {flag: COBALT_CONSERVATION_TEST , descrip: use for conservation of tracers}
+- {flag: COBALT_IRON              , descrip: use for iron components}
+- {flag: COBALT_MINERALS          , descrip: use for mineral components}
+- {flag: COBALT_PHOSPHORUS        , descrip: use for phosphorus components}
+- {flag: NO_IRON_COAST            , descrip: use for no coastal iron}

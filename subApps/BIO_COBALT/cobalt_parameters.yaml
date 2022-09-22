@@ -1,0 +1,257 @@
+- {param: htotal_scale_lo,   value: 0.01                  , unit: ,                       descrip: "?"}
+- {param: htotal_scale_hi,   value: 100.0                 , unit: ,                       descrip: "?"}
+- {param: RHO_0,             value: 1035.0                , unit: N/A,                    descrip: coefficients for O2 saturation}
+- {param: NKML,              value: 1                     , unit: N/A,                    descrip: coefficients for O2 saturation}
+- {param: a_0,               value: 2.00907               , unit: N/A,                    descrip: coefficients for O2 saturation}
+- {param: a_1,               value: 3.22014               , unit: N/A,                    descrip: coefficients for O2 saturation}
+- {param: a_2,               value: 4.0501                , unit: N/A,                    descrip: coefficients for O2 saturation}
+- {param: a_3,               value: 4.94457               , unit: N/A,                    descrip: coefficients for O2 saturation}
+- {param: a_4,               value: -0.256847             , unit: N/A,                    descrip: coefficients for O2 saturation}
+- {param: a_5,               value: 3.88767               , unit: N/A,                    descrip: coefficients for O2 saturation}
+- {param: b_0,               value: -0.00624523           , unit: N/A,                    descrip: coefficients for O2 saturation}
+- {param: b_1,               value: -0.00737614           , unit: N/A,                    descrip: coefficients for O2 saturation}
+- {param: b_2,               value: -0.010341             , unit: N/A,                    descrip: coefficients for O2 saturation}
+- {param: b_3,               value: -0.00817083           , unit: N/A,                    descrip: coefficients for O2 saturation}
+- {param: c_0,               value: -4.88682e-07          , unit: N/A,                    descrip: coefficients for O2 saturation}
+- {param: a1_co2,            value: 2068.9                , unit: N/A,                    descrip: Compute the Schmidt number of CO2 in seawater}
+- {param: a2_co2,            value: -118.63               , unit: N/A,                    descrip: Compute the Schmidt number of CO2 in seawater}
+- {param: a3_co2,            value: 2.9311                , unit: N/A,                    descrip: Compute the Schmidt number of CO2 in seawater}
+- {param: a4_co2,            value: -0.027                , unit: N/A,                    descrip: Compute the Schmidt number of CO2 in seawater}
+- {param: a1_o2,             value: 1929.7                , unit: N/A,                    descrip: Compute the Schmidt number of O2 in seawater}
+- {param: a2_o2,             value: -117.46               , unit: N/A,                    descrip: Compute the Schmidt number of O2 in seawater}
+- {param: a3_o2,             value: 3.116                 , unit: N/A,                    descrip: Compute the Schmidt number of O2 in seawater}
+- {param: a4_o2,             value: -0.0306               , unit: N/A,                    descrip: Compute the Schmidt number of O2 in seawater}
+- {param: mass_2_n,          value: 148.665               , unit: g mol N-1,              descrip: Stoichiometry}
+- {param: n_2_n_denit,       value: 5.9                   , unit: mol N NO3 mol N org-1,  descrip: Stoichiometry}
+- {param: o2_2_c,            value: 1.415                 , unit: mol O2 mol C-1,         descrip: Stoichiometry}
+- {param: o2_2_nfix,         value: 118.375               , unit: mol O2 mol N-1,         descrip: Stoichiometry}
+- {param: o2_2_nh4,          value: 7.375                 , unit: mol O2 mol N-1,         descrip: Stoichiometry}
+- {param: o2_2_nitrif,       value: 2.0                   , unit: mol O2 mol N-1,         descrip: Stoichiometry}
+- {param: o2_2_no3,          value: 9.375                 , unit: mol O2 mol N-1,         descrip: Stoichiometry}
+- {param: k_fed_Di,          value: 5.0e-10               , unit: mol Fed kg-1,           descrip: Nutrient Limitation Parameters (phytoplankton)}
+- {param: k_fed_Lg,          value: 4.5e-10               , unit: mol Fed kg-1,           descrip: Nutrient Limitation Parameters (phytoplankton)}
+- {param: k_fed_Md,          value: 3.0e-10               , unit: mol Fed kg-1,           descrip: Nutrient Limitation Parameters (phytoplankton)}
+- {param: k_fed_Sm,          value: 1.0e-10               , unit: mol Fed kg-1,           descrip: Nutrient Limitation Parameters (phytoplankton)}
+- {param: k_nh4_Lg,          value: 4.5e-07               , unit: mol NH4 kg-1,           descrip: Nutrient Limitation Parameters (phytoplankton)}
+- {param: k_nh4_Md,          value: 3.0e-07               , unit: mol NH4 kg-1,           descrip: Nutrient Limitation Parameters (phytoplankton)}
+- {param: k_nh4_Sm,          value: 1.0e-07               , unit: mol NH4 kg-1,           descrip: Nutrient Limitation Parameters (phytoplankton)}
+- {param: k_nh4_Di,          value: 5.0e-07               , unit: mol NH4 kg-1,           descrip: Nutrient Limitation Parameters (phytoplankton)}
+- {param: k_no3_Lg,          value: 2.25e-06              , unit: mol NO3 kg-1,           descrip: Nutrient Limitation Parameters (phytoplankton)}
+- {param: k_no3_Md,          value: 2.0e-06               , unit: mol NO3 kg-1,           descrip: Nutrient Limitation Parameters (phytoplankton)}
+- {param: k_no3_Sm,          value: 5.0e-07               , unit: mol NO3 kg-1,           descrip: Nutrient Limitation Parameters (phytoplankton)}
+- {param: k_no3_Di,          value: 2.5e-06               , unit: mol NO3 kg-1,           descrip: Nutrient Limitation Parameters (phytoplankton)}
+- {param: k_po4_Di,          value: 5.0e-08               , unit: mol PO4 kg-1,           descrip: Nutrient Limitation Parameters (phytoplankton)}
+- {param: k_po4_Lg,          value: 4.5e-08               , unit: mol PO4 kg-1,           descrip: Nutrient Limitation Parameters (phytoplankton)}
+- {param: k_po4_Md,          value: 3.0e-08               , unit: mol PO4 kg-1,           descrip: Nutrient Limitation Parameters (phytoplankton)}
+- {param: k_po4_Sm,          value: 1.0e-08               , unit: mol PO4 kg-1,           descrip: Nutrient Limitation Parameters (phytoplankton)}
+- {param: k_sio4_Lg,         value: 1.5e-06               , unit: mol SiO4 kg-1,          descrip: Nutrient Limitation Parameters (phytoplankton)}
+- {param: k_sio4_Md,         value: 1.0e-06               , unit: mol SiO4 kg-1,          descrip: Nutrient Limitation Parameters (phytoplankton)}
+- {param: k_fe_2_n_Di,       value: 0.000165625           , unit: mol Fe mol N-1,         descrip: Nutrient Limitation Parameters (phytoplankton)}
+- {param: k_fe_2_n_Lg,       value: 6.360000000000001e-05 , unit: mol Fe mol N-1,         descrip: Nutrient Limitation Parameters (phytoplankton)}
+- {param: k_fe_2_n_Md,       value: 4.968750000000001e-05 , unit: mol Fe mol N-1,         descrip: Nutrient Limitation Parameters (phytoplankton)}
+- {param: k_fe_2_n_Sm,       value: 1.9875e-05            , unit: mol Fe mol N-1,         descrip: Nutrient Limitation Parameters (phytoplankton)}
+- {param: fe_2_n_max_Sm,     value: 0.00033125            , unit: mol Fe mol N-1,         descrip: Nutrient Limitation Parameters (phytoplankton)}
+- {param: fe_2_n_max_Md,     value: 0.0033125             , unit: mol Fe mol N-1,         descrip: Nutrient Limitation Parameters (phytoplankton)}
+- {param: fe_2_n_max_Lg,     value: 0.0033125             , unit: mol Fe mol N-1,         descrip: Nutrient Limitation Parameters (phytoplankton)}
+- {param: fe_2_n_max_Di,     value: 0.0033125             , unit: mol Fe mol N-1,         descrip: Nutrient Limitation Parameters (phytoplankton)}
+- {param: fe_2_n_upt_fac,    value: 1.5e-05               , unit: mol Fe mol N-1,         descrip: Nutrient Limitation Parameters (phytoplankton)}
+- {param: alpha_Di,          value: 4.6e-05               , unit: g C g Chl-1 m2 W-1 s-1, descrip: Phytoplankton light limitation/growth rate}
+- {param: alpha_Lg,          value: 1.37994021919628e-05  , unit: g C g Chl-1 m2 W-1 s-1, descrip: Phytoplankton light limitation/growth rate}
+- {param: alpha_Md,          value: 1.531733643307871e-05 , unit: g C g Chl-1 m2 W-1 s-1, descrip: Phytoplankton light limitation/growth rate}
+- {param: alpha_Sm,          value: 2.759880438392561e-05 , unit: g C g Chl-1 m2 W-1 s-1, descrip: Phytoplankton light limitation/growth rate}
+- {param: kappa_eppley,      value: 0.063                 , unit: deg C-1,                descrip: Phytoplankton light limitation/growth rate}
+- {param: P_C_max_Di,        value: 5.787e-06             , unit: s-1,                    descrip: Phytoplankton light limitation/growth rate}
+- {param: P_C_max_Lg,        value: 1.302e-05             , unit: s-1,                    descrip: Phytoplankton light limitation/growth rate}
+- {param: P_C_max_Md,        value: 1.447e-05             , unit: s-1,                    descrip: Phytoplankton light limitation/growth rate}
+- {param: P_C_max_Sm,        value: 1.302e-05             , unit: s-1,                    descrip: Phytoplankton light limitation/growth rate}
+- {param: thetamax_Di,       value: 0.03                  , unit: g Chl g C-1,            descrip: Phytoplankton light limitation/growth rate}
+- {param: thetamax_Lg,       value: 0.07000000000000001   , unit: g Chl g C-1,            descrip: Phytoplankton light limitation/growth rate}
+- {param: thetamax_Md,       value: 0.05                  , unit: g Chl g C-1,            descrip: Phytoplankton light limitation/growth rate}
+- {param: thetamax_Sm,       value: 0.03                  , unit: g Chl g C-1,            descrip: Phytoplankton light limitation/growth rate}
+- {param: bresp_Di,          value: 2.894e-07             , unit: sec-1,                  descrip: Phytoplankton light limitation/growth rate}
+- {param: bresp_Lg,          value: 2.604e-07             , unit: sec-1,                  descrip: Phytoplankton light limitation/growth rate}
+- {param: bresp_Md,          value: 2.894e-07             , unit: sec-1,                  descrip: Phytoplankton light limitation/growth rate}
+- {param: bresp_Sm,          value: 2.604e-07             , unit: sec-1,                  descrip: Phytoplankton light limitation/growth rate}
+- {param: thetamin,          value: 0.002                 , unit: g Chl g C-1,            descrip: Phytoplankton light limitation/growth rate}
+- {param: thetamin_nolim,    value: 0.0                   , unit: g Chl g C-1,            descrip: Phytoplankton light limitation/growth rate}
+- {param: zpllgr,            value: 0.05                  , unit: dimensionless,          descrip: Phytoplankton light limitation/growth rate}
+- {param: gamma_irr_mem,     value: 1.1574074e-05         , unit: s-1,                    descrip: Phytoplankton light limitation/growth rate}
+- {param: gamma_mu_mem,      value: 1.1574074e-05         , unit: s-1,                    descrip: Phytoplankton aggregation rate}
+- {param: k_n_inhib_Di,      value: 1.0e-06               , unit: mol NO3 kg-1,           descrip: Nitrogen fixation inhibition parameters}
+- {param: o2_inhib_Di_pow,   value: 4.0                   , unit: mol O2-1 m3,            descrip: Nitrogen fixation inhibition parameters}
+- {param: o2_inhib_Di_sat,   value: 0.0003                , unit: mol O2 kg-1,            descrip: Nitrogen fixation inhibition parameters}
+- {param: p_2_n_static,      value: 1                     , unit: N/A,                    descrip: Other stoichiometry}
+- {param: c_2_n,             value: 6.625                 , unit: N/A,                    descrip: Other stoichiometry}
+- {param: alk_2_n_denit,     value: 1.1694915             , unit: eq. alk mol NO3-1,      descrip: Other stoichiometry}
+- {param: p_2_n_static_Di,   value: 0.025                 , unit: mol P mol N-1,          descrip: Other stoichiometry}
+- {param: p_2_n_static_Lg,   value: 0.0625                , unit: mol P mol N-1,          descrip: Other stoichiometry}
+- {param: p_2_n_static_Md,   value: 0.0625                , unit: mol P mol N-1,          descrip: Other stoichiometry}
+- {param: p_2_n_static_Sm,   value: 0.0625                , unit: mol P mol N-1,          descrip: Other stoichiometry}
+- {param: si_2_n_static_Lg,  value: 2.0                   , unit: mol Si mol N-1,         descrip: Other stoichiometry}
+- {param: si_2_n_max_Lg,     value: 5.0                   , unit: mol Si mol N-1,         descrip: Other stoichiometry}
+- {param: si_2_n_static_Md,  value: 2.0                   , unit: mol Si mol N-1,         descrip: Other stoichiometry}
+- {param: si_2_n_max_Md,     value: 5.0                   , unit: mol Si mol N-1,         descrip: Other stoichiometry}
+- {param: ca_2_n_arag,       value: 0.1325                , unit: mol Ca mol N-1,         descrip: Other stoichiometry}
+- {param: ca_2_n_calc,       value: 0.06625               , unit: mol Ca mol N-1,         descrip: Other stoichiometry}
+- {param: caco3_sat_max,     value: 10.0                  , unit: dimensionless,          descrip: Other stoichiometry}
+- {param: q_p_2_n_smz,       value: 0.0625                , unit: mol P mol N-1,          descrip: Zooplankton Stoichiometry - presently static}
+- {param: q_p_2_n_mdz,       value: 0.0625                , unit: mol P mol N-1,          descrip: Zooplankton Stoichiometry - presently static}
+- {param: q_p_2_n_lgz,       value: 0.0625                , unit: mol P mol N-1,          descrip: Zooplankton Stoichiometry - presently static}
+- {param: q_p_2_n_bact,      value: 0.0625                , unit: mol P mol N-1,          descrip: Bacteria Stoichiometry - presently static}
+- {param: agg_Sm,            value: 1.1574074             , unit: s-1 (mole N kg)-1,      descrip: Phytoplankton aggregation}
+- {param: agg_Di,            value: 0.0                   , unit: s-1 (mole N kg)-1,      descrip: Phytoplankton aggregation}
+- {param: agg_Lg,            value: 8.680999999999999     , unit: s-1 (mole N kg)-1,      descrip: Phytoplankton aggregation}
+- {param: agg_Md,            value: 3.472                 , unit: s-1 (mole N kg)-1,      descrip: Phytoplankton aggregation}
+- {param: vir_Sm,            value: 0.2894                , unit: mole N kg)-1,           descrip: Phytoplankton and bacterial losses to viruses}
+- {param: vir_Di,            value: 0.0                   , unit: mole N kg)-1,           descrip: Phytoplankton and bacterial losses to viruses}
+- {param: vir_Lg,            value: 0.0                   , unit: mole N kg)-1,           descrip: Phytoplankton and bacterial losses to viruses}
+- {param: vir_Md,            value: 0.0                   , unit: mole N kg)-1,           descrip: Phytoplankton and bacterial losses to viruses}
+- {param: vir_Bact,          value: 0.3819444444          , unit: mole N kg)-1,           descrip: Phytoplankton and bacterial losses to viruses}
+- {param: ktemp_vir,         value: 0.063                 , unit: C-1,                    descrip: Phytoplankton and bacterial losses to viruses}
+- {param: exu_Sm,            value: 0.13                  , unit: dimensionless,          descrip: Phytoplankton losses to exudation}
+- {param: exu_Di,            value: 0.13                  , unit: dimensionless,          descrip: Phytoplankton losses to exudation}
+- {param: exu_Lg,            value: 0.13                  , unit: dimensionless,          descrip: Phytoplankton losses to exudation}
+- {param: exu_Md,            value: 0.13                  , unit: dimensionless,          descrip: Phytoplankton losses to exudation}
+- {param: imax_smz,          value: 1.643518518518518e-05 , unit: s-1,                    descrip: Zooplankton ingestion parameterization and temperature dependence}
+- {param: imax_mdz,          value: 6.597222222222221e-06 , unit: s-1,                    descrip: Zooplankton ingestion parameterization and temperature dependence}
+- {param: imax_lgz,          value: 2.662037037037037e-06 , unit: s-1,                    descrip: Zooplankton ingestion parameterization and temperature dependence}
+- {param: ki_smz,            value: 1.25e-06              , unit: moles N kg-1,           descrip: Zooplankton ingestion parameterization and temperature dependence}
+- {param: ki_mdz,            value: 1.25e-06              , unit: moles N kg-1,           descrip: Zooplankton ingestion parameterization and temperature dependence}
+- {param: ki_lgz,            value: 1.25e-06              , unit: moles N kg-1,           descrip: Zooplankton ingestion parameterization and temperature dependence}
+- {param: ktemp_smz,         value: 0.063                 , unit: C-1,                    descrip: Zooplankton ingestion parameterization and temperature dependence}
+- {param: ktemp_mdz,         value: 0.063                 , unit: C-1,                    descrip: Zooplankton ingestion parameterization and temperature dependence}
+- {param: ktemp_lgz,         value: 0.063                 , unit: C-1,                    descrip: Zooplankton ingestion parameterization and temperature dependence}
+- {param: mu_max_bact,       value: 1.157407407407407e-05 , unit: s-1,                    descrip: Bacterial growth and uptake parameters}
+- {param: k_ldon_bact,       value: 5.0e-07               , unit: mol ldon kg-1,          descrip: Bacterial growth and uptake parameters}
+- {param: ktemp_bact,        value: 0.063                 , unit: C-1,                    descrip: Bacterial growth and uptake parameters}
+- {param: nswitch_smz,       value: 2.0                   , unit: dimensionless,          descrip: Zooplankton switching and prey preference parameters}
+- {param: nswitch_mdz,       value: 2.0                   , unit: dimensionless,          descrip: Zooplankton switching and prey preference parameters}
+- {param: nswitch_lgz,       value: 2.0                   , unit: dimensionless,          descrip: Zooplankton switching and prey preference parameters}
+- {param: mswitch_smz,       value: 2.0                   , unit: dimensionless,          descrip: Zooplankton switching and prey preference parameters}
+- {param: mswitch_mdz,       value: 2.0                   , unit: dimensionless,          descrip: Zooplankton switching and prey preference parameters}
+- {param: mswitch_lgz,       value: 2.0                   , unit: dimensionless,          descrip: Zooplankton switching and prey preference parameters}
+- {param: smz_ipa_smp,       value: 1.0                   , unit: dimensionless,          descrip: Zooplankton switching and prey preference parameters}
+- {param: smz_ipa_mdp,       value: 0.0                   , unit: dimensionless,          descrip: Zooplankton switching and prey preference parameters}
+- {param: smz_ipa_lgp,       value: 0.0                   , unit: dimensionless,          descrip: Zooplankton switching and prey preference parameters}
+- {param: smz_ipa_diaz,      value: 0.0                   , unit: dimensionless,          descrip: Zooplankton switching and prey preference parameters}
+- {param: smz_ipa_smz,       value: 0.0                   , unit: dimensionless,          descrip: Zooplankton switching and prey preference parameters}
+- {param: smz_ipa_mdz,       value: 0.0                   , unit: dimensionless,          descrip: Zooplankton switching and prey preference parameters}
+- {param: smz_ipa_lgz,       value: 0.0                   , unit: dimensionless,          descrip: Zooplankton switching and prey preference parameters}
+- {param: smz_ipa_bact,      value: 0.25                  , unit: dimensionless,          descrip: Zooplankton switching and prey preference parameters}
+- {param: smz_ipa_det,       value: 0.0                   , unit: dimensionless,          descrip: Zooplankton switching and prey preference parameters}
+- {param: mdz_ipa_smp,       value: 0.0                   , unit: dimensionless,          descrip: Zooplankton switching and prey preference parameters}
+- {param: mdz_ipa_mdp,       value: 1.0                   , unit: dimensionless,          descrip: Zooplankton switching and prey preference parameters}
+- {param: mdz_ipa_lgp,       value: 0.0                   , unit: dimensionless,          descrip: Zooplankton switching and prey preference parameters}
+- {param: mdz_ipa_diaz,      value: 1.0                   , unit: dimensionless,          descrip: Zooplankton switching and prey preference parameters}
+- {param: mdz_ipa_smz,       value: 1.0                   , unit: dimensionless,          descrip: Zooplankton switching and prey preference parameters}
+- {param: mdz_ipa_mdz,       value: 0.0                   , unit: dimensionless,          descrip: Zooplankton switching and prey preference parameters}
+- {param: mdz_ipa_lgz,       value: 0.0                   , unit: dimensionless,          descrip: Zooplankton switching and prey preference parameters}
+- {param: mdz_ipa_bact,      value: 0.0                   , unit: dimensionless,          descrip: Zooplankton switching and prey preference parameters}
+- {param: mdz_ipa_det,       value: 0.0                   , unit: dimensionless,          descrip: Zooplankton switching and prey preference parameters}
+- {param: lgz_ipa_smp,       value: 0.0                   , unit: dimensionless,          descrip: Zooplankton switching and prey preference parameters}
+- {param: lgz_ipa_mdp,       value: 0.0                   , unit: dimensionless,          descrip: Zooplankton switching and prey preference parameters}
+- {param: lgz_ipa_lgp,       value: 1.0                   , unit: dimensionless,          descrip: Zooplankton switching and prey preference parameters}
+- {param: lgz_ipa_diaz,      value: 1.0                   , unit: dimensionless,          descrip: Zooplankton switching and prey preference parameters}
+- {param: lgz_ipa_smz,       value: 0.0                   , unit: dimensionless,          descrip: Zooplankton switching and prey preference parameters}
+- {param: lgz_ipa_mdz,       value: 1.0                   , unit: dimensionless,          descrip: Zooplankton switching and prey preference parameters}
+- {param: lgz_ipa_lgz,       value: 0.0                   , unit: dimensionless,          descrip: Zooplankton switching and prey preference parameters}
+- {param: lgz_ipa_bact,      value: 0.0                   , unit: dimensionless,          descrip: Zooplankton switching and prey preference parameters}
+- {param: lgz_ipa_det,       value: 0.0                   , unit: dimensionless,          descrip: Zooplankton switching and prey preference parameters}
+- {param: gge_max_smz,       value: 0.4                   , unit: dimensionless,          descrip: Zooplankton bioenergetics}
+- {param: gge_max_mdz,       value: 0.4                   , unit: dimensionless,          descrip: Zooplankton bioenergetics}
+- {param: gge_max_lgz,       value: 0.4                   , unit: dimensionless,          descrip: Zooplankton bioenergetics}
+- {param: bresp_smz,         value: 2.314814814814815e-07 , unit: s-1,                    descrip: Zooplankton bioenergetics}
+- {param: bresp_mdz,         value: 9.259259259259259e-08 , unit: s-1,                    descrip: Zooplankton bioenergetics}
+- {param: bresp_lgz,         value: 3.703703703703704e-08 , unit: s-1,                    descrip: Zooplankton bioenergetics}
+- {param: gge_max_bact,      value: 0.4                   , unit: dimensionless,          descrip: Bacterial bioenergetics}
+- {param: bresp_bact,        value: 8.680555555555555e-08 , unit: s-1,                    descrip: Bacterial bioenergetics}
+- {param: phi_det_smz,       value: 0.0                   , unit: dimensionless,          descrip: Partitioning of zooplankton ingestion to other compartments}
+- {param: phi_det_mdz,       value: 0.2                   , unit: dimensionless,          descrip: Partitioning of zooplankton ingestion to other compartments}
+- {param: phi_det_lgz,       value: 0.3                   , unit: dimensionless,          descrip: Partitioning of zooplankton ingestion to other compartments}
+- {param: phi_ldon_smz,      value: 0.165                 , unit: dimensionless,          descrip: Partitioning of zooplankton ingestion to other compartments}
+- {param: phi_ldon_mdz,      value: 0.055                 , unit: dimensionless,          descrip: Partitioning of zooplankton ingestion to other compartments}
+- {param: phi_ldon_lgz,      value: 0.0                   , unit: dimensionless,          descrip: Partitioning of zooplankton ingestion to other compartments}
+- {param: phi_ldop_smz,      value: 0.135                 , unit: dimensionless,          descrip: Partitioning of zooplankton ingestion to other compartments}
+- {param: phi_ldop_mdz,      value: 0.045                 , unit: dimensionless,          descrip: Partitioning of zooplankton ingestion to other compartments}
+- {param: phi_ldop_lgz,      value: 0.0                   , unit: dimensionless,          descrip: Partitioning of zooplankton ingestion to other compartments}
+- {param: phi_srdon_smz,     value: 0.015                 , unit: dimensionless,          descrip: Partitioning of zooplankton ingestion to other compartments}
+- {param: phi_srdon_mdz,     value: 0.005                 , unit: dimensionless,          descrip: Partitioning of zooplankton ingestion to other compartments}
+- {param: phi_srdon_lgz,     value: 0.0                   , unit: dimensionless,          descrip: Partitioning of zooplankton ingestion to other compartments}
+- {param: phi_srdop_smz,     value: 0.045                 , unit: dimensionless,          descrip: Partitioning of zooplankton ingestion to other compartments}
+- {param: phi_srdop_mdz,     value: 0.015                 , unit: dimensionless,          descrip: Partitioning of zooplankton ingestion to other compartments}
+- {param: phi_srdop_lgz,     value: 0.0                   , unit: dimensionless,          descrip: Partitioning of zooplankton ingestion to other compartments}
+- {param: phi_sldon_smz,     value: 0.12                  , unit: dimensionless,          descrip: Partitioning of zooplankton ingestion to other compartments}
+- {param: phi_sldon_mdz,     value: 0.04                  , unit: dimensionless,          descrip: Partitioning of zooplankton ingestion to other compartments}
+- {param: phi_sldon_lgz,     value: 0.0                   , unit: dimensionless,          descrip: Partitioning of zooplankton ingestion to other compartments}
+- {param: phi_sldop_smz,     value: 0.12                  , unit: dimensionless,          descrip: Partitioning of zooplankton ingestion to other compartments}
+- {param: phi_sldop_mdz,     value: 0.04                  , unit: dimensionless,          descrip: Partitioning of zooplankton ingestion to other compartments}
+- {param: phi_sldop_lgz,     value: 0.0                   , unit: dimensionless,          descrip: Partitioning of zooplankton ingestion to other compartments}
+- {param: phi_nh4_smz,       value: 0.3                   , unit: dimensionless,          descrip: Partitioning of zooplankton ingestion to other compartments}
+- {param: phi_nh4_mdz,       value: 0.3                   , unit: dimensionless,          descrip: Partitioning of zooplankton ingestion to other compartments}
+- {param: phi_nh4_lgz,       value: 0.3                   , unit: dimensionless,          descrip: Partitioning of zooplankton ingestion to other compartments}
+- {param: phi_po4_smz,       value: 0.3                   , unit: dimensionless,          descrip: Partitioning of zooplankton ingestion to other compartments}
+- {param: phi_po4_mdz,       value: 0.3                   , unit: dimensionless,          descrip: Partitioning of zooplankton ingestion to other compartments}
+- {param: phi_po4_lgz,       value: 0.3                   , unit: dimensionless,          descrip: Partitioning of zooplankton ingestion to other compartments}
+- {param: phi_ldon_vir,      value: 0.55                  , unit: dimensionless,          descrip: Partitioning of zooplankton ingestion to other compartments}
+- {param: phi_srdon_vir,     value: 0.05                  , unit: dimensionless,          descrip: Partitioning of zooplankton ingestion to other compartments}
+- {param: phi_sldon_vir,     value: 0.4                   , unit: dimensionless,          descrip: Partitioning of zooplankton ingestion to other compartments}
+- {param: phi_ldop_vir,      value: 0.45                  , unit: dimensionless,          descrip: Partitioning of zooplankton ingestion to other compartments}
+- {param: phi_srdop_vir,     value: 0.15                  , unit: dimensionless,          descrip: Partitioning of zooplankton ingestion to other compartments}
+- {param: phi_sldop_vir,     value: 0.4                   , unit: dimensionless,          descrip: Partitioning of zooplankton ingestion to other compartments}
+- {param: imax_hp,           value: 1.041666666666667e-06 , unit: s-1,                    descrip: Parameters for unresolved higher predators}
+- {param: ki_hp,             value: 1.2e-06               , unit: mol N kg-1,             descrip: Parameters for unresolved higher predators}
+- {param: coef_hp,           value: 2.0                   , unit: dimensionless,          descrip: Parameters for unresolved higher predators}
+- {param: ktemp_hp,          value: 0.063                 , unit: C-1,                    descrip: Parameters for unresolved higher predators}
+- {param: nswitch_hp,        value: 2.0                   , unit: dimensionless,          descrip: Parameters for unresolved higher predators}
+- {param: mswitch_hp,        value: 2.0                   , unit: dimensionless,          descrip: Parameters for unresolved higher predators}
+- {param: hp_ipa_smp,        value: 0.0                   , unit: dimensionless,          descrip: Parameters for unresolved higher predators}
+- {param: hp_ipa_lgp,        value: 0.0                   , unit: dimensionless,          descrip: Parameters for unresolved higher predators}
+- {param: hp_ipa_diaz,       value: 0.0                   , unit: dimensionless,          descrip: Parameters for unresolved higher predators}
+- {param: hp_ipa_smz,        value: 0.0                   , unit: dimensionless,          descrip: Parameters for unresolved higher predators}
+- {param: hp_ipa_mdz,        value: 1.0                   , unit: dimensionless,          descrip: Parameters for unresolved higher predators}
+- {param: hp_ipa_lgz,        value: 1.0                   , unit: dimensionless,          descrip: Parameters for unresolved higher predators}
+- {param: hp_ipa_bact,       value: 0.0                   , unit: dimensionless,          descrip: Parameters for unresolved higher predators}
+- {param: hp_ipa_det,        value: 0.0                   , unit: dimensionless,          descrip: Parameters for unresolved higher predators}
+- {param: hp_phi_det,        value: 0.35                  , unit: dimensionless,          descrip: Parameters for unresolved higher predators}
+- {param: hp_phi_ldon,       value: 0.0                   , unit: dimensionless,          descrip: Parameters for unresolved higher predators}
+- {param: hp_phi_ldop,       value: 0.0                   , unit: dimensionless,          descrip: Parameters for unresolved higher predators}
+- {param: hp_phi_srdon,      value: 0.0                   , unit: dimensionless,          descrip: Parameters for unresolved higher predators}
+- {param: hp_phi_srdop,      value: 0.0                   , unit: dimensionless,          descrip: Parameters for unresolved higher predators}
+- {param: hp_phi_sldon,      value: 0.0                   , unit: dimensionless,          descrip: Parameters for unresolved higher predators}
+- {param: hp_phi_sldop,      value: 0.0                   , unit: dimensionless,          descrip: Parameters for unresolved higher predators}
+- {param: hp_phi_nh4,        value: 0.65                  , unit: dimensionless,          descrip: Parameters for unresolved higher predators}
+- {param: hp_phi_po4,        value: 0.65                  , unit: dimensionless,          descrip: Parameters for unresolved higher predators}
+- {param: felig_bkg,         value: 1.0e-09               , unit: mol Fe kg-1,            descrip: Iron chemistry}
+- {param: felig_2_don,       value: 0.0                   , unit: mol Fe mol N-1,         descrip: Iron chemistry}
+- {param: fe_2_n_sed,        value: 0.006625              , unit: mol Fe mol N-1,         descrip: Iron chemistry}
+- {param: fe_coast,          value: 9.999999999999999e-12 , unit: mol Fe m kg-1 s-1,      descrip: Iron chemistry}
+- {param: alpha_fescav,      value: 3.168808781402895e-07 , unit: sec-1,                  descrip: Iron chemistry}
+- {param: ffe_sed_max,       value: 0.0                   , unit: micromol Fe m-2 d-1,    descrip: Iron chemistry} # KK TODO: not in original file... need to track down value?
+- {param: beta_fescav,       value: 0.0                   , unit: mol N-1 sec-1,          descrip: Iron chemistry}
+- {param: remin_eff_fedet,   value: 0.2                   , unit: unitless,               descrip: Iron chemistry}
+- {param: ki_fescav,         value: 1.0                   , unit: watts m-2,              descrip: Iron chemistry}
+- {param: io_fescav,         value: 10                    , unit: watts m-2,              descrip: Iron chemistry}
+- {param: gamma_fescav,      value: 1.0                   , unit: watts m-2,              descrip: Iron chemistry}
+- {param: kfe_eq_lig_ll,     value: 1.0e+12               , unit: mol lig-1 kg,           descrip: Iron chemistry}
+- {param: kfe_eq_lig_hl,     value: 1.0e+8                , unit: mol lig-1 kg,           descrip: Iron chemistry}
+- {param: k_o2,              value: 2.0e-05               , unit: mol O2 kg-1,            descrip: Remineralization}
+- {param: o2_min,            value: 1.0e-06               , unit: mol O2 kg-1,            descrip: Remineralization}
+- {param: rpcaco3,           value: 0.08805031446540881   , unit: mol N mol Ca-1,         descrip: Remineralization}
+- {param: rplith,            value: 0.0008176100628930818 , unit: mol N g lith-1,         descrip: Remineralization}
+- {param: rpsio2,            value: 0.01962264150943396   , unit: mol N mol Si-1,         descrip: Remineralization}
+- {param: gamma_ndet,        value: 6.156422379826635e-06 , unit: s-1,                    descrip: Remineralization}
+- {param: gamma_cadet_arag,  value: 1.522904483430799e-06 , unit: s-1,                    descrip: Remineralization}
+- {param: gamma_cadet_calc,  value: 8.618074515319488e-07 , unit: s-1,                    descrip: Remineralization}
+- {param: gamma_sidet,       value: 5.787037037037037e-07 , unit: s-1,                    descrip: Remineralization}
+- {param: phi_lith,          value: 0.002                 , unit: kg mol-1,               descrip: Remineralization}
+- {param: k_lith,            value: 1.157407407407407e-11 , unit: s-1,                    descrip: Remineralization}
+- {param: z_sed,             value: 0.1                   , unit: m,                      descrip: Remineralization}
+- {param: k_no3_denit,       value: 1.0e-06               , unit: mol NO3 kg-1,           descrip: Remineralization}
+- {param: gamma_srdon,       value: 1.760449323001608e-09 , unit: s-1,                    descrip: Dissolved Organic Material}
+- {param: gamma_srdop,       value: 7.922021953507237e-09 , unit: s-1,                    descrip: Dissolved Organic Material}
+- {param: gamma_sldon,       value: 1.286008230452675e-07 , unit: s-1,                    descrip: Dissolved Organic Material}
+- {param: gamma_sldop,       value: 1.286008230452675e-07 , unit: s-1,                    descrip: Dissolved Organic Material}
+- {param: gamma_nitrif,      value: 3.858024691358024e-07 , unit: s-1,                    descrip: Nitrification}
+- {param: irr_inhibit,       value: 0.1                   , unit: m2 W-1,                 descrip: Nitrification}
+- {param: htotal_in,         value: 1.0e-08               , unit: N/A,                    descrip: "?"}
+- {param: wsink,             value: 0.001157407407407407  , unit: m s-1,                  descrip: Sinking velocity of detritus}

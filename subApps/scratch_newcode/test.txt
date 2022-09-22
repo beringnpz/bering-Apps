@@ -1,0 +1,78 @@
+  -M   -M   -M   -M   -M   -M   -M   -M   -M   -M   -M   -M   -M   -M   -M   -M   +M   +M   +M   +M   +M   +M   +M   +M   +M   +M   +M   +M   +M   +M   +M   +M
+  -P   -P   -P   -P   -P   -P   -P   -P   +P   +P   +P   +P   +P   +P   +P   +P   -P   -P   -P   -P   -P   -P   -P   -P   +P   +P   +P   +P   +P   +P   +P   +P
+  -I   -I   -I   -I   +I   +I   +I   +I   -I   -I   -I   -I   +I   +I   +I   +I   -I   -I   -I   -I   +I   +I   +I   +I   -I   -I   -I   -I   +I   +I   +I   +I
+  -C   -C   +C   +C   -C   -C   +C   +C   -C   -C   +C   +C   -C   -C   +C   +C   -C   -C   +C   +C   -C   -C   +C   +C   -C   -C   +C   +C   -C   -C   +C   +C
+  -D   +D   -D   +D   -D   +D   -D   +D   -D   +D   -D   +D   -D   +D   -D   +D   -D   +D   -D   +D   -D   +D   -D   +D   -D   +D   -D   +D   -D   +D   -D   +D
+   1    1    1    1    1    1    1    1    1    1    1    1    1    1    1    1    1    1    1    1    1    1    1    1    1    1    1    1    1    1    1    1
+   2    2    2    2    2    2    2    2    2    2    2    2    2    2    2    2    2    2    2    2    2    2    2    2    2    2    2    2    2    2    2    2
+   3    3    3    3    3    3    3    3    3    3    3    3    3    3    3    3    3    3    3    3    3    3    3    3    3    3    3    3    3    3    3    3
+   4    4    4    4    4    4    4    4    4    4    4    4    4    4    4    4    4    4    4    4    4    4    4    4    4    4    4    4    4    4    4    4
+   5    5    5    5    5    5    5    5    5    5    5    5    5    5    5    5    5    5    5    5    5    5    5    5    5    5    5    5    5    5    5    5
+   6    6    6    6    6    6    6    6    6    6    6    6    6    6    6    6    6    6    6    6    6    6    6    6    6    6    6    6    6    6    6    6
+   7    7    7    7    7    7    7    7    7    7    7    7    7    7    7    7    7    7    7    7    7    7    7    7    7    7    7    7    7    7    7    7
+   8    8    8    8    8    8    8    8    8    8    8    8    8    8    8    8    8    8    8    8    8    8    8    8    8    8    8    8    8    8    8    8
+   9    9    9    9    9    9    9    9    9    9    9    9    9    9    9    9    9    9    9    9    9    9    9    9    9    9    9    9    9    9    9    9
+  10   10   10   10   10   10   10   10   10   10   10   10   10   10   10   10   10   10   10   10   10   10   10   10   10   10   10   10   10   10   10   10
+  11   11   11   11   11   11   11   11   11   11   11   11   11   11   11   11   11   11   11   11   11   11   11   11   11   11   11   11   11   11   11   11
+  12   12   12   12   12   12   12   12   12   12   12   12   12   12   12   12   12   12   12   12   12   12   12   12   12   12   12   12   12   12   12   12
+  13   13   13   13   13   13   13   13   13   13   13   13   13   13   13   13   13   13   13   13   13   13   13   13   13   13   13   13   13   13   13   13
+ NaN  NaN  NaN  NaN  NaN  NaN  NaN  NaN  NaN  NaN  NaN  NaN  NaN  NaN  NaN  NaN   14   14   14   14   14   14   14   14   14   14   14   14   14   14   14   14
+ NaN  NaN  NaN  NaN  NaN  NaN  NaN  NaN  NaN  NaN  NaN  NaN  NaN  NaN  NaN  NaN   15   15   15   15   15   15   15   15   15   15   15   15   15   15   15   15
+ NaN  NaN  NaN  NaN  NaN  NaN  NaN  NaN  NaN  NaN  NaN  NaN  NaN  NaN  NaN  NaN   16   16   16   16   16   16   16   16   16   16   16   16   16   16   16   16
+ NaN  NaN  NaN  NaN  NaN  NaN  NaN  NaN  NaN  NaN  NaN  NaN  NaN  NaN  NaN  NaN   17   17   17   17   17   17   17   17   17   17   17   17   17   17   17   17
+ NaN  NaN  NaN  NaN  NaN  NaN  NaN  NaN  NaN  NaN  NaN  NaN  NaN  NaN  NaN  NaN   18   18   18   18   18   18   18   18   18   18   18   18   18   18   18   18
+ NaN  NaN  NaN  NaN  NaN  NaN  NaN  NaN  NaN  NaN  NaN  NaN  NaN  NaN  NaN  NaN   19   19   19   19   19   19   19   19   19   19   19   19   19   19   19   19
+ NaN  NaN  NaN  NaN  NaN  NaN  NaN  NaN  NaN  NaN  NaN  NaN  NaN  NaN  NaN  NaN   20   20   20   20   20   20   20   20   20   20   20   20   20   20   20   20
+ NaN  NaN  NaN  NaN  NaN  NaN  NaN  NaN   14   14   14   14   14   14   14   14  NaN  NaN  NaN  NaN  NaN  NaN  NaN  NaN   21   21   21   21   21   21   21   21
+ NaN  NaN  NaN  NaN  NaN  NaN  NaN  NaN   15   15   15   15   15   15   15   15  NaN  NaN  NaN  NaN  NaN  NaN  NaN  NaN   22   22   22   22   22   22   22   22
+ NaN  NaN  NaN  NaN  NaN  NaN  NaN  NaN   16   16   16   16   16   16   16   16  NaN  NaN  NaN  NaN  NaN  NaN  NaN  NaN   23   23   23   23   23   23   23   23
+  14   14   14   14   14   14   14   14   17   17   17   17   17   17   17   17   21   21   21   21   21   21   21   21   24   24   24   24   24   24   24   24
+ NaN  NaN  NaN  NaN  NaN  NaN  NaN  NaN   18   18   18   18   18   18   18   18  NaN  NaN  NaN  NaN  NaN  NaN  NaN  NaN   25   25   25   25   25   25   25   25
+ NaN  NaN  NaN  NaN   15   15   15   15  NaN  NaN  NaN  NaN   19   19   19   19  NaN  NaN  NaN  NaN   22   22   22   22  NaN  NaN  NaN  NaN   26   26   26   26
+ NaN  NaN  NaN  NaN   16   16   16   16  NaN  NaN  NaN  NaN   20   20   20   20  NaN  NaN  NaN  NaN   23   23   23   23  NaN  NaN  NaN  NaN   27   27   27   27
+ NaN  NaN  NaN  NaN   17   17   17   17  NaN  NaN  NaN  NaN   21   21   21   21  NaN  NaN  NaN  NaN   24   24   24   24  NaN  NaN  NaN  NaN   28   28   28   28
+ NaN  NaN  NaN  NaN   18   18   18   18  NaN  NaN  NaN  NaN   22   22   22   22  NaN  NaN  NaN  NaN   25   25   25   25  NaN  NaN  NaN  NaN   29   29   29   29
+ NaN  NaN  NaN  NaN   19   19   19   19  NaN  NaN  NaN  NaN   23   23   23   23  NaN  NaN  NaN  NaN   26   26   26   26  NaN  NaN  NaN  NaN   30   30   30   30
+ NaN  NaN   15   15  NaN  NaN   20   20  NaN  NaN   19   19  NaN  NaN   24   24  NaN  NaN   22   22  NaN  NaN   27   27  NaN  NaN   26   26  NaN  NaN   31   31
+ NaN  NaN   16   16  NaN  NaN   21   21  NaN  NaN   20   20  NaN  NaN   25   25  NaN  NaN   23   23  NaN  NaN   28   28  NaN  NaN   27   27  NaN  NaN   32   32
+ NaN  NaN   17   17  NaN  NaN   22   22  NaN  NaN   21   21  NaN  NaN   26   26  NaN  NaN   24   24  NaN  NaN   29   29  NaN  NaN   28   28  NaN  NaN   33   33
+ NaN   15  NaN   18  NaN   20  NaN   23  NaN   19  NaN   22  NaN   24  NaN   27  NaN   22  NaN   25  NaN   27  NaN   30  NaN   26  NaN   29  NaN   31  NaN   34
+ NaN   16  NaN   19  NaN   21  NaN   24  NaN   20  NaN   23  NaN   25  NaN   28  NaN   23  NaN   26  NaN   28  NaN   31  NaN   27  NaN   30  NaN   32  NaN   35
+ NaN   17  NaN   20  NaN   22  NaN   25  NaN   21  NaN   24  NaN   26  NaN   29  NaN   24  NaN   27  NaN   29  NaN   32  NaN   28  NaN   31  NaN   33  NaN   36
+
+insm        Small Phytoplankton Nitrogen
+inlg        Large Phytoplankton Nitrogen
+indi        Diazotroph Nitrogen
+insmz       Small Zooplankton Nitrogen
+inmdz       Medium-sized zooplankton Nitrog
+inlgz       large Zooplankton Nitrogen
+ildon       labile DON
+isldon      Semilabile DON
+isrdon      Semi-Refractory DON
+inbact      bacterial
+inh4        Ammonia
+ino3        Nitrate
+indet       ndet
+isio4       Silicate
+isilg       Large Phytoplankton Silicon
+isidet      Detrital Silicon
+icadet_calc Detrital CaCO3
+icadet_arag Detrital CaCO3
+ilith       Lithogenic Aluminosilicate
+ilithdet    lithdet
+ildop       labile DOP
+isldop      Semilabile DOP
+isrdop      Semi-Refractory DOP
+ipo4        Phosphate
+ipdet       Detrital Phosphorus
+ifesm       Small Phytoplankton Iron
+ifedi       Diazotroph Iron
+ifelg       Large Phytoplankton Iron
+ifed        Dissolved Iron
+ifedet      Detrital Iron
+io2         Oxygen
+idic        Dissolved Inorganic Carbon
+ialk        Alkalinity
+inmd        Medium Phytoplankton Nitrogen
+isimd       Medium Phytoplankton Silicon
+ifemd       Medium Phytoplankton Iron
