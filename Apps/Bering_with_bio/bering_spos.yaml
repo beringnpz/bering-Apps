@@ -1,0 +1,246 @@
+#==============================================================================
+#
+# The YAML ROMS input format mimics that of ROMS standard input (e.g., roms.in)
+# files, but using a more flexible format that is both human-readable and more
+# easily machine-parsable than the standard input format.  
+#
+# These files are inteded to be used with the roms_input_wrangler toolbox.
+#
+# Input parameters can be entered in (almost) any order (but there are a few 
+# exceptions, like the tiling parameters, so I suggest maintaining the original 
+# order.)  Comments are preceded by a # sign and are ignored on reading. Most 
+# values follow standard YAML format.  Parameters should be entered as 
+# dictionary entries, with the parameter name as key.  Note that unlike ROMS 
+# standard input, indentation is important in the YAML format, and all parameter 
+# keywords should be left-justified.
+#
+# Integers are distinguished from floating point numbers by the presence or 
+# absence of decimal points (e.g., 1 = integer, 1.0 = float).
+# 
+# Lists of parameters should be entered for keywords that expect multiple 
+# values.  These can either be entered across multiple lines: 
+#
+# AKT_BAK:
+#   - 1.0e-6
+#   - 1.0e-6
+#   - 5.0e-6
+#   - 5.0e-6
+#
+# or as "flow collections" on a single line:
+#
+# AKT_BAK: [1.0e-6, 1.0e-6, 5.0e-6, 5.0e-6]
+#
+# or across multiple lines:
+#
+# AKT_BAK: [1.0e-6, 1.0e-6,
+#           5.0e-6, 5.0e-6]
+#  
+# The above three examples will all be interpreted identically.
+#
+# NetCDF filename parameters can accept "multiple filenames", where a single 
+# input dataset is split across several files.  These are marked by vertical bar 
+# separators (|) in the ROMS standard input.  In the YAML format, these should 
+# be entered as nested arrays, e.g,:
+#
+# NFFILES: 6
+# FRCNAME: 
+#    - [my_lwrad_year1.nc, my_lwrad_year2.nc]
+#    - [my_swrad_year1.nc, my_swrad_year2.nc]
+#    - [my_winds_year1.nc, 
+#       my_winds_year2.nc]
+#    - [my_Pair_year1.nc, 
+#       my_Pair_year2.nc]
+#    - - my_Qair_year1.nc
+#      - my_Qair_year2.nc
+#    - - my_Tair_year1.nc
+#      - my_Tair_year2.nc
+#
+# Again, all list syntaxes are valid, and may be used interchangeably as 
+# demonstrated here.
+#
+# Parameters with nested indices (e.g. Hout(idUvel), Hout(idVvel)) are 
+# represented as dictionaries, with the nested indices as keys, e.g.:
+# 
+# Hout:
+#   idUvel: TRUE       # u                  3D U-velocity
+#   idVvel: TRUE       # v                  3D V-velocity
+#
+#==============================================================================
+
+# In multiple levels of nesting or multiple connected domains step-ups,       
+# "Ngrids" entries are expected for some of these parameters. In such case,   
+# the order of the entries for a parameter is critical. It must follow the    
+# same order (1:Ngrids) as in the state variable declaration.  In the ROMS 
+# standard input format, these values are marked by a "==" plural after the 
+# KEYWORD instead of a "=".  List any of the less common *non-plural* KEYWORDS 
+# here so that they can be formatted accordingly later.
+
+no_plural: [POS]
+
+#==============================================================================
+
+# Switch to control the writing of stations data within nested and/or multiple
+# connected grids, [1:Ngrids].
+
+Lstations: TRUE
+
+# Logical switches (TRUE/FALSE) to activate writing of fields in STATION
+# output file, [Sout(:,ng), ng=1, Ngrids].
+
+Sout:
+  idFsur: TRUE                          # free-surface
+  idUbar: TRUE                          # 2D U-velocity
+  idVbar: TRUE                          # 2D V-velocity
+  idUvel: TRUE                          # 3D U-velocity
+  idVvel: TRUE                          # 3D V-velocity
+  idWvel: TRUE                          # 3D W-velocity
+  idOvel: TRUE                          # 3D omega vertical velocity
+
+  idTvar: TRUE                          # all (NAT+NBT) tracers
+
+  idUsms: TRUE                          # surface U-stress
+  idVsms: TRUE                          # surface V-stress
+  idUbms: TRUE                          # bottom U-stress
+  idVbms: TRUE                          # bottom V-stress
+  idUbws: FALSE                         # bottom U-wave stress
+  idVbws: FALSE                         # bottom V-wave stress
+       
+  idUbed: FALSE                         # bed wave orbital U-velocity
+  idVbed: FALSE                         # bed wave orbital V-velocity
+  idUbot: FALSE                         # bottom U-momentum above bed
+  idVbot: FALSE                         # bottom V-momentum above bed
+
+  idTsur: [TRUE, TRUE]                  # surface net heat and salt flux
+  idLhea: TRUE                          # latent heat flux
+  idShea: TRUE                          # sensible heat flux
+  idLrad: TRUE                          # longwave radiation flux
+  idSrad: TRUE                          # shortwave radiation flux
+  idevap: FALSE                         # evaporation rate
+  idrain: FALSE                         # precipitation rate
+
+  idDano: TRUE                          # density anomaly
+  idVvis: TRUE                          # vertical viscosity
+  idTdif: TRUE                          # vertical T-diffusion
+  idSdif: TRUE                          # vertical Salinity diffusion
+  idHsbl: TRUE                          # depth of surface boundary layer
+  idHbbl: TRUE                          # depth of bottom boundary layer
+  idMtke: FALSE                         # turbulent kinetic energy
+  idMtls: FALSE                         # turbulent length scale
+
+# Logical switches (TRUE/FALSE) to activate writing of ice prognostic
+# variables into HISTORY output file.
+  idUice: TRUE
+  idVice: TRUE
+  idAice: TRUE
+  idHice: TRUE
+  idTice: TRUE
+  idHsno: TRUE
+  idTimid: TRUE
+  idT2ice: TRUE
+  idTauiw: FALSE
+  idChuiw: FALSE
+  idAgeice: TRUE
+  idSig11: TRUE
+  idSig12: TRUE
+  idSig22: TRUE
+  idS0mk: TRUE
+  idT0mk: TRUE
+  idWfr: TRUE
+  idWai: TRUE
+  idWao: TRUE
+  idWio: TRUE
+  idWro: TRUE
+  idWdiv: TRUE
+       
+  idAlbe: TRUE
+  idAlbI: TRUE
+  idLWdn: TRUE
+  idSWdn: TRUE
+  idLatI: TRUE
+  idSenI: TRUE
+  idLWupI: TRUE
+  idSWupI: TRUE
+  idSWinI: TRUE
+  idSWthruI: TRUE
+  idSaltI: TRUE
+  idSaltL: TRUE
+  idQao: TRUE
+  idQai: TRUE
+  idQio: TRUE
+  idQi2: TRUE
+  idSnoI: TRUE
+
+# Logical switches (TRUE/FALSE) to activate writing of exposed sediment
+# layer properties into STATIONS output file.  Currently, MBOTP properties
+# are expected for the bottom boundary layer and/or sediment models:
+
+  idBott:
+    - FALSE  # isd50 = 1        # mean grain diameter
+    - FALSE  # idens = 2        # mean grain density
+    - FALSE  # iwsed = 3        # mean settling velocity
+    - FALSE  # itauc = 4        # critical erosion stress
+    - FALSE  # irlen = 5        # ripple length
+    - FALSE  # irhgt = 6        # ripple height
+    - FALSE  # ibwav = 7        # wave excursion amplitude
+    - FALSE  # izdef = 8        # default bottom roughness
+    - FALSE  # izapp = 9        # apparent bottom roughness
+    - FALSE  # izNik = 10       # Nikuradse bottom roughness
+    - FALSE  # izbio = 11       # biological bottom roughness
+    - FALSE  # izbfm = 12       # bed form bottom roughness
+    - FALSE  # izbld = 13       # bed load bottom roughness
+    - FALSE  # izwbl = 14       # wave bottom roughness
+    - FALSE  # iactv = 15       # active layer thickness
+    - FALSE  # ishgt = 16       # saltation height
+
+# Number of stations to process in each nested grid.  These values are
+# essential because the station arrays are dynamically allocated using
+# these values, [1:Ngrids].
+
+NSTATION:  35
+
+# Station locations for all grids in any desired order.  The horizontal
+# location for a particular station may be specified in terms of fractional
+# (I,J) grid pairs (FLAG=0) or (longitude,latitude) grid pairs (FLAG=1).
+# Here, FLAG is a special switch and may be used for multiple purposes.
+# The GRID column indicates nested grid number to process. This value must
+# be one in non-nested applications.  The COMMENT section is ignored during
+# reading and may be used to help documentation.
+#
+# Columns: GRID, FLAG, X-POS, Y-POS
+
+POS:                                          # name                  region                     gridcell   
+  - [   1,   1,   195.482000,    55.072000]   # 'BS-1'                'AK peninsula'             10092
+  - [   1,   1,   195.943000,    56.877000]   # 'BS-2'                'South middle shelf'       11201
+  - [   1,   1,   193.663000,    56.049000]   # 'BS-3'                'South outer shelf'        12462
+  - [   1,   1,   191.130000,    57.853000]   # 'BS-4'                'Central middle shelf'     16112
+  - [   1,   1,   188.289000,    59.898000]   # 'BS-5'                'St. Matthew'              19947
+  - [   1,   1,   191.146000,    53.406000]   # 'BS-6'                'Off-shelf southeast'      12797
+  - [   1,   1,   190.905000,    53.598000]   # 'BS-7'                'Off-shelf southeast'      13162
+  - [   1,   1,   185.332000,    62.194000]   # 'BS-8'                'North middle shelf'       23786
+  - [   1,   1,   198.050942,    56.268793]   # '1east'               'AK peninsula'              8835
+  - [   1,   1,   197.075666,    58.082151]   # '2'                   'South inner shelf'        11214
+  - [   1,   1,   201.560638,    57.889318]   # '2 low'               'South inner shelf'         7402
+  - [   1,   1,   193.438736,    57.912346]   # '3high'               'South middle shelf'       14116
+  - [   1,   1,   199.847699,    57.364473]   # '3low'                'South middle shelf'        8303
+  - [   1,   1,   189.605389,    56.811488]   # '5'                   'Pribilofs'                16646
+  - [   1,   1,   192.498012,    59.274617]   # '7'                   'Central inner shelf'      15946
+  - [   1,   1,   183.091018,    60.346739]   # '8high'               'North outer shelf'        24493
+  - [   1,   1,   186.321121,    58.817561]   # '8med'                'North outer shelf'        20844
+  - [   1,   1,   187.786134,    57.099870]   # '8low'                'North outer shelf'        18465
+  - [   1,   1,   191.340159,    61.212814]   # '11'                  'North inner shelf'        18327
+  - [   1,   1,   187.719107,    63.766476]   # '12'                  'St. Lawrence'             22894
+  - [   1,   1,   191.833220,    64.425345]   # '13'                  'South Bering Strait'      20359
+  - [   1,   1,   195.143283,    63.956613]   # '14'                  'Norton Sound'             17631
+  - [   1,   1,   181.242499,    59.030382]   # '15high'              'Off-shelf north'          25388
+  - [   1,   1,   184.563456,    58.055814]   # '15med'               'Off-shelf north'          21926
+  - [   1,   1,   187.977788,    55.954464]   # '15low'               'Off-shelf north'          17545
+  - [   1,   1,   189.535606,    55.377820]   # '16 high'             'Off-shelf southeast'      15723
+  - [   1,   1,   192.351143,    54.443646]   # '16lowinner'          'Off-shelf southeast'      12445
+  - [   1,   1,   189.364722,    53.519340]   # '16lowouter'          'Off-shelf southeast'      14614
+  - [   1,   1,   181.732286,    64.069596]   # 'Gulf of Anadyr'      'Gulf of Anadyr'           27620
+  - [   1,   1,   164.339841,    59.524587]   # 'Karaginskiy Gulf'    'Karaginskiy Gulf'         40667
+  - [   1,   1,   176.673737,    57.534277]   # 'Aleutian Basin'      'Aleutian Basin'           28826
+  - [   1,   1,   176.187612,    53.526246]   # 'Bowers Basin'        'Bowers Basin'             27695
+  - [   1,   1,   167.077501,    57.035096]   # 'Komandor Basin'      'Komandor Basin'           37731
+  - [   1,   1,   179.911736,    53.260088]   # 'Bowers Ridge'        'Bowers Ridge'             23876
+  - [   1,   1,   170.626328,    58.287708]   # 'Shirshov Ridge'      'Shirshov Ridge'           34652

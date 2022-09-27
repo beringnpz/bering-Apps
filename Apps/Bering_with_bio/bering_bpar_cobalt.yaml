@@ -1,0 +1,1318 @@
+#==============================================================================
+#
+# The YAML ROMS input format mimics that of ROMS standard input (e.g., roms.in)
+# files, but using a more flexible format that is both human-readable and more
+# easily machine-parsable than the standard input format.  
+#
+# These files are inteded to be used with the roms_input_wrangler toolbox.
+#
+# Input parameters can be entered in (almost) any order (but there are a few 
+# exceptions, like the tiling parameters, so I suggest maintaining the original 
+# order.)  Comments are preceded by a # sign and are ignored on reading. Most 
+# values follow standard YAML format.  Parameters should be entered as 
+# dictionary entries, with the parameter name as key.  Note that unlike ROMS 
+# standard input, indentation is important in the YAML format, and all parameter 
+# keywords should be left-justified.
+#
+# Integers are distinguished from floating point numbers by the presence or 
+# absence of decimal points (e.g., 1 = integer, 1.0 = float).
+# 
+# Lists of parameters should be entered for keywords that expect multiple 
+# values.  These can either be entered across multiple lines: 
+#
+# AKT_BAK:
+#   - 1.0e-6
+#   - 1.0e-6
+#   - 5.0e-6
+#   - 5.0e-6
+#
+# or as "flow collections" on a single line:
+#
+# AKT_BAK: [1.0e-6, 1.0e-6, 5.0e-6, 5.0e-6]
+#
+# or across multiple lines:
+#
+# AKT_BAK: [1.0e-6, 1.0e-6,
+#           5.0e-6, 5.0e-6]
+#  
+# The above three examples will all be interpreted identically.
+#
+# NetCDF filename parameters can accept "multiple filenames", where a single 
+# input dataset is split across several files.  These are marked by vertical bar 
+# separators (|) in the ROMS standard input.  In the YAML format, these should 
+# be entered as nested arrays, e.g,:
+#
+# NFFILES: 6
+# FRCNAME: 
+#    - [my_lwrad_year1.nc, my_lwrad_year2.nc]
+#    - [my_swrad_year1.nc, my_swrad_year2.nc]
+#    - [my_winds_year1.nc, 
+#       my_winds_year2.nc]
+#    - [my_Pair_year1.nc, 
+#       my_Pair_year2.nc]
+#    - - my_Qair_year1.nc
+#      - my_Qair_year2.nc
+#    - - my_Tair_year1.nc
+#      - my_Tair_year2.nc
+#
+# Again, all list syntaxes are valid, and may be used interchangeably as 
+# demonstrated here.
+#
+# Parameters with nested indices (e.g. Hout(idUvel), Hout(idVvel)) are 
+# represented as dictionaries, with the nested indices as keys, e.g.:
+# 
+# Hout:
+#   idUvel: TRUE       # u                  3D U-velocity
+#   idVvel: TRUE       # v                  3D V-velocity
+#
+#==============================================================================
+
+# In multiple levels of nesting or multiple connected domains step-ups,       
+# "Ngrids" entries are expected for some of these parameters. In such case,   
+# the order of the entries for a parameter is critical. It must follow the    
+# same order (1:Ngrids) as in the state variable declaration.  In the ROMS 
+# standard input format, these values are marked by a "==" plural after the 
+# KEYWORD instead of a "=".  List any of the less common *non-plural* KEYWORDS 
+# here so that they can be formatted accordingly later.
+
+no_plural: []
+
+#==============================================================================
+
+
+# Switch to control the computation of biology within nested and/or multiple
+# connected grids.
+
+Lbiology: TRUE
+
+# Maximum number of iterations to achieve convergence of the nonlinear
+# solution.
+
+BioIter: 1
+
+# ? [None]
+htotal_scale_lo: 0.01
+
+# ? [None]
+htotal_scale_hi: 100.0
+
+# coefficients for O2 saturation [N/A]
+RHO_0: 1035.0
+
+# coefficients for O2 saturation [N/A]
+NKML: 1
+
+# coefficients for O2 saturation [N/A]
+a_0: 2.00907
+
+# coefficients for O2 saturation [N/A]
+a_1: 3.22014
+
+# coefficients for O2 saturation [N/A]
+a_2: 4.0501
+
+# coefficients for O2 saturation [N/A]
+a_3: 4.94457
+
+# coefficients for O2 saturation [N/A]
+a_4: -0.256847
+
+# coefficients for O2 saturation [N/A]
+a_5: 3.88767
+
+# coefficients for O2 saturation [N/A]
+b_0: -0.00624523
+
+# coefficients for O2 saturation [N/A]
+b_1: -0.00737614
+
+# coefficients for O2 saturation [N/A]
+b_2: -0.010341
+
+# coefficients for O2 saturation [N/A]
+b_3: -0.00817083
+
+# coefficients for O2 saturation [N/A]
+c_0: -4.88682e-07
+
+# Compute the Schmidt number of CO2 in seawater [N/A]
+a1_co2: 2068.9
+
+# Compute the Schmidt number of CO2 in seawater [N/A]
+a2_co2: -118.63
+
+# Compute the Schmidt number of CO2 in seawater [N/A]
+a3_co2: 2.9311
+
+# Compute the Schmidt number of CO2 in seawater [N/A]
+a4_co2: -0.027
+
+# Compute the Schmidt number of O2 in seawater [N/A]
+a1_o2: 1929.7
+
+# Compute the Schmidt number of O2 in seawater [N/A]
+a2_o2: -117.46
+
+# Compute the Schmidt number of O2 in seawater [N/A]
+a3_o2: 3.116
+
+# Compute the Schmidt number of O2 in seawater [N/A]
+a4_o2: -0.0306
+
+# Stoichiometry [g mol N-1]
+mass_2_n: 148.665
+
+# Stoichiometry [mol N NO3 mol N org-1]
+n_2_n_denit: 5.9
+
+# Stoichiometry [mol O2 mol C-1]
+o2_2_c: 1.415
+
+# Stoichiometry [mol O2 mol N-1]
+o2_2_nfix: 118.375
+
+# Stoichiometry [mol O2 mol N-1]
+o2_2_nh4: 7.375
+
+# Stoichiometry [mol O2 mol N-1]
+o2_2_nitrif: 2.0
+
+# Stoichiometry [mol O2 mol N-1]
+o2_2_no3: 9.375
+
+# Nutrient Limitation Parameters (phytoplankton) [mol Fed kg-1]
+k_fed_Di: 5.0e-10
+
+# Nutrient Limitation Parameters (phytoplankton) [mol Fed kg-1]
+k_fed_Lg: 4.5e-10
+
+# Nutrient Limitation Parameters (phytoplankton) [mol Fed kg-1]
+k_fed_Md: 3.0e-10
+
+# Nutrient Limitation Parameters (phytoplankton) [mol Fed kg-1]
+k_fed_Sm: 1.0e-10
+
+# Nutrient Limitation Parameters (phytoplankton) [mol NH4 kg-1]
+k_nh4_Lg: 4.5e-07
+
+# Nutrient Limitation Parameters (phytoplankton) [mol NH4 kg-1]
+k_nh4_Md: 3.0e-07
+
+# Nutrient Limitation Parameters (phytoplankton) [mol NH4 kg-1]
+k_nh4_Sm: 1.0e-07
+
+# Nutrient Limitation Parameters (phytoplankton) [mol NH4 kg-1]
+k_nh4_Di: 5.0e-07
+
+# Nutrient Limitation Parameters (phytoplankton) [mol NO3 kg-1]
+k_no3_Lg: 2.25e-06
+
+# Nutrient Limitation Parameters (phytoplankton) [mol NO3 kg-1]
+k_no3_Md: 2.0e-06
+
+# Nutrient Limitation Parameters (phytoplankton) [mol NO3 kg-1]
+k_no3_Sm: 5.0e-07
+
+# Nutrient Limitation Parameters (phytoplankton) [mol NO3 kg-1]
+k_no3_Di: 2.5e-06
+
+# Nutrient Limitation Parameters (phytoplankton) [mol PO4 kg-1]
+k_po4_Di: 5.0e-08
+
+# Nutrient Limitation Parameters (phytoplankton) [mol PO4 kg-1]
+k_po4_Lg: 4.5e-08
+
+# Nutrient Limitation Parameters (phytoplankton) [mol PO4 kg-1]
+k_po4_Md: 3.0e-08
+
+# Nutrient Limitation Parameters (phytoplankton) [mol PO4 kg-1]
+k_po4_Sm: 1.0e-08
+
+# Nutrient Limitation Parameters (phytoplankton) [mol SiO4 kg-1]
+k_sio4_Lg: 1.5e-06
+
+# Nutrient Limitation Parameters (phytoplankton) [mol SiO4 kg-1]
+k_sio4_Md: 1.0e-06
+
+# Nutrient Limitation Parameters (phytoplankton) [mol Fe mol N-1]
+k_fe_2_n_Di: 0.000165625
+
+# Nutrient Limitation Parameters (phytoplankton) [mol Fe mol N-1]
+k_fe_2_n_Lg: 6.360000000000001e-05
+
+# Nutrient Limitation Parameters (phytoplankton) [mol Fe mol N-1]
+k_fe_2_n_Md: 4.968750000000001e-05
+
+# Nutrient Limitation Parameters (phytoplankton) [mol Fe mol N-1]
+k_fe_2_n_Sm: 1.9875e-05
+
+# Nutrient Limitation Parameters (phytoplankton) [mol Fe mol N-1]
+fe_2_n_max_Sm: 0.00033125
+
+# Nutrient Limitation Parameters (phytoplankton) [mol Fe mol N-1]
+fe_2_n_max_Md: 0.0033125
+
+# Nutrient Limitation Parameters (phytoplankton) [mol Fe mol N-1]
+fe_2_n_max_Lg: 0.0033125
+
+# Nutrient Limitation Parameters (phytoplankton) [mol Fe mol N-1]
+fe_2_n_max_Di: 0.0033125
+
+# Nutrient Limitation Parameters (phytoplankton) [mol Fe mol N-1]
+fe_2_n_upt_fac: 1.5e-05
+
+# Phytoplankton light limitation/growth rate [g C g Chl-1 m2 W-1 s-1]
+alpha_Di: 4.6e-05
+
+# Phytoplankton light limitation/growth rate [g C g Chl-1 m2 W-1 s-1]
+alpha_Lg: 1.37994021919628e-05
+
+# Phytoplankton light limitation/growth rate [g C g Chl-1 m2 W-1 s-1]
+alpha_Md: 1.531733643307871e-05
+
+# Phytoplankton light limitation/growth rate [g C g Chl-1 m2 W-1 s-1]
+alpha_Sm: 2.759880438392561e-05
+
+# Phytoplankton light limitation/growth rate [deg C-1]
+kappa_eppley: 0.063
+
+# Phytoplankton light limitation/growth rate [s-1]
+P_C_max_Di: 5.787e-06
+
+# Phytoplankton light limitation/growth rate [s-1]
+P_C_max_Lg: 1.302e-05
+
+# Phytoplankton light limitation/growth rate [s-1]
+P_C_max_Md: 1.447e-05
+
+# Phytoplankton light limitation/growth rate [s-1]
+P_C_max_Sm: 1.302e-05
+
+# Phytoplankton light limitation/growth rate [g Chl g C-1]
+thetamax_Di: 0.03
+
+# Phytoplankton light limitation/growth rate [g Chl g C-1]
+thetamax_Lg: 0.07
+
+# Phytoplankton light limitation/growth rate [g Chl g C-1]
+thetamax_Md: 0.05
+
+# Phytoplankton light limitation/growth rate [g Chl g C-1]
+thetamax_Sm: 0.03
+
+# Phytoplankton light limitation/growth rate [sec-1]
+bresp_Di: 2.894e-07
+
+# Phytoplankton light limitation/growth rate [sec-1]
+bresp_Lg: 2.604e-07
+
+# Phytoplankton light limitation/growth rate [sec-1]
+bresp_Md: 2.894e-07
+
+# Phytoplankton light limitation/growth rate [sec-1]
+bresp_Sm: 2.604e-07
+
+# Phytoplankton light limitation/growth rate [g Chl g C-1]
+thetamin: 0.002
+
+# Phytoplankton light limitation/growth rate [g Chl g C-1]
+thetamin_nolim: 0.0
+
+# Phytoplankton light limitation/growth rate [dimensionless]
+zpllgr: 0.05
+
+# Phytoplankton light limitation/growth rate [s-1]
+gamma_irr_mem: 1.1574074e-05
+
+# Phytoplankton aggregation rate [s-1]
+gamma_mu_mem: 1.1574074e-05
+
+# Nitrogen fixation inhibition parameters [mol NO3 kg-1]
+k_n_inhib_Di: 1.0e-06
+
+# Nitrogen fixation inhibition parameters [mol O2-1 m3]
+o2_inhib_Di_pow: 4.0
+
+# Nitrogen fixation inhibition parameters [mol O2 kg-1]
+o2_inhib_Di_sat: 0.0003
+
+# Other stoichiometry [N/A]
+p_2_n_static: 1
+
+# Other stoichiometry [N/A]
+c_2_n: 6.625
+
+# Other stoichiometry [eq. alk mol NO3-1]
+alk_2_n_denit: 1.1694915
+
+# Other stoichiometry [mol P mol N-1]
+p_2_n_static_Di: 0.025
+
+# Other stoichiometry [mol P mol N-1]
+p_2_n_static_Lg: 0.0625
+
+# Other stoichiometry [mol P mol N-1]
+p_2_n_static_Md: 0.0625
+
+# Other stoichiometry [mol P mol N-1]
+p_2_n_static_Sm: 0.0625
+
+# Other stoichiometry [mol Si mol N-1]
+si_2_n_static_Lg: 2.0
+
+# Other stoichiometry [mol Si mol N-1]
+si_2_n_max_Lg: 5.0
+
+# Other stoichiometry [mol Si mol N-1]
+si_2_n_static_Md: 2.0
+
+# Other stoichiometry [mol Si mol N-1]
+si_2_n_max_Md: 5.0
+
+# Other stoichiometry [mol Ca mol N-1]
+ca_2_n_arag: 0.1325
+
+# Other stoichiometry [mol Ca mol N-1]
+ca_2_n_calc: 0.06625
+
+# Other stoichiometry [dimensionless]
+caco3_sat_max: 10.0
+
+# Zooplankton Stoichiometry - presently static [mol P mol N-1]
+q_p_2_n_smz: 0.0625
+
+# Zooplankton Stoichiometry - presently static [mol P mol N-1]
+q_p_2_n_mdz: 0.0625
+
+# Zooplankton Stoichiometry - presently static [mol P mol N-1]
+q_p_2_n_lgz: 0.0625
+
+# Bacteria Stoichiometry - presently static [mol P mol N-1]
+q_p_2_n_bact: 0.0625
+
+# Phytoplankton aggregation [s-1 (mole N kg)-1]
+agg_Sm: 1.1574074
+
+# Phytoplankton aggregation [s-1 (mole N kg)-1]
+agg_Di: 0.0
+
+# Phytoplankton aggregation [s-1 (mole N kg)-1]
+agg_Lg: 8.681
+
+# Phytoplankton aggregation [s-1 (mole N kg)-1]
+agg_Md: 3.472
+
+# Phytoplankton and bacterial losses to viruses [mole N kg)-1]
+vir_Sm: 0.2894
+
+# Phytoplankton and bacterial losses to viruses [mole N kg)-1]
+vir_Di: 0.0
+
+# Phytoplankton and bacterial losses to viruses [mole N kg)-1]
+vir_Lg: 0.0
+
+# Phytoplankton and bacterial losses to viruses [mole N kg)-1]
+vir_Md: 0.0
+
+# Phytoplankton and bacterial losses to viruses [mole N kg)-1]
+vir_Bact: 0.3819444444
+
+# Phytoplankton and bacterial losses to viruses [C-1]
+ktemp_vir: 0.063
+
+# Phytoplankton losses to exudation [dimensionless]
+exu_Sm: 0.13
+
+# Phytoplankton losses to exudation [dimensionless]
+exu_Di: 0.13
+
+# Phytoplankton losses to exudation [dimensionless]
+exu_Lg: 0.13
+
+# Phytoplankton losses to exudation [dimensionless]
+exu_Md: 0.13
+
+# Zooplankton ingestion parameterization and temperature dependence [s-1]
+imax_smz: 1.643518518518518e-05
+
+# Zooplankton ingestion parameterization and temperature dependence [s-1]
+imax_mdz: 6.597222222222221e-06
+
+# Zooplankton ingestion parameterization and temperature dependence [s-1]
+imax_lgz: 2.662037037037037e-06
+
+# Zooplankton ingestion parameterization and temperature dependence [moles N kg-1]
+ki_smz: 1.25e-06
+
+# Zooplankton ingestion parameterization and temperature dependence [moles N kg-1]
+ki_mdz: 1.25e-06
+
+# Zooplankton ingestion parameterization and temperature dependence [moles N kg-1]
+ki_lgz: 1.25e-06
+
+# Zooplankton ingestion parameterization and temperature dependence [C-1]
+ktemp_smz: 0.063
+
+# Zooplankton ingestion parameterization and temperature dependence [C-1]
+ktemp_mdz: 0.063
+
+# Zooplankton ingestion parameterization and temperature dependence [C-1]
+ktemp_lgz: 0.063
+
+# Bacterial growth and uptake parameters [s-1]
+mu_max_bact: 1.157407407407407e-05
+
+# Bacterial growth and uptake parameters [mol ldon kg-1]
+k_ldon_bact: 5.0e-07
+
+# Bacterial growth and uptake parameters [C-1]
+ktemp_bact: 0.063
+
+# Zooplankton switching and prey preference parameters [dimensionless]
+nswitch_smz: 2.0
+
+# Zooplankton switching and prey preference parameters [dimensionless]
+nswitch_mdz: 2.0
+
+# Zooplankton switching and prey preference parameters [dimensionless]
+nswitch_lgz: 2.0
+
+# Zooplankton switching and prey preference parameters [dimensionless]
+mswitch_smz: 2.0
+
+# Zooplankton switching and prey preference parameters [dimensionless]
+mswitch_mdz: 2.0
+
+# Zooplankton switching and prey preference parameters [dimensionless]
+mswitch_lgz: 2.0
+
+# Zooplankton switching and prey preference parameters [dimensionless]
+smz_ipa_smp: 1.0
+
+# Zooplankton switching and prey preference parameters [dimensionless]
+smz_ipa_mdp: 0.0
+
+# Zooplankton switching and prey preference parameters [dimensionless]
+smz_ipa_lgp: 0.0
+
+# Zooplankton switching and prey preference parameters [dimensionless]
+smz_ipa_diaz: 0.0
+
+# Zooplankton switching and prey preference parameters [dimensionless]
+smz_ipa_smz: 0.0
+
+# Zooplankton switching and prey preference parameters [dimensionless]
+smz_ipa_mdz: 0.0
+
+# Zooplankton switching and prey preference parameters [dimensionless]
+smz_ipa_lgz: 0.0
+
+# Zooplankton switching and prey preference parameters [dimensionless]
+smz_ipa_bact: 0.25
+
+# Zooplankton switching and prey preference parameters [dimensionless]
+smz_ipa_det: 0.0
+
+# Zooplankton switching and prey preference parameters [dimensionless]
+mdz_ipa_smp: 0.0
+
+# Zooplankton switching and prey preference parameters [dimensionless]
+mdz_ipa_mdp: 1.0
+
+# Zooplankton switching and prey preference parameters [dimensionless]
+mdz_ipa_lgp: 0.0
+
+# Zooplankton switching and prey preference parameters [dimensionless]
+mdz_ipa_diaz: 1.0
+
+# Zooplankton switching and prey preference parameters [dimensionless]
+mdz_ipa_smz: 1.0
+
+# Zooplankton switching and prey preference parameters [dimensionless]
+mdz_ipa_mdz: 0.0
+
+# Zooplankton switching and prey preference parameters [dimensionless]
+mdz_ipa_lgz: 0.0
+
+# Zooplankton switching and prey preference parameters [dimensionless]
+mdz_ipa_bact: 0.0
+
+# Zooplankton switching and prey preference parameters [dimensionless]
+mdz_ipa_det: 0.0
+
+# Zooplankton switching and prey preference parameters [dimensionless]
+lgz_ipa_smp: 0.0
+
+# Zooplankton switching and prey preference parameters [dimensionless]
+lgz_ipa_mdp: 0.0
+
+# Zooplankton switching and prey preference parameters [dimensionless]
+lgz_ipa_lgp: 1.0
+
+# Zooplankton switching and prey preference parameters [dimensionless]
+lgz_ipa_diaz: 1.0
+
+# Zooplankton switching and prey preference parameters [dimensionless]
+lgz_ipa_smz: 0.0
+
+# Zooplankton switching and prey preference parameters [dimensionless]
+lgz_ipa_mdz: 1.0
+
+# Zooplankton switching and prey preference parameters [dimensionless]
+lgz_ipa_lgz: 0.0
+
+# Zooplankton switching and prey preference parameters [dimensionless]
+lgz_ipa_bact: 0.0
+
+# Zooplankton switching and prey preference parameters [dimensionless]
+lgz_ipa_det: 0.0
+
+# Zooplankton bioenergetics [dimensionless]
+gge_max_smz: 0.4
+
+# Zooplankton bioenergetics [dimensionless]
+gge_max_mdz: 0.4
+
+# Zooplankton bioenergetics [dimensionless]
+gge_max_lgz: 0.4
+
+# Zooplankton bioenergetics [s-1]
+bresp_smz: 2.314814814814815e-07
+
+# Zooplankton bioenergetics [s-1]
+bresp_mdz: 9.259259259259259e-08
+
+# Zooplankton bioenergetics [s-1]
+bresp_lgz: 3.703703703703704e-08
+
+# Bacterial bioenergetics [dimensionless]
+gge_max_bact: 0.4
+
+# Bacterial bioenergetics [s-1]
+bresp_bact: 8.680555555555555e-08
+
+# Partitioning of zooplankton ingestion to other compartments [dimensionless]
+phi_det_smz: 0.0
+
+# Partitioning of zooplankton ingestion to other compartments [dimensionless]
+phi_det_mdz: 0.2
+
+# Partitioning of zooplankton ingestion to other compartments [dimensionless]
+phi_det_lgz: 0.3
+
+# Partitioning of zooplankton ingestion to other compartments [dimensionless]
+phi_ldon_smz: 0.165
+
+# Partitioning of zooplankton ingestion to other compartments [dimensionless]
+phi_ldon_mdz: 0.055
+
+# Partitioning of zooplankton ingestion to other compartments [dimensionless]
+phi_ldon_lgz: 0.0
+
+# Partitioning of zooplankton ingestion to other compartments [dimensionless]
+phi_ldop_smz: 0.135
+
+# Partitioning of zooplankton ingestion to other compartments [dimensionless]
+phi_ldop_mdz: 0.045
+
+# Partitioning of zooplankton ingestion to other compartments [dimensionless]
+phi_ldop_lgz: 0.0
+
+# Partitioning of zooplankton ingestion to other compartments [dimensionless]
+phi_srdon_smz: 0.015
+
+# Partitioning of zooplankton ingestion to other compartments [dimensionless]
+phi_srdon_mdz: 0.005
+
+# Partitioning of zooplankton ingestion to other compartments [dimensionless]
+phi_srdon_lgz: 0.0
+
+# Partitioning of zooplankton ingestion to other compartments [dimensionless]
+phi_srdop_smz: 0.045
+
+# Partitioning of zooplankton ingestion to other compartments [dimensionless]
+phi_srdop_mdz: 0.015
+
+# Partitioning of zooplankton ingestion to other compartments [dimensionless]
+phi_srdop_lgz: 0.0
+
+# Partitioning of zooplankton ingestion to other compartments [dimensionless]
+phi_sldon_smz: 0.12
+
+# Partitioning of zooplankton ingestion to other compartments [dimensionless]
+phi_sldon_mdz: 0.04
+
+# Partitioning of zooplankton ingestion to other compartments [dimensionless]
+phi_sldon_lgz: 0.0
+
+# Partitioning of zooplankton ingestion to other compartments [dimensionless]
+phi_sldop_smz: 0.12
+
+# Partitioning of zooplankton ingestion to other compartments [dimensionless]
+phi_sldop_mdz: 0.04
+
+# Partitioning of zooplankton ingestion to other compartments [dimensionless]
+phi_sldop_lgz: 0.0
+
+# Partitioning of zooplankton ingestion to other compartments [dimensionless]
+phi_nh4_smz: 0.3
+
+# Partitioning of zooplankton ingestion to other compartments [dimensionless]
+phi_nh4_mdz: 0.3
+
+# Partitioning of zooplankton ingestion to other compartments [dimensionless]
+phi_nh4_lgz: 0.3
+
+# Partitioning of zooplankton ingestion to other compartments [dimensionless]
+phi_po4_smz: 0.3
+
+# Partitioning of zooplankton ingestion to other compartments [dimensionless]
+phi_po4_mdz: 0.3
+
+# Partitioning of zooplankton ingestion to other compartments [dimensionless]
+phi_po4_lgz: 0.3
+
+# Partitioning of zooplankton ingestion to other compartments [dimensionless]
+phi_ldon_vir: 0.55
+
+# Partitioning of zooplankton ingestion to other compartments [dimensionless]
+phi_srdon_vir: 0.05
+
+# Partitioning of zooplankton ingestion to other compartments [dimensionless]
+phi_sldon_vir: 0.4
+
+# Partitioning of zooplankton ingestion to other compartments [dimensionless]
+phi_ldop_vir: 0.45
+
+# Partitioning of zooplankton ingestion to other compartments [dimensionless]
+phi_srdop_vir: 0.15
+
+# Partitioning of zooplankton ingestion to other compartments [dimensionless]
+phi_sldop_vir: 0.4
+
+# Parameters for unresolved higher predators [s-1]
+imax_hp: 1.041666666666667e-06
+
+# Parameters for unresolved higher predators [mol N kg-1]
+ki_hp: 1.2e-06
+
+# Parameters for unresolved higher predators [dimensionless]
+coef_hp: 2.0
+
+# Parameters for unresolved higher predators [C-1]
+ktemp_hp: 0.063
+
+# Parameters for unresolved higher predators [dimensionless]
+nswitch_hp: 2.0
+
+# Parameters for unresolved higher predators [dimensionless]
+mswitch_hp: 2.0
+
+# Parameters for unresolved higher predators [dimensionless]
+hp_ipa_smp: 0.0
+
+# Parameters for unresolved higher predators [dimensionless]
+hp_ipa_lgp: 0.0
+
+# Parameters for unresolved higher predators [dimensionless]
+hp_ipa_diaz: 0.0
+
+# Parameters for unresolved higher predators [dimensionless]
+hp_ipa_smz: 0.0
+
+# Parameters for unresolved higher predators [dimensionless]
+hp_ipa_mdz: 1.0
+
+# Parameters for unresolved higher predators [dimensionless]
+hp_ipa_lgz: 1.0
+
+# Parameters for unresolved higher predators [dimensionless]
+hp_ipa_bact: 0.0
+
+# Parameters for unresolved higher predators [dimensionless]
+hp_ipa_det: 0.0
+
+# Parameters for unresolved higher predators [dimensionless]
+hp_phi_det: 0.35
+
+# Parameters for unresolved higher predators [dimensionless]
+hp_phi_ldon: 0.0
+
+# Parameters for unresolved higher predators [dimensionless]
+hp_phi_ldop: 0.0
+
+# Parameters for unresolved higher predators [dimensionless]
+hp_phi_srdon: 0.0
+
+# Parameters for unresolved higher predators [dimensionless]
+hp_phi_srdop: 0.0
+
+# Parameters for unresolved higher predators [dimensionless]
+hp_phi_sldon: 0.0
+
+# Parameters for unresolved higher predators [dimensionless]
+hp_phi_sldop: 0.0
+
+# Parameters for unresolved higher predators [dimensionless]
+hp_phi_nh4: 0.65
+
+# Parameters for unresolved higher predators [dimensionless]
+hp_phi_po4: 0.65
+
+# Iron chemistry [mol Fe kg-1]
+felig_bkg: 1.0e-09
+
+# Iron chemistry [mol Fe mol N-1]
+felig_2_don: 0.0
+
+# Iron chemistry [mol Fe mol N-1]
+fe_2_n_sed: 0.006625
+
+# Iron chemistry [mol Fe m kg-1 s-1]
+fe_coast: 1.0e-11
+
+# Iron chemistry [sec-1]
+alpha_fescav: 3.168808781402895e-07
+
+# Iron chemistry [micromol Fe m-2 d-1]
+ffe_sed_max: 0.0
+
+# Iron chemistry [mol N-1 sec-1]
+beta_fescav: 0.0
+
+# Iron chemistry [unitless]
+remin_eff_fedet: 0.2
+
+# Iron chemistry [watts m-2]
+ki_fescav: 1.0
+
+# Iron chemistry [watts m-2]
+io_fescav: 10
+
+# Iron chemistry [watts m-2]
+gamma_fescav: 1.0
+
+# Iron chemistry [mol lig-1 kg]
+kfe_eq_lig_ll: 1000000000000.0
+
+# Iron chemistry [mol lig-1 kg]
+kfe_eq_lig_hl: 100000000.0
+
+# Remineralization [mol O2 kg-1]
+k_o2: 2.0e-05
+
+# Remineralization [mol O2 kg-1]
+o2_min: 1.0e-06
+
+# Remineralization [mol N mol Ca-1]
+rpcaco3: 0.08805031446540881
+
+# Remineralization [mol N g lith-1]
+rplith: 0.0008176100628930818
+
+# Remineralization [mol N mol Si-1]
+rpsio2: 0.01962264150943396
+
+# Remineralization [s-1]
+gamma_ndet: 6.156422379826635e-06
+
+# Remineralization [s-1]
+gamma_cadet_arag: 1.522904483430799e-06
+
+# Remineralization [s-1]
+gamma_cadet_calc: 8.618074515319488e-07
+
+# Remineralization [s-1]
+gamma_sidet: 5.787037037037037e-07
+
+# Remineralization [kg mol-1]
+phi_lith: 0.002
+
+# Remineralization [s-1]
+k_lith: 1.157407407407407e-11
+
+# Remineralization [m]
+z_sed: 0.1
+
+# Remineralization [mol NO3 kg-1]
+k_no3_denit: 1.0e-06
+
+# Dissolved Organic Material [s-1]
+gamma_srdon: 1.760449323001608e-09
+
+# Dissolved Organic Material [s-1]
+gamma_srdop: 7.922021953507237e-09
+
+# Dissolved Organic Material [s-1]
+gamma_sldon: 1.286008230452675e-07
+
+# Dissolved Organic Material [s-1]
+gamma_sldop: 1.286008230452675e-07
+
+# Nitrification [s-1]
+gamma_nitrif: 3.858024691358024e-07
+
+# Nitrification [m2 W-1]
+irr_inhibit: 0.1
+
+# ? [N/A]
+htotal_in: 1.0e-08
+
+# Sinking velocity of detritus [m s-1]
+wsink: 0.001157407407407407
+
+# Tracer index reference
+#
+# The following compilation flags affect tracer indexing:
+#  COBALT_MINERALS, COBALT_PHOSPHORUS, COBALT_IRON, COBALT_CARBON,
+#  COASTDIAT
+#
+#  -M  -M  -M  -M  -M  -M  -M  -M  -M  -M  -M  -M  -M  -M  -M  -M  +M  +M  +M  +M  +M  +M  +M  +M  +M  +M  +M  +M  +M  +M  +M  +M
+#  -P  -P  -P  -P  -P  -P  -P  -P  +P  +P  +P  +P  +P  +P  +P  +P  -P  -P  -P  -P  -P  -P  -P  -P  +P  +P  +P  +P  +P  +P  +P  +P
+#  -I  -I  -I  -I  +I  +I  +I  +I  -I  -I  -I  -I  +I  +I  +I  +I  -I  -I  -I  -I  +I  +I  +I  +I  -I  -I  -I  -I  +I  +I  +I  +I
+#  -C  -C  +C  +C  -C  -C  +C  +C  -C  -C  +C  +C  -C  -C  +C  +C  -C  -C  +C  +C  -C  -C  +C  +C  -C  -C  +C  +C  -C  -C  +C  +C
+#  -D  +D  -D  +D  -D  +D  -D  +D  -D  +D  -D  +D  -D  +D  -D  +D  -D  +D  -D  +D  -D  +D  -D  +D  -D  +D  -D  +D  -D  +D  -D  +D
+
+#   1   1   1   1   1   1   1   1   1   1   1   1   1   1   1   1   1   1   1   1   1   1   1   1   1   1   1   1   1   1   1   1  insm        Small Phytoplankton Nitrogen
+#   2   2   2   2   2   2   2   2   2   2   2   2   2   2   2   2   2   2   2   2   2   2   2   2   2   2   2   2   2   2   2   2  inlg        Large Phytoplankton Nitrogen
+#   3   3   3   3   3   3   3   3   3   3   3   3   3   3   3   3   3   3   3   3   3   3   3   3   3   3   3   3   3   3   3   3  indi        Diazotroph Nitrogen
+#   4   4   4   4   4   4   4   4   4   4   4   4   4   4   4   4   4   4   4   4   4   4   4   4   4   4   4   4   4   4   4   4  insmz       Small Zooplankton Nitrogen
+#   5   5   5   5   5   5   5   5   5   5   5   5   5   5   5   5   5   5   5   5   5   5   5   5   5   5   5   5   5   5   5   5  inmdz       Medium-sized zooplankton Nitrog
+#   6   6   6   6   6   6   6   6   6   6   6   6   6   6   6   6   6   6   6   6   6   6   6   6   6   6   6   6   6   6   6   6  inlgz       large Zooplankton Nitrogen
+#   7   7   7   7   7   7   7   7   7   7   7   7   7   7   7   7   7   7   7   7   7   7   7   7   7   7   7   7   7   7   7   7  ildon       labile DON
+#   8   8   8   8   8   8   8   8   8   8   8   8   8   8   8   8   8   8   8   8   8   8   8   8   8   8   8   8   8   8   8   8  isldon      Semilabile DON
+#   9   9   9   9   9   9   9   9   9   9   9   9   9   9   9   9   9   9   9   9   9   9   9   9   9   9   9   9   9   9   9   9  isrdon      Semi-Refractory DON
+#  10  10  10  10  10  10  10  10  10  10  10  10  10  10  10  10  10  10  10  10  10  10  10  10  10  10  10  10  10  10  10  10  inbact      bacterial
+#  11  11  11  11  11  11  11  11  11  11  11  11  11  11  11  11  11  11  11  11  11  11  11  11  11  11  11  11  11  11  11  11  inh4        Ammonia
+#  12  12  12  12  12  12  12  12  12  12  12  12  12  12  12  12  12  12  12  12  12  12  12  12  12  12  12  12  12  12  12  12  ino3        Nitrate
+#  13  13  13  13  13  13  13  13  13  13  13  13  13  13  13  13  13  13  13  13  13  13  13  13  13  13  13  13  13  13  13  13  indet       ndet
+#  -   -   -   -   -   -   -   -   -   -   -   -   -   -   -   -   14  14  14  14  14  14  14  14  14  14  14  14  14  14  14  14  isio4       Silicate
+#  -   -   -   -   -   -   -   -   -   -   -   -   -   -   -   -   15  15  15  15  15  15  15  15  15  15  15  15  15  15  15  15  isilg       Large Phytoplankton Silicon
+#  -   -   -   -   -   -   -   -   -   -   -   -   -   -   -   -   16  16  16  16  16  16  16  16  16  16  16  16  16  16  16  16  isidet      Detrital Silicon
+#  -   -   -   -   -   -   -   -   -   -   -   -   -   -   -   -   17  17  17  17  17  17  17  17  17  17  17  17  17  17  17  17  icadet_calc Detrital CaCO3
+#  -   -   -   -   -   -   -   -   -   -   -   -   -   -   -   -   18  18  18  18  18  18  18  18  18  18  18  18  18  18  18  18  icadet_arag Detrital CaCO3
+#  -   -   -   -   -   -   -   -   -   -   -   -   -   -   -   -   19  19  19  19  19  19  19  19  19  19  19  19  19  19  19  19  ilith       Lithogenic Aluminosilicate
+#  -   -   -   -   -   -   -   -   -   -   -   -   -   -   -   -   20  20  20  20  20  20  20  20  20  20  20  20  20  20  20  20  ilithdet    lithdet
+#  -   -   -   -   -   -   -   -   14  14  14  14  14  14  14  14  -   -   -   -   -   -   -   -   21  21  21  21  21  21  21  21  ildop       labile DOP
+#  -   -   -   -   -   -   -   -   15  15  15  15  15  15  15  15  -   -   -   -   -   -   -   -   22  22  22  22  22  22  22  22  isldop      Semilabile DOP
+#  -   -   -   -   -   -   -   -   16  16  16  16  16  16  16  16  -   -   -   -   -   -   -   -   23  23  23  23  23  23  23  23  isrdop      Semi-Refractory DOP
+#  14  14  14  14  14  14  14  14  17  17  17  17  17  17  17  17  21  21  21  21  21  21  21  21  24  24  24  24  24  24  24  24  ipo4        Phosphate
+#  -   -   -   -   -   -   -   -   18  18  18  18  18  18  18  18  -   -   -   -   -   -   -   -   25  25  25  25  25  25  25  25  ipdet       Detrital Phosphorus
+#  -   -   -   -   15  15  15  15  -   -   -   -   19  19  19  19  -   -   -   -   22  22  22  22  -   -   -   -   26  26  26  26  ifesm       Small Phytoplankton Iron
+#  -   -   -   -   16  16  16  16  -   -   -   -   20  20  20  20  -   -   -   -   23  23  23  23  -   -   -   -   27  27  27  27  ifedi       Diazotroph Iron
+#  -   -   -   -   17  17  17  17  -   -   -   -   21  21  21  21  -   -   -   -   24  24  24  24  -   -   -   -   28  28  28  28  ifelg       Large Phytoplankton Iron
+#  -   -   -   -   18  18  18  18  -   -   -   -   22  22  22  22  -   -   -   -   25  25  25  25  -   -   -   -   29  29  29  29  ifed        Dissolved Iron
+#  -   -   -   -   19  19  19  19  -   -   -   -   23  23  23  23  -   -   -   -   26  26  26  26  -   -   -   -   30  30  30  30  ifedet      Detrital Iron
+#  -   -   15  15  -   -   20  20  -   -   19  19  -   -   24  24  -   -   22  22  -   -   27  27  -   -   26  26  -   -   31  31  io2         Oxygen
+#  -   -   16  16  -   -   21  21  -   -   20  20  -   -   25  25  -   -   23  23  -   -   28  28  -   -   27  27  -   -   32  32  idic        Dissolved Inorganic Carbon
+#  -   -   17  17  -   -   22  22  -   -   21  21  -   -   26  26  -   -   24  24  -   -   29  29  -   -   28  28  -   -   33  33  ialk        Alkalinity
+#  -   15  -   18  -   20  -   23  -   19  -   22  -   24  -   27  -   22  -   25  -   27  -   30  -   26  -   29  -   31  -   34  inmd        Medium Phytoplankton Nitrogen
+#  -   16  -   19  -   21  -   24  -   20  -   23  -   25  -   28  -   23  -   26  -   28  -   31  -   27  -   30  -   32  -   35  isimd       Medium Phytoplankton Silicon
+#  -   17  -   20  -   22  -   25  -   21  -   24  -   26  -   29  -   24  -   27  -   29  -   32  -   28  -   31  -   33  -   36  ifemd       Medium Phytoplankton Iron
+#
+#                                                                                              **
+
+# Lateral, constant, harmonic/biharmonic horizontal diffusion of biological
+# tracer: [1:NBT,Ngrids].
+
+TNU2: 5.0           # [m2/s]
+
+TNU4: 0.0             # [m4/s]
+
+# Vertical mixing coefficients for biological tracers: [1:NBT,Ngrids].
+
+AKT_BAK: 1.0e-6       # [m2/s]
+
+# Nudging/relaxation time scales, inverse scales will be computed
+# internally: [1:NBT,Ngrids].
+
+TNUDG: 360.0          # [days]
+
+# Set horizontal and vertical advection schemes for biological tracers.
+# A different advection scheme is allowed for each tracer. For example,
+# a positive-definite (monotonic) algorithm can be activated for
+# salinity and biological tracers, while a different one is set for
+# temperature. [1:NAT+NPT,Ngrids] values are expected.
+#
+#   Keyword    Advection Algorithm
+#
+#   A4         4th-order Akima (horizontal/vertical)
+#   C2         2nd-order centered differences (horizontal/vertical)
+#   C4         4th-order centered differences (horizontal/vertical)
+#   HSIMT      3th-order HSIMT-TVD (horizontal/vertical)
+#   MPDATA     recursive flux corrected MPDATA (horizontal/vertical)
+#   SPLINES    parabolic splines (only vertical)
+#   SU3        split third-order upstream (horizontal/vertical)
+#   U3         3rd-order upstream-biased (only horizontal)
+#
+# The user has the option of specifying the full Keyword or the first
+# two letters, regardless if using uppercase or lowercase. If nested
+# grids, specify values for each grid.
+#
+Hadvection: HSIMT
+
+Vadvection: HSIMT
+
+# Adjoint-based algorithms can have different horizontal and schemes
+# for active and inert tracers.
+
+ad_Hadvection: U3                             # idbio(:), compact
+
+ad_Vadvection: C4                             # idbio(:), compact
+
+# Logical switches (TRUE/FALSE) to activate writing of biological tracers
+# into HISTORY output file: [1:NBT,Ngrids].
+
+Hout:
+  idTvar:
+    - true #  1. insm
+    - true #  2. inlg
+    - true #  3. indi
+    - true #  4. insmz
+    - true #  5. inmdz
+    - true #  6. inlgz
+    - true #  7. ildon
+    - true #  8. isldon
+    - true #  9. isrdon
+    - true # 10. inbact
+    - true # 11. inh4
+    - true # 12. ino3
+    - true # 13. indet
+    - true # 14. isio4
+    - true # 15. isilg
+    - true # 16. isidet
+    - true # 17. icadet_calc
+    - true # 18. icadet_arag
+    - true # 19. ilith
+    - true # 20. ilithdet
+    - true # 21. ipo4
+    - true # 22. ifesm
+    - true # 23. ifedi
+    - true # 24. ifelg
+    - true # 25. ifed
+    - true # 26. ifedet
+    - true # 27. io2
+    - true # 28. idic
+    - true # 29. ialk
+    - true # 30. inmd
+    - true # 31. isimd
+    - true # 32. ifemd
+  idBeTvar:
+    - true # 1. icased
+    - true # 2. icadet_arag_btf
+    - true # 3. icadet_calc_btf
+    - true # 4. indet_btf
+    - true # 5. ipdet_btf
+    - true # 6. isidet_btf
+
+Aout:
+  idTvar:
+    - true #  1. insm
+    - true #  2. inlg
+    - true #  3. indi
+    - true #  4. insmz
+    - true #  5. inmdz
+    - true #  6. inlgz
+    - true #  7. ildon
+    - true #  8. isldon
+    - true #  9. isrdon
+    - true # 10. inbact
+    - true # 11. inh4
+    - true # 12. ino3
+    - true # 13. indet
+    - true # 14. isio4
+    - true # 15. isilg
+    - true # 16. isidet
+    - true # 17. icadet_calc
+    - true # 18. icadet_arag
+    - true # 19. ilith
+    - true # 20. ilithdet
+    - true # 21. ipo4
+    - true # 22. ifesm
+    - true # 23. ifedi
+    - true # 24. ifelg
+    - true # 25. ifed
+    - true # 26. ifedet
+    - true # 27. io2
+    - true # 28. idic
+    - true # 29. ialk
+    - true # 30. inmd
+    - true # 31. isimd
+    - true # 32. ifemd
+  idBeTvar:
+    - true # 1. icased
+    - true # 2. icadet_arag_btf
+    - true # 3. icadet_calc_btf
+    - true # 4. indet_btf
+    - true # 5. ipdet_btf
+    - true # 6. isidet_btf
+
+# Logical switches (TRUE/FALSE) to activate writing of biological diagnostics
+# into DIAGNOSTICS output file
+
+Dout:
+  ichl: false
+  ico3_ion: false
+  ihtotal: false
+  iirr_mem: false
+  iirr_mix: false
+  iirr_inst: false
+  ico3_sol_calc: false
+  ico3_sol_arag: false
+  ife_bulk_flx: false
+  iomega_cadet_calc: false
+  iomega_cadet_arag: false
+  iswdk: false
+  imu_mem_sm: false
+  imu_mem_di: false
+  imu_mem_lg: false
+  iagg_lim_sm: false
+  iagg_lim_di: false
+  iagg_lim_lg: false
+  iaggloss_di: false
+  iaggloss_sm: false
+  iaggloss_lg: false
+  ivirloss_di: false
+  ivirloss_sm: false
+  ivirloss_lg: false
+  izloss_di: false
+  izloss_sm: false
+  izloss_lg: false
+  idef_fe_sm: false
+  idef_fe_di: false
+  idef_fe_lg: false
+  ifelim_sm: false
+  ifelim_di: false
+  ifelim_lg: false
+  ino3lim_sm: false
+  ino3lim_di: false
+  ino3lim_lg: false
+  inh4lim_sm: false
+  inh4lim_di: false
+  inh4lim_lg: false
+  ipo4lim_sm: false
+  ipo4lim_di: false
+  ipo4lim_lg: false
+  ichl_di: false
+  iC_2_chl_di: false
+  ichl_sm: false
+  iC_2_chl_sm: false
+  ichl_lg: false
+  iC_2_chl_lg: false
+  imu_mem_md: false
+  iagg_lim_md: false
+  ivirloss_md: false
+  izloss_md: false
+  idef_fe_md: false
+  ifelim_md: false
+  ino3lim_md: false
+  inh4lim_md: false
+  ipo4lim_md: false
+  ichl_md: false
+  iC_2_chl_md: false
+  icased: false
+  icadet_arag_btf: false
+  icadet_calc_btf: false
+  indet_btf: false
+  ipdet_btf: false
+  isidet_btf: false
+  ialk_btf: false
+  idic_btf: false
+  ifed_btf: false
+  inh4_btf: false
+  ino3_btf: false
+  io2_btf: false
+  ipo4_btf: false
+  isio4_btf: false
+  imxl_depth: false
+  imxl_level: false
+  ialpha: false
+  ico2star: false
+  ipco2surf: false
+  ico2_flx: false
+  io2_flx: false
+  iironsed_flx: false
+  inpp_100: false
+  imesozoo_200: false
+  iprod_n_100_sm: false
+  iaggloss_n_100_sm: false
+  izloss_n_100_sm: false
+  iprod_n_100_lg: false
+  iaggloss_n_100_lg: false
+  izloss_n_100_lg: false
+  iprod_n_100_di: false
+  iaggloss_n_100_di: false
+  izloss_n_100_di: false
+  iprod_n_100_smz: false
+  iingest_n_100_smz: false
+  izloss_n_100_smz: false
+  ihploss_n_100_smz: false
+  iprod_ndet_100_smz: false
+  iprod_n_100_mdz: false
+  iingest_n_100_mdz: false
+  izloss_n_100_mdz: false
+  ihploss_n_100_mdz: false
+  iprod_ndet_100_mdz: false
+  iprod_n_100_lgz: false
+  iingest_n_100_lgz: false
+  izloss_n_100_lgz: false
+  ihploss_n_100_lgz: false
+  iprod_ndet_100_lgz: false
+  iprod_n_100_bact: false
+  izloss_n_100_bact: false
+  imesozooprod_200: false
+  iuptake_din_100: false
+  iuptake_no3_n2_100: false
+  iprod_mesozoo_100: false
+  iz_ratio_100: false
+  ipe_ratio_100: false
+  if_ratio_100: false
+  iprod_don_100_smz: false
+  iprod_don_100_mdz: false
+  iprod_don_100_lgz: false
+  ino3denit_sed: false
+  ijno3denit_wc_vint: false
+  iprod_n_100_md: false
+  iaggloss_n_100_md: false
+  izloss_n_100_md: false
+
+# Lateral boundary conditions
+
+LBC:
+  isTvar: [RadNud,  RadNud,  Clo,  Clo,  #  1. insm
+           RadNud,  RadNud,  Clo,  Clo,  #  2. inlg
+           RadNud,  RadNud,  Clo,  Clo,  #  3. indi
+           RadNud,  RadNud,  Clo,  Clo,  #  4. insmz
+           RadNud,  RadNud,  Clo,  Clo,  #  5. inmdz
+           RadNud,  RadNud,  Clo,  Clo,  #  6. inlgz
+           RadNud,  RadNud,  Clo,  Clo,  #  7. ildon
+           RadNud,  RadNud,  Clo,  Clo,  #  8. isldon
+           RadNud,  RadNud,  Clo,  Clo,  #  9. isrdon
+           RadNud,  RadNud,  Clo,  Clo,  # 10. inbact
+           RadNud,  RadNud,  Clo,  Clo,  # 11. inh4
+           RadNud,  RadNud,  Clo,  Clo,  # 12. ino3
+           RadNud,  RadNud,  Clo,  Clo,  # 13. indet
+           RadNud,  RadNud,  Clo,  Clo,  # 14. isio4
+           RadNud,  RadNud,  Clo,  Clo,  # 15. isilg
+           RadNud,  RadNud,  Clo,  Clo,  # 16. isidet
+           RadNud,  RadNud,  Clo,  Clo,  # 17. icadet_calc
+           RadNud,  RadNud,  Clo,  Clo,  # 18. icadet_arag
+           RadNud,  RadNud,  Clo,  Clo,  # 19. ilith
+           RadNud,  RadNud,  Clo,  Clo,  # 20. ilithdet
+           RadNud,  RadNud,  Clo,  Clo,  # 21. ipo4
+           RadNud,  RadNud,  Clo,  Clo,  # 22. ifesm
+           RadNud,  RadNud,  Clo,  Clo,  # 23. ifedi
+           RadNud,  RadNud,  Clo,  Clo,  # 24. ifelg
+           RadNud,  RadNud,  Clo,  Clo,  # 25. ifed
+           RadNud,  RadNud,  Clo,  Clo,  # 26. ifedet
+           RadNud,  RadNud,  Clo,  Clo,  # 27. io2
+           RadNud,  RadNud,  Clo,  Clo,  # 28. idic
+           RadNud,  RadNud,  Clo,  Clo,  # 29. ialk
+           RadNud,  RadNud,  Clo,  Clo,  # 30. inmd
+           RadNud,  RadNud,  Clo,  Clo,  # 31. isimd
+           RadNud,  RadNud,  Clo,  Clo]  # 32. ifemd
+
+# Logical switches (TRUE/FALSE) to specify which variables to process for
+# tracers climatology: [NBT,Ngrids] values are expected. See glossary below
+# for details.
+
+LtracerCLM:
+  - true #  1. insm
+  - true #  2. inlg
+  - true #  3. indi
+  - true #  4. insmz
+  - true #  5. inmdz
+  - true #  6. inlgz
+  - true #  7. ildon
+  - true #  8. isldon
+  - true #  9. isrdon
+  - true # 10. inbact
+  - true # 11. inh4
+  - true # 12. ino3
+  - true # 13. indet
+  - true # 14. isio4
+  - true # 15. isilg
+  - true # 16. isidet
+  - true # 17. icadet_calc
+  - true # 18. icadet_arag
+  - true # 19. ilith
+  - true # 20. ilithdet
+  - true # 21. ipo4
+  - true # 22. ifesm
+  - true # 23. ifedi
+  - true # 24. ifelg
+  - true # 25. ifed
+  - true # 26. ifedet
+  - true # 27. io2
+  - true # 28. idic
+  - true # 29. ialk
+  - true # 30. inmd
+  - true # 31. isimd
+  - true # 32. ifemd
+LnudgeTCLM:
+  - false #  1. insm
+  - false #  2. inlg
+  - false #  3. indi
+  - false #  4. insmz
+  - false #  5. inmdz
+  - false #  6. inlgz
+  - false #  7. ildon
+  - false #  8. isldon
+  - false #  9. isrdon
+  - false # 10. inbact
+  - false # 11. inh4
+  - false # 12. ino3
+  - false # 13. indet
+  - false # 14. isio4
+  - false # 15. isilg
+  - false # 16. isidet
+  - false # 17. icadet_calc
+  - false # 18. icadet_arag
+  - false # 19. ilith
+  - false # 20. ilithdet
+  - false # 21. ipo4
+  - false # 22. ifesm
+  - false # 23. ifedi
+  - false # 24. ifelg
+  - false # 25. ifed
+  - false # 26. ifedet
+  - false # 27. io2
+  - false # 28. idic
+  - false # 29. ialk
+  - false # 30. inmd
+  - false # 31. isimd
+  - false # 32. ifemd
+LtracerSrc:
+  - false #  1. insm
+  - false #  2. inlg
+  - false #  3. indi
+  - false #  4. insmz
+  - false #  5. inmdz
+  - false #  6. inlgz
+  - false #  7. ildon
+  - false #  8. isldon
+  - false #  9. isrdon
+  - false # 10. inbact
+  - false # 11. inh4
+  - false # 12. ino3
+  - false # 13. indet
+  - false # 14. isio4
+  - false # 15. isilg
+  - false # 16. isidet
+  - false # 17. icadet_calc
+  - false # 18. icadet_arag
+  - false # 19. ilith
+  - false # 20. ilithdet
+  - false # 21. ipo4
+  - false # 22. ifesm
+  - false # 23. ifedi
+  - false # 24. ifelg
+  - false # 25. ifed
+  - false # 26. ifedet
+  - false # 27. io2
+  - false # 28. idic
+  - false # 29. ialk
+  - false # 30. inmd
+  - false # 31. isimd
+  - false # 32. ifemd
+

@@ -1,0 +1,282 @@
+#==============================================================================
+#
+# The YAML ROMS input format mimics that of ROMS standard input (e.g., roms.in)
+# files, but using a more flexible format that is both human-readable and more
+# easily machine-parsable than the standard input format.  
+#
+# These files are inteded to be used with the roms_input_wrangler toolbox.
+#
+# Input parameters can be entered in (almost) any order (but there are a few 
+# exceptions, like the tiling parameters, so I suggest maintaining the original 
+# order.)  Comments are preceded by a # sign and are ignored on reading. Most 
+# values follow standard YAML format.  Parameters should be entered as 
+# dictionary entries, with the parameter name as key.  Note that unlike ROMS 
+# standard input, indentation is important in the YAML format, and all parameter 
+# keywords should be left-justified.
+#
+# Integers are distinguished from floating point numbers by the presence or 
+# absence of decimal points (e.g., 1 = integer, 1.0 = float).
+# 
+# Lists of parameters should be entered for keywords that expect multiple 
+# values.  These can either be entered across multiple lines: 
+#
+# AKT_BAK:
+#   - 1.0e-6
+#   - 1.0e-6
+#   - 5.0e-6
+#   - 5.0e-6
+#
+# or as "flow collections" on a single line:
+#
+# AKT_BAK: [1.0e-6, 1.0e-6, 5.0e-6, 5.0e-6]
+#
+# or across multiple lines:
+#
+# AKT_BAK: [1.0e-6, 1.0e-6,
+#           5.0e-6, 5.0e-6]
+#  
+# The above three examples will all be interpreted identically.
+#
+# NetCDF filename parameters can accept "multiple filenames", where a single 
+# input dataset is split across several files.  These are marked by vertical bar 
+# separators (|) in the ROMS standard input.  In the YAML format, these should 
+# be entered as nested arrays, e.g,:
+#
+# NFFILES: 6
+# FRCNAME: 
+#    - [my_lwrad_year1.nc, my_lwrad_year2.nc]
+#    - [my_swrad_year1.nc, my_swrad_year2.nc]
+#    - [my_winds_year1.nc, 
+#       my_winds_year2.nc]
+#    - [my_Pair_year1.nc, 
+#       my_Pair_year2.nc]
+#    - - my_Qair_year1.nc
+#      - my_Qair_year2.nc
+#    - - my_Tair_year1.nc
+#      - my_Tair_year2.nc
+#
+# Again, all list syntaxes are valid, and may be used interchangeably as 
+# demonstrated here.
+#
+# Parameters with nested indices (e.g. Hout(idUvel), Hout(idVvel)) are 
+# represented as dictionaries, with the nested indices as keys, e.g.:
+# 
+# Hout:
+#   idUvel: TRUE       # u                  3D U-velocity
+#   idVvel: TRUE       # v                  3D V-velocity
+#
+#==============================================================================
+
+# In multiple levels of nesting or multiple connected domains step-ups,       
+# "Ngrids" entries are expected for some of these parameters. In such case,   
+# the order of the entries for a parameter is critical. It must follow the    
+# same order (1:Ngrids) as in the state variable declaration.  In the ROMS 
+# standard input format, these values are marked by a "==" plural after the 
+# KEYWORD instead of a "=".  List any of the less common *non-plural* KEYWORDS 
+# here so that they can be formatted accordingly later.
+
+no_plural: []
+
+#==============================================================================
+#
+# Switch to control the computation of biology within nested and/or multiple
+# connected grids.
+
+Lbiology: TRUE
+
+# Maximum number of iterations to achieve convergence of the nonlinear
+# solution.
+
+BioIter: 1
+
+# maximum phytoplankton growth rate [d^-1]
+mu0: 1.2
+
+# light attenuation by seawater [m^-1]
+att_sw: 0.05
+
+# light attneuation by phytoplankton [m^-1 uM N^-1]
+att_p: 0.006
+
+# initial growth-light slope, winter [(W M^-2)^-1 d^-1]
+alpha_win: 0.01
+
+# initial growth-light slope, summer [(W M^-2)^-1 d^-1]
+alpha_sum: 0.16
+
+# light level of alpha_win/alpha_sum transition [W m^-2]
+Ecrit: 30
+
+# width of alpha_win/alpha_sum transition [W m^-2]
+deltaE: 5
+
+# minmimum half-saturation for NO3 [uM N]
+kmin: 0.16
+
+# preference for NH4 [unitless]
+phi_NH4: 2.0
+
+# phytoplankton C:N ratio [molC/molN]
+CNratio: 9.0
+
+# chlorohpyll:N ratio [mg chl/uM N]
+chlNratio: 2.2
+
+# phytoplankton mortality [d^-1]
+m_P: 0.03
+
+# phytoplankton loss via aggregation [(uM N)^-1 d^-1]
+m_agg: 0.009
+
+# max microzooplankton ingestion rate [d^-1]
+I0: 3.4
+
+# grazing half-saturation [uM N]
+K: 1
+
+# microzooplankton growth efficiency [unitless]
+epsil: 0.3
+
+# fraction of grazing excreted to NH4 [unitless]
+fex: 0.35
+
+# microzooplankton mortality [d^-1]
+m_Z: 1.5
+
+# small detritus sinking rate [m d^-1]
+w_S: 3
+
+# large detritus sinking rate [m d^-1]
+w_L: 100
+
+# detrital remineralization rate [d^-1]
+r_remin: 0.05
+
+# nitrification rate [d^-1]
+r_nitr: 0.03
+
+# Q10 for phytoplankton [unitless]
+Q_P: 2
+
+# Q10 for zooplankton [unitless]
+Q_Z: 2.8
+
+# Q10 for bacterial respiration [unitless]
+Q_R: 2.8
+
+# Lateral, constant, harmonic/biharmonic horizontal diffusion of biological
+# tracer: [1:NBT,Ngrids].
+
+TNU2:
+  - 25.0  #  1. iphyto  # [m2/s]
+  - 25.0  #  2. izoo  
+  - 25.0  #  3. idets 
+  - 25.0  #  4. idetl 
+  - 25.0  #  5. inh4  
+  - 25.0  #  6. ino3  
+
+          
+TNU4: 0.0             # [m4/s]
+
+# Vertical mixing coefficients for biological tracers: [1:NBT,Ngrids].
+
+AKT_BAK: 1.0e-6       # [m2/s]
+
+# Nudging/relaxation time scales, inverse scales will be computed
+# internally: [1:NBT,Ngrids].
+
+TNUDG: 0.0            # [days]
+
+# Set horizontal and vertical advection schemes for biological tracers.
+# A different advection scheme is allowed for each tracer. For example,
+# a positive-definite (monotonic) algorithm can be activated for
+# salinity and biological tracers, while a different one is set for
+# temperature. [1:NAT+NPT,Ngrids] values are expected.
+#
+#   Keyword    Advection Algorithm
+#
+#   A4         4th-order Akima (horizontal/vertical)
+#   C2         2nd-order centered differences (horizontal/vertical)
+#   C4         4th-order centered differences (horizontal/vertical)
+#   HSIMT      3th-order HSIMT-TVD (horizontal/vertical)
+#   MPDATA     recursive flux corrected MPDATA (horizontal/vertical)
+#   SPLINES    parabolic splines (only vertical)
+#   SU3        split third-order upstream (horizontal/vertical)
+#   U3         3rd-order upstream-biased (only horizontal)
+#
+# The user has the option of specifying the full Keyword or the first
+# two letters, regardless if using uppercase or lowercase. If nested
+# grids, specify values for each grid.
+#
+Hadvection: HSIMT
+
+Vadvection: HSIMT
+
+# Adjoint-based algorithms can have different horizontal and schemes
+# for active and inert tracers.
+
+ad_Hadvection: U3                             # idbio(:), compact
+
+ad_Vadvection: C4                             # idbio(:), compact
+
+# Logical switches (TRUE/FALSE) to activate writing of biological tracers
+# into HISTORY output file: [1:NBT,Ngrids].
+
+Hout:
+  idTvar:
+    - true  #  1. iphyto  # [m2/s]
+    - true  #  2. izoo  
+    - true  #  3. idets 
+    - true  #  4. idetl 
+    - true  #  5. inh4  
+    - true  #  6. ino3 
+  
+Aout:
+  idTvar:
+    - true  #  1. iphyto  # [m2/s]
+    - true  #  2. izoo  
+    - true  #  3. idets 
+    - true  #  4. idetl 
+    - true  #  5. inh4  
+    - true  #  6. ino3 
+
+# Logical switches (TRUE/FALSE) to activate writing of biological diagnostics
+# into DIAGNOSTICS output file
+
+
+# Lateral boundary conditions
+
+LBC: 
+  isTvar: [RadNud,  RadNud,  Clo,  Clo,  #  1. iphyto 
+           RadNud,  RadNud,  Clo,  Clo,  #  2. izoo  
+           RadNud,  RadNud,  Clo,  Clo,  #  3. idets 
+           RadNud,  RadNud,  Clo,  Clo,  #  4. idetl 
+           RadNud,  RadNud,  Clo,  Clo,  #  5. inh4  
+           RadNud,  RadNud,  Clo,  Clo]  #  6. ino3 
+
+# Logical switches (TRUE/FALSE) to specify which variables to process for
+# tracers climatology: [NBT,Ngrids] values are expected. See glossary below
+# for details.
+
+LtracerCLM: 
+   - FALSE  #  1. iphyto 
+   - FALSE  #  2. izoo  
+   - FALSE  #  3. idets 
+   - FALSE  #  4. idetl 
+   - FALSE  #  5. inh4  
+   - FALSE  #  6. ino3 
+LnudgeTCLM:
+   - FALSE  #  1. iphyto 
+   - FALSE  #  2. izoo  
+   - FALSE  #  3. idets 
+   - FALSE  #  4. idetl 
+   - FALSE  #  5. inh4  
+   - FALSE  #  6. ino3 
+LtracerSrc:
+   - FALSE  #  1. iphyto 
+   - FALSE  #  2. izoo  
+   - FALSE  #  3. idets 
+   - FALSE  #  4. idetl 
+   - FALSE  #  5. inh4  
+   - FALSE  #  6. ino3 
+
