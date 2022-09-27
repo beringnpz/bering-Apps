@@ -4,7 +4,7 @@
 # files, but using a more flexible format that is both human-readable and more
 # easily machine-parsable than the standard input format.  
 #
-# These files are inteded to be used with the TODO:name toolbox.
+# These files are inteded to be used with the roms_input_wrangler toolbox.
 #
 # Input parameters can be entered in (almost) any order (but there are a few 
 # exceptions, like the tiling parameters, so I suggest maintaining the original 

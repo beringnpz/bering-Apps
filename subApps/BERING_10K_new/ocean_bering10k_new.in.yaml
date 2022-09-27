@@ -4,7 +4,7 @@
 # files, but using a more flexible format that is both human-readable and more
 # easily machine-parsable than the standard input format.  
 #
-# These files are inteded to be used with the TODO:name toolbox.
+# These files are inteded to be used with the roms_input_wrangler toolbox.
 #
 # Input parameters can be entered in (almost) any order (but there are a few 
 # exceptions, like the tiling parameters, so I suggest maintaining the original 
@@ -398,19 +398,19 @@ TKENU4: 0.0                           # m4/s
 
 # Generic length-scale turbulence closure parameters.
 
-#      GLS_P == 3.0d0                           # K-epsilon
-#      GLS_M == 1.5d0
-#      GLS_N == -1.0d0
-#   GLS_Kmin == 7.6d-6
-#   GLS_Pmin == 1.0d-12
-
-#   GLS_CMU0 == 0.5477d0
-#     GLS_C1 == 1.44d0
-#     GLS_C2 == 1.92d0
-#    GLS_C3M == -0.4d0
-#    GLS_C3P == 1.0d0
-#   GLS_SIGK == 1.0d0
-#   GLS_SIGP == 1.30d0
+# GLS_P: 3.0                          # K-epsilon
+# GLS_M: 1.5
+# GLS_N: -1.0
+# GLS_Kmin: 7.6e-6
+# GLS_Pmin: 1.0e-12
+#
+# GLS_CMU0: 0.5477
+# GLS_C1: 1.44
+# GLS_C2: 1.92
+# GLS_C3M: -0.4
+# GLS_C3P: 1.0
+# GLS_SIGK: 1.0
+# GLS_SIGP: 1.30
 
 GLS_P: -1.0                           # K-omega
 GLS_M: 0.5

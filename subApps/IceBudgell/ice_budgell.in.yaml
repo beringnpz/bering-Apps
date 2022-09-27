@@ -4,7 +4,7 @@
 # files, but using a more flexible format that is both human-readable and more
 # easily machine-parsable than the standard input format.  
 #
-# These files are inteded to be used with the TODO:name toolbox.
+# These files are inteded to be used with the roms_input_wrangler toolbox.
 #
 # Input parameters can be entered in (almost) any order (but there are a few 
 # exceptions, like the tiling parameters, so I suggest maintaining the original 
@@ -75,7 +75,8 @@
 # KEYWORD instead of a "=".  List any of the less common *non-plural* KEYWORDS 
 # here so that they can be formatted accordingly later.
 
-no_plural: []
+no_plural: [GAMMA2, rho_air, tol, stressang, ice_emiss, spec_heat_air, 
+            trans_coeff, sublim_latent_heat, t0deg, lf_k1, lf_k2, lf_u0]
 
 #==============================================================================
 # Switch to control the computation of ice within nested and/or multiple
