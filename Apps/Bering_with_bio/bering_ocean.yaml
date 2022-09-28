@@ -299,8 +299,8 @@ NCV: 10                              # Number of eigenvectors
 
 NRREC: 0
 LcycleRST: TRUE
-NRST: 1008
-NSTA: 6
+NRST: 18
+NSTA: 36
 NFLT: 144
 NINFO: 1
 
