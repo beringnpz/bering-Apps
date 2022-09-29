@@ -1133,7 +1133,7 @@ TIDENAME: /gscratch/bumblereem/bering10k/input/generic/tides_OTBS.nc
 # continuation (\) or a vertical bar (|) symbol after each entry, except
 # the last one.
 
-NFFILES: 14                         # number of forcing files
+NFFILES: 15                         # number of forcing files
 
 FRCNAME:
   - - ./Input/2002/roms-cfs-atmos-Pair-2002.nc
@@ -1182,6 +1182,12 @@ FRCNAME:
     - ./Input/2004/runoff_kearney_2004.nc
     - ./Input/2005/runoff_kearney_2005.nc
     - ./Input/2006/runoff_kearney_2006.nc
+  - - ./Input/2001/runoff_carbon_2001.nc
+    - ./Input/2002/runoff_carbon_2002.nc
+    - ./Input/2003/runoff_carbon_2003.nc
+    - ./Input/2004/runoff_carbon_2004.nc
+    - ./Input/2005/runoff_carbon_2005.nc
+    - ./Input/2006/runoff_carbon_2006.nc
   - ./Input/atmo_co2_2002-2020.nc
   - ./Input/solublefe_test.nc
   - ./Input/ironsed_test.nc
