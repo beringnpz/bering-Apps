@@ -1,7 +1,7 @@
 /*
-** svn $Id: basin.h 8 2007-02-06 19:00:29Z arango $
+** svn $Id$
 *******************************************************************************
-** Copyright (c) 2002-2009 The ROMS/TOMS Group
+** Copyright (c) 2002-2017 The ROMS/TOMS Group
 **
 **   Licensed under a MIT/X style license
 **
@@ -9,19 +9,13 @@
 **
 *******************************************************************************
 **
-**  Options for BERING_10K simulation.  
-**
-**  This file originated from the nep5.h header file, and was then modified for
-**  the smaller BERING_10K domain. 
-**  
-**  By default this will run a physics-only variant.  To add the BESTNPZ 
-**  biogeochmistry, add "-DBESTNPZ" to MY_CPP_FLAGS; to add the full 
-**  FEAST food web, add "-DBESTNPZ -DFEAST"
+**  Options for BERING simulation
 */
 
 #undef NETCDF4              // use classic netCDF 
 #undef PARALLEL_IO          // no parallel input/output
 #undef OFFLINE_FLOATS       // could be used for floats in offline version... but not now
+#undef USE_CICE             // no CICE ice... should be undefined by default but hitting issues building
 
 /* general */
 
@@ -75,16 +69,6 @@
 #define RST_SINGLE          // Use single precision for restart files
 #define AVERAGES            // Write out averages output
 #undef AVERAGES2            // No secondary averages output
-#ifdef SOLVE3D
-# undef AVERAGES_DETIDE     // Don't apply detiding filter
-# define AVERAGES_AKT       // add AKt output to averages file
-# define AVERAGES_AKS       // add AKs output to averages file
-# define AVERAGES_AKV       // add AKv output to averages file
-# define AVERAGES_FLUXES    // add a bunch of variables related to surface fluxes to averages file
-# undef AVERAGES_QUADRATIC  // Donj't add quadratic terms to averages file
-# undef DIAGNOSTICS_TS      // Don't add tracer diagnostics to averages file
-#endif
-#undef DIAGNOSTICS_UV       // Don't add momentum diagnostics to averages file
  
 /* advection, dissipation, pressure grad, etc. */
  
@@ -96,18 +80,11 @@
 #define UV_COR              // turn on Coriolis terms
 #define UV_SADVECTION       // turn on splines vertical advection
  
-#ifdef SOLVE3D
-# define TS_C4HADVECTION    // use 4th-order centered horizontal advection
-# define TS_C4VADVECTION    // use 4th-order centered vertical advection
-# undef TS_MPDATA           // Don't use recursive MPDATA 3D advection
-#endif
- 
 #define UV_VIS2             // turn on harmonic horizontal mixing, momentum 
 #define UV_SMAGORINSKY      // turn on Smagorinky-like viscosity 
 #define VISC_3DCOEF         // turn on time-invarant horizontal viscosity at rho-points
 #define MIX_S_UV            // mixing along constant S-surfaces 
 #define VISC_GRID           // scale viscosity coefficient by grid size
-#define SPONGE              // allows for enhanced viscosity/diffusion areas
 
 #ifdef SOLVE3D
 # define TS_DIF2            // turn on harmonic horizontal mixing, tracers 
@@ -175,9 +152,7 @@
 
 #ifdef SOLVE3D
 # define RUNOFF             // Add runoff as an additional rain field
-# define UV_PSOURCE         // Include momentum point sources (but not for rivers, for Bering Strait)
 # define ANA_PSOURCE        // Use analytical point sources
-# undef TS_PSOURCE          // No tracer point sources
 #endif
  
 /* tides */
@@ -189,12 +164,12 @@
 # define UV_TIDES           // impose tidal currents
 # define ADD_FSOBC          // add tidal elevation to processed OBC data
 # define ADD_M2OBC          // add tidal currents  to processed OBC data
-# undef RAMP_TIDES
-# define TIDES_ASTRO
+# undef RAMP_TIDES          // don't ramp tidal forcing over a day
+# define TIDES_ASTRO        // calculate astronomical phase argument
 # define POT_TIDES          // impose potential tides
 # define UV_LDRAG           // turn on linear bottom friction
-# define RDRG_GRID          // read bottom drag coefficients from grid file
-# define DRAG_LIMITER       // quadratic bottom stress  KAK: customization?
+# define UV_DRAG_GRID       // use spatially-varying linear coefficient of bottom drag
+# define LIMIT_BSTRESS      // limit bottom stress to not change direction of momentum
 # undef UV_QDRAG
 #else
 # define UV_QDRAG           // quadratic bottom stress
@@ -206,60 +181,7 @@
                east = Bering Strait, closed but with momentum point source (see ana_psource)
                west = North Pacific (south of Aleutians), open */
  
-#define EASTERN_WALL        // closed eastern
-#define NORTHERN_WALL       // closed northern
-#undef WESTERN_WALL
-#undef SOUTHERN_WALL
- 
 #define RADIATION_2D
- 
-#ifndef NORTHERN_WALL
-# define NORTH_FSCHAPMAN
-# define NORTH_M2FLATHER
-# ifdef SOLVE3D
-#  define NORTH_M3RADIATION
-#  define NORTH_M3NUDGING
-#  define NORTH_TRADIATION
-#  define NORTH_TNUDGING
-#  define NORTH_MIGRADIENT
-# endif
-#endif
- 
-#ifndef WESTERN_WALL        // western boundary conditions
-# define WEST_FSCHAPMAN     // ... free surface Chapman
-# define WEST_M2FLATHER     // ... 2D momentum Flather
-# ifdef SOLVE3D
-#  define WEST_M3RADIATION  // ... 3D momentum radiation+nudging
-#  define WEST_M3NUDGING
-#  define WEST_TRADIATION   // ... 3D tracers radiation+nudging
-#  define WEST_TNUDGING     
-#  define WEST_MIGRADIENT   // ... Ice tracers gradient
-# endif
-#endif
- 
-#ifndef SOUTHERN_WALL       // southern boundary conditions
-# define SOUTH_FSCHAPMAN    // ... free surface Chapman
-# define SOUTH_M2FLATHER    // ... 2D momentum Flather
-# ifdef SOLVE3D
-#  define SOUTH_M3RADIATION // ... 3D momentum radiation+nudging
-#  define SOUTH_M3NUDGING
-#  define SOUTH_TRADIATION  // ... 3D tracers radiation+nudging
-#  define SOUTH_TNUDGING
-#  define SOUTH_MIGRADIENT  // ... Ice tracers gradient
-# endif
-#endif
- 
-#ifndef EASTERN_WALL
-# define EAST_FSCHAPMAN
-# define EAST_M2FLATHER
-# ifdef SOLVE3D
-#  define EAST_M3RADIATION
-#  define EAST_M3NUDGING
-#  define EAST_TRADIATION
-#  define EAST_TNUDGING
-#  define EAST_MIGRADIENT
-# endif
-#endif
  
 /* roms quirks */
  
@@ -270,102 +192,13 @@
 # define ANA_SMFLUX
 #endif
 
-/*
-**  Biological model options.
-*/
+/* MPI stuff (see https://www.myroms.org/projects/src/ticket/747)      */
+/* not strictly necessary, but enforces same behavior as older version */
 
-/* In order to allow use of this header file with different biology, I'm 
-   leaving out any explicit define/undef options for BESTNPZ and FEAST.  
-   These will be defined externally via MY_CPP_FLAGS.
-*/ 
-
-#undef NEMURO
-#undef BIO_GOANPZ        /* Sarah Hinckley's 11 box model */
-
-#if defined BEST_NPZ || defined BIO_GOANPZ || defined PASSIVE_TRACERS
-# undef  BIOFLUX           /* sum Nitrogen fluxes between boxes */
-# define ANA_BIOLOGY       /* analytical biology initial conditions */
-# define ANA_BPFLUX        /* analytical bottom passive tracers fluxes */
-# define ANA_SPFLUX        /* analytical surface passive tracers fluxes */
-# define DIAPAUSE          /* Enable large copepod seasonal vertical migration */
-# undef FLOAT_VWALK
-#endif
-
-#if defined NEMURO
-# undef ANA_BIOLOGY        /* analytical biology initial conditions */
-# define ANA_BPFLUX        /* analytical bottom passive tracers fluxes */
-# define ANA_SPFLUX        /* analytical surface passive tracers fluxes */
-# define IRON_LIMIT        /* Add iron as passive 11th tracer */
-# define IRON_RELAX
-# undef  IRON_RSIN
-# define BIO_SEDIMENT
-# define HOLLING_GRAZING
-# undef  IVLEV_EXPLICIT
-# undef  ANA_BIOSWRAD
-# undef  DIAGNOSTICS_BIO
-# undef  BIO_SEDIMENT
-#endif
-
-/* TODO: Need to clean this up, and determine which options are needed for 
-   H16 compilation vs K20 compilation, and which are thoroughly deprecated */
-
-#ifdef BEST_NPZ
-
-# define BIO_NUDGE_ONLY    /* Fe nudging */
-
-# undef LIMIT_BIO_AKT
-# if !defined(NEWSHADE) && !defined(NEWSHADESHALLOW) && !defined(COKELET)
-#   define COKELET         /* Only relevant in H16 code, removed from K20  */
-# endif
-# undef KODIAK_IRAD        /* Generate irradiance with curve matching Kodiak data 
-                              Else use Sarah Hinckly original code   */
-# define JELLY
-# define IRON_LIMIT        /* Add iron  */
-# define BENTHIC           /*FENNEL or BENTHIC or TRAP*/
-# define ICE_BIO
-# undef CLIM_ICE_1D
-# define TCLM_NUDGING      /* Nudging of tracer climatology for iron */
-# define ANA_TCLIMA        /* analytical tracers climatology for iron */
-# define TCLIMATOLOGY      /* Processing of tracer climatology for iron */
-# if defined CARBON
-#  define CARBON_FLUX      /* For river fluxes of DIC,TA */
-#  define OXYGEN           /* For oxygen cycling */
-#  define STATIONARY2
-# endif
-# define STATIONARY
-# define GPPMID            /* gross primary production at mid-point of layer */
-# define PI_CONSTANT       /* PI curve: use constant-alpha version */
-# undef PROD3 
-# undef PROD2
-# undef SINKVAR            /* for variable sinking rate*/
-# undef DENMAN
-# undef CORRECT_TEMP_BIAS  /* corrects ROMS temp for biology only */
-#endif
-
-/*
-#undef  OFFLINE_BIOLOGY     define if offline simulation of bio tracers 
-#if defined OFFLINE_BIOLOGY
-# define AKSCLIMATOLOGY     Processing of AKS climatology 
-# undef ANA_AKSCLIMA        Processing of AKS climatology 
-#endif
-*/
-
-/* Here's the new stuff for feast*/
-
-#ifdef FEAST
-# ifdef PROD3
-#  define FEAST_DAT        /* only use this if using 60-layer model */
-# endif
-# undef FEAST_DAT          /* so undef in the 10-layer model */
-# define FEAST_FORCING
-# define T_PASSIVE
-# define ANA_PASSIVE
-# undef ANA_PASSIVE
-# undef FLOATS
-# define ANA_BPFLUX
-# define ANA_SPFLUX
-# undef FEAST_NOEXCHANGE
-#endif
-
+# define BOUNDARY_ALLREDUCE /* use mpi_allreduce in mp_boundary */
+# undef  COLLECT_ALLGATHER  /* use mpi_allgather in mp_collect  */
+# define COLLECT_ALLREDUCE  /* use mpi_allreduce in mp_collect  */
+# define REDUCE_ALLGATHER   /* use mpi_allgather in mp_reduce   */
+# undef  REDUCE_ALLREDUCE   /* use mpi_allreduce in mp_reduce   */
 
 

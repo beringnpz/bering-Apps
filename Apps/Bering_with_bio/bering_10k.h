@@ -12,13 +12,6 @@
 **  Options for BERING simulation
 */
 
-/*#define  BERING_10K     /* Application flag */
-                        /* Usually, this would be set via the ROMS_APPLICATION environment 
-                           variable within a build script or makefile.  BERING_10K is a 
-                           special case in that it relies on two application flags: NEP5 
-                           and BERING_10K.  When used this way, this header file should be
-                           renamed nep5.h. */
-
 #undef NETCDF4              // use classic netCDF 
 #undef PARALLEL_IO          // no parallel input/output
 #undef OFFLINE_FLOATS       // could be used for floats in offline version... but not now
