@@ -2473,7 +2473,7 @@
   'r2dvar'
   1.0d0
 
-'rdrag_grid'
+'rdrg_grid'
   'linear bottom drag coefficient'
   'meter second-1'
   'rdrag, scalar, series'
