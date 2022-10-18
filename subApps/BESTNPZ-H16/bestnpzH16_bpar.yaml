@@ -1,0 +1,649 @@
+#==============================================================================
+#
+# The YAML ROMS input format mimics that of ROMS standard input (e.g., roms.in)
+# files, but using a more flexible format that is both human-readable and more
+# easily machine-parsable than the standard input format.  
+#
+# These files are inteded to be used with the roms_input_wrangler toolbox.
+#
+# Input parameters can be entered in (almost) any order (but there are a few 
+# exceptions, like the tiling parameters, so I suggest maintaining the original 
+# order.)  Comments are preceded by a # sign and are ignored on reading. Most 
+# values follow standard YAML format.  Parameters should be entered as 
+# dictionary entries, with the parameter name as key.  Note that unlike ROMS 
+# standard input, indentation is important in the YAML format, and all parameter 
+# keywords should be left-justified.
+#
+# Integers are distinguished from floating point numbers by the presence or 
+# absence of decimal points (e.g., 1 = integer, 1.0 = float).
+# 
+# Lists of parameters should be entered for keywords that expect multiple 
+# values.  These can either be entered across multiple lines: 
+#
+# AKT_BAK:
+#   - 1.0e-6
+#   - 1.0e-6
+#   - 5.0e-6
+#   - 5.0e-6
+#
+# or as "flow collections" on a single line:
+#
+# AKT_BAK: [1.0e-6, 1.0e-6, 5.0e-6, 5.0e-6]
+#
+# or across multiple lines:
+#
+# AKT_BAK: [1.0e-6, 1.0e-6,
+#           5.0e-6, 5.0e-6]
+#  
+# The above three examples will all be interpreted identically.
+#
+# NetCDF filename parameters can accept "multiple filenames", where a single 
+# input dataset is split across several files.  These are marked by vertical bar 
+# separators (|) in the ROMS standard input.  In the YAML format, these should 
+# be entered as nested arrays, e.g,:
+#
+# NFFILES: 6
+# FRCNAME: 
+#    - [my_lwrad_year1.nc, my_lwrad_year2.nc]
+#    - [my_swrad_year1.nc, my_swrad_year2.nc]
+#    - [my_winds_year1.nc, 
+#       my_winds_year2.nc]
+#    - [my_Pair_year1.nc, 
+#       my_Pair_year2.nc]
+#    - - my_Qair_year1.nc
+#      - my_Qair_year2.nc
+#    - - my_Tair_year1.nc
+#      - my_Tair_year2.nc
+#
+# Again, all list syntaxes are valid, and may be used interchangeably as 
+# demonstrated here.
+#
+# Parameters with nested indices (e.g. Hout(idUvel), Hout(idVvel)) are 
+# represented as dictionaries, with the nested indices as keys, e.g.:
+# 
+# Hout:
+#   idUvel: TRUE       # u                  3D U-velocity
+#   idVvel: TRUE       # v                  3D V-velocity
+#
+#==============================================================================
+
+# In multiple levels of nesting or multiple connected domains step-ups,       
+# "Ngrids" entries are expected for some of these parameters. In such case,   
+# the order of the entries for a parameter is critical. It must follow the    
+# same order (1:Ngrids) as in the state variable declaration.  In the ROMS 
+# standard input format, these values are marked by a "==" plural after the 
+# KEYWORD instead of a "=".  List any of the less common *non-plural* KEYWORDS 
+# here so that they can be formatted accordingly later.
+
+no_plural: []
+
+#==============================================================================
+#
+# Switch to control the computation of biology within nested and/or multiple
+# connected grids.
+
+Lbiology: TRUE
+
+# Maximum number of iterations to achieve convergence of the nonlinear
+# solution.
+
+BioIter: 1
+
+# Fraction of irradiance that is photosynthetically available (PAR) [unitless]
+PARfrac: 0.5
+
+# Clear-water attenuation coefficient [m^-1]
+k_ext: 0.046
+
+# Extinction coefficient due to Phy. [1/m]
+k_chl: 0.121
+
+# Chlorophyll attenuation coefficient, factor [m^-1]
+k_chlA: 0.1159
+
+# Chlorophyll attenuation coefficient, exponent [unitless]
+k_chlB: 0.2829
+
+# Other material (CDOM,sediment,etc.) attenuation coefficient [m^-1]
+k_chlC: 0.0
+
+# Jerlov water type light parameter (swdk calc in pre_step3d)
+a_frac: 0.58
+
+ # Jerlov water type light parameter (swdk calc in pre_step3d)     
+a_mu1: 0.35     
+
+# Nitrogen:Carbon ratio [mmol N / mg C]
+xi: 0.0126
+
+# Carbon:Chlorophyll ratio, small phyto [mg C / mg Chl-a]
+ccr: 65.0
+
+# Carbon:Chlorophyll ratio, large phyto [mg C / mg Chl-a]
+ccrPhL: 25.0
+
+# Fe:Carbon ratio [umol Fe / mg C]
+FeC: 0.0001667
+
+# Doubling rate parameter [d^-1]
+DiS: 0.5
+
+# Doubling rate parameter [d^-1]
+DiL: 1.0
+
+# Doubling rate exponent [degC^-1]
+DpS: 0.0275
+
+# Doubling rate exponent [degC^-1]
+DpL: 0.0275
+
+# Half-saturation constant for NO3 limitation [None]
+k1PhS: 1.0
+
+# Half-saturation constant for NO3 limitation [None]
+k1PhL: 2.0
+
+# Half-saturation constant for NH4 limitation [None]
+k2PhS: 0.5
+
+# Half-saturation constant for NH4 limitation [None]
+k2PhL: 2.0
+
+# Threshold below which PhS is limited [umol Fe m^-3]
+FeCritPS: 2.0
+
+# Threshold below which PhS is limited [umol Fe m^-3]
+FeCritPL: 2.0
+
+# Half-saturation constant for Fe [umol m^-3]
+kfePhS: 0.3
+
+# Half-saturation constant for Fe [umol m^-3]
+kfePhL: 1.0
+
+# PhS->MZL  Feeding preference [None]
+fpPhSMZL: 1.0
+
+# PhL->MZL  Feeding preference [None]
+fpPhLMZL: 0.2
+
+# PhS->Cop  Feeding preference [None]
+fpPhSCop: 0.8
+
+# PhL->Cop  Feeding preference [None]
+fpPhLCop: 0.7
+
+# MZL->Cop  Feeding preference [None]
+fpMZLCop: 0.5
+
+# PhS->NCa  Feeding preference [None]
+fpPhSNCa: 0.1
+
+# PhL->NCa  Feeding preference [None]
+fpPhLNCa: 1.0
+
+# MZL->NCa  Feeding preference [None]
+fpMZLNCa: 1.0
+
+# PhS->Eup  Feeding preference [None]
+fpPhSEup: 1.0
+
+# PhL->Eup  Feeding preference [None]
+fpPhLEup: 1.0
+
+# MZL->Eup  Feeding preference [None]
+fpMZLEup: 1.0
+
+# Cop->Eup  Feeding preference [None]
+fpCopEup: 0.2
+
+# Det->Eup  Feeding preference [None]
+fpDetEup: 0.4
+
+# Det->EupO Feeding preference [None]
+fpDetEupO: 0.0
+
+# Cop->Jel  Feeding preference [None]
+fpCopJel: 1.0
+
+# NCa->Jel  Feeding preference [None]
+fpNCaJel: 1.0
+
+# Eup->Jel  Feeding preference [None]
+fpEupJel: 1.0
+
+# maximum specific ingestion rate [mg C/mg C/d]
+eMZL: 0.4
+
+# maximum specific ingestion rate [mg C/mg C/d]
+eCop: 0.4
+
+# maximum specific ingestion rate [mg C/mg C/d]
+eNCa: 0.3
+
+# maximum specific ingestion rate [mg C/mg C/d]
+eEup: 0.3
+
+# maximum specific ingestion rate [mg C/mg C/d]
+eJel: 0.069
+
+# Q10 for growth rate [unitless]
+Q10MZL: 2.0
+
+# Q10 for growth rate [unitless]
+Q10Cop: 1.7
+
+# Q10 for growth rate [unitless]
+Q10NCa: 1.6
+
+# Q10 for growth rate [unitless]
+Q10Eup: 1.5
+
+# Q10 for growth rate [unitless]
+Q10Jele: 2.4
+
+# Temperature coefficient for Q10 [deg. C]
+Q10MZLT: 5.0
+
+# Temperature coefficient for Q10 [deg. C]
+Q10CopT: 5.0
+
+# Temperature coefficient for Q10 [deg. C]
+Q10NCaT: 5.0
+
+# Temperature coefficient for Q10 [deg. C]
+Q10EupT: 5.0
+
+# Temperature coefficient for Q10 [deg. C]
+Q10JelTe: 10.0
+
+# Half-saturation constant for grazing [mg C/m3]
+fMZL: 20.0
+
+# Half-saturation constant for grazing [mg C/m3]
+fCop: 30.0
+
+# Half-saturation constant for grazing [mg C/m3]
+fNCa: 30.0
+
+# Half-saturation constant for grazing [mg C/m3]
+fEup: 40.0
+
+# Half-saturation constant for grazing [mg C/m3]
+fJel: 0.01
+
+# Growth efficiency [None]
+gammaMZL: 0.7
+
+# Growth efficiency [None]
+gammaCop: 0.7
+
+# Growth efficiency [None]
+gammaNCa: 0.7
+
+# Growth efficiency [None]
+gammaEup: 0.7
+
+# Growth efficiency [None]
+gammaJel: 1.0
+
+# daily linear mortality rate (senescence) [1/d]
+mPhS: 0.01
+
+# daily linear mortality rate (senescence) [1/d]
+mPhL: 0.01
+
+# daily linear mortality rate [1/d]
+mMZL: 0.0
+
+# Daily mortality for Large Microzoo. [1/d/mgC]
+mpredMZL: 0.01
+
+# Daily mortality for Copepods [1/d/mgC]
+mpredCop: 0.05
+
+# Daily mortality for Neocalanus [1/d/mgC]
+mpredNCa: 0.05
+
+# Daily mortality for Euphausiids [1/d/mgC]
+mpredEup: 0.05
+
+# Daily mortality for Large Microzoo. [1/d/mgC]
+mpredJel: 0.006
+
+# Sinking rate for Small Phytoplankton [m/d]
+wPhS: 0.05
+
+# Sinking rate for Large Phytoplankton [m/d]
+wPhL: 1.0
+
+# Sinking rate for Detritus [m/d]
+wDet: 1.0
+
+# Sinking rate for Detritus [m/d]
+wDetF: 10.0
+
+# Specific respiration rate [d^-1]
+respPhS: 0.02
+
+# Specific respiration rate [d^-1]
+respPhL: 0.02
+
+# Specific respiration rate [d^-1]
+respMZL: 0.08
+
+# Specific respiration rate [d^-1]
+respCop: 0.04
+
+# Specific respiration rate [d^-1]
+respNCa: 0.03
+
+# Specific respiration rate [d^-1]
+respEup: 0.02
+
+# Specific respiration rate [d^-1]
+respJel: 0.02
+
+# Q10 for respiration rate, jellyfish [degC]
+Q10Jelr: 2.8
+
+# reference temperature for Q10 respiration, jellyfish [1/degC]
+Q10JelTr: 10.0
+
+# temperature coefficient for respiration [1/deg C]
+KtBm_PhS: 0.03
+
+# temperature coefficient for respiration [1/deg C]
+KtBm_PhL: 0.03
+
+# temperature coefficient for respiration [1/deg C]
+KtBm_MZL: 0.069
+
+# temperature coefficient for respiration [1/deg C]
+ktbmC: 0.05
+
+# temperature coefficient for respiration [1/deg C]
+ktbmN: 0.05
+
+# temperature coefficient for respiration [1/deg C]
+ktbmE: 0.069
+
+# reference temperature for respiration [degC]
+TmaxPhS: 10.0
+
+# reference temperature for respiration [degC]
+TmaxPhL: 10.0
+
+# reference temperature for respiration [degC]
+TmaxMZL: 8.0
+
+# reference temperature for respiration [degC]
+TrefC: 15.0
+
+# reference temperature for respiration [degC]
+TrefN: 5.0
+
+# reference temperature for respiration [degC]
+TrefE: 5.0
+
+# inshore/surface [micromol Fe m-3 or nM]
+Feinlo: 2.0
+
+# inshore/deep [micromol Fe m-3 or nM]
+Feinhi: 4.0
+
+# inshore isobath of transition [m]
+Feinh: 20.0
+
+# offshore/surface [micromol Fe m-3 or nM]
+Feofflo: 0.01
+
+# offshore/deep [micromol Fe m-3 or nM]
+Feoffhi: 2.0
+
+# offshore isobath of transition [m]
+Feoffh: 100.0
+
+# upward velocity , tuned not data [m/day]
+wNCrise: 12.0
+
+# downward velocity , tuned not data [m/day]
+wNCsink: 11.0
+
+# Date NCaO begin to move upward [Day of Year]
+RiseStart: 0.0
+
+# Date NCaO stop moving upward [Day of Year]
+RiseEnd: 60.0
+
+# Date NCaO begin to move downward [Day of Year]
+SinkStart: 155.0
+
+# Date NCaO stop moving downward [Day of Year]
+SinkEnd: 366.0
+
+# Date NCaS begin to move upward [Day of Year]
+RiseStartCM: 0.0
+
+# Date NCaS stop moving upward [Day of Year]
+RiseEndCM: 0.0
+
+# Date NCaS begin to move downward [Day of Year]
+SinkStartCM: 0.0
+
+# Date NCaS stop moving downward [Day of Year]
+SinkEndCM: 0.0
+
+# PON decompositon at 0 deg C [1/d]
+Pv0: 0.1
+
+# Temperature coefficient for remineralization [1/deg C]
+PvT: 0.069
+
+# Nitrification rate at 0C [1/d]
+Nitr0: 0.0107
+
+# Temperature coefficient for nitrification [1/deg C]
+ktntr: 0.002
+
+# Half saturation constant for nitrification [mmolN/m^3]
+KNH4Nit: 0.057
+
+# Optimal temperature for nitrification [degC]
+ToptNtr: 20.0
+
+# Q10 for growth/feeding and mortality rate [unitless]
+q10r: 1.5
+
+# maximum specific ingestion rate [1/d]
+Rup: 0.05
+
+# Half-saturation constant for feeding on benthic prey [mg C/m^2]
+KupD: 2000.0
+
+# Half-saturation constant for feeding on pelagic prey [mg C/m^2]
+KupP: 10.0
+
+# Lower threshold for feeding on benthic prey [mg C/m^2]
+LupD: 292.0
+
+# Lower threshold for feeding on pelagic prey [mg C/m^2]
+LupP: 1.0
+
+# Active metabolic rate [1/d]
+Qres: 0.25
+
+# Basal metabolism rate [1/d]
+Rres: 0.0027
+
+# linear mortality rate [1/d]
+rmort: 0.0021
+
+# fraction of living food excreted (1 - growth efficiency) [None]
+eex: 0.3
+
+# fraction of detrital food excreted [None]
+eexD: 0.5
+
+# DetBen->Ben feeding preference [None]
+prefD: 1.0
+
+# PhL->Ben feeding preference [None]
+prefPL: 1.0
+
+# PhS->Ben feeding preference [None]
+prefPS: 0.1
+
+# Reference temperature for growth/feeding rate [degC]
+T0benr: 5.0
+
+# Quadratic mortality rate due to undefined predation [1/mgC/d]
+BenPred: 1.0e-06
+
+# IcePhL Chl-a specific attenuation coefficient [W^-1 m^-2]
+alphaIb: 0.8
+
+# IcePhL photosynthetic efficiency [W^-1 m^-2]
+betaI: 0.018
+
+# IcePhL NH4 inhibition on NO3 uptake [m^3/mmol N]
+inhib: 1.46
+
+# IcePhL half-saturation constant for NO3 [mmolN/m^3]
+ksnut1: 1.0
+
+# IcePhL half-saturation constant for NH4 [mmolN/m^3]
+ksnut2: 4.0
+
+# IcePhL maximum growth rate at 0 deg C [1/d]
+mu0: 2.4
+
+# IcePhL respiration rate [1/d]
+R0i: 0.05
+
+# IcePhL mortality rate at 0 deg C [1/d]
+rg0: 0.01
+
+# IcePhL temperature coefficient for mortality [1/deg C]
+rg: 0.03
+
+# IcePhL nitrification factor [1/d]
+annit: 0.0149
+
+# Ice thickness [m]
+aidz: 0.02
+
+# Nitrification light threshold [W m^-2]
+tI0: 0.0095
+
+# Nitrification light half-saturation constant [W m^-2]
+KI: 4.0
+
+# Tracer index reference
+# 
+# The following compilation flags affect tracer indexing:
+#  JELLY, IRON_LIMIT
+#
+#  -J -J +J +J  
+#  -I +I -I +I   
+#
+#   1  1  1  1    NO3 
+#   2  2  2  2    NH4
+#   3  3  3  3    PhS
+#   4  4  4  4    PhL
+#   5  5  5  5    MZS
+#   6  6  6  6    MZL
+#   7  7  7  7    Cop
+#   8  8  8  8    NCaS
+#   9  9  9  9    EupS
+#  10 10 10 10    NCaO
+#  11 11 11 11    EupO
+#  12 12 12 12    Det
+#  13 13 13 13    DetF
+#  -  -  14 14    Jel
+#  -  14 -  15    Fe
+#
+#           **
+
+# Lateral, constant, harmonic/biharmonic horizontal diffusion of biological
+# tracer: [1:NBT,Ngrids].
+
+TNU2:
+  - 25.0  #  1. NO3   # [m2/s]
+  - 25.0  #  2. NH4
+  - 25.0  #  3. PhS
+  - 25.0  #  4. PhL
+  - 25.0  #  5. MZS
+  - 25.0  #  6. MZL
+  - 25.0  #  7. Cop
+  - 25.0  #  8. NCaS
+  - 25.0  #  9. EupS
+  - 25.0  # 10. NCaO
+  - 25.0  # 11. EupO
+  - 25.0  # 12. Det
+  - 25.0  # 13. DetF
+  - 25.0  # 14. Jel
+  - 25.0  # 15. Fe
+
+TNU4: 0.0             # [m4/s]
+
+# Vertical mixing coefficients for biological tracers: [1:NBT,Ngrids].
+
+AKT_BAK: 1.0e-6       # [m2/s]
+
+# Nudging/relaxation time scales, inverse scales will be computed
+# internally: [1:NBT,Ngrids].
+
+TNUDG: 
+  -  360.0  #  1. NO3   # [days]
+  -  360.0  #  2. NH4
+  - 3600.0  #  3. PhS
+  - 3600.0  #  4. PhL
+  - 3600.0  #  5. MZS
+  - 3600.0  #  6. MZL
+  - 3600.0  #  7. Cop
+  - 3600.0  #  8. NCaS
+  - 3600.0  #  9. EupS
+  - 3600.0  # 10. NCaO
+  - 3600.0  # 11. EupO
+  - 3600.0  # 12. Det
+  - 3600.0  # 13. DetF
+  - 3600.0  # 14. Jel
+  -  360.0  # 15. Fe  
+
+# Logical switches (TRUE/FALSE) to activate writing of biological tracers
+# into HISTORY output file: [1:NBT,Ngrids].
+
+Hout:
+  idTvar:
+    - TRUE  #  1. NO3
+    - TRUE  #  2. NH4
+    - TRUE  #  3. PhS
+    - TRUE  #  4. PhL
+    - TRUE  #  5. MZS
+    - TRUE  #  6. MZL
+    - TRUE  #  7. Cop
+    - TRUE  #  8. NCaS
+    - TRUE  #  9. EupS
+    - TRUE  # 10. NCaO
+    - TRUE  # 11. EupO
+    - TRUE  # 12. Det
+    - TRUE  # 13. DetF
+    - TRUE  # 14. Jel
+    - TRUE  # 15. Fe
+  idBvar:
+    - TRUE
+    - TRUE
+  idIceBvar:
+    - TRUE
+    - TRUE
+    - TRUE
+    - TRUE
+  idIcePhL: TRUE
+  idIceNO3: TRUE
+  idIceNH4: TRUE
+  idIceLog: TRUE
+  idTSvar: FALSE
+  idTS2var: FALSE
+  idPT2var: FALSE
+  idPT3var: FALSE
