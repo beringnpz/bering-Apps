@@ -285,7 +285,7 @@ TIME_REF: 19000101.0              # yyyymmdd.dd
 # Nudging/relaxation time scales, inverse scales will be computed
 # internally, [1:Ngrids].
 
-TNUDG: [360.0, 360]               # days
+TNUDG: [360.0, 360.0]             # days
 ZNUDG: 360.0                      # days
 M2NUDG: 360.0                      # days
 M3NUDG: 360.0                      # days
