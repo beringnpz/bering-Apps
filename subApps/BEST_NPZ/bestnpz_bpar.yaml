@@ -679,7 +679,7 @@ Hout:
   idBeTvar:
     - TRUE  # 1. Ben
     - TRUE  # 2. DetBen
-  idIceVar:
+  idIceTvar:
     - TRUE  # 1. IcePhL
     - TRUE  # 2. IceNO3
     - TRUE  # 3. IceNH4
@@ -706,7 +706,7 @@ Aout:
   idBeTvar:
     - TRUE  # 1. Ben
     - TRUE  # 2. DetBen
-  idIceVar:
+  idIceTvar:
     - TRUE  # 1. IcePhL
     - TRUE  # 2. IceNO3
     - TRUE  # 3. IceNH4
