@@ -341,6 +341,10 @@ case "$compilevar" in
     longname="BEST_NPZ"
     export MY_CPP_FLAGS="${MY_CPP_FLAGS} -DBEST_NPZ -DCARBON"
     ;;
+  banas )
+    longname="BIO_BANAS"
+    export MY_CPP_FLAGS="${MY_CPP_FLAGS} -DBIO_BANAS"
+    ;;
   * )
     echo "Unknown variant"
     echo "  (options: phys, cobalt, bestnpz)"
