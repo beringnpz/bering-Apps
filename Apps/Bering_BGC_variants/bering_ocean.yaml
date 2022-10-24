@@ -4,7 +4,8 @@
 # files, but using a more flexible format that is both human-readable and more
 # easily machine-parsable than the standard input format.  
 #
-# These files are intended to be used with the roms_input_wrangler toolbox.
+# These files are intended to be used with the ROMS Communication (romscom) 
+# toolbox.
 #
 # Input parameters can be entered in (almost) any order (but there are a few 
 # exceptions, like the tiling parameters, so I suggest maintaining the original 

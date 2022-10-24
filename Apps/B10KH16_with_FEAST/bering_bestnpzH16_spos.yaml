@@ -4,14 +4,15 @@
 # files, but using a more flexible format that is both human-readable and more
 # easily machine-parsable than the standard input format.  
 #
-# These files are inteded to be used with the roms_input_wrangler toolbox.
+# These files are intended to be used with the ROMS Communication (romscom) 
+# toolbox.
 #
 # Input parameters can be entered in (almost) any order (but there are a few 
 # exceptions, like the tiling parameters, so I suggest maintaining the original 
 # order.)  Comments are preceded by a # sign and are ignored on reading. Most 
 # values follow standard YAML format.  Parameters should be entered as 
 # dictionary entries, with the parameter name as key.  Note that unlike ROMS 
-# standard input, indentation is important in the YAML format, and all parameter 
+# standard input, indentation is important in the YAML format, and all parameter
 # keywords should be left-justified.
 #
 # Integers are distinguished from floating point numbers by the presence or 
