@@ -42,8 +42,9 @@
 #                                                                       :::
 #    -variant [x] CPP-combo variant to compile.  Can be:                :::
 #                 phys:    no bio, default ice [default]                :::
-#                 cobalt:  COBALT bio, default ice                      :::
+#                 cobalt:  BIO_COBALT bio, default ice                  :::
 #                 bestnpz: BEST_NPZ bio, default ice                    :::
+#                 banas:   BIO_BANAS bio, default ice                   :::
 #                                                                       :::
 #                                                                       :::
 # Notice that sometimes the parallel compilation fail to find MPI       :::
