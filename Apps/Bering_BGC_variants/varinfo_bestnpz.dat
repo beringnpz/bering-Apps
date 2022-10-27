@@ -2830,7 +2830,7 @@
   'benthos, scalar, series'
   'ocean_time'
   'idBeTvar(iBen)'
-  'r2dvar'
+  'bn3dvar'
   1.0d0
 
 'DetBen'
@@ -2839,7 +2839,7 @@
   'benthic detritus, scalar, series'
   'ocean_time'
   'idBeTvar(iDetBen)'
-  'r2dvar'
+  'bn3dvar'
   1.0d0
 
 'Fe'
