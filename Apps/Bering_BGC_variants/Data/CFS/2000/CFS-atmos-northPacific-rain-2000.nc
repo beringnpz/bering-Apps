@@ -1,0 +1,1 @@
+/gscratch/bumblereem/kearney/ROMS_Datasets/CFS/2000/CFS-atmos-northPacific-rain-2000.nc

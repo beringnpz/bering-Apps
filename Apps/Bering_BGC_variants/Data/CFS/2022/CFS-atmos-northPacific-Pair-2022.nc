@@ -1,0 +1,1 @@
+/gscratch/bumblereem/kearney/ROMS_Datasets/CFS/2022/CFS-atmos-northPacific-Pair-2022.nc

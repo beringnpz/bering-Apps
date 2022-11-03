@@ -1,0 +1,1 @@
+/gscratch/bumblereem/kearney/ROMS_Datasets/CFS/1987/CFS-atmos-northPacific-Uwind-1987.nc

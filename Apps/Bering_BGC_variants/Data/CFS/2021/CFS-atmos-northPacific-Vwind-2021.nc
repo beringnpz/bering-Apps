@@ -1,0 +1,1 @@
+/gscratch/bumblereem/kearney/ROMS_Datasets/CFS/2021/CFS-atmos-northPacific-Vwind-2021.nc

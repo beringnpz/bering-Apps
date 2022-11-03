@@ -1,0 +1,1 @@
+/gscratch/bumblereem/kearney/ROMS_Datasets/roms_ini/prevB10KCFS-Glodap_Bering10K-banas_ini_19850103.nc

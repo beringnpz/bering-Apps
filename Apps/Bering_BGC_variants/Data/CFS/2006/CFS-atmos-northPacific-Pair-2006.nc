@@ -1,0 +1,1 @@
+/gscratch/bumblereem/kearney/ROMS_Datasets/CFS/2006/CFS-atmos-northPacific-Pair-2006.nc

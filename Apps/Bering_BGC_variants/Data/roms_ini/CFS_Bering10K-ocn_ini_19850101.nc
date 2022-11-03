@@ -1,0 +1,1 @@
+/gscratch/bumblereem/kearney/ROMS_Datasets/roms_ini/CFS_Bering10K-ocn_ini_19850101.nc

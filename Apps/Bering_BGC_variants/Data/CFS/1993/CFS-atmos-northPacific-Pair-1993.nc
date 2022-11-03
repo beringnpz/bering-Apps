@@ -1,0 +1,1 @@
+/gscratch/bumblereem/kearney/ROMS_Datasets/CFS/1993/CFS-atmos-northPacific-Pair-1993.nc

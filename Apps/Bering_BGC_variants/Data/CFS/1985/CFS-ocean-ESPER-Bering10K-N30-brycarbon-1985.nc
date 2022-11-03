@@ -1,0 +1,1 @@
+/gscratch/bumblereem/kearney/ROMS_Datasets/CFS/1985/CFS-ocean-ESPER-Bering10K-N30-brycarbon-1985.nc

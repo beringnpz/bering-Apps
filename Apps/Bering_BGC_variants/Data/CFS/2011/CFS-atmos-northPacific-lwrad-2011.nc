@@ -1,0 +1,1 @@
+/gscratch/bumblereem/kearney/ROMS_Datasets/CFS/2011/CFS-atmos-northPacific-lwrad-2011.nc

@@ -1,0 +1,1 @@
+/gscratch/bumblereem/kearney/ROMS_Datasets/CFS/1996/CFS-atmos-northPacific-Uwind-1996.nc

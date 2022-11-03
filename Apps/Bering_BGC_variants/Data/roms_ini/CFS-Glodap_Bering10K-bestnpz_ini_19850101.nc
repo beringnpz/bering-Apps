@@ -1,0 +1,1 @@
+/gscratch/bumblereem/kearney/ROMS_Datasets/roms_ini/CFS-Glodap_Bering10K-bestnpz_ini_19850101.nc

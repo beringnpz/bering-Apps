@@ -1,0 +1,1 @@
+/gscratch/bumblereem/kearney/ROMS_Datasets/CFS/1994/CFS-ocean-Bering10K-N30-bryocn-1994.nc

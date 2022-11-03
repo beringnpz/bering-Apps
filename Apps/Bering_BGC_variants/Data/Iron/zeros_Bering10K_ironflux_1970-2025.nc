@@ -1,0 +1,1 @@
+/gscratch/bumblereem/kearney/ROMS_Datasets/Iron/zeros_Bering10K_ironflux_1970-2025.nc

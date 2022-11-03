@@ -1,0 +1,1 @@
+/gscratch/bumblereem/kearney/ROMS_Datasets/CFS/1992/CFS-atmos-northPacific-Vwind-1992.nc

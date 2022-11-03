@@ -1,0 +1,1 @@
+/gscratch/bumblereem/kearney/ROMS_Datasets/CFS/1988/CFS-atmos-northPacific-Tair-1988.nc

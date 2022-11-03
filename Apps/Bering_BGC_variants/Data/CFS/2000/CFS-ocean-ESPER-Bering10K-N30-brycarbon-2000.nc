@@ -1,0 +1,1 @@
+/gscratch/bumblereem/kearney/ROMS_Datasets/CFS/2000/CFS-ocean-ESPER-Bering10K-N30-brycarbon-2000.nc

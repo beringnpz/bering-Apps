@@ -1,0 +1,1 @@
+/gscratch/bumblereem/kearney/ROMS_Datasets/WOA/WOA2018-Bering10K-N30-brybgc.nc
