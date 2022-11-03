@@ -1044,8 +1044,8 @@ NC_DLEVEL:  1                 # deflate level [0-9]
 
 # Input NetCDF file names, [1:Ngrids].
 
-GRDNAME: ./Input/Bering10K_extended_grid.nc
-ININAME: ./Input/delta_46_his_00168.nc # BGC-specific
+GRDNAME: ./Data/roms_grd/Bering10K_extended_grid.nc
+ININAME: ./Data/roms_ini/CFS_Bering10K-ocn_ini_19850101.nc # Note: switch for BGC variants
 ITLNAME: placeholder.nc
 IRPNAME: placeholder.nc
 IADNAME: placeholder.nc
@@ -1084,24 +1084,23 @@ NGCNAME:  placeholder.nc
 # except the last one.
 
 NCLMFILES: 1                         # number of climate files
-CLMNAME: ./Input/clm_po4.nc
+CLMNAME: ./Data/roms_ini/CFS-Glodap_Bering10K-cobalt_ini_19850101.nc
 
 NBCFILES: 3                          # number of boundary files
 BRYNAME: 
-  - - ./Input/2001/roms-cfs-bryphys-N30-2001.nc
-    - ./Input/2002/roms-cfs-bryphys-N30-2002.nc
-    - ./Input/2003/roms-cfs-bryphys-N30-2003.nc
-    - ./Input/2004/roms-cfs-bryphys-N30-2004.nc
-    - ./Input/2005/roms-cfs-bryphys-N30-2005.nc
-    - ./Input/2006/roms-cfs-bryphys-N30-2006.nc
-  - - ./Input/2001/roms-cfs-brycarbonate-N30-2001.nc
-    - ./Input/2002/roms-cfs-brycarbonate-N30-2002.nc
-    - ./Input/2003/roms-cfs-brycarbonate-N30-2003.nc
-    - ./Input/2004/roms-cfs-brycarbonate-N30-2004.nc
-    - ./Input/2005/roms-cfs-brycarbonate-N30-2005.nc
-    - ./Input/2006/roms-cfs-brycarbonate-N30-2006.nc
-  - ./Input/roms-brybio-N30.nc
-
+  - - ./Data/CFS/2001/CFS-ocean-Bering10K-N30-bryocn-2001.nc
+    - ./Data/CFS/2002/CFS-ocean-Bering10K-N30-bryocn-2002.nc
+    - ./Data/CFS/2003/CFS-ocean-Bering10K-N30-bryocn-2003.nc
+    - ./Data/CFS/2004/CFS-ocean-Bering10K-N30-bryocn-2004.nc
+    - ./Data/CFS/2005/CFS-ocean-Bering10K-N30-bryocn-2005.nc
+    - ./Data/CFS/2006/CFS-ocean-Bering10K-N30-bryocn-2006.nc
+  - - ./Data/CFS/2001/CFS-ocean-ESPER_Bering10K-N30-brycarbon-2001.nc
+    - ./Data/CFS/2002/CFS-ocean-ESPER_Bering10K-N30-brycarbon-2002.nc
+    - ./Data/CFS/2003/CFS-ocean-ESPER_Bering10K-N30-brycarbon-2003.nc
+    - ./Data/CFS/2004/CFS-ocean-ESPER_Bering10K-N30-brycarbon-2004.nc
+    - ./Data/CFS/2005/CFS-ocean-ESPER_Bering10K-N30-brycarbon-2005.nc
+    - ./Data/CFS/2006/CFS-ocean-ESPER_Bering10K-N30-brycarbon-2006.nc
+  - ./Data/WOA/WOA2018-Bering10K-N30-brybgc.nc
 
 # Input climatology nudging coefficients file name.
 
@@ -1134,66 +1133,64 @@ TIDENAME: /gscratch/bumblereem/bering10k/input/generic/tides_OTBS.nc
 # continuation (\) or a vertical bar (|) symbol after each entry, except
 # the last one.
 
-NFFILES: 15                         # number of forcing files
+NFFILES: 13                         # number of forcing files
 
 FRCNAME:
-  - - ./Input/2002/roms-cfs-atmos-Pair-2002.nc
-    - ./Input/2003/roms-cfs-atmos-Pair-2003.nc
-    - ./Input/2004/roms-cfs-atmos-Pair-2004.nc
-    - ./Input/2005/roms-cfs-atmos-Pair-2005.nc
-    - ./Input/2006/roms-cfs-atmos-Pair-2006.nc
-  - - ./Input/2002/roms-cfs-atmos-Qair-2002.nc
-    - ./Input/2003/roms-cfs-atmos-Qair-2003.nc
-    - ./Input/2004/roms-cfs-atmos-Qair-2004.nc
-    - ./Input/2005/roms-cfs-atmos-Qair-2005.nc
-    - ./Input/2006/roms-cfs-atmos-Qair-2006.nc
-  - - ./Input/2002/roms-cfs-atmos-Tair-2002.nc
-    - ./Input/2003/roms-cfs-atmos-Tair-2003.nc
-    - ./Input/2004/roms-cfs-atmos-Tair-2004.nc
-    - ./Input/2005/roms-cfs-atmos-Tair-2005.nc
-    - ./Input/2006/roms-cfs-atmos-Tair-2006.nc
-  - - ./Input/2002/roms-cfs-atmos-Uwind-2002.nc
-    - ./Input/2003/roms-cfs-atmos-Uwind-2003.nc
-    - ./Input/2004/roms-cfs-atmos-Uwind-2004.nc
-    - ./Input/2005/roms-cfs-atmos-Uwind-2005.nc
-    - ./Input/2006/roms-cfs-atmos-Uwind-2006.nc
-  - - ./Input/2002/roms-cfs-atmos-Vwind-2002.nc
-    - ./Input/2003/roms-cfs-atmos-Vwind-2003.nc
-    - ./Input/2004/roms-cfs-atmos-Vwind-2004.nc
-    - ./Input/2005/roms-cfs-atmos-Vwind-2005.nc
-    - ./Input/2006/roms-cfs-atmos-Vwind-2006.nc
-  - - ./Input/2002/roms-cfs-atmos-lwrad-2002.nc
-    - ./Input/2003/roms-cfs-atmos-lwrad-2003.nc
-    - ./Input/2004/roms-cfs-atmos-lwrad-2004.nc
-    - ./Input/2005/roms-cfs-atmos-lwrad-2005.nc
-    - ./Input/2006/roms-cfs-atmos-lwrad-2006.nc
-  - - ./Input/2002/roms-cfs-atmos-rain-2002.nc
-    - ./Input/2003/roms-cfs-atmos-rain-2003.nc
-    - ./Input/2004/roms-cfs-atmos-rain-2004.nc
-    - ./Input/2005/roms-cfs-atmos-rain-2005.nc
-    - ./Input/2006/roms-cfs-atmos-rain-2006.nc
-  - - ./Input/2002/roms-cfs-atmos-swrad-2002.nc
-    - ./Input/2003/roms-cfs-atmos-swrad-2003.nc
-    - ./Input/2004/roms-cfs-atmos-swrad-2004.nc
-    - ./Input/2005/roms-cfs-atmos-swrad-2005.nc
-    - ./Input/2006/roms-cfs-atmos-swrad-2006.nc
-  - - ./Input/2001/runoff_kearney_2001.nc
-    - ./Input/2002/runoff_kearney_2002.nc
-    - ./Input/2003/runoff_kearney_2003.nc
-    - ./Input/2004/runoff_kearney_2004.nc
-    - ./Input/2005/runoff_kearney_2005.nc
-    - ./Input/2006/runoff_kearney_2006.nc
-  - - ./Input/2001/runoff_carbon_2001.nc
-    - ./Input/2002/runoff_carbon_2002.nc
-    - ./Input/2003/runoff_carbon_2003.nc
-    - ./Input/2004/runoff_carbon_2004.nc
-    - ./Input/2005/runoff_carbon_2005.nc
-    - ./Input/2006/runoff_carbon_2006.nc
-  - ./Input/atmo_co2_2002-2020.nc
-  - ./Input/solublefe_test.nc
-  - ./Input/ironsed_test.nc
-  - ./Input/mineralfe_test.nc
-  - /gscratch/bumblereem/bering10k/input/generic/sss.clim.nc
+  - - ./Data/CFS/2002/CFS-atmos-northPacific-Pair-2002.nc
+    - ./Data/CFS/2003/CFS-atmos-northPacific-Pair-2003.nc
+    - ./Data/CFS/2004/CFS-atmos-northPacific-Pair-2004.nc
+    - ./Data/CFS/2005/CFS-atmos-northPacific-Pair-2005.nc
+    - ./Data/CFS/2006/CFS-atmos-northPacific-Pair-2006.nc
+  - - ./Data/CFS/2002/CFS-atmos-northPacific-Qair-2002.nc
+    - ./Data/CFS/2003/CFS-atmos-northPacific-Qair-2003.nc
+    - ./Data/CFS/2004/CFS-atmos-northPacific-Qair-2004.nc
+    - ./Data/CFS/2005/CFS-atmos-northPacific-Qair-2005.nc
+    - ./Data/CFS/2006/CFS-atmos-northPacific-Qair-2006.nc
+  - - ./Data/CFS/2002/CFS-atmos-northPacific-Tair-2002.nc
+    - ./Data/CFS/2003/CFS-atmos-northPacific-Tair-2003.nc
+    - ./Data/CFS/2004/CFS-atmos-northPacific-Tair-2004.nc
+    - ./Data/CFS/2005/CFS-atmos-northPacific-Tair-2005.nc
+    - ./Data/CFS/2006/CFS-atmos-northPacific-Tair-2006.nc
+  - - ./Data/CFS/2002/CFS-atmos-northPacific-Uwind-2002.nc
+    - ./Data/CFS/2003/CFS-atmos-northPacific-Uwind-2003.nc
+    - ./Data/CFS/2004/CFS-atmos-northPacific-Uwind-2004.nc
+    - ./Data/CFS/2005/CFS-atmos-northPacific-Uwind-2005.nc
+    - ./Data/CFS/2006/CFS-atmos-northPacific-Uwind-2006.nc
+  - - ./Data/CFS/2002/CFS-atmos-northPacific-Vwind-2002.nc
+    - ./Data/CFS/2003/CFS-atmos-northPacific-Vwind-2003.nc
+    - ./Data/CFS/2004/CFS-atmos-northPacific-Vwind-2004.nc
+    - ./Data/CFS/2005/CFS-atmos-northPacific-Vwind-2005.nc
+    - ./Data/CFS/2006/CFS-atmos-northPacific-Vwind-2006.nc
+  - - ./Data/CFS/2002/CFS-atmos-northPacific-lwrad-2002.nc
+    - ./Data/CFS/2003/CFS-atmos-northPacific-lwrad-2003.nc
+    - ./Data/CFS/2004/CFS-atmos-northPacific-lwrad-2004.nc
+    - ./Data/CFS/2005/CFS-atmos-northPacific-lwrad-2005.nc
+    - ./Data/CFS/2006/CFS-atmos-northPacific-lwrad-2006.nc
+  - - ./Data/CFS/2002/CFS-atmos-northPacific-rain-2002.nc
+    - ./Data/CFS/2003/CFS-atmos-northPacific-rain-2003.nc
+    - ./Data/CFS/2004/CFS-atmos-northPacific-rain-2004.nc
+    - ./Data/CFS/2005/CFS-atmos-northPacific-rain-2005.nc
+    - ./Data/CFS/2006/CFS-atmos-northPacific-rain-2006.nc
+  - - ./Data/CFS/2002/CFS-atmos-northPacific-swrad-2002.nc
+    - ./Data/CFS/2003/CFS-atmos-northPacific-swrad-2003.nc
+    - ./Data/CFS/2004/CFS-atmos-northPacific-swrad-2004.nc
+    - ./Data/CFS/2005/CFS-atmos-northPacific-swrad-2005.nc
+    - ./Data/CFS/2006/CFS-atmos-northPacific-swrad-2006.nc
+  - - ./Data/KearneyEtAl2019/KearneyEtAl2019_Bering10K_Runoff_2001.nc
+    - ./Data/KearneyEtAl2019/KearneyEtAl2019_Bering10K_Runoff_2002.nc
+    - ./Data/KearneyEtAl2019/KearneyEtAl2019_Bering10K_Runoff_2003.nc
+    - ./Data/KearneyEtAl2019/KearneyEtAl2019_Bering10K_Runoff_2004.nc
+    - ./Data/KearneyEtAl2019/KearneyEtAl2019_Bering10K_Runoff_2005.nc
+    - ./Data/KearneyEtAl2019/KearneyEtAl2019_Bering10K_Runoff_2006.nc
+  - - ./Data/KearneyEtAl2019/KearneyEtAl2019-Mathis_Bering10K_RunoffCarbon_2001.nc
+    - ./Data/KearneyEtAl2019/KearneyEtAl2019-Mathis_Bering10K_RunoffCarbon_2002.nc
+    - ./Data/KearneyEtAl2019/KearneyEtAl2019-Mathis_Bering10K_RunoffCarbon_2003.nc
+    - ./Data/KearneyEtAl2019/KearneyEtAl2019-Mathis_Bering10K_RunoffCarbon_2004.nc
+    - ./Data/KearneyEtAl2019/KearneyEtAl2019-Mathis_Bering10K_RunoffCarbon_2005.nc
+    - ./Data/KearneyEtAl2019/KearneyEtAl2019-Mathis_Bering10K_RunoffCarbon_2006.nc
+  - ./Data/BarrowCO2/atmo_co2_barrow_1970_2020.nc
+  - ./Data/Iron/zeros_Bering10K_ironflux_1970-2025.nc
+  - ./Data/salinity/sss.clim.nc
 
 # Output NetCDF file names, [1:Ngrids].
 
