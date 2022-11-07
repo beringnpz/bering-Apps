@@ -122,7 +122,7 @@ N: 30             # Number of vertical levels
 Nbed:  0          # Number of sediment bed layers
 
 NAT:  2           # Number of active tracers (usually, 2)
-NPT:  0           # Number of inactive passive tracers
+NPT:  1           # Number of inactive passive tracers
 NCS:  0           # Number of cohesive (mud) sediment tracers
 NNS:  0           # Number of non-cohesive (sand) sediment tracers
 
@@ -1044,7 +1044,7 @@ NC_DLEVEL:  1                 # deflate level [0-9]
 
 # Input NetCDF file names, [1:Ngrids].
 
-GRDNAME: ./Data/roms_grd/Bering10K_extended_grid.nc
+GRDNAME: ./Data/roms_grd/Bering10K_extended_grid2.nc
 ININAME: ./Data/roms_ini/CFS_Bering10K-ocn_ini_19850101.nc # Note: switch for BGC variants
 ITLNAME: placeholder.nc
 IRPNAME: placeholder.nc
@@ -1113,7 +1113,7 @@ SSFNAME: placeholder.nc
 
 # Input tidal forcing file name.
 
-TIDENAME: /gscratch/bumblereem/bering10k/input/generic/tides_OTBS.nc
+TIDENAME: ./Data/OTPS/tides_OTPS_Bering10K.nc
 
 # Input forcing NetCDF file name(s).
 #
