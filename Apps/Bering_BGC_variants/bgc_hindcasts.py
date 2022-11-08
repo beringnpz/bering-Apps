@@ -13,7 +13,7 @@ dryrun = False
 bioname  = ["bestnpz", "cobalt", "banas", "phys"]
 romsexec = ["./romsM_bestnpz_202211071253",
              "./romsM_cobalt_202211071304", 
-              "./romsM_banas_202211071326"
+              "./romsM_banas_202211071326",
                "./romsM_phys_202211071317"]
 
 mpiexec = "mpirun"
