@@ -5180,7 +5180,7 @@
   'bio_time'
   'idTbry(ieast,iFe)'
   'nulvar'
-  1.0d0
+  1025.0d0
 
 'NH4_east'
   'Ammonium concentration eastern boundary condition'
@@ -5189,7 +5189,7 @@
   'bio_time'
   'idTbry(ieast,iNH4)'
   'nulvar'
-  1.0d0
+  1.025d0
 
 'NO3_east'
   'Nitrate concentration eastern boundary condition'
@@ -5198,7 +5198,7 @@
   'bio_time'
   'idTbry(ieast,iNO3)'
   'nulvar'
-  1.0d0
+  1.025d0
 
 'oxygen_east'
   'Oxygen eastern boundary condition'
@@ -5207,7 +5207,7 @@
   'oxygen_time'
   'idTbry(ieast,iOxyg)'
   'nulvar'
-  1.0d0
+  1.025d0
 
 'alkalinity_east'
   'Alkalinity eastern boundary condition'
@@ -5216,7 +5216,7 @@
   'bio_time'
   'idTbry(ieast,iTAlk)'
   'nulvar'
-  1.0d0
+  1.025d0
 
 'TIC_east'
   'TIC eastern boundary condition'
@@ -5225,7 +5225,7 @@
   'bio_time'
   'idTbry(ieast,iTIC_)'
   'nulvar'
-  1.0d0
+  1.025d0
 
 'Fe_north'
   'Iron concentration northern boundary condition'
@@ -5234,7 +5234,7 @@
   'bio_time'
   'idTbry(inorth,iFe)'
   'nulvar'
-  1.0d0
+  1025.0d0
 
 'NH4_north'
   'Ammonium concentration northern boundary condition'
@@ -5243,7 +5243,7 @@
   'bio_time'
   'idTbry(inorth,iNH4)'
   'nulvar'
-  1.0d0
+  1.025d0
 
 'NO3_north'
   'Nitrate concentration northern boundary condition'
@@ -5252,7 +5252,7 @@
   'bio_time'
   'idTbry(inorth,iNO3)'
   'nulvar'
-  1.0d0
+  1.025d0
 
 'oxygen_north'
   'Oxygen northern boundary condition'
@@ -5261,7 +5261,7 @@
   'oxygen_time'
   'idTbry(inorth,iOxyg)'
   'nulvar'
-  1.0d0
+  1.025d0
 
 'alkalinity_north'
   'Alkalinity northern boundary condition'
@@ -5270,7 +5270,7 @@
   'bio_time'
   'idTbry(inorth,iTAlk)'
   'nulvar'
-  1.0d0
+  1.025d0
 
 'TIC_north'
   'TIC northern boundary condition'
@@ -5279,7 +5279,7 @@
   'bio_time'
   'idTbry(inorth,iTIC_)'
   'nulvar'
-  1.0d0
+  1.025d0
 
 'Fe_south'
   'Iron concentration southern boundary condition'
@@ -5288,7 +5288,7 @@
   'bio_time'
   'idTbry(isouth,iFe)'
   'nulvar'
-  1.0d0
+  1025.0d0
 
 'NH4_south'
   'Ammonium concentration southern boundary condition'
@@ -5297,7 +5297,7 @@
   'bio_time'
   'idTbry(isouth,iNH4)'
   'nulvar'
-  1.0d0
+  1.025d0
 
 'NO3_south'
   'Nitrate concentration southern boundary condition'
@@ -5306,7 +5306,7 @@
   'bio_time'
   'idTbry(isouth,iNO3)'
   'nulvar'
-  1.0d0
+  1.025d0
 
 'oxygen_south'
   'Oxygen southern boundary condition'
@@ -5315,7 +5315,7 @@
   'oxygen_time'
   'idTbry(isouth,iOxyg)'
   'nulvar'
-  1.0d0
+  1.025d0
 
 'alkalinity_south'
   'Alkalinity southern boundary condition'
@@ -5324,7 +5324,7 @@
   'bio_time'
   'idTbry(isouth,iTAlk)'
   'nulvar'
-  1.0d0
+  1.025d0
 
 'TIC_south'
   'TIC southern boundary condition'
@@ -5333,7 +5333,7 @@
   'bio_time'
   'idTbry(isouth,iTIC_)'
   'nulvar'
-  1.0d0
+  1.025d0
 
 'Fe_west'
   'Iron concentration western boundary condition'
@@ -5342,7 +5342,7 @@
   'bio_time'
   'idTbry(iwest,iFe)'
   'nulvar'
-  1.0d0
+  1025.0d0
 
 'NH4_west'
   'Ammonium concentration western boundary condition'
@@ -5351,7 +5351,7 @@
   'bio_time'
   'idTbry(iwest,iNH4)'
   'nulvar'
-  1.0d0
+  1.025d0
 
 'NO3_west'
   'Nitrate concentration western boundary condition'
@@ -5360,7 +5360,7 @@
   'bio_time'
   'idTbry(iwest,iNO3)'
   'nulvar'
-  1.0d0
+  1.025d0
 
 'oxygen_west'
   'Oxygen western boundary condition'
@@ -5369,7 +5369,7 @@
   'oxygen_time'
   'idTbry(iwest,iOxyg)'
   'nulvar'
-  1.0d0
+  1.025d0
 
 'alkalinity_west'
   'Alkalinity western boundary condition'
@@ -5378,7 +5378,7 @@
   'bio_time'
   'idTbry(iwest,iTAlk)'
   'nulvar'
-  1.0d0
+  1.025d0
 
 'TIC_west'
   'TIC western boundary condition'
@@ -5387,7 +5387,7 @@
   'bio_time'
   'idTbry(iwest,iTIC_)'
   'nulvar'
-  1.0d0
+  1.025d0
 
 'LightLimS'
   'PhS Light limitation'

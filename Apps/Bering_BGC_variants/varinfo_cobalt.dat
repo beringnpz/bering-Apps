@@ -5009,7 +5009,7 @@
   'ocean_time'
   'idTbry(ieast,insm)'
   'nulvar'
-  1.0d-9
+  1.0d-19
 
 'ones_east'
   'Large Phytoplankton Nitrogen eastern boundary condition'
@@ -5018,7 +5018,7 @@
   'ocean_time'
   'idTbry(ieast,inlg)'
   'nulvar'
-  1.0d-9
+  1.0d-19
 
 'ones_east'
   'Diazotroph Nitrogen eastern boundary condition'
@@ -5027,7 +5027,7 @@
   'ocean_time'
   'idTbry(ieast,indi)'
   'nulvar'
-  1.0d-9
+  1.0d-19
 
 'ones_east'
   'Small Zooplankton Nitrogen eastern boundary condition'
@@ -5036,7 +5036,7 @@
   'ocean_time'
   'idTbry(ieast,insmz)'
   'nulvar'
-  1.0d-9
+  1.0d-19
 
 'ones_east'
   'Medium-sized zooplankton Nitrogen eastern boundary condition'
@@ -5045,7 +5045,7 @@
   'ocean_time'
   'idTbry(ieast,inmdz)'
   'nulvar'
-  1.0d-9
+  1.0d-19
 
 'ones_east'
   'large Zooplankton Nitrogen eastern boundary condition'
@@ -5054,7 +5054,7 @@
   'ocean_time'
   'idTbry(ieast,inlgz)'
   'nulvar'
-  1.0d-9
+  1.0d-19
 
 'ones_east'
   'labile DON eastern boundary condition'
@@ -5063,7 +5063,7 @@
   'ocean_time'
   'idTbry(ieast,ildon)'
   'nulvar'
-  1.0d-9
+  1.0d-19
 
 'ones_east'
   'Semilabile DON eastern boundary condition'
@@ -5072,7 +5072,7 @@
   'ocean_time'
   'idTbry(ieast,isldon)'
   'nulvar'
-  1.0d-9
+  1.0d-19
 
 'ones_east'
   'Semi-Refractory DON eastern boundary condition'
@@ -5081,7 +5081,7 @@
   'ocean_time'
   'idTbry(ieast,isrdon)'
   'nulvar'
-  1.0d-9
+  1.0d-19
 
 'ones_east'
   'bacterial eastern boundary condition'
@@ -5090,7 +5090,7 @@
   'ocean_time'
   'idTbry(ieast,inbact)'
   'nulvar'
-  1.0d-9
+  1.0d-19
 
 'NH4_east'
   'Ammonia eastern boundary condition'
@@ -5117,7 +5117,7 @@
   'ocean_time'
   'idTbry(ieast,indet)'
   'nulvar'
-  1.0d-9
+  1.0d-19
 
 'ones_north'
   'Small Phytoplankton Nitrogen northern boundary condition'
@@ -5126,7 +5126,7 @@
   'ocean_time'
   'idTbry(inorth,insm)'
   'nulvar'
-  1.0d-9
+  1.0d-19
 
 'ones_north'
   'Large Phytoplankton Nitrogen northern boundary condition'
@@ -5135,7 +5135,7 @@
   'ocean_time'
   'idTbry(inorth,inlg)'
   'nulvar'
-  1.0d-9
+  1.0d-19
 
 'ones_north'
   'Diazotroph Nitrogen northern boundary condition'
@@ -5144,7 +5144,7 @@
   'ocean_time'
   'idTbry(inorth,indi)'
   'nulvar'
-  1.0d-9
+  1.0d-19
 
 'ones_north'
   'Small Zooplankton Nitrogen northern boundary condition'
@@ -5153,7 +5153,7 @@
   'ocean_time'
   'idTbry(inorth,insmz)'
   'nulvar'
-  1.0d-9
+  1.0d-19
 
 'ones_north'
   'Medium-sized zooplankton Nitrogen northern boundary condition'
@@ -5162,7 +5162,7 @@
   'ocean_time'
   'idTbry(inorth,inmdz)'
   'nulvar'
-  1.0d-9
+  1.0d-19
 
 'ones_north'
   'large Zooplankton Nitrogen northern boundary condition'
@@ -5171,7 +5171,7 @@
   'ocean_time'
   'idTbry(inorth,inlgz)'
   'nulvar'
-  1.0d-9
+  1.0d-19
 
 'ones_north'
   'labile DON northern boundary condition'
@@ -5180,7 +5180,7 @@
   'ocean_time'
   'idTbry(inorth,ildon)'
   'nulvar'
-  1.0d-9
+  1.0d-19
 
 'ones_north'
   'Semilabile DON northern boundary condition'
@@ -5189,7 +5189,7 @@
   'ocean_time'
   'idTbry(inorth,isldon)'
   'nulvar'
-  1.0d-9
+  1.0d-19
 
 'ones_north'
   'Semi-Refractory DON northern boundary condition'
@@ -5198,7 +5198,7 @@
   'ocean_time'
   'idTbry(inorth,isrdon)'
   'nulvar'
-  1.0d-9
+  1.0d-19
 
 'ones_north'
   'bacterial northern boundary condition'
@@ -5207,7 +5207,7 @@
   'ocean_time'
   'idTbry(inorth,inbact)'
   'nulvar'
-  1.0d-9
+  1.0d-19
 
 'NH4_north'
   'Ammonia northern boundary condition'
@@ -5234,7 +5234,7 @@
   'ocean_time'
   'idTbry(inorth,indet)'
   'nulvar'
-  1.0d-9
+  1.0d-19
 
 'ones_south'
   'Small Phytoplankton Nitrogen southern boundary condition'
@@ -5243,7 +5243,7 @@
   'ocean_time'
   'idTbry(isouth,insm)'
   'nulvar'
-  1.0d-9
+  1.0d-19
 
 'ones_south'
   'Large Phytoplankton Nitrogen southern boundary condition'
@@ -5252,7 +5252,7 @@
   'ocean_time'
   'idTbry(isouth,inlg)'
   'nulvar'
-  1.0d-9
+  1.0d-19
 
 'ones_south'
   'Diazotroph Nitrogen southern boundary condition'
@@ -5261,7 +5261,7 @@
   'ocean_time'
   'idTbry(isouth,indi)'
   'nulvar'
-  1.0d-9
+  1.0d-19
 
 'ones_south'
   'Small Zooplankton Nitrogen southern boundary condition'
@@ -5270,7 +5270,7 @@
   'ocean_time'
   'idTbry(isouth,insmz)'
   'nulvar'
-  1.0d-9
+  1.0d-19
 
 'ones_south'
   'Medium-sized zooplankton Nitrogen southern boundary condition'
@@ -5279,7 +5279,7 @@
   'ocean_time'
   'idTbry(isouth,inmdz)'
   'nulvar'
-  1.0d-9
+  1.0d-19
 
 'ones_south'
   'large Zooplankton Nitrogen southern boundary condition'
@@ -5288,7 +5288,7 @@
   'ocean_time'
   'idTbry(isouth,inlgz)'
   'nulvar'
-  1.0d-9
+  1.0d-19
 
 'ones_south'
   'labile DON southern boundary condition'
@@ -5297,7 +5297,7 @@
   'ocean_time'
   'idTbry(isouth,ildon)'
   'nulvar'
-  1.0d-9
+  1.0d-19
 
 'ones_south'
   'Semilabile DON southern boundary condition'
@@ -5306,7 +5306,7 @@
   'ocean_time'
   'idTbry(isouth,isldon)'
   'nulvar'
-  1.0d-9
+  1.0d-19
 
 'ones_south'
   'Semi-Refractory DON southern boundary condition'
@@ -5315,7 +5315,7 @@
   'ocean_time'
   'idTbry(isouth,isrdon)'
   'nulvar'
-  1.0d-9
+  1.0d-19
 
 'ones_south'
   'bacterial southern boundary condition'
@@ -5324,7 +5324,7 @@
   'ocean_time'
   'idTbry(isouth,inbact)'
   'nulvar'
-  1.0d-9
+  1.0d-19
 
 'NH4_south'
   'Ammonia southern boundary condition'
@@ -5351,7 +5351,7 @@
   'ocean_time'
   'idTbry(isouth,indet)'
   'nulvar'
-  1.0d-9
+  1.0d-19
 
 'ones_west'
   'Small Phytoplankton Nitrogen western boundary condition'
@@ -5360,7 +5360,7 @@
   'ocean_time'
   'idTbry(iwest,insm)'
   'nulvar'
-  1.0d-9
+  1.0d-19
 
 'ones_west'
   'Large Phytoplankton Nitrogen western boundary condition'
@@ -5369,7 +5369,7 @@
   'ocean_time'
   'idTbry(iwest,inlg)'
   'nulvar'
-  1.0d-9
+  1.0d-19
 
 'ones_west'
   'Diazotroph Nitrogen western boundary condition'
@@ -5378,7 +5378,7 @@
   'ocean_time'
   'idTbry(iwest,indi)'
   'nulvar'
-  1.0d-9
+  1.0d-19
 
 'ones_west'
   'Small Zooplankton Nitrogen western boundary condition'
@@ -5387,7 +5387,7 @@
   'ocean_time'
   'idTbry(iwest,insmz)'
   'nulvar'
-  1.0d-9
+  1.0d-19
 
 'ones_west'
   'Medium-sized zooplankton Nitrogen western boundary condition'
@@ -5396,7 +5396,7 @@
   'ocean_time'
   'idTbry(iwest,inmdz)'
   'nulvar'
-  1.0d-9
+  1.0d-19
 
 'ones_west'
   'large Zooplankton Nitrogen western boundary condition'
@@ -5405,7 +5405,7 @@
   'ocean_time'
   'idTbry(iwest,inlgz)'
   'nulvar'
-  1.0d-9
+  1.0d-19
 
 'ones_west'
   'labile DON western boundary condition'
@@ -5414,7 +5414,7 @@
   'ocean_time'
   'idTbry(iwest,ildon)'
   'nulvar'
-  1.0d-9
+  1.0d-19
 
 'ones_west'
   'Semilabile DON western boundary condition'
@@ -5423,7 +5423,7 @@
   'ocean_time'
   'idTbry(iwest,isldon)'
   'nulvar'
-  1.0d-9
+  1.0d-19
 
 'ones_west'
   'Semi-Refractory DON western boundary condition'
@@ -5432,7 +5432,7 @@
   'ocean_time'
   'idTbry(iwest,isrdon)'
   'nulvar'
-  1.0d-9
+  1.0d-19
 
 'ones_west'
   'bacterial western boundary condition'
@@ -5441,7 +5441,7 @@
   'ocean_time'
   'idTbry(iwest,inbact)'
   'nulvar'
-  1.0d-9
+  1.0d-19
 
 'NH4_west'
   'Ammonia western boundary condition'
@@ -5468,7 +5468,7 @@
   'ocean_time'
   'idTbry(iwest,indet)'
   'nulvar'
-  1.0d-9
+  1.0d-19
 
 'SiO4_east'
   'Silicate eastern boundary condition'
@@ -5486,7 +5486,7 @@
   'ocean_time'
   'idTbry(ieast,isilg)'
   'nulvar'
-  1.0d-9
+  1.0d-19
 
 'ones_east'
   'Detrital Silicon eastern boundary condition'
@@ -5495,7 +5495,7 @@
   'ocean_time'
   'idTbry(ieast,isidet)'
   'nulvar'
-  1.0d-9
+  1.0d-19
 
 'ones_east'
   'Detrital CaCO3 eastern boundary condition'
@@ -5504,7 +5504,7 @@
   'ocean_time'
   'idTbry(ieast,icadet_calc)'
   'nulvar'
-  1.0d-9
+  1.0d-19
 
 'ones_east'
   'Detrital CaCO3 eastern boundary condition'
@@ -5513,7 +5513,7 @@
   'ocean_time'
   'idTbry(ieast,icadet_arag)'
   'nulvar'
-  1.0d-9
+  1.0d-19
 
 'ones_east'
   'Lithogenic Aluminosilicate eastern boundary condition'
@@ -5522,7 +5522,7 @@
   'ocean_time'
   'idTbry(ieast,ilith)'
   'nulvar'
-  1.0d-9
+  1.0d-19
 
 'ones_east'
   'lithdet eastern boundary condition'
@@ -5531,7 +5531,7 @@
   'ocean_time'
   'idTbry(ieast,ilithdet)'
   'nulvar'
-  1.0d-9
+  1.0d-19
 
 'SiO4_north'
   'Silicate northern boundary condition'
@@ -5549,7 +5549,7 @@
   'ocean_time'
   'idTbry(inorth,isilg)'
   'nulvar'
-  1.0d-9
+  1.0d-19
 
 'ones_north'
   'Detrital Silicon northern boundary condition'
@@ -5558,7 +5558,7 @@
   'ocean_time'
   'idTbry(inorth,isidet)'
   'nulvar'
-  1.0d-9
+  1.0d-19
 
 'ones_north'
   'Detrital CaCO3 northern boundary condition'
@@ -5567,7 +5567,7 @@
   'ocean_time'
   'idTbry(inorth,icadet_calc)'
   'nulvar'
-  1.0d-9
+  1.0d-19
 
 'ones_north'
   'Detrital CaCO3 northern boundary condition'
@@ -5576,7 +5576,7 @@
   'ocean_time'
   'idTbry(inorth,icadet_arag)'
   'nulvar'
-  1.0d-9
+  1.0d-19
 
 'ones_north'
   'Lithogenic Aluminosilicate northern boundary condition'
@@ -5585,7 +5585,7 @@
   'ocean_time'
   'idTbry(inorth,ilith)'
   'nulvar'
-  1.0d-9
+  1.0d-19
 
 'ones_north'
   'lithdet northern boundary condition'
@@ -5594,7 +5594,7 @@
   'ocean_time'
   'idTbry(inorth,ilithdet)'
   'nulvar'
-  1.0d-9
+  1.0d-19
 
 'SiO4_south'
   'Silicate southern boundary condition'
@@ -5612,7 +5612,7 @@
   'ocean_time'
   'idTbry(isouth,isilg)'
   'nulvar'
-  1.0d-9
+  1.0d-19
 
 'ones_south'
   'Detrital Silicon southern boundary condition'
@@ -5621,7 +5621,7 @@
   'ocean_time'
   'idTbry(isouth,isidet)'
   'nulvar'
-  1.0d-9
+  1.0d-19
 
 'ones_south'
   'Detrital CaCO3 southern boundary condition'
@@ -5630,7 +5630,7 @@
   'ocean_time'
   'idTbry(isouth,icadet_calc)'
   'nulvar'
-  1.0d-9
+  1.0d-19
 
 'ones_south'
   'Detrital CaCO3 southern boundary condition'
@@ -5639,7 +5639,7 @@
   'ocean_time'
   'idTbry(isouth,icadet_arag)'
   'nulvar'
-  1.0d-9
+  1.0d-19
 
 'ones_south'
   'Lithogenic Aluminosilicate southern boundary condition'
@@ -5648,7 +5648,7 @@
   'ocean_time'
   'idTbry(isouth,ilith)'
   'nulvar'
-  1.0d-9
+  1.0d-19
 
 'ones_south'
   'lithdet southern boundary condition'
@@ -5657,7 +5657,7 @@
   'ocean_time'
   'idTbry(isouth,ilithdet)'
   'nulvar'
-  1.0d-9
+  1.0d-19
 
 'SiO4_west'
   'Silicate western boundary condition'
@@ -5675,7 +5675,7 @@
   'ocean_time'
   'idTbry(iwest,isilg)'
   'nulvar'
-  1.0d-9
+  1.0d-19
 
 'ones_west'
   'Detrital Silicon western boundary condition'
@@ -5684,7 +5684,7 @@
   'ocean_time'
   'idTbry(iwest,isidet)'
   'nulvar'
-  1.0d-9
+  1.0d-19
 
 'ones_west'
   'Detrital CaCO3 western boundary condition'
@@ -5693,7 +5693,7 @@
   'ocean_time'
   'idTbry(iwest,icadet_calc)'
   'nulvar'
-  1.0d-9
+  1.0d-19
 
 'ones_west'
   'Detrital CaCO3 western boundary condition'
@@ -5702,7 +5702,7 @@
   'ocean_time'
   'idTbry(iwest,icadet_arag)'
   'nulvar'
-  1.0d-9
+  1.0d-19
 
 'ones_west'
   'Lithogenic Aluminosilicate western boundary condition'
@@ -5711,7 +5711,7 @@
   'ocean_time'
   'idTbry(iwest,ilith)'
   'nulvar'
-  1.0d-9
+  1.0d-19
 
 'ones_west'
   'lithdet western boundary condition'
@@ -5720,7 +5720,7 @@
   'ocean_time'
   'idTbry(iwest,ilithdet)'
   'nulvar'
-  1.0d-9
+  1.0d-19
 
 'PO4_east'
   'Phosphate eastern boundary condition'
@@ -5765,7 +5765,7 @@
   'ocean_time'
   'idTbry(ieast,ildop)'
   'nulvar'
-  1.0d-9
+  1.0d-19
 
 'ones_east'
   'Semilabile DOP eastern boundary condition'
@@ -5774,7 +5774,7 @@
   'ocean_time'
   'idTbry(ieast,isldop)'
   'nulvar'
-  1.0d-9
+  1.0d-19
 
 'ones_east'
   'Semi-Refractory DOP eastern boundary condition'
@@ -5783,7 +5783,7 @@
   'ocean_time'
   'idTbry(ieast,isrdop)'
   'nulvar'
-  1.0d-9
+  1.0d-19
 
 'ones_east'
   'Detrital Phosphorus eastern boundary condition'
@@ -5792,7 +5792,7 @@
   'ocean_time'
   'idTbry(ieast,ipdet)'
   'nulvar'
-  1.0d-9
+  1.0d-19
 
 'ones_north'
   'labile DOP northern boundary condition'
@@ -5801,7 +5801,7 @@
   'ocean_time'
   'idTbry(inorth,ildop)'
   'nulvar'
-  1.0d-9
+  1.0d-19
 
 'ones_north'
   'Semilabile DOP northern boundary condition'
@@ -5810,7 +5810,7 @@
   'ocean_time'
   'idTbry(inorth,isldop)'
   'nulvar'
-  1.0d-9
+  1.0d-19
 
 'ones_north'
   'Semi-Refractory DOP northern boundary condition'
@@ -5819,7 +5819,7 @@
   'ocean_time'
   'idTbry(inorth,isrdop)'
   'nulvar'
-  1.0d-9
+  1.0d-19
 
 'ones_north'
   'Detrital Phosphorus northern boundary condition'
@@ -5828,7 +5828,7 @@
   'ocean_time'
   'idTbry(inorth,ipdet)'
   'nulvar'
-  1.0d-9
+  1.0d-19
 
 'ones_south'
   'labile DOP southern boundary condition'
@@ -5837,7 +5837,7 @@
   'ocean_time'
   'idTbry(isouth,ildop)'
   'nulvar'
-  1.0d-9
+  1.0d-19
 
 'ones_south'
   'Semilabile DOP southern boundary condition'
@@ -5846,7 +5846,7 @@
   'ocean_time'
   'idTbry(isouth,isldop)'
   'nulvar'
-  1.0d-9
+  1.0d-19
 
 'ones_south'
   'Semi-Refractory DOP southern boundary condition'
@@ -5855,7 +5855,7 @@
   'ocean_time'
   'idTbry(isouth,isrdop)'
   'nulvar'
-  1.0d-9
+  1.0d-19
 
 'ones_south'
   'Detrital Phosphorus southern boundary condition'
@@ -5864,7 +5864,7 @@
   'ocean_time'
   'idTbry(isouth,ipdet)'
   'nulvar'
-  1.0d-9
+  1.0d-19
 
 'ones_west'
   'labile DOP western boundary condition'
@@ -5873,7 +5873,7 @@
   'ocean_time'
   'idTbry(iwest,ildop)'
   'nulvar'
-  1.0d-9
+  1.0d-19
 
 'ones_west'
   'Semilabile DOP western boundary condition'
@@ -5882,7 +5882,7 @@
   'ocean_time'
   'idTbry(iwest,isldop)'
   'nulvar'
-  1.0d-9
+  1.0d-19
 
 'ones_west'
   'Semi-Refractory DOP western boundary condition'
@@ -5891,7 +5891,7 @@
   'ocean_time'
   'idTbry(iwest,isrdop)'
   'nulvar'
-  1.0d-9
+  1.0d-19
 
 'ones_west'
   'Detrital Phosphorus western boundary condition'
@@ -5900,7 +5900,7 @@
   'ocean_time'
   'idTbry(iwest,ipdet)'
   'nulvar'
-  1.0d-9
+  1.0d-19
 
 'ones_east'
   'Small Phytoplankton Iron eastern boundary condition'
@@ -5909,7 +5909,7 @@
   'ocean_time'
   'idTbry(ieast,ifesm)'
   'nulvar'
-  1.0d-9
+  1.0d-19
 
 'ones_east'
   'Diazotroph Iron eastern boundary condition'
@@ -5918,7 +5918,7 @@
   'ocean_time'
   'idTbry(ieast,ifedi)'
   'nulvar'
-  1.0d-9
+  1.0d-19
 
 'ones_east'
   'Large Phytoplankton Iron eastern boundary condition'
@@ -5927,7 +5927,7 @@
   'ocean_time'
   'idTbry(ieast,ifelg)'
   'nulvar'
-  1.0d-9
+  1.0d-19
 
 'Fe_east'
   'Dissolved Iron eastern boundary condition'
@@ -5936,7 +5936,7 @@
   'ocean_time'
   'idTbry(ieast,ifed)'
   'nulvar'
-  1.0d-9
+  1.0d-19
 
 'ones_east'
   'Detrital Iron eastern boundary condition'
@@ -5945,7 +5945,7 @@
   'ocean_time'
   'idTbry(ieast,ifedet)'
   'nulvar'
-  1.0d-9
+  1.0d-19
 
 'ones_north'
   'Small Phytoplankton Iron northern boundary condition'
@@ -5954,7 +5954,7 @@
   'ocean_time'
   'idTbry(inorth,ifesm)'
   'nulvar'
-  1.0d-9
+  1.0d-19
 
 'ones_north'
   'Diazotroph Iron northern boundary condition'
@@ -5963,7 +5963,7 @@
   'ocean_time'
   'idTbry(inorth,ifedi)'
   'nulvar'
-  1.0d-9
+  1.0d-19
 
 'ones_north'
   'Large Phytoplankton Iron northern boundary condition'
@@ -5972,7 +5972,7 @@
   'ocean_time'
   'idTbry(inorth,ifelg)'
   'nulvar'
-  1.0d-9
+  1.0d-19
 
 'Fe_north'
   'Dissolved Iron northern boundary condition'
@@ -5981,7 +5981,7 @@
   'ocean_time'
   'idTbry(inorth,ifed)'
   'nulvar'
-  1.0d-9
+  1.0d-19
 
 'ones_north'
   'Detrital Iron northern boundary condition'
@@ -5990,7 +5990,7 @@
   'ocean_time'
   'idTbry(inorth,ifedet)'
   'nulvar'
-  1.0d-9
+  1.0d-19
 
 'ones_south'
   'Small Phytoplankton Iron southern boundary condition'
@@ -5999,7 +5999,7 @@
   'ocean_time'
   'idTbry(isouth,ifesm)'
   'nulvar'
-  1.0d-9
+  1.0d-19
 
 'ones_south'
   'Diazotroph Iron southern boundary condition'
@@ -6008,7 +6008,7 @@
   'ocean_time'
   'idTbry(isouth,ifedi)'
   'nulvar'
-  1.0d-9
+  1.0d-19
 
 'ones_south'
   'Large Phytoplankton Iron southern boundary condition'
@@ -6017,7 +6017,7 @@
   'ocean_time'
   'idTbry(isouth,ifelg)'
   'nulvar'
-  1.0d-9
+  1.0d-19
 
 'Fe_south'
   'Dissolved Iron southern boundary condition'
@@ -6026,7 +6026,7 @@
   'ocean_time'
   'idTbry(isouth,ifed)'
   'nulvar'
-  1.0d-9
+  1.0d-19
 
 'ones_south'
   'Detrital Iron southern boundary condition'
@@ -6035,7 +6035,7 @@
   'ocean_time'
   'idTbry(isouth,ifedet)'
   'nulvar'
-  1.0d-9
+  1.0d-19
 
 'ones_west'
   'Small Phytoplankton Iron western boundary condition'
@@ -6044,7 +6044,7 @@
   'ocean_time'
   'idTbry(iwest,ifesm)'
   'nulvar'
-  1.0d-9
+  1.0d-19
 
 'ones_west'
   'Diazotroph Iron western boundary condition'
@@ -6053,7 +6053,7 @@
   'ocean_time'
   'idTbry(iwest,ifedi)'
   'nulvar'
-  1.0d-9
+  1.0d-19
 
 'ones_west'
   'Large Phytoplankton Iron western boundary condition'
@@ -6062,7 +6062,7 @@
   'ocean_time'
   'idTbry(iwest,ifelg)'
   'nulvar'
-  1.0d-9
+  1.0d-19
 
 'Fe_west'
   'Dissolved Iron western boundary condition'
@@ -6071,7 +6071,7 @@
   'ocean_time'
   'idTbry(iwest,ifed)'
   'nulvar'
-  1.0d-9
+  1.0d-19
 
 'ones_west'
   'Detrital Iron western boundary condition'
@@ -6080,7 +6080,7 @@
   'ocean_time'
   'idTbry(iwest,ifedet)'
   'nulvar'
-  1.0d-9
+  1.0d-19
 
 'oxygen_east'
   'Oxygen eastern boundary condition'
@@ -6197,7 +6197,7 @@
   'ocean_time'
   'idTbry(ieast,inmd)'
   'nulvar'
-  1.0d-9
+  1.0d-19
 
 'ones_east'
   'Medium Phytoplankton Silicon eastern boundary condition'
@@ -6206,7 +6206,7 @@
   'ocean_time'
   'idTbry(ieast,isimd)'
   'nulvar'
-  1.0d-9
+  1.0d-19
 
 'ones_east'
   'Medium Phytoplankton Iron eastern boundary condition'
@@ -6215,7 +6215,7 @@
   'ocean_time'
   'idTbry(ieast,ifemd)'
   'nulvar'
-  1.0d-9
+  1.0d-19
 
 'ones_north'
   'Medium Phytoplankton Nitrogen northern boundary condition'
@@ -6224,7 +6224,7 @@
   'ocean_time'
   'idTbry(inorth,inmd)'
   'nulvar'
-  1.0d-9
+  1.0d-19
 
 'ones_north'
   'Medium Phytoplankton Silicon northern boundary condition'
@@ -6233,7 +6233,7 @@
   'ocean_time'
   'idTbry(inorth,isimd)'
   'nulvar'
-  1.0d-9
+  1.0d-19
 
 'ones_north'
   'Medium Phytoplankton Iron northern boundary condition'
@@ -6242,7 +6242,7 @@
   'ocean_time'
   'idTbry(inorth,ifemd)'
   'nulvar'
-  1.0d-9
+  1.0d-19
 
 'ones_south'
   'Medium Phytoplankton Nitrogen southern boundary condition'
@@ -6251,7 +6251,7 @@
   'ocean_time'
   'idTbry(isouth,inmd)'
   'nulvar'
-  1.0d-9
+  1.0d-19
 
 'ones_south'
   'Medium Phytoplankton Silicon southern boundary condition'
@@ -6260,7 +6260,7 @@
   'ocean_time'
   'idTbry(isouth,isimd)'
   'nulvar'
-  1.0d-9
+  1.0d-19
 
 'ones_south'
   'Medium Phytoplankton Iron southern boundary condition'
@@ -6269,7 +6269,7 @@
   'ocean_time'
   'idTbry(isouth,ifemd)'
   'nulvar'
-  1.0d-9
+  1.0d-19
 
 'ones_west'
   'Medium Phytoplankton Nitrogen western boundary condition'
@@ -6278,7 +6278,7 @@
   'ocean_time'
   'idTbry(iwest,inmd)'
   'nulvar'
-  1.0d-9
+  1.0d-19
 
 'ones_west'
   'Medium Phytoplankton Silicon western boundary condition'
@@ -6287,7 +6287,7 @@
   'ocean_time'
   'idTbry(iwest,isimd)'
   'nulvar'
-  1.0d-9
+  1.0d-19
 
 'ones_west'
   'Medium Phytoplankton Iron western boundary condition'
@@ -6296,7 +6296,7 @@
   'ocean_time'
   'idTbry(iwest,ifemd)'
   'nulvar'
-  1.0d-9
+  1.0d-19
 
 'river_nsm'
   'river runoff Small Phytoplankton Nitrogen'

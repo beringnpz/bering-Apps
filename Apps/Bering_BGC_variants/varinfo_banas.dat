@@ -2709,7 +2709,7 @@
 
 'phyto'
   'phytoplankton'
-  'uM N'
+  'mmol N m^-3'
   'phytoplankton'
   'ocean_time'
   'idTvar(iphyto)'
@@ -2718,7 +2718,7 @@
 
 'microzoo'
   'microzooplankton'
-  'uM N'
+  'mmol N m^-3'
   'microzooplankton'
   'ocean_time'
   'idTvar(izoo)'
@@ -2727,7 +2727,7 @@
 
 'det_small'
   'small detritus'
-  'uM N'
+  'mmol N m^-3'
   'small detritus'
   'ocean_time'
   'idTvar(idets)'
@@ -2736,7 +2736,7 @@
 
 'det_large'
   'large detritus (aggregates)'
-  'uM N'
+  'mmol N m^-3'
   'large detritus'
   'ocean_time'
   'idTvar(idetl)'
@@ -2745,7 +2745,7 @@
 
 'NH4'
   'ammonium'
-  'uM N'
+  'mmol N m^-3'
   'ammonium'
   'ocean_time'
   'idTvar(inh4)'
@@ -2754,7 +2754,7 @@
 
 'NO3'
   'nitrate'
-  'uM N'
+  'mmol N m^-3'
   'nitrate'
   'ocean_time'
   'idTvar(ino3)'
@@ -4572,7 +4572,7 @@
 
 'ones_east'
   'phytoplankton eastern boundary condition'
-  'uM N'
+  'mmol N m^-3'
   'phytoplankton'
   'bry_time'
   'idTbry(ieast,iphyto)'
@@ -4581,7 +4581,7 @@
 
 'ones_north'
   'phytoplankton northern boundary condition'
-  'uM N'
+  'mmol N m^-3'
   'phytoplankton'
   'bry_time'
   'idTbry(inorth,iphyto)'
@@ -4590,7 +4590,7 @@
 
 'ones_south'
   'phytoplankton western boundary condition'
-  'uM N'
+  'mmol N m^-3'
   'phytoplankton'
   'bry_time'
   'idTbry(iwest,iphyto)'
@@ -4599,7 +4599,7 @@
 
 'ones_west'
   'phytoplankton southern boundary condition'
-  'uM N'
+  'mmol N m^-3'
   'phytoplankton'
   'bry_time'
   'idTbry(isouth,iphyto)'
@@ -4608,7 +4608,7 @@
 
 'ones_east'
   'microzooplankton eastern boundary condition'
-  'uM N'
+  'mmol N m^-3'
   'microzooplankton'
   'bry_time'
   'idTbry(ieast,izoo)'
@@ -4617,7 +4617,7 @@
 
 'ones_north'
   'microzooplankton northern boundary condition'
-  'uM N'
+  'mmol N m^-3'
   'microzooplankton'
   'bry_time'
   'idTbry(inorth,izoo)'
@@ -4626,7 +4626,7 @@
 
 'ones_south'
   'microzooplankton western boundary condition'
-  'uM N'
+  'mmol N m^-3'
   'microzooplankton'
   'bry_time'
   'idTbry(iwest,izoo)'
@@ -4635,7 +4635,7 @@
 
 'ones_west'
   'microzooplankton southern boundary condition'
-  'uM N'
+  'mmol N m^-3'
   'microzooplankton'
   'bry_time'
   'idTbry(isouth,izoo)'
@@ -4644,7 +4644,7 @@
 
 'ones_east'
   'det_small eastern boundary condition'
-  'uM N'
+  'mmol N m^-3'
   'det_small'
   'bry_time'
   'idTbry(ieast,idets)'
@@ -4653,7 +4653,7 @@
 
 'ones_north'
   'det_small northern boundary condition'
-  'uM N'
+  'mmol N m^-3'
   'det_small'
   'bry_time'
   'idTbry(inorth,idets)'
@@ -4662,7 +4662,7 @@
 
 'ones_south'
   'det_small western boundary condition'
-  'uM N'
+  'mmol N m^-3'
   'det_small'
   'bry_time'
   'idTbry(iwest,idets)'
@@ -4671,7 +4671,7 @@
 
 'ones_west'
   'det_small southern boundary condition'
-  'uM N'
+  'mmol N m^-3'
   'det_small'
   'bry_time'
   'idTbry(isouth,idets)'
@@ -4680,7 +4680,7 @@
 
 'ones_east'
   'det_large eastern boundary condition'
-  'uM N'
+  'mmol N m^-3'
   'det_large'
   'bry_time'
   'idTbry(ieast,idetl)'
@@ -4689,7 +4689,7 @@
 
 'ones_north'
   'det_large northern boundary condition'
-  'uM N'
+  'mmol N m^-3'
   'det_large'
   'bry_time'
   'idTbry(inorth,idetl)'
@@ -4698,7 +4698,7 @@
 
 'ones_south'
   'det_large western boundary condition'
-  'uM N'
+  'mmol N m^-3'
   'det_large'
   'bry_time'
   'idTbry(iwest,idetl)'
@@ -4707,7 +4707,7 @@
 
 'ones_west'
   'det_large southern boundary condition'
-  'uM N'
+  'mmol N m^-3'
   'det_large'
   'bry_time'
   'idTbry(isouth,idetl)'
@@ -4716,73 +4716,73 @@
 
 'NH4_east'
   'ammonium eastern boundary condition'
-  'uM N'
+  'mmol N m^-3'
   'ammonium'
   'bry_time'
   'idTbry(ieast,inh4)'
   'nulvar'
-  1.0d-16
+  1.025d0
 
 'NH4_north'
   'ammonium northern boundary condition'
-  'uM N'
+  'mmol N m^-3'
   'ammonium'
   'bry_time'
   'idTbry(inorth,inh4)'
   'nulvar'
-  1.0d-16
+  1.025d0
 
 'NH4_south'
   'ammonium western boundary condition'
-  'uM N'
+  'mmol N m^-3'
   'ammonium'
   'bry_time'
   'idTbry(iwest,inh4)'
   'nulvar'
-  1.0d-16
+  1.025d0
 
 'NH4_west'
   'ammonium southern boundary condition'
-  'uM N'
+  'mmol N m^-3'
   'ammonium'
   'bry_time'
   'idTbry(isouth,inh4)'
   'nulvar'
-  1.0d-16
+  1.025d0
 
 'NO3_east'
   'nitrate eastern boundary condition'
-  'uM N'
+  'mmol N m^-3'
   'nitrate'
   'bry_time'
   'idTbry(ieast,ino3)'
   'nulvar'
-  1.0d-16
+  1.025d0
 
 'NO3_north'
   'nitrate northern boundary condition'
-  'uM N'
+  'mmol N m^-3'
   'nitrate'
   'bry_time'
   'idTbry(inorth,ino3)'
   'nulvar'
-  1.0d-16
+  1.025d0
 
 'NO3_south'
   'nitrate western boundary condition'
-  'uM N'
+  'mmol N m^-3'
   'nitrate'
   'bry_time'
   'idTbry(iwest,ino3)'
   'nulvar'
-  1.0d-16
+  1.025d0
 
 'NO3_west'
   'nitrate southern boundary condition'
-  'uM N'
+  'mmol N m^-3'
   'nitrate'
   'bry_time'
   'idTbry(isouth,ino3)'
   'nulvar'
-  1.0d-16
+  1.025d0
 

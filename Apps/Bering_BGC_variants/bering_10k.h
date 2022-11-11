@@ -201,12 +201,14 @@
 # define REDUCE_ALLGATHER   /* use mpi_allgather in mp_reduce   */
 # undef  REDUCE_ALLREDUCE   /* use mpi_allreduce in mp_reduce   */
 
+
+
 /* COBALT module options */
 
 #ifdef BIO_COBALT
 # undef TS_MPDATA
 # define TS_HSIMT
-#elif defined SOLVE3D     /* KK TODO: weird elif... is this supposed to be on? */
+#elif defined SOLVE3D
 # define TS_U3HADVECTION
 # define TS_C4VADVECTION
 #endif
