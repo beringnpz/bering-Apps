@@ -5,7 +5,8 @@
 # define ICE_BIO           /* Add ice bio (PhL, NO3, NH4) */
 # undef CLIM_ICE_1D
 # define DIAPAUSE          /* turn on seasonal vertical migration for large copepods */
-# define OPTIC_MANIZZA
+# define OPTIC_MANIZZA     /* Manizza light attenuation... */
+# define COASTAL_ATTEN     /* ... with additional coastal attenuation */
 # if defined CARBON
 #  define CARBON_FLUX      /* For river fluxes of DIC,TA */
 #  define OXYGEN           /* For oxygen cycling */

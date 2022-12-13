@@ -1,1 +1,2 @@
 - {flag: BIO_BANAS, descrip: "Banas et al., 2016 Eastern Bering Sea NPZ model"}
+- { flag: COASTAL_ATTEN, descrip: "Increase light attenuation in shallow water"}

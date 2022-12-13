@@ -17,7 +17,8 @@
 #if defined BIO_COBALT
 # undef FILTERED
 # undef AVERAGES2
-# define OPTIC_MANIZZA
+# define OPTIC_MANIZZA     /* Manizza light attenuation... */
+# define COASTAL_ATTEN     /* ... with additional coastal attenuation */
 # define COBALT_MINERALS
 # undef COBALT_PHOSPHORUS
 # define COBALT_IRON

@@ -6,3 +6,4 @@
 - { flag: EUPDIEL,      descrip: "Diel vertical migration for euphausiids"}
 - { flag: JELLY,        descrip: "Add jellyfish top predator"}
 - { flag: MZLM0LIN,     descrip: "Linear non-predatory mortality for microzooplankton"}
+- { flag: COASTAL_ATTEN, descrip: "Increase light attenuation in shallow water"}
