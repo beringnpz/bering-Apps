@@ -4649,7 +4649,7 @@
   'bry_time'
   'idTbry(ieast,idets)'
   'nulvar'
-  1.0d-16
+  0.0d0
 
 'ones_north'
   'det_small northern boundary condition'
@@ -4658,7 +4658,7 @@
   'bry_time'
   'idTbry(inorth,idets)'
   'nulvar'
-  1.0d-16
+  0.0d0
 
 'ones_south'
   'det_small western boundary condition'
@@ -4667,7 +4667,7 @@
   'bry_time'
   'idTbry(iwest,idets)'
   'nulvar'
-  1.0d-16
+  0.0d0
 
 'ones_west'
   'det_small southern boundary condition'
@@ -4676,7 +4676,7 @@
   'bry_time'
   'idTbry(isouth,idets)'
   'nulvar'
-  1.0d-16
+  0.0d0
 
 'ones_east'
   'det_large eastern boundary condition'
@@ -4685,7 +4685,7 @@
   'bry_time'
   'idTbry(ieast,idetl)'
   'nulvar'
-  1.0d-16
+  0.0d0
 
 'ones_north'
   'det_large northern boundary condition'
@@ -4694,7 +4694,7 @@
   'bry_time'
   'idTbry(inorth,idetl)'
   'nulvar'
-  1.0d-16
+  0.0d0
 
 'ones_south'
   'det_large western boundary condition'
@@ -4703,7 +4703,7 @@
   'bry_time'
   'idTbry(iwest,idetl)'
   'nulvar'
-  1.0d-16
+  0.0d0
 
 'ones_west'
   'det_large southern boundary condition'
@@ -4712,11 +4712,11 @@
   'bry_time'
   'idTbry(isouth,idetl)'
   'nulvar'
-  1.0d-16
+  0.0d0
 
 'NH4_east'
   'ammonium eastern boundary condition'
-  'mmol N m^-3'
+  'umol/kg'
   'ammonium'
   'bry_time'
   'idTbry(ieast,inh4)'
@@ -4725,7 +4725,7 @@
 
 'NH4_north'
   'ammonium northern boundary condition'
-  'mmol N m^-3'
+  'umol/kg'
   'ammonium'
   'bry_time'
   'idTbry(inorth,inh4)'
@@ -4734,7 +4734,7 @@
 
 'NH4_south'
   'ammonium western boundary condition'
-  'mmol N m^-3'
+  'umol/kg'
   'ammonium'
   'bry_time'
   'idTbry(iwest,inh4)'
@@ -4743,7 +4743,7 @@
 
 'NH4_west'
   'ammonium southern boundary condition'
-  'mmol N m^-3'
+  'umol/kg'
   'ammonium'
   'bry_time'
   'idTbry(isouth,inh4)'
@@ -4752,7 +4752,7 @@
 
 'NO3_east'
   'nitrate eastern boundary condition'
-  'mmol N m^-3'
+  'umol/kg'
   'nitrate'
   'bry_time'
   'idTbry(ieast,ino3)'
@@ -4761,7 +4761,7 @@
 
 'NO3_north'
   'nitrate northern boundary condition'
-  'mmol N m^-3'
+  'umol/kg'
   'nitrate'
   'bry_time'
   'idTbry(inorth,ino3)'
@@ -4770,7 +4770,7 @@
 
 'NO3_south'
   'nitrate western boundary condition'
-  'mmol N m^-3'
+  'umol/kg'
   'nitrate'
   'bry_time'
   'idTbry(iwest,ino3)'
@@ -4779,7 +4779,7 @@
 
 'NO3_west'
   'nitrate southern boundary condition'
-  'mmol N m^-3'
+  'umol/kg'
   'nitrate'
   'bry_time'
   'idTbry(isouth,ino3)'

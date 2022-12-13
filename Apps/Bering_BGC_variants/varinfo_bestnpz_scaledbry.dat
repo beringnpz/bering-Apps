@@ -2707,382 +2707,175 @@
   'r2dvar'
   1.0d0
 
-'nsm'
-  'Small Phytoplankton Nitrogen'
-  'mol/kg'
-  'nsm, scalar, series'
+'NO3'
+  'Nitrate concentration'
+  'mmol N m^-3'
+  'NO3, scalar, series'
   'ocean_time'
-  'idTvar(insm)'
+  'idTvar(iNO3)'
   'r3dvar'
   1.0d0
 
-'nlg'
-  'Large Phytoplankton Nitrogen'
-  'mol/kg'
-  'nlg, scalar, series'
+'NH4'
+  'Ammonium concentration'
+  'mmol N m^-3'
+  'NH4, scalar, series'
   'ocean_time'
-  'idTvar(inlg)'
+  'idTvar(iNH4)'
   'r3dvar'
   1.0d0
 
-'ndi'
-  'Diazotroph Nitrogen'
-  'mol/kg'
-  'ndi, scalar, series'
+'PhS'
+  'Small phytoplankton concentration'
+  'mg C m^-3'
+  'small phytoplankton, scalar, series'
   'ocean_time'
-  'idTvar(indi)'
+  'idTvar(iPhS)'
   'r3dvar'
   1.0d0
 
-'nsmz'
-  'Small Zooplankton Nitrogen'
-  'mol/kg'
-  'nsmz, scalar, series'
+'PhL'
+  'Large phytoplankton concentration'
+  'mg C m^-3'
+  'large phytoplankton, scalar, series'
   'ocean_time'
-  'idTvar(insmz)'
+  'idTvar(iPhL)'
   'r3dvar'
   1.0d0
 
-'nmdz'
-  'Medium-sized zooplankton Nitrogen'
-  'mol/kg'
-  'nmdz, scalar, series'
+'MZL'
+  'Microzooplankton concentration'
+  'mg C m^-3'
+  'large microzooplankton, scalar, series'
   'ocean_time'
-  'idTvar(inmdz)'
+  'idTvar(iMZL)'
   'r3dvar'
   1.0d0
 
-'nlgz'
-  'large Zooplankton Nitrogen'
-  'mol/kg'
-  'nlgz, scalar, series'
+'Cop'
+  'Small copepod concentration'
+  'mg C m^-3'
+  'copepod, scalar, series'
   'ocean_time'
-  'idTvar(inlgz)'
+  'idTvar(iCop)'
   'r3dvar'
   1.0d0
 
-'ldon'
-  'labile DON'
-  'mol/kg'
-  'ldon, scalar, series'
+'NCaS'
+  'On-shelf large copepod concentration'
+  'mg C m^-3'
+  'neocalanus, scalar, series'
   'ocean_time'
-  'idTvar(ildon)'
+  'idTvar(iNCaS)'
   'r3dvar'
   1.0d0
 
-'sldon'
-  'Semilabile DON'
-  'mol/kg'
-  'sldon, scalar, series'
+'EupS'
+  'On-shelf euphausiid concentration'
+  'mg C m^-3'
+  'euphausiid, scalar, series'
   'ocean_time'
-  'idTvar(isldon)'
+  'idTvar(iEupS)'
   'r3dvar'
   1.0d0
 
-'srdon'
-  'Semi-Refractory DON'
-  'mol/kg'
-  'srdon, scalar, series'
+'NCaO'
+  'Offshore large copepod concentration'
+  'mg C m^-3'
+  'neocalanus, scalar, series'
   'ocean_time'
-  'idTvar(isrdon)'
+  'idTvar(iNCaO)'
   'r3dvar'
   1.0d0
 
-'nbact'
-  'bacterial'
-  'mol/kg'
-  'nbact, scalar, series'
+'EupO'
+  'Offshore euphausiid concentration'
+  'mg C m^-3'
+  'euphausiid, scalar, series'
   'ocean_time'
-  'idTvar(inbact)'
+  'idTvar(iEupO)'
   'r3dvar'
   1.0d0
 
-'nh4'
-  'Ammonia'
-  'mol/kg'
-  'nh4, scalar, series'
+'Det'
+  'Slow-sinking detritus concentration'
+  'mg C m^-3'
+  'detritus, scalar, series'
   'ocean_time'
-  'idTvar(inh4)'
+  'idTvar(iDet)'
   'r3dvar'
   1.0d0
 
-'no3'
-  'Nitrate'
-  'mol/kg'
-  'no3, scalar, series'
+'DetF'
+  'Fast-sinking detritus concentration'
+  'mg C m^-3'
+  'detritus, scalar, series'
   'ocean_time'
-  'idTvar(ino3)'
+  'idTvar(iDetF)'
   'r3dvar'
   1.0d0
 
-'ndet'
-  'ndet'
-  'mol/kg'
-  'ndet, scalar, series'
+'Jel'
+  'Jellyfish concentration'
+  'mg C m^-3'
+  'jellyfish, scalar, series'
   'ocean_time'
-  'idTvar(indet)'
+  'idTvar(iJel)'
   'r3dvar'
   1.0d0
 
-'sio4'
-  'Silicate'
-  'mol/kg'
-  'sio4, scalar, series'
+'Ben'
+  'Benthic infauna concentration'
+  'mg C m^-2'
+  'benthos, scalar, series'
   'ocean_time'
-  'idTvar(isio4)'
+  'idBeTvar(iBen)'
+  'bn3dvar'
+  1.0d0
+
+'DetBen'
+  'Benthic detritus concentration'
+  'mg C m^-2'
+  'benthic detritus, scalar, series'
+  'ocean_time'
+  'idBeTvar(iDetBen)'
+  'bn3dvar'
+  1.0d0
+
+'Fe'
+  'Ice ammonium concentration'
+  'umol Fe m^-3'
+  'iron conc, scalar, series'
+  'ocean_time'
+  'idTvar(iFe)'
   'r3dvar'
   1.0d0
 
-'silg'
-  'Large Phytoplankton Silicon'
-  'mol/kg'
-  'silg, scalar, series'
+'alkalinity'
+  'total alkalinity'
+  'mmol C m^-3'
+  'TAlk, scalar, series'
   'ocean_time'
-  'idTvar(isilg)'
+  'idTvar(iTAlk)'
   'r3dvar'
   1.0d0
 
-'sidet'
-  'Detrital Silicon'
-  'mol/kg'
-  'sidet, scalar, series'
+'TIC'
+  'total inorganic carbon'
+  'mmol C m^-3'
+  'TIC, scalar, series'
   'ocean_time'
-  'idTvar(isidet)'
+  'idTvar(iTIC_)'
   'r3dvar'
   1.0d0
 
-'cadet_calc'
-  'Detrital CaCO3'
-  'mol/kg'
-  'cadet_calc, scalar, series'
+'oxygen'
+  'dissolved oxygen concentration'
+  'mmol O m^-3'
+  'Oxygen, scalar, series'
   'ocean_time'
-  'idTvar(icadet_calc)'
+  'idTvar(iOxyg)'
   'r3dvar'
-  1.0d0
-
-'cadet_arag'
-  'Detrital CaCO3'
-  'mol/kg'
-  'cadet_arag, scalar, series'
-  'ocean_time'
-  'idTvar(icadet_arag)'
-  'r3dvar'
-  1.0d0
-
-'lith'
-  'Lithogenic Aluminosilicate'
-  'g/kg'
-  'lith, scalar, series'
-  'ocean_time'
-  'idTvar(ilith)'
-  'r3dvar'
-  1.0d0
-
-'lithdet'
-  'lithdet'
-  'g/kg'
-  'lithdet, scalar, series'
-  'ocean_time'
-  'idTvar(ilithdet)'
-  'r3dvar'
-  1.0d0
-
-'po4'
-  'Phosphate'
-  'mol/kg'
-  'po4, scalar, series'
-  'ocean_time'
-  'idTvar(ipo4)'
-  'r3dvar'
-  1.0d0
-
-'ldop'
-  'labile DOP'
-  'mol/kg'
-  'ldop, scalar, series'
-  'ocean_time'
-  'idTvar(ildop)'
-  'r3dvar'
-  1.0d0
-
-'sldop'
-  'Semilabile DOP'
-  'mol/kg'
-  'sldop, scalar, series'
-  'ocean_time'
-  'idTvar(isldop)'
-  'r3dvar'
-  1.0d0
-
-'srdop'
-  'Semi-Refractory DOP'
-  'mol/kg'
-  'srdop, scalar, series'
-  'ocean_time'
-  'idTvar(isrdop)'
-  'r3dvar'
-  1.0d0
-
-'pdet'
-  'Detrital Phosphorus'
-  'mol/kg'
-  'pdet, scalar, series'
-  'ocean_time'
-  'idTvar(ipdet)'
-  'r3dvar'
-  1.0d0
-
-'fesm'
-  'Small Phytoplankton Iron'
-  'mol/kg'
-  'fesm, scalar, series'
-  'ocean_time'
-  'idTvar(ifesm)'
-  'r3dvar'
-  1.0d0
-
-'fedi'
-  'Diazotroph Iron'
-  'mol/kg'
-  'fedi, scalar, series'
-  'ocean_time'
-  'idTvar(ifedi)'
-  'r3dvar'
-  1.0d0
-
-'felg'
-  'Large Phytoplankton Iron'
-  'mol/kg'
-  'felg, scalar, series'
-  'ocean_time'
-  'idTvar(ifelg)'
-  'r3dvar'
-  1.0d0
-
-'fed'
-  'Dissolved Iron'
-  'mol/kg'
-  'fed, scalar, series'
-  'ocean_time'
-  'idTvar(ifed)'
-  'r3dvar'
-  1.0d0
-
-'fedet'
-  'Detrital Iron'
-  'mol/kg'
-  'fedet, scalar, series'
-  'ocean_time'
-  'idTvar(ifedet)'
-  'r3dvar'
-  1.0d0
-
-'o2'
-  'Oxygen'
-  'mol/kg'
-  'o2, scalar, series'
-  'ocean_time'
-  'idTvar(io2)'
-  'r3dvar'
-  1.0d0
-
-'dic'
-  'Dissolved Inorganic Carbon'
-  'mol/kg'
-  'dic, scalar, series'
-  'ocean_time'
-  'idTvar(idic)'
-  'r3dvar'
-  1.0d0
-
-'alk'
-  'Alkalinity'
-  'mol/kg'
-  'alk, scalar, series'
-  'ocean_time'
-  'idTvar(ialk)'
-  'r3dvar'
-  1.0d0
-
-'nmd'
-  'Medium Phytoplankton Nitrogen'
-  'mol/kg'
-  'nmd, scalar, series'
-  'ocean_time'
-  'idTvar(inmd)'
-  'r3dvar'
-  1.0d0
-
-'simd'
-  'Medium Phytoplankton Silicon'
-  'mol/kg'
-  'simd, scalar, series'
-  'ocean_time'
-  'idTvar(isimd)'
-  'r3dvar'
-  1.0d0
-
-'femd'
-  'Medium Phytoplankton Iron'
-  'mol/kg'
-  'femd, scalar, series'
-  'ocean_time'
-  'idTvar(ifemd)'
-  'r3dvar'
-  1.0d0
-
-'cased'
-  'Sediment CaCO3'
-  'mol.m-3'
-  'cased, scalar, series'
-  'ocean_time'
-  'idBeTvar(icased)'
-  'r2dvar'
-  1.0d0
-
-'cadet_arag_btf'
-  'aragonite flux to Sediments'
-  'mol m-2 s-1'
-  'cadet_arag_btf, scalar, series'
-  'ocean_time'
-  'idBeTvar(icadet_arag_btf)'
-  'r2dvar'
-  1.0d0
-
-'cadet_calc_btf'
-  'calcite flux to Sediments'
-  'mol m-2 s-1'
-  'cadet_calc_btf, scalar, series'
-  'ocean_time'
-  'idBeTvar(icadet_calc_btf)'
-  'r2dvar'
-  1.0d0
-
-'ndet_btf'
-  'N flux to Sediments'
-  'mol m-2 s-1'
-  'ndet_btf, scalar, series'
-  'ocean_time'
-  'idBeTvar(indet_btf)'
-  'r2dvar'
-  1.0d0
-
-'pdet_btf'
-  'P flux to Sediments'
-  'mol m-2 s-1'
-  'pdet_btf, scalar, series'
-  'ocean_time'
-  'idBeTvar(ipdet_btf)'
-  'r2dvar'
-  1.0d0
-
-'sidet_btf'
-  'SiO2 flux to Sediments'
-  'mol m-2 s-1'
-  'sidet_btf, scalar, series'
-  'ocean_time'
-  'idBeTvar(isidet_btf)'
-  'r2dvar'
   1.0d0
 
 'zeta2'
@@ -4894,2973 +4687,2136 @@
   'nulvar'
   1.0d0
 
-'chl'
-  'Chlorophyll'
-  'ug kg-1'
-  'chl, scalar, series'
+'pCO2air'
+  'Atmospheric pCO2'
+  'micro atm'
+  'Atmospheric pCO2'
   'ocean_time'
-  'iDobgc(iochl)'
+  'idpCO2air'
+  'r2dvar'
+  1.0d0
+
+'Alkalinity_Flux'
+  'Alk flux with freshwater runoff'
+  'umol C m^-2 s^-1'
+  'Alkalinity Flux'
+  'alkalinity_time'
+  'idTAFlux'
+  'r2dvar'
+  1.0d0
+
+'DIC_Flux'
+  'DIC flux with freshwater runoff'
+  'umol C m^-2 s^-1'
+  'DIC Flux'
+  'DIC_time'
+  'idDICFlux'
+  'r2dvar'
+  1.0d0
+
+'IcePhL'
+  'Iron concentration'
+  'mg C m^-3'
+  'ice algae conc, scalar, series'
+  'ocean_time'
+  'idIceTvar(iIcPhL)'
+  'r2dvar'
+  1.0d0
+
+'IceNO3'
+  'Ice algae concentration'
+  'mmol N m^-3'
+  'ice nitrate conc, scalar, series'
+  'ocean_time'
+  'idIceTvar(iIcNO3)'
+  'r2dvar'
+  1.0d0
+
+'IceNH4'
+  'Ice nitrate concentration'
+  'mmol N m^-3'
+  'ice ammonium conc, scalar, series'
+  'ocean_time'
+  'idIceTvar(iIcNH4)'
+  'r2dvar'
+  1.0d0
+
+'LightLimS'
+  'PhS Light limitation'
+  'unitless'
+  'StatVar, scalar, series'
+  'ocean_time'
+  'iDbio3(iilims)'
   'r3dvar'
   1.0d0
 
-'irr_mem'
-  'Irradiance memory'
-  'Watts/m^2'
-  'irr_mem, scalar, series'
+'LightLimL'
+  'PhL Light limitation'
+  'unitless'
+  'StatVar, scalar, series'
   'ocean_time'
-  'iDobgc(ioirr_mem)'
+  'iDbio3(iiliml)'
   'r3dvar'
   1.0d0
 
-'htotal'
-  'H+ ion concentration'
-  'mol/kg'
-  'htotal, scalar, series'
+'NOLimS'
+  'PhS NO3 limitation'
+  'unitless'
+  'StatVar, scalar, series'
   'ocean_time'
-  'iDobgc(iohtotal)'
+  'iDbio3(inolims)'
   'r3dvar'
   1.0d0
 
-'co3_ion'
-  'Carbonate ion'
-  'mol/kg'
-  'co3_ion, scalar, series'
+'NOLimL'
+  'PhL NO3 limitation'
+  'unitless'
+  'StatVar, scalar, series'
   'ocean_time'
-  'iDobgc(ioco3_ion)'
+  'iDbio3(inoliml)'
   'r3dvar'
   1.0d0
 
-'mu_mem_sm'
-  'Aggreg memory small phyto'
-  'None'
-  'mu_mem_sm, scalar, series'
+'NHLimS'
+  'PhS NH4 limitation'
+  'unitless'
+  'StatVar, scalar, series'
   'ocean_time'
-  'iDobgc(iomu_mem_sm)'
+  'iDbio3(inhlims)'
   'r3dvar'
   1.0d0
 
-'mu_mem_di'
-  'Aggreg memory diatoms'
-  'None'
-  'mu_mem_di, scalar, series'
+'NHLimL'
+  'PhL NH4 limitation'
+  'unitless'
+  'StatVar, scalar, series'
   'ocean_time'
-  'iDobgc(iomu_mem_di)'
+  'iDbio3(inhliml)'
   'r3dvar'
   1.0d0
 
-'mu_mem_lg'
-  'Aggreg memory large phyto'
-  'None'
-  'mu_mem_lg, scalar, series'
+'IronLimS'
+  'PhS Iron limitation'
+  'unitless'
+  'StatVar, scalar, series'
   'ocean_time'
-  'iDobgc(iomu_mem_lg)'
+  'iDbio3(ifelims)'
   'r3dvar'
   1.0d0
 
-'mu_mem_md'
-  'Aggreg memory medium phyto'
-  'None'
-  'mu_mem_md, scalar, series'
+'IronLimL'
+  'PhL Iron limitation'
+  'unitless'
+  'StatVar, scalar, series'
   'ocean_time'
-  'iDobgc(iomu_mem_md)'
+  'iDbio3(ifeliml)'
   'r3dvar'
   1.0d0
 
-'tracer_NudgeCoef'
-  'generic tracer inverse nudging coefficients'
-  'day-1'
-  'tracer_NudgeCoef, scalar'
-  'nulvar'
-  'idgTnc'
+'Gpp_NO3_PhS'
+  'gross primary production flux from NO3 to PhS'
+  'mg C m^-2 d^-1'
+  'StatVar, scalar, series'
+  'ocean_time'
+  'iDbio3(iflx_Gpp_NO3_PhS)'
   'r3dvar'
   1.0d0
 
-'nmd'
-  'medium Phytoplankton Nitrogen'
-  'mol/kg'
-  'nmd, scalar, series'
+'Gpp_NO3_PhL'
+  'gross primary production flux from NO3 to PhL'
+  'mg C m^-2 d^-1'
+  'StatVar, scalar, series'
   'ocean_time'
-  'idTclm(inmd)'
+  'iDbio3(iflx_Gpp_NO3_PhL)'
   'r3dvar'
   1.0d0
 
-'simd'
-  'medium Phytoplankton Silicon'
-  'mol/kg'
-  'simd, scalar, series'
+'Gpp_NH4_PhS'
+  'gross primary production flux from NH4 to PhS'
+  'mg C m^-2 d^-1'
+  'StatVar, scalar, series'
   'ocean_time'
-  'idTclm(isimd)'
+  'iDbio3(iflx_Gpp_NH4_PhS)'
   'r3dvar'
   1.0d0
 
-'femd'
-  'medium Phytoplankton Iron'
-  'mol/kg'
-  'femd, scalar, series'
+'Gpp_NH4_PhL'
+  'gross primary production flux from NH4 to PhL'
+  'mg C m^-2 d^-1'
+  'StatVar, scalar, series'
   'ocean_time'
-  'idTclm(ifemd)'
+  'iDbio3(iflx_Gpp_NH4_PhL)'
   'r3dvar'
   1.0d0
 
-'ones_east'
-  'Small Phytoplankton Nitrogen eastern boundary condition'
-  'mol/kg'
-  'nsm_east, scalar, series'
+'Gra_PhS_MZL'
+  'grazing/predation flux from PhS to MZL'
+  'mg C m^-2 d^-1'
+  'StatVar, scalar, series'
   'ocean_time'
-  'idTbry(ieast,insm)'
-  'nulvar'
-  1.0d-19
+  'iDbio3(iflx_Gra_PhS_MZL)'
+  'r3dvar'
+  1.0d0
+
+'Gra_PhL_MZL'
+  'grazing/predation flux from PhL to MZL'
+  'mg C m^-2 d^-1'
+  'StatVar, scalar, series'
+  'ocean_time'
+  'iDbio3(iflx_Gra_PhL_MZL)'
+  'r3dvar'
+  1.0d0
+
+'Ege_MZL_Det'
+  'egestion flux from MZL to Det'
+  'mg C m^-2 d^-1'
+  'StatVar, scalar, series'
+  'ocean_time'
+  'iDbio3(iflx_Ege_MZL_Det)'
+  'r3dvar'
+  1.0d0
+
+'Gra_PhS_Cop'
+  'grazing/predation flux from PhS to Cop'
+  'mg C m^-2 d^-1'
+  'StatVar, scalar, series'
+  'ocean_time'
+  'iDbio3(iflx_Gra_PhS_Cop)'
+  'r3dvar'
+  1.0d0
+
+'Gra_PhL_Cop'
+  'grazing/predation flux from PhL to Cop'
+  'mg C m^-2 d^-1'
+  'StatVar, scalar, series'
+  'ocean_time'
+  'iDbio3(iflx_Gra_PhL_Cop)'
+  'r3dvar'
+  1.0d0
+
+'Gra_MZL_Cop'
+  'grazing/predation flux from MZL to Cop'
+  'mg C m^-2 d^-1'
+  'StatVar, scalar, series'
+  'ocean_time'
+  'iDbio3(iflx_Gra_MZL_Cop)'
+  'r3dvar'
+  1.0d0
+
+'Gra_IPhL_Cop'
+  'grazing/predation flux from IPhL to Cop'
+  'mg C m^-2 d^-1'
+  'StatVar, scalar, series'
+  'ocean_time'
+  'iDbio3(iflx_Gra_IPhL_Cop)'
+  'r3dvar'
+  1.0d0
+
+'Ege_Cop_DetF'
+  'egestion flux from Cop to DetF'
+  'mg C m^-2 d^-1'
+  'StatVar, scalar, series'
+  'ocean_time'
+  'iDbio3(iflx_Ege_Cop_DetF)'
+  'r3dvar'
+  1.0d0
+
+'Gra_PhS_NCaS'
+  'grazing/predation flux from PhS to NCaS'
+  'mg C m^-2 d^-1'
+  'StatVar, scalar, series'
+  'ocean_time'
+  'iDbio3(iflx_Gra_PhS_NCaS)'
+  'r3dvar'
+  1.0d0
+
+'Gra_PhL_NCaS'
+  'grazing/predation flux from PhL to NCaS'
+  'mg C m^-2 d^-1'
+  'StatVar, scalar, series'
+  'ocean_time'
+  'iDbio3(iflx_Gra_PhL_NCaS)'
+  'r3dvar'
+  1.0d0
+
+'Gra_MZL_NCaS'
+  'grazing/predation flux from MZL to NCaS'
+  'mg C m^-2 d^-1'
+  'StatVar, scalar, series'
+  'ocean_time'
+  'iDbio3(iflx_Gra_MZL_NCaS)'
+  'r3dvar'
+  1.0d0
+
+'Gra_IPhL_NCaS'
+  'grazing/predation flux from IPhL to NCaS'
+  'mg C m^-2 d^-1'
+  'StatVar, scalar, series'
+  'ocean_time'
+  'iDbio3(iflx_Gra_IPhL_NCaS)'
+  'r3dvar'
+  1.0d0
+
+'Ege_NCaS_DetF'
+  'egestion flux from NCaS to DetF'
+  'mg C m^-2 d^-1'
+  'StatVar, scalar, series'
+  'ocean_time'
+  'iDbio3(iflx_Ege_NCaS_DetF)'
+  'r3dvar'
+  1.0d0
+
+'Gra_PhS_NCaO'
+  'grazing/predation flux from PhS to NCaO'
+  'mg C m^-2 d^-1'
+  'StatVar, scalar, series'
+  'ocean_time'
+  'iDbio3(iflx_Gra_PhS_NCaO)'
+  'r3dvar'
+  1.0d0
+
+'Gra_PhL_NCaO'
+  'grazing/predation flux from PhL to NCaO'
+  'mg C m^-2 d^-1'
+  'StatVar, scalar, series'
+  'ocean_time'
+  'iDbio3(iflx_Gra_PhL_NCaO)'
+  'r3dvar'
+  1.0d0
+
+'Gra_MZL_NCaO'
+  'grazing/predation flux from MZL to NCaO'
+  'mg C m^-2 d^-1'
+  'StatVar, scalar, series'
+  'ocean_time'
+  'iDbio3(iflx_Gra_MZL_NCaO)'
+  'r3dvar'
+  1.0d0
+
+'Gra_IPhL_NCaO'
+  'grazing/predation flux from IPhL to NCaO'
+  'mg C m^-2 d^-1'
+  'StatVar, scalar, series'
+  'ocean_time'
+  'iDbio3(iflx_Gra_IPhL_NCaO)'
+  'r3dvar'
+  1.0d0
+
+'Ege_NCaO_DetF'
+  'egestion flux from NCaO to DetF'
+  'mg C m^-2 d^-1'
+  'StatVar, scalar, series'
+  'ocean_time'
+  'iDbio3(iflx_Ege_NCaO_DetF)'
+  'r3dvar'
+  1.0d0
+
+'Gra_PhS_EupS'
+  'grazing/predation flux from PhS to EupS'
+  'mg C m^-2 d^-1'
+  'StatVar, scalar, series'
+  'ocean_time'
+  'iDbio3(iflx_Gra_PhS_EupS)'
+  'r3dvar'
+  1.0d0
+
+'Gra_PhL_EupS'
+  'grazing/predation flux from PhL to EupS'
+  'mg C m^-2 d^-1'
+  'StatVar, scalar, series'
+  'ocean_time'
+  'iDbio3(iflx_Gra_PhL_EupS)'
+  'r3dvar'
+  1.0d0
+
+'Gra_MZL_EupS'
+  'grazing/predation flux from MZL to EupS'
+  'mg C m^-2 d^-1'
+  'StatVar, scalar, series'
+  'ocean_time'
+  'iDbio3(iflx_Gra_MZL_EupS)'
+  'r3dvar'
+  1.0d0
+
+'Gra_Cop_EupS'
+  'grazing/predation flux from Cop to EupS'
+  'mg C m^-2 d^-1'
+  'StatVar, scalar, series'
+  'ocean_time'
+  'iDbio3(iflx_Gra_Cop_EupS)'
+  'r3dvar'
+  1.0d0
+
+'Gra_IPhL_EupS'
+  'grazing/predation flux from IPhL to EupS'
+  'mg C m^-2 d^-1'
+  'StatVar, scalar, series'
+  'ocean_time'
+  'iDbio3(iflx_Gra_IPhL_EupS)'
+  'r3dvar'
+  1.0d0
+
+'Gra_Det_EupS'
+  'grazing/predation flux from Det to EupS'
+  'mg C m^-2 d^-1'
+  'StatVar, scalar, series'
+  'ocean_time'
+  'iDbio3(iflx_Gra_Det_EupS)'
+  'r3dvar'
+  1.0d0
+
+'Gra_DetF_EupS'
+  'grazing/predation flux from DetF to EupS'
+  'mg C m^-2 d^-1'
+  'StatVar, scalar, series'
+  'ocean_time'
+  'iDbio3(iflx_Gra_DetF_EupS)'
+  'r3dvar'
+  1.0d0
+
+'Ege_EupS_DetF'
+  'egestion flux from EupS to DetF'
+  'mg C m^-2 d^-1'
+  'StatVar, scalar, series'
+  'ocean_time'
+  'iDbio3(iflx_Ege_EupS_DetF)'
+  'r3dvar'
+  1.0d0
+
+'Gra_PhS_EupO'
+  'grazing/predation flux from PhS to EupO'
+  'mg C m^-2 d^-1'
+  'StatVar, scalar, series'
+  'ocean_time'
+  'iDbio3(iflx_Gra_PhS_EupO)'
+  'r3dvar'
+  1.0d0
+
+'Gra_PhL_EupO'
+  'grazing/predation flux from PhL to EupO'
+  'mg C m^-2 d^-1'
+  'StatVar, scalar, series'
+  'ocean_time'
+  'iDbio3(iflx_Gra_PhL_EupO)'
+  'r3dvar'
+  1.0d0
+
+'Gra_MZL_EupO'
+  'grazing/predation flux from MZL to EupO'
+  'mg C m^-2 d^-1'
+  'StatVar, scalar, series'
+  'ocean_time'
+  'iDbio3(iflx_Gra_MZL_EupO)'
+  'r3dvar'
+  1.0d0
+
+'Gra_Cop_EupO'
+  'grazing/predation flux from Cop to EupO'
+  'mg C m^-2 d^-1'
+  'StatVar, scalar, series'
+  'ocean_time'
+  'iDbio3(iflx_Gra_Cop_EupO)'
+  'r3dvar'
+  1.0d0
+
+'Gra_IPhL_EupO'
+  'grazing/predation flux from IPhL to EupO'
+  'mg C m^-2 d^-1'
+  'StatVar, scalar, series'
+  'ocean_time'
+  'iDbio3(iflx_Gra_IPhL_EupO)'
+  'r3dvar'
+  1.0d0
+
+'Gra_Det_EupO'
+  'grazing/predation flux from Det to EupO'
+  'mg C m^-2 d^-1'
+  'StatVar, scalar, series'
+  'ocean_time'
+  'iDbio3(iflx_Gra_Det_EupO)'
+  'r3dvar'
+  1.0d0
+
+'Gra_DetF_EupO'
+  'grazing/predation flux from DetF to EupO'
+  'mg C m^-2 d^-1'
+  'StatVar, scalar, series'
+  'ocean_time'
+  'iDbio3(iflx_Gra_DetF_EupO)'
+  'r3dvar'
+  1.0d0
+
+'Ege_EupO_DetF'
+  'egestion flux from EupO to DetF'
+  'mg C m^-2 d^-1'
+  'StatVar, scalar, series'
+  'ocean_time'
+  'iDbio3(iflx_Ege_EupO_DetF)'
+  'r3dvar'
+  1.0d0
+
+'Gra_Cop_Jel'
+  'grazing/predation flux from Cop to Jel'
+  'mg C m^-2 d^-1'
+  'StatVar, scalar, series'
+  'ocean_time'
+  'iDbio3(iflx_Gra_Cop_Jel)'
+  'r3dvar'
+  1.0d0
+
+'Gra_EupS_Jel'
+  'grazing/predation flux from EupS to Jel'
+  'mg C m^-2 d^-1'
+  'StatVar, scalar, series'
+  'ocean_time'
+  'iDbio3(iflx_Gra_EupS_Jel)'
+  'r3dvar'
+  1.0d0
+
+'Gra_EupO_Jel'
+  'grazing/predation flux from EupO to Jel'
+  'mg C m^-2 d^-1'
+  'StatVar, scalar, series'
+  'ocean_time'
+  'iDbio3(iflx_Gra_EupO_Jel)'
+  'r3dvar'
+  1.0d0
+
+'Gra_NCaS_Jel'
+  'grazing/predation flux from NCaS to Jel'
+  'mg C m^-2 d^-1'
+  'StatVar, scalar, series'
+  'ocean_time'
+  'iDbio3(iflx_Gra_NCaS_Jel)'
+  'r3dvar'
+  1.0d0
+
+'Gra_NCaO_Jel'
+  'grazing/predation flux from NCaO to Jel'
+  'mg C m^-2 d^-1'
+  'StatVar, scalar, series'
+  'ocean_time'
+  'iDbio3(iflx_Gra_NCaO_Jel)'
+  'r3dvar'
+  1.0d0
+
+'Ege_Jel_DetF'
+  'egestion flux from Jel to DetF'
+  'mg C m^-2 d^-1'
+  'StatVar, scalar, series'
+  'ocean_time'
+  'iDbio3(iflx_Ege_Jel_DetF)'
+  'r3dvar'
+  1.0d0
+
+'Mor_PhS_Det'
+  'other mortality flux from PhS to Det'
+  'mg C m^-2 d^-1'
+  'StatVar, scalar, series'
+  'ocean_time'
+  'iDbio3(iflx_Mor_PhS_Det)'
+  'r3dvar'
+  1.0d0
+
+'Mor_PhL_Det'
+  'other mortality flux from PhL to Det'
+  'mg C m^-2 d^-1'
+  'StatVar, scalar, series'
+  'ocean_time'
+  'iDbio3(iflx_Mor_PhL_Det)'
+  'r3dvar'
+  1.0d0
+
+'Mor_MZL_Det'
+  'other mortality flux from MZL to Det'
+  'mg C m^-2 d^-1'
+  'StatVar, scalar, series'
+  'ocean_time'
+  'iDbio3(iflx_Mor_MZL_Det)'
+  'r3dvar'
+  1.0d0
+
+'Mor_Cop_DetF'
+  'other mortality flux from Cop to DetF'
+  'mg C m^-2 d^-1'
+  'StatVar, scalar, series'
+  'ocean_time'
+  'iDbio3(iflx_Mor_Cop_DetF)'
+  'r3dvar'
+  1.0d0
+
+'Mor_NCaS_DetF'
+  'other mortality flux from NCaS to DetF'
+  'mg C m^-2 d^-1'
+  'StatVar, scalar, series'
+  'ocean_time'
+  'iDbio3(iflx_Mor_NCaS_DetF)'
+  'r3dvar'
+  1.0d0
+
+'Mor_EupS_DetF'
+  'other mortality flux from EupS to DetF'
+  'mg C m^-2 d^-1'
+  'StatVar, scalar, series'
+  'ocean_time'
+  'iDbio3(iflx_Mor_EupS_DetF)'
+  'r3dvar'
+  1.0d0
+
+'Mor_NCaO_DetF'
+  'other mortality flux from NCaO to DetF'
+  'mg C m^-2 d^-1'
+  'StatVar, scalar, series'
+  'ocean_time'
+  'iDbio3(iflx_Mor_NCaO_DetF)'
+  'r3dvar'
+  1.0d0
+
+'Mor_EupO_DetF'
+  'other mortality flux from EupO to DetF'
+  'mg C m^-2 d^-1'
+  'StatVar, scalar, series'
+  'ocean_time'
+  'iDbio3(iflx_Mor_EupO_DetF)'
+  'r3dvar'
+  1.0d0
+
+'Mor_Jel_DetF'
+  'other mortality flux from Jel to DetF'
+  'mg C m^-2 d^-1'
+  'StatVar, scalar, series'
+  'ocean_time'
+  'iDbio3(iflx_Mor_Jel_DetF)'
+  'r3dvar'
+  1.0d0
+
+'Res_PhS_NH4'
+  'respiration flux from PhS to NH4'
+  'mg C m^-2 d^-1'
+  'StatVar, scalar, series'
+  'ocean_time'
+  'iDbio3(iflx_Res_PhS_NH4)'
+  'r3dvar'
+  1.0d0
+
+'Res_PhL_NH4'
+  'respiration flux from PhL to NH4'
+  'mg C m^-2 d^-1'
+  'StatVar, scalar, series'
+  'ocean_time'
+  'iDbio3(iflx_Res_PhL_NH4)'
+  'r3dvar'
+  1.0d0
+
+'Res_MZL_NH4'
+  'respiration flux from MZL to NH4'
+  'mg C m^-2 d^-1'
+  'StatVar, scalar, series'
+  'ocean_time'
+  'iDbio3(iflx_Res_MZL_NH4)'
+  'r3dvar'
+  1.0d0
+
+'Res_Cop_NH4'
+  'respiration flux from Cop to NH4'
+  'mg C m^-2 d^-1'
+  'StatVar, scalar, series'
+  'ocean_time'
+  'iDbio3(iflx_Res_Cop_NH4)'
+  'r3dvar'
+  1.0d0
+
+'Res_NCaS_NH4'
+  'respiration flux from NCaS to NH4'
+  'mg C m^-2 d^-1'
+  'StatVar, scalar, series'
+  'ocean_time'
+  'iDbio3(iflx_Res_NCaS_NH4)'
+  'r3dvar'
+  1.0d0
+
+'Res_NCaO_NH4'
+  'respiration flux from NCaO to NH4'
+  'mg C m^-2 d^-1'
+  'StatVar, scalar, series'
+  'ocean_time'
+  'iDbio3(iflx_Res_NCaO_NH4)'
+  'r3dvar'
+  1.0d0
+
+'Res_EupS_NH4'
+  'respiration flux from EupS to NH4'
+  'mg C m^-2 d^-1'
+  'StatVar, scalar, series'
+  'ocean_time'
+  'iDbio3(iflx_Res_EupS_NH4)'
+  'r3dvar'
+  1.0d0
+
+'Res_EupO_NH4'
+  'respiration flux from EupO to NH4'
+  'mg C m^-2 d^-1'
+  'StatVar, scalar, series'
+  'ocean_time'
+  'iDbio3(iflx_Res_EupO_NH4)'
+  'r3dvar'
+  1.0d0
+
+'Res_Jel_NH4'
+  'respiration flux from Jel to NH4'
+  'mg C m^-2 d^-1'
+  'StatVar, scalar, series'
+  'ocean_time'
+  'iDbio3(iflx_Res_Jel_NH4)'
+  'r3dvar'
+  1.0d0
+
+'Rem_Det_NH4'
+  'remineralization flux from Det to NH4'
+  'mg C m^-2 d^-1'
+  'StatVar, scalar, series'
+  'ocean_time'
+  'iDbio3(iflx_Rem_Det_NH4)'
+  'r3dvar'
+  1.0d0
+
+'Rem_DetF_NH4'
+  'remineralization flux from DetF to NH4'
+  'mg C m^-2 d^-1'
+  'StatVar, scalar, series'
+  'ocean_time'
+  'iDbio3(iflx_Rem_DetF_NH4)'
+  'r3dvar'
+  1.0d0
+
+'Nit_NH4_NO3'
+  'nitrification flux from NH4 to NO3'
+  'mg C m^-2 d^-1'
+  'StatVar, scalar, series'
+  'ocean_time'
+  'iDbio3(iflx_Nit_NH4_NO3)'
+  'r3dvar'
+  1.0d0
+
+'Gra_Det_Ben'
+  'grazing/predation flux from Det to Ben'
+  'mg C m^-2 d^-1'
+  'StatVar, scalar, series'
+  'ocean_time'
+  'iDbio3(iflx_Gra_Det_Ben)'
+  'r3dvar'
+  1.0d0
+
+'Gra_DetF_Ben'
+  'grazing/predation flux from DetF to Ben'
+  'mg C m^-2 d^-1'
+  'StatVar, scalar, series'
+  'ocean_time'
+  'iDbio3(iflx_Gra_DetF_Ben)'
+  'r3dvar'
+  1.0d0
+
+'Gra_PhS_Ben'
+  'grazing/predation flux from PhS to Ben'
+  'mg C m^-2 d^-1'
+  'StatVar, scalar, series'
+  'ocean_time'
+  'iDbio3(iflx_Gra_PhS_Ben)'
+  'r3dvar'
+  1.0d0
+
+'Gra_PhL_Ben'
+  'grazing/predation flux from PhL to Ben'
+  'mg C m^-2 d^-1'
+  'StatVar, scalar, series'
+  'ocean_time'
+  'iDbio3(iflx_Gra_PhL_Ben)'
+  'r3dvar'
+  1.0d0
+
+'Gra_DetBen_Ben'
+  'grazing/predation flux from DetBen to Ben'
+  'mg C m^-2 d^-1'
+  'StatVar, scalar, series'
+  'ocean_time'
+  'iDbio3(iflx_Gra_DetB_Ben)'
+  'r3dvar'
+  1.0d0
+
+'Exc_Ben_NH4'
+  'excretion flux from Ben to NH4'
+  'mg C m^-2 d^-1'
+  'StatVar, scalar, series'
+  'ocean_time'
+  'iDbio3(iflx_Exc_Ben_NH4)'
+  'r3dvar'
+  1.0d0
+
+'Exc_Ben_DetBen'
+  'excretion flux from Ben to DetBen'
+  'mg C m^-2 d^-1'
+  'StatVar, scalar, series'
+  'ocean_time'
+  'iDbio3(iflx_Exc_Ben_DetB)'
+  'r3dvar'
+  1.0d0
+
+'Res_Ben_NH4'
+  'respiration flux from Ben to NH4'
+  'mg C m^-2 d^-1'
+  'StatVar, scalar, series'
+  'ocean_time'
+  'iDbio3(iflx_Res_Ben_NH4)'
+  'r3dvar'
+  1.0d0
+
+'Mor_Ben_DetBen'
+  'other mortality flux from Ben to DetBen'
+  'mg C m^-2 d^-1'
+  'StatVar, scalar, series'
+  'ocean_time'
+  'iDbio3(iflx_Mor_Ben_DetB)'
+  'r3dvar'
+  1.0d0
+
+'Rem_DetBen_NH4'
+  'remineralization flux from DetBen to NH4'
+  'mg C m^-2 d^-1'
+  'StatVar, scalar, series'
+  'ocean_time'
+  'iDbio3(iflx_Rem_DetB_NH4)'
+  'r3dvar'
+  1.0d0
+
+'Gpp_INO3_IPhL'
+  'gross primary production flux from INO3 to IPhL'
+  'mg C m^-2 d^-1'
+  'StatVar, scalar, series'
+  'ocean_time'
+  'iDbio3(iflx_Gpp_INO3_IPhL)'
+  'r3dvar'
+  1.0d0
+
+'Gpp_INH4_IPhL'
+  'gross primary production flux from INH4 to IPhL'
+  'mg C m^-2 d^-1'
+  'StatVar, scalar, series'
+  'ocean_time'
+  'iDbio3(iflx_Gpp_INH4_IPhL)'
+  'r3dvar'
+  1.0d0
+
+'Res_IPhL_INH4'
+  'respiration flux from IPhL to INH4'
+  'mg C m^-2 d^-1'
+  'StatVar, scalar, series'
+  'ocean_time'
+  'iDbio3(iflx_Res_IPhL_INH4)'
+  'r3dvar'
+  1.0d0
+
+'Mor_IPhL_INH4'
+  'other mortality flux from IPhL to INH4'
+  'mg C m^-2 d^-1'
+  'StatVar, scalar, series'
+  'ocean_time'
+  'iDbio3(iflx_Mor_IPhL_INH4)'
+  'r3dvar'
+  1.0d0
+
+'Nit_INH4_INO3'
+  'nitrification flux from INH4 to INO3'
+  'mg C m^-2 d^-1'
+  'StatVar, scalar, series'
+  'ocean_time'
+  'iDbio3(iflx_Nit_INH4_INO3)'
+  'r3dvar'
+  1.0d0
+
+'Twi_IPhL_PhL'
+  'ice/water exchange flux from IPhL to PhL'
+  'mg C m^-2 d^-1'
+  'StatVar, scalar, series'
+  'ocean_time'
+  'iDbio3(iflx_Twi_IPhL_PhL)'
+  'r3dvar'
+  1.0d0
+
+'Twi_INO3_NO3'
+  'ice/water exchange flux from INO3 to NO3'
+  'mg C m^-2 d^-1'
+  'StatVar, scalar, series'
+  'ocean_time'
+  'iDbio3(iflx_Twi_INO3_NO3)'
+  'r3dvar'
+  1.0d0
+
+'Twi_INH4_NH4'
+  'ice/water exchange flux from INH4 to NH4'
+  'mg C m^-2 d^-1'
+  'StatVar, scalar, series'
+  'ocean_time'
+  'iDbio3(iflx_Twi_INH4_NH4)'
+  'r3dvar'
+  1.0d0
+
+'Ver_PhS_DetBen'
+  'sinking-to-bottom flux from PhS to DetBen'
+  'mg C m^-2 d^-1'
+  'StatVar, scalar, series'
+  'ocean_time'
+  'iDbio3(iflx_Ver_PhS_DetB)'
+  'r3dvar'
+  1.0d0
+
+'Ver_PhS_Out'
+  'sinking-to-bottom flux from PhS to Out'
+  'mg C m^-2 d^-1'
+  'StatVar, scalar, series'
+  'ocean_time'
+  'iDbio3(iflx_Ver_PhS_Out)'
+  'r3dvar'
+  1.0d0
+
+'Ver_PhL_DetBen'
+  'sinking-to-bottom flux from PhL to DetBen'
+  'mg C m^-2 d^-1'
+  'StatVar, scalar, series'
+  'ocean_time'
+  'iDbio3(iflx_Ver_PhL_DetB)'
+  'r3dvar'
+  1.0d0
+
+'Ver_PhL_Out'
+  'sinking-to-bottom flux from PhL to Out'
+  'mg C m^-2 d^-1'
+  'StatVar, scalar, series'
+  'ocean_time'
+  'iDbio3(iflx_Ver_PhL_Out)'
+  'r3dvar'
+  1.0d0
+
+'Ver_Det_DetBen'
+  'sinking-to-bottom flux from Det to DetBen'
+  'mg C m^-2 d^-1'
+  'StatVar, scalar, series'
+  'ocean_time'
+  'iDbio3(iflx_Ver_Det_DetB)'
+  'r3dvar'
+  1.0d0
+
+'Ver_Det_Out'
+  'sinking-to-bottom flux from Det to Out'
+  'mg C m^-2 d^-1'
+  'StatVar, scalar, series'
+  'ocean_time'
+  'iDbio3(iflx_Ver_Det_Out)'
+  'r3dvar'
+  1.0d0
+
+'Ver_DetF_DetBen'
+  'sinking-to-bottom flux from DetF to DetBen'
+  'mg C m^-2 d^-1'
+  'StatVar, scalar, series'
+  'ocean_time'
+  'iDbio3(iflx_Ver_DetF_DetB)'
+  'r3dvar'
+  1.0d0
+
+'Ver_DetF_Out'
+  'sinking-to-bottom flux from DetF to Out'
+  'mg C m^-2 d^-1'
+  'StatVar, scalar, series'
+  'ocean_time'
+  'iDbio3(iflx_Ver_DetF_Out)'
+  'r3dvar'
+  1.0d0
+
+'Ver_NCaO_DetBen'
+  'sinking-to-bottom flux from NCaO to DetBen'
+  'mg C m^-2 d^-1'
+  'StatVar, scalar, series'
+  'ocean_time'
+  'iDbio3(iflx_Ver_NCaO_DetB)'
+  'r3dvar'
+  1.0d0
+
+'Ver_NCaS_DetF'
+  'sinking-to-bottom flux from NCaS to DetF'
+  'mg C m^-2 d^-1'
+  'StatVar, scalar, series'
+  'ocean_time'
+  'iDbio3(iflx_Ver_NCaS_DetF)'
+  'r3dvar'
+  1.0d0
+
+'Ver_NCaS_DetBen'
+  'sinking-to-bottom flux from NCaS to DetBen'
+  'mg C m^-2 d^-1'
+  'StatVar, scalar, series'
+  'ocean_time'
+  'iDbio3(iflx_Ver_NCaS_DetB)'
+  'r3dvar'
+  1.0d0
+
+'Frz_PhL_IPhL'
+  'freezing(+)/melting(-) flux from PhL to IPhL'
+  'mg C m^-2 d^-1'
+  'StatVar, scalar, series'
+  'ocean_time'
+  'iDbio3(iflx_Frz_PhL_IPhL)'
+  'r3dvar'
+  1.0d0
+
+'Frz_NO3_INO3'
+  'freezing(+)/melting(-) flux from NO3 to INO3'
+  'mg C m^-2 d^-1'
+  'StatVar, scalar, series'
+  'ocean_time'
+  'iDbio3(iflx_Frz_NO3_INO3)'
+  'r3dvar'
+  1.0d0
+
+'Frz_NH4_INH4'
+  'freezing(+)/melting(-) flux from NH4 to INH4'
+  'mg C m^-2 d^-1'
+  'StatVar, scalar, series'
+  'ocean_time'
+  'iDbio3(iflx_Frz_NH4_INH4)'
+  'r3dvar'
+  1.0d0
+
+'prod_PhS'
+  'PhS net production rate'
+  'mg C m^-2 d^-1'
+  'StatVar, scalar, series'
+  'ocean_time'
+  'iDbio3(iprod_PhS)'
+  'r3dvar'
+  1.0d0
+
+'prod_PhL'
+  'PhL net primary production'
+  'mg C m^-3 d^-1'
+  'StatVar, scalar, series'
+  'ocean_time'
+  'iDbio3(iprod_PhL)'
+  'r3dvar'
+  1.0d0
+
+'prod_MZL'
+  'MZL net production rate'
+  'mg C m^-2 d^-1'
+  'StatVar, scalar, series'
+  'ocean_time'
+  'iDbio3(iprod_MZL)'
+  'r3dvar'
+  1.0d0
+
+'prod_Cop'
+  'Cop net production rate'
+  'mg C m^-2 d^-1'
+  'StatVar, scalar, series'
+  'ocean_time'
+  'iDbio3(iprod_Cop)'
+  'r3dvar'
+  1.0d0
+
+'prod_NCaS'
+  'NCaS net production rate'
+  'mg C m^-2 d^-1'
+  'StatVar, scalar, series'
+  'ocean_time'
+  'iDbio3(iprod_NCaS)'
+  'r3dvar'
+  1.0d0
+
+'prod_EupS'
+  'EupS net production rate'
+  'mg C m^-2 d^-1'
+  'StatVar, scalar, series'
+  'ocean_time'
+  'iDbio3(iprod_EupS)'
+  'r3dvar'
+  1.0d0
+
+'prod_NCaO'
+  'NCaO net production rate'
+  'mg C m^-2 d^-1'
+  'StatVar, scalar, series'
+  'ocean_time'
+  'iDbio3(iprod_NCaO)'
+  'r3dvar'
+  1.0d0
+
+'prod_EupO'
+  'EupO net production rate'
+  'mg C m^-2 d^-1'
+  'StatVar, scalar, series'
+  'ocean_time'
+  'iDbio3(iprod_EupO)'
+  'r3dvar'
+  1.0d0
+
+'prod_Jel'
+  'Jel net production rate'
+  'mg C m^-2 d^-1'
+  'StatVar, scalar, series'
+  'ocean_time'
+  'iDbio3(iprod_Jel)'
+  'r3dvar'
+  1.0d0
+
+'prod_Ben'
+  'Ben net production rate'
+  'mg C m^-2 d^-1'
+  'StatVar, scalar, series'
+  'ocean_time'
+  'iDbio3(iprod_Ben)'
+  'r3dvar'
+  1.0d0
+
+'prod_IcePhL'
+  'IcePhL net production rate'
+  'mg C m^-2 d^-1'
+  'StatVar, scalar, series'
+  'ocean_time'
+  'iDbio3(iprod_IcePhL)'
+  'r3dvar'
+  1.0d0
+
+'onExit_NO3'
+  'NO3 biomass tracker'
+  'mmol N m^-2'
+  'StatVar, scalar, series'
+  'ocean_time'
+  'iDbio3(ibiomem_NO3)'
+  'r3dvar'
+  1.0d0
+
+'onExit_NH4'
+  'NH4 biomass tracker'
+  'mmol N m^-2'
+  'StatVar, scalar, series'
+  'ocean_time'
+  'iDbio3(ibiomem_NH4)'
+  'r3dvar'
+  1.0d0
+
+'onExit_PhS'
+  'PhS biomass tracker'
+  'mgC m^-2'
+  'StatVar, scalar, series'
+  'ocean_time'
+  'iDbio3(ibiomem_PhS)'
+  'r3dvar'
+  1.0d0
+
+'onExit_PhL'
+  'PhL biomass tracker'
+  'mgC m^-2'
+  'StatVar, scalar, series'
+  'ocean_time'
+  'iDbio3(ibiomem_PhL)'
+  'r3dvar'
+  1.0d0
+
+'onExit_MZL'
+  'MZL biomass tracker'
+  'mgC m^-2'
+  'StatVar, scalar, series'
+  'ocean_time'
+  'iDbio3(ibiomem_MZL)'
+  'r3dvar'
+  1.0d0
+
+'onExit_Cop'
+  'Cop biomass tracker'
+  'mgC m^-2'
+  'StatVar, scalar, series'
+  'ocean_time'
+  'iDbio3(ibiomem_Cop)'
+  'r3dvar'
+  1.0d0
+
+'onExit_NCaS'
+  'NCaS biomass tracker'
+  'mgC m^-2'
+  'StatVar, scalar, series'
+  'ocean_time'
+  'iDbio3(ibiomem_NCaS)'
+  'r3dvar'
+  1.0d0
+
+'onExit_EupS'
+  'EupS biomass tracker'
+  'mgC m^-2'
+  'StatVar, scalar, series'
+  'ocean_time'
+  'iDbio3(ibiomem_EupS)'
+  'r3dvar'
+  1.0d0
+
+'onExit_NCaO'
+  'NCaO biomass tracker'
+  'mgC m^-2'
+  'StatVar, scalar, series'
+  'ocean_time'
+  'iDbio3(ibiomem_NCaO)'
+  'r3dvar'
+  1.0d0
+
+'onExit_EupO'
+  'EupO biomass tracker'
+  'mgC m^-2'
+  'StatVar, scalar, series'
+  'ocean_time'
+  'iDbio3(ibiomem_EupO)'
+  'r3dvar'
+  1.0d0
+
+'onExit_Det'
+  'Det biomass tracker'
+  'mgC m^-2'
+  'StatVar, scalar, series'
+  'ocean_time'
+  'iDbio3(ibiomem_Det)'
+  'r3dvar'
+  1.0d0
+
+'onExit_DetF'
+  'DetF biomass tracker'
+  'mgC m^-2'
+  'StatVar, scalar, series'
+  'ocean_time'
+  'iDbio3(ibiomem_DetF)'
+  'r3dvar'
+  1.0d0
+
+'onExit_Jel'
+  'Jel biomass tracker'
+  'mgC m^-2'
+  'StatVar, scalar, series'
+  'ocean_time'
+  'iDbio3(ibiomem_Jel)'
+  'r3dvar'
+  1.0d0
+
+'onExit_Fe'
+  'Fe biomass tracker'
+  'umolFe m^-2'
+  'StatVar, scalar, series'
+  'ocean_time'
+  'iDbio3(ibiomem_Fe)'
+  'r3dvar'
+  1.0d0
+
+'advdiff_NO3'
+  'NO3 rate of change due to advection and diffusion'
+  'mmol N m^-2 d^-1'
+  'StatVar, scalar, series'
+  'ocean_time'
+  'iDbio3(iflx_Adv_NO3)'
+  'r3dvar'
+  1.0d0
+
+'advdiff_NH4'
+  'NH4 rate of change due to advection and diffusion'
+  'mmol N m^-2 d^-1'
+  'StatVar, scalar, series'
+  'ocean_time'
+  'iDbio3(iflx_Adv_NH4)'
+  'r3dvar'
+  1.0d0
+
+'advdiff_PhS'
+  'PhS rate of change due to advection and diffusion'
+  'mgC m^-2 d^-1'
+  'StatVar, scalar, series'
+  'ocean_time'
+  'iDbio3(iflx_Adv_PhS)'
+  'r3dvar'
+  1.0d0
+
+'advdiff_PhL'
+  'PhL rate of change due to advection and diffusion'
+  'mgC m^-2 d^-1'
+  'StatVar, scalar, series'
+  'ocean_time'
+  'iDbio3(iflx_Adv_PhL)'
+  'r3dvar'
+  1.0d0
+
+'advdiff_MZL'
+  'MZL rate of change due to advection and diffusion'
+  'mgC m^-2 d^-1'
+  'StatVar, scalar, series'
+  'ocean_time'
+  'iDbio3(iflx_Adv_MZL)'
+  'r3dvar'
+  1.0d0
+
+'advdiff_Cop'
+  'Cop rate of change due to advection and diffusion'
+  'mgC m^-2 d^-1'
+  'StatVar, scalar, series'
+  'ocean_time'
+  'iDbio3(iflx_Adv_Cop)'
+  'r3dvar'
+  1.0d0
+
+'advdiff_NCaS'
+  'NCaS rate of change due to advection and diffusion'
+  'mgC m^-2 d^-1'
+  'StatVar, scalar, series'
+  'ocean_time'
+  'iDbio3(iflx_Adv_NCaS)'
+  'r3dvar'
+  1.0d0
+
+'advdiff_EupS'
+  'EupS rate of change due to advection and diffusion'
+  'mgC m^-2 d^-1'
+  'StatVar, scalar, series'
+  'ocean_time'
+  'iDbio3(iflx_Adv_EupS)'
+  'r3dvar'
+  1.0d0
+
+'advdiff_NCaO'
+  'NCaO rate of change due to advection and diffusion'
+  'mgC m^-2 d^-1'
+  'StatVar, scalar, series'
+  'ocean_time'
+  'iDbio3(iflx_Adv_NCaO)'
+  'r3dvar'
+  1.0d0
+
+'advdiff_EupO'
+  'EupO rate of change due to advection and diffusion'
+  'mgC m^-2 d^-1'
+  'StatVar, scalar, series'
+  'ocean_time'
+  'iDbio3(iflx_Adv_EupO)'
+  'r3dvar'
+  1.0d0
+
+'advdiff_Det'
+  'Det rate of change due to advection and diffusion'
+  'mgC m^-2 d^-1'
+  'StatVar, scalar, series'
+  'ocean_time'
+  'iDbio3(iflx_Adv_Det)'
+  'r3dvar'
+  1.0d0
+
+'advdiff_DetF'
+  'DetF rate of change due to advection and diffusion'
+  'mgC m^-2 d^-1'
+  'StatVar, scalar, series'
+  'ocean_time'
+  'iDbio3(iflx_Adv_DetF)'
+  'r3dvar'
+  1.0d0
+
+'advdiff_Jel'
+  'Jel rate of change due to advection and diffusion'
+  'mgC m^-2 d^-1'
+  'StatVar, scalar, series'
+  'ocean_time'
+  'iDbio3(iflx_Adv_Jel)'
+  'r3dvar'
+  1.0d0
+
+'advdiff_Fe'
+  'Fe rate of change due to advection and diffusion'
+  'umolFe m^-2 d^-1'
+  'StatVar, scalar, series'
+  'ocean_time'
+  'iDbio3(iflx_Adv_Fe)'
+  'r3dvar'
+  1.0d0
+
+'PAR'
+  'Photosynthetically active radiation'
+  'W m^-2'
+  'StatVar, scalar, series'
+  'ocean_time'
+  'iDbio3(ipar)'
+  'r3dvar'
+  1.0d0
+
+'P_Production'
+  'Cumulative gross primary production'
+  'mg C m^-2 d-1'
+  'StatVar, scalar, series'
+  'ocean_time'
+  'iDbio3(itotprod)'
+  'r3dvar'
+  1.0d0
+
+'Respiration'
+  'Cumulative respiration'
+  'mg C m^-2 d^-1'
+  'StatVar, scalar, series'
+  'ocean_time'
+  'iDbio3(itotresp)'
+  'r3dvar'
+  1.0d0
+
+'Remineralization'
+  'Cumulative remineralization'
+  'mg C m^-2 d^-1'
+  'StatVar, scalar, series'
+  'ocean_time'
+  'iDbio3(itotrem)'
+  'r3dvar'
+  1.0d0
+
+'ice_Alk_flux'
+  'Sea-ice alklinity exchange'
+  'mmol C m^-2 d^-1'
+  'StatVar, scalar, series'
+  'ocean_time'
+  'iDbio3(iflx_Frz_Alk)'
+  'r3dvar'
+  1.0d0
+
+'ice_TIC_flux'
+  'Sea-ice TIC exchange'
+  'mmol C m^-2 d^-1'
+  'StatVar, scalar, series'
+  'oean_time'
+  'iDbio3(iflx_Frz_TIC)'
+  'r3dvar'
+  1.0d0
+
+'onExit_TIC'
+  'TIC biomass tracker'
+  'mmol C m^-2'
+  'StatVar, scalar, series'
+  'oean_time'
+  'iDbio3(ibiomem_TIC)'
+  'r3dvar'
+  1.0d0
+
+'onExit_Alk'
+  'alkalinity biomass tracker'
+  'mmol C m^-2'
+  'StatVar, scalar, series'
+  'oean_time'
+  'iDbio3(ibiomem_Alk)'
+  'r3dvar'
+  1.0d0
+
+'onExit_oxygen'
+  'oxygen biomass tracker'
+  'mmol O m^-2'
+  'StatVar, scalar, series'
+  'oean_time'
+  'iDbio3(ibiomem_Oxyg)'
+  'r3dvar'
+  1.0d0
+
+'advdiff_TIC'
+  'TIC rate of change due to advection and diffusion'
+  'mmol C m^-2 d^-1'
+  'StatVar, scalar, series'
+  'oean_time'
+  'iDbio3(iflx_Adv_TIC)'
+  'r3dvar'
+  1.0d0
+
+'advdiff_alkalinity'
+  'alkalinity rate of change due to advection and diffusion'
+  'mmol C m^-2 d^-1'
+  'StatVar, scalar, series'
+  'oean_time'
+  'iDbio3(iflx_Adv_Alk)'
+  'r3dvar'
+  1.0d0
+
+'advdiff_oxygen'
+  'oxygen rate of change due to advection and diffusion'
+  'mmol O m^-2 d^-1'
+  'StatVar, scalar, series'
+  'oean_time'
+  'iDbio3(iflx_Adv_Oxyg)'
+  'r3dvar'
+  1.0d0
+
+'CO2_airsea'
+  'CO2 air-sea flux'
+  'mmol C m^-2 d^-1'
+  'StatVar scalar series'
+  'ocean_time'
+  'iDbio2(ico2flx)'
+  'r2dvar'
+  1.0d0
+
+'pCO2'
+  'partial pressure of CO2'
+  'uatm'
+  'StatVar scalar series'
+  'ocean_time'
+  'iDbio2(ipco2)'
+  'r2dvar'
+  1.0d0
+
+'O2_airsea'
+  'O2 air-sea flux'
+  'mmol O m^-2 d^-1'
+  'StatVar scalar series'
+  'ocean_time'
+  'iDbio2(io2flx)'
+  'r2dvar'
+  1.0d0
 
 'ones_east'
-  'Large Phytoplankton Nitrogen eastern boundary condition'
-  'mol/kg'
-  'nlg_east, scalar, series'
-  'ocean_time'
-  'idTbry(ieast,inlg)'
+  'Small microzooplankton concentration eastern boundary condition'
+  'mg C m^-3'
+  'MZS_east, scalar, series'
+  'bio_time'
+  'idTbry(ieast,iMZS)'
   'nulvar'
-  1.0d-19
-
-'ones_east'
-  'Diazotroph Nitrogen eastern boundary condition'
-  'mol/kg'
-  'ndi_east, scalar, series'
-  'ocean_time'
-  'idTbry(ieast,indi)'
-  'nulvar'
-  1.0d-19
-
-'ones_east'
-  'Small Zooplankton Nitrogen eastern boundary condition'
-  'mol/kg'
-  'nsmz_east, scalar, series'
-  'ocean_time'
-  'idTbry(ieast,insmz)'
-  'nulvar'
-  1.0d-19
-
-'ones_east'
-  'Medium-sized zooplankton Nitrogen eastern boundary condition'
-  'mol/kg'
-  'nmdz_east, scalar, series'
-  'ocean_time'
-  'idTbry(ieast,inmdz)'
-  'nulvar'
-  1.0d-19
-
-'ones_east'
-  'large Zooplankton Nitrogen eastern boundary condition'
-  'mol/kg'
-  'nlgz_east, scalar, series'
-  'ocean_time'
-  'idTbry(ieast,inlgz)'
-  'nulvar'
-  1.0d-19
-
-'ones_east'
-  'labile DON eastern boundary condition'
-  'mol/kg'
-  'ldon_east, scalar, series'
-  'ocean_time'
-  'idTbry(ieast,ildon)'
-  'nulvar'
-  1.0d-19
-
-'ones_east'
-  'Semilabile DON eastern boundary condition'
-  'mol/kg'
-  'sldon_east, scalar, series'
-  'ocean_time'
-  'idTbry(ieast,isldon)'
-  'nulvar'
-  1.0d-19
-
-'ones_east'
-  'Semi-Refractory DON eastern boundary condition'
-  'mol/kg'
-  'srdon_east, scalar, series'
-  'ocean_time'
-  'idTbry(ieast,isrdon)'
-  'nulvar'
-  1.0d-19
-
-'ones_east'
-  'bacterial eastern boundary condition'
-  'mol/kg'
-  'nbact_east, scalar, series'
-  'ocean_time'
-  'idTbry(ieast,inbact)'
-  'nulvar'
-  1.0d-19
-
-'NH4_east'
-  'Ammonia eastern boundary condition'
-  'mol/kg'
-  'nh4_east, scalar, series'
-  'ocean_time'
-  'idTbry(ieast,inh4)'
-  'nulvar'
-  1.0d-6
-
-'NO3_east'
-  'Nitrate eastern boundary condition'
-  'mol/kg'
-  'no3_east, scalar, series'
-  'ocean_time'
-  'idTbry(ieast,ino3)'
-  'nulvar'
-  1.0d-6
-
-'ones_east'
-  'ndet eastern boundary condition'
-  'mol/kg'
-  'ndet_east, scalar, series'
-  'ocean_time'
-  'idTbry(ieast,indet)'
-  'nulvar'
-  1.0d-19
+  0.0d0
 
 'ones_north'
-  'Small Phytoplankton Nitrogen northern boundary condition'
-  'mol/kg'
-  'nsm_north, scalar, series'
-  'ocean_time'
-  'idTbry(inorth,insm)'
+  'Small microzooplankton concentration northern boundary condition'
+  'mg C m^-3'
+  'MZS_north, scalar, series'
+  'bio_time'
+  'idTbry(inorth,iMZS)'
   'nulvar'
-  1.0d-19
-
-'ones_north'
-  'Large Phytoplankton Nitrogen northern boundary condition'
-  'mol/kg'
-  'nlg_north, scalar, series'
-  'ocean_time'
-  'idTbry(inorth,inlg)'
-  'nulvar'
-  1.0d-19
-
-'ones_north'
-  'Diazotroph Nitrogen northern boundary condition'
-  'mol/kg'
-  'ndi_north, scalar, series'
-  'ocean_time'
-  'idTbry(inorth,indi)'
-  'nulvar'
-  1.0d-19
-
-'ones_north'
-  'Small Zooplankton Nitrogen northern boundary condition'
-  'mol/kg'
-  'nsmz_north, scalar, series'
-  'ocean_time'
-  'idTbry(inorth,insmz)'
-  'nulvar'
-  1.0d-19
-
-'ones_north'
-  'Medium-sized zooplankton Nitrogen northern boundary condition'
-  'mol/kg'
-  'nmdz_north, scalar, series'
-  'ocean_time'
-  'idTbry(inorth,inmdz)'
-  'nulvar'
-  1.0d-19
-
-'ones_north'
-  'large Zooplankton Nitrogen northern boundary condition'
-  'mol/kg'
-  'nlgz_north, scalar, series'
-  'ocean_time'
-  'idTbry(inorth,inlgz)'
-  'nulvar'
-  1.0d-19
-
-'ones_north'
-  'labile DON northern boundary condition'
-  'mol/kg'
-  'ldon_north, scalar, series'
-  'ocean_time'
-  'idTbry(inorth,ildon)'
-  'nulvar'
-  1.0d-19
-
-'ones_north'
-  'Semilabile DON northern boundary condition'
-  'mol/kg'
-  'sldon_north, scalar, series'
-  'ocean_time'
-  'idTbry(inorth,isldon)'
-  'nulvar'
-  1.0d-19
-
-'ones_north'
-  'Semi-Refractory DON northern boundary condition'
-  'mol/kg'
-  'srdon_north, scalar, series'
-  'ocean_time'
-  'idTbry(inorth,isrdon)'
-  'nulvar'
-  1.0d-19
-
-'ones_north'
-  'bacterial northern boundary condition'
-  'mol/kg'
-  'nbact_north, scalar, series'
-  'ocean_time'
-  'idTbry(inorth,inbact)'
-  'nulvar'
-  1.0d-19
-
-'NH4_north'
-  'Ammonia northern boundary condition'
-  'mol/kg'
-  'nh4_north, scalar, series'
-  'ocean_time'
-  'idTbry(inorth,inh4)'
-  'nulvar'
-  1.0d-6
-
-'NO3_north'
-  'Nitrate northern boundary condition'
-  'mol/kg'
-  'no3_north, scalar, series'
-  'ocean_time'
-  'idTbry(inorth,ino3)'
-  'nulvar'
-  1.0d-6
-
-'ones_north'
-  'ndet northern boundary condition'
-  'mol/kg'
-  'ndet_north, scalar, series'
-  'ocean_time'
-  'idTbry(inorth,indet)'
-  'nulvar'
-  1.0d-19
+  0.0d0
 
 'ones_south'
-  'Small Phytoplankton Nitrogen southern boundary condition'
-  'mol/kg'
-  'nsm_south, scalar, series'
-  'ocean_time'
-  'idTbry(isouth,insm)'
+  'Small microzooplankton concentration southern boundary condition'
+  'mg C m^-3'
+  'MZS_south, scalar, series'
+  'bio_time'
+  'idTbry(isouth,iMZS)'
   'nulvar'
-  1.0d-19
-
-'ones_south'
-  'Large Phytoplankton Nitrogen southern boundary condition'
-  'mol/kg'
-  'nlg_south, scalar, series'
-  'ocean_time'
-  'idTbry(isouth,inlg)'
-  'nulvar'
-  1.0d-19
-
-'ones_south'
-  'Diazotroph Nitrogen southern boundary condition'
-  'mol/kg'
-  'ndi_south, scalar, series'
-  'ocean_time'
-  'idTbry(isouth,indi)'
-  'nulvar'
-  1.0d-19
-
-'ones_south'
-  'Small Zooplankton Nitrogen southern boundary condition'
-  'mol/kg'
-  'nsmz_south, scalar, series'
-  'ocean_time'
-  'idTbry(isouth,insmz)'
-  'nulvar'
-  1.0d-19
-
-'ones_south'
-  'Medium-sized zooplankton Nitrogen southern boundary condition'
-  'mol/kg'
-  'nmdz_south, scalar, series'
-  'ocean_time'
-  'idTbry(isouth,inmdz)'
-  'nulvar'
-  1.0d-19
-
-'ones_south'
-  'large Zooplankton Nitrogen southern boundary condition'
-  'mol/kg'
-  'nlgz_south, scalar, series'
-  'ocean_time'
-  'idTbry(isouth,inlgz)'
-  'nulvar'
-  1.0d-19
-
-'ones_south'
-  'labile DON southern boundary condition'
-  'mol/kg'
-  'ldon_south, scalar, series'
-  'ocean_time'
-  'idTbry(isouth,ildon)'
-  'nulvar'
-  1.0d-19
-
-'ones_south'
-  'Semilabile DON southern boundary condition'
-  'mol/kg'
-  'sldon_south, scalar, series'
-  'ocean_time'
-  'idTbry(isouth,isldon)'
-  'nulvar'
-  1.0d-19
-
-'ones_south'
-  'Semi-Refractory DON southern boundary condition'
-  'mol/kg'
-  'srdon_south, scalar, series'
-  'ocean_time'
-  'idTbry(isouth,isrdon)'
-  'nulvar'
-  1.0d-19
-
-'ones_south'
-  'bacterial southern boundary condition'
-  'mol/kg'
-  'nbact_south, scalar, series'
-  'ocean_time'
-  'idTbry(isouth,inbact)'
-  'nulvar'
-  1.0d-19
-
-'NH4_south'
-  'Ammonia southern boundary condition'
-  'mol/kg'
-  'nh4_south, scalar, series'
-  'ocean_time'
-  'idTbry(isouth,inh4)'
-  'nulvar'
-  1.0d-6
-
-'NO3_south'
-  'Nitrate southern boundary condition'
-  'mol/kg'
-  'no3_south, scalar, series'
-  'ocean_time'
-  'idTbry(isouth,ino3)'
-  'nulvar'
-  1.0d-6
-
-'ones_south'
-  'ndet southern boundary condition'
-  'mol/kg'
-  'ndet_south, scalar, series'
-  'ocean_time'
-  'idTbry(isouth,indet)'
-  'nulvar'
-  1.0d-19
+  0.0d0
 
 'ones_west'
-  'Small Phytoplankton Nitrogen western boundary condition'
-  'mol/kg'
-  'nsm_west, scalar, series'
-  'ocean_time'
-  'idTbry(iwest,insm)'
+  'Small microzooplankton concentration western boundary condition'
+  'mg C m^-3'
+  'MZS_west, scalar, series'
+  'bio_time'
+  'idTbry(iwest,iMZS)'
   'nulvar'
-  1.0d-19
-
-'ones_west'
-  'Large Phytoplankton Nitrogen western boundary condition'
-  'mol/kg'
-  'nlg_west, scalar, series'
-  'ocean_time'
-  'idTbry(iwest,inlg)'
-  'nulvar'
-  1.0d-19
-
-'ones_west'
-  'Diazotroph Nitrogen western boundary condition'
-  'mol/kg'
-  'ndi_west, scalar, series'
-  'ocean_time'
-  'idTbry(iwest,indi)'
-  'nulvar'
-  1.0d-19
-
-'ones_west'
-  'Small Zooplankton Nitrogen western boundary condition'
-  'mol/kg'
-  'nsmz_west, scalar, series'
-  'ocean_time'
-  'idTbry(iwest,insmz)'
-  'nulvar'
-  1.0d-19
-
-'ones_west'
-  'Medium-sized zooplankton Nitrogen western boundary condition'
-  'mol/kg'
-  'nmdz_west, scalar, series'
-  'ocean_time'
-  'idTbry(iwest,inmdz)'
-  'nulvar'
-  1.0d-19
-
-'ones_west'
-  'large Zooplankton Nitrogen western boundary condition'
-  'mol/kg'
-  'nlgz_west, scalar, series'
-  'ocean_time'
-  'idTbry(iwest,inlgz)'
-  'nulvar'
-  1.0d-19
-
-'ones_west'
-  'labile DON western boundary condition'
-  'mol/kg'
-  'ldon_west, scalar, series'
-  'ocean_time'
-  'idTbry(iwest,ildon)'
-  'nulvar'
-  1.0d-19
-
-'ones_west'
-  'Semilabile DON western boundary condition'
-  'mol/kg'
-  'sldon_west, scalar, series'
-  'ocean_time'
-  'idTbry(iwest,isldon)'
-  'nulvar'
-  1.0d-19
-
-'ones_west'
-  'Semi-Refractory DON western boundary condition'
-  'mol/kg'
-  'srdon_west, scalar, series'
-  'ocean_time'
-  'idTbry(iwest,isrdon)'
-  'nulvar'
-  1.0d-19
-
-'ones_west'
-  'bacterial western boundary condition'
-  'mol/kg'
-  'nbact_west, scalar, series'
-  'ocean_time'
-  'idTbry(iwest,inbact)'
-  'nulvar'
-  1.0d-19
-
-'NH4_west'
-  'Ammonia western boundary condition'
-  'mol/kg'
-  'nh4_west, scalar, series'
-  'ocean_time'
-  'idTbry(iwest,inh4)'
-  'nulvar'
-  1.0d-6
-
-'NO3_west'
-  'Nitrate western boundary condition'
-  'mol/kg'
-  'no3_west, scalar, series'
-  'ocean_time'
-  'idTbry(iwest,ino3)'
-  'nulvar'
-  1.0d-6
-
-'ones_west'
-  'ndet western boundary condition'
-  'mol/kg'
-  'ndet_west, scalar, series'
-  'ocean_time'
-  'idTbry(iwest,indet)'
-  'nulvar'
-  1.0d-19
-
-'SiO4_east'
-  'Silicate eastern boundary condition'
-  'mol/kg'
-  'sio4_east, scalar, series'
-  'ocean_time'
-  'idTbry(ieast,isio4)'
-  'nulvar'
-  1.0d-6
+  0.0d0
 
 'ones_east'
-  'Large Phytoplankton Silicon eastern boundary condition'
-  'mol/kg'
-  'silg_east, scalar, series'
-  'ocean_time'
-  'idTbry(ieast,isilg)'
+  'Small copepod concentration eastern boundary condition'
+  'mg C m^-3'
+  'Cop_east, scalar, series'
+  'bio_time'
+  'idTbry(ieast,iCop)'
   'nulvar'
-  1.0d-19
+  1.0d-16
 
 'ones_east'
-  'Detrital Silicon eastern boundary condition'
-  'mol/kg'
-  'sidet_east, scalar, series'
-  'ocean_time'
-  'idTbry(ieast,isidet)'
+  'Slow-sinking detritus concetration eastern boundary condition'
+  'mg C m^-3'
+  'Det_east, scalar, series'
+  'bio_time'
+  'idTbry(ieast,iDet)'
   'nulvar'
-  1.0d-19
+  0.0d0
 
 'ones_east'
-  'Detrital CaCO3 eastern boundary condition'
-  'mol/kg'
-  'cadet_calc_east, scalar, series'
-  'ocean_time'
-  'idTbry(ieast,icadet_calc)'
+  'Fast-sinking detritus concentration eastern boundary condition'
+  'mg C m^-3'
+  'DetF_east, scalar, series'
+  'bio_time'
+  'idTbry(ieast,iDetF)'
   'nulvar'
-  1.0d-19
+  0.0d0
 
 'ones_east'
-  'Detrital CaCO3 eastern boundary condition'
-  'mol/kg'
-  'cadet_arag_east, scalar, series'
-  'ocean_time'
-  'idTbry(ieast,icadet_arag)'
+  'Offshore euphausiid concentration eastern boundary condition'
+  'mg C m^-3'
+  'EupO_east, scalar, series'
+  'bio_time'
+  'idTbry(ieast,iEupO)'
   'nulvar'
-  1.0d-19
+  1.0d-16
 
 'ones_east'
-  'Lithogenic Aluminosilicate eastern boundary condition'
-  'g/kg'
-  'lith_east, scalar, series'
-  'ocean_time'
-  'idTbry(ieast,ilith)'
+  'On-shelf euphausiid concentration eastern boundary condition'
+  'mg C m^-3'
+  'EupS_east, scalar, series'
+  'bio_time'
+  'idTbry(ieast,iEupS)'
   'nulvar'
-  1.0d-19
+  1.0d-16
 
 'ones_east'
-  'lithdet eastern boundary condition'
-  'g/kg'
-  'lithdet_east, scalar, series'
-  'ocean_time'
-  'idTbry(ieast,ilithdet)'
+  'Jellyfish concentration eastern boundary condition'
+  'mg C m^-3'
+  'Jel_east, scalar, series'
+  'bio_time'
+  'idTbry(ieast,iJel)'
   'nulvar'
-  1.0d-19
+  1.0d-16
 
-'SiO4_north'
-  'Silicate northern boundary condition'
-  'mol/kg'
-  'sio4_north, scalar, series'
-  'ocean_time'
-  'idTbry(inorth,isio4)'
+'ones_east'
+  'Microzooplankton concentration eastern boundary condition'
+  'mg C m^-3'
+  'MZL_east, scalar, series'
+  'bio_time'
+  'idTbry(ieast,iMZL)'
   'nulvar'
-  1.0d-6
+  1.0d-16
+
+'ones_east'
+  'Offshore large copepod concentration eastern boundary condition'
+  'mg C m^-3'
+  'NCaO_east, scalar, series'
+  'bio_time'
+  'idTbry(ieast,iNCaO)'
+  'nulvar'
+  1.0d-16
+
+'ones_east'
+  'On-shelf large copepod concentration eastern boundary condition'
+  'mg C m^-3'
+  'NCaS_east, scalar, series'
+  'bio_time'
+  'idTbry(ieast,iNCaS)'
+  'nulvar'
+  1.0d-16
+
+'ones_east'
+  'Large phytoplankton concentration eastern boundary condition'
+  'mg C m^-3'
+  'PhL_east, scalar, series'
+  'bio_time'
+  'idTbry(ieast,iPhL)'
+  'nulvar'
+  1.0d-16
+
+'ones_east'
+  'Small phytoplankton concentration eastern boundary condition'
+  'mg C m^-3'
+  'PhS_east, scalar, series'
+  'bio_time'
+  'idTbry(ieast,iPhS)'
+  'nulvar'
+  1.0d-16
 
 'ones_north'
-  'Large Phytoplankton Silicon northern boundary condition'
-  'mol/kg'
-  'silg_north, scalar, series'
-  'ocean_time'
-  'idTbry(inorth,isilg)'
+  'Small copepod concentration northern boundary condition'
+  'mg C m^-3'
+  'Cop_north, scalar, series'
+  'bio_time'
+  'idTbry(inorth,iCop)'
   'nulvar'
-  1.0d-19
+  1.0d-16
 
 'ones_north'
-  'Detrital Silicon northern boundary condition'
-  'mol/kg'
-  'sidet_north, scalar, series'
-  'ocean_time'
-  'idTbry(inorth,isidet)'
+  'Slow-sinking detritus concetration northern boundary condition'
+  'mg C m^-3'
+  'Det_north, scalar, series'
+  'bio_time'
+  'idTbry(inorth,iDet)'
   'nulvar'
-  1.0d-19
+  0.0d0
 
 'ones_north'
-  'Detrital CaCO3 northern boundary condition'
-  'mol/kg'
-  'cadet_calc_north, scalar, series'
-  'ocean_time'
-  'idTbry(inorth,icadet_calc)'
+  'Fast-sinking detritus concentration northern boundary condition'
+  'mg C m^-3'
+  'DetF_north, scalar, series'
+  'bio_time'
+  'idTbry(inorth,iDetF)'
   'nulvar'
-  1.0d-19
+  0.0d0
 
 'ones_north'
-  'Detrital CaCO3 northern boundary condition'
-  'mol/kg'
-  'cadet_arag_north, scalar, series'
-  'ocean_time'
-  'idTbry(inorth,icadet_arag)'
+  'Offshore euphausiid concentration northern boundary condition'
+  'mg C m^-3'
+  'EupO_north, scalar, series'
+  'bio_time'
+  'idTbry(inorth,iEupO)'
   'nulvar'
-  1.0d-19
+  1.0d-16
 
 'ones_north'
-  'Lithogenic Aluminosilicate northern boundary condition'
-  'g/kg'
-  'lith_north, scalar, series'
-  'ocean_time'
-  'idTbry(inorth,ilith)'
+  'On-shelf euphausiid concentration northern boundary condition'
+  'mg C m^-3'
+  'EupS_north, scalar, series'
+  'bio_time'
+  'idTbry(inorth,iEupS)'
   'nulvar'
-  1.0d-19
+  1.0d-16
 
 'ones_north'
-  'lithdet northern boundary condition'
-  'g/kg'
-  'lithdet_north, scalar, series'
-  'ocean_time'
-  'idTbry(inorth,ilithdet)'
+  'Jellyfish concentration northern boundary condition'
+  'mg C m^-3'
+  'Jel_north, scalar, series'
+  'bio_time'
+  'idTbry(inorth,iJel)'
   'nulvar'
-  1.0d-19
-
-'SiO4_south'
-  'Silicate southern boundary condition'
-  'mol/kg'
-  'sio4_south, scalar, series'
-  'ocean_time'
-  'idTbry(isouth,isio4)'
-  'nulvar'
-  1.0d-6
-
-'ones_south'
-  'Large Phytoplankton Silicon southern boundary condition'
-  'mol/kg'
-  'silg_south, scalar, series'
-  'ocean_time'
-  'idTbry(isouth,isilg)'
-  'nulvar'
-  1.0d-19
-
-'ones_south'
-  'Detrital Silicon southern boundary condition'
-  'mol/kg'
-  'sidet_south, scalar, series'
-  'ocean_time'
-  'idTbry(isouth,isidet)'
-  'nulvar'
-  1.0d-19
-
-'ones_south'
-  'Detrital CaCO3 southern boundary condition'
-  'mol/kg'
-  'cadet_calc_south, scalar, series'
-  'ocean_time'
-  'idTbry(isouth,icadet_calc)'
-  'nulvar'
-  1.0d-19
-
-'ones_south'
-  'Detrital CaCO3 southern boundary condition'
-  'mol/kg'
-  'cadet_arag_south, scalar, series'
-  'ocean_time'
-  'idTbry(isouth,icadet_arag)'
-  'nulvar'
-  1.0d-19
-
-'ones_south'
-  'Lithogenic Aluminosilicate southern boundary condition'
-  'g/kg'
-  'lith_south, scalar, series'
-  'ocean_time'
-  'idTbry(isouth,ilith)'
-  'nulvar'
-  1.0d-19
-
-'ones_south'
-  'lithdet southern boundary condition'
-  'g/kg'
-  'lithdet_south, scalar, series'
-  'ocean_time'
-  'idTbry(isouth,ilithdet)'
-  'nulvar'
-  1.0d-19
-
-'SiO4_west'
-  'Silicate western boundary condition'
-  'mol/kg'
-  'sio4_west, scalar, series'
-  'ocean_time'
-  'idTbry(iwest,isio4)'
-  'nulvar'
-  1.0d-6
-
-'ones_west'
-  'Large Phytoplankton Silicon western boundary condition'
-  'mol/kg'
-  'silg_west, scalar, series'
-  'ocean_time'
-  'idTbry(iwest,isilg)'
-  'nulvar'
-  1.0d-19
-
-'ones_west'
-  'Detrital Silicon western boundary condition'
-  'mol/kg'
-  'sidet_west, scalar, series'
-  'ocean_time'
-  'idTbry(iwest,isidet)'
-  'nulvar'
-  1.0d-19
-
-'ones_west'
-  'Detrital CaCO3 western boundary condition'
-  'mol/kg'
-  'cadet_calc_west, scalar, series'
-  'ocean_time'
-  'idTbry(iwest,icadet_calc)'
-  'nulvar'
-  1.0d-19
-
-'ones_west'
-  'Detrital CaCO3 western boundary condition'
-  'mol/kg'
-  'cadet_arag_west, scalar, series'
-  'ocean_time'
-  'idTbry(iwest,icadet_arag)'
-  'nulvar'
-  1.0d-19
-
-'ones_west'
-  'Lithogenic Aluminosilicate western boundary condition'
-  'g/kg'
-  'lith_west, scalar, series'
-  'ocean_time'
-  'idTbry(iwest,ilith)'
-  'nulvar'
-  1.0d-19
-
-'ones_west'
-  'lithdet western boundary condition'
-  'g/kg'
-  'lithdet_west, scalar, series'
-  'ocean_time'
-  'idTbry(iwest,ilithdet)'
-  'nulvar'
-  1.0d-19
-
-'PO4_east'
-  'Phosphate eastern boundary condition'
-  'mol/kg'
-  'po4_east, scalar, series'
-  'ocean_time'
-  'idTbry(ieast,ipo4)'
-  'nulvar'
-  1.0d-6
-
-'PO4_north'
-  'Phosphate northern boundary condition'
-  'mol/kg'
-  'po4_north, scalar, series'
-  'ocean_time'
-  'idTbry(inorth,ipo4)'
-  'nulvar'
-  1.0d-6
-
-'PO4_south'
-  'Phosphate southern boundary condition'
-  'mol/kg'
-  'po4_south, scalar, series'
-  'ocean_time'
-  'idTbry(isouth,ipo4)'
-  'nulvar'
-  1.0d-6
-
-'PO4_west'
-  'Phosphate western boundary condition'
-  'mol/kg'
-  'po4_west, scalar, series'
-  'ocean_time'
-  'idTbry(iwest,ipo4)'
-  'nulvar'
-  1.0d-6
-
-'ones_east'
-  'labile DOP eastern boundary condition'
-  'mol/kg'
-  'ldop_east, scalar, series'
-  'ocean_time'
-  'idTbry(ieast,ildop)'
-  'nulvar'
-  1.0d-19
-
-'ones_east'
-  'Semilabile DOP eastern boundary condition'
-  'mol/kg'
-  'sldop_east, scalar, series'
-  'ocean_time'
-  'idTbry(ieast,isldop)'
-  'nulvar'
-  1.0d-19
-
-'ones_east'
-  'Semi-Refractory DOP eastern boundary condition'
-  'mol/kg'
-  'srdop_east, scalar, series'
-  'ocean_time'
-  'idTbry(ieast,isrdop)'
-  'nulvar'
-  1.0d-19
-
-'ones_east'
-  'Detrital Phosphorus eastern boundary condition'
-  'mol/kg'
-  'pdet_east, scalar, series'
-  'ocean_time'
-  'idTbry(ieast,ipdet)'
-  'nulvar'
-  1.0d-19
+  1.0d-16
 
 'ones_north'
-  'labile DOP northern boundary condition'
-  'mol/kg'
-  'ldop_north, scalar, series'
-  'ocean_time'
-  'idTbry(inorth,ildop)'
+  'Microzooplankton concentration northern boundary condition'
+  'mg C m^-3'
+  'MZL_north, scalar, series'
+  'bio_time'
+  'idTbry(inorth,iMZL)'
   'nulvar'
-  1.0d-19
+  1.0d-16
 
 'ones_north'
-  'Semilabile DOP northern boundary condition'
-  'mol/kg'
-  'sldop_north, scalar, series'
-  'ocean_time'
-  'idTbry(inorth,isldop)'
+  'Offshore large copepod concentration northern boundary condition'
+  'mg C m^-3'
+  'NCaO_north, scalar, series'
+  'bio_time'
+  'idTbry(inorth,iNCaO)'
   'nulvar'
-  1.0d-19
+  1.0d-16
 
 'ones_north'
-  'Semi-Refractory DOP northern boundary condition'
-  'mol/kg'
-  'srdop_north, scalar, series'
-  'ocean_time'
-  'idTbry(inorth,isrdop)'
+  'On-shelf large copepod concentration northern boundary condition'
+  'mg C m^-3'
+  'NCaS_north, scalar, series'
+  'bio_time'
+  'idTbry(inorth,iNCaS)'
   'nulvar'
-  1.0d-19
+  1.0d-16
 
 'ones_north'
-  'Detrital Phosphorus northern boundary condition'
-  'mol/kg'
-  'pdet_north, scalar, series'
-  'ocean_time'
-  'idTbry(inorth,ipdet)'
+  'Large phytoplankton concentration northern boundary condition'
+  'mg C m^-3'
+  'PhL_north, scalar, series'
+  'bio_time'
+  'idTbry(inorth,iPhL)'
   'nulvar'
-  1.0d-19
+  1.0d-16
+
+'ones_north'
+  'Small phytoplankton concentration northern boundary condition'
+  'mg C m^-3'
+  'PhS_north, scalar, series'
+  'bio_time'
+  'idTbry(inorth,iPhS)'
+  'nulvar'
+  1.0d-16
 
 'ones_south'
-  'labile DOP southern boundary condition'
-  'mol/kg'
-  'ldop_south, scalar, series'
-  'ocean_time'
-  'idTbry(isouth,ildop)'
+  'Small copepod concentration southern boundary condition'
+  'mg C m^-3'
+  'Cop_south, scalar, series'
+  'bio_time'
+  'idTbry(isouth,iCop)'
   'nulvar'
-  1.0d-19
+  1.0d-16
 
 'ones_south'
-  'Semilabile DOP southern boundary condition'
-  'mol/kg'
-  'sldop_south, scalar, series'
-  'ocean_time'
-  'idTbry(isouth,isldop)'
+  'Slow-sinking detritus concetration southern boundary condition'
+  'mg C m^-3'
+  'Det_south, scalar, series'
+  'bio_time'
+  'idTbry(isouth,iDet)'
   'nulvar'
-  1.0d-19
+  0.0d0
 
 'ones_south'
-  'Semi-Refractory DOP southern boundary condition'
-  'mol/kg'
-  'srdop_south, scalar, series'
-  'ocean_time'
-  'idTbry(isouth,isrdop)'
+  'Fast-sinking detritus concentration southern boundary condition'
+  'mg C m^-3'
+  'DetF_south, scalar, series'
+  'bio_time'
+  'idTbry(isouth,iDetF)'
   'nulvar'
-  1.0d-19
+  0.0d0
 
 'ones_south'
-  'Detrital Phosphorus southern boundary condition'
-  'mol/kg'
-  'pdet_south, scalar, series'
-  'ocean_time'
-  'idTbry(isouth,ipdet)'
+  'Offshore euphausiid concentration southern boundary condition'
+  'mg C m^-3'
+  'EupO_south, scalar, series'
+  'bio_time'
+  'idTbry(isouth,iEupO)'
   'nulvar'
-  1.0d-19
+  1.0d-16
+
+'ones_south'
+  'On-shelf euphausiid concentration southern boundary condition'
+  'mg C m^-3'
+  'EupS_south, scalar, series'
+  'bio_time'
+  'idTbry(isouth,iEupS)'
+  'nulvar'
+  1.0d-16
+
+'ones_south'
+  'Jellyfish concentration southern boundary condition'
+  'mg C m^-3'
+  'Jel_south, scalar, series'
+  'bio_time'
+  'idTbry(isouth,iJel)'
+  'nulvar'
+  1.0d-16
+
+'ones_south'
+  'Microzooplankton concentration southern boundary condition'
+  'mg C m^-3'
+  'MZL_south, scalar, series'
+  'bio_time'
+  'idTbry(isouth,iMZL)'
+  'nulvar'
+  1.0d-16
+
+'ones_south'
+  'Offshore large copepod concentration southern boundary condition'
+  'mg C m^-3'
+  'NCaO_south, scalar, series'
+  'bio_time'
+  'idTbry(isouth,iNCaO)'
+  'nulvar'
+  1.0d-16
+
+'ones_south'
+  'On-shelf large copepod concentration southern boundary condition'
+  'mg C m^-3'
+  'NCaS_south, scalar, series'
+  'bio_time'
+  'idTbry(isouth,iNCaS)'
+  'nulvar'
+  1.0d-16
+
+'ones_south'
+  'Large phytoplankton concentration southern boundary condition'
+  'mg C m^-3'
+  'PhL_south, scalar, series'
+  'bio_time'
+  'idTbry(isouth,iPhL)'
+  'nulvar'
+  1.0d-16
+
+'ones_south'
+  'Small phytoplankton concentration southern boundary condition'
+  'mg C m^-3'
+  'PhS_south, scalar, series'
+  'bio_time'
+  'idTbry(isouth,iPhS)'
+  'nulvar'
+  1.0d-16
 
 'ones_west'
-  'labile DOP western boundary condition'
-  'mol/kg'
-  'ldop_west, scalar, series'
-  'ocean_time'
-  'idTbry(iwest,ildop)'
+  'Small copepod concentration western boundary condition'
+  'mg C m^-3'
+  'Cop_west, scalar, series'
+  'bio_time'
+  'idTbry(iwest,iCop)'
   'nulvar'
-  1.0d-19
+  1.0d-16
 
 'ones_west'
-  'Semilabile DOP western boundary condition'
-  'mol/kg'
-  'sldop_west, scalar, series'
-  'ocean_time'
-  'idTbry(iwest,isldop)'
+  'Slow-sinking detritus concetration western boundary condition'
+  'mg C m^-3'
+  'Det_west, scalar, series'
+  'bio_time'
+  'idTbry(iwest,iDet)'
   'nulvar'
-  1.0d-19
+  0.0d0
 
 'ones_west'
-  'Semi-Refractory DOP western boundary condition'
-  'mol/kg'
-  'srdop_west, scalar, series'
-  'ocean_time'
-  'idTbry(iwest,isrdop)'
+  'Fast-sinking detritus concentration western boundary condition'
+  'mg C m^-3'
+  'DetF_west, scalar, series'
+  'bio_time'
+  'idTbry(iwest,iDetF)'
   'nulvar'
-  1.0d-19
+  0.0d0
 
 'ones_west'
-  'Detrital Phosphorus western boundary condition'
-  'mol/kg'
-  'pdet_west, scalar, series'
-  'ocean_time'
-  'idTbry(iwest,ipdet)'
+  'Offshore euphausiid concentration western boundary condition'
+  'mg C m^-3'
+  'EupO_west, scalar, series'
+  'bio_time'
+  'idTbry(iwest,iEupO)'
   'nulvar'
-  1.0d-19
+  1.0d-16
 
-'ones_east'
-  'Small Phytoplankton Iron eastern boundary condition'
-  'mol/kg'
-  'fesm_east, scalar, series'
-  'ocean_time'
-  'idTbry(ieast,ifesm)'
+'ones_west'
+  'On-shelf euphausiid concentration western boundary condition'
+  'mg C m^-3'
+  'EupS_west, scalar, series'
+  'bio_time'
+  'idTbry(iwest,iEupS)'
   'nulvar'
-  1.0d-19
+  1.0d-16
 
-'ones_east'
-  'Diazotroph Iron eastern boundary condition'
-  'mol/kg'
-  'fedi_east, scalar, series'
-  'ocean_time'
-  'idTbry(ieast,ifedi)'
+'ones_west'
+  'Jellyfish concentration western boundary condition'
+  'mg C m^-3'
+  'Jel_west, scalar, series'
+  'bio_time'
+  'idTbry(iwest,iJel)'
   'nulvar'
-  1.0d-19
+  1.0d-16
 
-'ones_east'
-  'Large Phytoplankton Iron eastern boundary condition'
-  'mol/kg'
-  'felg_east, scalar, series'
-  'ocean_time'
-  'idTbry(ieast,ifelg)'
+'ones_west'
+  'Microzooplankton concentration western boundary condition'
+  'mg C m^-3'
+  'MZL_west, scalar, series'
+  'bio_time'
+  'idTbry(iwest,iMZL)'
   'nulvar'
-  1.0d-19
+  1.0d-16
+
+'ones_west'
+  'Offshore large copepod concentration western boundary condition'
+  'mg C m^-3'
+  'NCaO_west, scalar, series'
+  'bio_time'
+  'idTbry(iwest,iNCaO)'
+  'nulvar'
+  1.0d-16
+
+'ones_west'
+  'On-shelf large copepod concentration western boundary condition'
+  'mg C m^-3'
+  'NCaS_west, scalar, series'
+  'bio_time'
+  'idTbry(iwest,iNCaS)'
+  'nulvar'
+  1.0d-16
+
+'ones_west'
+  'Large phytoplankton concentration western boundary condition'
+  'mg C m^-3'
+  'PhL_west, scalar, series'
+  'bio_time'
+  'idTbry(iwest,iPhL)'
+  'nulvar'
+  1.0d-16
+
+'ones_west'
+  'Small phytoplankton concentration western boundary condition'
+  'mg C m^-3'
+  'PhS_west, scalar, series'
+  'bio_time'
+  'idTbry(iwest,iPhS)'
+  'nulvar'
+  1.0d-16
 
 'Fe_east'
-  'Dissolved Iron eastern boundary condition'
-  'mol/kg'
-  'fed_east, scalar, series'
-  'ocean_time'
-  'idTbry(ieast,ifed)'
+  'Iron concentration eastern boundary condition'
+  'umol Fe m^-3'
+  'Fe_east, scalar, series'
+  'bio_time'
+  'idTbry(ieast,iFe)'
   'nulvar'
-  1.0d-19
+  1.0d0
 
-'ones_east'
-  'Detrital Iron eastern boundary condition'
-  'mol/kg'
-  'fedet_east, scalar, series'
-  'ocean_time'
-  'idTbry(ieast,ifedet)'
+'NH4_east'
+  'Ammonium concentration eastern boundary condition'
+  'umol/kg'
+  'NH4_east, scalar, series'
+  'bio_time'
+  'idTbry(ieast,iNH4)'
   'nulvar'
-  1.0d-19
+  1.025d0
 
-'ones_north'
-  'Small Phytoplankton Iron northern boundary condition'
-  'mol/kg'
-  'fesm_north, scalar, series'
-  'ocean_time'
-  'idTbry(inorth,ifesm)'
+'NO3_east'
+  'Nitrate concentration eastern boundary condition'
+  'umol/kg'
+  'NO3_east, scalar, series'
+  'bio_time'
+  'idTbry(ieast,iNO3)'
   'nulvar'
-  1.0d-19
-
-'ones_north'
-  'Diazotroph Iron northern boundary condition'
-  'mol/kg'
-  'fedi_north, scalar, series'
-  'ocean_time'
-  'idTbry(inorth,ifedi)'
-  'nulvar'
-  1.0d-19
-
-'ones_north'
-  'Large Phytoplankton Iron northern boundary condition'
-  'mol/kg'
-  'felg_north, scalar, series'
-  'ocean_time'
-  'idTbry(inorth,ifelg)'
-  'nulvar'
-  1.0d-19
-
-'Fe_north'
-  'Dissolved Iron northern boundary condition'
-  'mol/kg'
-  'fed_north, scalar, series'
-  'ocean_time'
-  'idTbry(inorth,ifed)'
-  'nulvar'
-  1.0d-19
-
-'ones_north'
-  'Detrital Iron northern boundary condition'
-  'mol/kg'
-  'fedet_north, scalar, series'
-  'ocean_time'
-  'idTbry(inorth,ifedet)'
-  'nulvar'
-  1.0d-19
-
-'ones_south'
-  'Small Phytoplankton Iron southern boundary condition'
-  'mol/kg'
-  'fesm_south, scalar, series'
-  'ocean_time'
-  'idTbry(isouth,ifesm)'
-  'nulvar'
-  1.0d-19
-
-'ones_south'
-  'Diazotroph Iron southern boundary condition'
-  'mol/kg'
-  'fedi_south, scalar, series'
-  'ocean_time'
-  'idTbry(isouth,ifedi)'
-  'nulvar'
-  1.0d-19
-
-'ones_south'
-  'Large Phytoplankton Iron southern boundary condition'
-  'mol/kg'
-  'felg_south, scalar, series'
-  'ocean_time'
-  'idTbry(isouth,ifelg)'
-  'nulvar'
-  1.0d-19
-
-'Fe_south'
-  'Dissolved Iron southern boundary condition'
-  'mol/kg'
-  'fed_south, scalar, series'
-  'ocean_time'
-  'idTbry(isouth,ifed)'
-  'nulvar'
-  1.0d-19
-
-'ones_south'
-  'Detrital Iron southern boundary condition'
-  'mol/kg'
-  'fedet_south, scalar, series'
-  'ocean_time'
-  'idTbry(isouth,ifedet)'
-  'nulvar'
-  1.0d-19
-
-'ones_west'
-  'Small Phytoplankton Iron western boundary condition'
-  'mol/kg'
-  'fesm_west, scalar, series'
-  'ocean_time'
-  'idTbry(iwest,ifesm)'
-  'nulvar'
-  1.0d-19
-
-'ones_west'
-  'Diazotroph Iron western boundary condition'
-  'mol/kg'
-  'fedi_west, scalar, series'
-  'ocean_time'
-  'idTbry(iwest,ifedi)'
-  'nulvar'
-  1.0d-19
-
-'ones_west'
-  'Large Phytoplankton Iron western boundary condition'
-  'mol/kg'
-  'felg_west, scalar, series'
-  'ocean_time'
-  'idTbry(iwest,ifelg)'
-  'nulvar'
-  1.0d-19
-
-'Fe_west'
-  'Dissolved Iron western boundary condition'
-  'mol/kg'
-  'fed_west, scalar, series'
-  'ocean_time'
-  'idTbry(iwest,ifed)'
-  'nulvar'
-  1.0d-19
-
-'ones_west'
-  'Detrital Iron western boundary condition'
-  'mol/kg'
-  'fedet_west, scalar, series'
-  'ocean_time'
-  'idTbry(iwest,ifedet)'
-  'nulvar'
-  1.0d-19
+  1.025d0
 
 'oxygen_east'
   'Oxygen eastern boundary condition'
-  'mol/kg'
-  'o2_east, scalar, series'
+  'umol/kg'
+  'Oxyg_east, scalar, series'
   'oxygen_time'
-  'idTbry(ieast,io2)'
+  'idTbry(ieast,iOxyg)'
   'nulvar'
-  1.0d-6
-
-'TIC_east'
-  'Dissolved Inorganic Carbon eastern boundary condition'
-  'mol/kg'
-  'dic_east, scalar, series'
-  'bry_time'
-  'idTbry(ieast,idic)'
-  'nulvar'
-  1.0d-6
+  1.025d0
 
 'alkalinity_east'
   'Alkalinity eastern boundary condition'
-  'mol/kg'
-  'alk_east, scalar, series'
-  'bry_time'
-  'idTbry(ieast,ialk)'
+  'umol/kg'
+  'TAlk_east, scalar, series'
+  'bio_time'
+  'idTbry(ieast,iTAlk)'
   'nulvar'
-  1.0d-6
+  1.025d0
+
+'TIC_east'
+  'TIC eastern boundary condition'
+  'umol/kg'
+  'TIC_east, scalar, series'
+  'bio_time'
+  'idTbry(ieast,iTIC_)'
+  'nulvar'
+  1.025d0
+
+'Fe_north'
+  'Iron concentration northern boundary condition'
+  'umol Fe m^-3'
+  'Fe_north, scalar, series'
+  'bio_time'
+  'idTbry(inorth,iFe)'
+  'nulvar'
+  1.0d0
+
+'NH4_north'
+  'Ammonium concentration northern boundary condition'
+  'umol/kg'
+  'NH4_north, scalar, series'
+  'bio_time'
+  'idTbry(inorth,iNH4)'
+  'nulvar'
+  1.025d0
+
+'NO3_north'
+  'Nitrate concentration northern boundary condition'
+  'umol/kg'
+  'NO3_north, scalar, series'
+  'bio_time'
+  'idTbry(inorth,iNO3)'
+  'nulvar'
+  1.025d0
 
 'oxygen_north'
   'Oxygen northern boundary condition'
-  'mol/kg'
-  'o2_north, scalar, series'
+  'umol/kg'
+  'Oxyg_north, scalar, series'
   'oxygen_time'
-  'idTbry(inorth,io2)'
+  'idTbry(inorth,iOxyg)'
   'nulvar'
-  1.0d-6
-
-'TIC_north'
-  'Dissolved Inorganic Carbon northern boundary condition'
-  'mol/kg'
-  'dic_north, scalar, series'
-  'bry_time'
-  'idTbry(inorth,idic)'
-  'nulvar'
-  1.0d-6
+  1.025d0
 
 'alkalinity_north'
   'Alkalinity northern boundary condition'
-  'mol/kg'
-  'alk_north, scalar, series'
-  'bry_time'
-  'idTbry(inorth,ialk)'
+  'umol/kg'
+  'TAlk_north, scalar, series'
+  'bio_time'
+  'idTbry(inorth,iTAlk)'
   'nulvar'
-  1.0d-6
+  1.025d0
+
+'TIC_north'
+  'TIC northern boundary condition'
+  'umol/kg'
+  'TIC_north, scalar, series'
+  'bio_time'
+  'idTbry(inorth,iTIC_)'
+  'nulvar'
+  1.025d0
+
+'Fe_south'
+  'Iron concentration southern boundary condition'
+  'umol Fe m^-3'
+  'Fe_south, scalar, series'
+  'bio_time'
+  'idTbry(isouth,iFe)'
+  'nulvar'
+  1.0d0
+
+'NH4_south'
+  'Ammonium concentration southern boundary condition'
+  'umol/kg'
+  'NH4_south, scalar, series'
+  'bio_time'
+  'idTbry(isouth,iNH4)'
+  'nulvar'
+  1.025d0
+
+'NO3_south'
+  'Nitrate concentration southern boundary condition'
+  'umol/kg'
+  'NO3_south, scalar, series'
+  'bio_time'
+  'idTbry(isouth,iNO3)'
+  'nulvar'
+  1.025d0
 
 'oxygen_south'
   'Oxygen southern boundary condition'
-  'mol/kg'
-  'o2_south, scalar, series'
+  'umol/kg'
+  'Oxyg_south, scalar, series'
   'oxygen_time'
-  'idTbry(isouth,io2)'
+  'idTbry(isouth,iOxyg)'
   'nulvar'
-  1.0d-6
-
-'TIC_south'
-  'Dissolved Inorganic Carbon southern boundary condition'
-  'mol/kg'
-  'dic_south, scalar, series'
-  'bry_time'
-  'idTbry(isouth,idic)'
-  'nulvar'
-  1.0d-6
+  1.025d0
 
 'alkalinity_south'
   'Alkalinity southern boundary condition'
-  'mol/kg'
-  'alk_south, scalar, series'
-  'bry_time'
-  'idTbry(isouth,ialk)'
+  'umol/kg'
+  'TAlk_south, scalar, series'
+  'bio_time'
+  'idTbry(isouth,iTAlk)'
   'nulvar'
-  1.0d-6
+  1.025d0
+
+'TIC_south'
+  'TIC southern boundary condition'
+  'umol/kg'
+  'TIC_south, scalar, series'
+  'bio_time'
+  'idTbry(isouth,iTIC_)'
+  'nulvar'
+  1.025d0
+
+'Fe_west'
+  'Iron concentration western boundary condition'
+  'umol Fe m^-3'
+  'Fe_west, scalar, series'
+  'bio_time'
+  'idTbry(iwest,iFe)'
+  'nulvar'
+  1.0d0
+
+'NH4_west'
+  'Ammonium concentration western boundary condition'
+  'umol/kg'
+  'NH4_west, scalar, series'
+  'bio_time'
+  'idTbry(iwest,iNH4)'
+  'nulvar'
+  1.025d0
+
+'NO3_west'
+  'Nitrate concentration western boundary condition'
+  'umol/kg'
+  'NO3_west, scalar, series'
+  'bio_time'
+  'idTbry(iwest,iNO3)'
+  'nulvar'
+  1.025d0
 
 'oxygen_west'
   'Oxygen western boundary condition'
-  'mol/kg'
-  'o2_west, scalar, series'
+  'umol/kg'
+  'Oxyg_west, scalar, series'
   'oxygen_time'
-  'idTbry(iwest,io2)'
+  'idTbry(iwest,iOxyg)'
   'nulvar'
-  1.0d-6
-
-'TIC_west'
-  'Dissolved Inorganic Carbon western boundary condition'
-  'mol/kg'
-  'dic_west, scalar, series'
-  'bry_time'
-  'idTbry(iwest,idic)'
-  'nulvar'
-  1.0d-6
+  1.025d0
 
 'alkalinity_west'
   'Alkalinity western boundary condition'
-  'mol/kg'
-  'alk_west, scalar, series'
-  'bry_time'
-  'idTbry(iwest,ialk)'
+  'umol/kg'
+  'TAlk_west, scalar, series'
+  'bio_time'
+  'idTbry(iwest,iTAlk)'
   'nulvar'
-  1.0d-6
+  1.025d0
 
-'ones_east'
-  'Medium Phytoplankton Nitrogen eastern boundary condition'
-  'mol/kg'
-  'nmd_east, scalar, series'
-  'ocean_time'
-  'idTbry(ieast,inmd)'
+'TIC_west'
+  'TIC western boundary condition'
+  'umol/kg'
+  'TIC_west, scalar, series'
+  'bio_time'
+  'idTbry(iwest,iTIC_)'
   'nulvar'
-  1.0d-19
-
-'ones_east'
-  'Medium Phytoplankton Silicon eastern boundary condition'
-  'mol/kg'
-  'simd_east, scalar, series'
-  'ocean_time'
-  'idTbry(ieast,isimd)'
-  'nulvar'
-  1.0d-19
-
-'ones_east'
-  'Medium Phytoplankton Iron eastern boundary condition'
-  'mol/kg'
-  'femd_east, scalar, series'
-  'ocean_time'
-  'idTbry(ieast,ifemd)'
-  'nulvar'
-  1.0d-19
-
-'ones_north'
-  'Medium Phytoplankton Nitrogen northern boundary condition'
-  'mol/kg'
-  'nmd_north, scalar, series'
-  'ocean_time'
-  'idTbry(inorth,inmd)'
-  'nulvar'
-  1.0d-19
-
-'ones_north'
-  'Medium Phytoplankton Silicon northern boundary condition'
-  'mol/kg'
-  'simd_north, scalar, series'
-  'ocean_time'
-  'idTbry(inorth,isimd)'
-  'nulvar'
-  1.0d-19
-
-'ones_north'
-  'Medium Phytoplankton Iron northern boundary condition'
-  'mol/kg'
-  'femd_north, scalar, series'
-  'ocean_time'
-  'idTbry(inorth,ifemd)'
-  'nulvar'
-  1.0d-19
-
-'ones_south'
-  'Medium Phytoplankton Nitrogen southern boundary condition'
-  'mol/kg'
-  'nmd_south, scalar, series'
-  'ocean_time'
-  'idTbry(isouth,inmd)'
-  'nulvar'
-  1.0d-19
-
-'ones_south'
-  'Medium Phytoplankton Silicon southern boundary condition'
-  'mol/kg'
-  'simd_south, scalar, series'
-  'ocean_time'
-  'idTbry(isouth,isimd)'
-  'nulvar'
-  1.0d-19
-
-'ones_south'
-  'Medium Phytoplankton Iron southern boundary condition'
-  'mol/kg'
-  'femd_south, scalar, series'
-  'ocean_time'
-  'idTbry(isouth,ifemd)'
-  'nulvar'
-  1.0d-19
-
-'ones_west'
-  'Medium Phytoplankton Nitrogen western boundary condition'
-  'mol/kg'
-  'nmd_west, scalar, series'
-  'ocean_time'
-  'idTbry(iwest,inmd)'
-  'nulvar'
-  1.0d-19
-
-'ones_west'
-  'Medium Phytoplankton Silicon western boundary condition'
-  'mol/kg'
-  'simd_west, scalar, series'
-  'ocean_time'
-  'idTbry(iwest,isimd)'
-  'nulvar'
-  1.0d-19
-
-'ones_west'
-  'Medium Phytoplankton Iron western boundary condition'
-  'mol/kg'
-  'femd_west, scalar, series'
-  'ocean_time'
-  'idTbry(iwest,ifemd)'
-  'nulvar'
-  1.0d-19
-
-'river_nsm'
-  'river runoff Small Phytoplankton Nitrogen'
-  'mol/kg'
-  'nsm, scalar, series'
-  'ocean_time'
-  'idRtrc(insm)'
-  'r3dvar'
-  1.0d0
-
-'river_nlg'
-  'river runoff Large Phytoplankton Nitrogen'
-  'mol/kg'
-  'nlg, scalar, series'
-  'ocean_time'
-  'idRtrc(inlg)'
-  'r3dvar'
-  1.0d0
-
-'river_ndi'
-  'river runoff Diazotroph Nitrogen'
-  'mol/kg'
-  'ndi, scalar, series'
-  'ocean_time'
-  'idRtrc(indi)'
-  'r3dvar'
-  1.0d0
-
-'river_nsmz'
-  'river runoff Small Zooplankton Nitrogen'
-  'mol/kg'
-  'nsmz, scalar, series'
-  'ocean_time'
-  'idRtrc(insmz)'
-  'r3dvar'
-  1.0d0
-
-'river_nmdz'
-  'river runoff Medium-sized zooplankton Nitrogen'
-  'mol/kg'
-  'nmdz, scalar, series'
-  'ocean_time'
-  'idRtrc(inmdz)'
-  'r3dvar'
-  1.0d0
-
-'river_nlgz'
-  'river runoff large Zooplankton Nitrogen'
-  'mol/kg'
-  'nlgz, scalar, series'
-  'ocean_time'
-  'idRtrc(inlgz)'
-  'r3dvar'
-  1.0d0
-
-'river_ldon'
-  'river runoff labile DON'
-  'mol/kg'
-  'ldon, scalar, series'
-  'ocean_time'
-  'idRtrc(ildon)'
-  'r3dvar'
-  1.0d0
-
-'river_sldon'
-  'river runoff Semilabile DON'
-  'mol/kg'
-  'sldon, scalar, series'
-  'ocean_time'
-  'idRtrc(isldon)'
-  'r3dvar'
-  1.0d0
-
-'river_srdon'
-  'river runoff Semi-Refractory DON'
-  'mol/kg'
-  'srdon, scalar, series'
-  'ocean_time'
-  'idRtrc(isrdon)'
-  'r3dvar'
-  1.0d0
-
-'river_nbact'
-  'river runoff bacterial'
-  'mol/kg'
-  'nbact, scalar, series'
-  'ocean_time'
-  'idRtrc(inbact)'
-  'r3dvar'
-  1.0d0
-
-'river_nh4'
-  'river runoff Ammonia'
-  'mol/kg'
-  'nh4, scalar, series'
-  'ocean_time'
-  'idRtrc(inh4)'
-  'r3dvar'
-  1.0d0
-
-'river_no3'
-  'river runoff Nitrate'
-  'mol/kg'
-  'no3, scalar, series'
-  'ocean_time'
-  'idRtrc(ino3)'
-  'r3dvar'
-  1.0d0
-
-'river_ndet'
-  'river runoff ndet'
-  'mol/kg'
-  'ndet, scalar, series'
-  'ocean_time'
-  'idRtrc(indet)'
-  'r3dvar'
-  1.0d0
-
-'river_sio4'
-  'river runoff Silicate'
-  'mol/kg'
-  'sio4, scalar, series'
-  'ocean_time'
-  'idRtrc(isio4)'
-  'r3dvar'
-  1.0d0
-
-'river_silg'
-  'river runoff Large Phytoplankton Silicon'
-  'mol/kg'
-  'silg, scalar, series'
-  'ocean_time'
-  'idRtrc(isilg)'
-  'r3dvar'
-  1.0d0
-
-'river_sidet'
-  'river runoff Detrital Silicon'
-  'mol/kg'
-  'sidet, scalar, series'
-  'ocean_time'
-  'idRtrc(isidet)'
-  'r3dvar'
-  1.0d0
-
-'river_cadet_calc'
-  'river runoff Detrital CaCO3'
-  'mol/kg'
-  'cadet_calc, scalar, series'
-  'ocean_time'
-  'idRtrc(icadet_calc)'
-  'r3dvar'
-  1.0d0
-
-'river_cadet_arag'
-  'river runoff Detrital CaCO3'
-  'mol/kg'
-  'cadet_arag, scalar, series'
-  'ocean_time'
-  'idRtrc(icadet_arag)'
-  'r3dvar'
-  1.0d0
-
-'river_lith'
-  'river runoff Lithogenic Aluminosilicate'
-  'g/kg'
-  'lith, scalar, series'
-  'ocean_time'
-  'idRtrc(ilith)'
-  'r3dvar'
-  1.0d0
-
-'river_lithdet'
-  'river runoff lithdet'
-  'g/kg'
-  'lithdet, scalar, series'
-  'ocean_time'
-  'idRtrc(ilithdet)'
-  'r3dvar'
-  1.0d0
-
-'river_po4'
-  'river runoff Phosphate'
-  'mol/kg'
-  'po4, scalar, series'
-  'ocean_time'
-  'idRtrc(ipo4)'
-  'r3dvar'
-  1.0d0
-
-'river_ldop'
-  'river runoff labile DOP'
-  'mol/kg'
-  'ldop, scalar, series'
-  'ocean_time'
-  'idRtrc(ildop)'
-  'r3dvar'
-  1.0d0
-
-'river_sldop'
-  'river runoff Semilabile DOP'
-  'mol/kg'
-  'sldop, scalar, series'
-  'ocean_time'
-  'idRtrc(isldop)'
-  'r3dvar'
-  1.0d0
-
-'river_srdop'
-  'river runoff Semi-Refractory DOP'
-  'mol/kg'
-  'srdop, scalar, series'
-  'ocean_time'
-  'idRtrc(isrdop)'
-  'r3dvar'
-  1.0d0
-
-'river_pdet'
-  'river runoff Detrital Phosphorus'
-  'mol/kg'
-  'pdet, scalar, series'
-  'ocean_time'
-  'idRtrc(ipdet)'
-  'r3dvar'
-  1.0d0
-
-'river_fesm'
-  'river runoff Small Phytoplankton Iron'
-  'mol/kg'
-  'fesm, scalar, series'
-  'ocean_time'
-  'idRtrc(ifesm)'
-  'r3dvar'
-  1.0d0
-
-'river_fedi'
-  'river runoff Diazotroph Iron'
-  'mol/kg'
-  'fedi, scalar, series'
-  'ocean_time'
-  'idRtrc(ifedi)'
-  'r3dvar'
-  1.0d0
-
-'river_felg'
-  'river runoff Large Phytoplankton Iron'
-  'mol/kg'
-  'felg, scalar, series'
-  'ocean_time'
-  'idRtrc(ifelg)'
-  'r3dvar'
-  1.0d0
-
-'river_fed'
-  'river runoff Dissolved Iron'
-  'mol/kg'
-  'fed, scalar, series'
-  'ocean_time'
-  'idRtrc(ifed)'
-  'r3dvar'
-  1.0d0
-
-'river_fedet'
-  'river runoff Detrital Iron'
-  'mol/kg'
-  'fedet, scalar, series'
-  'ocean_time'
-  'idRtrc(ifedet)'
-  'r3dvar'
-  1.0d0
-
-'river_o2'
-  'river runoff Oxygen'
-  'mol/kg'
-  'o2, scalar, series'
-  'ocean_time'
-  'idRtrc(io2)'
-  'r3dvar'
-  1.0d0
-
-'river_dic'
-  'river runoff Dissolved Inorganic Carbon'
-  'mol/kg'
-  'dic, scalar, series'
-  'ocean_time'
-  'idRtrc(idic)'
-  'r3dvar'
-  1.0d0
-
-'river_alk'
-  'river runoff Alkalinity'
-  'mol/kg'
-  'alk, scalar, series'
-  'ocean_time'
-  'idRtrc(ialk)'
-  'r3dvar'
-  1.0d0
-
-'river_nmd'
-  'river runoff Medium Phytoplankton Nitrogen'
-  'mol/kg'
-  'nmd, scalar, series'
-  'ocean_time'
-  'idRtrc(inmd)'
-  'r3dvar'
-  1.0d0
-
-'river_simd'
-  'river runoff Medium Phytoplankton Silicon'
-  'mol/kg'
-  'simd, scalar, series'
-  'ocean_time'
-  'idRtrc(isimd)'
-  'r3dvar'
-  1.0d0
-
-'river_femd'
-  'river runoff Medium Phytoplankton Iron'
-  'mol/kg'
-  'femd, scalar, series'
-  'ocean_time'
-  'idRtrc(ifemd)'
-  'r3dvar'
-  1.0d0
-
-'river_no3'
-  'no3 river source'
-  'mol.m-2.s-1'
-  'river_no3, scalar, series'
-  'runoff_time'
-  'idriver_no3'
-  'r2dvar'
-  1.0d0
-
-'river_ldon'
-  'ldon river source'
-  'mol.m-2.s-1'
-  'river_ldon, scalar, series'
-  'runoff_time'
-  'idriver_ldon'
-  'r2dvar'
-  1.0d0
-
-'river_sldon'
-  'sldon river source'
-  'mol.m-2.s-1'
-  'river_sldon, scalar, series'
-  'runoff_time'
-  'idriver_sldon'
-  'r2dvar'
-  1.0d0
-
-'river_srdon'
-  'srdon river source'
-  'mol.m-2.s-1'
-  'river_srdon, scalar, series'
-  'runoff_time'
-  'idriver_srdon'
-  'r2dvar'
-  1.0d0
-
-'river_ndet'
-  'ndet river source'
-  'mol.m-2.s-1'
-  'river_ndet, scalar, series'
-  'runoff_time'
-  'idriver_ndet'
-  'r2dvar'
-  1.0d0
-
-'river_po4'
-  'po4 river source'
-  'mol.m-2.s-1'
-  'river_po4, scalar, series'
-  'runoff_time'
-  'idriver_po4'
-  'r2dvar'
-  1.0d0
-
-'river_ldop'
-  'ldop river source'
-  'mol.m-2.s-1'
-  'river_ldop, scalar, series'
-  'runoff_time'
-  'idriver_ldop'
-  'r2dvar'
-  1.0d0
-
-'river_sldop'
-  'sldop river source'
-  'mol.m-2.s-1'
-  'river_sldop, scalar, series'
-  'runoff_time'
-  'idriver_sldop'
-  'r2dvar'
-  1.0d0
-
-'river_srdop'
-  'srdop river source'
-  'mol.m-2.s-1'
-  'river_srdop, scalar, series'
-  'runoff_time'
-  'idriver_srdop'
-  'r2dvar'
-  1.0d0
-
-'river_fed'
-  'fed river source'
-  'mol.m-2.s-1'
-  'river_fed, scalar, series'
-  'runoff_time'
-  'idriver_fed'
-  'r2dvar'
-  1.0d0
-
-'pCO2air'
-  'atmCO2'
-  'ppmv'
-  'atmCO2, scalar, series'
-  'ocean_time'
-  'idAtmCO2'
-  'r2dvar'
-  1.0d0
-
-'ironsed'
-  'ironsed'
-  'mol.m-2.s-1'
-  'ironsed, scalar, series'
-  'ironsed_time'
-  'idIronSed'
-  'r2dvar'
-  1.0d0
-
-'solublefe'
-  'solublefe'
-  'mol.m-2.s-1'
-  'soluble_fe, scalar, series'
-  'solublefe_time'
-  'idSolubleFe'
-  'r2dvar'
-  1.0d0
-
-'mineralfe'
-  'mineralfe'
-  'g.m-2.s-1'
-  'mineral_fe, scalar, series'
-  'mineralfe_time'
-  'idMineralFe'
-  'r2dvar'
-  1.0d0
-
-'cased'
-  'Sediment CaCO3'
-  'mol.m-3'
-  'cased, scalar, series'
-  'ocean_time'
-  'iDbio2(icased)'
-  'r2dvar'
-  1.0d0
-
-'cadet_arag_btf'
-  'aragonite flux to Sediments'
-  'mol m-2 s-1'
-  'cadet_arag_btf, scalar, series'
-  'ocean_time'
-  'iDbio2(icadet_arag_btf)'
-  'r2dvar'
-  1.0d0
-
-'cadet_calc_btf'
-  'calcite flux to Sediments'
-  'mol m-2 s-1'
-  'cadet_calc_btf, scalar, series'
-  'ocean_time'
-  'iDbio2(icadet_calc_btf)'
-  'r2dvar'
-  1.0d0
-
-'ndet_btf'
-  'N flux to Sediments'
-  'mol m-2 s-1'
-  'ndet_btf, scalar, series'
-  'ocean_time'
-  'iDbio2(indet_btf)'
-  'r2dvar'
-  1.0d0
-
-'pdet_btf'
-  'P flux to Sediments'
-  'mol m-2 s-1'
-  'pdet_btf, scalar, series'
-  'ocean_time'
-  'iDbio2(ipdet_btf)'
-  'r2dvar'
-  1.0d0
-
-'sidet_btf'
-  'SiO2 flux to Sediments'
-  'mol m-2 s-1'
-  'sidet_btf, scalar, series'
-  'ocean_time'
-  'iDbio2(isidet_btf)'
-  'r2dvar'
-  1.0d0
-
-'alk_btf'
-  'Alkalinity bottom flux'
-  'mol m-2 s-1'
-  'alk_btf, scalar, series'
-  'ocean_time'
-  'iDbio2(ialk_btf)'
-  'r2dvar'
-  1.0d0
-
-'dic_btf'
-  'DIC bottom flux'
-  'mol m-2 s-1'
-  'dic_btf, scalar, series'
-  'ocean_time'
-  'iDbio2(idic_btf)'
-  'r2dvar'
-  1.0d0
-
-'fed_btf'
-  'fed bottom flux'
-  'mol m-2 s-1'
-  'fed_btf, scalar, series'
-  'ocean_time'
-  'iDbio2(ifed_btf)'
-  'r2dvar'
-  1.0d0
-
-'nh4_btf'
-  'Ammonia bottom flux'
-  'mol m-2 s-1'
-  'nh4_btf, scalar, series'
-  'ocean_time'
-  'iDbio2(inh4_btf)'
-  'r2dvar'
-  1.0d0
-
-'no3_btf'
-  'Nitrates bottom flux'
-  'mol m-2 s-1'
-  'no3_btf, scalar, series'
-  'ocean_time'
-  'iDbio2(ino3_btf)'
-  'r2dvar'
-  1.0d0
-
-'o2_btf'
-  'Oxygen bottom flux'
-  'mol m-2 s-1'
-  'o2_btf, scalar, series'
-  'ocean_time'
-  'iDbio2(io2_btf)'
-  'r2dvar'
-  1.0d0
-
-'po4_btf'
-  'Phosphate bottom flux'
-  'mol m-2 s-1'
-  'po4_btf, scalar, series'
-  'ocean_time'
-  'iDbio2(ipo4_btf)'
-  'r2dvar'
-  1.0d0
-
-'sio4_btf'
-  'Silicate bottom flux'
-  'mol m-2 s-1'
-  'sio4_btf, scalar, series'
-  'ocean_time'
-  'iDbio2(isio4_btf)'
-  'r2dvar'
-  1.0d0
-
-'mxl_depth'
-  'depth of the mixed layer hsbl'
-  'm'
-  'mxl_depth, scalar, series'
-  'ocean_time'
-  'iDbio2(imxl_depth)'
-  'r2dvar'
-  1.0d0
-
-'mxl_level'
-  'level of the mixed layer hsbl'
-  'm'
-  'mxl_level, scalar, series'
-  'ocean_time'
-  'iDbio2(imxl_level)'
-  'r2dvar'
-  1.0d0
-
-'alpha'
-  'Solubility of CO2 for air'
-  'mol/kg/atm'
-  'alpha, scalar, series'
-  'ocean_time'
-  'iDbio2(ialpha)'
-  'r2dvar'
-  1.0d0
-
-'co2star'
-  'CO2*water, or H2CO3 concentration'
-  'mol/kg'
-  'co2star, scalar, series'
-  'ocean_time'
-  'iDbio2(ico2star)'
-  'r2dvar'
-  1.0d0
-
-'pco2surf'
-  'oceanic pCO2'
-  'ppmv'
-  'pco2surf, scalar, series'
-  'ocean_time'
-  'iDbio2(ipco2surf)'
-  'r2dvar'
-  1.0d0
-
-'co2_flx'
-  'air-sea fluxes in terms of contrib to DIC'
-  'mol/kg'
-  'co2_flx, scalar, series'
-  'ocean_time'
-  'iDbio2(ico2_flx)'
-  'r2dvar'
-  1.0d0
-
-'o2_flx'
-  'air-sea fluxes in terms of contrib to O2'
-  'mol/kg'
-  'o2_flx, scalar, series'
-  'ocean_time'
-  'iDbio2(io2_flx)'
-  'r2dvar'
-  1.0d0
-
-'ironsed_flx'
-  'iron fluxes from the sediments'
-  'mol/kg'
-  'ironsed_flx, scalar, series'
-  'ocean_time'
-  'iDbio2(iironsed_flx)'
-  'r2dvar'
-  1.0d0
-
-'npp_100'
-  'Net Primary production integral 100 meters'
-  'mgC/m2/day'
-  'npp_100, scalar, series'
-  'ocean_time'
-  'iDbio2(inpp_100)'
-  'r2dvar'
-  1.0d0
-
-'mesozoo_200'
-  'Mesozoo Biomass integral 200 meters'
-  'mgC/m2'
-  'mesozoo_200, scalar, series'
-  'ocean_time'
-  'iDbio2(imesozoo_200)'
-  'r2dvar'
-  1.0d0
-
-'prod_n_100_sm'
-  'nitrogen production for small phyto upper 100m'
-  'mol.m-2.s-1'
-  'prod_n_100_sm, scalar, series'
-  'ocean_time'
-  'iDbio2(iprod_n_100_sm)'
-  'r2dvar'
-  1.0d0
-
-'aggloss_n_100_sm'
-  'loss to aggregation for small phyto upper 100m'
-  'mol.m-2.s-1'
-  'aggloss_n_100_sm, scalar, series'
-  'ocean_time'
-  'iDbio2(iaggloss_n_100_sm)'
-  'r2dvar'
-  1.0d0
-
-'zloss_n_100_sm'
-  'loss to zooplankton for small phyto upper 100m'
-  'mol.m-2.s-1'
-  'zloss_n_100_sm, scalar, series'
-  'ocean_time'
-  'iDbio2(izloss_n_100_sm)'
-  'r2dvar'
-  1.0d0
-
-'prod_n_100_lg'
-  'nitrogen production for large phyto upper 100m'
-  'mol.m-2.s-1'
-  'prod_n_100_lg, scalar, series'
-  'ocean_time'
-  'iDbio2(iprod_n_100_lg)'
-  'r2dvar'
-  1.0d0
-
-'aggloss_n_100_lg'
-  'loss to aggregation for large phyto upper 100m'
-  'mol.m-2.s-1'
-  'aggloss_n_100_lg, scalar, series'
-  'ocean_time'
-  'iDbio2(iaggloss_n_100_lg)'
-  'r2dvar'
-  1.0d0
-
-'zloss_n_100_lg'
-  'loss to zooplankton for large phyto upper 100m'
-  'mol.m-2.s-1'
-  'zloss_n_100_lg, scalar, series'
-  'ocean_time'
-  'iDbio2(izloss_n_100_lg)'
-  'r2dvar'
-  1.0d0
-
-'prod_n_100_di'
-  'nitrogen production for diazo phyto upper 100m'
-  'mol.m-2.s-1'
-  'prod_n_100_di, scalar, series'
-  'ocean_time'
-  'iDbio2(iprod_n_100_di)'
-  'r2dvar'
-  1.0d0
-
-'aggloss_n_100_di'
-  'loss to aggregation for diazo phyto upper 100m'
-  'mol.m-2.s-1'
-  'aggloss_n_100_di, scalar, series'
-  'ocean_time'
-  'iDbio2(iaggloss_n_100_di)'
-  'r2dvar'
-  1.0d0
-
-'zloss_n_100_di'
-  'loss to zooplankton for diazo phyto upper 100m'
-  'mol.m-2.s-1'
-  'zloss_n_100_di, scalar, series'
-  'ocean_time'
-  'iDbio2(izloss_n_100_di)'
-  'r2dvar'
-  1.0d0
-
-'prod_n_100_smz'
-  'nitrogen production for small zoo upper 100m'
-  'mol.m-2.s-1'
-  'prod_n_100_smz, scalar, series'
-  'ocean_time'
-  'iDbio2(iprod_n_100_smz)'
-  'r2dvar'
-  1.0d0
-
-'ingest_n_100_smz'
-  'ingestion for small zoo upper 100m'
-  'mol.m-2.s-1'
-  'ingest_n_100_smz, scalar, series'
-  'ocean_time'
-  'iDbio2(iingest_n_100_smz)'
-  'r2dvar'
-  1.0d0
-
-'zloss_n_100_smz'
-  'loss to zooplankton for small zoo upper 100m'
-  'mol.m-2.s-1'
-  'zloss_n_100_smz, scalar, series'
-  'ocean_time'
-  'iDbio2(izloss_n_100_smz)'
-  'r2dvar'
-  1.0d0
-
-'hploss_n_100_smz'
-  'loss to highe predators for small zoo upper 100m'
-  'mol.m-2.s-1'
-  'hploss_n_100_smz, scalar, series'
-  'ocean_time'
-  'iDbio2(ihploss_n_100_smz)'
-  'r2dvar'
-  1.0d0
-
-'prod_ndet_100_smz'
-  'detrital production for small zoo upper 100m'
-  'mol.m-2.s-1'
-  'prod_ndet_100_smz, scalar, series'
-  'ocean_time'
-  'iDbio2(iprod_ndet_100_smz)'
-  'r2dvar'
-  1.0d0
-
-'prod_n_100_mdz'
-  'nitrogen production for medium zoo upper 100m'
-  'mol.m-2.s-1'
-  'prod_n_100_mdz, scalar, series'
-  'ocean_time'
-  'iDbio2(iprod_n_100_mdz)'
-  'r2dvar'
-  1.0d0
-
-'ingest_n_100_mdz'
-  'ingestion for medium zoo upper 100m'
-  'mol.m-2.s-1'
-  'ingest_n_100_mdz, scalar, series'
-  'ocean_time'
-  'iDbio2(iingest_n_100_mdz)'
-  'r2dvar'
-  1.0d0
-
-'zloss_n_100_mdz'
-  'loss to zooplankton for medium zoo upper 100m'
-  'mol.m-2.s-1'
-  'zloss_n_100_mdz, scalar, series'
-  'ocean_time'
-  'iDbio2(izloss_n_100_mdz)'
-  'r2dvar'
-  1.0d0
-
-'hploss_n_100_mdz'
-  'loss to highe predators for medium zoo upper 100m'
-  'mol.m-2.s-1'
-  'hploss_n_100_mdz, scalar, series'
-  'ocean_time'
-  'iDbio2(ihploss_n_100_mdz)'
-  'r2dvar'
-  1.0d0
-
-'prod_ndet_100_mdz'
-  'detrital production for medium zoo upper 100m'
-  'mol.m-2.s-1'
-  'prod_ndet_100_mdz, scalar, series'
-  'ocean_time'
-  'iDbio2(iprod_ndet_100_mdz)'
-  'r2dvar'
-  1.0d0
-
-'prod_n_100_lgz'
-  'nitrogen production for large zoo upper 100m'
-  'mol.m-2.s-1'
-  'prod_n_100_lgz, scalar, series'
-  'ocean_time'
-  'iDbio2(iprod_n_100_lgz)'
-  'r2dvar'
-  1.0d0
-
-'ingest_n_100_lgz'
-  'ingestion for large zoo upper 100m'
-  'mol.m-2.s-1'
-  'ingest_n_100_lgz, scalar, series'
-  'ocean_time'
-  'iDbio2(iingest_n_100_lgz)'
-  'r2dvar'
-  1.0d0
-
-'zloss_n_100_lgz'
-  'loss to zooplankton for large zoo upper 100m'
-  'mol.m-2.s-1'
-  'zloss_n_100_lgz, scalar, series'
-  'ocean_time'
-  'iDbio2(izloss_n_100_lgz)'
-  'r2dvar'
-  1.0d0
-
-'hploss_n_100_lgz'
-  'loss to higher predators for large zoo upper 100m'
-  'mol.m-2.s-1'
-  'hploss_n_100_lgz, scalar, series'
-  'ocean_time'
-  'iDbio2(ihploss_n_100_lgz)'
-  'r2dvar'
-  1.0d0
-
-'prod_ndet_100_lgz'
-  'detrital production for large zoo upper 100m'
-  'mol.m-2.s-1'
-  'prod_ndet_100_lgz, scalar, series'
-  'ocean_time'
-  'iDbio2(iprod_ndet_100_lgz)'
-  'r2dvar'
-  1.0d0
-
-'prod_n_100_bact'
-  'nitrogen production for bacteria upper 100m'
-  'mol.m-2.s-1'
-  'prod_n_100_bact, scalar, series'
-  'ocean_time'
-  'iDbio2(iprod_n_100_bact)'
-  'r2dvar'
-  1.0d0
-
-'zloss_n_100_bact'
-  'loss to zooplankton for bacteria upper 100m'
-  'mol.m-2.s-1'
-  'zloss_n_100_bact, scalar, series'
-  'ocean_time'
-  'iDbio2(izloss_n_100_bact)'
-  'r2dvar'
-  1.0d0
-
-'mesozooprod_200'
-  'mesozoo production over top 200m'
-  'mgC m-2 day-1'
-  'mesozooprod_200, scalar, series'
-  'ocean_time'
-  'iDbio2(imesozooprod_200)'
-  'r2dvar'
-  1.0d0
-
-'uptake_din_100'
-  'uptake DIN over top 100m'
-  'mgC m-2 day-1'
-  'uptake_din_100, scalar, series'
-  'ocean_time'
-  'iDbio2(iuptake_din_100)'
-  'r2dvar'
-  1.0d0
-
-'uptake_no3_n2_100'
-  'uptake NO3+N2 over top 100m'
-  'mgC m-2 day-1'
-  'uptake_no3_n2_100, scalar, series'
-  'ocean_time'
-  'iDbio2(iuptake_no3_n2_100)'
-  'r2dvar'
-  1.0d0
-
-'prod_mesozoo_100'
-  'mesozoo production over top 100m'
-  'mgC m-2 day-1'
-  'prod_mesozoo_100, scalar, series'
-  'ocean_time'
-  'iDbio2(iprod_mesozoo_100)'
-  'r2dvar'
-  1.0d0
-
-'z_ratio_100'
-  'Z-ratio'
-  'None'
-  'z_ratio_100, scalar, series'
-  'ocean_time'
-  'iDbio2(iz_ratio_100)'
-  'r2dvar'
-  1.0d0
-
-'pe_ratio_100'
-  'pe-ratio'
-  'None'
-  'pe_ratio_100, scalar, series'
-  'ocean_time'
-  'iDbio2(ipe_ratio_100)'
-  'r2dvar'
-  1.0d0
-
-'f_ratio_100'
-  'f-ratio'
-  'None'
-  'f_ratio_100, scalar, series'
-  'ocean_time'
-  'iDbio2(if_ratio_100)'
-  'r2dvar'
-  1.0d0
-
-'prod_don_100_smz'
-  'production DON by small zoo over top 100m'
-  'mol.m-2.s-1'
-  'prod_don_100_smz, scalar, series'
-  'ocean_time'
-  'iDbio2(iprod_don_100_smz)'
-  'r2dvar'
-  1.0d0
-
-'prod_don_100_mdz'
-  'production DON by medium zoo over top 100m'
-  'mol.m-2.s-1'
-  'prod_don_100_mdz, scalar, series'
-  'ocean_time'
-  'iDbio2(iprod_don_100_mdz)'
-  'r2dvar'
-  1.0d0
-
-'prod_don_100_lgz'
-  'production DON by large zoo over top 100m'
-  'mol.m-2.s-1'
-  'prod_don_100_lgz, scalar, series'
-  'ocean_time'
-  'iDbio2(iprod_don_100_lgz)'
-  'r2dvar'
-  1.0d0
-
-'no3denit_sed'
-  'sedimentary denitrification'
-  'mgC/m2/day'
-  'no3denit_sed, scalar, series'
-  'ocean_time'
-  'iDbio2(ino3denit_sed)'
-  'r2dvar'
-  1.0d0
-
-'jno3denit_wc_vint'
-  'sedimentary denitrification'
-  'mgC/m2/day'
-  'jno3denit_wc_vint, scalar, series'
-  'ocean_time'
-  'iDbio2(ijno3denit_wc_vint)'
-  'r2dvar'
-  1.0d0
-
-'chl'
-  'Chlorophyll'
-  'ug kg-1'
-  'chl, scalar, series'
-  'ocean_time'
-  'iDbio3(ichl)'
-  'r3dvar'
-  1.0d0
-
-'co3_ion'
-  'Carbonate ion'
-  'mol/kg'
-  'co3_ion, scalar, series'
-  'ocean_time'
-  'iDbio3(ico3_ion)'
-  'r3dvar'
-  1.0d0
-
-'htotal'
-  'H+ ion concentration'
-  'mol/kg'
-  'htotal, scalar, series'
-  'ocean_time'
-  'iDbio3(ihtotal)'
-  'r3dvar'
-  1.0d0
-
-'irr_mem'
-  'Irradiance memory'
-  'Watts/m^2'
-  'irr_mem, scalar, series'
-  'ocean_time'
-  'iDbio3(iirr_mem)'
-  'r3dvar'
-  1.0d0
-
-'irr_mix'
-  'Irradiance in mixed layer'
-  'Watts/m^2'
-  'irr_mix, scalar, series'
-  'ocean_time'
-  'iDbio3(iirr_mix)'
-  'r3dvar'
-  1.0d0
-
-'irr_inst'
-  'Irradiance instantaneous'
-  'Watts/m^2'
-  'irr_inst, scalar, series'
-  'ocean_time'
-  'iDbio3(iirr_inst)'
-  'r3dvar'
-  1.0d0
-
-'co3_sol_calc'
-  'solubility of calcite'
-  'N/A'
-  'co3_sol_calc, scalar, series'
-  'ocean_time'
-  'iDbio3(ico3_sol_calc)'
-  'r3dvar'
-  1.0d0
-
-'co3_sol_arag'
-  'solubility of aragonite'
-  'N/A'
-  'co3_sol_arag, scalar, series'
-  'ocean_time'
-  'iDbio3(ico3_sol_arag)'
-  'r3dvar'
-  1.0d0
-
-'fe_bulk_flx'
-  'iron flux from surface and pen'
-  'N/A'
-  'fe_bulk_flx, scalar, series'
-  'ocean_time'
-  'iDbio3(ife_bulk_flx)'
-  'r3dvar'
-  1.0d0
-
-'omega_cadet_calc'
-  'omega calcite'
-  '[]'
-  'omega_cadet_calc, scalar, series'
-  'ocean_time'
-  'iDbio3(iomega_cadet_calc)'
-  'r3dvar'
-  1.0d0
-
-'omega_cadet_arag'
-  'omega aragonite'
-  '[]'
-  'omega_cadet_arag, scalar, series'
-  'ocean_time'
-  'iDbio3(iomega_cadet_arag)'
-  'r3dvar'
-  1.0d0
-
-'swdk'
-  'shortwave decay function for visible (red+blue)'
-  '[]'
-  'swdk, scalar, series'
-  'ocean_time'
-  'iDbio3(iswdk)'
-  'r3dvar'
-  1.0d0
-
-'mu_mem_sm'
-  'aggregation memory small phyto'
-  '[]'
-  'mu_mem_sm, scalar, series'
-  'ocean_time'
-  'iDbio3(imu_mem_sm)'
-  'r3dvar'
-  1.0d0
-
-'mu_mem_di'
-  'aggregation memory diatoms'
-  '[]'
-  'mu_mem_di, scalar, series'
-  'ocean_time'
-  'iDbio3(imu_mem_di)'
-  'r3dvar'
-  1.0d0
-
-'mu_mem_lg'
-  'aggregation memory large phyto'
-  '[]'
-  'mu_mem_lg, scalar, series'
-  'ocean_time'
-  'iDbio3(imu_mem_lg)'
-  'r3dvar'
-  1.0d0
-
-'agg_lim_sm'
-  'aggregation limitation small phyto'
-  '[]'
-  'agg_lim_sm, scalar, series'
-  'ocean_time'
-  'iDbio3(iagg_lim_sm)'
-  'r3dvar'
-  1.0d0
-
-'agg_lim_di'
-  'aggregation limitation diatoms'
-  '[]'
-  'agg_lim_di, scalar, series'
-  'ocean_time'
-  'iDbio3(iagg_lim_di)'
-  'r3dvar'
-  1.0d0
-
-'agg_lim_lg'
-  'aggregation limitation large phyto'
-  '[]'
-  'agg_lim_lg, scalar, series'
-  'ocean_time'
-  'iDbio3(iagg_lim_lg)'
-  'r3dvar'
-  1.0d0
-
-'aggloss_di'
-  'losses to aggregation diazo phyto'
-  'mol/kg'
-  'aggloss_di, scalar, series'
-  'ocean_time'
-  'iDbio3(iaggloss_di)'
-  'r3dvar'
-  1.0d0
-
-'aggloss_sm'
-  'losses to aggregation small phyto'
-  'mol/kg'
-  'aggloss_sm, scalar, series'
-  'ocean_time'
-  'iDbio3(iaggloss_sm)'
-  'r3dvar'
-  1.0d0
-
-'aggloss_lg'
-  'losses to aggregation large phyto'
-  'mol/kg'
-  'aggloss_lg, scalar, series'
-  'ocean_time'
-  'iDbio3(iaggloss_lg)'
-  'r3dvar'
-  1.0d0
-
-'virloss_di'
-  'losses to viruses diazo phyto'
-  'mol/kg'
-  'virloss_di, scalar, series'
-  'ocean_time'
-  'iDbio3(ivirloss_di)'
-  'r3dvar'
-  1.0d0
-
-'virloss_sm'
-  'losses to viruses small phyto'
-  'mol/kg'
-  'virloss_sm, scalar, series'
-  'ocean_time'
-  'iDbio3(ivirloss_sm)'
-  'r3dvar'
-  1.0d0
-
-'virloss_lg'
-  'losses to viruses large phyto'
-  'mol/kg'
-  'virloss_lg, scalar, series'
-  'ocean_time'
-  'iDbio3(ivirloss_lg)'
-  'r3dvar'
-  1.0d0
-
-'zloss_di'
-  'losses to zoo diazo phyto'
-  'mol/kg'
-  'zloss_di, scalar, series'
-  'ocean_time'
-  'iDbio3(izloss_di)'
-  'r3dvar'
-  1.0d0
-
-'zloss_sm'
-  'losses to zoo small phyto'
-  'mol/kg'
-  'zloss_sm, scalar, series'
-  'ocean_time'
-  'iDbio3(izloss_sm)'
-  'r3dvar'
-  1.0d0
-
-'zloss_lg'
-  'losses to zoo large phyto'
-  'mol/kg'
-  'zloss_lg, scalar, series'
-  'ocean_time'
-  'iDbio3(izloss_lg)'
-  'r3dvar'
-  1.0d0
-
-'def_fe_sm'
-  'None'
-  '[]'
-  'def_fe_sm, scalar, series'
-  'ocean_time'
-  'iDbio3(idef_fe_sm)'
-  'r3dvar'
-  1.0d0
-
-'def_fe_di'
-  'None'
-  '[]'
-  'def_fe_di, scalar, series'
-  'ocean_time'
-  'iDbio3(idef_fe_di)'
-  'r3dvar'
-  1.0d0
-
-'def_fe_lg'
-  'None'
-  '[]'
-  'def_fe_lg, scalar, series'
-  'ocean_time'
-  'iDbio3(idef_fe_lg)'
-  'r3dvar'
-  1.0d0
-
-'felim_sm'
-  'None'
-  '[]'
-  'felim_sm, scalar, series'
-  'ocean_time'
-  'iDbio3(ifelim_sm)'
-  'r3dvar'
-  1.0d0
-
-'felim_di'
-  'None'
-  '[]'
-  'felim_di, scalar, series'
-  'ocean_time'
-  'iDbio3(ifelim_di)'
-  'r3dvar'
-  1.0d0
-
-'felim_lg'
-  'None'
-  '[]'
-  'felim_lg, scalar, series'
-  'ocean_time'
-  'iDbio3(ifelim_lg)'
-  'r3dvar'
-  1.0d0
-
-'no3lim_sm'
-  'None'
-  '[]'
-  'no3lim_sm, scalar, series'
-  'ocean_time'
-  'iDbio3(ino3lim_sm)'
-  'r3dvar'
-  1.0d0
-
-'no3lim_di'
-  'None'
-  '[]'
-  'no3lim_di, scalar, series'
-  'ocean_time'
-  'iDbio3(ino3lim_di)'
-  'r3dvar'
-  1.0d0
-
-'no3lim_lg'
-  'None'
-  '[]'
-  'no3lim_lg, scalar, series'
-  'ocean_time'
-  'iDbio3(ino3lim_lg)'
-  'r3dvar'
-  1.0d0
-
-'nh4lim_sm'
-  'None'
-  '[]'
-  'nh4lim_sm, scalar, series'
-  'ocean_time'
-  'iDbio3(inh4lim_sm)'
-  'r3dvar'
-  1.0d0
-
-'nh4lim_di'
-  'None'
-  '[]'
-  'nh4lim_di, scalar, series'
-  'ocean_time'
-  'iDbio3(inh4lim_di)'
-  'r3dvar'
-  1.0d0
-
-'nh4lim_lg'
-  'None'
-  '[]'
-  'nh4lim_lg, scalar, series'
-  'ocean_time'
-  'iDbio3(inh4lim_lg)'
-  'r3dvar'
-  1.0d0
-
-'po4lim_sm'
-  'None'
-  '[]'
-  'po4lim_sm, scalar, series'
-  'ocean_time'
-  'iDbio3(ipo4lim_sm)'
-  'r3dvar'
-  1.0d0
-
-'po4lim_di'
-  'None'
-  '[]'
-  'po4lim_di, scalar, series'
-  'ocean_time'
-  'iDbio3(ipo4lim_di)'
-  'r3dvar'
-  1.0d0
-
-'po4lim_lg'
-  'None'
-  '[]'
-  'po4lim_lg, scalar, series'
-  'ocean_time'
-  'iDbio3(ipo4lim_lg)'
-  'r3dvar'
-  1.0d0
-
-'chl_di'
-  'None'
-  '['ug/kg']'
-  'chl_di, scalar, series'
-  'ocean_time'
-  'iDbio3(ichl_di)'
-  'r3dvar'
-  1.0d0
-
-'C_2_chl_di'
-  'None'
-  '['ug/kg']'
-  'C_2_chl_di, scalar, series'
-  'ocean_time'
-  'iDbio3(iC_2_chl_di)'
-  'r3dvar'
-  1.0d0
-
-'chl_sm'
-  'None'
-  '['ug/kg']'
-  'chl_sm, scalar, series'
-  'ocean_time'
-  'iDbio3(ichl_sm)'
-  'r3dvar'
-  1.0d0
-
-'C_2_chl_sm'
-  'None'
-  '['ug/kg']'
-  'C_2_chl_sm, scalar, series'
-  'ocean_time'
-  'iDbio3(iC_2_chl_sm)'
-  'r3dvar'
-  1.0d0
-
-'chl_lg'
-  'None'
-  '['ug/kg']'
-  'chl_lg, scalar, series'
-  'ocean_time'
-  'iDbio3(ichl_lg)'
-  'r3dvar'
-  1.0d0
-
-'C_2_chl_lg'
-  'None'
-  '['ug/kg']'
-  'C_2_chl_lg, scalar, series'
-  'ocean_time'
-  'iDbio3(iC_2_chl_lg)'
-  'r3dvar'
-  1.0d0
-
-'prod_n_100_md'
-  'nitrogen production for medium phyto upper 100m'
-  'mol.m-2.s-1'
-  'prod_n_100_md, scalar, series'
-  'ocean_time'
-  'iDbio2(iprod_n_100_md)'
-  'r2dvar'
-  1.0d0
-
-'aggloss_n_100_md'
-  'loss to aggregation for medium phyto upper 100m'
-  'mol.m-2.s-1'
-  'aggloss_n_100_md, scalar, series'
-  'ocean_time'
-  'iDbio2(iaggloss_n_100_md)'
-  'r2dvar'
-  1.0d0
-
-'zloss_n_100_md'
-  'loss to zooplankton for medium phyto upper 100m'
-  'mol.m-2.s-1'
-  'zloss_n_100_md, scalar, series'
-  'ocean_time'
-  'iDbio2(izloss_n_100_md)'
-  'r2dvar'
-  1.0d0
-
-'mu_mem_md'
-  'aggregation memory medium phyto'
-  '[]'
-  'mu_mem_md, scalar, series'
-  'ocean_time'
-  'iDbio3(imu_mem_md)'
-  'r3dvar'
-  1.0d0
-
-'agg_lim_md'
-  'aggregation limitation medium phyto'
-  '[]'
-  'agg_lim_md, scalar, series'
-  'ocean_time'
-  'iDbio3(iagg_lim_md)'
-  'r3dvar'
-  1.0d0
-
-'virloss_md'
-  'losses to viruses medium phyto'
-  'mol/kg'
-  'virloss_md, scalar, series'
-  'ocean_time'
-  'iDbio3(ivirloss_md)'
-  'r3dvar'
-  1.0d0
-
-'zloss_md'
-  'losses to zoo medium phyto'
-  'mol/kg'
-  'zloss_md, scalar, series'
-  'ocean_time'
-  'iDbio3(izloss_md)'
-  'r3dvar'
-  1.0d0
-
-'def_fe_md'
-  'None'
-  '[]'
-  'def_fe_md, scalar, series'
-  'ocean_time'
-  'iDbio3(idef_fe_md)'
-  'r3dvar'
-  1.0d0
-
-'felim_md'
-  'None'
-  '[]'
-  'felim_md, scalar, series'
-  'ocean_time'
-  'iDbio3(ifelim_md)'
-  'r3dvar'
-  1.0d0
-
-'no3lim_md'
-  'None'
-  '[]'
-  'no3lim_md, scalar, series'
-  'ocean_time'
-  'iDbio3(ino3lim_md)'
-  'r3dvar'
-  1.0d0
-
-'nh4lim_md'
-  'None'
-  '[]'
-  'nh4lim_md, scalar, series'
-  'ocean_time'
-  'iDbio3(inh4lim_md)'
-  'r3dvar'
-  1.0d0
-
-'po4lim_md'
-  'None'
-  '[]'
-  'po4lim_md, scalar, series'
-  'ocean_time'
-  'iDbio3(ipo4lim_md)'
-  'r3dvar'
-  1.0d0
-
-'chl_md'
-  'None'
-  '['ug/kg']'
-  'chl_md, scalar, series'
-  'ocean_time'
-  'iDbio3(ichl_md)'
-  'r3dvar'
-  1.0d0
-
-'C_2_chl_md'
-  'None'
-  '['ug/kg']'
-  'C_2_chl_md, scalar, series'
-  'ocean_time'
-  'iDbio3(iC_2_chl_md)'
-  'r3dvar'
-  1.0d0
+  1.025d0
 

@@ -919,7 +919,7 @@ LtracerCLM:
    - FALSE  # 11. Det
    - FALSE  # 12. DetF
    - FALSE  # 13. Jel
-   - FALSE  # 14. Fe
+   - TRUE   # 14. Fe
    - FALSE  # 15. TIC
    - FALSE  # 16. Alk
    - FALSE  # 17. Oxyg
@@ -937,7 +937,7 @@ LnudgeTCLM:
    - FALSE  # 11. Det
    - FALSE  # 12. DetF
    - FALSE  # 13. Jel
-   - FALSE  # 14. Fe
+   - TRUE   # 14. Fe
    - FALSE  # 15. TIC
    - FALSE  # 16. Alk
    - FALSE  # 17. Oxyg

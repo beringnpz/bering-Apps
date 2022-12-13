@@ -2843,7 +2843,7 @@
   1.0d0
 
 'Fe'
-  'Iron concentration'
+  'Ice ammonium concentration'
   'umol Fe m^-3'
   'iron conc, scalar, series'
   'ocean_time'
@@ -4715,7 +4715,7 @@
   1.0d0
 
 'IcePhL'
-  'Ice algae concentration'
+  'Iron concentration'
   'mg C m^-3'
   'ice algae conc, scalar, series'
   'ocean_time'
@@ -4724,7 +4724,7 @@
   1.0d0
 
 'IceNO3'
-  'Ice nitrate concentration'
+  'Ice algae concentration'
   'mmol N m^-3'
   'ice nitrate conc, scalar, series'
   'ocean_time'
@@ -4733,661 +4733,13 @@
   1.0d0
 
 'IceNH4'
-  'Ice ammonium concentration'
+  'Ice nitrate concentration'
   'mmol N m^-3'
   'ice ammonium conc, scalar, series'
   'ocean_time'
   'idIceTvar(iIcNH4)'
   'r2dvar'
   1.0d0
-
-'ones_east'
-  'Small microzooplankton concentration eastern boundary condition'
-  'mg C m^-3'
-  'MZS_east, scalar, series'
-  'bio_time'
-  'idTbry(ieast,iMZS)'
-  'nulvar'
-  0.0d0
-
-'ones_north'
-  'Small microzooplankton concentration northern boundary condition'
-  'mg C m^-3'
-  'MZS_north, scalar, series'
-  'bio_time'
-  'idTbry(inorth,iMZS)'
-  'nulvar'
-  0.0d0
-
-'ones_south'
-  'Small microzooplankton concentration southern boundary condition'
-  'mg C m^-3'
-  'MZS_south, scalar, series'
-  'bio_time'
-  'idTbry(isouth,iMZS)'
-  'nulvar'
-  0.0d0
-
-'ones_west'
-  'Small microzooplankton concentration western boundary condition'
-  'mg C m^-3'
-  'MZS_west, scalar, series'
-  'bio_time'
-  'idTbry(iwest,iMZS)'
-  'nulvar'
-  0.0d0
-
-'ones_east'
-  'Small copepod concentration eastern boundary condition'
-  'mg C m^-3'
-  'Cop_east, scalar, series'
-  'bio_time'
-  'idTbry(ieast,iCop)'
-  'nulvar'
-  1.0d-16
-
-'ones_east'
-  'Slow-sinking detritus concetration eastern boundary condition'
-  'mg C m^-3'
-  'Det_east, scalar, series'
-  'bio_time'
-  'idTbry(ieast,iDet)'
-  'nulvar'
-  1.0d-16
-
-'ones_east'
-  'Fast-sinking detritus concentration eastern boundary condition'
-  'mg C m^-3'
-  'DetF_east, scalar, series'
-  'bio_time'
-  'idTbry(ieast,iDetF)'
-  'nulvar'
-  1.0d-16
-
-'ones_east'
-  'Offshore euphausiid concentration eastern boundary condition'
-  'mg C m^-3'
-  'EupO_east, scalar, series'
-  'bio_time'
-  'idTbry(ieast,iEupO)'
-  'nulvar'
-  1.0d-16
-
-'ones_east'
-  'On-shelf euphausiid concentration eastern boundary condition'
-  'mg C m^-3'
-  'EupS_east, scalar, series'
-  'bio_time'
-  'idTbry(ieast,iEupS)'
-  'nulvar'
-  1.0d-16
-
-'ones_east'
-  'Jellyfish concentration eastern boundary condition'
-  'mg C m^-3'
-  'Jel_east, scalar, series'
-  'bio_time'
-  'idTbry(ieast,iJel)'
-  'nulvar'
-  1.0d-16
-
-'ones_east'
-  'Microzooplankton concentration eastern boundary condition'
-  'mg C m^-3'
-  'MZL_east, scalar, series'
-  'bio_time'
-  'idTbry(ieast,iMZL)'
-  'nulvar'
-  1.0d-16
-
-'ones_east'
-  'Offshore large copepod concentration eastern boundary condition'
-  'mg C m^-3'
-  'NCaO_east, scalar, series'
-  'bio_time'
-  'idTbry(ieast,iNCaO)'
-  'nulvar'
-  1.0d-16
-
-'ones_east'
-  'On-shelf large copepod concentration eastern boundary condition'
-  'mg C m^-3'
-  'NCaS_east, scalar, series'
-  'bio_time'
-  'idTbry(ieast,iNCaS)'
-  'nulvar'
-  1.0d-16
-
-'ones_east'
-  'Large phytoplankton concentration eastern boundary condition'
-  'mg C m^-3'
-  'PhL_east, scalar, series'
-  'bio_time'
-  'idTbry(ieast,iPhL)'
-  'nulvar'
-  1.0d-16
-
-'ones_east'
-  'Small phytoplankton concentration eastern boundary condition'
-  'mg C m^-3'
-  'PhS_east, scalar, series'
-  'bio_time'
-  'idTbry(ieast,iPhS)'
-  'nulvar'
-  1.0d-16
-
-'ones_north'
-  'Small copepod concentration northern boundary condition'
-  'mg C m^-3'
-  'Cop_north, scalar, series'
-  'bio_time'
-  'idTbry(inorth,iCop)'
-  'nulvar'
-  1.0d-16
-
-'ones_north'
-  'Slow-sinking detritus concetration northern boundary condition'
-  'mg C m^-3'
-  'Det_north, scalar, series'
-  'bio_time'
-  'idTbry(inorth,iDet)'
-  'nulvar'
-  1.0d-16
-
-'ones_north'
-  'Fast-sinking detritus concentration northern boundary condition'
-  'mg C m^-3'
-  'DetF_north, scalar, series'
-  'bio_time'
-  'idTbry(inorth,iDetF)'
-  'nulvar'
-  1.0d-16
-
-'ones_north'
-  'Offshore euphausiid concentration northern boundary condition'
-  'mg C m^-3'
-  'EupO_north, scalar, series'
-  'bio_time'
-  'idTbry(inorth,iEupO)'
-  'nulvar'
-  1.0d-16
-
-'ones_north'
-  'On-shelf euphausiid concentration northern boundary condition'
-  'mg C m^-3'
-  'EupS_north, scalar, series'
-  'bio_time'
-  'idTbry(inorth,iEupS)'
-  'nulvar'
-  1.0d-16
-
-'ones_north'
-  'Jellyfish concentration northern boundary condition'
-  'mg C m^-3'
-  'Jel_north, scalar, series'
-  'bio_time'
-  'idTbry(inorth,iJel)'
-  'nulvar'
-  1.0d-16
-
-'ones_north'
-  'Microzooplankton concentration northern boundary condition'
-  'mg C m^-3'
-  'MZL_north, scalar, series'
-  'bio_time'
-  'idTbry(inorth,iMZL)'
-  'nulvar'
-  1.0d-16
-
-'ones_north'
-  'Offshore large copepod concentration northern boundary condition'
-  'mg C m^-3'
-  'NCaO_north, scalar, series'
-  'bio_time'
-  'idTbry(inorth,iNCaO)'
-  'nulvar'
-  1.0d-16
-
-'ones_north'
-  'On-shelf large copepod concentration northern boundary condition'
-  'mg C m^-3'
-  'NCaS_north, scalar, series'
-  'bio_time'
-  'idTbry(inorth,iNCaS)'
-  'nulvar'
-  1.0d-16
-
-'ones_north'
-  'Large phytoplankton concentration northern boundary condition'
-  'mg C m^-3'
-  'PhL_north, scalar, series'
-  'bio_time'
-  'idTbry(inorth,iPhL)'
-  'nulvar'
-  1.0d-16
-
-'ones_north'
-  'Small phytoplankton concentration northern boundary condition'
-  'mg C m^-3'
-  'PhS_north, scalar, series'
-  'bio_time'
-  'idTbry(inorth,iPhS)'
-  'nulvar'
-  1.0d-16
-
-'ones_south'
-  'Small copepod concentration southern boundary condition'
-  'mg C m^-3'
-  'Cop_south, scalar, series'
-  'bio_time'
-  'idTbry(isouth,iCop)'
-  'nulvar'
-  1.0d-16
-
-'ones_south'
-  'Slow-sinking detritus concetration southern boundary condition'
-  'mg C m^-3'
-  'Det_south, scalar, series'
-  'bio_time'
-  'idTbry(isouth,iDet)'
-  'nulvar'
-  1.0d-16
-
-'ones_south'
-  'Fast-sinking detritus concentration southern boundary condition'
-  'mg C m^-3'
-  'DetF_south, scalar, series'
-  'bio_time'
-  'idTbry(isouth,iDetF)'
-  'nulvar'
-  1.0d-16
-
-'ones_south'
-  'Offshore euphausiid concentration southern boundary condition'
-  'mg C m^-3'
-  'EupO_south, scalar, series'
-  'bio_time'
-  'idTbry(isouth,iEupO)'
-  'nulvar'
-  1.0d-16
-
-'ones_south'
-  'On-shelf euphausiid concentration southern boundary condition'
-  'mg C m^-3'
-  'EupS_south, scalar, series'
-  'bio_time'
-  'idTbry(isouth,iEupS)'
-  'nulvar'
-  1.0d-16
-
-'ones_south'
-  'Jellyfish concentration southern boundary condition'
-  'mg C m^-3'
-  'Jel_south, scalar, series'
-  'bio_time'
-  'idTbry(isouth,iJel)'
-  'nulvar'
-  1.0d-16
-
-'ones_south'
-  'Microzooplankton concentration southern boundary condition'
-  'mg C m^-3'
-  'MZL_south, scalar, series'
-  'bio_time'
-  'idTbry(isouth,iMZL)'
-  'nulvar'
-  1.0d-16
-
-'ones_south'
-  'Offshore large copepod concentration southern boundary condition'
-  'mg C m^-3'
-  'NCaO_south, scalar, series'
-  'bio_time'
-  'idTbry(isouth,iNCaO)'
-  'nulvar'
-  1.0d-16
-
-'ones_south'
-  'On-shelf large copepod concentration southern boundary condition'
-  'mg C m^-3'
-  'NCaS_south, scalar, series'
-  'bio_time'
-  'idTbry(isouth,iNCaS)'
-  'nulvar'
-  1.0d-16
-
-'ones_south'
-  'Large phytoplankton concentration southern boundary condition'
-  'mg C m^-3'
-  'PhL_south, scalar, series'
-  'bio_time'
-  'idTbry(isouth,iPhL)'
-  'nulvar'
-  1.0d-16
-
-'ones_south'
-  'Small phytoplankton concentration southern boundary condition'
-  'mg C m^-3'
-  'PhS_south, scalar, series'
-  'bio_time'
-  'idTbry(isouth,iPhS)'
-  'nulvar'
-  1.0d-16
-
-'ones_west'
-  'Small copepod concentration western boundary condition'
-  'mg C m^-3'
-  'Cop_west, scalar, series'
-  'bio_time'
-  'idTbry(iwest,iCop)'
-  'nulvar'
-  1.0d-16
-
-'ones_west'
-  'Slow-sinking detritus concetration western boundary condition'
-  'mg C m^-3'
-  'Det_west, scalar, series'
-  'bio_time'
-  'idTbry(iwest,iDet)'
-  'nulvar'
-  1.0d-16
-
-'ones_west'
-  'Fast-sinking detritus concentration western boundary condition'
-  'mg C m^-3'
-  'DetF_west, scalar, series'
-  'bio_time'
-  'idTbry(iwest,iDetF)'
-  'nulvar'
-  1.0d-16
-
-'ones_west'
-  'Offshore euphausiid concentration western boundary condition'
-  'mg C m^-3'
-  'EupO_west, scalar, series'
-  'bio_time'
-  'idTbry(iwest,iEupO)'
-  'nulvar'
-  1.0d-16
-
-'ones_west'
-  'On-shelf euphausiid concentration western boundary condition'
-  'mg C m^-3'
-  'EupS_west, scalar, series'
-  'bio_time'
-  'idTbry(iwest,iEupS)'
-  'nulvar'
-  1.0d-16
-
-'ones_west'
-  'Jellyfish concentration western boundary condition'
-  'mg C m^-3'
-  'Jel_west, scalar, series'
-  'bio_time'
-  'idTbry(iwest,iJel)'
-  'nulvar'
-  1.0d-16
-
-'ones_west'
-  'Microzooplankton concentration western boundary condition'
-  'mg C m^-3'
-  'MZL_west, scalar, series'
-  'bio_time'
-  'idTbry(iwest,iMZL)'
-  'nulvar'
-  1.0d-16
-
-'ones_west'
-  'Offshore large copepod concentration western boundary condition'
-  'mg C m^-3'
-  'NCaO_west, scalar, series'
-  'bio_time'
-  'idTbry(iwest,iNCaO)'
-  'nulvar'
-  1.0d-16
-
-'ones_west'
-  'On-shelf large copepod concentration western boundary condition'
-  'mg C m^-3'
-  'NCaS_west, scalar, series'
-  'bio_time'
-  'idTbry(iwest,iNCaS)'
-  'nulvar'
-  1.0d-16
-
-'ones_west'
-  'Large phytoplankton concentration western boundary condition'
-  'mg C m^-3'
-  'PhL_west, scalar, series'
-  'bio_time'
-  'idTbry(iwest,iPhL)'
-  'nulvar'
-  1.0d-16
-
-'ones_west'
-  'Small phytoplankton concentration western boundary condition'
-  'mg C m^-3'
-  'PhS_west, scalar, series'
-  'bio_time'
-  'idTbry(iwest,iPhS)'
-  'nulvar'
-  1.0d-16
-
-'Fe_east'
-  'Iron concentration eastern boundary condition'
-  'umol Fe m^-3'
-  'Fe_east, scalar, series'
-  'bio_time'
-  'idTbry(ieast,iFe)'
-  'nulvar'
-  1025.0d0
-
-'NH4_east'
-  'Ammonium concentration eastern boundary condition'
-  'mmol N m^-3'
-  'NH4_east, scalar, series'
-  'bio_time'
-  'idTbry(ieast,iNH4)'
-  'nulvar'
-  1.025d0
-
-'NO3_east'
-  'Nitrate concentration eastern boundary condition'
-  'mmol N m^-3'
-  'NO3_east, scalar, series'
-  'bio_time'
-  'idTbry(ieast,iNO3)'
-  'nulvar'
-  1.025d0
-
-'oxygen_east'
-  'Oxygen eastern boundary condition'
-  'mmol O m^-3'
-  'Oxyg_east, scalar, series'
-  'oxygen_time'
-  'idTbry(ieast,iOxyg)'
-  'nulvar'
-  1.025d0
-
-'alkalinity_east'
-  'Alkalinity eastern boundary condition'
-  'mmol C m^-3'
-  'TAlk_east, scalar, series'
-  'bio_time'
-  'idTbry(ieast,iTAlk)'
-  'nulvar'
-  1.025d0
-
-'TIC_east'
-  'TIC eastern boundary condition'
-  'mmol C m^-3'
-  'TIC_east, scalar, series'
-  'bio_time'
-  'idTbry(ieast,iTIC_)'
-  'nulvar'
-  1.025d0
-
-'Fe_north'
-  'Iron concentration northern boundary condition'
-  'umol Fe m^-3'
-  'Fe_north, scalar, series'
-  'bio_time'
-  'idTbry(inorth,iFe)'
-  'nulvar'
-  1025.0d0
-
-'NH4_north'
-  'Ammonium concentration northern boundary condition'
-  'mmol N m^-3'
-  'NH4_north, scalar, series'
-  'bio_time'
-  'idTbry(inorth,iNH4)'
-  'nulvar'
-  1.025d0
-
-'NO3_north'
-  'Nitrate concentration northern boundary condition'
-  'mmol N m^-3'
-  'NO3_north, scalar, series'
-  'bio_time'
-  'idTbry(inorth,iNO3)'
-  'nulvar'
-  1.025d0
-
-'oxygen_north'
-  'Oxygen northern boundary condition'
-  'mmol O m^-3'
-  'Oxyg_north, scalar, series'
-  'oxygen_time'
-  'idTbry(inorth,iOxyg)'
-  'nulvar'
-  1.025d0
-
-'alkalinity_north'
-  'Alkalinity northern boundary condition'
-  'mmol C m^-3'
-  'TAlk_north, scalar, series'
-  'bio_time'
-  'idTbry(inorth,iTAlk)'
-  'nulvar'
-  1.025d0
-
-'TIC_north'
-  'TIC northern boundary condition'
-  'mmol C m^-3'
-  'TIC_north, scalar, series'
-  'bio_time'
-  'idTbry(inorth,iTIC_)'
-  'nulvar'
-  1.025d0
-
-'Fe_south'
-  'Iron concentration southern boundary condition'
-  'umol Fe m^-3'
-  'Fe_south, scalar, series'
-  'bio_time'
-  'idTbry(isouth,iFe)'
-  'nulvar'
-  1025.0d0
-
-'NH4_south'
-  'Ammonium concentration southern boundary condition'
-  'mmol N m^-3'
-  'NH4_south, scalar, series'
-  'bio_time'
-  'idTbry(isouth,iNH4)'
-  'nulvar'
-  1.025d0
-
-'NO3_south'
-  'Nitrate concentration southern boundary condition'
-  'mmol N m^-3'
-  'NO3_south, scalar, series'
-  'bio_time'
-  'idTbry(isouth,iNO3)'
-  'nulvar'
-  1.025d0
-
-'oxygen_south'
-  'Oxygen southern boundary condition'
-  'mmol O m^-3'
-  'Oxyg_south, scalar, series'
-  'oxygen_time'
-  'idTbry(isouth,iOxyg)'
-  'nulvar'
-  1.025d0
-
-'alkalinity_south'
-  'Alkalinity southern boundary condition'
-  'mmol C m^-3'
-  'TAlk_south, scalar, series'
-  'bio_time'
-  'idTbry(isouth,iTAlk)'
-  'nulvar'
-  1.025d0
-
-'TIC_south'
-  'TIC southern boundary condition'
-  'mmol C m^-3'
-  'TIC_south, scalar, series'
-  'bio_time'
-  'idTbry(isouth,iTIC_)'
-  'nulvar'
-  1.025d0
-
-'Fe_west'
-  'Iron concentration western boundary condition'
-  'umol Fe m^-3'
-  'Fe_west, scalar, series'
-  'bio_time'
-  'idTbry(iwest,iFe)'
-  'nulvar'
-  1025.0d0
-
-'NH4_west'
-  'Ammonium concentration western boundary condition'
-  'mmol N m^-3'
-  'NH4_west, scalar, series'
-  'bio_time'
-  'idTbry(iwest,iNH4)'
-  'nulvar'
-  1.025d0
-
-'NO3_west'
-  'Nitrate concentration western boundary condition'
-  'mmol N m^-3'
-  'NO3_west, scalar, series'
-  'bio_time'
-  'idTbry(iwest,iNO3)'
-  'nulvar'
-  1.025d0
-
-'oxygen_west'
-  'Oxygen western boundary condition'
-  'mmol O m^-3'
-  'Oxyg_west, scalar, series'
-  'oxygen_time'
-  'idTbry(iwest,iOxyg)'
-  'nulvar'
-  1.025d0
-
-'alkalinity_west'
-  'Alkalinity western boundary condition'
-  'mmol C m^-3'
-  'TAlk_west, scalar, series'
-  'bio_time'
-  'idTbry(iwest,iTAlk)'
-  'nulvar'
-  1.025d0
-
-'TIC_west'
-  'TIC western boundary condition'
-  'mmol C m^-3'
-  'TIC_west, scalar, series'
-  'bio_time'
-  'idTbry(iwest,iTIC_)'
-  'nulvar'
-  1.025d0
 
 'LightLimS'
   'PhS Light limitation'
@@ -6818,5 +6170,617 @@
   'ocean_time'
   'iDbio2(io2flx)'
   'r2dvar'
+  1.0d0
+
+'Cop_east'
+  'Small copepod concentration eastern boundary condition'
+  'mg C m^-3'
+  'Cop_east, scalar, series'
+  'bio_time'
+  'idTbry(ieast,iCop)'
+  'nulvar'
+  1.0d0
+
+'Det_east'
+  'Slow-sinking detritus concetration eastern boundary condition'
+  'mg C m^-3'
+  'Det_east, scalar, series'
+  'bio_time'
+  'idTbry(ieast,iDet)'
+  'nulvar'
+  1.0d0
+
+'DetF_east'
+  'Fast-sinking detritus concentration eastern boundary condition'
+  'mg C m^-3'
+  'DetF_east, scalar, series'
+  'bio_time'
+  'idTbry(ieast,iDetF)'
+  'nulvar'
+  1.0d0
+
+'EupO_east'
+  'Offshore euphausiid concentration eastern boundary condition'
+  'mg C m^-3'
+  'EupO_east, scalar, series'
+  'bio_time'
+  'idTbry(ieast,iEupO)'
+  'nulvar'
+  1.0d0
+
+'EupS_east'
+  'On-shelf euphausiid concentration eastern boundary condition'
+  'mg C m^-3'
+  'EupS_east, scalar, series'
+  'bio_time'
+  'idTbry(ieast,iEupS)'
+  'nulvar'
+  1.0d0
+
+'Jel_east'
+  'Jellyfish concentration eastern boundary condition'
+  'mg C m^-3'
+  'Jel_east, scalar, series'
+  'bio_time'
+  'idTbry(ieast,iJel)'
+  'nulvar'
+  1.0d0
+
+'MZL_east'
+  'Microzooplankton concentration eastern boundary condition'
+  'mg C m^-3'
+  'MZL_east, scalar, series'
+  'bio_time'
+  'idTbry(ieast,iMZL)'
+  'nulvar'
+  1.0d0
+
+'NCaO_east'
+  'Offshore large copepod concentration eastern boundary condition'
+  'mg C m^-3'
+  'NCaO_east, scalar, series'
+  'bio_time'
+  'idTbry(ieast,iNCaO)'
+  'nulvar'
+  1.0d0
+
+'NCaS_east'
+  'On-shelf large copepod concentration eastern boundary condition'
+  'mg C m^-3'
+  'NCaS_east, scalar, series'
+  'bio_time'
+  'idTbry(ieast,iNCaS)'
+  'nulvar'
+  1.0d0
+
+'PhL_east'
+  'Large phytoplankton concentration eastern boundary condition'
+  'mg C m^-3'
+  'PhL_east, scalar, series'
+  'bio_time'
+  'idTbry(ieast,iPhL)'
+  'nulvar'
+  1.0d0
+
+'PhS_east'
+  'Small phytoplankton concentration eastern boundary condition'
+  'mg C m^-3'
+  'PhS_east, scalar, series'
+  'bio_time'
+  'idTbry(ieast,iPhS)'
+  'nulvar'
+  1.0d0
+
+'Cop_north'
+  'Small copepod concentration northern boundary condition'
+  'mg C m^-3'
+  'Cop_north, scalar, series'
+  'bio_time'
+  'idTbry(inorth,iCop)'
+  'nulvar'
+  1.0d0
+
+'Det_north'
+  'Slow-sinking detritus concetration northern boundary condition'
+  'mg C m^-3'
+  'Det_north, scalar, series'
+  'bio_time'
+  'idTbry(inorth,iDet)'
+  'nulvar'
+  1.0d0
+
+'DetF_north'
+  'Fast-sinking detritus concentration northern boundary condition'
+  'mg C m^-3'
+  'DetF_north, scalar, series'
+  'bio_time'
+  'idTbry(inorth,iDetF)'
+  'nulvar'
+  1.0d0
+
+'EupO_north'
+  'Offshore euphausiid concentration northern boundary condition'
+  'mg C m^-3'
+  'EupO_north, scalar, series'
+  'bio_time'
+  'idTbry(inorth,iEupO)'
+  'nulvar'
+  1.0d0
+
+'EupS_north'
+  'On-shelf euphausiid concentration northern boundary condition'
+  'mg C m^-3'
+  'EupS_north, scalar, series'
+  'bio_time'
+  'idTbry(inorth,iEupS)'
+  'nulvar'
+  1.0d0
+
+'Jel_north'
+  'Jellyfish concentration northern boundary condition'
+  'mg C m^-3'
+  'Jel_north, scalar, series'
+  'bio_time'
+  'idTbry(inorth,iJel)'
+  'nulvar'
+  1.0d0
+
+'MZL_north'
+  'Microzooplankton concentration northern boundary condition'
+  'mg C m^-3'
+  'MZL_north, scalar, series'
+  'bio_time'
+  'idTbry(inorth,iMZL)'
+  'nulvar'
+  1.0d0
+
+'NCaO_north'
+  'Offshore large copepod concentration northern boundary condition'
+  'mg C m^-3'
+  'NCaO_north, scalar, series'
+  'bio_time'
+  'idTbry(inorth,iNCaO)'
+  'nulvar'
+  1.0d0
+
+'NCaS_north'
+  'On-shelf large copepod concentration northern boundary condition'
+  'mg C m^-3'
+  'NCaS_north, scalar, series'
+  'bio_time'
+  'idTbry(inorth,iNCaS)'
+  'nulvar'
+  1.0d0
+
+'PhL_north'
+  'Large phytoplankton concentration northern boundary condition'
+  'mg C m^-3'
+  'PhL_north, scalar, series'
+  'bio_time'
+  'idTbry(inorth,iPhL)'
+  'nulvar'
+  1.0d0
+
+'PhS_north'
+  'Small phytoplankton concentration northern boundary condition'
+  'mg C m^-3'
+  'PhS_north, scalar, series'
+  'bio_time'
+  'idTbry(inorth,iPhS)'
+  'nulvar'
+  1.0d0
+
+'Cop_south'
+  'Small copepod concentration southern boundary condition'
+  'mg C m^-3'
+  'Cop_south, scalar, series'
+  'bio_time'
+  'idTbry(isouth,iCop)'
+  'nulvar'
+  1.0d0
+
+'Det_south'
+  'Slow-sinking detritus concetration southern boundary condition'
+  'mg C m^-3'
+  'Det_south, scalar, series'
+  'bio_time'
+  'idTbry(isouth,iDet)'
+  'nulvar'
+  1.0d0
+
+'DetF_south'
+  'Fast-sinking detritus concentration southern boundary condition'
+  'mg C m^-3'
+  'DetF_south, scalar, series'
+  'bio_time'
+  'idTbry(isouth,iDetF)'
+  'nulvar'
+  1.0d0
+
+'EupO_south'
+  'Offshore euphausiid concentration southern boundary condition'
+  'mg C m^-3'
+  'EupO_south, scalar, series'
+  'bio_time'
+  'idTbry(isouth,iEupO)'
+  'nulvar'
+  1.0d0
+
+'EupS_south'
+  'On-shelf euphausiid concentration southern boundary condition'
+  'mg C m^-3'
+  'EupS_south, scalar, series'
+  'bio_time'
+  'idTbry(isouth,iEupS)'
+  'nulvar'
+  1.0d0
+
+'Jel_south'
+  'Jellyfish concentration southern boundary condition'
+  'mg C m^-3'
+  'Jel_south, scalar, series'
+  'bio_time'
+  'idTbry(isouth,iJel)'
+  'nulvar'
+  1.0d0
+
+'MZL_south'
+  'Microzooplankton concentration southern boundary condition'
+  'mg C m^-3'
+  'MZL_south, scalar, series'
+  'bio_time'
+  'idTbry(isouth,iMZL)'
+  'nulvar'
+  1.0d0
+
+'NCaO_south'
+  'Offshore large copepod concentration southern boundary condition'
+  'mg C m^-3'
+  'NCaO_south, scalar, series'
+  'bio_time'
+  'idTbry(isouth,iNCaO)'
+  'nulvar'
+  1.0d0
+
+'NCaS_south'
+  'On-shelf large copepod concentration southern boundary condition'
+  'mg C m^-3'
+  'NCaS_south, scalar, series'
+  'bio_time'
+  'idTbry(isouth,iNCaS)'
+  'nulvar'
+  1.0d0
+
+'PhL_south'
+  'Large phytoplankton concentration southern boundary condition'
+  'mg C m^-3'
+  'PhL_south, scalar, series'
+  'bio_time'
+  'idTbry(isouth,iPhL)'
+  'nulvar'
+  1.0d0
+
+'PhS_south'
+  'Small phytoplankton concentration southern boundary condition'
+  'mg C m^-3'
+  'PhS_south, scalar, series'
+  'bio_time'
+  'idTbry(isouth,iPhS)'
+  'nulvar'
+  1.0d0
+
+'Cop_west'
+  'Small copepod concentration western boundary condition'
+  'mg C m^-3'
+  'Cop_west, scalar, series'
+  'bio_time'
+  'idTbry(iwest,iCop)'
+  'nulvar'
+  1.0d0
+
+'Det_west'
+  'Slow-sinking detritus concetration western boundary condition'
+  'mg C m^-3'
+  'Det_west, scalar, series'
+  'bio_time'
+  'idTbry(iwest,iDet)'
+  'nulvar'
+  1.0d0
+
+'DetF_west'
+  'Fast-sinking detritus concentration western boundary condition'
+  'mg C m^-3'
+  'DetF_west, scalar, series'
+  'bio_time'
+  'idTbry(iwest,iDetF)'
+  'nulvar'
+  1.0d0
+
+'EupO_west'
+  'Offshore euphausiid concentration western boundary condition'
+  'mg C m^-3'
+  'EupO_west, scalar, series'
+  'bio_time'
+  'idTbry(iwest,iEupO)'
+  'nulvar'
+  1.0d0
+
+'EupS_west'
+  'On-shelf euphausiid concentration western boundary condition'
+  'mg C m^-3'
+  'EupS_west, scalar, series'
+  'bio_time'
+  'idTbry(iwest,iEupS)'
+  'nulvar'
+  1.0d0
+
+'Jel_west'
+  'Jellyfish concentration western boundary condition'
+  'mg C m^-3'
+  'Jel_west, scalar, series'
+  'bio_time'
+  'idTbry(iwest,iJel)'
+  'nulvar'
+  1.0d0
+
+'MZL_west'
+  'Microzooplankton concentration western boundary condition'
+  'mg C m^-3'
+  'MZL_west, scalar, series'
+  'bio_time'
+  'idTbry(iwest,iMZL)'
+  'nulvar'
+  1.0d0
+
+'NCaO_west'
+  'Offshore large copepod concentration western boundary condition'
+  'mg C m^-3'
+  'NCaO_west, scalar, series'
+  'bio_time'
+  'idTbry(iwest,iNCaO)'
+  'nulvar'
+  1.0d0
+
+'NCaS_west'
+  'On-shelf large copepod concentration western boundary condition'
+  'mg C m^-3'
+  'NCaS_west, scalar, series'
+  'bio_time'
+  'idTbry(iwest,iNCaS)'
+  'nulvar'
+  1.0d0
+
+'PhL_west'
+  'Large phytoplankton concentration western boundary condition'
+  'mg C m^-3'
+  'PhL_west, scalar, series'
+  'bio_time'
+  'idTbry(iwest,iPhL)'
+  'nulvar'
+  1.0d0
+
+'PhS_west'
+  'Small phytoplankton concentration western boundary condition'
+  'mg C m^-3'
+  'PhS_west, scalar, series'
+  'bio_time'
+  'idTbry(iwest,iPhS)'
+  'nulvar'
+  1.0d0
+
+'Fe_east'
+  'Iron concentration eastern boundary condition'
+  'umol Fe m^-3'
+  'Fe_east, scalar, series'
+  'bio_time'
+  'idTbry(ieast,iFe)'
+  'nulvar'
+  1.0d0
+
+'NH4_east'
+  'Ammonium concentration eastern boundary condition'
+  'mmol N m^-3'
+  'NH4_east, scalar, series'
+  'bio_time'
+  'idTbry(ieast,iNH4)'
+  'nulvar'
+  1.0d0
+
+'NO3_east'
+  'Nitrate concentration eastern boundary condition'
+  'mmol N m^-3'
+  'NO3_east, scalar, series'
+  'bio_time'
+  'idTbry(ieast,iNO3)'
+  'nulvar'
+  1.0d0
+
+'oxygen_east'
+  'Oxygen eastern boundary condition'
+  'mmol O m^-3'
+  'Oxyg_east, scalar, series'
+  'oxygen_time'
+  'idTbry(ieast,iOxyg)'
+  'nulvar'
+  1.0d0
+
+'alkalinity_east'
+  'Alkalinity eastern boundary condition'
+  'mmol C m^-3'
+  'TAlk_east, scalar, series'
+  'bio_time'
+  'idTbry(ieast,iTAlk)'
+  'nulvar'
+  1.0d0
+
+'TIC_east'
+  'TIC eastern boundary condition'
+  'mmol C m^-3'
+  'TIC_east, scalar, series'
+  'bio_time'
+  'idTbry(ieast,iTIC_)'
+  'nulvar'
+  1.0d0
+
+'Fe_north'
+  'Iron concentration northern boundary condition'
+  'umol Fe m^-3'
+  'Fe_north, scalar, series'
+  'bio_time'
+  'idTbry(inorth,iFe)'
+  'nulvar'
+  1.0d0
+
+'NH4_north'
+  'Ammonium concentration northern boundary condition'
+  'mmol N m^-3'
+  'NH4_north, scalar, series'
+  'bio_time'
+  'idTbry(inorth,iNH4)'
+  'nulvar'
+  1.0d0
+
+'NO3_north'
+  'Nitrate concentration northern boundary condition'
+  'mmol N m^-3'
+  'NO3_north, scalar, series'
+  'bio_time'
+  'idTbry(inorth,iNO3)'
+  'nulvar'
+  1.0d0
+
+'oxygen_north'
+  'Oxygen northern boundary condition'
+  'mmol O m^-3'
+  'Oxyg_north, scalar, series'
+  'oxygen_time'
+  'idTbry(inorth,iOxyg)'
+  'nulvar'
+  1.0d0
+
+'alkalinity_north'
+  'Alkalinity northern boundary condition'
+  'mmol C m^-3'
+  'TAlk_north, scalar, series'
+  'bio_time'
+  'idTbry(inorth,iTAlk)'
+  'nulvar'
+  1.0d0
+
+'TIC_north'
+  'TIC northern boundary condition'
+  'mmol C m^-3'
+  'TIC_north, scalar, series'
+  'bio_time'
+  'idTbry(inorth,iTIC_)'
+  'nulvar'
+  1.0d0
+
+'Fe_south'
+  'Iron concentration southern boundary condition'
+  'umol Fe m^-3'
+  'Fe_south, scalar, series'
+  'bio_time'
+  'idTbry(isouth,iFe)'
+  'nulvar'
+  1.0d0
+
+'NH4_south'
+  'Ammonium concentration southern boundary condition'
+  'mmol N m^-3'
+  'NH4_south, scalar, series'
+  'bio_time'
+  'idTbry(isouth,iNH4)'
+  'nulvar'
+  1.0d0
+
+'NO3_south'
+  'Nitrate concentration southern boundary condition'
+  'mmol N m^-3'
+  'NO3_south, scalar, series'
+  'bio_time'
+  'idTbry(isouth,iNO3)'
+  'nulvar'
+  1.0d0
+
+'oxygen_south'
+  'Oxygen southern boundary condition'
+  'mmol O m^-3'
+  'Oxyg_south, scalar, series'
+  'oxygen_time'
+  'idTbry(isouth,iOxyg)'
+  'nulvar'
+  1.0d0
+
+'alkalinity_south'
+  'Alkalinity southern boundary condition'
+  'mmol C m^-3'
+  'TAlk_south, scalar, series'
+  'bio_time'
+  'idTbry(isouth,iTAlk)'
+  'nulvar'
+  1.0d0
+
+'TIC_south'
+  'TIC southern boundary condition'
+  'mmol C m^-3'
+  'TIC_south, scalar, series'
+  'bio_time'
+  'idTbry(isouth,iTIC_)'
+  'nulvar'
+  1.0d0
+
+'Fe_west'
+  'Iron concentration western boundary condition'
+  'umol Fe m^-3'
+  'Fe_west, scalar, series'
+  'bio_time'
+  'idTbry(iwest,iFe)'
+  'nulvar'
+  1.0d0
+
+'NH4_west'
+  'Ammonium concentration western boundary condition'
+  'mmol N m^-3'
+  'NH4_west, scalar, series'
+  'bio_time'
+  'idTbry(iwest,iNH4)'
+  'nulvar'
+  1.0d0
+
+'NO3_west'
+  'Nitrate concentration western boundary condition'
+  'mmol N m^-3'
+  'NO3_west, scalar, series'
+  'bio_time'
+  'idTbry(iwest,iNO3)'
+  'nulvar'
+  1.0d0
+
+'oxygen_west'
+  'Oxygen western boundary condition'
+  'mmol O m^-3'
+  'Oxyg_west, scalar, series'
+  'oxygen_time'
+  'idTbry(iwest,iOxyg)'
+  'nulvar'
+  1.0d0
+
+'alkalinity_west'
+  'Alkalinity western boundary condition'
+  'mmol C m^-3'
+  'TAlk_west, scalar, series'
+  'bio_time'
+  'idTbry(iwest,iTAlk)'
+  'nulvar'
+  1.0d0
+
+'TIC_west'
+  'TIC western boundary condition'
+  'mmol C m^-3'
+  'TIC_west, scalar, series'
+  'bio_time'
+  'idTbry(iwest,iTIC_)'
+  'nulvar'
   1.0d0
 
