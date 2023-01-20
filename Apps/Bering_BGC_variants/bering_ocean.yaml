@@ -1044,8 +1044,8 @@ NC_DLEVEL:  1                 # deflate level [0-9]
 
 # Input NetCDF file names, [1:Ngrids].
 
-GRDNAME: ./Data/roms_grd/Bering10K_extended_grid2.nc
-ININAME: ./Data/roms_ini/CFS_Bering10K-ocn_ini_19850101.nc # Note: switch for BGC variants
+GRDNAME: ./Data/grids/AlaskaGrids_Bering10K.nc
+ININAME: ./Data/initial/ini_hindcast_unnested_Bering10K_BEST_NPZ.nc # Note: switch for BGC variants
 ITLNAME: placeholder.nc
 IRPNAME: placeholder.nc
 IADNAME: placeholder.nc
@@ -1084,22 +1084,14 @@ NGCNAME:  placeholder.nc
 # except the last one.
 
 NCLMFILES: 1                         # number of climate files
-CLMNAME: ./Data/roms_ini/CFS-Glodap_Bering10K-cobalt_ini_19850101.nc
+CLMNAME: ./Data/inital/ini_hindcast_unnested_Bering10K_BEST_NPZ.nc
 
 NBCFILES: 3                          # number of boundary files
 BRYNAME: 
-  - - ./Data/CFS/2001/CFS-ocean-Bering10K-N30-bryocn-2001.nc
-    - ./Data/CFS/2002/CFS-ocean-Bering10K-N30-bryocn-2002.nc
-    - ./Data/CFS/2003/CFS-ocean-Bering10K-N30-bryocn-2003.nc
-    - ./Data/CFS/2004/CFS-ocean-Bering10K-N30-bryocn-2004.nc
-    - ./Data/CFS/2005/CFS-ocean-Bering10K-N30-bryocn-2005.nc
-    - ./Data/CFS/2006/CFS-ocean-Bering10K-N30-bryocn-2006.nc
-  - - ./Data/CFS/2001/CFS-ocean-ESPER_Bering10K-N30-brycarbon-2001.nc
-    - ./Data/CFS/2002/CFS-ocean-ESPER_Bering10K-N30-brycarbon-2002.nc
-    - ./Data/CFS/2003/CFS-ocean-ESPER_Bering10K-N30-brycarbon-2003.nc
-    - ./Data/CFS/2004/CFS-ocean-ESPER_Bering10K-N30-brycarbon-2004.nc
-    - ./Data/CFS/2005/CFS-ocean-ESPER_Bering10K-N30-brycarbon-2005.nc
-    - ./Data/CFS/2006/CFS-ocean-ESPER_Bering10K-N30-brycarbon-2006.nc
+  - - ./Data/CFS/2001/CFS-ocean-Bering10K-N30-bryocn-2002.nc
+    - ./Data/CFS/2002/CFS-ocean-Bering10K-N30-bryocn-2003.nc
+  - - ./Data/CFS/2001/CFS-ocean-ESPER_Bering10K-N30-brycarbon-2002.nc
+    - ./Data/CFS/2002/CFS-ocean-ESPER_Bering10K-N30-brycarbon-2003.nc
   - ./Data/WOA/WOA2018-Bering10K-N30-brybgc.nc
 
 # Input climatology nudging coefficients file name.
@@ -1138,56 +1130,24 @@ NFFILES: 13                         # number of forcing files
 FRCNAME:
   - - ./Data/CFS/2002/CFS-atmos-northPacific-Pair-2002.nc
     - ./Data/CFS/2003/CFS-atmos-northPacific-Pair-2003.nc
-    - ./Data/CFS/2004/CFS-atmos-northPacific-Pair-2004.nc
-    - ./Data/CFS/2005/CFS-atmos-northPacific-Pair-2005.nc
-    - ./Data/CFS/2006/CFS-atmos-northPacific-Pair-2006.nc
   - - ./Data/CFS/2002/CFS-atmos-northPacific-Qair-2002.nc
     - ./Data/CFS/2003/CFS-atmos-northPacific-Qair-2003.nc
-    - ./Data/CFS/2004/CFS-atmos-northPacific-Qair-2004.nc
-    - ./Data/CFS/2005/CFS-atmos-northPacific-Qair-2005.nc
-    - ./Data/CFS/2006/CFS-atmos-northPacific-Qair-2006.nc
   - - ./Data/CFS/2002/CFS-atmos-northPacific-Tair-2002.nc
     - ./Data/CFS/2003/CFS-atmos-northPacific-Tair-2003.nc
-    - ./Data/CFS/2004/CFS-atmos-northPacific-Tair-2004.nc
-    - ./Data/CFS/2005/CFS-atmos-northPacific-Tair-2005.nc
-    - ./Data/CFS/2006/CFS-atmos-northPacific-Tair-2006.nc
   - - ./Data/CFS/2002/CFS-atmos-northPacific-Uwind-2002.nc
     - ./Data/CFS/2003/CFS-atmos-northPacific-Uwind-2003.nc
-    - ./Data/CFS/2004/CFS-atmos-northPacific-Uwind-2004.nc
-    - ./Data/CFS/2005/CFS-atmos-northPacific-Uwind-2005.nc
-    - ./Data/CFS/2006/CFS-atmos-northPacific-Uwind-2006.nc
   - - ./Data/CFS/2002/CFS-atmos-northPacific-Vwind-2002.nc
     - ./Data/CFS/2003/CFS-atmos-northPacific-Vwind-2003.nc
-    - ./Data/CFS/2004/CFS-atmos-northPacific-Vwind-2004.nc
-    - ./Data/CFS/2005/CFS-atmos-northPacific-Vwind-2005.nc
-    - ./Data/CFS/2006/CFS-atmos-northPacific-Vwind-2006.nc
   - - ./Data/CFS/2002/CFS-atmos-northPacific-lwrad-2002.nc
     - ./Data/CFS/2003/CFS-atmos-northPacific-lwrad-2003.nc
-    - ./Data/CFS/2004/CFS-atmos-northPacific-lwrad-2004.nc
-    - ./Data/CFS/2005/CFS-atmos-northPacific-lwrad-2005.nc
-    - ./Data/CFS/2006/CFS-atmos-northPacific-lwrad-2006.nc
   - - ./Data/CFS/2002/CFS-atmos-northPacific-rain-2002.nc
     - ./Data/CFS/2003/CFS-atmos-northPacific-rain-2003.nc
-    - ./Data/CFS/2004/CFS-atmos-northPacific-rain-2004.nc
-    - ./Data/CFS/2005/CFS-atmos-northPacific-rain-2005.nc
-    - ./Data/CFS/2006/CFS-atmos-northPacific-rain-2006.nc
   - - ./Data/CFS/2002/CFS-atmos-northPacific-swrad-2002.nc
     - ./Data/CFS/2003/CFS-atmos-northPacific-swrad-2003.nc
-    - ./Data/CFS/2004/CFS-atmos-northPacific-swrad-2004.nc
-    - ./Data/CFS/2005/CFS-atmos-northPacific-swrad-2005.nc
-    - ./Data/CFS/2006/CFS-atmos-northPacific-swrad-2006.nc
-  - - ./Data/KearneyEtAl2019/KearneyEtAl2019_Bering10K_Runoff_2001.nc
-    - ./Data/KearneyEtAl2019/KearneyEtAl2019_Bering10K_Runoff_2002.nc
-    - ./Data/KearneyEtAl2019/KearneyEtAl2019_Bering10K_Runoff_2003.nc
-    - ./Data/KearneyEtAl2019/KearneyEtAl2019_Bering10K_Runoff_2004.nc
-    - ./Data/KearneyEtAl2019/KearneyEtAl2019_Bering10K_Runoff_2005.nc
-    - ./Data/KearneyEtAl2019/KearneyEtAl2019_Bering10K_Runoff_2006.nc
-  - - ./Data/KearneyEtAl2019/KearneyEtAl2019-Mathis_Bering10K_RunoffCarbon_2001.nc
-    - ./Data/KearneyEtAl2019/KearneyEtAl2019-Mathis_Bering10K_RunoffCarbon_2002.nc
-    - ./Data/KearneyEtAl2019/KearneyEtAl2019-Mathis_Bering10K_RunoffCarbon_2003.nc
-    - ./Data/KearneyEtAl2019/KearneyEtAl2019-Mathis_Bering10K_RunoffCarbon_2004.nc
-    - ./Data/KearneyEtAl2019/KearneyEtAl2019-Mathis_Bering10K_RunoffCarbon_2005.nc
-    - ./Data/KearneyEtAl2019/KearneyEtAl2019-Mathis_Bering10K_RunoffCarbon_2006.nc
+  - - ./Data/GloFAS/GloFAS_runoff_Bering10K_2002.nc
+    - ./Data/GloFAS/GloFAS_runoff_Bering10K_2003.nc
+  - - ./Data/GloFAS/GloFAS-based_nutrientflux_NEP_2002.nc
+    - ./Data/GloFAS/GloFAS-based_nutrientflux_NEP_2002.nc
   - ./Data/BarrowCO2/atmo_co2_barrow_1970_2020.nc
   - ./Data/Iron/zeros_Bering10K_ironflux_1970-2025.nc
   - ./Data/salinity/sss.clim.nc
