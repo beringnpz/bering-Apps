@@ -14,7 +14,7 @@
 - {param: m_P,        value: 0.03,  unit: d^-1,             descrip: phytoplankton mortality}
 - {param: m_agg,      value: 0.009, unit: (uM N)^-1 d^-1,   descrip: phytoplankton loss via aggregation}
 - {param: I0,         value: 3.4,   unit: d^-1,             descrip: max microzooplankton ingestion rate}
-- {param: K,          value: 1,     unit: uM N,             descrip: grazing half-saturation}
+- {param: Kgraz,      value: 1,     unit: uM N,             descrip: grazing half-saturation}
 - {param: epsil,      value: 0.3,   unit: unitless,         descrip: microzooplankton growth efficiency}
 - {param: fex,        value: 0.35,  unit: unitless,         descrip: fraction of grazing excreted to NH4}
 - {param: m_Z,        value: 1.5,   unit: d^-1,             descrip: microzooplankton mortality}
