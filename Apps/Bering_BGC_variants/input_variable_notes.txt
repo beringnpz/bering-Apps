@@ -1,0 +1,201 @@
+
+
+Input for the Bering ROMS variants:
+
+
+Variants: BGC intercomparison
+
+1) Bering Sea 10km grid, physics only, unnested
+2) Bering Sea 10km grid, BESTNPZ, unnested
+3) Bering Sea 10km grid, BIO_COBALT, unnested
+4) Bering Sea 10km grid, BIO_BANAS, unnested
+
+Variants: ACLIM nested run
+
+5) Northeast Pacific 10km grid, BESTNPZ, unnested
+6) Bering Sea 10km grid, BESTNPZ, nested in NEP10K
+7) Bering Sea 3km grid, BESTNPZ, nested in NEP10K
+
+
+Input variables:
+----------------
+
+TITLE: 
+TODO: match variant label above?  Just use grid name like currently?
+
+MyAppCPP: (1 per grid file)
+- (1): BERING_10K
+- (2): BERING_10K
+- (3): BERING_10K
+- (4): BERING_10K
+- (5): NEP_10K
+- (6): BERING_10K
+- (7): BS_3K
+
+MyAppCPP files (must match {lower(MyAppCPP)}.h, 1 per grid file)
+- (1) {app}/bering_10k.h TODO: change runoff-related CPP options?
+- (2) see 1
+- (3) see 1
+- (4) see 1
+- (5): TODO
+- (6) see 1
+- (7): TODO
+
+VARNAME: (1 per bio, bio boundaries differ for nested vs non-nested setups)
+- (1): {app}/varinfo_phys.dat
+- (2): {app}/varinfo_bestnpz_scaledbry.dat
+- (3): {app}/varinfo_cobalt_scaledbry.dat
+- (4): {app}/varinfo_banas_scaledbry.dat
+- (5): {app}/varinfo_bestnpz_scaledbry.dat
+- (6): {app}/varinfo_bestnpz_nativebry.dat
+- (7): {app}/varinfo_bestnpz_nativebry.dat
+
+Lm: (changes with grid)
+- (1): 180
+- (2): 180
+- (3): 180
+- (4): 180
+- (5): 224
+- (6): 180
+- (7): 450
+
+Mm: (changes with grid)
+- (1): 256
+- (2): 256
+- (3): 256
+- (4): 256
+- (5): 640
+- (6): 256
+- (7): 525
+
+NtileI: (based on computer CPUs, possibly changes with grid?)
+- (1): 7
+- (2): 7
+- (3): 7
+- (4): 7
+- (5): TODO
+- (6): 7
+- (7): TODO
+
+NtileJ: (based on computer CPUs, possibly changes with grid?)
+- (1): 20 (28 cpus/node * 5 nodes = 140 cpus, adjust as needed for fewer nodes)
+- (2): 20
+- (3): 20
+- (4): 20
+- (5): TODO
+- (6): 20
+- (7): TODO
+
+Boundaries: 
+LBC:  
+- (1): TODO: set up for both open Bering Strait side (east) and closed-with-UV-point source?
+- (2): see 1
+- (3): see 1
+- (4): see 1
+- (5): see 1, TODO: update ana_psource.h for both BERING_10K and NEP_10K CPP options
+- (6): see 1
+- (7): TODO: set up with all open boundaries
+
+LuvSrc: TODO: come back to after LBC is done
+
+LwSrc: TODO: maybe turn on for rivers?
+LtracerSrc: TODO see LwSrc, if turn on will need to make decisions here (in bpar files and ocean file)
+
+GRDNAME: 
+- (1): {data}/grids/AlaskaGrids_Bering10K.nc
+- (2): see 1
+- (3): see 1
+- (4): see 1
+- (5): {data}/grids/NEP_grid_5a.nc TODO: check sponge, rdrag_grdm mask, change mask fill values?, then copy from kearney to main
+- (6): see 1
+- (7): TODO: Al updating some mask and bathymetry stuff
+
+ININAME:
+- (1): see 1-4
+- (2): {data}/initial/ini_hindcast_unnested_Bering10K_BEST_NPZ.nc
+- (3): {data}/initial/ini_hindcast_unnested_Bering10K_BIO_COBALT.nc
+- (4): {data}/initial/ini_hindcast_unnested_Bering10K_BIO_BANAS.nc
+- (5): {data}/initial/ini_hindcast_unnested_NEP_BEST_NPZ.nc
+- (6): {data}/initial/ini_hindcast_unnested_NEP_BIO_COBALT.nc
+- (7): {data}/initial/ini_hindcast_unnested_NEP_BIO_BANAS.nc
+
+CLMNAME:
+- (1): placeholder.nc
+- (2): {data}/initial/ini_hindcast_unnested_Bering10K_BEST_NPZ.nc
+- (3): {data}/initial/ini_hindcast_unnested_Bering10K_BIO_COBALT.nc
+- (4): placeholder.nc
+- (5): see 2
+- (6): see 2
+- (7): see 2
+
+BRYNAME: 
+- (1): {data}/CFS/{YYYY}/CFS-ocean-Bering10K-N30-bryocn-{YYYY}.nc
+       {data}/CFS/{YYYY}/CFS-ocean-ESPER-Bering10K-N30-brycarbon-{YYYY}.nc
+       {data}/WOA2018/WOA2018_Bering10K_N30_brybgc.nc
+- (2): see 1 
+- (3): see 1 
+- (4): see 1 
+- (5): {data}/CFS/{YYYY}/CFS-ocean-NEP-N30-bryocn-{YYYY}.nc
+       {data}/CFS/{YYYY}/CFS-ocean-ESPER-NEP-N30-brycarbon-{YYYY}.nc
+       {data}/WOA2018/BRYbgc_WOA2018_NEP_N30.nc
+- (6): TODO: extract from NEP once run
+- (7): TODO: extract from NEP once run
+
+SSFNAME: TODO: see LwSrc, come back to if we turn on
+
+TIDENAME: (1 per grid?)
+- (1) {data}/OTPS/tides_OTPS_Bering10K.nc
+- (2): see 1 
+- (3): see 1 
+- (4): see 1 
+- (5): TODO: get from Al? Build new?
+- (6): see 1
+- (7): TODO: Build new?
+     
+FRCNAME: (atmos and salinity good for all grids, others are grid-specific)
+- (1): {data}/CFS/{YYYY}/CFS-atmos-northPacific-Pair-{YYYY}.nc
+       {data}/CFS/{YYYY}/CFS-atmos-northPacific-Qair-{YYYY}.nc
+       {data}/CFS/{YYYY}/CFS-atmos-northPacific-Tair-{YYYY}.nc
+       {data}/CFS/{YYYY}/CFS-atmos-northPacific-Uwind-{YYYY}.nc
+       {data}/CFS/{YYYY}/CFS-atmos-northPacific-Vwind-{YYYY}.nc
+       {data}/CFS/{YYYY}/CFS-atmos-northPacific-rain-{YYYY}.nc
+       {data}/CFS/{YYYY}/CFS-atmos-northPacific-swrad-{YYYY}.nc
+       {data}/CFS/{YYYY}/CFS-atmos-northPacific-lwrad-{YYYY}.nc
+       {data}/salinity/sss.clim.nc
+       {data}/GloFAS/GloFAS_runoff_Bering10K_{YYYY}.nc
+- (2): see 1, plus
+       {data}/GloFAS/GloFAS-based_nutrientflux_Bering10K_{YYYY}.nc
+       {data}/BarrowCO2/atmo_co2_barrow_1970_2020.nc
+- (3): see 2, plus
+       {data}/Iron/zeros_Bering10K_ironflux_1970-2025.nc
+- (4): see 2 
+- (5): {data}/CFS/{YYYY}/CFS-atmos-northPacific-Pair-{YYYY}.nc
+       {data}/CFS/{YYYY}/CFS-atmos-northPacific-Qair-{YYYY}.nc
+       {data}/CFS/{YYYY}/CFS-atmos-northPacific-Tair-{YYYY}.nc
+       {data}/CFS/{YYYY}/CFS-atmos-northPacific-Uwind-{YYYY}.nc
+       {data}/CFS/{YYYY}/CFS-atmos-northPacific-Vwind-{YYYY}.nc
+       {data}/CFS/{YYYY}/CFS-atmos-northPacific-rain-{YYYY}.nc
+       {data}/CFS/{YYYY}/CFS-atmos-northPacific-swrad-{YYYY}.nc
+       {data}/CFS/{YYYY}/CFS-atmos-northPacific-lwrad-{YYYY}.nc
+       {data}/salinity/sss.clim.nc
+       {data}/GloFAS/GloFAS_runoff_NEP_{YYYY}.nc
+       {data}/GloFAS/GloFAS-based_nutrientflux_NEP_{YYYY}.nc
+       TODO: need CO2 data for whole NEP region
+- (6): see 1
+- (7): {data}/CFS/{YYYY}/CFS-atmos-northPacific-Pair-{YYYY}.nc
+       {data}/CFS/{YYYY}/CFS-atmos-northPacific-Qair-{YYYY}.nc
+       {data}/CFS/{YYYY}/CFS-atmos-northPacific-Tair-{YYYY}.nc
+       {data}/CFS/{YYYY}/CFS-atmos-northPacific-Uwind-{YYYY}.nc
+       {data}/CFS/{YYYY}/CFS-atmos-northPacific-Vwind-{YYYY}.nc
+       {data}/CFS/{YYYY}/CFS-atmos-northPacific-rain-{YYYY}.nc
+       {data}/CFS/{YYYY}/CFS-atmos-northPacific-swrad-{YYYY}.nc
+       {data}/CFS/{YYYY}/CFS-atmos-northPacific-lwrad-{YYYY}.nc
+       {data}/salinity/sss.clim.nc
+       TODO: runoff from GloFAS if not changing to point source
+       TODO: carbon, iron from regressions + GloFAS
+       TODO: interpolate Barrow data to BS3K grid?
+      
+       
+       
+       
+       
