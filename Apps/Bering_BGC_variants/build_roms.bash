@@ -144,7 +144,8 @@ export   ROMS_APPLICATION=BERING_10K
 # where all this project's files are kept.
 
 export        MY_ROOT_DIR=${PWD}
-export     MY_PROJECT_DIR=/gscratch/bumblereem/kearney/testBeringApp
+export     MY_PROJECT_DIR=${MY_PROJECT_DIR:=/gscratch/bumblereem/kearney/testBeringApp}
+# export     MY_PROJECT_DIR=/gscratch/bumblereem/kearney/testBeringApp
 
 # The path to the user's local current ROMS source code.
 #
