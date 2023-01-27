@@ -15,8 +15,8 @@
 # define ANA_ICEBIOBC      /* Analytical ice bio boundary conditions */
 # undef ANA_BIOLOGY
 # define TCLM_NUDGING      /* Nudging of tracer climatology for iron */
-# define ANA_TCLIMA        /* analytical tracers climatology for iron */
-# define TCLIMATOLOGY      /* Processing of tracer climatology for iron */
+# undef ANA_TCLIMA         /* analytical tracers climatology for iron */
+# undef TCLIMATOLOGY       /* Processing of tracer climatology for iron (now deprecated) */
 # define ANA_BPFLUX        /* analytical bottom passive tracers fluxes */
 # define ANA_SPFLUX        /* analytical surface passive tracers fluxes */
 #endif
