@@ -4732,7 +4732,7 @@
   'nulvar'
   1.025d0
 
-'NH4_south'
+'NH4_west'
   'ammonium western boundary condition'
   'umol/kg'
   'ammonium'
@@ -4741,7 +4741,7 @@
   'nulvar'
   1.025d0
 
-'NH4_west'
+'NH4_south'
   'ammonium southern boundary condition'
   'umol/kg'
   'ammonium'
@@ -4768,7 +4768,7 @@
   'nulvar'
   1.025d0
 
-'NO3_south'
+'NO3_west'
   'nitrate western boundary condition'
   'umol/kg'
   'nitrate'
@@ -4777,7 +4777,7 @@
   'nulvar'
   1.025d0
 
-'NO3_west'
+'NO3_south'
   'nitrate southern boundary condition'
   'umol/kg'
   'nitrate'
