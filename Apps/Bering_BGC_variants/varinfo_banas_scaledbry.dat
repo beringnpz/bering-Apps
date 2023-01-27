@@ -4588,7 +4588,7 @@
   'nulvar'
   1.0d-16
 
-'ones_south'
+'ones_west'
   'phytoplankton western boundary condition'
   'mmol N m^-3'
   'phytoplankton'
@@ -4597,7 +4597,7 @@
   'nulvar'
   1.0d-16
 
-'ones_west'
+'ones_south'
   'phytoplankton southern boundary condition'
   'mmol N m^-3'
   'phytoplankton'
@@ -4624,7 +4624,7 @@
   'nulvar'
   1.0d-16
 
-'ones_south'
+'ones_west'
   'microzooplankton western boundary condition'
   'mmol N m^-3'
   'microzooplankton'
@@ -4633,7 +4633,7 @@
   'nulvar'
   1.0d-16
 
-'ones_west'
+'ones_south'
   'microzooplankton southern boundary condition'
   'mmol N m^-3'
   'microzooplankton'
@@ -4660,7 +4660,7 @@
   'nulvar'
   0.0d0
 
-'ones_south'
+'ones_west'
   'det_small western boundary condition'
   'mmol N m^-3'
   'det_small'
@@ -4669,7 +4669,7 @@
   'nulvar'
   0.0d0
 
-'ones_west'
+'ones_south'
   'det_small southern boundary condition'
   'mmol N m^-3'
   'det_small'
@@ -4696,7 +4696,7 @@
   'nulvar'
   0.0d0
 
-'ones_south'
+'ones_west'
   'det_large western boundary condition'
   'mmol N m^-3'
   'det_large'
@@ -4705,7 +4705,7 @@
   'nulvar'
   0.0d0
 
-'ones_west'
+'ones_south'
   'det_large southern boundary condition'
   'mmol N m^-3'
   'det_large'
