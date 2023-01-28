@@ -241,6 +241,15 @@ climatology:
   - {variable: SSS,                     long_name: sea surface salinity climatology,                                  units: nondimensional,                        field: "SSS, scalar, series",                             time: sss_time,     index_code: idSSSc,                     type: r2dvar,  scale: 1.0d0,                 io: Input}
   - {variable: SST,                     long_name: sea surface temperature climatology,                               units: Celsius,                               field: "SST, scalar, series",                             time: sst_time,     index_code: idSSTc,                     type: r2dvar,  scale: 1.0d0,                 io: Input}
 
+# Nudging to climatology time scales. We can have a generic variable for all
+# tracer nudging time scales or individual variables for each active and
+# passive tracer. The metadata for the individual variables is set internally
+# in "mod_ncparam"
+nudging:
+  - {variable: M2_NudgeCoef,            long_name: 2D momentum inverse nudging coefficients,                          units: day-1,                                 field: M2_NudgeCoef, scalar,                              time: nulvar,       index_code: idM2nc,                     type: r2dvar,  scale: 1.157407d-5,           io: Input}
+  - {variable: M3_NudgeCoef,            long_name: 3D momentum inverse nudging coefficients,                          units: day-1,                                 field: M3_NudgeCoef, scalar,                              time: nulvar,       index_code: idM3nc,                     type: r3dvar,  scale: 1.157407d-5,           io: Input}
+  - {variable: tracer_NudgeCoef,        long_name: generic tracer inverse nudging coefficients,                       units: day-1,                                 field: tracer_NudgeCoef, scalar,                          time: nulvar,       index_code: idgTnc,                     type: r3dvar,  scale: 1.157407d-5,           io: Input}
+
 # Adjoint sensitivy variables.  The units below are the same as the state.
 # However, the input functional can have squared, energy, nondimensional,
 # or other units.

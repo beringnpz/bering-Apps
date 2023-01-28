@@ -1861,6 +1861,33 @@
   'r2dvar'
   1.0d0
 
+'M2_NudgeCoef'
+  '2D momentum inverse nudging coefficients'
+  'day-1'
+  'M2_NudgeCoef'
+  'nulvar'
+  'idM2nc'
+  'r2dvar'
+  1.157407d-5
+
+'M3_NudgeCoef'
+  '3D momentum inverse nudging coefficients'
+  'day-1'
+  'M3_NudgeCoef'
+  'nulvar'
+  'idM3nc'
+  'r3dvar'
+  1.157407d-5
+
+'tracer_NudgeCoef'
+  'generic tracer inverse nudging coefficients'
+  'day-1'
+  'tracer_NudgeCoef'
+  'nulvar'
+  'idgTnc'
+  'r3dvar'
+  1.157407d-5
+
 'zeta'
   'sea surface height functional'
   'meter'
