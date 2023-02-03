@@ -2870,7 +2870,7 @@
   1.0d0
 
 'Fe'
-  'Ice ammonium concentration'
+  'Iron concentration'
   'umol Fe m^-3'
   'iron conc, scalar, series'
   'ocean_time'
@@ -4742,7 +4742,7 @@
   1.0d0
 
 'IcePhL'
-  'Iron concentration'
+  'Ice algae concentration'
   'mg C m^-3'
   'ice algae conc, scalar, series'
   'ocean_time'
@@ -4751,7 +4751,7 @@
   1.0d0
 
 'IceNO3'
-  'Ice algae concentration'
+  'Ice nitrate concentration'
   'mmol N m^-3'
   'ice nitrate conc, scalar, series'
   'ocean_time'
@@ -4760,7 +4760,7 @@
   1.0d0
 
 'IceNH4'
-  'Ice nitrate concentration'
+  'Ice ammonium concentration'
   'mmol N m^-3'
   'ice ammonium conc, scalar, series'
   'ocean_time'
