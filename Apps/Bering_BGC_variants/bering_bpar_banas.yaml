@@ -244,7 +244,16 @@ Aout:
 # Logical switches (TRUE/FALSE) to activate writing of biological diagnostics
 # into DIAGNOSTICS output file
 
-
+Dout:
+  iflxgpp: false
+  iflxgra: false
+  iflxagg: false
+  iflxpmor: false
+  iflxzmor: false
+  iflxsrem: false
+  iflxlrem: false
+  iflxnit: false
+  
 # Lateral boundary conditions
 
 LBC: 

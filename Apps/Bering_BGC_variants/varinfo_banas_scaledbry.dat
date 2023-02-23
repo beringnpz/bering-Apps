@@ -4597,6 +4597,78 @@
   'nulvar'
   1.0d0
 
+'gpp'
+  'gross primary production rate'
+  'mmol N m^-3 s^-1'
+  'gpp'
+  'ocean_time'
+  'iDbio3(iflxgpp)'
+  'r3dvar'
+  1.0d0
+
+'gra'
+  'grazig rate'
+  'mmol N m^-3 s^-1'
+  'gra'
+  'ocean_time'
+  'iDbio3(iflxgra)'
+  'r3dvar'
+  1.0d0
+
+'agg'
+  'aggregation rate'
+  'mmol N m^-3 s^-1'
+  'agg'
+  'ocean_time'
+  'iDbio3(iflxagg)'
+  'r3dvar'
+  1.0d0
+
+'pmor'
+  'phytoplankton mortality rate'
+  'mmol N m^-3 s^-1'
+  'pmor'
+  'ocean_time'
+  'iDbio3(iflxpmor)'
+  'r3dvar'
+  1.0d0
+
+'zmor'
+  'zooplankton mortality rate'
+  'mmol N m^-3 s^-1'
+  'zmor'
+  'ocean_time'
+  'iDbio3(iflxzmor)'
+  'r3dvar'
+  1.0d0
+
+'srem'
+  'small detritus remineralization rate'
+  'mmol N m^-3 s^-1'
+  'srem'
+  'ocean_time'
+  'iDbio3(iflxsrem)'
+  'r3dvar'
+  1.0d0
+
+'lrem'
+  'large detritus remineralization rate'
+  'mmol N m^-3 s^-1'
+  'lrem'
+  'ocean_time'
+  'iDbio3(iflxlrem)'
+  'r3dvar'
+  1.0d0
+
+'nit'
+  'nitrification'
+  'mmol N m^-3 s^-1'
+  'nit'
+  'ocean_time'
+  'iDbio3(iflxnit)'
+  'r3dvar'
+  1.0d0
+
 'ones_east'
   'phytoplankton eastern boundary condition'
   'mmol N m^-3'
