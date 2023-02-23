@@ -266,4 +266,5 @@
 # define COASTAL_ATTEN     /* ... with additional coastal attenuation */
 # define ANA_BPFLUX        /* analytical bottom passive tracers fluxes */
 # define ANA_SPFLUX        /* analytical surface passive tracers fluxes */
+# define DIAGNOSTICS_BIO   /* turn on diagnostics */
 #endif
