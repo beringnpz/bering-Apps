@@ -133,7 +133,7 @@ m_agg: 0.009
 I0: 3.4
 
 # grazing half-saturation [uM N]
-K: 1
+Kgraz: 1
 
 # microzooplankton growth efficiency [unitless]
 epsil: 0.3
