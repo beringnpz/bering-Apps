@@ -124,10 +124,10 @@ ccrPhL: 25.0
 FeC: 0.0001667
 
 # Doubling rate parameter [d^-1]
-DiS: 0.5
+DiS: 1.0
 
 # Doubling rate parameter [d^-1]
-DiL: 1.0
+DiL: 2.0
 
 # Doubling rate exponent [degC^-1]
 DpS: 0.0275
