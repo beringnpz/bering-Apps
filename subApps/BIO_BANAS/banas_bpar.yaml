@@ -251,7 +251,7 @@ Aout:
 # into DIAGNOSTICS output file
 
 Dout:
-  iflxgpp: false
+  iflxnpp: false
   iflxgra: false
   iflxagg: false
   iflxpmor: false

@@ -1182,6 +1182,14 @@ Dout:
   iprod_n_100_md: false
   iaggloss_n_100_md: false
   izloss_n_100_md: false
+  inpp_sm: false
+  inpp_md: false
+  inpp_lg: false
+  inpp_di: false
+  ifratio: false
+  iprod_smz: false
+  iprod_mdz: false
+  iprod_lgz: false
 
 # Lateral boundary conditions
 
