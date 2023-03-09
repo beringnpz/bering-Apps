@@ -862,6 +862,12 @@ htotal_in: 1.0e-08
 # Sinking velocity of detritus [m s-1]
 wsink: 0.001157407407407407
 
+# Depth-based attenuation coefficient, factor [m^-1]
+k_sed1: 2.833
+
+# Depth-based attenuation coefficient, exponent [unitless]
+k_sed2: -1.079
+
 # Tracer index reference
 #
 # The following compilation flags affect tracer indexing:
@@ -1176,6 +1182,14 @@ Dout:
   iprod_n_100_md: false
   iaggloss_n_100_md: false
   izloss_n_100_md: false
+  inpp_sm: false
+  inpp_md: false
+  inpp_lg: false
+  inpp_di: false
+  ifratio: false
+  iprod_smz: false
+  iprod_mdz: false
+  iprod_lgz: false
 
 # Lateral boundary conditions
 

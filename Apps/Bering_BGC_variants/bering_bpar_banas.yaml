@@ -165,6 +165,12 @@ Q_Z: 2.8
 # Q10 for bacterial respiration [unitless]
 Q_R: 2.8
 
+# Depth-based attenuation coefficient, factor [m^-1]
+k_sed1: 2.833
+
+# Depth-based attenuation coefficient, exponent [unitless]
+k_sed2: -1.079
+
 # Lateral, constant, harmonic/biharmonic horizontal diffusion of biological
 # tracer: [1:NBT,Ngrids].
 
@@ -245,7 +251,7 @@ Aout:
 # into DIAGNOSTICS output file
 
 Dout:
-  iflxgpp: false
+  iflxnpp: false
   iflxgra: false
   iflxagg: false
   iflxpmor: false
@@ -253,7 +259,7 @@ Dout:
   iflxsrem: false
   iflxlrem: false
   iflxnit: false
-  
+
 # Lateral boundary conditions
 
 LBC: 

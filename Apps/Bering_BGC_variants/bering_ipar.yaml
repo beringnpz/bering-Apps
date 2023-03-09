@@ -76,7 +76,8 @@
 # KEYWORD instead of a "=".  List any of the less common *non-plural* KEYWORDS 
 # here so that they can be formatted accordingly later.
 
-no_plural: []
+no_plural: [GAMMA2, rho_air, tol, stressang, ice_emiss, spec_heat_air, 
+            trans_coeff, sublim_latent_heat, t0deg, lf_k1, lf_k2, lf_u0]
 
 #==============================================================================
 # Switch to control the computation of ice within nested and/or multiple

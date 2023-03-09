@@ -255,3 +255,5 @@
 - {param: irr_inhibit,       value: 0.1                   , unit: m2 W-1,                 descrip: Nitrification}
 - {param: htotal_in,         value: 1.0e-08               , unit: N/A,                    descrip: "?"}
 - {param: wsink,             value: 0.001157407407407407  , unit: m s-1,                  descrip: Sinking velocity of detritus}
+- {param: k_sed1,            value:   2.833               , unit: m^-1,                   descrip: "Depth-based attenuation coefficient, factor"}
+- {param: k_sed2,            value:  -1.079               , unit: unitless,               descrip: "Depth-based attenuation coefficient, exponent"}
