@@ -4597,12 +4597,12 @@
   'nulvar'
   1.0d0
 
-'gpp'
-  'gross primary production rate'
+'npp'
+  'net primary production rate'
   'mmol N m^-3 s^-1'
-  'gpp'
+  'npp'
   'ocean_time'
-  'iDbio3(iflxgpp)'
+  'iDbio3(iflxnpp)'
   'r3dvar'
   1.0d0
 

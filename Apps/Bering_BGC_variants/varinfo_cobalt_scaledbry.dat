@@ -6469,6 +6469,15 @@
   'r3dvar'
   1.0d0
 
+'pCO2'
+  'pCO2'
+  '[]'
+  'pCO2, scalar, series'
+  'ocean_time'
+  'iDbio3(ipCO2)'
+  'r3dvar'
+  1.0d0
+
 'prod_n_100_md'
   'nitrogen production for medium phyto upper 100m'
   'mol.m-2.s-1'
@@ -6592,6 +6601,78 @@
   'C_2_chl_md, scalar, series'
   'ocean_time'
   'iDbio3(iC_2_chl_md)'
+  'r3dvar'
+  1.0d0
+
+'npp_sm'
+  'net primary production for small phytoplankton'
+  '['umol/kg/s']'
+  'NPP, scalar, series'
+  'ocean_time'
+  'iDbio3(inpp_sm)'
+  'r3dvar'
+  1.0d0
+
+'npp_md'
+  'net primary production for medium phytoplankton'
+  '['umol/kg/s']'
+  'NPP, scalar, series'
+  'ocean_time'
+  'iDbio3(inpp_md)'
+  'r3dvar'
+  1.0d0
+
+'npp_lg'
+  'net primary production for large phytoplankton'
+  '['umol/kg/s']'
+  'NPP, scalar, series'
+  'ocean_time'
+  'iDbio3(inpp_lg)'
+  'r3dvar'
+  1.0d0
+
+'npp_di'
+  'net primary production for diazotroph phytoplankton'
+  '['umol/kg/s']'
+  'NPP, scalar, series'
+  'ocean_time'
+  'iDbio3(inpp_di)'
+  'r3dvar'
+  1.0d0
+
+'fratio'
+  'f-ratio (NO3-based NPP/total NPP)'
+  '[]'
+  'fratio, scalar, series'
+  'ocean_time'
+  'iDbio3(ifratio)'
+  'r3dvar'
+  1.0d0
+
+'zprod_sm'
+  'net production for small zooplankton'
+  '['umol/kg/s']'
+  'z production, scalar, series'
+  'ocean_time'
+  'iDbio3(iprod_smz)'
+  'r3dvar'
+  1.0d0
+
+'zprod_md'
+  'net production for medium zooplankton'
+  '['umol/kg/s']'
+  'z production, scalar, series'
+  'ocean_time'
+  'iDbio3(iprod_mdz)'
+  'r3dvar'
+  1.0d0
+
+'zprod_lg'
+  'net production for large zooplankton'
+  '['umol/kg/s']'
+  'z production, scalar, series'
+  'ocean_time'
+  'iDbio3(iprod_lgz)'
   'r3dvar'
   1.0d0
 
