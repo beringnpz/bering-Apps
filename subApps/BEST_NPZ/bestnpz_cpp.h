@@ -12,6 +12,7 @@
 #  define OXYGEN           /* For oxygen cycling */
 # endif
 # define DIAGNOSTICS_BIO   /* diagnostics on */
+# define DIAGBIOAVG        /* averages-like diagnostics for select diags */
 # define ANA_ICEBIOBC      /* Analytical ice bio boundary conditions */
 # undef ANA_BIOLOGY
 # define TCLM_NUDGING      /* Nudging of tracer climatology for iron */

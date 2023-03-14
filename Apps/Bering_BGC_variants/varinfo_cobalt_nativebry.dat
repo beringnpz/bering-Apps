@@ -6417,7 +6417,7 @@
 
 'chl_di'
   'None'
-  '['ug/kg']'
+  'ug/kg'
   'chl_di, scalar, series'
   'ocean_time'
   'iDbio3(ichl_di)'
@@ -6426,7 +6426,7 @@
 
 'C_2_chl_di'
   'None'
-  '['ug/kg']'
+  'ug/kg'
   'C_2_chl_di, scalar, series'
   'ocean_time'
   'iDbio3(iC_2_chl_di)'
@@ -6435,7 +6435,7 @@
 
 'chl_sm'
   'None'
-  '['ug/kg']'
+  'ug/kg'
   'chl_sm, scalar, series'
   'ocean_time'
   'iDbio3(ichl_sm)'
@@ -6444,7 +6444,7 @@
 
 'C_2_chl_sm'
   'None'
-  '['ug/kg']'
+  'ug/kg'
   'C_2_chl_sm, scalar, series'
   'ocean_time'
   'iDbio3(iC_2_chl_sm)'
@@ -6453,7 +6453,7 @@
 
 'chl_lg'
   'None'
-  '['ug/kg']'
+  'ug/kg'
   'chl_lg, scalar, series'
   'ocean_time'
   'iDbio3(ichl_lg)'
@@ -6462,7 +6462,7 @@
 
 'C_2_chl_lg'
   'None'
-  '['ug/kg']'
+  'ug/kg'
   'C_2_chl_lg, scalar, series'
   'ocean_time'
   'iDbio3(iC_2_chl_lg)'
@@ -6588,7 +6588,7 @@
 
 'chl_md'
   'None'
-  '['ug/kg']'
+  'ug/kg'
   'chl_md, scalar, series'
   'ocean_time'
   'iDbio3(ichl_md)'
@@ -6597,7 +6597,7 @@
 
 'C_2_chl_md'
   'None'
-  '['ug/kg']'
+  'ug/kg'
   'C_2_chl_md, scalar, series'
   'ocean_time'
   'iDbio3(iC_2_chl_md)'
@@ -6606,7 +6606,7 @@
 
 'npp_sm'
   'net primary production for small phytoplankton'
-  '['umol/kg/s']'
+  'umol/kg/s'
   'NPP, scalar, series'
   'ocean_time'
   'iDbio3(inpp_sm)'
@@ -6615,7 +6615,7 @@
 
 'npp_md'
   'net primary production for medium phytoplankton'
-  '['umol/kg/s']'
+  'umol/kg/s'
   'NPP, scalar, series'
   'ocean_time'
   'iDbio3(inpp_md)'
@@ -6624,7 +6624,7 @@
 
 'npp_lg'
   'net primary production for large phytoplankton'
-  '['umol/kg/s']'
+  'umol/kg/s'
   'NPP, scalar, series'
   'ocean_time'
   'iDbio3(inpp_lg)'
@@ -6633,7 +6633,7 @@
 
 'npp_di'
   'net primary production for diazotroph phytoplankton'
-  '['umol/kg/s']'
+  'umol/kg/s'
   'NPP, scalar, series'
   'ocean_time'
   'iDbio3(inpp_di)'
@@ -6651,7 +6651,7 @@
 
 'zprod_sm'
   'net production for small zooplankton'
-  '['umol/kg/s']'
+  'umol/kg/s'
   'z production, scalar, series'
   'ocean_time'
   'iDbio3(iprod_smz)'
@@ -6660,7 +6660,7 @@
 
 'zprod_md'
   'net production for medium zooplankton'
-  '['umol/kg/s']'
+  'umol/kg/s'
   'z production, scalar, series'
   'ocean_time'
   'iDbio3(iprod_mdz)'
@@ -6669,7 +6669,7 @@
 
 'zprod_lg'
   'net production for large zooplankton'
-  '['umol/kg/s']'
+  'umol/kg/s'
   'z production, scalar, series'
   'ocean_time'
   'iDbio3(iprod_lgz)'
