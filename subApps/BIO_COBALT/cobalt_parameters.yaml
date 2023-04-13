@@ -226,8 +226,8 @@
 - {param: fe_2_n_sed,        value: 0.006625              , unit: mol Fe mol N-1,         descrip: Iron chemistry}
 - {param: fe_coast,          value: 9.999999999999999e-12 , unit: mol Fe m kg-1 s-1,      descrip: Iron chemistry}
 - {param: alpha_fescav,      value: 3.168808781402895e-07 , unit: sec-1,                  descrip: Iron chemistry}
-- {param: ffe_sed_max,       value: 0.0                   , unit: micromol Fe m-2 d-1,    descrip: Iron chemistry} # KK TODO: not in original file... need to track down value?
-- {param: beta_fescav,       value: 0.0                   , unit: mol N-1 sec-1,          descrip: Iron chemistry}
+- {param: ffe_sed_max,       value: 170.0                 , unit: micromol Fe m-2 d-1,    descrip: Iron chemistry} # KK: not in original file... value set from Dale et al 2015
+- {param: beta_fescav,       value: 0.0                   , unit: mol N-1 sec-1,          descrip: Iron chemistry} # Unused?
 - {param: remin_eff_fedet,   value: 0.2                   , unit: unitless,               descrip: Iron chemistry}
 - {param: ki_fescav,         value: 1.0                   , unit: watts m-2,              descrip: Iron chemistry}
 - {param: io_fescav,         value: 10                    , unit: watts m-2,              descrip: Iron chemistry}

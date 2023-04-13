@@ -776,7 +776,7 @@ fe_coast: 1.0e-11
 alpha_fescav: 3.168808781402895e-07
 
 # Iron chemistry [micromol Fe m-2 d-1]
-ffe_sed_max: 0.0
+ffe_sed_max: 170.0
 
 # Iron chemistry [mol N-1 sec-1]
 beta_fescav: 0.0
