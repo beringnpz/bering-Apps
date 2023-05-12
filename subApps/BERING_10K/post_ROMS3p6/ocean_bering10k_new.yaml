@@ -122,7 +122,7 @@ N: 30             # Number of vertical levels
 Nbed:  0          # Number of sediment bed layers
 
 NAT:  2           # Number of active tracers (usually, 2)
-NPT:  167         # Number of inactive passive tracers
+NPT:  1           # Number of inactive passive tracers
 NCS:  0           # Number of cohesive (mud) sediment tracers
 NNS:  0           # Number of non-cohesive (sand) sediment tracers
 
@@ -630,72 +630,72 @@ SO_sdev:
 Hout:
   idUvel: TRUE       # u                  3D U-velocity
   idVvel: TRUE       # v                  3D V-velocity
-  idu3dE: FALSE       # u_eastward         3D U-eastward  at RHO-points
-  idv3dN: FALSE       # v_northward        3D V-northward at RHO-points
+  idu3dE: FALSE      # u_eastward         3D U-eastward  at RHO-points
+  idv3dN: FALSE      # v_northward        3D V-northward at RHO-points
   idWvel: TRUE       # w                  3D W-velocity
   idOvel: TRUE       # omega              omega vertical velocity
   idUbar: TRUE       # ubar               2D U-velocity
   idVbar: TRUE       # vbar               2D V-velocity
-  idu2dE: FALSE       # ubar_eastward      2D U-eastward  at RHO-points
-  idv2dN: FALSE       # vbar_northward     2D V-northward at RHO-points
+  idu2dE: FALSE      # ubar_eastward      2D U-eastward  at RHO-points
+  idv2dN: FALSE      # vbar_northward     2D V-northward at RHO-points
   idFsur: TRUE       # zeta               free-surface
   idBath: TRUE       # bath               time-dependent bathymetry
 
   idTvar: [TRUE, TRUE]     # temp, salt         temperature and salinity
 
-  idpthR: FALSE       # z_rho              time-varying depths of RHO-points
-  idpthU: FALSE       # z_u                time-varying depths of U-points
-  idpthV: FALSE       # z_v                time-varying depths of V-points
-  idpthW: FALSE       # z_w                time-varying depths of W-points
+  idpthR: FALSE      # z_rho              time-varying depths of RHO-points
+  idpthU: FALSE      # z_u                time-varying depths of U-points
+  idpthV: FALSE      # z_v                time-varying depths of V-points
+  idpthW: FALSE      # z_w                time-varying depths of W-points
        
   idUsms: TRUE       # sustr              surface U-stress
   idVsms: TRUE       # svstr              surface V-stress
   idUbms: TRUE       # bustr              bottom U-stress
   idVbms: TRUE       # bvstr              bottom V-stress
        
-  idUbrs: FALSE       # bustrc             bottom U-current stress
-  idVbrs: FALSE       # bvstrc             bottom V-current stress
-  idUbws: FALSE       # bustrw             bottom U-wave stress
-  idVbws: FALSE       # bvstrw             bottom V-wave stress
-  idUbcs: FALSE       # bustrcwmax         bottom max wave-current U-stress
-  idVbcs: FALSE       # bvstrcwmax         bottom max wave-current V-stress
+  idUbrs: FALSE      # bustrc             bottom U-current stress
+  idVbrs: FALSE      # bvstrc             bottom V-current stress
+  idUbws: FALSE      # bustrw             bottom U-wave stress
+  idVbws: FALSE      # bvstrw             bottom V-wave stress
+  idUbcs: FALSE      # bustrcwmax         bottom max wave-current U-stress
+  idVbcs: FALSE      # bvstrcwmax         bottom max wave-current V-stress
        
-  idUbot: FALSE       # Ubot               bed wave orbital U-velocity
-  idVbot: FALSE       # Vbot               bed wave orbital V-velocity
-  idUbur: FALSE       # Ur                 bottom U-velocity above bed
-  idVbvr: FALSE       # Vr                 bottom V-velocity above bed
+  idUbot: FALSE      # Ubot               bed wave orbital U-velocity
+  idVbot: FALSE      # Vbot               bed wave orbital V-velocity
+  idUbur: FALSE      # Ur                 bottom U-velocity above bed
+  idVbvr: FALSE      # Vr                 bottom V-velocity above bed
        
-  idW2xx: FALSE       # Sxx_bar            2D radiation stress, Sxx component
-  idW2xy: FALSE       # Sxy_bar            2D radiation stress, Sxy component
-  idW2yy: FALSE       # Syy_bar            2D radiation stress, Syy component
-  idU2rs: FALSE       # Ubar_Rstress       2D radiation U-stress
-  idV2rs: FALSE       # Vbar_Rstress       2D radiation V-stress
-  idU2Sd: FALSE       # ubar_stokes        2D U-Stokes velocity
-  idV2Sd: FALSE       # vbar_stokes        2D V-Stokes velocity
+  idW2xx: FALSE      # Sxx_bar            2D radiation stress, Sxx component
+  idW2xy: FALSE      # Sxy_bar            2D radiation stress, Sxy component
+  idW2yy: FALSE      # Syy_bar            2D radiation stress, Syy component
+  idU2rs: FALSE      # Ubar_Rstress       2D radiation U-stress
+  idV2rs: FALSE      # Vbar_Rstress       2D radiation V-stress
+  idU2Sd: FALSE      # ubar_stokes        2D U-Stokes velocity
+  idV2Sd: FALSE      # vbar_stokes        2D V-Stokes velocity
        
-  idW3xx: FALSE       # Sxx                3D radiation stress, Sxx component
-  idW3xy: FALSE       # Sxy                3D radiation stress, Sxy component
-  idW3yy: FALSE       # Syy                3D radiation stress, Syy component
-  idW3zx: FALSE       # Szx                3D radiation stress, Szx component
-  idW3zy: FALSE       # Szy                3D radiation stress, Szy component
-  idU3rs: FALSE       # u_Rstress          3D U-radiation stress
-  idV3rs: FALSE       # v_Rstress          3D V-radiation stress
-  idU3Sd: FALSE       # u_stokes           3D U-Stokes velocity
-  idV3Sd: FALSE       # v_stokes           3D V-Stokes velocity
+  idW3xx: FALSE      # Sxx                3D radiation stress, Sxx component
+  idW3xy: FALSE      # Sxy                3D radiation stress, Sxy component
+  idW3yy: FALSE      # Syy                3D radiation stress, Syy component
+  idW3zx: FALSE      # Szx                3D radiation stress, Szx component
+  idW3zy: FALSE      # Szy                3D radiation stress, Szy component
+  idU3rs: FALSE      # u_Rstress          3D U-radiation stress
+  idV3rs: FALSE      # v_Rstress          3D V-radiation stress
+  idU3Sd: FALSE      # u_stokes           3D U-Stokes velocity
+  idV3Sd: FALSE      # v_stokes           3D V-Stokes velocity
        
-  idWamp: FALSE       # Hwave              wave height
-  idWlen: FALSE       # Lwave              wave length
-  idWdir: FALSE       # Dwave              wave direction
-  idWptp: FALSE       # Pwave_top          wave surface period
-  idWpbt: FALSE       # Pwave_bot          wave bottom period
-  idWorb: FALSE       # Ub_swan            wave bottom orbital velocity
-  idWdis: FALSE       # Wave_dissip        wave dissipation
+  idWamp: FALSE      # Hwave              wave height
+  idWlen: FALSE      # Lwave              wave length
+  idWdir: FALSE      # Dwave              wave direction
+  idWptp: FALSE      # Pwave_top          wave surface period
+  idWpbt: FALSE      # Pwave_bot          wave bottom period
+  idWorb: FALSE      # Ub_swan            wave bottom orbital velocity
+  idWdis: FALSE      # Wave_dissip        wave dissipation
        
   idPair: TRUE       # Pair               surface air pressure
-  idUair: FALSE       # Uair               surface U-wind component
-  idVair: FALSE       # Vair               surface V-wind component
-  idUairE: FALSE      # Uwind_eastward     surface U-wind
-  idVairN: FALSE      # Vwind_northward    surface V-wind
+  idUair: FALSE      # Uair               surface U-wind component
+  idVair: FALSE      # Vair               surface V-wind component
+  idUairE: FALSE     # Uwind_eastward     surface U-wind
+  idVairN: FALSE     # Vwind_northward    surface V-wind
        
   idTsur: [TRUE, TRUE]     # shflux, ssflux     surface net heat and salt flux
   idLhea: TRUE       # latent             latent heat flux
@@ -703,8 +703,8 @@ Hout:
   idLrad: TRUE       # lwrad              longwave radiation flux
   idSrad: TRUE       # swrad              shortwave radiation flux
   idEmPf: TRUE       # EminusP            E-P flux
-  idevap: FALSE       # evaporation        evaporation rate
-  idrain: FALSE       # rain               precipitation rate
+  idevap: FALSE      # evaporation        evaporation rate
+  idrain: FALSE      # rain               precipitation rate
        
   idDano: TRUE       # rho                density anomaly
   idVvis: TRUE       # AKv                vertical viscosity
@@ -712,8 +712,8 @@ Hout:
   idSdif: TRUE       # AKs                vertical Salinity diffusion
   idHsbl: TRUE       # Hsbl               depth of surface boundary layer
   idHbbl: TRUE       # Hbbl               depth of bottom boundary layer
-  idMtke: FALSE       # tke                turbulent kinetic energy
-  idMtls: FALSE       # gls                turbulent length scale
+  idMtke: FALSE      # tke                turbulent kinetic energy
+  idMtls: FALSE      # gls                turbulent length scale
        
   idStr: TRUE        # strain             strain
   id3dPV: TRUE       # pvor               potential vorticity
@@ -738,14 +738,14 @@ Qout:
   idVvel: TRUE       # v                  3D V-velocity
   idu3dE: TRUE       # u_eastward         3D U-eastward  at RHO-points
   idv3dN: TRUE       # v_northward        3D V-northward at RHO-points
-  idWvel: FALSE       # w                  3D W-velocity
-  idOvel: FALSE       # omega              omega vertical velocity
+  idWvel: FALSE      # w                  3D W-velocity
+  idOvel: FALSE      # omega              omega vertical velocity
   idUbar: TRUE       # ubar               2D U-velocity
   idVbar: TRUE       # vbar               2D V-velocity
   idu2dE: TRUE       # ubar_eastward      2D U-eastward  at RHO-points
   idv2dN: TRUE       # vbar_northward     2D V-northward at RHO-points
   idFsur: TRUE       # zeta               free-surface
-  idBath: FALSE       # bath               time-dependent bathymetry
+  idBath: FALSE      # bath               time-dependent bathymetry
   
   idTvar: [FALSE, FALSE]     # temp, salt         temperature and salinity
   
@@ -756,55 +756,55 @@ Qout:
   
   idsurT: [TRUE, TRUE]     # temp_sur, salt_sur surface temperature and salinity
   
-  idpthR: FALSE       # z_rho              time-varying depths of RHO-points
-  idpthU: FALSE       # z_u                time-varying depths of U-points
-  idpthV: FALSE       # z_v                time-varying depths of V-points
-  idpthW: FALSE       # z_w                time-varying depths of W-points
+  idpthR: FALSE      # z_rho              time-varying depths of RHO-points
+  idpthU: FALSE      # z_u                time-varying depths of U-points
+  idpthV: FALSE      # z_v                time-varying depths of V-points
+  idpthW: FALSE      # z_w                time-varying depths of W-points
   
-  idUsms: FALSE       # sustr              surface U-stress
-  idVsms: FALSE       # svstr              surface V-stress
-  idUbms: FALSE       # bustr              bottom U-stress
-  idVbms: FALSE       # bvstr              bottom V-stress
+  idUsms: FALSE      # sustr              surface U-stress
+  idVsms: FALSE      # svstr              surface V-stress
+  idUbms: FALSE      # bustr              bottom U-stress
+  idVbms: FALSE      # bvstr              bottom V-stress
   
-  idUbrs: FALSE       # bustrc             bottom U-current stress
-  idVbrs: FALSE       # bvstrc             bottom V-current stress
-  idUbws: FALSE       # bustrw             bottom U-wave stress
-  idVbws: FALSE       # bvstrw             bottom V-wave stress
-  idUbcs: FALSE       # bustrcwmax         bottom max wave-current U-stress
-  idVbcs: FALSE       # bvstrcwmax         bottom max wave-current V-stress
+  idUbrs: FALSE      # bustrc             bottom U-current stress
+  idVbrs: FALSE      # bvstrc             bottom V-current stress
+  idUbws: FALSE      # bustrw             bottom U-wave stress
+  idVbws: FALSE      # bvstrw             bottom V-wave stress
+  idUbcs: FALSE      # bustrcwmax         bottom max wave-current U-stress
+  idVbcs: FALSE      # bvstrcwmax         bottom max wave-current V-stress
   
-  idUbot: FALSE       # Ubot               bed wave orbital U-velocity
-  idVbot: FALSE       # Vbot               bed wave orbital V-velocity
-  idUbur: FALSE       # Ur                 bottom U-velocity above bed
-  idVbvr: FALSE       # Vr                 bottom V-velocity above bed
+  idUbot: FALSE      # Ubot               bed wave orbital U-velocity
+  idVbot: FALSE      # Vbot               bed wave orbital V-velocity
+  idUbur: FALSE      # Ur                 bottom U-velocity above bed
+  idVbvr: FALSE      # Vr                 bottom V-velocity above bed
   
-  idW2xx: FALSE       # Sxx_bar            2D radiation stress, Sxx component
-  idW2xy: FALSE       # Sxy_bar            2D radiation stress, Sxy component
-  idW2yy: FALSE       # Syy_bar            2D radiation stress, Syy component
-  idU2rs: FALSE       # Ubar_Rstress       2D radiation U-stress
-  idV2rs: FALSE       # Vbar_Rstress       2D radiation V-stress
-  idU2Sd: FALSE       # ubar_stokes        2D U-Stokes velocity
-  idV2Sd: FALSE       # vbar_stokes        2D V-Stokes velocity
+  idW2xx: FALSE      # Sxx_bar            2D radiation stress, Sxx component
+  idW2xy: FALSE      # Sxy_bar            2D radiation stress, Sxy component
+  idW2yy: FALSE      # Syy_bar            2D radiation stress, Syy component
+  idU2rs: FALSE      # Ubar_Rstress       2D radiation U-stress
+  idV2rs: FALSE      # Vbar_Rstress       2D radiation V-stress
+  idU2Sd: FALSE      # ubar_stokes        2D U-Stokes velocity
+  idV2Sd: FALSE      # vbar_stokes        2D V-Stokes velocity
   
-  idW3xx: FALSE       # Sxx                3D radiation stress, Sxx component
-  idW3xy: FALSE       # Sxy                3D radiation stress, Sxy component
-  idW3yy: FALSE       # Syy                3D radiation stress, Syy component
-  idW3zx: FALSE       # Szx                3D radiation stress, Szx component
-  idW3zy: FALSE       # Szy                3D radiation stress, Szy component
-  idU3rs: FALSE       # u_Rstress          3D U-radiation stress
-  idV3rs: FALSE       # v_Rstress          3D V-radiation stress
-  idU3Sd: FALSE       # u_stokes           3D U-Stokes velocity
-  idV3Sd: FALSE       # v_stokes           3D V-Stokes velocity
+  idW3xx: FALSE      # Sxx                3D radiation stress, Sxx component
+  idW3xy: FALSE      # Sxy                3D radiation stress, Sxy component
+  idW3yy: FALSE      # Syy                3D radiation stress, Syy component
+  idW3zx: FALSE      # Szx                3D radiation stress, Szx component
+  idW3zy: FALSE      # Szy                3D radiation stress, Szy component
+  idU3rs: FALSE      # u_Rstress          3D U-radiation stress
+  idV3rs: FALSE      # v_Rstress          3D V-radiation stress
+  idU3Sd: FALSE      # u_stokes           3D U-Stokes velocity
+  idV3Sd: FALSE      # v_stokes           3D V-Stokes velocity
   
-  idWamp: FALSE       # Hwave              wave height
-  idWlen: FALSE       # Lwave              wave length
-  idWdir: FALSE       # Dwave              wave direction
-  idWptp: FALSE       # Pwave_top          wave surface period
-  idWpbt: FALSE       # Pwave_bot          wave bottom period
-  idWorb: FALSE       # Ub_swan            wave bottom orbital velocity
-  idWdis: FALSE       # Wave_dissip        wave dissipation
+  idWamp: FALSE      # Hwave              wave height
+  idWlen: FALSE      # Lwave              wave length
+  idWdir: FALSE      # Dwave              wave direction
+  idWptp: FALSE      # Pwave_top          wave surface period
+  idWpbt: FALSE      # Pwave_bot          wave bottom period
+  idWorb: FALSE      # Ub_swan            wave bottom orbital velocity
+  idWdis: FALSE      # Wave_dissip        wave dissipation
   
-  idPair: FALSE       # Pair               surface air pressure
+  idPair: FALSE      # Pair               surface air pressure
   idUair: TRUE       # Uair               surface U-wind component
   idVair: TRUE       # Vair               surface V-wind component
   idUairE: TRUE                          # surface U-wind
@@ -819,14 +819,14 @@ Qout:
   idevap: TRUE       # evaporation        evaporation rate
   idrain: TRUE       # rain               precipitation rate
   
-  idDano: FALSE       # rho                density anomaly
-  idVvis: FALSE       # AKv                vertical viscosity
-  idTdif: FALSE       # AKt                vertical T-diffusion
-  idSdif: FALSE       # AKs                vertical Salinity diffusion
-  idHsbl: FALSE       # Hsbl               depth of surface boundary layer
-  idHbbl: FALSE       # Hbbl               depth of bottom boundary layer
-  idMtke: FALSE       # tke                turbulent kinetic energy
-  idMtls: FALSE       # gls                turbulent length scale
+  idDano: FALSE      # rho                density anomaly
+  idVvis: FALSE      # AKv                vertical viscosity
+  idTdif: FALSE      # AKt                vertical T-diffusion
+  idSdif: FALSE      # AKs                vertical Salinity diffusion
+  idHsbl: FALSE      # Hsbl               depth of surface boundary layer
+  idHbbl: FALSE      # Hbbl               depth of bottom boundary layer
+  idMtke: FALSE      # tke                turbulent kinetic energy
+  idMtls: FALSE      # gls                turbulent length scale
   
   idEBF: TRUE        # EBF                Ekman buoyancy flux
   idStr2: TRUE       # strain_sur         surface strain
@@ -874,9 +874,9 @@ Aout2:
   idShea: TRUE       # sensible           sensible heat flux
   idLrad: TRUE       # lwrad              longwave radiation flux
   idSrad: TRUE       # swrad              shortwave radiation flux
-  idEmPf: FALSE       # EminusP            E-P flux
-  idevap: FALSE       # evaporation        evaporation rate
-  idrain: FALSE       # rain               precipitation rate
+  idEmPf: FALSE      # EminusP            E-P flux
+  idevap: FALSE      # evaporation        evaporation rate
+  idrain: FALSE      # rain               precipitation rate
 
 # Logical switches (TRUE/FALSE) to activate writing of extra inert passive
 # tracers other than biological and sediment tracers. An inert passive tracer
@@ -910,29 +910,29 @@ Aout:
   idUbms: TRUE       # bustr              bottom U-stress
   idVbms: TRUE       # bvstr              bottom V-stress
        
-  idW2xx: FALSE       # Sxx_bar            2D radiation stress, Sxx component
-  idW2xy: FALSE       # Sxy_bar            2D radiation stress, Sxy component
-  idW2yy: FALSE       # Syy_bar            2D radiation stress, Syy component
-  idU2rs: FALSE       # Ubar_Rstress       2D radiation U-stress
-  idV2rs: FALSE       # Vbar_Rstress       2D radiation V-stress
-  idU2Sd: FALSE       # ubar_stokes        2D U-Stokes velocity
-  idV2Sd: FALSE       # vbar_stokes        2D V-Stokes velocity
+  idW2xx: FALSE      # Sxx_bar            2D radiation stress, Sxx component
+  idW2xy: FALSE      # Sxy_bar            2D radiation stress, Sxy component
+  idW2yy: FALSE      # Syy_bar            2D radiation stress, Syy component
+  idU2rs: FALSE      # Ubar_Rstress       2D radiation U-stress
+  idV2rs: FALSE      # Vbar_Rstress       2D radiation V-stress
+  idU2Sd: FALSE      # ubar_stokes        2D U-Stokes velocity
+  idV2Sd: FALSE      # vbar_stokes        2D V-Stokes velocity
        
-  idW3xx: FALSE       # Sxx                3D radiation stress, Sxx component
-  idW3xy: FALSE       # Sxy                3D radiation stress, Sxy component
-  idW3yy: FALSE       # Syy                3D radiation stress, Syy component
-  idW3zx: FALSE       # Szx                3D radiation stress, Szx component
-  idW3zy: FALSE       # Szy                3D radiation stress, Szy component
-  idU3rs: FALSE       # u_Rstress          3D U-radiation stress
-  idV3rs: FALSE       # v_Rstress          3D V-radiation stress
-  idU3Sd: FALSE       # u_stokes           3D U-Stokes velocity
-  idV3Sd: FALSE       # v_stokes           3D V-Stokes velocity
+  idW3xx: FALSE      # Sxx                3D radiation stress, Sxx component
+  idW3xy: FALSE      # Sxy                3D radiation stress, Sxy component
+  idW3yy: FALSE      # Syy                3D radiation stress, Syy component
+  idW3zx: FALSE      # Szx                3D radiation stress, Szx component
+  idW3zy: FALSE      # Szy                3D radiation stress, Szy component
+  idU3rs: FALSE      # u_Rstress          3D U-radiation stress
+  idV3rs: FALSE      # v_Rstress          3D V-radiation stress
+  idU3Sd: FALSE      # u_stokes           3D U-Stokes velocity
+  idV3Sd: FALSE      # v_stokes           3D V-Stokes velocity
        
-  idPair: FALSE       # Pair               surface air pressure
-  idUair: FALSE       # Uair               surface U-wind component
-  idVair: FALSE       # Vair               surface V-wind component
-  idUairE: FALSE      # Uwind_eastward     surface U-wind
-  idVairN: FALSE      # Vwind_northward    surface V-wind
+  idPair: FALSE      # Pair               surface air pressure
+  idUair: FALSE      # Uair               surface U-wind component
+  idVair: FALSE      # Vair               surface V-wind component
+  idUairE: FALSE     # Uwind_eastward     surface U-wind
+  idVairN: FALSE     # Vwind_northward    surface V-wind
        
   idTsur: [TRUE, TRUE]     # shflux, ssflux     surface net heat and salt flux
   idLhea: TRUE       # latent             latent heat flux
@@ -943,33 +943,33 @@ Aout:
   idrain: TRUE       # rain               precipitation rate
        
   idDano: TRUE       # rho                density anomaly
-  idVvis: FALSE       # AKv                vertical viscosity
-  idTdif: FALSE       # AKt                vertical T-diffusion
-  idSdif: FALSE       # AKs                vertical Salinity diffusion
+  idVvis: FALSE      # AKv                vertical viscosity
+  idTdif: FALSE      # AKt                vertical T-diffusion
+  idSdif: FALSE      # AKs                vertical Salinity diffusion
   idHsbl: TRUE       # Hsbl               depth of surface boundary layer
-  idHbbl: FALSE       # Hbbl               depth of bottom boundary layer
+  idHbbl: FALSE      # Hbbl               depth of bottom boundary layer
        
-  id2dRV: FALSE       # pvorticity_bar     2D relative vorticity
-  id3dRV: FALSE       # pvorticity         3D relative vorticity
-  id2dPV: FALSE       # rvorticity_bar     2D potential vorticity
-  id3dPV: FALSE       # rvorticity         3D potential vorticity
+  id2dRV: FALSE      # pvorticity_bar     2D relative vorticity
+  id3dRV: FALSE      # pvorticity         3D relative vorticity
+  id2dPV: FALSE      # rvorticity_bar     2D potential vorticity
+  id3dPV: FALSE      # rvorticity         3D potential vorticity
        
-  idu3dD: FALSE       # u_detided          detided 3D U-velocity
-  idv3dD: FALSE       # v_detided          detided 3D V-velocity
-  idu2dD: FALSE       # ubar_detided       detided 2D U-velocity
-  idv2dD: FALSE       # vbar_detided       detided 2D V-velocity
-  idFsuD: FALSE       # zeta_detided       detided free-surface
+  idu3dD: FALSE      # u_detided          detided 3D U-velocity
+  idv3dD: FALSE      # v_detided          detided 3D V-velocity
+  idu2dD: FALSE      # ubar_detided       detided 2D U-velocity
+  idv2dD: FALSE      # vbar_detided       detided 2D V-velocity
+  idFsuD: FALSE      # zeta_detided       detided free-surface
        
   idTrcD: [FALSE, FALSE]     # temp_detided, ...  detided temperature and salinity
        
-  idHUav: FALSE       # Huon               u-volume flux, Huon
-  idHVav: FALSE       # Hvom               v-volume flux, Hvom
-  idUUav: FALSE       # uu                 quadratic <u*u> term
-  idUVav: FALSE       # uv                 quadratic <u*v> term
-  idVVav: FALSE       # vv                 quadratic <v*v> term
-  idU2av: FALSE       # ubar2              quadratic <ubar*ubar> term
-  idV2av: FALSE       # vbar2              quadratic <vbar*vbar> term
-  idZZav: FALSE       # zeta2              quadratic <zeta*zeta> term
+  idHUav: FALSE      # Huon               u-volume flux, Huon
+  idHVav: FALSE      # Hvom               v-volume flux, Hvom
+  idUUav: FALSE      # uu                 quadratic <u*u> term
+  idUVav: FALSE      # uv                 quadratic <u*v> term
+  idVVav: FALSE      # vv                 quadratic <v*v> term
+  idU2av: FALSE      # ubar2              quadratic <ubar*ubar> term
+  idV2av: FALSE      # vbar2              quadratic <vbar*vbar> term
+  idZZav: FALSE      # zeta2              quadratic <zeta*zeta> term
        
   idTTav: [FALSE, FALSE]     # temp_2, ...        quadratic <t*t> tracer terms
   idUTav: [FALSE, FALSE]     # u_temp, ...        quadratic <u*t> tracer terms
@@ -1046,11 +1046,11 @@ NC_DLEVEL:  1                 # deflate level [0-9]
 
 GRDNAME: ocean_grd.nc
 ININAME: ocean_ini.nc
-ITLNAME: ocean_itl.nc
-IRPNAME: ocean_irp.nc
-IADNAME: ocean_iad.nc
-FWDNAME: ocean_fwd.nc
-ADSNAME: ocean_ads.nc
+ITLNAME: placeholder.nc
+IRPNAME: placeholder.nc
+IADNAME: placeholder.nc
+FWDNAME: placeholder.nc
+ADSNAME: placeholder.nc
 
 # Input adjoint forcing NetCDF filenames for computing observations
 # impacts during the analysis-forecast cycle. If the forecast error
@@ -1061,21 +1061,21 @@ ADSNAME: ocean_ads.nc
 # s4dvar.in input script) will have the structure of a 4D-Var observation
 # file.
 
-FOInameA: roms_foi_a.nc
-FOInameB: roms_foi_b.nc
+FOInameA: placeholder.nc
+FOInameB: placeholder.nc
 
 # Input NetCDF filenames for the forecasts initialized from the analysis
 # of the current 4D-Var cycle (FCTnameA) and initialized from the analysis
 # of the previous 4D-Var cycle (FCTnameB).
 
-FCTnameA: roms_fct_a.nc
-FCTnameB: roms_fct_b.nc
+FCTnameA: placeholder.nc
+FCTnameB: placeholder.nc
 
 # Nesting grids connectivity data: contact points information. This
 # NetCDF file is special and complex. It is currently generated using
 # the script "matlab/grid/contact.m" from the Matlab repository.
 
-NGCNAME:  ocean_ngc.nc
+NGCNAME:  placeholder.nc
 
 # Input lateral boundary conditions and climatology file names.  The
 # USER has the option to split input data time records into several
@@ -1091,12 +1091,12 @@ BRYNAME: ocean_bry.nc
 
 # Input climatology nudging coefficients file name.
 
-NUDNAME: ocean_nud.nc
+NUDNAME: placeholder.nc
 
 # Input Sources/Sinks forcing (like river runoff) file name.
 
 NSSFFILES: 1
-SSFNAME: ocean_rivers.nc
+SSFNAME: placeholder.nc
 
 # Input tidal forcing file name.
 
@@ -1126,30 +1126,30 @@ FRCNAME: ocean_frc.nc
 
 # Output NetCDF file names, [1:Ngrids].
 
-DAINAME: ocean_dai.nc
-GSTNAME: ocean_gst.nc
-RSTNAME: bering_rst.nc
-HISNAME: bering_his.nc
-QCKNAME: bering_his2.nc
-TLMNAME: bering_tlm.nc
-TLFNAME: bering_tlf.nc
-ADJNAME: bering_tlm.nc
-HARNAME: ocean_har.nc
-AVGNAME: bering_avg.nc
+DAINAME:  bering_dai.nc
+GSTNAME:  bering_gst.nc
+RSTNAME:  bering_rst.nc
+HISNAME:  bering_his.nc
+QCKNAME:  bering_his2.nc
+TLMNAME:  bering_tlm.nc
+TLFNAME:  bering_tlf.nc
+ADJNAME:  bering_tlm.nc
+HARNAME:  bering_har.nc
+AVGNAME:  bering_avg.nc
 AVG2NAME: bering_avg2.nc
-DIANAME: bering_dia.nc
-STANAME: bering_sta.nc
-FLTNAME: bering_flt.nc
+DIANAME:  bering_dia.nc
+STANAME:  bering_sta.nc
+FLTNAME:  bering_flt.nc
 
 # Input ASCII parameter filenames.
 
-APARNAM: assimilation.in
-SPOSNAM: stations_bering.in
-FPOSNAM: floats_bering.in
-IPARNAM: ice.in
-BPARNAM: nemuro_iron.in
-SPARNAM: sediment.in
-USRNAME: MyFile.dat
+APARNAM: placeholder.in
+SPOSNAM: bering_spos.in
+FPOSNAM: placeholder.in
+IPARNAM: bering_ipar.in
+BPARNAM: bering_bpar.in
+SPARNAM: placeholder.in
+USRNAME: placeholder.dat
 
 #
 #  GLOSSARY:
