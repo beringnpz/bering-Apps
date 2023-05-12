@@ -1190,6 +1190,72 @@ Dout:
   iprod_smz: false
   iprod_mdz: false
   iprod_lgz: false
+  iflx_gpp_no3_nsm: false
+  iflx_gpp_no3_nlg: false
+  iflx_gpp_no3_ndi: false
+  iflx_gpp_nh4_nsm: false
+  iflx_gpp_nh4_nlg: false
+  iflx_gpp_nh4_ndi: false
+  iflx_gpp_n2_ndi: false
+  iflx_gra_ldon_bac: false
+  iflx_rem_ldon_nh4: false
+  iflx_gra_nsm_nsmz: false
+  iflx_gra_bac_nsmz: false
+  iflx_gra_ndi_nmdz: false
+  iflx_gra_nlg_nmdz: false
+  iflx_gra_nsmz_nmdz: false
+  iflx_gra_ndi_nlgz: false
+  iflx_gra_nlg_nlgz: false
+  iflx_gra_nmdz_nlgz: false
+  iflx_gra_nsmz_hip: false
+  iflx_gra_nmdz_hip: false
+  iflx_gra_nlgz_hip: false
+  iflx_ege_nsmz_ndet: false
+  iflx_ege_nsmz_sldon: false
+  iflx_ege_nsmz_ldon: false
+  iflx_ege_nsmz_srdon: false
+  iflx_ege_nmdz_ndet: false
+  iflx_ege_nmdz_sldon: false
+  iflx_ege_nmdz_ldon: false
+  iflx_ege_nmdz_srdon: false
+  iflx_ege_nlgz_ndet: false
+  iflx_ege_nlgz_sldon: false
+  iflx_ege_nlgz_ldon: false
+  iflx_ege_nlgz_srdon: false
+  iflx_ege_hip_ndet: false
+  iflx_agg_ndi_ndet: false
+  iflx_agg_nlg_ndet: false
+  iflx_agg_nsm_ndet: false
+  iflx_vir_ndi_ldon: false
+  iflx_vir_nlg_ldon: false
+  iflx_vir_nsm_ldon: false
+  iflx_vir_bac_ldon: false
+  iflx_vir_ndi_sldon: false
+  iflx_vir_nlg_sldon: false
+  iflx_vir_nsm_sldon: false
+  iflx_vir_bac_sldon: false
+  iflx_vir_ndi_srdon: false
+  iflx_vir_nlg_srdon: false
+  iflx_vir_nsm_srdon: false
+  iflx_vir_bac_srdon: false
+  iflx_exu_ndi_ldon: false
+  iflx_exu_nlg_ldon: false
+  iflx_exu_nsm_ldon: false
+  iflx_ege_nsmz_nh4: false
+  iflx_ege_nmdz_nh4: false
+  iflx_ege_nlgz_nh4: false
+  iflx_mor_nsmz_ndet: false
+  iflx_mor_nmdz_ndet: false
+  iflx_mor_nlgz_ndet: false
+  iflx_mor_bac_ldon: false
+  iflx_mor_bac_sldon: false
+  iflx_mor_bac_srdon: false
+  iflx_ege_hip_nh4: false
+  iflx_rem_ndet_out: false
+  iflx_dnit_no3_nh4: false
+  iflx_nit_nh4_no3: false
+  iflx_rem_sldon_ldon: false
+  iflx_rem_srdon_ldon: false
 
 # Lateral boundary conditions
 

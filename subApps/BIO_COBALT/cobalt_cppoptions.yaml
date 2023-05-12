@@ -9,3 +9,4 @@
 - {flag: COBALT_PHOSPHORUS        , descrip: use for phosphorus components}
 - {flag: NO_IRON_COAST            , descrip: use for no coastal iron}
 - {flag: COASTAL_ATTEN            , descrip: "Increase light attenuation in shallow water"}
+- {flag: NLIM_ONEILL              , descrip: "use ONeill (1989) N-limitation (vs Frost & Franzen, 1992)"}
