@@ -7230,7 +7230,7 @@
   'umol/kg/s'
   'flux diagnostics'
   'ocean_time'
-  'iDbio3(iflx_rem_ndet_out)'
+  'iDbio3(iflx_rem_ndet_nh4)'
   'r3dvar'
   1.0d0
 

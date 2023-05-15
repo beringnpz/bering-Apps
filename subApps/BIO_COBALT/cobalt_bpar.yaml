@@ -1251,7 +1251,7 @@ Dout:
   iflx_mor_bac_sldon: false
   iflx_mor_bac_srdon: false
   iflx_ege_hip_nh4: false
-  iflx_rem_ndet_out: false
+  iflx_rem_ndet_nh4: false
   iflx_dnit_no3_nh4: false
   iflx_nit_nh4_no3: false
   iflx_rem_sldon_ldon: false
