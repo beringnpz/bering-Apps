@@ -6676,6 +6676,600 @@
   'r3dvar'
   1.0d0
 
+'gpp_no3_nsm'
+  'gross primary production (small phyto new)'
+  'umol/kg/s'
+  'flux diagnostics'
+  'ocean_time'
+  'iDbio3(iflx_gpp_no3_nsm)'
+  'r3dvar'
+  1.0d0
+
+'gpp_no3_nlg'
+  'gross primary production (large phyto new)'
+  'umol/kg/s'
+  'flux diagnostics'
+  'ocean_time'
+  'iDbio3(iflx_gpp_no3_nlg)'
+  'r3dvar'
+  1.0d0
+
+'gpp_no3_ndi'
+  'gross primary production (diazotroph new)'
+  'umol/kg/s'
+  'flux diagnostics'
+  'ocean_time'
+  'iDbio3(iflx_gpp_no3_ndi)'
+  'r3dvar'
+  1.0d0
+
+'gpp_nh4_nsm'
+  'gross primary production (small phyto regen)'
+  'umol/kg/s'
+  'flux diagnostics'
+  'ocean_time'
+  'iDbio3(iflx_gpp_nh4_nsm)'
+  'r3dvar'
+  1.0d0
+
+'gpp_nh4_nlg'
+  'gross primary production (large phyto regen)'
+  'umol/kg/s'
+  'flux diagnostics'
+  'ocean_time'
+  'iDbio3(iflx_gpp_nh4_nlg)'
+  'r3dvar'
+  1.0d0
+
+'gpp_nh4_ndi'
+  'gross primary production (diazotroph regen)'
+  'umol/kg/s'
+  'flux diagnostics'
+  'ocean_time'
+  'iDbio3(iflx_gpp_nh4_ndi)'
+  'r3dvar'
+  1.0d0
+
+'gpp_n2_ndi'
+  'gross primary production (diazotroph N2 fix)'
+  'umol/kg/s'
+  'flux diagnostics'
+  'ocean_time'
+  'iDbio3(iflx_gpp_n2_ndi)'
+  'r3dvar'
+  1.0d0
+
+'gra_ldon_bac'
+  'bacterial grazing'
+  'umol/kg/s'
+  'flux diagnostics'
+  'ocean_time'
+  'iDbio3(iflx_gra_ldon_bac)'
+  'r3dvar'
+  1.0d0
+
+'rem_ldon_nh4'
+  'bacterial remineralization'
+  'umol/kg/s'
+  'flux diagnostics'
+  'ocean_time'
+  'iDbio3(iflx_rem_ldon_nh4)'
+  'r3dvar'
+  1.0d0
+
+'gra_nsm_nsmz'
+  'grazing (small P  -> small Z)'
+  'umol/kg/s'
+  'flux diagnostics'
+  'ocean_time'
+  'iDbio3(iflx_gra_nsm_nsmz)'
+  'r3dvar'
+  1.0d0
+
+'gra_bac_nsmz'
+  'grazing (bacteria -> small Z)'
+  'umol/kg/s'
+  'flux diagnostics'
+  'ocean_time'
+  'iDbio3(iflx_gra_bac_nsmz)'
+  'r3dvar'
+  1.0d0
+
+'gra_ndi_nmdz'
+  'grazing (diazotroph -> small Z)'
+  'umol/kg/s'
+  'flux diagnostics'
+  'ocean_time'
+  'iDbio3(iflx_gra_ndi_nmdz)'
+  'r3dvar'
+  1.0d0
+
+'gra_nlg_nmdz'
+  'grazing (large P -> medium Z)'
+  'umol/kg/s'
+  'flux diagnostics'
+  'ocean_time'
+  'iDbio3(iflx_gra_nlg_nmdz)'
+  'r3dvar'
+  1.0d0
+
+'gra_nsmz_nmdz'
+  'grazing (small Z -> medium Z)'
+  'umol/kg/s'
+  'flux diagnostics'
+  'ocean_time'
+  'iDbio3(iflx_gra_nsmz_nmdz)'
+  'r3dvar'
+  1.0d0
+
+'gra_ndi_nlgz'
+  'grazing (diazotroph -> large Z)'
+  'umol/kg/s'
+  'flux diagnostics'
+  'ocean_time'
+  'iDbio3(iflx_gra_ndi_nlgz)'
+  'r3dvar'
+  1.0d0
+
+'gra_nlg_nlgz'
+  'grazing (large P -> large Z)'
+  'umol/kg/s'
+  'flux diagnostics'
+  'ocean_time'
+  'iDbio3(iflx_gra_nlg_nlgz)'
+  'r3dvar'
+  1.0d0
+
+'gra_nmdz_nlgz'
+  'grazing (medium Z -> large Z)'
+  'umol/kg/s'
+  'flux diagnostics'
+  'ocean_time'
+  'iDbio3(iflx_gra_nmdz_nlgz)'
+  'r3dvar'
+  1.0d0
+
+'gra_nsmz_hip'
+  'grazing (small Z -> higher predators)'
+  'umol/kg/s'
+  'flux diagnostics'
+  'ocean_time'
+  'iDbio3(iflx_gra_nsmz_hip)'
+  'r3dvar'
+  1.0d0
+
+'gra_nmdz_hip'
+  'grazing (medium Z -> higher predators)'
+  'umol/kg/s'
+  'flux diagnostics'
+  'ocean_time'
+  'iDbio3(iflx_gra_nmdz_hip)'
+  'r3dvar'
+  1.0d0
+
+'gra_nlgz_hip'
+  'grazing (large Z -> higher predators)'
+  'umol/kg/s'
+  'flux diagnostics'
+  'ocean_time'
+  'iDbio3(iflx_gra_nlgz_hip)'
+  'r3dvar'
+  1.0d0
+
+'ege_nsmz_ndet'
+  'egestion (small Z -> N detritus)'
+  'umol/kg/s'
+  'flux diagnostics'
+  'ocean_time'
+  'iDbio3(iflx_ege_nsmz_ndet)'
+  'r3dvar'
+  1.0d0
+
+'ege_nsmz_sldon'
+  'egestion (small Z -> semi-labile DON)'
+  'umol/kg/s'
+  'flux diagnostics'
+  'ocean_time'
+  'iDbio3(iflx_ege_nsmz_sldon)'
+  'r3dvar'
+  1.0d0
+
+'ege_nsmz_ldon'
+  'egestion (small Z -> labile DON)'
+  'umol/kg/s'
+  'flux diagnostics'
+  'ocean_time'
+  'iDbio3(iflx_ege_nsmz_ldon)'
+  'r3dvar'
+  1.0d0
+
+'ege_nsmz_srdon'
+  'egestion (small Z -> semi-refractory DON)'
+  'umol/kg/s'
+  'flux diagnostics'
+  'ocean_time'
+  'iDbio3(iflx_ege_nsmz_srdon)'
+  'r3dvar'
+  1.0d0
+
+'ege_nmdz_ndet'
+  'egestion (medium Z -> N detritus)'
+  'umol/kg/s'
+  'flux diagnostics'
+  'ocean_time'
+  'iDbio3(iflx_ege_nmdz_ndet)'
+  'r3dvar'
+  1.0d0
+
+'ege_nmdz_sldon'
+  'egestion (medium Z -> semi-labile DON)'
+  'umol/kg/s'
+  'flux diagnostics'
+  'ocean_time'
+  'iDbio3(iflx_ege_nmdz_sldon)'
+  'r3dvar'
+  1.0d0
+
+'ege_nmdz_ldon'
+  'egestion (medium Z -> labile DON)'
+  'umol/kg/s'
+  'flux diagnostics'
+  'ocean_time'
+  'iDbio3(iflx_ege_nmdz_ldon)'
+  'r3dvar'
+  1.0d0
+
+'ege_nmdz_srdon'
+  'egestion (medium Z -> semi-refractory DON)'
+  'umol/kg/s'
+  'flux diagnostics'
+  'ocean_time'
+  'iDbio3(iflx_ege_nmdz_srdon)'
+  'r3dvar'
+  1.0d0
+
+'ege_nlgz_ndet'
+  'egestion (large Z -> N detritus)'
+  'umol/kg/s'
+  'flux diagnostics'
+  'ocean_time'
+  'iDbio3(iflx_ege_nlgz_ndet)'
+  'r3dvar'
+  1.0d0
+
+'ege_nlgz_sldon'
+  'egestion (large Z -> semi-labile DON)'
+  'umol/kg/s'
+  'flux diagnostics'
+  'ocean_time'
+  'iDbio3(iflx_ege_nlgz_sldon)'
+  'r3dvar'
+  1.0d0
+
+'ege_nlgz_ldon'
+  'egestion (large Z -> labile DON)'
+  'umol/kg/s'
+  'flux diagnostics'
+  'ocean_time'
+  'iDbio3(iflx_ege_nlgz_ldon)'
+  'r3dvar'
+  1.0d0
+
+'ege_nlgz_srdon'
+  'egestion (large Z -> semi-refractory DON)'
+  'umol/kg/s'
+  'flux diagnostics'
+  'ocean_time'
+  'iDbio3(iflx_ege_nlgz_srdon)'
+  'r3dvar'
+  1.0d0
+
+'ege_hip_ndet'
+  'egestion (higher predators -> N detritus)'
+  'umol/kg/s'
+  'flux diagnostics'
+  'ocean_time'
+  'iDbio3(iflx_ege_hip_ndet)'
+  'r3dvar'
+  1.0d0
+
+'agg_ndi_ndet'
+  'aggregation loss of diazotrophs'
+  'umol/kg/s'
+  'flux diagnostics'
+  'ocean_time'
+  'iDbio3(iflx_agg_ndi_ndet)'
+  'r3dvar'
+  1.0d0
+
+'agg_nlg_ndet'
+  'aggregation loss of large P'
+  'umol/kg/s'
+  'flux diagnostics'
+  'ocean_time'
+  'iDbio3(iflx_agg_nlg_ndet)'
+  'r3dvar'
+  1.0d0
+
+'agg_nsm_ndet'
+  'aggregation loss of small P'
+  'umol/kg/s'
+  'flux diagnostics'
+  'ocean_time'
+  'iDbio3(iflx_agg_nsm_ndet)'
+  'r3dvar'
+  1.0d0
+
+'vir_ndi_ldon'
+  'viral loss (diazotrophs -> labile DON)'
+  'umol/kg/s'
+  'flux diagnostics'
+  'ocean_time'
+  'iDbio3(iflx_vir_ndi_ldon)'
+  'r3dvar'
+  1.0d0
+
+'vir_nlg_ldon'
+  'viral loss (large P -> labile DON)'
+  'umol/kg/s'
+  'flux diagnostics'
+  'ocean_time'
+  'iDbio3(iflx_vir_nlg_ldon)'
+  'r3dvar'
+  1.0d0
+
+'vir_nsm_ldon'
+  'viral loss (small P -> labile DON)'
+  'umol/kg/s'
+  'flux diagnostics'
+  'ocean_time'
+  'iDbio3(iflx_vir_nsm_ldon)'
+  'r3dvar'
+  1.0d0
+
+'vir_bac_ldon'
+  'viral loss (bacteria -> labile DON)'
+  'umol/kg/s'
+  'flux diagnostics'
+  'ocean_time'
+  'iDbio3(iflx_vir_bac_ldon)'
+  'r3dvar'
+  1.0d0
+
+'vir_ndi_sldon'
+  'viral loss (diazotrophs -> semi-labile DON)'
+  'umol/kg/s'
+  'flux diagnostics'
+  'ocean_time'
+  'iDbio3(iflx_vir_ndi_sldon)'
+  'r3dvar'
+  1.0d0
+
+'vir_nlg_sldon'
+  'viral loss (large P -> semi-labile DON)'
+  'umol/kg/s'
+  'flux diagnostics'
+  'ocean_time'
+  'iDbio3(iflx_vir_nlg_sldon)'
+  'r3dvar'
+  1.0d0
+
+'vir_nsm_sldon'
+  'viral loss (small P -> semi-labile DON)'
+  'umol/kg/s'
+  'flux diagnostics'
+  'ocean_time'
+  'iDbio3(iflx_vir_nsm_sldon)'
+  'r3dvar'
+  1.0d0
+
+'vir_bac_sldon'
+  'viral loss (bacteria -> semi-labile DON)'
+  'umol/kg/s'
+  'flux diagnostics'
+  'ocean_time'
+  'iDbio3(iflx_vir_bac_sldon)'
+  'r3dvar'
+  1.0d0
+
+'vir_ndi_srdon'
+  'viral loss (diazotrophs -> semi-refractory DON)'
+  'umol/kg/s'
+  'flux diagnostics'
+  'ocean_time'
+  'iDbio3(iflx_vir_ndi_srdon)'
+  'r3dvar'
+  1.0d0
+
+'vir_nlg_srdon'
+  'viral loss (large P -> semi-refractory DON)'
+  'umol/kg/s'
+  'flux diagnostics'
+  'ocean_time'
+  'iDbio3(iflx_vir_nlg_srdon)'
+  'r3dvar'
+  1.0d0
+
+'vir_nsm_srdon'
+  'viral loss (small P -> semi-refractory DON)'
+  'umol/kg/s'
+  'flux diagnostics'
+  'ocean_time'
+  'iDbio3(iflx_vir_nsm_srdon)'
+  'r3dvar'
+  1.0d0
+
+'vir_bac_srdon'
+  'viral loss (bacteria -> semi-refractory DON)'
+  'umol/kg/s'
+  'flux diagnostics'
+  'ocean_time'
+  'iDbio3(iflx_vir_bac_srdon)'
+  'r3dvar'
+  1.0d0
+
+'exu_ndi_ldon'
+  'exudation from diazotroph'
+  'umol/kg/s'
+  'flux diagnostics'
+  'ocean_time'
+  'iDbio3(iflx_exu_ndi_ldon)'
+  'r3dvar'
+  1.0d0
+
+'exu_nlg_ldon'
+  'exudation from large P'
+  'umol/kg/s'
+  'flux diagnostics'
+  'ocean_time'
+  'iDbio3(iflx_exu_nlg_ldon)'
+  'r3dvar'
+  1.0d0
+
+'exu_nsm_ldon'
+  'exudation from small P'
+  'umol/kg/s'
+  'flux diagnostics'
+  'ocean_time'
+  'iDbio3(iflx_exu_nsm_ldon)'
+  'r3dvar'
+  1.0d0
+
+'ege_nsmz_nh4'
+  'small Z active metabolism'
+  'umol/kg/s'
+  'flux diagnostics'
+  'ocean_time'
+  'iDbio3(iflx_ege_nsmz_nh4)'
+  'r3dvar'
+  1.0d0
+
+'ege_nmdz_nh4'
+  'medium Z active metabolism'
+  'umol/kg/s'
+  'flux diagnostics'
+  'ocean_time'
+  'iDbio3(iflx_ege_nmdz_nh4)'
+  'r3dvar'
+  1.0d0
+
+'ege_nlgz_nh4'
+  'large Z active metabolism'
+  'umol/kg/s'
+  'flux diagnostics'
+  'ocean_time'
+  'iDbio3(iflx_ege_nlgz_nh4)'
+  'r3dvar'
+  1.0d0
+
+'mor_nsmz_ndet'
+  'small Z starvation mortality'
+  'umol/kg/s'
+  'flux diagnostics'
+  'ocean_time'
+  'iDbio3(iflx_mor_nsmz_ndet)'
+  'r3dvar'
+  1.0d0
+
+'mor_nmdz_ndet'
+  'medium Z starvation mortality'
+  'umol/kg/s'
+  'flux diagnostics'
+  'ocean_time'
+  'iDbio3(iflx_mor_nmdz_ndet)'
+  'r3dvar'
+  1.0d0
+
+'mor_nlgz_ndet'
+  'large Z starvation mortality'
+  'umol/kg/s'
+  'flux diagnostics'
+  'ocean_time'
+  'iDbio3(iflx_mor_nlgz_ndet)'
+  'r3dvar'
+  1.0d0
+
+'mor_bac_ldon'
+  'bacterial starvation mortality (to labile)'
+  'umol/kg/s'
+  'flux diagnostics'
+  'ocean_time'
+  'iDbio3(iflx_mor_bac_ldon)'
+  'r3dvar'
+  1.0d0
+
+'mor_bac_sldon'
+  'bacterial starvation mortality (to semi-labile)'
+  'umol/kg/s'
+  'flux diagnostics'
+  'ocean_time'
+  'iDbio3(iflx_mor_bac_sldon)'
+  'r3dvar'
+  1.0d0
+
+'mor_bac_srdon'
+  'bacterial starvation mortality (to semi-refractory)'
+  'umol/kg/s'
+  'flux diagnostics'
+  'ocean_time'
+  'iDbio3(iflx_mor_bac_srdon)'
+  'r3dvar'
+  1.0d0
+
+'ege_hip_nh4'
+  'excretion by higher predators'
+  'umol/kg/s'
+  'flux diagnostics'
+  'ocean_time'
+  'iDbio3(iflx_ege_hip_nh4)'
+  'r3dvar'
+  1.0d0
+
+'rem_ndet_out'
+  'reminaralization'
+  'umol/kg/s'
+  'flux diagnostics'
+  'ocean_time'
+  'iDbio3(iflx_rem_ndet_out)'
+  'r3dvar'
+  1.0d0
+
+'dnit_no3_nh4'
+  'water column denitrification'
+  'umol/kg/s'
+  'flux diagnostics'
+  'ocean_time'
+  'iDbio3(iflx_dnit_no3_nh4)'
+  'r3dvar'
+  1.0d0
+
+'nit_nh4_no3'
+  'nitrification'
+  'umol/kg/s'
+  'flux diagnostics'
+  'ocean_time'
+  'iDbio3(iflx_nit_nh4_no3)'
+  'r3dvar'
+  1.0d0
+
+'rem_sldon_ldon'
+  'remineralization (semi-labile DON -> labile DON)'
+  'umol/kg/s'
+  'flux diagnostics'
+  'ocean_time'
+  'iDbio3(iflx_rem_sldon_ldon)'
+  'r3dvar'
+  1.0d0
+
+'rem_srdon_ldon'
+  'remineralization (semi-refractory DON -> labile DON)'
+  'umol/kg/s'
+  'flux diagnostics'
+  'ocean_time'
+  'iDbio3(iflx_rem_srdon_ldon)'
+  'r3dvar'
+  1.0d0
+
 'ones_east'
   'Small Phytoplankton Nitrogen eastern boundary condition'
   'mol/kg'

@@ -4669,6 +4669,15 @@
   'r3dvar'
   1.0d0
 
+'fratio'
+  'f-ratio'
+  'fraction'
+  'fratio'
+  'ocean_time'
+  'iDbio3(ifratio)'
+  'r3dvar'
+  1.0d0
+
 'ones_east'
   'phytoplankton eastern boundary condition'
   'mmol N m^-3'
