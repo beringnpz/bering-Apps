@@ -5533,6 +5533,24 @@
   'r2dvar'
   1.0d0
 
+'mxl_depth'
+  'depth of the mixed layer hsbl'
+  'm'
+  'mxl_depth, scalar, series'
+  'ocean_time'
+  'iDbio2(imxl_depth)'
+  'r2dvar'
+  1.0d0
+
+'mxl_level'
+  'level of the mixed layer hsbl'
+  'm'
+  'mxl_level, scalar, series'
+  'ocean_time'
+  'iDbio2(imxl_level)'
+  'r2dvar'
+  1.0d0
+
 'alk_btf'
   'Alkalinity bottom flux'
   'mol m-2 s-1'
@@ -5602,24 +5620,6 @@
   'sio4_btf, scalar, series'
   'ocean_time'
   'iDbio2(isio4_btf)'
-  'r2dvar'
-  1.0d0
-
-'mxl_depth'
-  'depth of the mixed layer hsbl'
-  'm'
-  'mxl_depth, scalar, series'
-  'ocean_time'
-  'iDbio2(imxl_depth)'
-  'r2dvar'
-  1.0d0
-
-'mxl_level'
-  'level of the mixed layer hsbl'
-  'm'
-  'mxl_level, scalar, series'
-  'ocean_time'
-  'iDbio2(imxl_level)'
   'r2dvar'
   1.0d0
 
@@ -6037,6 +6037,33 @@
   'r2dvar'
   1.0d0
 
+'prod_n_100_md'
+  'nitrogen production for medium phyto upper 100m'
+  'mol.m-2.s-1'
+  'prod_n_100_md, scalar, series'
+  'ocean_time'
+  'iDbio2(iprod_n_100_md)'
+  'r2dvar'
+  1.0d0
+
+'aggloss_n_100_md'
+  'loss to aggregation for medium phyto upper 100m'
+  'mol.m-2.s-1'
+  'aggloss_n_100_md, scalar, series'
+  'ocean_time'
+  'iDbio2(iaggloss_n_100_md)'
+  'r2dvar'
+  1.0d0
+
+'zloss_n_100_md'
+  'loss to zooplankton for medium phyto upper 100m'
+  'mol.m-2.s-1'
+  'zloss_n_100_md, scalar, series'
+  'ocean_time'
+  'iDbio2(izloss_n_100_md)'
+  'r2dvar'
+  1.0d0
+
 'chl'
   'Chlorophyll'
   'ug kg-1'
@@ -6199,21 +6226,21 @@
   'r3dvar'
   1.0d0
 
-'aggloss_di'
-  'losses to aggregation diazo phyto'
-  'mol/kg'
-  'aggloss_di, scalar, series'
-  'ocean_time'
-  'iDbio3(iaggloss_di)'
-  'r3dvar'
-  1.0d0
-
 'aggloss_sm'
   'losses to aggregation small phyto'
   'mol/kg'
   'aggloss_sm, scalar, series'
   'ocean_time'
   'iDbio3(iaggloss_sm)'
+  'r3dvar'
+  1.0d0
+
+'aggloss_di'
+  'losses to aggregation diazo phyto'
+  'mol/kg'
+  'aggloss_di, scalar, series'
+  'ocean_time'
+  'iDbio3(iaggloss_di)'
   'r3dvar'
   1.0d0
 
@@ -6226,21 +6253,21 @@
   'r3dvar'
   1.0d0
 
-'virloss_di'
-  'losses to viruses diazo phyto'
-  'mol/kg'
-  'virloss_di, scalar, series'
-  'ocean_time'
-  'iDbio3(ivirloss_di)'
-  'r3dvar'
-  1.0d0
-
 'virloss_sm'
   'losses to viruses small phyto'
   'mol/kg'
   'virloss_sm, scalar, series'
   'ocean_time'
   'iDbio3(ivirloss_sm)'
+  'r3dvar'
+  1.0d0
+
+'virloss_di'
+  'losses to viruses diazo phyto'
+  'mol/kg'
+  'virloss_di, scalar, series'
+  'ocean_time'
+  'iDbio3(ivirloss_di)'
   'r3dvar'
   1.0d0
 
@@ -6253,21 +6280,21 @@
   'r3dvar'
   1.0d0
 
-'zloss_di'
-  'losses to zoo diazo phyto'
-  'mol/kg'
-  'zloss_di, scalar, series'
-  'ocean_time'
-  'iDbio3(izloss_di)'
-  'r3dvar'
-  1.0d0
-
 'zloss_sm'
   'losses to zoo small phyto'
   'mol/kg'
   'zloss_sm, scalar, series'
   'ocean_time'
   'iDbio3(izloss_sm)'
+  'r3dvar'
+  1.0d0
+
+'zloss_di'
+  'losses to zoo diazo phyto'
+  'mol/kg'
+  'zloss_di, scalar, series'
+  'ocean_time'
+  'iDbio3(izloss_di)'
   'r3dvar'
   1.0d0
 
@@ -6281,7 +6308,7 @@
   1.0d0
 
 'def_fe_sm'
-  'None'
+  'iron deficiency small phyto'
   '[]'
   'def_fe_sm, scalar, series'
   'ocean_time'
@@ -6290,7 +6317,7 @@
   1.0d0
 
 'def_fe_di'
-  'None'
+  'iron deficiency diazotrophs'
   '[]'
   'def_fe_di, scalar, series'
   'ocean_time'
@@ -6299,7 +6326,7 @@
   1.0d0
 
 'def_fe_lg'
-  'None'
+  'iron deficiency large phyto'
   '[]'
   'def_fe_lg, scalar, series'
   'ocean_time'
@@ -6308,7 +6335,7 @@
   1.0d0
 
 'felim_sm'
-  'None'
+  'iron limitation small phyto'
   '[]'
   'felim_sm, scalar, series'
   'ocean_time'
@@ -6317,7 +6344,7 @@
   1.0d0
 
 'felim_di'
-  'None'
+  'iron limitation diazotrophs'
   '[]'
   'felim_di, scalar, series'
   'ocean_time'
@@ -6326,7 +6353,7 @@
   1.0d0
 
 'felim_lg'
-  'None'
+  'iron limitation large phyto'
   '[]'
   'felim_lg, scalar, series'
   'ocean_time'
@@ -6335,7 +6362,7 @@
   1.0d0
 
 'no3lim_sm'
-  'None'
+  'nitrate limitation small phyto'
   '[]'
   'no3lim_sm, scalar, series'
   'ocean_time'
@@ -6344,7 +6371,7 @@
   1.0d0
 
 'no3lim_di'
-  'None'
+  'nitrate limitation diazotrophs'
   '[]'
   'no3lim_di, scalar, series'
   'ocean_time'
@@ -6353,7 +6380,7 @@
   1.0d0
 
 'no3lim_lg'
-  'None'
+  'nitrate limitation large phyto'
   '[]'
   'no3lim_lg, scalar, series'
   'ocean_time'
@@ -6362,7 +6389,7 @@
   1.0d0
 
 'nh4lim_sm'
-  'None'
+  'ammonium limitation small phyto'
   '[]'
   'nh4lim_sm, scalar, series'
   'ocean_time'
@@ -6371,7 +6398,7 @@
   1.0d0
 
 'nh4lim_di'
-  'None'
+  'ammonium limitation diazotrophs'
   '[]'
   'nh4lim_di, scalar, series'
   'ocean_time'
@@ -6380,7 +6407,7 @@
   1.0d0
 
 'nh4lim_lg'
-  'None'
+  'ammonium limitation large phyto'
   '[]'
   'nh4lim_lg, scalar, series'
   'ocean_time'
@@ -6389,7 +6416,7 @@
   1.0d0
 
 'po4lim_sm'
-  'None'
+  'phosphate limitation small phyto'
   '[]'
   'po4lim_sm, scalar, series'
   'ocean_time'
@@ -6398,7 +6425,7 @@
   1.0d0
 
 'po4lim_di'
-  'None'
+  'phosphate limitation diazotrophs'
   '[]'
   'po4lim_di, scalar, series'
   'ocean_time'
@@ -6407,7 +6434,7 @@
   1.0d0
 
 'po4lim_lg'
-  'None'
+  'phosphate limitation large phyto'
   '[]'
   'po4lim_lg, scalar, series'
   'ocean_time'
@@ -6416,7 +6443,7 @@
   1.0d0
 
 'chl_di'
-  'None'
+  'diazotroph chlorophyll'
   'ug/kg'
   'chl_di, scalar, series'
   'ocean_time'
@@ -6425,7 +6452,7 @@
   1.0d0
 
 'C_2_chl_di'
-  'None'
+  'diazotroph C:chl'
   'ug/kg'
   'C_2_chl_di, scalar, series'
   'ocean_time'
@@ -6434,7 +6461,7 @@
   1.0d0
 
 'chl_sm'
-  'None'
+  'small phyto chlorophyll'
   'ug/kg'
   'chl_sm, scalar, series'
   'ocean_time'
@@ -6443,7 +6470,7 @@
   1.0d0
 
 'C_2_chl_sm'
-  'None'
+  'small phyto C:chl'
   'ug/kg'
   'C_2_chl_sm, scalar, series'
   'ocean_time'
@@ -6452,7 +6479,7 @@
   1.0d0
 
 'chl_lg'
-  'None'
+  'large phyto chlorophyll'
   'ug/kg'
   'chl_lg, scalar, series'
   'ocean_time'
@@ -6461,7 +6488,7 @@
   1.0d0
 
 'C_2_chl_lg'
-  'None'
+  'large phyto C:chl'
   'ug/kg'
   'C_2_chl_lg, scalar, series'
   'ocean_time'
@@ -6478,147 +6505,12 @@
   'r3dvar'
   1.0d0
 
-'prod_n_100_md'
-  'nitrogen production for medium phyto upper 100m'
-  'mol.m-2.s-1'
-  'prod_n_100_md, scalar, series'
-  'ocean_time'
-  'iDbio2(iprod_n_100_md)'
-  'r2dvar'
-  1.0d0
-
-'aggloss_n_100_md'
-  'loss to aggregation for medium phyto upper 100m'
-  'mol.m-2.s-1'
-  'aggloss_n_100_md, scalar, series'
-  'ocean_time'
-  'iDbio2(iaggloss_n_100_md)'
-  'r2dvar'
-  1.0d0
-
-'zloss_n_100_md'
-  'loss to zooplankton for medium phyto upper 100m'
-  'mol.m-2.s-1'
-  'zloss_n_100_md, scalar, series'
-  'ocean_time'
-  'iDbio2(izloss_n_100_md)'
-  'r2dvar'
-  1.0d0
-
-'mu_mem_md'
-  'aggregation memory medium phyto'
-  '[]'
-  'mu_mem_md, scalar, series'
-  'ocean_time'
-  'iDbio3(imu_mem_md)'
-  'r3dvar'
-  1.0d0
-
-'agg_lim_md'
-  'aggregation limitation medium phyto'
-  '[]'
-  'agg_lim_md, scalar, series'
-  'ocean_time'
-  'iDbio3(iagg_lim_md)'
-  'r3dvar'
-  1.0d0
-
-'virloss_md'
-  'losses to viruses medium phyto'
-  'mol/kg'
-  'virloss_md, scalar, series'
-  'ocean_time'
-  'iDbio3(ivirloss_md)'
-  'r3dvar'
-  1.0d0
-
-'zloss_md'
-  'losses to zoo medium phyto'
-  'mol/kg'
-  'zloss_md, scalar, series'
-  'ocean_time'
-  'iDbio3(izloss_md)'
-  'r3dvar'
-  1.0d0
-
-'def_fe_md'
-  'None'
-  '[]'
-  'def_fe_md, scalar, series'
-  'ocean_time'
-  'iDbio3(idef_fe_md)'
-  'r3dvar'
-  1.0d0
-
-'felim_md'
-  'None'
-  '[]'
-  'felim_md, scalar, series'
-  'ocean_time'
-  'iDbio3(ifelim_md)'
-  'r3dvar'
-  1.0d0
-
-'no3lim_md'
-  'None'
-  '[]'
-  'no3lim_md, scalar, series'
-  'ocean_time'
-  'iDbio3(ino3lim_md)'
-  'r3dvar'
-  1.0d0
-
-'nh4lim_md'
-  'None'
-  '[]'
-  'nh4lim_md, scalar, series'
-  'ocean_time'
-  'iDbio3(inh4lim_md)'
-  'r3dvar'
-  1.0d0
-
-'po4lim_md'
-  'None'
-  '[]'
-  'po4lim_md, scalar, series'
-  'ocean_time'
-  'iDbio3(ipo4lim_md)'
-  'r3dvar'
-  1.0d0
-
-'chl_md'
-  'None'
-  'ug/kg'
-  'chl_md, scalar, series'
-  'ocean_time'
-  'iDbio3(ichl_md)'
-  'r3dvar'
-  1.0d0
-
-'C_2_chl_md'
-  'None'
-  'ug/kg'
-  'C_2_chl_md, scalar, series'
-  'ocean_time'
-  'iDbio3(iC_2_chl_md)'
-  'r3dvar'
-  1.0d0
-
 'npp_sm'
   'net primary production for small phytoplankton'
   'umol/kg/s'
   'NPP, scalar, series'
   'ocean_time'
   'iDbio3(inpp_sm)'
-  'r3dvar'
-  1.0d0
-
-'npp_md'
-  'net primary production for medium phytoplankton'
-  'umol/kg/s'
-  'NPP, scalar, series'
-  'ocean_time'
-  'iDbio3(inpp_md)'
   'r3dvar'
   1.0d0
 
@@ -7225,7 +7117,7 @@
   'r3dvar'
   1.0d0
 
-'rem_ndet_out'
+'rem_ndet_nh4'
   'reminaralization'
   'umol/kg/s'
   'flux diagnostics'
@@ -7267,6 +7159,123 @@
   'flux diagnostics'
   'ocean_time'
   'iDbio3(iflx_rem_srdon_ldon)'
+  'r3dvar'
+  1.0d0
+
+'mu_mem_md'
+  'aggregation memory medium phyto'
+  '[]'
+  'mu_mem_md, scalar, series'
+  'ocean_time'
+  'iDbio3(imu_mem_md)'
+  'r3dvar'
+  1.0d0
+
+'agg_lim_md'
+  'aggregation limitation medium phyto'
+  '[]'
+  'agg_lim_md, scalar, series'
+  'ocean_time'
+  'iDbio3(iagg_lim_md)'
+  'r3dvar'
+  1.0d0
+
+'aggloss_md'
+  'aggregation of medium phyto'
+  'mol/kg'
+  'aggloss_md, scalar, series'
+  'ocean_time'
+  'iDbio3(iaggloss_md)'
+  'r3dvar'
+  1.0d0
+
+'virloss_md'
+  'losses to viruses medium phyto'
+  'mol/kg'
+  'virloss_md, scalar, series'
+  'ocean_time'
+  'iDbio3(ivirloss_md)'
+  'r3dvar'
+  1.0d0
+
+'zloss_md'
+  'losses to zoo medium phyto'
+  'mol/kg'
+  'zloss_md, scalar, series'
+  'ocean_time'
+  'iDbio3(izloss_md)'
+  'r3dvar'
+  1.0d0
+
+'def_fe_md'
+  'iron deficiency medium phyto'
+  '[]'
+  'def_fe_md, scalar, series'
+  'ocean_time'
+  'iDbio3(idef_fe_md)'
+  'r3dvar'
+  1.0d0
+
+'felim_md'
+  'iron limitation medium phyto'
+  '[]'
+  'felim_md, scalar, series'
+  'ocean_time'
+  'iDbio3(ifelim_md)'
+  'r3dvar'
+  1.0d0
+
+'no3lim_md'
+  'nitrate limitation medium phyto'
+  '[]'
+  'no3lim_md, scalar, series'
+  'ocean_time'
+  'iDbio3(ino3lim_md)'
+  'r3dvar'
+  1.0d0
+
+'nh4lim_md'
+  'ammonium limititation medium phyto'
+  '[]'
+  'nh4lim_md, scalar, series'
+  'ocean_time'
+  'iDbio3(inh4lim_md)'
+  'r3dvar'
+  1.0d0
+
+'po4lim_md'
+  'phosphate limitation medium phyto'
+  '[]'
+  'po4lim_md, scalar, series'
+  'ocean_time'
+  'iDbio3(ipo4lim_md)'
+  'r3dvar'
+  1.0d0
+
+'chl_md'
+  'medium phyto chlorophyll'
+  'ug/kg'
+  'chl_md, scalar, series'
+  'ocean_time'
+  'iDbio3(ichl_md)'
+  'r3dvar'
+  1.0d0
+
+'C_2_chl_md'
+  'medium phyto C:chl'
+  'ug/kg'
+  'C_2_chl_md, scalar, series'
+  'ocean_time'
+  'iDbio3(iC_2_chl_md)'
+  'r3dvar'
+  1.0d0
+
+'npp_md'
+  'net primary production for medium phytoplankton'
+  'umol/kg/s'
+  'NPP, scalar, series'
+  'ocean_time'
+  'iDbio3(inpp_md)'
   'r3dvar'
   1.0d0
 

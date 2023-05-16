@@ -235,7 +235,7 @@
 # undef ANA_BIOLOGY        /* analytical biology initial conditions */
 # define ANA_BPFLUX        /* analytical bottom passive tracers fluxes */
 # define ANA_SPFLUX        /* analytical surface passive tracers fluxes */
-# define COASTDIAT
+# undef COASTDIAT
 #endif
 
 #ifdef BEST_NPZ
