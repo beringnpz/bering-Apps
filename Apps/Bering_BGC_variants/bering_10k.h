@@ -201,6 +201,10 @@
 # define REDUCE_ALLGATHER   /* use mpi_allgather in mp_reduce   */
 # undef  REDUCE_ALLREDUCE   /* use mpi_allreduce in mp_reduce   */
 
+/* Diagnostics */
+
+# define DIAGNOSTICS_TS
+
 
 
 /* COBALT module options */
