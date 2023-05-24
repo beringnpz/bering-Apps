@@ -7171,6 +7171,24 @@
   'r3dvar'
   1.0d0
 
+'sed_out_nh4'
+  'sedimentary remineralization of ndet to NH4'
+  'umol/kg/s'
+  'flux diagnostics'
+  'ocean_time'
+  'iDbio3(iflx_sed_out_nh4)'
+  'r3dvar'
+  1.0d0
+
+'sed_out_no3'
+  'sedimentary dentrification of ndet to NO3'
+  'umol/kg/s'
+  'flux diagnostics'
+  'ocean_time'
+  'iDbio3(iflx_sed_out_no3)'
+  'r3dvar'
+  1.0d0
+
 'mu_mem_md'
   'aggregation memory medium phyto'
   '[]'
