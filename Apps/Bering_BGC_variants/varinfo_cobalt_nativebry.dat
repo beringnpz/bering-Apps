@@ -7162,6 +7162,15 @@
   'r3dvar'
   1.0d0
 
+'snk_ndet_out'
+  'sinking of N detritus'
+  'umol/kg/s'
+  'flux diagnostics'
+  'ocean_time'
+  'iDbio3(iflx_snk_ndet_out)'
+  'r3dvar'
+  1.0d0
+
 'mu_mem_md'
   'aggregation memory medium phyto'
   '[]'

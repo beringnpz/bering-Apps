@@ -4599,7 +4599,7 @@
 
 'npp'
   'net primary production rate'
-  'mmol N m^-3 s^-1'
+  'mmol N m^-3 d^-1'
   'npp'
   'ocean_time'
   'iDbio3(iflxnpp)'
@@ -4608,7 +4608,7 @@
 
 'gra'
   'grazig rate'
-  'mmol N m^-3 s^-1'
+  'mmol N m^-3 d^-1'
   'gra'
   'ocean_time'
   'iDbio3(iflxgra)'
@@ -4617,7 +4617,7 @@
 
 'agg'
   'aggregation rate'
-  'mmol N m^-3 s^-1'
+  'mmol N m^-3 d^-1'
   'agg'
   'ocean_time'
   'iDbio3(iflxagg)'
@@ -4626,7 +4626,7 @@
 
 'pmor'
   'phytoplankton mortality rate'
-  'mmol N m^-3 s^-1'
+  'mmol N m^-3 d^-1'
   'pmor'
   'ocean_time'
   'iDbio3(iflxpmor)'
@@ -4635,7 +4635,7 @@
 
 'zmor'
   'zooplankton mortality rate'
-  'mmol N m^-3 s^-1'
+  'mmol N m^-3 d^-1'
   'zmor'
   'ocean_time'
   'iDbio3(iflxzmor)'
@@ -4644,7 +4644,7 @@
 
 'srem'
   'small detritus remineralization rate'
-  'mmol N m^-3 s^-1'
+  'mmol N m^-3 d^-1'
   'srem'
   'ocean_time'
   'iDbio3(iflxsrem)'
@@ -4653,7 +4653,7 @@
 
 'lrem'
   'large detritus remineralization rate'
-  'mmol N m^-3 s^-1'
+  'mmol N m^-3 d^-1'
   'lrem'
   'ocean_time'
   'iDbio3(iflxlrem)'
@@ -4662,7 +4662,7 @@
 
 'nit'
   'nitrification'
-  'mmol N m^-3 s^-1'
+  'mmol N m^-3 d^-1'
   'nit'
   'ocean_time'
   'iDbio3(iflxnit)'
@@ -4675,6 +4675,24 @@
   'fratio'
   'ocean_time'
   'iDbio3(ifratio)'
+  'r3dvar'
+  1.0d0
+
+'sinks'
+  'small detritus sinking rate'
+  'mmol N m^-3 d^-1'
+  'ssink'
+  'ocean_time'
+  'iDbio3(iflxsinks)'
+  'r3dvar'
+  1.0d0
+
+'sinkl'
+  'small detritus sinking rate'
+  'mmol N m^-3 d^-1'
+  'ssink'
+  'ocean_time'
+  'iDbio3(iflxsinkl)'
   'r3dvar'
   1.0d0
 
