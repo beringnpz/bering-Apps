@@ -260,6 +260,8 @@ Dout:
   iflxlrem: false
   iflxnit: false
   ifratio: false
+  iflxsinks: false
+  iflxsinkl: false
 
 # Lateral boundary conditions
 
