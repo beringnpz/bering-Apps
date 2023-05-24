@@ -1256,6 +1256,7 @@ Dout:
   iflx_nit_nh4_no3: false
   iflx_rem_sldon_ldon: false
   iflx_rem_srdon_ldon: false
+  iflx_snk_ndet_out: false
 
 # Lateral boundary conditions
 
