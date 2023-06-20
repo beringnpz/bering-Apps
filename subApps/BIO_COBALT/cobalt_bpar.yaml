@@ -170,7 +170,7 @@ n_2_n_denit: 5.9
 o2_2_c: 1.415
 
 # Stoichiometry [mol O2 mol N-1]
-o2_2_nfix: 118.375
+o2_2_nfix: 8.125
 
 # Stoichiometry [mol O2 mol N-1]
 o2_2_nh4: 7.375
@@ -185,7 +185,7 @@ o2_2_no3: 9.375
 k_fed_Di: 5.0e-10
 
 # Nutrient Limitation Parameters (phytoplankton) [mol Fed kg-1]
-k_fed_Lg: 4.5e-10
+k_fed_Lg: 5.0e-10
 
 # Nutrient Limitation Parameters (phytoplankton) [mol Fed kg-1]
 k_fed_Md: 3.0e-10
@@ -194,19 +194,19 @@ k_fed_Md: 3.0e-10
 k_fed_Sm: 1.0e-10
 
 # Nutrient Limitation Parameters (phytoplankton) [mol NH4 kg-1]
-k_nh4_Lg: 4.5e-07
+k_nh4_Lg: 5.0e-08
 
 # Nutrient Limitation Parameters (phytoplankton) [mol NH4 kg-1]
 k_nh4_Md: 3.0e-07
 
 # Nutrient Limitation Parameters (phytoplankton) [mol NH4 kg-1]
-k_nh4_Sm: 1.0e-07
+k_nh4_Sm: 1.0e-08
 
 # Nutrient Limitation Parameters (phytoplankton) [mol NH4 kg-1]
-k_nh4_Di: 5.0e-07
+k_nh4_Di: 1.0e-07
 
 # Nutrient Limitation Parameters (phytoplankton) [mol NO3 kg-1]
-k_no3_Lg: 2.25e-06
+k_no3_Lg: 2.5e-06
 
 # Nutrient Limitation Parameters (phytoplankton) [mol NO3 kg-1]
 k_no3_Md: 2.0e-06
@@ -221,7 +221,7 @@ k_no3_Di: 2.5e-06
 k_po4_Di: 5.0e-08
 
 # Nutrient Limitation Parameters (phytoplankton) [mol PO4 kg-1]
-k_po4_Lg: 4.5e-08
+k_po4_Lg: 5.0e-08
 
 # Nutrient Limitation Parameters (phytoplankton) [mol PO4 kg-1]
 k_po4_Md: 3.0e-08
@@ -230,16 +230,16 @@ k_po4_Md: 3.0e-08
 k_po4_Sm: 1.0e-08
 
 # Nutrient Limitation Parameters (phytoplankton) [mol SiO4 kg-1]
-k_sio4_Lg: 1.5e-06
+k_sio4_Lg: 2.0e-06
 
 # Nutrient Limitation Parameters (phytoplankton) [mol SiO4 kg-1]
 k_sio4_Md: 1.0e-06
 
 # Nutrient Limitation Parameters (phytoplankton) [mol Fe mol N-1]
-k_fe_2_n_Di: 0.000165625
+k_fe_2_n_Di: 7.95e-05
 
 # Nutrient Limitation Parameters (phytoplankton) [mol Fe mol N-1]
-k_fe_2_n_Lg: 6.360000000000001e-05
+k_fe_2_n_Lg:  3.975e-05
 
 # Nutrient Limitation Parameters (phytoplankton) [mol Fe mol N-1]
 k_fe_2_n_Md: 4.968750000000001e-05
@@ -263,16 +263,16 @@ fe_2_n_max_Di: 0.0033125
 fe_2_n_upt_fac: 1.5e-05
 
 # Phytoplankton light limitation/growth rate [g C g Chl-1 m2 W-1 s-1]
-alpha_Di: 4.6e-05
+alpha_Di: 3.6798e-05
 
 # Phytoplankton light limitation/growth rate [g C g Chl-1 m2 W-1 s-1]
-alpha_Lg: 1.37994021919628e-05
+alpha_Lg: 3.6798e-05
 
 # Phytoplankton light limitation/growth rate [g C g Chl-1 m2 W-1 s-1]
 alpha_Md: 1.531733643307871e-05
 
 # Phytoplankton light limitation/growth rate [g C g Chl-1 m2 W-1 s-1]
-alpha_Sm: 2.759880438392561e-05
+alpha_Sm: 0.0001104
 
 # Phytoplankton light limitation/growth rate [deg C-1]
 kappa_eppley: 0.063
@@ -281,19 +281,19 @@ kappa_eppley: 0.063
 P_C_max_Di: 5.787e-06
 
 # Phytoplankton light limitation/growth rate [s-1]
-P_C_max_Lg: 1.302e-05
+P_C_max_Lg: 1.4468e-05
 
 # Phytoplankton light limitation/growth rate [s-1]
 P_C_max_Md: 1.447e-05
 
 # Phytoplankton light limitation/growth rate [s-1]
-P_C_max_Sm: 1.302e-05
+P_C_max_Sm: 1.4468e-05
 
 # Phytoplankton light limitation/growth rate [g Chl g C-1]
 thetamax_Di: 0.03
 
 # Phytoplankton light limitation/growth rate [g Chl g C-1]
-thetamax_Lg: 0.07
+thetamax_Lg: 0.05
 
 # Phytoplankton light limitation/growth rate [g Chl g C-1]
 thetamax_Md: 0.05
@@ -302,16 +302,16 @@ thetamax_Md: 0.05
 thetamax_Sm: 0.03
 
 # Phytoplankton light limitation/growth rate [sec-1]
-bresp_Di: 2.894e-07
+bresp_Di: 5.787e-07
 
 # Phytoplankton light limitation/growth rate [sec-1]
-bresp_Lg: 2.604e-07
+bresp_Lg: 5.787e-07
 
 # Phytoplankton light limitation/growth rate [sec-1]
 bresp_Md: 2.894e-07
 
 # Phytoplankton light limitation/growth rate [sec-1]
-bresp_Sm: 2.604e-07
+bresp_Sm: 3.4722e-07
 
 # Phytoplankton light limitation/growth rate [g Chl g C-1]
 thetamin: 0.002
@@ -350,13 +350,13 @@ alk_2_n_denit: 1.1694915
 p_2_n_static_Di: 0.025
 
 # Other stoichiometry [mol P mol N-1]
-p_2_n_static_Lg: 0.0625
+p_2_n_static_Lg: 0.083333
 
 # Other stoichiometry [mol P mol N-1]
 p_2_n_static_Md: 0.0625
 
 # Other stoichiometry [mol P mol N-1]
-p_2_n_static_Sm: 0.0625
+p_2_n_static_Sm: 0.05
 
 # Other stoichiometry [mol Si mol N-1]
 si_2_n_static_Lg: 2.0
@@ -371,16 +371,16 @@ si_2_n_static_Md: 2.0
 si_2_n_max_Md: 5.0
 
 # Other stoichiometry [mol Ca mol N-1]
-ca_2_n_arag: 0.1325
+ca_2_n_arag: 0.19875
 
 # Other stoichiometry [mol Ca mol N-1]
-ca_2_n_calc: 0.06625
+ca_2_n_calc: 0.086125
 
 # Other stoichiometry [dimensionless]
 caco3_sat_max: 10.0
 
 # Zooplankton Stoichiometry - presently static [mol P mol N-1]
-q_p_2_n_smz: 0.0625
+q_p_2_n_smz: 0.055556
 
 # Zooplankton Stoichiometry - presently static [mol P mol N-1]
 q_p_2_n_mdz: 0.0625
@@ -398,13 +398,13 @@ agg_Sm: 1.1574074
 agg_Di: 0.0
 
 # Phytoplankton aggregation [s-1 (mole N kg)-1]
-agg_Lg: 8.681
+agg_Lg: 3.4722
 
 # Phytoplankton aggregation [s-1 (mole N kg)-1]
 agg_Md: 3.472
 
 # Phytoplankton and bacterial losses to viruses [mole N kg)-1]
-vir_Sm: 0.2894
+vir_Sm: 2.3148
 
 # Phytoplankton and bacterial losses to viruses [mole N kg)-1]
 vir_Di: 0.0
@@ -416,7 +416,7 @@ vir_Lg: 0.0
 vir_Md: 0.0
 
 # Phytoplankton and bacterial losses to viruses [mole N kg)-1]
-vir_Bact: 0.3819444444
+vir_Bact: 2.3148
 
 # Phytoplankton and bacterial losses to viruses [C-1]
 ktemp_vir: 0.063
@@ -434,13 +434,13 @@ exu_Lg: 0.13
 exu_Md: 0.13
 
 # Zooplankton ingestion parameterization and temperature dependence [s-1]
-imax_smz: 1.643518518518518e-05
+imax_smz: 1.47916666666667e-05
 
 # Zooplankton ingestion parameterization and temperature dependence [s-1]
-imax_mdz: 6.597222222222221e-06
+imax_mdz: 6.59722222222222e-06
 
 # Zooplankton ingestion parameterization and temperature dependence [s-1]
-imax_lgz: 2.662037037037037e-06
+imax_lgz: 2.66203703703704e-06
 
 # Zooplankton ingestion parameterization and temperature dependence [moles N kg-1]
 ki_smz: 1.25e-06
@@ -461,7 +461,7 @@ ktemp_mdz: 0.063
 ktemp_lgz: 0.063
 
 # Bacterial growth and uptake parameters [s-1]
-mu_max_bact: 1.157407407407407e-05
+mu_max_bact: 1.15740740740741e-05
 
 # Bacterial growth and uptake parameters [mol ldon kg-1]
 k_ldon_bact: 5.0e-07
@@ -471,120 +471,54 @@ ktemp_bact: 0.063
 
 # Zooplankton switching and prey preference parameters [dimensionless]
 nswitch_smz: 2.0
-
-# Zooplankton switching and prey preference parameters [dimensionless]
 nswitch_mdz: 2.0
-
-# Zooplankton switching and prey preference parameters [dimensionless]
 nswitch_lgz: 2.0
-
-# Zooplankton switching and prey preference parameters [dimensionless]
 mswitch_smz: 2.0
-
-# Zooplankton switching and prey preference parameters [dimensionless]
 mswitch_mdz: 2.0
-
-# Zooplankton switching and prey preference parameters [dimensionless]
 mswitch_lgz: 2.0
 
-# Zooplankton switching and prey preference parameters [dimensionless]
-smz_ipa_smp: 1.0
-
-# Zooplankton switching and prey preference parameters [dimensionless]
-smz_ipa_mdp: 0.0
-
-# Zooplankton switching and prey preference parameters [dimensionless]
-smz_ipa_lgp: 0.0
-
-# Zooplankton switching and prey preference parameters [dimensionless]
+# Innate prey availability for small zooplankton [dimensionless]
+smz_ipa_smp:  1.0
+smz_ipa_mdp:  0.0
+smz_ipa_lgp:  0.0
 smz_ipa_diaz: 0.0
-
-# Zooplankton switching and prey preference parameters [dimensionless]
-smz_ipa_smz: 0.0
-
-# Zooplankton switching and prey preference parameters [dimensionless]
-smz_ipa_mdz: 0.0
-
-# Zooplankton switching and prey preference parameters [dimensionless]
-smz_ipa_lgz: 0.0
-
-# Zooplankton switching and prey preference parameters [dimensionless]
+smz_ipa_smz:  0.0
+smz_ipa_mdz:  0.0
+smz_ipa_lgz:  0.0
 smz_ipa_bact: 0.25
+smz_ipa_det:  0.0
 
-# Zooplankton switching and prey preference parameters [dimensionless]
-smz_ipa_det: 0.0
-
-# Zooplankton switching and prey preference parameters [dimensionless]
-mdz_ipa_smp: 0.0
-
-# Zooplankton switching and prey preference parameters [dimensionless]
-mdz_ipa_mdp: 1.0
-
-# Zooplankton switching and prey preference parameters [dimensionless]
-mdz_ipa_lgp: 0.0
-
-# Zooplankton switching and prey preference parameters [dimensionless]
+# Innate prey availability for medium zooplankton [dimensionless]
+mdz_ipa_smp:  0.0
+mdz_ipa_mdp:  1.0
+mdz_ipa_lgp:  1.0
 mdz_ipa_diaz: 1.0
-
-# Zooplankton switching and prey preference parameters [dimensionless]
-mdz_ipa_smz: 1.0
-
-# Zooplankton switching and prey preference parameters [dimensionless]
-mdz_ipa_mdz: 0.0
-
-# Zooplankton switching and prey preference parameters [dimensionless]
-mdz_ipa_lgz: 0.0
-
-# Zooplankton switching and prey preference parameters [dimensionless]
+mdz_ipa_smz:  1.0
+mdz_ipa_mdz:  0.0
+mdz_ipa_lgz:  0.0
 mdz_ipa_bact: 0.0
+mdz_ipa_det:  0.0
 
-# Zooplankton switching and prey preference parameters [dimensionless]
-mdz_ipa_det: 0.0
-
-# Zooplankton switching and prey preference parameters [dimensionless]
-lgz_ipa_smp: 0.0
-
-# Zooplankton switching and prey preference parameters [dimensionless]
-lgz_ipa_mdp: 0.0
-
-# Zooplankton switching and prey preference parameters [dimensionless]
-lgz_ipa_lgp: 1.0
-
-# Zooplankton switching and prey preference parameters [dimensionless]
+# Innate prey availability for large predatory zooplankton [dimensionless]
+lgz_ipa_smp:  0.0
+lgz_ipa_mdp:  0.0
+lgz_ipa_lgp:  1.0
 lgz_ipa_diaz: 1.0
-
-# Zooplankton switching and prey preference parameters [dimensionless]
-lgz_ipa_smz: 0.0
-
-# Zooplankton switching and prey preference parameters [dimensionless]
-lgz_ipa_mdz: 1.0
-
-# Zooplankton switching and prey preference parameters [dimensionless]
-lgz_ipa_lgz: 0.0
-
-# Zooplankton switching and prey preference parameters [dimensionless]
+lgz_ipa_smz:  1.0
+lgz_ipa_mdz:  1.0
+lgz_ipa_lgz:  0.0
 lgz_ipa_bact: 0.0
-
-# Zooplankton switching and prey preference parameters [dimensionless]
-lgz_ipa_det: 0.0
+lgz_ipa_det:  0.0
 
 # Zooplankton bioenergetics [dimensionless]
 gge_max_smz: 0.4
-
-# Zooplankton bioenergetics [dimensionless]
 gge_max_mdz: 0.4
-
-# Zooplankton bioenergetics [dimensionless]
 gge_max_lgz: 0.4
 
 # Zooplankton bioenergetics [s-1]
-bresp_smz: 2.314814814814815e-07
-
-# Zooplankton bioenergetics [s-1]
-bresp_mdz: 9.259259259259259e-08
-
-# Zooplankton bioenergetics [s-1]
-bresp_lgz: 3.703703703703704e-08
+bresp_smz: 2.08333333333333e-07
+bresp_mdz: 9.25925925925926e-08
+bresp_lgz: 3.7037037037037e-08
 
 # Bacterial bioenergetics [dimensionless]
 gge_max_bact: 0.4
@@ -593,109 +527,55 @@ gge_max_bact: 0.4
 bresp_bact: 8.680555555555555e-08
 
 # Partitioning of zooplankton ingestion to other compartments [dimensionless]
-phi_det_smz: 0.0
+phi_det_smz:   0.1
+phi_det_mdz:   0.2
+phi_det_lgz:   0.3
 
-# Partitioning of zooplankton ingestion to other compartments [dimensionless]
-phi_det_mdz: 0.2
+phi_ldon_smz:  0.14
+phi_ldon_mdz:  0.07
+phi_ldon_lgz:  0.0
 
-# Partitioning of zooplankton ingestion to other compartments [dimensionless]
-phi_det_lgz: 0.3
+phi_ldop_smz:  0.13
+phi_ldop_mdz:  0.065
+phi_ldop_lgz:  0.0
 
-# Partitioning of zooplankton ingestion to other compartments [dimensionless]
-phi_ldon_smz: 0.165
+phi_srdon_smz: 0.02
+phi_srdon_mdz: 0.01
+phi_srdon_lgz: 0.00
 
-# Partitioning of zooplankton ingestion to other compartments [dimensionless]
-phi_ldon_mdz: 0.055
-
-# Partitioning of zooplankton ingestion to other compartments [dimensionless]
-phi_ldon_lgz: 0.0
-
-# Partitioning of zooplankton ingestion to other compartments [dimensionless]
-phi_ldop_smz: 0.135
-
-# Partitioning of zooplankton ingestion to other compartments [dimensionless]
-phi_ldop_mdz: 0.045
-
-# Partitioning of zooplankton ingestion to other compartments [dimensionless]
-phi_ldop_lgz: 0.0
-
-# Partitioning of zooplankton ingestion to other compartments [dimensionless]
-phi_srdon_smz: 0.015
-
-# Partitioning of zooplankton ingestion to other compartments [dimensionless]
-phi_srdon_mdz: 0.005
-
-# Partitioning of zooplankton ingestion to other compartments [dimensionless]
-phi_srdon_lgz: 0.0
-
-# Partitioning of zooplankton ingestion to other compartments [dimensionless]
-phi_srdop_smz: 0.045
-
-# Partitioning of zooplankton ingestion to other compartments [dimensionless]
+phi_srdop_smz: 0.03
 phi_srdop_mdz: 0.015
-
-# Partitioning of zooplankton ingestion to other compartments [dimensionless]
 phi_srdop_lgz: 0.0
 
-# Partitioning of zooplankton ingestion to other compartments [dimensionless]
-phi_sldon_smz: 0.12
-
-# Partitioning of zooplankton ingestion to other compartments [dimensionless]
-phi_sldon_mdz: 0.04
-
-# Partitioning of zooplankton ingestion to other compartments [dimensionless]
+phi_sldon_smz: 0.04
+phi_sldon_mdz: 0.02
 phi_sldon_lgz: 0.0
 
-# Partitioning of zooplankton ingestion to other compartments [dimensionless]
-phi_sldop_smz: 0.12
-
-# Partitioning of zooplankton ingestion to other compartments [dimensionless]
-phi_sldop_mdz: 0.04
-
-# Partitioning of zooplankton ingestion to other compartments [dimensionless]
+phi_sldop_smz: 0.04
+phi_sldop_mdz: 0.02
 phi_sldop_lgz: 0.0
 
-# Partitioning of zooplankton ingestion to other compartments [dimensionless]
-phi_nh4_smz: 0.3
+phi_nh4_smz:   0.3
+phi_nh4_mdz:   0.3
+phi_nh4_lgz:   0.3
 
-# Partitioning of zooplankton ingestion to other compartments [dimensionless]
-phi_nh4_mdz: 0.3
+phi_po4_smz:   0.3
+phi_po4_mdz:   0.3
+phi_po4_lgz:   0.3
 
-# Partitioning of zooplankton ingestion to other compartments [dimensionless]
-phi_nh4_lgz: 0.3
+phi_ldon_vir:  0.7
+phi_srdon_vir: 0.1
+phi_sldon_vir: 0.2
 
-# Partitioning of zooplankton ingestion to other compartments [dimensionless]
-phi_po4_smz: 0.3
-
-# Partitioning of zooplankton ingestion to other compartments [dimensionless]
-phi_po4_mdz: 0.3
-
-# Partitioning of zooplankton ingestion to other compartments [dimensionless]
-phi_po4_lgz: 0.3
-
-# Partitioning of zooplankton ingestion to other compartments [dimensionless]
-phi_ldon_vir: 0.55
-
-# Partitioning of zooplankton ingestion to other compartments [dimensionless]
-phi_srdon_vir: 0.05
-
-# Partitioning of zooplankton ingestion to other compartments [dimensionless]
-phi_sldon_vir: 0.4
-
-# Partitioning of zooplankton ingestion to other compartments [dimensionless]
-phi_ldop_vir: 0.45
-
-# Partitioning of zooplankton ingestion to other compartments [dimensionless]
+phi_ldop_vir:  0.65
 phi_srdop_vir: 0.15
-
-# Partitioning of zooplankton ingestion to other compartments [dimensionless]
-phi_sldop_vir: 0.4
+phi_sldop_vir: 0.2
 
 # Parameters for unresolved higher predators [s-1]
 imax_hp: 1.041666666666667e-06
 
 # Parameters for unresolved higher predators [mol N kg-1]
-ki_hp: 1.2e-06
+ki_hp: 1.25e-06
 
 # Parameters for unresolved higher predators [dimensionless]
 coef_hp: 2.0
@@ -761,28 +641,28 @@ hp_phi_nh4: 0.65
 hp_phi_po4: 0.65
 
 # Iron chemistry [mol Fe kg-1]
-felig_bkg: 1.0e-09
+felig_bkg: 0.5e-09
 
 # Iron chemistry [mol Fe mol N-1]
-felig_2_don: 0.0
+felig_2_don: 0.5e-3
 
 # Iron chemistry [mol Fe mol N-1]
 fe_2_n_sed: 0.006625
 
 # Iron chemistry [mol Fe m kg-1 s-1]
-fe_coast: 1.0e-11
+fe_coast: 0.0
 
 # Iron chemistry [sec-1]
-alpha_fescav: 3.168808781402895e-07
+alpha_fescav: 0.0
 
 # Iron chemistry [micromol Fe m-2 d-1]
 ffe_sed_max: 170.0
 
 # Iron chemistry [mol N-1 sec-1]
-beta_fescav: 0.0
+beta_fescav:  79.2202195350724
 
 # Iron chemistry [unitless]
-remin_eff_fedet: 0.2
+remin_eff_fedet: 0.25
 
 # Iron chemistry [watts m-2]
 ki_fescav: 1.0
@@ -800,10 +680,10 @@ kfe_eq_lig_ll: 1000000000000.0
 kfe_eq_lig_hl: 100000000.0
 
 # Remineralization [mol O2 kg-1]
-k_o2: 2.0e-05
+k_o2: 8.0e-6
 
 # Remineralization [mol O2 kg-1]
-o2_min: 1.0e-06
+o2_min: 0.8e-06
 
 # Remineralization [mol N mol Ca-1]
 rpcaco3: 0.08805031446540881
@@ -839,16 +719,16 @@ z_sed: 0.1
 k_no3_denit: 1.0e-06
 
 # Dissolved Organic Material [s-1]
-gamma_srdon: 1.760449323001608e-09
+gamma_srdon: 3.16880878140289e-09
 
 # Dissolved Organic Material [s-1]
-gamma_srdop: 7.922021953507237e-09
+gamma_srdop: 7.92202195350724e-09
 
 # Dissolved Organic Material [s-1]
 gamma_sldon: 1.286008230452675e-07
 
 # Dissolved Organic Material [s-1]
-gamma_sldop: 1.286008230452675e-07
+gamma_sldop: 1.28600823045267e-07
 
 # Nitrification [s-1]
 gamma_nitrif: 3.858024691358024e-07
