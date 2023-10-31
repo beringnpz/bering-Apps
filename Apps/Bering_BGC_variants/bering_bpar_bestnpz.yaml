@@ -543,6 +543,9 @@ tI0: 0.0095
 # Nitrification light half-saturation constant [W m^-2]
 KI: 4.0
 
+# fraction of sinking flux across bottom boundary that remains in system (unburied) [None]
+fracUnburied: 0.79
+
 # Tracer index reference
 # 
 # The following compilation flags affect tracer indexing:
