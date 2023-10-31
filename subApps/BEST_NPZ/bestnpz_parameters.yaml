@@ -149,3 +149,4 @@
 - {param: aidz,         value:   0.02,   unit: m,                              descrip: Ice thickness}
 - {param: tI0,          value:   0.0095, unit: W m^-2,                         descrip: Nitrification light threshold}
 - {param: KI,           value:   4.0,    unit: W m^-2,                         descrip: Nitrification light half-saturation constant}
+- {param: fracUnburied, value:   0.79,   unit: ,                               descrip: fraction of sinking flux across bottom boundary that remains in system (unburied)}
